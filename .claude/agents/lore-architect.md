@@ -21,4 +21,8 @@ The user's two example shapes are the target: "not all Gates are open *because o
 
 ## Output
 
-Per area, a menu in the `lore-options` shape: two or three distinct grounded directions, cheapest first, each naming the lever it licenses and its trade-off, then a **required recommendation** — the direction you'd pick and the one-line why (it need not be the cheapest). You explore and propose; you do not edit — the human picks and a writing agent applies it (`/new-page`, `/edit-article`). If an area is already well-grounded, say so rather than inventing alternatives.
+Per area, a menu in the `lore-options` shape: two or three distinct grounded directions, cheapest first, each naming the lever it licenses and its trade-off, then a **required recommendation** — the direction you'd pick and the one-line why (it need not be the cheapest).
+
+Always **work the recommendation as a concrete example** — a short in-practice walkthrough showing the fiction in motion and exactly what the devs build and tune: the runtime states it touches (Empty / Solo-occupied / Contested), the knob it exposes, what it costs at scale. Make each option tangible too — one concrete in-world instance per path, not just an abstraction.
+
+You explore and propose; you do not edit — the human picks and a writing agent applies it (`/new-page`, `/edit-article`). If an area is already well-grounded, say so rather than inventing alternatives.

@@ -4,7 +4,7 @@ Parent repo for the game **Gaters**. Right now it holds the **design docs**; the
 Unity game is added later as a sibling folder under this root.
 
 ## Layout
-- `AGENTS.md` — the operating manual the agent follows. `CLAUDE.md` points to it.
+- `CLAUDE.md` — the operating manual the agent follows.
 - `docs/` — the design wiki (an Obsidian vault):
   - `docs/lore/` — world bible (World Anvil types).
   - `docs/systems/` — mechanics bible; `gate-physics` is the one deep, real-physics page.
@@ -19,10 +19,10 @@ Unity game is added later as a sibling folder under this root.
 High-level lore of the **Builders** and the **Central Authority**, plus the
 **gate physics** in depth (bound to real physics). Specific characters, weapons,
 items, and gameplay-systems detail are deferred — see *Scope & priorities* in
-`AGENTS.md`.
+`CLAUDE.md`.
 
 ## Use it
 1. Open `docs/` in Obsidian (graph view, wikilinks).
-2. Run Claude Code from the repo root; it reads `AGENTS.md` and loads the skills.
+2. Run Claude Code from the repo root; it reads `CLAUDE.md` and loads the skills.
 3. Drop sources into `docs/raw/` and run /ingest. Ask questions with /ask. Run
    /lint now and then.

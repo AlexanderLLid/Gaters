@@ -6,6 +6,7 @@ description: Reference for the Gaters lore page types and their fields, based on
 # lore-schema
 
 Lore page types and what each is for:
+
 - character - a single named being, including deities. Named individuals only.
 - location - a place: world, region, settlement, landmark, hub.
 - organization - a group: faction, government, guild, order, pantheon.
@@ -19,8 +20,9 @@ Lore page types and what each is for:
 - event - something that happened in canon; links to the timeline.
 
 Rules:
+
 - Named being maps to character. Whole kind maps to species. This split is
   deliberate.
 - Cross-link to systems pages where an element appears in-game.
-- Anchor canon to raw/ sources. See AGENTS.md for the full conventions.
-Use the matching template in docs/_templates/lore/.
+- Anchor canon to raw/ sources. See CLAUDE.md for the full conventions.
+  Use the matching template in docs/_templates/lore/.

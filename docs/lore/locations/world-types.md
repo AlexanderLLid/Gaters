@@ -16,10 +16,11 @@ raw/design-overview.md). [tentative]
 - **Home planet-base** — your claimed world on a single [[Gates|Gate]]; safe when sealed.
 - **Surface worlds** — the starting tier; larger and richer worlds as you progress.
 - **Hub worlds** — neutral, lawless crossroads (staging + trade routing).
-- **The Safe Core** — the [[Central Authority]]-policed market and spawn region.
-- **The Frontier** — everything past the authority's writ.
+- **The Safe Core** — the [[Central Authority]]-policed market and spawn region; always certified, always reachable.
+- **The Frontier** — everything past the authority's writ; uncertified, reached by direct dial on found coordinates.
 
-Detail (exposure rules, hub capture, the unlock ladder) is deferred to raw/.
+Detail (exposure rules, hub capture) is deferred to raw/. Gate availability — the
+certification waves that drive the unlock ladder — is set in DDR-0005.
 
 ## Later (wants to have)
 Deferred place-types we intend to add — see roadmap.md: orbital / space Gates, and

@@ -8,7 +8,7 @@ Resolve an item → write a numbered **DDR** (design) or **ADR** (architecture) 
 the why and what you rejected, flip the relevant page tag `[tentative]→[decided]`,
 and strike it here. Use /domain-modeling. Source: raw/design-overview.md.
 
-Already graduated: players are gaters / game named after them (DDR-0002); reach-equals-exposure (DDR-0001).
+Already graduated: players are gaters / game named after them (DDR-0002); reach-equals-exposure (DDR-0001); Authority as Patch Channel (DDR-0005).
 Proposed and awaiting confirmation: players-are-human (DDR-0003), mesh-with-a-heart
 topology + central nexus (DDR-0004).
 
@@ -40,4 +40,4 @@ topology + central nexus (DDR-0004).
 11. **Can Rifts be stabilized into Gates** — player-driven or authority/tech-gated?
 12. **Rift specifics** — rank scale (E–S vs. 1–10), spawn location, ignore-it downside, Rift-loot vs. raid-loot balance.
 13. **Mask/field specifics** — gradient vs. hard radius; field radius authority-only vs. capped upgrade; confirm asymmetric mask-at-zero.
-14. **Lock "Authority as Patch Channel" as canon?** ([[Central Authority]])
+14. ~~**Lock "Authority as Patch Channel" as canon?**~~ — decided: yes; Gate availability = Authority-certified provisioning (DDR-0005).

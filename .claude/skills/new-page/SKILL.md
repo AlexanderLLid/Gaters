@@ -8,7 +8,7 @@ description: Create a new wiki page from the right template. Use when the user a
 Input: a type and a title.
 
 1. Pick the template: docs/_templates/lore/<type>.md or docs/_templates/systems/<type>.md.
-   Valid types are listed in AGENTS.md.
+   Valid types are listed in CLAUDE.md.
 2. Copy it to the content folder for that type (e.g. docs/lore/characters/,
    docs/systems/recipes/) with a kebab-case filename matching the title.
 3. Fill the frontmatter (type, status: draft, updated, any aliases) and the
