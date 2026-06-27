@@ -1,6 +1,6 @@
 ---
 name: lint
-description: Health-check the Gateers wiki for contradictions, stale pages, orphans, and dangling links. Use when the user asks to lint, audit, or check the wiki.
+description: Health-check the Gaters wiki for contradictions, stale pages, orphans, and dangling links. Use when the user asks to lint, audit, or check the wiki.
 ---
 
 # lint

@@ -1,6 +1,6 @@
-# AGENTS.md - Gateers Knowledge Wiki
+# AGENTS.md - Gaters Knowledge Wiki
 
-This repo is an LLM-maintained knowledge base for the game Gateers, kept as an
+This repo is an LLM-maintained knowledge base for the game Gaters, kept as an
 Obsidian vault. It holds two linked wikis under one schema:
 
 - lore/ - the world bible: canon, characters, factions, places, events. Page

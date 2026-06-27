@@ -1,6 +1,6 @@
 ---
 name: ask
-description: Answer a question against the Gateers wiki with citations. Use when the user asks a lore or systems question that the wiki should answer (who, what, where, how does X work).
+description: Answer a question against the Gaters wiki with citations. Use when the user asks a lore or systems question that the wiki should answer (who, what, where, how does X work).
 ---
 
 # ask

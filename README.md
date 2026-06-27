@@ -1,6 +1,6 @@
-# Gateers Knowledge Wiki
+# Gaters Knowledge Wiki
 
-An LLM-maintained knowledge base for Gateers, kept as an Obsidian vault in git.
+An LLM-maintained knowledge base for Gaters, kept as an Obsidian vault in git.
 Two linked parts:
 
 - lore/ - the world bible (World Anvil categories: character, location,

@@ -1,6 +1,6 @@
 ---
 name: systems-schema
-description: Reference for the Gateers systems page types and the data-driven content model for an open-world survival game. The agent reaches for this when creating or editing a systems page (system, item, resource, recipe, station, structure, creature, biome, status-effect, tech, formula).
+description: Reference for the Gaters systems page types and the data-driven content model for an open-world survival game. The agent reaches for this when creating or editing a systems page (system, item, resource, recipe, station, structure, creature, biome, status-effect, tech, formula).
 ---
 
 # systems-schema

@@ -9,7 +9,7 @@ updated: 2026-06-27
 
 # World Overview
 
-Entry point to the Gateers lore. Keep short and link out as pages are created.
+Entry point to the Gaters lore. Keep short and link out as pages are created.
 
 ## Premise
 One paragraph: the setting and the central conflict.

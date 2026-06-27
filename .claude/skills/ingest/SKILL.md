@@ -1,6 +1,6 @@
 ---
 name: ingest
-description: Ingest a raw source into the Gateers wiki. Use when the user adds a file to raw/ and asks to process, ingest, or file it, or says update the wiki from this source.
+description: Ingest a raw source into the Gaters wiki. Use when the user adds a file to raw/ and asks to process, ingest, or file it, or says update the wiki from this source.
 ---
 
 # ingest

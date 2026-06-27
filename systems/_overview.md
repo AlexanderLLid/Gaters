@@ -9,7 +9,7 @@ updated: 2026-06-27
 
 # Systems Overview
 
-Map of Gateers mechanics. Keep short, link out as system pages are created.
+Map of Gaters mechanics. Keep short, link out as system pages are created.
 
 ## Core loop
 One paragraph: moment-to-moment play and the longer loop.

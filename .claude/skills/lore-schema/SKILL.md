@@ -1,6 +1,6 @@
 ---
 name: lore-schema
-description: Reference for the Gateers lore page types and their fields, based on the World Anvil category set. The agent reaches for this when creating or editing a lore page (character, location, organization, species, culture, religion, myth, item, language, event).
+description: Reference for the Gaters lore page types and their fields, based on the World Anvil category set. The agent reaches for this when creating or editing a lore page (character, location, organization, species, culture, religion, myth, item, language, event).
 ---
 
 # lore-schema

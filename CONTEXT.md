@@ -1,6 +1,6 @@
 # CONTEXT.md - Shared Language
 
-The working vocabulary for Gateers. Use these terms consistently in pages, code,
+The working vocabulary for Gaters. Use these terms consistently in pages, code,
 commits, and chat. Add a term when a concept keeps needing a sentence to
 explain. This is a glossary, not canon; it decodes jargon.
 

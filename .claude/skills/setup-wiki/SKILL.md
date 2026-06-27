@@ -1,6 +1,6 @@
 ---
 name: setup-wiki
-description: One-time setup for the Gateers wiki. Run once after cloning to confirm conventions before using the other wiki skills. Use when the user says set up the wiki, configure the wiki, or initialize the vault.
+description: One-time setup for the Gaters wiki. Run once after cloning to confirm conventions before using the other wiki skills. Use when the user says set up the wiki, configure the wiki, or initialize the vault.
 ---
 
 # setup-wiki
