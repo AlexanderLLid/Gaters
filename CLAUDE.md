@@ -173,4 +173,5 @@ no separate changelog.
 ## Notes
 
 - Markdown + Obsidian vault under git. Commits are the history.
+- **Git: never branch. Commit straight to `main` and push immediately** — every change goes directly to `main`.
 - Keep this schema lean. Add a short rule when a mistake repeats, not an essay.
