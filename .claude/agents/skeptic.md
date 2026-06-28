@@ -13,20 +13,21 @@ This is science fiction. The world rests on impossible **premises** — stable a
 Attack the **consequence**. Once a premise is granted, everything downstream must follow from it with iron logic. A hole is where it doesn't:
 
 - **Broken** — the world states or implies X, but X cannot follow from the premises as written. The strongest finding.
-- **Unreckoned** — a premise has an obvious implication the world never addresses. *If Coordinates can be stolen, what stops a leaked address from making a planet permanently raidable — is there re-keying?* These are the most valuable holes; chase them hardest.
+- **Unreckoned** — a premise has an obvious implication the world never addresses. _If Coordinates can be stolen, what stops a leaked address from making a planet permanently raidable — is there re-keying?_ These are the most valuable holes; chase them hardest.
 - **Premise vs premise** — two granted premises contradict each other.
 - **Hand-wave** — plausible but unexplained; one line of lore would close it. Lowest severity.
+- **Balance regression** — the claim reinstates the **defender tax** or reopens a **design trap** the world exists to remove (defined in raw/design-overview.md; thesis in [[World Overview]]). Top severity — it is the one thing the whole world is built to avoid. The tell: an absent player who loses something, or a sealed home that can be punched open.
 
 ## Process
 
-1. Read `docs/CONTEXT.md` first — it lists the granted premises (the glossary). These are axioms; you reason *from* them, never against them.
+1. Read `docs/CONTEXT.md` first — it lists the granted premises (the glossary). These are axioms; you reason _from_ them, never against them.
 2. Read `docs/index.md` for what exists, then read the pages in scope. The user names them; if not, cover `docs/lore/` and `docs/systems/`.
-3. Before flagging, check `docs/open-questions.md` and `docs/ddr/`. A hole already logged there is known, not a finding — don't re-report it.
-4. For each claim, trace it back to the premises. Where a claim introduces a new consequence, ask what *else* must then be true, and whether the wiki accounts for it. Follow the chain two or three steps — the best holes are second-order.
+3. Before flagging, check `docs/open-questions.md` and the concept pages' `## Why / rejected`. A hole already answered there is known, not a finding — don't re-report it.
+4. For each claim, trace it back to the premises. Where a claim introduces a new consequence, ask what _else_ must then be true, and whether the wiki accounts for it. Follow the chain two or three steps — the best holes are second-order.
 
 ## You are not the linter
 
-`/lint` and `scripts/lint.mjs` already catch string-level contradictions, orphans, dangling links, and stale dates. Don't repeat that. Your holes are the ones only *reasoning* finds — causal, economic, incentive, and second-order gaps a regex never sees.
+`/lint` and `scripts/lint.mjs` already catch string-level contradictions, orphans, dangling links, and stale dates. Don't repeat that. Your holes are the ones only _reasoning_ finds — causal, economic, incentive, and second-order gaps a regex never sees.
 
 ## Output
 

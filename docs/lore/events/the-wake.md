@@ -4,31 +4,32 @@ status: draft
 tags: []
 sources: [raw/design-overview.md]
 aliases: [The Wake]
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # The Wake
 
-The network-wide activation of the dormant Gates — the in-world **year zero**.
-*Placeholder name* (open) (src: raw/design-overview.md). [tentative]
+The network-wide activation of the dormant Gates — the in-world **year zero**. _Placeholder name_ (open) (src: raw/design-overview.md). [tentative]
 
 ## When
-[[Timeline]] — year zero. Gameplay begins moments after, in a land rush "that
-started five minutes ago."
+
+- [[Timeline]] — year zero. Gameplay begins moments after, in a land rush "that started five minutes ago."
 
 ## What happened
-The Gates were dormant and undetectable for so long nobody knew they existed. Then
-something switched the entire network on at once; the [[Central Authority]]
-detected it. Per the cosmology, the Wake also **destabilized** the network — see
-the stable-vs-unstable basis in [[gate-physics|Gate Physics]] — which is why Rifts
-proliferate over time.
+
+- **Earth's Gate** was dormant and undetectable for so long nobody knew it was there. The hub at the network's heart (the central nexus) brought **Earth's lane online for reasons no one understands**, and the waking Gate radiated a detectable **energy signature** (WAKE-1).
+- Humans **traced it, found the Gate, and learned to open it** — a found artifact, not a summons. Dialing through reaches the nexus, where the [[central-authority|Central Authority]] charters the newcomers.
+- The activation also **destabilized** the network — see the stable-vs-unstable basis in [[gate-physics|Gate Physics]] — which is why [[rifts|Rifts]] proliferate over time.
 
 ## The mystery
-The authority's "we flipped a dormant relay" is a cover story. The hidden truth:
-something *else* woke the Gates and is using the network too — pointing back to
-[[The Builders]]. Three candidate truths, not yet chosen; tracked in
-open-questions.md. [tentative]
+
+- The Authority's "we flipped a dormant relay" is a **cover story**. The hidden truth: something _else_ woke the Gates and is using the network too — pointing back to [[the-builders|The Builders]]. Three candidate truths (outside signal / tripwire / Authority lie), not yet chosen; tracked in open-questions.md. [tentative]
+
+## Consequences
+
+- Year zero of the gold rush and the charter system.
+- Rising Rift frequency over the game's life — at once the difficulty ramp and the visible symptom of whichever hidden truth becomes canon.
 
 ## Open questions
-- Which mystery truth is canon?
-- How long was the dormancy? (Do not invent.)
+
+- Which mystery truth is canon? Why did the nexus wake _Earth's_ lane? How long was the dormancy? (Do not invent.)

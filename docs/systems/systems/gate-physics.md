@@ -68,11 +68,38 @@ A Morris–Thorne throat is two-way and transparent: light and matter cross, wit
 an open Gate" is real. "One-way from the dialing side" and "**sealed by default**"
 are gameplay gating with no physical basis [CONCEIT] — flag them as rules.
 
+## Aperture size — driven, not built
+
+Throat diameter is set by how much exotic matter you channel and confine, **not** by
+building bigger hardware: the Builder ring is fixed, the aperture is a runtime variable.
+[GROUNDED — Morris–Thorne energy scales with throat size.] The **Ford–Roman quantum
+inequality** caps one ring (bigger throats force the walls Planck-thin → collapse), so
+fleet-wide apertures need multiple rings combined — a megastructure of **found** segments,
+never fabrication. [GROUNDED ceiling.] Overdrive one ring past the cap and it collapses to
+the un-propped state — a Rift. This is the physics under the driven aperture ([[gates|Gates]]) and the gate-overload bomb.
+
+## The dome — protecting transit, clearing builds
+
+An active throat must **flare out** into ambient space (the Morris–Thorne flare-out
+condition); just outside the mouth the curvature gradient is steep, so tidal shear tears
+anything rigidly anchored across it. [GROUNDED — tidal forces near steep curvature; M–T
+size their throat precisely so a _traveller_ survives the centre.] That lethality is why
+matter needs shielding to cross — in-world, the Builders' **dome**: a protective field,
+sized to the throat, that makes transit survivable and whose radius scales with gate
+power. [CONCEIT — projected force fields aren't real; same conceit family as the mask
+field.] The dome **destroys player-built structures** in its radius but spares natural
+terrain — it senses _construction, not material_. [CONCEIT — a Builder discriminator; no
+physics tells manufacture from nature.] So a Gate can never be walled in (the [[combat|dome]]); the
+tidal lethality is the GROUNDED reason something has to clear, the dome is the engineered
+how.
+
 ## Pure conceits (do not claim physics)
 
 - A sealed-but-sub-traversable default state (GR throats are open or collapsed).
 - A life-support field that weakens with radius.
 - Rifts clustering near Gates.
+- The gate dome: a protective field that shields transit and destroys only _built_ matter
+  (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
 
 ## Code
 
