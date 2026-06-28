@@ -2,6 +2,17 @@
 
 Catalog of every page with a one-line summary. Update on every ingest; read first when answering.
 
+## Status of these docs
+
+Everything here is a **working draft we're happy with — nothing is locked.** Pages are
+`status: draft` and read as confident calls because vague design docs are useless, not
+because they're final. Bring better reasoning and we re-decide (see "Nothing is locked"
+in CLAUDE.md). Inline tags say how settled a claim is:
+
+- **[decided]** — current best call + its _why_. Changeable: surface the conflict and re-decide.
+- **[tentative]** — leaning this way, not committed.
+- **[open]** — unresolved; tracked in [[open-questions|Open Questions]].
+
 ## Lore
 
 ### Overview
