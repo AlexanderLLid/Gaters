@@ -62,7 +62,7 @@ exposure-gated visibility, extraction). Pure inspo, nothing decided.
 - **Inverted Rift** — visible only to players _above_ the opener's Potential; the
   underdog baits the strong.
 - **Blind Rift** — rank/contents not telegraphed; gamble on what's behind it.
-- **Coordinate Rift** — guaranteed coordinate-shares inside; an Authority-seeded
+- **Coordinate Rift** — guaranteed coordinate-shares inside; a Coalition-seeded
   home-hunt event.
 - **Recurring Rift** — same world each time it opens; becomes known and contested,
   a soft persistent zone without the hosting cost.

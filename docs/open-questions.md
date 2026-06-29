@@ -10,9 +10,9 @@ Resolve an item → fold the decision (its _why_ + what you rejected) into the r
 still get an **ADR** in `docs/adr/`.)
 
 Decided so far (folded into the concept pages — see each page's _Why / rejected_): the game is
-named after its players, reach-equals-exposure, players-are-human ([[World Overview]]); Authority
+named after its players, reach-equals-exposure, players-are-human ([[World Overview]]); Coalition
 as patch channel + certified provisioning, the mandate, mesh-with-a-heart topology
-([[central-authority|Central Authority]]); the gate dome ([[combat|Combat]]); aperture driven, not
+([[united-gate-coalition|United Gate Coalition]]); the gate dome ([[combat|Combat]]); aperture driven, not
 built ([[Gates]]); the raid clock ([[raiding|Raiding]]); asymmetric uphill reach + Potential + tribe
 ownership ([[potential|Potential]]); exposed holdings ([[holdings|Holdings]]); consciousness-link /
 avatars / two-layer XP ([[consciousness-link|Consciousness Link]]); mortal home / obscurity /
@@ -29,12 +29,12 @@ avatar-shares ([[coordinates|Coordinates & Obscurity]]); Rifts as the PvPvE extr
 2. ~~**Siege-timer number**~~ — resolved: not one value but a curve of Gate power, capped by the ~38-min wormhole ceiling. ([[raiding|Raiding]])
 3. **"Gates unbuildable" vs. more Gates over time** — reconcile relocate/reassemble/stabilize-Rifts/saved-coordinates under one umbrella rule. ([[Gates]], [[rifts|Rifts]]) _Size axis resolved: ring fixed, aperture driven — no fabrication. Rift-stabilization pacing still open (see 10)._
 4. **Stagnation pressure vs. "no obligation" promise** — strong enough to push players out, not so strong it's a disguised upkeep tax. ([[economy|Economy]]) _Homesteader sub-case resolved (PROG-2): sealed play hits a soft ceiling and plateaus — a ceiling, not a leak — so the never-opener is never taxed (see [[progression|Progression]]). The general faucet/sink line still open._
-5. **Raider anonymity vs. the central registry** — "no caller ID" vs. the [[central-authority|Central Authority]] knowing who holds what. _Narrowed:_ the Authority **holds your body** (see [[consciousness-link|Consciousness Link]]), so it always knows your identity — anonymity is purely **peer-facing** (other players don't see caller ID), never Authority-facing. The open part is only what peers can/can't trace.
+5. **Raider anonymity vs. the central registry** — "no caller ID" vs. the [[united-gate-coalition|United Gate Coalition]] knowing who holds what. _Narrowed:_ the Coalition **holds your body** (see [[consciousness-link|Consciousness Link]]), so it always knows your identity — anonymity is purely **peer-facing** (other players don't see caller ID), never Coalition-facing. The open part is only what peers can/can't trace.
 6. ~~**Hub zerg problem**~~ — resolved: hubs become **lawless commerce/routing** (capturable for tolls), the open PvP contest moves to **Rifts** (visibility by Potential) **and space gates**, so the many-vs-many chaos is no longer hosted _at the hub_. ([[hub-worlds|Hub Worlds]], [[rifts|Rifts]])
 7. **"Sealed = isolated" vs. "comms pass through a sealed Gate"** — confirm the split (info yes; goods/energy/people no).
 8. **NMS-aspirational visuals vs. low-poly-achievable-solo** — two target identities; look is deferred.
 9. **Title "Gaters"** — phonetics ("gators" / "gaiters"), searchability, harassment risk. (Player term settled: gater.)
-10. **Player-driven Rift-stabilization vs. authority-paced expansion** — who controls world-growth pacing? ([[rifts|Rifts]], [[central-authority|Central Authority]])
+10. **Player-driven Rift-stabilization vs. Coalition-paced expansion** — who controls world-growth pacing? ([[rifts|Rifts]], [[united-gate-coalition|United Gate Coalition]])
 11. **Field radius and away reserve must stay decoupled** — standing rule; an "expand the field" patch must never lengthen the raid clock. ([[mask-energy|Mask Energy]])
 12. ~~**Power-potential computation**~~ — resolved: potential is a sticky high-water-mark of footprint (not live draw), and the uphill _tier-gap_ cost is a separate term from distance. ([[potential|Potential]])
 13. ~~**Solo vs. a mustered home defence**~~ — resolved via the **muster cap (COMBAT-2)**: the dome admits only K combat-effective defenders at the lip (K scales with attacker throat power), so a skilled solo can win the _breach_ against a muster — but not the open field, where the perimeter and the away-reserve clock still rule. ([[combat|Combat]])
@@ -45,27 +45,27 @@ avatar-shares ([[coordinates|Coordinates & Obscurity]]); Rifts as the PvPvE extr
 1. **Is the core fun real?** Will players actually open their Gates? (The greybox must answer.)
 2. ~~**What governs the raid clock**~~ — decided: the attacker's away reserve, fixed by home-Gate power, un-pumpable. ([[raiding|Raiding]])
 3. **How hard should stagnation push** without becoming upkeep?
-4. **Which mystery truth** is canon (outside signal / tripwire / authority lie)? ([[the-wake|The Wake]]) (Authority's motive now decided — threat-to-Earth reconnaissance, see [[central-authority|Central Authority]] — which colours but does **not** pick the truth; the three candidates stay open.)
+4. **Which mystery truth** is canon (outside signal / tripwire / Coalition lie)? ([[the-wake|The Wake]]) (Coalition's motive now decided — threat-to-Earth reconnaissance, see [[united-gate-coalition|United Gate Coalition]] — which colours but does **not** pick the truth; the three candidates stay open.)
 5. ~~**Combat model**~~ — resolved (COMBAT-1/COMBAT-2): third-person gear-and-positioning; the mask _is_ the combat resource (away reserve = clock + durability); aperture as a two-way fire-lane; muster cap for solo-vs-mustered; precursor-tech-hybrid spine. Numbers (TTK, K-values) stay open as data. ([[combat|Combat]])
 6. **Final art identity** (NMS-lush vs. low-poly-stylized).
 7. **Survival meters beyond mask energy** — any, and how minimal?
 8. **Raider anonymity + central registry** coexistence.
 9. **Does "Gaters" survive** the searchability/phonetics concern? (Player term settled: gater.)
-10. **Can Rifts be stabilized into Gates** — player-driven or authority/tech-gated? ([[rifts|Rifts]])
+10. **Can Rifts be stabilized into Gates** — player-driven or Coalition/tech-gated? ([[rifts|Rifts]])
 11. **Rift specifics** — rank scale (E–S vs. 1–10), spawn location, ignore-it downside, Rift-loot vs. raid-loot balance. ([[rifts|Rifts]])
-12. **Mask/field specifics** — gradient vs. hard radius; field radius authority-only vs. capped upgrade; confirm asymmetric mask-at-zero. ([[mask-energy|Mask Energy]])
-13. ~~**Lock "Authority as Patch Channel" as canon?**~~ — decided: yes; Gate availability = Authority-certified provisioning. ([[central-authority|Central Authority]])
+12. **Mask/field specifics** — gradient vs. hard radius; field radius Coalition-only vs. capped upgrade; confirm asymmetric mask-at-zero. ([[mask-energy|Mask Energy]])
+13. ~~**Lock "Coalition as Patch Channel" as canon?**~~ — decided: yes; Gate availability = Coalition-certified provisioning. ([[united-gate-coalition|United Gate Coalition]])
 14. **Why did the Builders forbid walling a Gate?** The dome (see [[combat|Combat]]) is a deliberate anti-enclosure feature — a Gate that can never be entombed can always be reached _through_. Mystery hook; rhymes with #4. Left unanswered per Builders-unknown.
 15. **Is Earth the only species the Gates woke for?** _Parked; canonical answer-in-waiting._ The
     synchronized Wake plausibly lit **many** species' Gates at once — making the simultaneity itself
     evidence the threat is real, and scaling the natural-selection frame into three rings (player vs.
-    player → humanity vs. other woken species → all vs. the threat — see [[central-authority|Central Authority]]). **Correction:** _not_
-    "rival Authorities" — an Authority is a **human** institution, contingent; alien evolution would
+    player → humanity vs. other woken species → all vs. the threat — see [[united-gate-coalition|United Gate Coalition]]). **Correction:** _not_
+    "rival Coalitions" — the Coalition is a **human** institution, contingent; alien evolution would
     not converge on it. Rivals at scale are **alien polities that answered the Wake differently** (a
     hive, a sovereign, a machine intelligence, or no central body at all). Open fork: **do other
     species hold bodies / respawn (see [[consciousness-link|Consciousness Link]]), or do they really die?** — this decides whether
     "only avatars die" is a human edge or a human weakness. If taken, soften the "threat to
-    Earth" framing → "threat to the woken worlds." Touches players-are-human ([[World Overview]]), [[central-authority|Central Authority]], [[consciousness-link|Consciousness Link]], the Species section,
+    Earth" framing → "threat to the woken worlds." Touches players-are-human ([[World Overview]]), [[united-gate-coalition|United Gate Coalition]], [[consciousness-link|Consciousness Link]], the Species section,
     and deepens #4. Roadmap, not launch.
 16. ~~**Sealed progression ceiling**~~ — resolved (PROG-2): a peaceful homesteader progresses _forever_ fully sealed up to a **soft ceiling** (one `sealed-reachable` boolean per tech node; frontier tiers flip to `false`), then plateaus — never decays, never punished. Stagnation as a ceiling, not a leak. The homesteader's **safety** is now **being unfound** — a pure-PvE never-leaver sheds no avatar-shares, so stays unfound; the plateau still holds. ([[progression|Progression]], [[coordinates|Coordinates & Obscurity]], [[rifts|Rifts]])
 17. **Theme/genre fork — sci-fi, fantasy, or precursor-tech hybrid?** _Leaning now adopted in the combat spine (COMBAT-1): bow/melee → scavenged Builder tech → fleets, with the tamer fork resolved narrow (TAME-1). The fork stays listed because committing the **whole** game to precursor-tech-hybrid as canon (art identity #6, setting/tone register) is broader than the combat model and not yet formally signed off._ Should players wield creatures/bows/melee rather than (or alongside) the sci-fi frame? Three paths, by what each licenses:

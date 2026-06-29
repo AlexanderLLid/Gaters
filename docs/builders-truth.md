@@ -27,7 +27,7 @@
 
 ## Ties to the existing mystery candidates
 
-- Compatible with the open candidate truths (outside signal / tripwire / Authority lie, [[the-wake|The Wake]]): the "best gene" could be cultivated _for_ whatever woke the network, or the Wake _is_ the tripwire that started selection. Keep these convergent, not contradictory.
+- Compatible with the open candidate truths (outside signal / tripwire / Coalition lie, [[the-wake|The Wake]]): the "best gene" could be cultivated _for_ whatever woke the network, or the Wake _is_ the tripwire that started selection. Keep these convergent, not contradictory.
 
 ## Discipline
 
