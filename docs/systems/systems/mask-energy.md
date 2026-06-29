@@ -23,7 +23,7 @@ The survival / life-support layer, and the **combat resource** — powered by th
 
 ## The two-number split (MASK-3) — load-bearing
 
-- **Field radius** — how far from your Gate you can roam/build; the **dev-expandable** lever (the [[central-authority|Authority]] "expands the field" as the studio grows the world).
+- **Field radius** — how far from your Gate you can roam/build; the **dev-expandable** lever (the [[united-gate-coalition|Coalition]] "expands the field" as the studio grows the world).
 - **Away reserve** — how long the mask lasts once you leave a field; the **raider clock** ( = the [[raiding|raid clock]]).
 - These **must stay separate numbers.** If they're one stat, every "expand the field 10%" patch also lets raiders camp enemy soil 10% longer. Away reserve is **fixed by the attacker's home-Gate power** and **un-pumpable** by carried cores or beacons.
 
@@ -42,4 +42,4 @@ Placeholder until the Unity project exists.
 
 ## Open questions
 
-- What the mask physically is; gradient vs. hard radius (leaning gradient); field radius authority-only vs. a capped player upgrade; whether any survival meters exist beyond the mask. Tracked in open-questions.md.
+- What the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. a capped player upgrade; whether any survival meters exist beyond the mask. Tracked in open-questions.md.

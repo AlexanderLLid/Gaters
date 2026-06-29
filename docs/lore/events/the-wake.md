@@ -18,12 +18,12 @@ The network-wide activation of the dormant Gates — the in-world **year zero**.
 ## What happened
 
 - **Earth's Gate** was dormant and undetectable for so long nobody knew it was there. The hub at the network's heart (the central nexus) brought **Earth's lane online for reasons no one understands**, and the waking Gate radiated a detectable **energy signature** (WAKE-1).
-- Humans **traced it, found the Gate, and learned to open it** — a found artifact, not a summons. Dialing through reaches the nexus, where the [[central-authority|Central Authority]] charters the newcomers.
+- Humans **traced it, found the Gate, and learned to open it** — a found artifact, not a summons. Dialing through reaches the nexus, where the [[united-gate-coalition|United Gate Coalition]] charters the newcomers.
 - The activation also **destabilized** the network — see the stable-vs-unstable basis in [[gate-physics|Gate Physics]] — which is why [[rifts|Rifts]] proliferate over time.
 
 ## The mystery
 
-- The Authority's "we flipped a dormant relay" is a **cover story**. The hidden truth: something _else_ woke the Gates and is using the network too — pointing back to [[the-builders|The Builders]]. Three candidate truths (outside signal / tripwire / Authority lie), not yet chosen; tracked in open-questions.md. [tentative]
+- The Coalition's "we flipped a dormant relay" is a **cover story**. The hidden truth: something _else_ woke the Gates and is using the network too — pointing back to [[the-builders|The Builders]]. Three candidate truths (outside signal / tripwire / Coalition lie), not yet chosen; tracked in open-questions.md. [tentative]
 
 ## Consequences
 

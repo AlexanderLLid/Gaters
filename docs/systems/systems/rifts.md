@@ -33,7 +33,7 @@ Spontaneous _unstable_ wormholes — the dopamine engine and the **PvPvE contact
 
 ## Rifts → new Gates
 
-- A stabilized Rift is where **new [[Gates]]** come from — you never manufacture one, you **tame** a natural unstable wormhole. Finite but slowly replenishing. Pacing (player-driven vs. authority-gated) is open.
+- A stabilized Rift is where **new [[Gates]]** come from — you never manufacture one, you **tame** a natural unstable wormhole. Finite but slowly replenishing. Pacing (player-driven vs. Coalition-gated) is open.
 
 ## Taming
 
@@ -57,4 +57,4 @@ Placeholder until the Unity project exists.
 
 ## Open questions
 
-- Rank scale (E–S vs. 1–10); surface vs. orbit; the ignore-it downside (missable loot vs. a present-only PvE incursion); Rift-loot vs. raid-loot balance; whether the Authority seeds public coordinate-drop Rift-events. Tracked in open-questions.md.
+- Rank scale (E–S vs. 1–10); surface vs. orbit; the ignore-it downside (missable loot vs. a present-only PvE incursion); Rift-loot vs. raid-loot balance; whether the Coalition seeds public coordinate-drop Rift-events. Tracked in open-questions.md.

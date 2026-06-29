@@ -74,7 +74,7 @@ Concretely:
   - **Rift (no dome):** nothing solid crosses; the network casts your pattern to the kernel, which **seeds and grows a bare body from local matter** → bare start is _structural_, not a rule (you sent a cell).
   - **Gate (domed):** you cross **carried-and-equipped**, gear and all → trade/raiding/extraction untouched.
 - **Pilot link** rides the persistent consciousness-link channel (comms-pass-a-sealed-Gate conceit), not the collapsing throat → real-time control survives a Rift.
-- **Why not robots:** only **living, self-organizing tissue** can host a human mind's real-time imprint (one conceit); a machine has nowhere to bind the kernel and no living substrate; and the Authority charters **accountable humans, not autonomous drones**. (Don't lean on "transit shears hardware" — the dome defeats that.)
+- **Why not robots:** only **living, self-organizing tissue** can host a human mind's real-time imprint (one conceit); a machine has nowhere to bind the kernel and no living substrate; and the Coalition charters **accountable humans, not autonomous drones**. (Don't lean on "transit shears hardware" — the dome defeats that.)
 - **Evolution (the fun part, in-run):** the grown body is the substrate. Avatar-XP = the body adapts/mutates to the world and to use; mind-XP = permanent growth patterns you re-grow into; biome-sculpted builds = your roster (templates-on-file). Cap the morphogenesis conceit (reassembly of remembered forms), tag it honestly.
 - **Death/recall:** death destroys the grown body, **kernel drops as loot carrying the share**, mind re-anchors home, regrow at the operator base (behind your field — no spawn-camp). Recall = drop the link, body + shell abandoned, **kernel re-anchors with you** (committed cost, not free re-lock).
 

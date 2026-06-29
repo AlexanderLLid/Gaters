@@ -53,7 +53,7 @@ explain. This is a glossary, not canon; it decodes jargon.
 
 - Avatar - the projected body you pilot through a Gate; the disposable layer. Only avatars
   die (gear drops, lootable); you develop several but pilot one at a time.
-- Body-on-Earth / consciousness-link - your real body, held by the Authority on Earth; presence
+- Body-on-Earth / consciousness-link - your real body, held by the Coalition on Earth; presence
   is the linked mind projecting into an avatar. The in-world basis for respawn and sanctioned violence.
 - Recall - snapping your mind home to defend; costs the away-avatar + gear left behind. A
   forced offense-vs-defense choice, not free teleport. In a Rift, the emergency exit.

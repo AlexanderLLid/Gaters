@@ -14,7 +14,7 @@ The precursor civilization that made the Gates — **unknown by design**. [decid
 ## What is known
 
 - They built the [[Gates|Gate]] network and then vanished. **Nothing else is established.**
-- Who they were and why they built it is hidden from everyone, including the [[central-authority|Central Authority]].
+- Who they were and why they built it is hidden from everyone, including the [[united-gate-coalition|United Gate Coalition]].
 - Their engineering encodes deliberate conceits we _do_ see: Gates **woke sealed**, **fail closed** without an operator, and project an un-wallable [[combat|dome]]. One principle — _the Gate guards what's behind it unless actively driven open_ — generates all three.
 
 ## Why they matter

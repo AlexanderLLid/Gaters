@@ -33,8 +33,8 @@ Tags: [decided] = current call + why; [tentative] = leaning; [open] = tracked in
   - So the **issued charter kit = cheap, durable, reusable** (a blade, a spear, a pick). **Never consumable/advanced** (guns/ammo) — wasteful on the dead, and useless without resupply (a gun is a club once the magazine's empty on a raw world).
 - **Looted/bought advanced weapons are temporary power spikes** — good until the ammo/charge runs out, then dead weight until you build the supply chain to feed them.
 - **Tech tree = a supply-chain / bootstrap climb, not a knowledge gate.** Knowing ≠ having: your genome may _know_ how to make a rifle, but a schematic isn't a factory. You climb stone → smelt → metal → machines.
-  - **Visible tree = human know-how**, freely shared (no Authority hoarding — kills the "if it wanted us to survive it'd share" objection).
-  - **Locked tree = Builder tech** you _discover and reverse-engineer in the world_ — discovery-gated, not permission-gated. The Authority can't give what it hasn't decoded. (This is the "accidental discovery" engine and the reason to explore.)
+  - **Visible tree = human know-how**, freely shared (no Coalition hoarding — kills the "if it wanted us to survive it'd share" objection).
+  - **Locked tree = Builder tech** you _discover and reverse-engineer in the world_ — discovery-gated, not permission-gated. The Coalition can't give what it hasn't decoded. (This is the "accidental discovery" engine and the reason to explore.)
 
 ## The Gate — power, tether, map border (two-tier energy) [decided]
 
@@ -80,9 +80,9 @@ Tags: [decided] = current call + why; [tentative] = leaning; [open] = tracked in
 
 ## The factions [tentative]
 
-- **The Authority administrates the Gate network** (and/or the charter) and takes a cut. **Hands-off — not a schemer.** The selection isn't its plan; it's the **system's nature**. The Authority may not even understand what the machine is doing.
+- **The Coalition administrates the Gate network** (and/or the charter) and takes a cut. **Hands-off — not a schemer.** The selection isn't its plan; it's the **system's nature**. The Coalition may not even understand what the machine is doing.
 - **A separate company cracked the body-growth/clone tech** (the "hidden tech"). You're a **self-employed prospector** using both — beholden to neither. _(Second faction is optional weight; keep if it earns its place.)_
-- _This supersedes_ central-authority's "secretly forging humanity" motive — selection moves from the Authority's scheme to the Builders' machine.
+- _This supersedes_ the United Gate Coalition's "secretly forging humanity" motive — selection moves from the Coalition's scheme to the Builders' machine.
 
 ## Two layers — what you play vs what's true
 
@@ -91,4 +91,4 @@ Tags: [decided] = current call + why; [tentative] = leaning; [open] = tracked in
 
 ## Supersedes — pages to reconcile (pending)
 
-This spine changes claims on: [[consciousness-link|Consciousness Link]] (done — now the clone model), [[central-authority|Central Authority]] (done — administrator not schemer; clone body), [[mask-energy|Mask Energy]] (mask draws from any Gate; attunement; ambient-field vs cores), [[Gates]] / [[rifts|Rifts]] (Rifts as Gate-strain → random Gate; claiming by imprint), [[the-wake|The Wake]] / [[the-builders|The Builders]] (instability source; the gene-engine function), [[progression|Progression]] (supply-chain tech tree; visible vs Builder-locked), [[World Overview]] (gene-as-unit theme; awakening; clone), [[CONTEXT|Glossary]] (avatar, claim, anchor, attunement, awakening, away-clock). Propagate when ready.
+This spine changes claims on: [[consciousness-link|Consciousness Link]] (done — now the clone model), [[united-gate-coalition|United Gate Coalition]] (done — administrator not schemer; clone body), [[mask-energy|Mask Energy]] (mask draws from any Gate; attunement; ambient-field vs cores), [[Gates]] / [[rifts|Rifts]] (Rifts as Gate-strain → random Gate; claiming by imprint), [[the-wake|The Wake]] / [[the-builders|The Builders]] (instability source; the gene-engine function), [[progression|Progression]] (supply-chain tech tree; visible vs Builder-locked), [[World Overview]] (gene-as-unit theme; awakening; clone), [[CONTEXT|Glossary]] (avatar, claim, anchor, attunement, awakening, away-clock). Propagate when ready.

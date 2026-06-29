@@ -14,7 +14,7 @@ Entry point to the Gaters lore. Short by design — link out.
 ## Premise
 
 - A long-dormant, galaxy-spanning network of ancient **Gates** suddenly switches on (see [[the-wake|The Wake]]).
-- Each player controls a single **planet-base** sitting on one [[Gates|Gate]]. The [[central-authority|Central Authority]] charters independent **gaters** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
+- Each player controls a single **planet-base** sitting on one [[Gates|Gate]]. The [[united-gate-coalition|United Gate Coalition]] charters independent **gaters** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
 - Players are **human** — people who found a Gate and stepped through (multi-species / post-human / alien rejected as scope with no payoff this phase).
 - The central conflict is a **gold rush over finite, un-manufacturable Gate infrastructure**. Reach and wealth require **opening your Gate and venturing out** — and venturing is what exposes you: acting is how your home is eventually **found** and made raidable. [decided]
 
@@ -33,7 +33,7 @@ Entry point to the Gaters lore. Short by design — link out.
 ## The world
 
 - **World types / regions:** [[world-types|World Types]] (planet-bases, hub worlds, Safe Core, Frontier; space Gates + megastructures deferred).
-- **Organizations:** [[central-authority|Central Authority]] (the only firmly-conceived faction so far).
+- **Organizations:** [[united-gate-coalition|United Gate Coalition]] (the only firmly-conceived faction so far).
 - **Timeline:** [[Timeline]], anchored on [[the-wake|The Wake]].
 
 ## The Gates & the Builders
@@ -44,7 +44,7 @@ Entry point to the Gaters lore. Short by design — link out.
 
 ## The mystery
 
-- The Authority's "we flipped a dormant relay" is a **cover story**; something _else_ woke the network and is using it too (see [[the-wake|The Wake]], [[the-builders|The Builders]]). Candidate truths tracked in open-questions.md. [tentative]
+- The Coalition's "we flipped a dormant relay" is a **cover story**; something _else_ woke the network and is using it too (see [[the-wake|The Wake]], [[the-builders|The Builders]]). Candidate truths tracked in open-questions.md. [tentative]
 
 ## Themes & tone
 

@@ -91,11 +91,11 @@ What the Gate fiction does _not_ already pay for. Ranked by severity for a **sol
 
 ### 4. The one irreducible shared state — the registry — _medium_
 
-- **The problem.** Claims, coordinates, who-holds-what, the [[Central Authority]] guarantee: a
+- **The problem.** Claims, coordinates, who-holds-what, the [[united-gate-coalition|United Gate Coalition]] guarantee: a
   **global, consistent, persistent** dataset. It's the one component instancing can't remove, and
   it couples to raider anonymity (Conflict #5 — "no caller ID" vs. a registry that knows everyone).
 - **The lever:** it's a **database problem, not a simulation problem** — rows and queries, not
-  60Hz physics. The Authority _is_ the natural home for centralized state (lore = the schema).
+  60Hz physics. The Coalition _is_ the natural home for centralized state (lore = the schema).
   Anonymity is solvable in the same layer: the registry knows owners, but the _raid tunnel_ need
   not expose the attacker's coordinate until commit (transponder model). Keep the registry small
   (metadata only); never let simulation state into it.
@@ -147,8 +147,8 @@ not just a story one. Surface in the concept pages when confirmed.
   explicitly that it also caps the portal frustum and dual-sim volume (#1).
 - **Mass cap / manifest on what crosses** — already catalogued (Gate Uses, EVE layer). Bounds the
   count of physics objects transferring at the aperture (#2).
-- **The Authority registry as the one sanctioned global DB** — centralize _all_ unavoidable shared
-  state into the Authority fiction; everything else stays instanced. Pays #4.
+- **The Coalition registry as the one sanctioned global DB** — centralize _all_ unavoidable shared
+  state into the Coalition fiction; everything else stays instanced. Pays #4.
 - **Open Rifts collapse on a countdown** — already canon (see the design docs);
   note it doubles as the auto-teardown that keeps the many-vs-many case bounded (#5).
 

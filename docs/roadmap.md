@@ -21,4 +21,4 @@ When an item comes into scope, build its pages and strike it here.
 - **Multi-species frontier** — the Wake lit many species' Gates at once; non-human
   **alien polities that answered it differently** (not mirror-Authorities) become the
   top-tier faction/PvP-at-scale layer. Launch stays Earth-intimate; this is the late
-  reveal. See open-questions #15, [[central-authority|Central Authority]], [[consciousness-link|Consciousness Link]].
+  reveal. See open-questions #15, [[united-gate-coalition|United Gate Coalition]], [[consciousness-link|Consciousness Link]].
