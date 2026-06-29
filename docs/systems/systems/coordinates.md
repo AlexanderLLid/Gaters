@@ -30,6 +30,17 @@ How hidden homes get found — the mechanism behind the **mortal home**: protect
 - **Epoch-bound, re-keyable.** Re-keying your address **voids every share already collected**. Cheap/automatic while sealed at home. **Re-key cost/cadence is the master knob** for the online:offline raid ratio.
 - **Anti-dodge:** every fielded avatar carries a _current-epoch_ share (no clean decoy avatars); shares die on re-key (no infinite banking).
 
+## The odds — what "safe" promises (player-facing)
+
+The player-facing read of SHARE-1; the mechanism (shares + threshold + re-key) is above, not restated.
+
+- "Safe" is never a wall — it's a **high probability of staying unfound**. A sealed Gate can't be cold-breached; a home whose coordinate someone has assembled is raidable, rarely even while you're offline.
+- The odds move with **how you play, not a toggle**:
+  - **Quiet, small, mostly sealed** → odds strongly in your favor: few avatars fielded = few shares shed; low [[potential|Potential]] keeps you off big hunters' reach.
+  - **Loud, large, always out** → odds against you: many avatars leak shares fast; high Potential makes you visible and reachable; big tribes are findable by construction (endgame siege targets).
+- **Offline tends _toward_ safety, not away from it.** Sealing (fail-closed) sheds no new shares while you're away, and re-key — cheap/automatic while sealed — voids shares a hunter already collected. Quiet-and-safe last week ≈ still safe after a week away; loud-and-found before logging off is not. How strongly offline favors you is the **re-key cadence** (the master knob, SHARE-1).
+- `reach = exposure` read as probability: the small are nearly unraidable, the big are worth the siege.
+
 ## Consequence — uphill relocates
 
 - Home raids are gated by **finding** (assembling shares), not a power wall. Anti-whale-farm protection moves to [[rifts|Rift-visibility]].

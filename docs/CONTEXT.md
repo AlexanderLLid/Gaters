@@ -24,7 +24,8 @@ explain. This is a glossary, not canon; it decodes jargon.
 - Coordinate-share - a fragment of a tribe's home coordinate carried by every fielded avatar;
   loot a dead avatar to get one. Enough shares narrow to a dialable address.
 - Re-key / epoch - rotating your home coordinate; **voids all shares already collected**. The
-  master knob for the online:offline raid ratio.
+  master knob for the online:offline raid ratio — tuned so **offline leans safer** (sealing sheds
+  no shares; re-key voids collected ones).
 - Potential - one sticky high-water-mark per tribe (Gate capability + footprint + tech + roster);
   drives Rift visibility and the raid clock. Solo = a tribe of one.
 - Operator base - the cheap default respawn anchor you rebuild from; your home/civilization is

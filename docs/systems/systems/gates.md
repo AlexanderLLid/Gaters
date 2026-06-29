@@ -46,6 +46,7 @@ The central object: every planet-base sits on a Gate, and all reach flows throug
 
 - A Gate is **open only while the owner is online and choosing it**; logging off **seals** it (the Gate fails closed — a Builder conceit, like the [[combat|dome]]). Sealing is a **spin-down**, not a switch.
 - Presence stops a _cold_ breach, but no longer grants immunity: a **found** home can be raided, rarely, even offline (see [[coordinates|Coordinates & Obscurity]]). The babysitting tax died from **obscurity**, not a wall.
+- **Offline tends _toward_ safety, not away from it** — sealing sheds no new shares and re-key voids those already taken, so logging off lowers your odds of being found, it doesn't raise them (see [[coordinates|the odds]]).
 
 ## Why / rejected
 
