@@ -69,6 +69,25 @@ exposure-gated visibility, extraction). Pure inspo, nothing decided.
 - **Anchored Rift** — doesn't collapse on schedule; a Rift mid-tame, precursor to
   a new Gate.
 
+## Counter — overused, don't ship
+
+Tropes that read as derivative the moment a player recognizes them. Avoid even
+if reskinned.
+
+- **Ancient precursors seeded all life.** A long-vanished elder race created or
+  DNA-seeded everyone, which is why every species shares a body plan / is secretly
+  related / converges on one origin. Done to death: Star Trek (the Progenitors,
+  "The Chase" → _Discovery_ S5), Assassin's Creed (the Isu), Stargate (the
+  Ancients), Halo (the Forerunners), Mass Effect (Protheans/Reapers), Prometheus
+  (the Engineers), Babylon 5 (the First Ones), 2001 (the Monolith makers).
+  - Includes the variants: **recursive precursors** (turtles all the way down)
+    and **we are our own ancestors / eternal cycle** (Battlestar Galactica's Kobol
+    → Earth, "all this has happened before").
+  - Why avoid: it's the standard answer to "why is the galaxy full of humanoids."
+    Our humanoids come through **Gates** — the question doesn't need a creation
+    myth, and answering it this way invites the comparison. If origin ever matters,
+    make it about the Gates, not a benevolent dead god.
+
 ## The rule
 
 Take the patterns above, never the proper nouns.
