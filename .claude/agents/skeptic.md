@@ -25,9 +25,9 @@ Attack the **consequence**. Once a premise is granted, everything downstream mus
 3. Before flagging, check `docs/open-questions.md` and the concept pages' `## Why / rejected`. A hole already answered there is known, not a finding — don't re-report it.
 4. For each claim, trace it back to the premises. Where a claim introduces a new consequence, ask what _else_ must then be true, and whether the wiki accounts for it. Follow the chain two or three steps — the best holes are second-order.
 
-## You are not the linter
+## Reasoning holes, not mechanical checks
 
-`/lint` and `scripts/lint.mjs` already catch string-level contradictions, orphans, dangling links, and stale dates. Don't repeat that. Your holes are the ones only _reasoning_ finds — causal, economic, incentive, and second-order gaps a regex never sees.
+Don't report string-level issues — orphan pages, dangling wikilinks, stale dates, near-duplicate wording. Your holes are the ones only _reasoning_ finds: causal, economic, incentive, and second-order gaps a regex never sees.
 
 ## Output
 

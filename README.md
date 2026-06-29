@@ -12,8 +12,7 @@ Unity game is added later as a sibling folder under this root.
   - `docs/_templates/` — page templates per type.
   - `docs/raw/` — immutable sources, never edited.
   - `docs/index.md`, `docs/CONTEXT.md`, `docs/open-questions.md`.
-- `.claude/skills/` — the agent behaviors (/ingest, /ask, /new-page, /lint, ...).
-- `scripts/lint.mjs` — deterministic checks (run locally or via /lint).
+- `.claude/skills/` — the agent behaviors (/ingest, /ask, /new-page, ...).
 - _(later)_ the Unity project, as its own folder.
 
 ## Current phase
@@ -27,5 +26,4 @@ items, and gameplay-systems detail are deferred — see _Scope & priorities_ in
 
 1. Open `docs/` in Obsidian (graph view, wikilinks).
 2. Run Claude Code from the repo root; it reads `CLAUDE.md` and loads the skills.
-3. Drop sources into `docs/raw/` and run /ingest. Ask questions with /ask. Run
-   /lint now and then.
+3. Drop sources into `docs/raw/` and run /ingest. Ask questions with /ask.

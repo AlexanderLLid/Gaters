@@ -1,7 +1,7 @@
 # CLAUDE.md - Gaters
 
 THIS IS A WOP FEEL FREE TO SUGGEST CHANGES TO ANYTHING ANYTIME. Nothing is set in stone.
-Never branch off and never open PRs — we always work on main. Commit locally; don't push unless asked (the human reviews first).
+Never open PRs — we always work off main, don't commit or push unless asked (the human reviews first).
 
 This is the **parent repo** for the game Gaters. Right now it holds **design docs
 only** (in `docs/`). The Unity game is added later as a sibling folder under this
@@ -84,8 +84,9 @@ updated: 2026-06-27
 ---
 ```
 
-Copy the matching file from `docs/_templates/`. Do not invent new section
-structures per page.
+Copy the matching file from `docs/_templates/`. Templates exist for the in-use
+types (organization, location, event, system); when adding a deferred type, copy
+the closest sibling as a base. Do not invent new section structures per page.
 
 ## Conventions
 
@@ -97,7 +98,7 @@ structures per page.
 - Filenames: kebab-case matching the title. Content lives in folders by type
   (`docs/lore/organizations/`, ...); folders appear as pages are added.
 - One subject per page. Cross-link with `[[Wikilinks]]`. Link multi-word pages as
-  `[[basename|Display]]` so the link resolves and the lint orphan check sees it.
+  `[[basename|Display]]` so the link resolves.
 - Anchor claims to sources: cite inline as `(src: raw/file.md)`. Prefer anchoring
   over memory; it stops canon and mechanics from drifting over many edits.
 - Numbers live in data, not prose: document the model and say where tunable values
@@ -113,7 +114,6 @@ structures per page.
   run a contradiction check on touched pages.
 - /ask <question> - answer from the wiki with citations.
 - /new-page <type> <title> - create a page from the right template.
-- /lint - health check; `scripts/lint.mjs` runs the deterministic checks.
 - /grill-lore <page> - interview the human to flesh out a thin page.
 - /domain-modeling - maintain the glossary (docs/CONTEXT.md) and record decisions (in the concept pages; ADR for technical).
 - /edit-article - revise a page section by section for clarity and dependency order.
@@ -128,7 +128,7 @@ When new content conflicts with a page, classify and record it on the page:
 - hard - direct conflict (a date clash with the timeline; a fact two ways).
   Blocking. Do not pick a winner; stop and ask.
 
-Record inline, and it surfaces in /lint until resolved:
+Record inline so it stays visible on the page until resolved:
 
 ```
 > Contradiction severity: hard
