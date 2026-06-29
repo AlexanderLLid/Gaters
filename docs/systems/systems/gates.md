@@ -33,8 +33,9 @@ The central object: every planet-base sits on a Gate, and all reach flows throug
 ## Gate variation — the Builder "config" [tentative]
 
 - Beyond tier (aperture, above), gates **behave differently** — field size, stability, what they dial, what life/loot a world grows. Working idea: each Gate carries a compact Builder-seeded **configuration** (a "genome" / build recipe) that sets these intrinsic traits, distinct from the runtime aperture you drive.
-- **Origin:** the variety comes from the **von Neumann probes** that built the network _experimenting_ with configs as they spread (cf. [[builders-truth|Builders' Truth]] — probes seeded the network). _Why_ they experimented stays parked (Builders-unknown).
-- **Status:** idea only — it explains gate variety and nothing else depends on it. It does **not** change dialing/findability (still [[coordinates|coordinates]]). The larger "gate-DNA-as-key" / two-factor findability exploration is parked in open-questions.md, not adopted.
+- **Origin:** the **von Neumann probes** that built the network **couldn't predict** what a given config would do up front (the gate regime resists being solved on paper — cf. [[gate-physics|Gate Physics]]), so they tuned **blind**. Gates came out **variously / imperfectly tuned** — that imperfection _is_ the variety. (cf. [[builders-truth|Builders' Truth]] — probes seeded the network; _why_ stays parked, Builders-unknown.)
+- This is **variation from imperfect design, not selection** — no "good gates breed, bad ones get culled" mechanism is implied (that idea was explored and rejected — see open-questions.md #22).
+- **Status:** idea only — it explains gate variety and nothing else depends on it. It does **not** change dialing/findability (still [[coordinates|coordinates]]).
 
 ## Exposure states — sealed / port-open / gate-open (STATE-1)
 
