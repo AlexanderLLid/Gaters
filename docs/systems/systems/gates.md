@@ -30,12 +30,10 @@ The central object: every planet-base sits on a Gate, and all reach flows throug
 - **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired, never new-built.
 - **Overdrive** one ring past its ceiling and the throat destabilises into a [[rifts|Rift]] (the gate-overload bomb).
 
-## Gate variation — the Builder "config" [tentative]
+## Gate variation — the Builder "config" [tentative — rough idea]
 
-- Beyond tier (aperture, above), gates **behave differently** — field size, stability, what they dial, what life/loot a world grows. Working idea: each Gate carries a compact Builder-seeded **configuration** (a "genome" / build recipe) that sets these intrinsic traits, distinct from the runtime aperture you drive.
-- **Origin:** the **von Neumann probes** that built the network **couldn't predict** what a given config would do up front (the gate regime resists being solved on paper — cf. [[gate-physics|Gate Physics]]), so they tuned **blind**. Gates came out **variously / imperfectly tuned** — that imperfection _is_ the variety. (cf. [[builders-truth|Builders' Truth]] — probes seeded the network; _why_ stays parked, Builders-unknown.)
-- This is **variation from imperfect design, not selection** — no "good gates breed, bad ones get culled" mechanism is implied (that idea was explored and rejected — see open-questions.md #22).
-- **Status:** idea only — it explains gate variety and nothing else depends on it. It does **not** change dialing/findability (still [[coordinates|coordinates]]).
+- **Loose idea, needs tuning — nothing depends on it.** Gates differ (field size, stability, what they dial, what grows there) maybe because each carries a small Builder-seeded **config** the [[builders-truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out imperfectly/variously tuned. That imperfection is the variety.
+- Just an explainer for _why gates aren't all the same_. It doesn't touch dialing/findability (still [[coordinates|coordinates]]), it's **not** a selection system (explored and rejected — open-questions.md #22), and the _why_ behind the probes stays parked. Shape it properly if/when it matters.
 
 ## Exposure states — sealed / port-open / gate-open (STATE-1)
 
