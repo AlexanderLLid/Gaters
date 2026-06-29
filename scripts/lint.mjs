@@ -95,9 +95,19 @@ const inbound = new Map();
 for (const set of linkSets.values())
   for (const t of set) inbound.set(t, (inbound.get(t) || 0) + 1);
 
+// Valid link targets = the whole vault (docs/), not just the lore/systems pages
+// we quality-check. Root design docs (world-spine, open-questions, pillars…) are
+// real Obsidian targets too; resolving only against lore/systems false-flags them.
+const targets = new Set();
+for (const f of walk(join(ROOT, "docs"))) {
+  const fm = frontmatter(readFileSync(f, "utf8"));
+  targets.add(basename(f, ".md").toLowerCase());
+  for (const a of aliases(fm)) targets.add(a.toLowerCase());
+}
+
 for (const [f, set] of linkSets)
   for (const t of set)
-    if (!pages.has(t))
+    if (!targets.has(t))
       problems.push("dangling link in " + relative(ROOT, f) + ": [[" + t + "]]");
 
 for (const [id, f] of pages) {
