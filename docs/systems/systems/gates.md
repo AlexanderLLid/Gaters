@@ -30,6 +30,12 @@ The central object: every planet-base sits on a Gate, and all reach flows throug
 - **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired, never new-built.
 - **Overdrive** one ring past its ceiling and the throat destabilises into a [[rifts|Rift]] (the gate-overload bomb).
 
+## Gate variation — the Builder "config" [tentative]
+
+- Beyond tier (aperture, above), gates **behave differently** — field size, stability, what they dial, what life/loot a world grows. Working idea: each Gate carries a compact Builder-seeded **configuration** (a "genome" / build recipe) that sets these intrinsic traits, distinct from the runtime aperture you drive.
+- **Origin:** the variety comes from the **von Neumann probes** that built the network _experimenting_ with configs as they spread (cf. [[builders-truth|Builders' Truth]] — probes seeded the network). _Why_ they experimented stays parked (Builders-unknown).
+- **Status:** idea only — it explains gate variety and nothing else depends on it. It does **not** change dialing/findability (still [[coordinates|coordinates]]). The larger "gate-DNA-as-key" / two-factor findability exploration is parked in open-questions.md, not adopted.
+
 ## Exposure states — sealed / port-open / gate-open (STATE-1)
 
 - **Sealed** — safe _while unfound_, isolated, stagnant; **not inviolable** (a found home is raidable — see [[coordinates|Coordinates & Obscurity]]). No cold breach through a shut throat; comms still pass.
