@@ -35,12 +35,11 @@ The cycle the thesis produces, at three scales. This is the map for the parts be
 
 - [[raiding|Raiding]] — bilateral tunnels, the raid clock, two modes, the anti-husk loot floor.
 - [[combat|Combat]] — gear-and-positioning; the dome; the aperture fire-lane; the muster cap.
-- [[rifts|Rifts]] — the unstable wormholes; the PvPvE extraction contact surface.
 - [[hub-worlds|Hub Worlds]] — lawless commerce crossroads, capturable for tolls.
 
 ## Identity, finding & ownership
 
-- [[consciousness-link|Consciousness Link]] — body-on-Earth, avatars, recall, two-layer XP.
+- [[consciousness-link|Consciousness Link]] — presence, respawn, recall, two-layer XP (avatar origin open — see [[avatar-origin-options|Avatar Origin]]).
 - [[coordinates|Coordinates & Obscurity]] — the mortal home, avatar-shares, re-keying.
 - [[potential|Potential]] — the strength metric; the tribe as ownership primitive.
 - [[holdings|Holdings]] — bounded offline raiding by flow-siphon.

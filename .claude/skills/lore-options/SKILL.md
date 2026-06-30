@@ -11,7 +11,7 @@ Turn a lore question or hole into a short menu of **grounded** paths the human c
 
 A path is **grounded** when its fiction earns its keep by licensing a concrete thing the devs can build, tune, or scale. The test for every path: _name the lever it hands the devs._ Fiction with no lever is colour, not a path — cut it.
 
-The levers already live in the tech model (`docs/CONTEXT.md` → Storage, Stack, Planet runtime states, Field radius). Map fiction onto these, or onto a new lever devs can clearly build:
+The levers already live in the tech model — `docs/technical-challenges.md` (Storage, Stack, planet runtime states) and [[mask-energy|Mask Energy]] (field radius). Map fiction onto these, or onto a new lever devs can clearly build:
 
 - **Reachability** — which worlds are live. _Empty = a DB row only_, seed-plus-deltas, lazy-loaded. Lore that gates _which Gates open_ is really lore that decides _when a planet-server is provisioned_. ("Not all Gates are open" → a server spins up only when its Gate is dialed and fueled.)
 - **World border** — how far a player roams. _Field radius_ is the dev-tunable knob; the _sustaining field_ is the soft border. Lore that bounds movement sets the streaming/border radius. ("Can't go past X from the Gate" → mask energy decays beyond the field.)

@@ -2,6 +2,8 @@
 
 _Decision-support, not canon. Generated from a 12-solution fan-out, each stress-tested by a skeptic. Nothing here is locked._
 
+**This page is the single home of the open avatar-origin question** — what the avatar physically is, where its body comes from, how your mind connects. The rest of the wiki uses only the origin-agnostic baseline (disposable avatar, respawn at an anchor, the mask, coordinate-shares, two-layer XP) and links here; it does **not** assert a body model. When a flavor is picked (see _The one decision for you_, bottom), fold it into the concept pages and retire this caveat. Tracked as open-questions #23.
+
 **The question:** what _is_ a Gaters avatar, where does its body come from, how is your Earth-bound mind connected to it — consistent, low-fantasy, justifying the bare "bow-and-stone" start and "why not just send a robot", ideally with an **evolution** angle.
 
 ## Headline: the 6 invariants (the real finding)

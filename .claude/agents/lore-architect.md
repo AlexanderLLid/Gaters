@@ -18,7 +18,7 @@ A direction can hand the devs a clean lever and still wreck the game by reinstat
 
 ## Process
 
-1. Read `docs/CONTEXT.md` — both the premises _and_ the tech model (Storage, Stack, Planet runtime states, Field radius). Your levers live here.
+1. Read the premises and the tech model — the world's core facts across the wiki ([[World Overview]], [[Systems Overview]]), and the buildable levers in `docs/technical-challenges.md` (Storage, Stack, planet runtime states) and [[mask-energy|Mask Energy]] (field radius). Your levers live there.
 2. Read the area in scope — the pages the user names, or an entry from `docs/open-questions.md`. Check what's already decided (the concept pages' `## Why / rejected`) so you build on it, not over it.
 3. Generate grounded directions with the **`lore-options` method** (`.claude/skills/lore-options/SKILL.md`) — read it and apply it. Each direction's fiction must tie to a buildable lever.
 4. Where a direction would expand the world (more servers, more world types, deeper instancing), say what the fiction lets the devs scale, and how.

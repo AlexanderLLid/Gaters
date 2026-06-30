@@ -30,15 +30,15 @@ Mechanic IDs in parentheses point to the concept page that owns the mechanic; **
   - **Exposed bases/territory worth capturing** with real value, not husks. ([[holdings|HOLD-1]], [[raiding|LOOT-1]])
   - A way to **take _and_ hold** — capture transfers the asset; defending it is the game. Routed to always-live capture targets (hubs for toll control, space gates) — a registry charter flip held by presence, not a decaying home-side claim. ([[holdings|HOLD-1]], [[hub-worlds|HUB-1]])
   - **Peer-or-greater targets only** (uphill) — conquest, not newbie-farming. ([[potential|REACH-1]])
-  - **Takes the empire, never the _existence_** — conquest can wipe a found home/civilization, but never the player (the body is on Earth). ([[consciousness-link|Consciousness Link]])
+  - **Takes the empire, never the _existence_** — conquest can wipe a found home/civilization, but never the player (you keep your existence). ([[consciousness-link|Consciousness Link]])
 
 ## Redirected — valid, but funnelled to a designated arena, never onto sleeping homes
 
 - **PvP brawler / roamer** [tentative]: combat for its own sake → **Open Rifts, space gates** (no longer hubs).
-  - An **always-live arena** (Open/extraction [[rifts|Rifts]], space gates) — no territory required to join.
+  - An **always-live arena** (contested [[world-types|frontier worlds]], space gates) — no territory required to join.
   - **Combat fun on its own**, quick in/out. ([[combat|COMBAT-1]])
   - No need to own or defend anything to participate.
-- **Clan / group / zerg** [tentative]: coordinated mass → **hub captures (toll control), big Rifts, Supergate events**; cannot punch down (uphill [[rifts|Rift-visibility]]), so kept off solos and newbies.
+- **Clan / group / zerg** [tentative]: coordinated mass → **hub captures (toll control), big frontier pushes, Supergate events**; cannot punch down (uphill [[potential|frontier-visibility]]), so kept off solos and newbies.
   - **Large-scale objectives** that reward coordination (hub captures, Supergate events, top-rank Rifts). ([[hub-worlds|HUB-1]], [[progression|PROG-1]])
   - A hard **can't-punch-down** floor — kept off solos / newbies' existence. ([[potential|REACH-1]])
   - **Group-only payoffs** worth the org overhead. ([[progression|PROG-1]])
@@ -46,10 +46,10 @@ Mechanic IDs in parentheses point to the concept page that owns the mechanic; **
 ## Denied — the ARK/Rust pain the design exists to remove; scenarios must confirm each stays dead
 
 - **Offline raider** [decided — reframed]: a sleeping player's **existence** stays denied (the body is on Earth). Their **home** is no longer immune — a **found** coordinate can be raided offline — but this is **rare** (you must find them; offline raids skew to the recently-active), not the ARK certainty. Their exposed [[holdings|holdings]] stay always-contestable without any search.
-- **Megabase newbie-farmer** [decided — denied]: blocked by **obscurity + uphill [[rifts|Rift-visibility]]** — a whale can't see a small player's Rifts to harvest their shares.
+- **Megabase newbie-farmer** [decided — denied]: blocked by **obscurity + uphill [[potential|frontier-visibility]]** — a whale can't see a small player's frontier pushes to harvest their shares.
 - **Turtle / babysitter** [decided — denied as a _dominant_ style]: sealing buys **obscurity, not immunity** (the home is mortal — [[coordinates|Coordinates & Obscurity]]) and stays stagnant; the aperture cannot be cheese-fortified.
 
 ## Resolved forks — were undecided; now served at a defined scope
 
 - **Tamer / breeder** [tentative — narrow yes]: include [[taming|taming]] (Rift-sourced companions); decline deep ARK breeding/genetics (a babysitting chore by construction).
-- **Peaceful homesteader** [tentative — served]: Valheim's largest audience never opens — build, explore, run solo PvE [[rifts|Rifts]] forever, progressing to a **soft ceiling** ([[progression|PROG-2]]), never punished for staying sealed. Safe because a never-leaver stays **unfound**, not by an inviolable wall.
+- **Peaceful homesteader** [tentative — served]: Valheim's largest audience never opens — build, explore, run solo PvE on the [[world-types|frontier]] forever, progressing to a **soft ceiling** ([[progression|PROG-2]]), never punished for staying sealed. Safe because a never-leaver stays **unfound**, not by an inviolable wall.

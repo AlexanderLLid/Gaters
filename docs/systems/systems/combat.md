@@ -31,7 +31,7 @@ Third-person, gear-and-positioning PvP — the model resolved enough to greybox.
 
 ## Two venues, one model
 
-- The same combat serves the **home raid** (at the aperture, under the clock) and the **standalone arena** ([[hub-worlds|hubs]] capture, Open [[rifts|Rifts]], space gates — quick in/out, no territory required).
+- The same combat serves the **home raid** (at the aperture, under the clock) and the **standalone arena** ([[hub-worlds|hubs]] capture, contested [[world-types|frontier worlds]], space gates — quick in/out, no territory required).
 
 ## Tech spine (precursor-tech-hybrid)
 

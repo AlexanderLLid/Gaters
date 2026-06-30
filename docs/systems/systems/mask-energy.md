@@ -19,7 +19,7 @@ The survival / life-support layer, and the **combat resource** — powered by th
 ## How it works
 
 - The player wears a life-support **mask** powered by a field drawn from the [[Gates|Gate]] (framed as projected energy; exact physics open — a [[gate-physics|conceit]]).
-- **The sustaining field (MASK-2)** — each active Gate projects a bubble; inside it the mask tops up (effectively unlimited time on your own soil). It **weakens on a gradient** outward — the game's **soft world border**: a cost/risk curve, not a wall. The dangerous fringe is where [[rifts|Rifts]] belong.
+- **The sustaining field (MASK-2)** — each active Gate projects a bubble; inside it the mask tops up (effectively unlimited time on your own soil). It **weakens on a gradient** outward — the game's **soft world border**: a cost/risk curve, not a wall. The dangerous fringe is where the [[world-types|frontier]] lies.
 
 ## The two-number split (MASK-3) — load-bearing
 

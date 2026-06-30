@@ -27,7 +27,7 @@ Entry point to the Gaters lore. Short by design — link out.
 
 ## What you can and can't lose
 
-- **Never lost:** your **existence** — your mind is **backed up** and your body is a re-grown clone (see [[consciousness-link|consciousness-link]], [[world-spine|World Spine]]); only avatars die.
+- **Never lost:** your **existence** — you pilot a disposable avatar and respawn on death; only avatars die (mechanics in [[consciousness-link|Consciousness Link]]; what the avatar is, is open — see [[avatar-origin-options|Avatar Origin]]).
 - **Mortal:** territory, holdings, your built civilization, the home itself — losable in a raid once you're found. You can lose your empire, never yourself.
 
 ## The world

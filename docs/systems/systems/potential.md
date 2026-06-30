@@ -9,7 +9,7 @@ updated: 2026-06-28
 
 # Potential
 
-The measure of an actor's strength and progression — one sticky number that drives Rift visibility and the raid clock. [tentative]
+The measure of an actor's strength and progression — one sticky number that drives frontier visibility and the raid clock. [tentative]
 
 ## Purpose
 
@@ -28,8 +28,8 @@ The measure of an actor's strength and progression — one sticky number that dr
 
 ## What it drives
 
-- **[[rifts|Rift visibility]]** — an Open Rift is shown to players ≤ the opener's Potential.
-- **Rift/hub tiering** — near-peers meet by construction.
+- **Frontier visibility** — a contested frontier world is visible/reachable to players ≤ the pusher's Potential, so a whale can't see (or farm) a small player's pushes. This is the anti-whale guardrail (`reach = exposure`); see [[Gates|Gates]] FRONTIER-1.
+- **Frontier/hub tiering** — near-peers meet by construction.
 - **[[raiding|Raid clock]]** — the away-reserve keys off home-Gate power, a Potential component.
 - **Not** home-raid eligibility — that's gated by **finding** now ([[coordinates|shares]]).
 

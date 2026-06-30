@@ -14,7 +14,7 @@ How hidden homes get found — the mechanism behind the **mortal home**: protect
 ## Purpose
 
 - Gives real, ARK-style stakes back (a home _can_ be wiped) **without** the defender tax. The tax came from the **certainty** of offline loss; hidden coordinates remove the certainty, not the possibility.
-- Only your **existence** is unloseable (the [[consciousness-link|body-on-Earth]]); your **civilization is mortal**.
+- Only your **existence** is unloseable (see [[consciousness-link|Consciousness Link]]); your **civilization is mortal**.
 
 ## Coordinates as intel (COORD-1)
 
@@ -43,7 +43,7 @@ The player-facing read of SHARE-1; the mechanism (shares + threshold + re-key) i
 
 ## Consequence — uphill relocates
 
-- Home raids are gated by **finding** (assembling shares), not a power wall. Anti-whale-farm protection moves to [[rifts|Rift-visibility]].
+- Home raids are gated by **finding** (assembling shares), not a power wall. Anti-whale-farm protection moves to [[potential|frontier-visibility]].
 - Ownership is the **[[potential|tribe]]**: one shared coordinate, every member sheds shares of it — so big tribes are inherently **leaky** (endgame siege targets) and solos stay stealthy. `reach = exposure` at the group level.
 
 ## Why / rejected

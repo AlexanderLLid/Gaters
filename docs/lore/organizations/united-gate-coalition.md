@@ -27,23 +27,23 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 ## Hands-off by design — can't hold it, doesn't want to
 
-- **It can't.** The network is Builder tech the Coalition only half-decodes — too vast and alien to police or hold back. It can open lanes and clip a cut; it **cannot steer the frontier.** The selection, the [[rifts|Rifts]], what the network is _for_ — all the machine's, beyond its reach (see [[world-spine|World Spine]]; it may not even see what the machine is doing).
+- **It can't.** The network is Builder tech the Coalition only half-decodes — too vast and alien to police or hold back. It can open lanes and clip a cut; it **cannot steer the frontier.** The selection, the [[world-types|frontier]], what the network is _for_ — all the machine's, beyond its reach (see [[the-builders|The Builders]]; it may not even see what the machine is doing).
 - **It doesn't want to.** What the frontier yields — resources, energy, salvaged Builder tech — flows **back to Earth, which needs it.** Loosing thousands of self-interested gaters is the fastest way to extract that windfall, so hands-off is the **strategy, not a failure**: open the floodgates, skim the flow. _(How badly Earth needs it, and what "it" is, stays open — don't over-specify.)_ [tentative]
 - This is the in-world **license for the competitive sandbox**: claiming, raiding, trading, sprawling are all permitted because the Coalition **gains from the churn and couldn't curb it anyway** — past its writ, "reach equals exposure" is the only law.
-- **Two layers hold here too:** the honest surface motive — _get rich, feed Earth_ — is real; the hidden truth, that the frontier _is_ the [[world-spine|gene-selection engine]], is something the Coalition neither built nor sees. Patriotic gold rush on top, cosmic indifference underneath.
-- Its few protective rules are **self-interest, not mercy**: uphill [[rifts|Rift-visibility]] + home [[coordinates|obscurity]] stop the strong from trivially farming the undeveloped — a productive frontier keeps yielding; a curb-stomped one doesn't.
+- **Two layers hold here too:** the honest surface motive — _get rich, feed Earth_ — is real; the hidden truth, that the frontier _is_ the gene-selection engine, is something the Coalition neither built nor sees. Patriotic gold rush on top, cosmic indifference underneath.
+- Its few protective rules are **self-interest, not mercy**: uphill [[potential|frontier-visibility]] + home [[coordinates|obscurity]] stop the strong from trivially farming the undeveloped — a productive frontier keeps yielding; a curb-stomped one doesn't.
 
-## The body — a backed-up clone
+## The body — a disposable avatar
 
-- A gater's body is a **clone grown on-site from their genome**; the mind is **backed up**, so only clones die and you re-decant from backup (see [[consciousness-link|Consciousness Link]], [[world-spine|World Spine]]).
-- Because every avatar is decanted from a **registered backup**, the system can always tie an avatar to a real genome — so anonymity is purely **peer-facing**, not absolute.
+- A gater pilots a **disposable avatar** and respawns on death; only the avatar dies (see [[consciousness-link|Consciousness Link]]). What the avatar physically is and how the mind connects is open — see [[avatar-origin-options|Avatar Origin]].
+- Because every avatar is **registered to a real person**, the system can always tie an avatar to its owner — so anonymity is purely **peer-facing**, not absolute.
 - This gives the frontier its teeth without erasing the stock: **selection without extinction** — civilizations are mortal, players are not.
 
 ## Why / rejected
 
 - **Network = mesh-with-a-heart**, chosen over pure hub-and-spoke — spokes would break the bilateral raid tunnel and the direct-dial-vs-hub economy.
 - **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the Rift cosmology; held for frontier worlds later).
-- **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Coalition as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with the players (corps and groups). See [[world-spine|World Spine]].
+- **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Coalition as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with the players (corps and groups). See [[the-builders|The Builders]].
 
 ## Open questions
 

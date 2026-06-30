@@ -20,7 +20,7 @@ Attack the **consequence**. Once a premise is granted, everything downstream mus
 
 ## Process
 
-1. Read `docs/CONTEXT.md` first — it lists the granted premises (the glossary). These are axioms; you reason _from_ them, never against them.
+1. The granted premises (the world's core facts) live across the wiki — chiefly [[World Overview]], [[Systems Overview]], and the concept pages. These are axioms; you reason _from_ them, never against them.
 2. Read `docs/index.md` for what exists, then read the pages in scope. The user names them; if not, cover `docs/lore/` and `docs/systems/`.
 3. Before flagging, check `docs/open-questions.md` and the concept pages' `## Why / rejected`. A hole already answered there is known, not a finding — don't re-report it.
 4. For each claim, trace it back to the premises. Where a claim introduces a new consequence, ask what _else_ must then be true, and whether the wiki accounts for it. Follow the chain two or three steps — the best holes are second-order.

@@ -4,7 +4,7 @@
 
 ## What players can observe (fair to make canon)
 
-- The system **selects for the fittest gene**, keys to **DNA**, **discards vehicles** (clones), and **propagates patterns**. It behaves like a galaxy-scale survival-of-the-fittest engine. This is visible and provable in-world.
+- The system **selects for the fittest gene**, keys to **DNA**, **discards vehicles**, and **propagates patterns**. It behaves like a galaxy-scale survival-of-the-fittest engine. This is visible and provable in-world.
 
 ## What stays the mystery (parked)
 
@@ -16,13 +16,13 @@
 - **So they built a successor-breeding machine.** Unable to persist as individuals, they aimed to cultivate a worthy **gene** to inherit what they couldn't keep. Selection without extinction is their design philosophy, not just a game thesis.
 - **They seeded the galaxy with von Neumann probes** (self-replicating craft). The probes:
   - **Built and spread the Gate network** across the galaxy (why it's galaxy-spanning).
-  - **Seeded living, breathable worlds** as arenas (why most Gate-worlds have life — and why clone bodies can grow from local biomass at all).
+  - **Seeded living, breathable worlds** as arenas (why most Gate-worlds have life — and a living substrate avatars can be grown or sustained from; how avatars work is open, see [[avatar-origin-options|Avatar Origin]]).
   - **Set up selection to scale: planet-level first, then galaxy-wide** as the network wakes and connects. Early game = local (planet/bubble) competition; late game = the arenas wire together into galaxy-scale selection.
 - **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable and Rifts proliferate.
 
 ## Why this candidate is strong
 
-- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, grow-from-local-biomass, the gene-as-unit theme, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
+- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, the gene-as-unit theme, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
 - It needs **no benevolent caretaker** — the makers are indifferent/dead; the machine just runs. Fits "cosmic unease."
 
 ## Ties to the existing mystery candidates
@@ -31,4 +31,4 @@
 
 ## Discipline
 
-- **Surface the function, park the purpose.** When/if a payoff arrives, reveal pieces of this. Until then, no NPC, page, or item states the Builders' motive. See [[world-spine|World Spine]] and CLAUDE.md ("Builders unknown by design").
+- **Surface the function, park the purpose.** When/if a payoff arrives, reveal pieces of this. Until then, no NPC, page, or item states the Builders' motive. See CLAUDE.md ("Builders unknown by design").

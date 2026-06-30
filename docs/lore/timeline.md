@@ -21,4 +21,4 @@ Canonical order of events. Link each entry to its event page as events are creat
 
 ## Over the game's life
 
-- Rising **Rift** frequency and rank — the difficulty ramp and the visible symptom of the mystery (see [[rifts|Rifts]], [[the-wake|The Wake]]). Not a fixed calendar; a trend. [tentative]
+- Rising **misdial** frequency and harsher frontier pulls — the difficulty ramp and the visible symptom of the mystery (see [[gates|Gates]], [[the-wake|The Wake]]). Not a fixed calendar; a trend. [tentative]

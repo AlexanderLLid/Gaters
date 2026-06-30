@@ -1,6 +1,6 @@
 # CLAUDE.md - Gaters
 
-THIS IS A WOP FEEL FREE TO SUGGEST CHANGES TO ANYTHING ANYTIME. Nothing is set in stone.
+THIS IS A WORK IN PROGRESS FEEL FREE TO SUGGEST CHANGES TO ANYTHING ANYTIME. Nothing is set in stone.
 Never open PRs — we always work off main, don't commit or push unless asked (the human reviews first).
 
 This is the **parent repo** for the game Gaters. Right now it holds **design docs
@@ -28,10 +28,6 @@ material that isn't a lore/systems page lives in focused docs at the `docs/` roo
 Scoped wiki: build pages for what's **decided or load-bearing**; stub or defer the rest. Don't
 fabricate detail to fill a page.
 
-- **In the wiki now:** the **Builders** and **Central Authority** (overview depth — frame what's
-  decided, don't elaborate), and the **locked mechanics** the pivot settled (exposure states,
-  mask/field, raid clock, bilateral tunnels, Rifts-as-extraction, consciousness-link,
-  mortal-home/obscurity, Potential, holdings, hub worlds, combat).
 - **In depth:** **gate physics** — the one place to go deep. Bind every claim to real physics
   and tag it GROUNDED / STRETCH / CONCEIT. See [[gate-physics|Gate Physics]].
 - **Stubbed (link-out, not a full page):** still-open mechanics — taming, build depth, economy
@@ -115,7 +111,7 @@ the closest sibling as a base. Do not invent new section structures per page.
 - /ask <question> - answer from the wiki with citations.
 - /new-page <type> <title> - create a page from the right template.
 - /grill-lore <page> - interview the human to flesh out a thin page.
-- /domain-modeling - maintain the glossary (docs/CONTEXT.md) and record decisions (in the concept pages; ADR for technical).
+- /domain-modeling - record decisions (in the concept pages; ADR for technical).
 - /edit-article - revise a page section by section for clarity and dependency order.
 - /setup-wiki - one-time, confirm conventions.
 
@@ -139,17 +135,15 @@ Record inline so it stays visible on the page until resolved:
 Undecided _design questions_ are not contradictions — track those in
 `docs/open-questions.md`. Never overwrite established canon in passing.
 
-## Decisions & glossary
+## Decisions
 
-Maintained via /domain-modeling. Decisions live next to what they govern, plus one glossary:
+Maintained via /domain-modeling. Decisions live next to what they govern:
 
 - **Design / world / mechanics decisions** — folded into the **concept page** that owns the
   topic (a `## Why / rejected` section: the call, the _why_, what was rejected), cross-referenced
   to sibling pages. No separate design-decision register.
 - **ADR** (`docs/adr/`) — architecture / technical decisions (the Unity code, the
   repo, tooling); standard ADR.
-- **`docs/CONTEXT.md`** — the glossary (ubiquitous language): terms only, no lore
-  or mechanics.
 - **Mechanic IDs** — mechanics carry **section-scoped IDs** (e.g. `SIEGE-1`, `ECON-2`),
   tagged on the section header of the concept page that owns them. IDs are local to a section
   so adding one never renumbers another. No separate registry file — the tagged headers are the index.

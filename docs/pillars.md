@@ -37,7 +37,7 @@ Each is a way the exposure model could collapse; the design's counter is named.
 - **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ tiered exposure — [[gates|port-open]] risks cargo, not the vault.
 - **Offline-dodge** — instant-seal mid-raid kills raiding; can't-close traps you online. _Counter:_ presence + the committed [[raiding|siege clock]] (opt-in, finite, no offline jump).
 - **Zerg pile-on** — if opening exposes you to everyone, mass wins. _Counter:_ [[raiding|bilateral directional tunnels]] (contained duels).
-- **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill [[rifts|Rift-visibility]] (a whale can't see a small player's Rifts to harvest their shares).
+- **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill [[potential|frontier-visibility]] (a whale can't see a small player's frontier pushes to harvest their shares).
 - **Doorstep kill-box** — walling the aperture into a sealed box nullifies raiding. _Counter:_ the [[combat|dome]] destroys manual builds (not terrain) — fortify the perimeter at range, never the doorstep.
 
 ## Validation — two questions, two scales

@@ -25,7 +25,7 @@ The headline fantasy: open a tunnel to a target, breach, take loot, withdraw —
 ## Two modes (kept separate)
 
 - **Home raid** — direct Gate, bilateral feud; contained, opt-in, governed by presence + the clock. Can take build, stock, and the civilization itself once found — but **never the player's existence** (see [[consciousness-link|Consciousness Link]], [[coordinates|Coordinates & Obscurity]]).
-- **Hub / Rift contest** — many-vs-many lives at [[hub-worlds|hubs]] (capture) and in Open [[rifts|Rifts]] (extraction), which you choose to walk into. Guardrail: a hub may lower _travel cost_ to a doorstep, never the _target's defenses_.
+- **Hub / frontier contest** — many-vs-many lives at [[hub-worlds|hubs]] (capture) and on contested [[world-types|frontier worlds]] (extraction), which you choose to walk into. Guardrail: a hub may lower _travel cost_ to a doorstep, never the _target's defenses_.
 
 ## Raid value floor (anti-husk, LOOT-1)
 
