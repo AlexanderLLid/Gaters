@@ -30,6 +30,8 @@ Rules:
 - Balance by default: each mechanic names the dev-tunable knob that keeps it healthy
   and the **design trap** it guards against (defined in [[pillars|Pillars]]). The
   bar is the aggressor fantasy without the **defender tax** — a dynamic that punishes
-  an absent player has reinvented decay; flag it like a hard contradiction.
+  an absent player has reinvented decay; flag it like a hard contradiction. Each
+  system also names the layer it sits in and justifies any new knob against upstream
+  knobs (see CLAUDE.md, Design order).
 
 Use the matching template in docs/_templates/systems/.

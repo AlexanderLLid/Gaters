@@ -75,7 +75,6 @@ in CLAUDE.md). Inline tags say how settled a claim is:
 - [[avatar-origin-options|Avatar Origin]] — the **open** avatar-origin question (what the body is, where it comes from, how the mind connects): options report + recommendation, not yet decided.
 - `archetypes.md` — the player-archetype test-set (served / redirected / denied).
 - `gate-uses.md` — the Gate-use option menu + deferred objects (beacon, jammer, transponder…).
-- `art-direction.md` — aesthetic touchstones (deferred until after greybox).
 - `technical-challenges.md` — what's hard to build, and the gate mechanic that eases each.
 - `adr/` — architecture / technical decisions.
 

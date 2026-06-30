@@ -1,28 +1,26 @@
 # CLAUDE.md - Gaters
 
 THIS IS A WORK IN PROGRESS FEEL FREE TO SUGGEST CHANGES TO ANYTHING ANYTIME. Nothing is set in stone.
-Never open PRs — we always work off main, don't commit or push unless asked (the human reviews first).
+Never branch, never open PRs — work off `main`, and don't commit or push unless asked (the human reviews local commits first).
 
 This is the **parent repo** for the game Gaters. Right now it holds **design docs
-only** (in `docs/`). The Unity game is added later as a sibling folder under this
-root — there is no game code here yet.
+only** (in `docs/`). The game is added later as a sibling folder under this
+root.
 
 `docs/` is an Obsidian vault: two linked wikis under one schema.
 
 - `docs/lore/` - the world bible: canon, factions, places, events (World Anvil types).
 - `docs/systems/` - the mechanics bible: how the game works (survival content model).
 
-You (the agent) maintain the docs. The human curates sources and asks questions.
-This file is the schema; read it at the start of every session.
+You maintain the docs; the human curates sources and asks questions. This file is the schema.
 
-Ponytail is active. Apply it to the docs: write the minimum page that does the
-job, link instead of duplicating, no filler sections.
+Ponytail is active — apply it to the docs: the minimum page that does the job, no filler.
 
 ## Scope & priorities
 
 Wiki mode is **active**: `docs/lore/` + `docs/systems/` are the living, maintained wiki. Design
 material that isn't a lore/systems page lives in focused docs at the `docs/` root — `pillars.md`
-(cores, design traps, validation), `archetypes.md`, `gate-uses.md`, `art-direction.md`,
+(cores, design traps, validation), `archetypes.md`, `gate-uses.md`,
 `technical-challenges.md` — and architecture in `docs/adr/`.
 
 Scoped wiki: build pages for what's **decided or load-bearing**; stub or defer the rest. Don't
@@ -37,13 +35,52 @@ fabricate detail to fill a page.
   recipes, creatures, named places/factions, species, cultures, religions, myths, languages.
 - **Wanted later:** decided-but-deferred features (e.g. space gates) live in `docs/roadmap.md`.
 
+## Design order
+
+How mechanics and lore get built: fix foundations before details, and stop
+minting parallel systems. It blends three known ideas — design backward from the
+player experience (MDA), build the core loop first, decide hardest-to-reverse
+things first. Shorthand: "core loop first".
+
+Build in this order — each layer depends on the one above, and a late change high
+up reworks everything below.
+
+1. Experience [decided] - reach equals exposure; aggressor fantasy, no defender
+   tax. See [[World Overview]], [[pillars|Pillars]].
+2. Core loop - moment / session / long-term. Documented in [[Systems Overview]];
+   link there, do not restate.
+3. Primary verb + seam - open / raid, routed through the [[Gates|Gate]]. The Gate
+   is the highest-blast object (everything routes through it); pin it as early as
+   the loop allows.
+4. Resources (the knobs) - [[mask-energy|mask energy]] (field radius + away
+   reserve), power cores, [[potential|Potential]], [[coordinates|Coordinates & Obscurity]].
+5. Conflict - [[raiding|Raiding]], [[combat|Combat]], [[hub-worlds|Hub Worlds]].
+6. Counterforce - the stagnation [[economy|economy]], [[progression|Region/World tiers]], charter / tithe.
+7. Content - [[taming|Taming]], [[building|Building]], items, biomes, creatures.
+
+Rules:
+
+- **Knob inheritance.** A layer spends the tunable knobs defined upstream. A new
+  knob lower down must say why an existing upstream knob cannot carry it, and stay
+  decoupled. Never merge two knobs that fail independently — like a shooter keeping
+  weapon damage and fire-rate as separate dials, not one "DPS" number.
+- **Balance is orthogonal, not a final layer.** When you define a layer, set its
+  structural ratios (the shape: how steep a curve is, which value dominates) but
+  defer calibrated values (exact rates, costs) to playtest. Never freeze balance
+  numbers in prose. Open-vs-turtle is assume-and-commit, settled at scale (see
+  [[pillars|Pillars]] Validation).
+- **Commit order, not waterfall.** Treat each layer as provisionally fixed, build
+  down, revisit up when a lower layer exposes a flaw above.
+- **Discovery exception.** Bottom-up prototyping to find the fun is research, not
+  construction. Gaters is past discovery (the fantasy is [decided]), so construction
+  runs top-down.
+
 ## Follow recorded decisions
 
-A page or proposal must conform to the decisions already recorded — link to
-them, don't restate them. Each design/mechanics decision lives in its **concept page**
-(a `## Why / rejected` section); the load-bearing one is the **balance thesis** — the
-aggressor fantasy without the defender tax (see [[World Overview]]; the Four Design Traps
-live in `docs/pillars.md`).
+A page or proposal must conform to the decisions already recorded — link, don't
+restate (where they live: see Decisions). The load-bearing one is the **balance
+thesis**: the aggressor fantasy without the defender tax (see [[World Overview]];
+design traps in `docs/pillars.md`).
 
 **Nothing is a hard rule right now.** Every recorded decision — the concept-page rationale,
 ADRs, the thesis, this schema — is provisional and open to change at this stage. A recorded
@@ -57,40 +94,17 @@ it, but don't treat it as immovable either. When the call changes, edit the page
 1. `docs/raw/` - source material (design notes, transcripts, exports). Immutable.
    Read from it, never edit it. The ultimate source of truth.
 2. `docs/lore/` and `docs/systems/` - the wiki pages you generate and maintain.
-3. `CLAUDE.md` - this schema, co-evolved with the human.
 
 ## Page types
 
-Every page starts with YAML frontmatter; `type` is required.
-
-Lore (World Anvil set): character, location, organization, species, culture,
-religion, myth, item, language, event, plus overview and timeline.
-
-Systems (survival model): system, item, resource, recipe, station, structure,
-creature, biome, status-effect, tech, formula, plus overview.
-
-```yaml
----
-type: organization
-status: draft # draft | stable | needs-review
-tags: []
-sources: [] # provenance into docs/raw/
-aliases: [] # add the Title-Case display name for multi-word pages
-updated: 2026-06-27
----
-```
-
-Copy the matching file from `docs/_templates/`. Templates exist for the in-use
-types (organization, location, event, system); when adding a deferred type, copy
-the closest sibling as a base. Do not invent new section structures per page.
+Page types, frontmatter, and how to start a new page live in `docs/_templates/README.md`.
 
 ## Conventions
 
 - **Bullets are the default.** Write docs as bullet points (nested where there's
-  hierarchy), not prose paragraphs — it's far easier to read and scan. Reserve prose
-  for a short framing/intro line above a list. Avoid inline enumerations like
-  `(1)… (2)… (3)…` inside a bullet; split them into sub-bullets. Applies to every doc
-  and every skill that writes docs.
+  hierarchy), not prose paragraphs. Reserve prose for a short framing line above a
+  list. Don't use inline enumerations like `(1)… (2)… (3)…` inside a bullet; split
+  them into sub-bullets. Applies to every doc and skill that writes docs.
 - Filenames: kebab-case matching the title. Content lives in folders by type
   (`docs/lore/organizations/`, ...); folders appear as pages are added.
 - One subject per page. Cross-link with `[[Wikilinks]]`. Link multi-word pages as
@@ -100,37 +114,14 @@ the closest sibling as a base. Do not invent new section structures per page.
 - Numbers live in data, not prose: document the model and say where tunable values
   will live. Split static (Definition) from runtime (Instance); prefer tags over
   rigid class trees.
-- **Code section:** leave as a placeholder until the Unity project exists. Once it
-  does, systems pages list the C# classes/paths that implement them.
-- A myth page states whether it is true in canon or only believed.
-
-## Operations (skills in `.claude/skills/`)
-
-- /ingest <source> - read a raw source, write/update pages, update index,
-  run a contradiction check on touched pages.
-- /ask <question> - answer from the wiki with citations.
-- /new-page <type> <title> - create a page from the right template.
-- /grill-lore <page> - interview the human to flesh out a thin page.
-- /domain-modeling - record decisions (in the concept pages; ADR for technical).
-- /edit-article - revise a page section by section for clarity and dependency order.
-- /setup-wiki - one-time, confirm conventions.
+- **Code section:** leave as a placeholder until the game project exists. Once it
+  does, systems pages list the classes/paths that implement them.
 
 ## Contradiction handling
 
-When new content conflicts with a page, classify and record it on the page:
-
-- soft - tone or emphasis. Non-blocking. Flag and note.
-- scope - true in different contexts. Non-blocking. Flag and explain each scope.
-- hard - direct conflict (a date clash with the timeline; a fact two ways).
-  Blocking. Do not pick a winner; stop and ask.
-
-Record inline so it stays visible on the page until resolved:
-
-```
-> Contradiction severity: hard
-> Status: unresolved - flagged for review
-> Conflict: [[Source A]] says X; [[Page B]] says Y.
-```
+New content conflicting with a page: classify (soft / scope / hard) and record it
+inline; **hard** blocks — don't pick a winner, stop and ask. Full protocol: the
+**contradiction-check** skill.
 
 Undecided _design questions_ are not contradictions — track those in
 `docs/open-questions.md`. Never overwrite established canon in passing.
@@ -142,23 +133,29 @@ Maintained via /domain-modeling. Decisions live next to what they govern:
 - **Design / world / mechanics decisions** — folded into the **concept page** that owns the
   topic (a `## Why / rejected` section: the call, the _why_, what was rejected), cross-referenced
   to sibling pages. No separate design-decision register.
-- **ADR** (`docs/adr/`) — architecture / technical decisions (the Unity code, the
+- **ADR** (`docs/adr/`) — architecture / technical decisions (the game code, the
   repo, tooling); standard ADR.
 - **Mechanic IDs** — mechanics carry **section-scoped IDs** (e.g. `SIEGE-1`, `ECON-2`),
   tagged on the section header of the concept page that owns them. IDs are local to a section
   so adding one never renumbers another. No separate registry file — the tagged headers are the index.
 
 Record a decision only when it is hard to reverse, surprising without context, and a real
-trade-off — capture the _why_ and what was rejected. `docs/open-questions.md` is the unresolved
-backlog; a settled item is folded into its concept page and its page tag flips to `[decided]`.
+trade-off — i.e. when a future agent could plausibly re-make it _differently_. Capture the
+_why_ and what was rejected; never record just to preserve history. `docs/open-questions.md`
+is the unresolved backlog; a settled item is folded into its concept page and its page tag
+flips to `[decided]`.
+
+A decision being **actively worked** lives in one holding doc (a `*-options.md` at the `docs/`
+root) plus an `open-questions.md` entry. On resolution it folds into its concept page (or an
+ADR for technical) and the holding doc is deleted. Don't promote a half-formed idea to a
+standalone concept page.
 
 ## Nothing is locked
 
 Green-field project: no users, no shipped versions, nothing locked in. Do not add
 backward-compatibility, migration notes, deprecation shims, or "supersedes the old
 X" history — when something changes, change it in place as if it had always been
-that way. Only record a decision (in a concept page, or an ADR for technical) when a future
-agent could plausibly re-make it _differently_; never to preserve history for its own sake.
+that way.
 
 ## Index
 
@@ -169,5 +166,4 @@ no separate changelog.
 ## Notes
 
 - Markdown + Obsidian vault under git. Commits are the history.
-- **Git: never branch, never open PRs.** Commit straight to `main`, but **don't push unless asked** — the human reviews local commits first.
 - Keep this schema lean. Add a short rule when a mistake repeats, not an essay.

@@ -1,4 +1,8 @@
 {
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "github"
+  ],
   "hooks": {
     "PostToolUse": [
       {
@@ -6,9 +10,9 @@
         "hooks": [
           {
             "type": "command",
-            "statusMessage": "prettier (markdown)",
+            "command": "f=$(node -e 'try{process.stdout.write(JSON.parse(require(\"fs\").readFileSync(0,\"utf8\")).tool_input.file_path||\"\")}catch{}'); case \"$f\" in *.md|*.markdown) npx --yes prettier --write \"$f\" >/dev/null 2>&1 || true;; esac",
             "timeout": 120,
-            "command": "f=$(node -e 'try{process.stdout.write(JSON.parse(require(\"fs\").readFileSync(0,\"utf8\")).tool_input.file_path||\"\")}catch{}'); case \"$f\" in *.md|*.markdown) npx --yes prettier --write \"$f\" >/dev/null 2>&1 || true;; esac"
+            "statusMessage": "prettier (markdown)"
           }
         ]
       }
@@ -16,9 +20,9 @@
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
-    "superpowers@claude-plugins-official": true
-  },  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": ["github"],
+    "superpowers@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
+  },
   "extraKnownMarketplaces": {
     "ponytail": {
       "source": {

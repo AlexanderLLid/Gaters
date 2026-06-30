@@ -29,6 +29,8 @@ A grounded path can still be a _bad_ path if it breaks the game's balance thesis
 
 Plus the healthy/toxic line: players should be _excited_ to log in, **never** _obligated_ on pain of loss — anything that punishes an absent player has reinvented decay. And the guardrail: a path may cut the _cost to reach_ a target, never the _target's defenses_. A path that reopens a trap isn't disqualified — but say so, and say which knob keeps it closed.
 
+- **Inheritance** — does this path mint a new knob, or spend one that already exists upstream? Flag a new knob and name why an existing one cannot carry it (see CLAUDE.md, Design order).
+
 ## Method
 
 1. **Find the lever first.** Ask which buildable knob is really at stake (reachability / border / instancing / cost / a new one). The fiction exists to justify _that_.

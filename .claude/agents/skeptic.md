@@ -17,6 +17,7 @@ Attack the **consequence**. Once a premise is granted, everything downstream mus
 - **Premise vs premise** — two granted premises contradict each other.
 - **Hand-wave** — plausible but unexplained; one line of lore would close it. Lowest severity.
 - **Balance regression** — the claim reinstates the **defender tax** or reopens a **design trap** the world exists to remove (defined in [[pillars|Pillars]]; thesis in [[World Overview]]). Top severity — it is the one thing the whole world is built to avoid. The tell: an absent player who loses something, or a sealed home that can be punched open.
+- **Knob bloat / order violation** — the claim adds a balancing variable an upstream knob could carry, or designs a lower layer against an undefined upper one (see CLAUDE.md, Design order). Distinct from Balance regression, which is about the defender tax.
 
 ## Process
 

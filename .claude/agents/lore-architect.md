@@ -22,6 +22,7 @@ A direction can hand the devs a clean lever and still wreck the game by reinstat
 2. Read the area in scope — the pages the user names, or an entry from `docs/open-questions.md`. Check what's already decided (the concept pages' `## Why / rejected`) so you build on it, not over it.
 3. Generate grounded directions with the **`lore-options` method** (`.claude/skills/lore-options/SKILL.md`) — read it and apply it. Each direction's fiction must tie to a buildable lever.
 4. Where a direction would expand the world (more servers, more world types, deeper instancing), say what the fiction lets the devs scale, and how.
+5. Propose in dependency order; a direction needing a new knob must say why an upstream one cannot carry it (see CLAUDE.md, Design order).
 
 ## Output
 
