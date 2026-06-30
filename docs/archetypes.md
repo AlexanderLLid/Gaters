@@ -34,7 +34,7 @@ This page names what each playstyle **needs** and links to the page that owns th
 
 ## Redirected — valid, but funnelled to a designated arena, never onto sleeping homes
 
-- **PvP brawler / roamer** [tentative]: combat for its own sake → **Open Rifts, space gates** (no longer hubs).
+- **PvP brawler / roamer** [tentative]: combat for its own sake → **contested frontier worlds, space gates** (no longer hubs).
   - An **always-live arena** — no territory required to join. ([[world-types|frontier worlds]])
   - **Combat fun on its own**, quick in/out. ([[combat|COMBAT-1]])
   - No need to own or defend anything to participate.

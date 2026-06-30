@@ -8,7 +8,7 @@ A menu of things Gates can _do_, and the discrete objects the design implies. Mo
 - **Occupy-to-lock / jamming**: holding a Gate open (or keeping a line busy) locks a target out of the network — a denial/siege tactic that doesn't touch the obscurity-protected home.
 - **Buffer wipe of in-transit forces**: troops "in transit" sit in a vulnerable buffer; cutting the connection mid-raid wipes an in-flight strike force — a raid-commitment mechanic.
 - **Stealable Gate control device**: damage or steal the console and a planet can receive but barely dial out — a "stranded, raidable, can't retaliate" state that is _not_ permanent base loss. (Constraint: it must **never block relocation** — the way out of a found state — or theft becomes a permanent raidable trap, which the design rejects.)
-- **Gate-as-bomb (overload)**: overloading a Gate yields a planet-scale explosion — a rare, costly scorched-earth / siege-ender (the [[gates|overdrive-to-Rift]] physics).
+- **Gate-as-bomb (overload)**: overloading a Gate yields a planet-scale explosion — a rare, costly scorched-earth / siege-ender (the [[gates|overdrive-to-collapse]] physics).
 
 ## Catalogued — not yet integrated [open]
 

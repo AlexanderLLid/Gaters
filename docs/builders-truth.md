@@ -18,7 +18,7 @@
   - **Built and spread the Gate network** across the galaxy (why it's galaxy-spanning).
   - **Seeded living, breathable worlds** as arenas (why most Gate-worlds have life — and a living substrate avatars can be grown or sustained from; how avatars work is open, see [[avatar-origin-options|Avatar Origin]]).
   - **Set up selection to scale: planet-level first, then galaxy-wide** as the network wakes and connects. Early game = local (planet/bubble) competition; late game = the arenas wire together into galaxy-scale selection.
-- **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable and Rifts proliferate.
+- **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable.
 
 ## Why this candidate is strong
 

@@ -25,7 +25,7 @@ The cores that must work. Full detail lives in the concept pages — this is the
 7. **Gate-based instancing** — what makes it buildable solo.
    - empty row → solo (cheap server tick) → contested (full server instance).
    - Server cost ∝ online players, not world size.
-8. **Rifts** — the engagement engine while you're home and quiet; opportunity, not invasion.
+8. **Misdials** — the engagement engine while you're home and quiet (a stray outbound lane to run); opportunity, not invasion.
 
 **Gate on all of it:** will players actually open their Gates? Make-or-break — and the one thing a greybox **can't** settle: it's a population equilibrium, not a feel. The greybox proves the loop is _fun_; whether the population _opts in_ only shows at playtest scale (see Validation).
 

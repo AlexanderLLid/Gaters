@@ -36,14 +36,13 @@ real requirement, packaged.
   This is the real realism ceiling, and the in-world reason cores are scarce and
   Gates **cannot be mass-produced**. [GROUNDED background.]
 
-## Stable vs unstable — Gate vs Rift
+## Stable vs unstable — propped vs un-propped
 
 An un-propped wormhole (the Schwarzschild / Einstein–Rosen bridge) is
 non-traversable: it **pinches off faster than light can cross it** (Fuller–Wheeler
-1962). [GROUNDED.] That _is_ a **Rift** — a throat with no exotic-matter support,
-collapsing on its light-crossing time. A Gate is the same throat held open by a
-core. So **Gate vs Rift = propped vs un-propped** — one physics, two states.
-(Rifts appearing _near_ Gates: [CONCEIT] — GR has no regional "thin spacetime".)
+1962). [GROUNDED.] That is the **un-propped state** — a throat with no exotic-matter
+support, collapsing on its light-crossing time. A Gate is the same throat held open
+by a core. So **Gate vs collapse = propped vs un-propped** — one physics, two states.
 
 ## Energy cost
 
@@ -77,7 +76,7 @@ building bigger hardware: the Builder ring is fixed, the aperture is a runtime v
 inequality** caps one ring (bigger throats force the walls Planck-thin → collapse), so
 fleet-wide apertures need multiple rings combined — a megastructure of **found** segments,
 never fabrication. [GROUNDED ceiling.] Overdrive one ring past the cap and it collapses to
-the un-propped state — a Rift. This is the physics under the driven aperture ([[gates|Gates]]) and the gate-overload bomb.
+the un-propped state. This is the physics under the driven aperture ([[gates|Gates]]) and the gate-overload bomb.
 
 ## The dome — protecting transit, clearing builds
 
@@ -97,7 +96,6 @@ how.
 ## Pure conceits (do not claim physics)
 
 - A life-support field that weakens with radius.
-- Rifts clustering near Gates.
 - The gate dome: a protective field that shields transit and destroys only _built_ matter
   (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
 

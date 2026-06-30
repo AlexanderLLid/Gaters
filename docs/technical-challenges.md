@@ -101,14 +101,14 @@ What the Gate fiction does _not_ already pay for. Ranked by severity for a **sol
   not expose the attacker's coordinate until commit (transponder model). Keep the registry small
   (metadata only); never let simulation state into it.
 
-### 5. The many-vs-many exception — hubs, Open Rifts, server events — _medium, but cappable_
+### 5. The many-vs-many exception — hubs, server events — _medium, but cappable_
 
-- **The problem.** [[Hub Worlds]], Open Rifts, and server-wide top-rank Rifts are _explicitly_
+- **The problem.** [[Hub Worlds]] and server-wide events (e.g. Supergate sieges) are _explicitly_
   many-vs-many (see the design docs). This is where "instancing makes it cheap" breaks —
   the expensive concurrent-simulation case the rest of the design avoids. Hub _balance_ is also
   flagged unsolved (Conflict #6).
 - **The lever:** these are **few, optional, and bounded.** Hubs can be hard-capped in concurrency;
-  Open Rifts are **temporary by fiction** (they collapse on a countdown) so they tear down on their
+  Server events are **temporary by fiction** (they end on a countdown) so they tear down on their
   own and never become permanent shared worlds. Scope them as the deliberate, budgeted exception —
   and keep them out of the greybox (deferred by the roadmap).
 
@@ -150,7 +150,7 @@ not just a story one. Surface in the concept pages when confirmed.
   count of physics objects transferring at the aperture (#2).
 - **The Coalition registry as the one sanctioned global DB** — centralize _all_ unavoidable shared
   state into the Coalition fiction; everything else stays instanced. Pays #4.
-- **Open Rifts collapse on a countdown** — already canon (see the design docs);
+- **Contested instances are time-bounded** (the away-reserve clock) —
   note it doubles as the auto-teardown that keeps the many-vs-many case bounded (#5).
 
 ---

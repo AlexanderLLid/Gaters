@@ -42,7 +42,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 ## Why / rejected
 
 - **Network = mesh-with-a-heart**, chosen over pure hub-and-spoke — spokes would break the bilateral raid tunnel and the direct-dial-vs-hub economy.
-- **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the Rift cosmology; held for frontier worlds later).
+- **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the frontier-instability story; held for frontier worlds later).
 - **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Coalition as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with the players (corps and groups). See [[the-builders|The Builders]].
 
 ## Open questions
