@@ -13,7 +13,7 @@ Map of Gaters mechanics. Locked + load-bearing systems have pages; still-open on
 
 ## Core idea
 
-- **Reach equals exposure** [decided] — you act on the world only as far as you open to it, you choose when, and your home's safety is **obscurity, not a wall**. The aggressor fantasy (raiding, looting) without the defender tax (babysitting, decay, _certain_ offline loss). See [[World Overview]].
+- **Reach equals exposure** [current call] — you act on the world only as far as you open to it, you choose when, and your home's safety is **obscurity, not a wall**. The aggressor fantasy (raiding, looting) without the defender tax (babysitting, decay, _certain_ offline loss). See [[World Overview]].
 
 ## Core loop [tentative]
 

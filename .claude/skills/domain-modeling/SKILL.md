@@ -50,4 +50,4 @@ Miss any one, skip it. Record the _why_ and _what you rejected_ — not ceremony
 
 docs/open-questions.md is the backlog of unresolved decisions. When one settles, fold the
 _why_ + _rejected_ into the relevant concept page's `## Why / rejected`, flip that page's tag
-`[tentative]→[decided]`, and strike it from open-questions.
+`[tentative]→[current call]`, and strike it from open-questions.

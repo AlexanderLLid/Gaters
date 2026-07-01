@@ -6,7 +6,7 @@ questions** — things not yet settled.
 
 Resolve an item → fold the decision (its _why_ + what you rejected) into the relevant
 **concept page** (a `## Why / rejected` section), flip that page's tag
-`[tentative]→[decided]`, and strike it here. Use /domain-modeling. (Technical / code choices
+`[tentative]→[current call]`, and strike it here. Use /domain-modeling. (Technical / code choices
 still get an **ADR** in `docs/adr/`.)
 
 Decided so far (folded into the concept pages — see each page's _Why / rejected_): the game is

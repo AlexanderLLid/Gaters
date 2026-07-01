@@ -28,14 +28,14 @@ enters the lore or systems wikis.
 
 ## Visual direction (deferred)
 
-Art is **deferred until after greybox validation** [decided]; final identity is open
+Art is **deferred until after greybox validation** [current call]; final identity is open
 (open-questions #6). Captured here so it isn't re-litigated.
 
 - **Touchstones:** Minecraft, Valheim, No Man's Sky. **NMS is the aspirational visual
   target**; the Gate structure deliberately sidesteps NMS's hardest engineering problem
   (seamless space-to-surface flight, replaced by Gate loads). **Valheim** is the
   achievable Unity aesthetic.
-- **Principle [decided]:** separate **visual style** (cheap, achievable solo) from the
+- **Principle [current call]:** separate **visual style** (cheap, achievable solo) from the
   **engine tech** of reference games (NMS's custom engine + seamless flight, not
   achievable solo).
 - **Leaning path to the NMS look solo:** low-poly, flat-shaded 3D with strong

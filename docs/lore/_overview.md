@@ -16,14 +16,14 @@ Entry point to the Gaters lore. Short by design — link out.
 - A long-dormant, galaxy-spanning network of ancient **Gates** suddenly switches on (see [[the-wake|The Wake]]).
 - Each player controls a single **planet-base** sitting on one [[Gates|Gate]]. The [[united-gate-coalition|United Gate Coalition]] charters independent **gaters** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
 - Players are **human** — people who found a Gate and stepped through (multi-species / post-human / alien rejected as scope with no payoff this phase).
-- The central conflict is a **gold rush over finite, un-manufacturable Gate infrastructure**. Reach and wealth require **opening your Gate and venturing out** — and venturing is what exposes you: acting is how your home is eventually **found** and made raidable. [decided]
+- The central conflict is a **gold rush over finite, un-manufacturable Gate infrastructure**. Reach and wealth require **opening your Gate and venturing out** — and venturing is what exposes you: acting is how your home is eventually **found** and made raidable. [current call]
 
 ## Design thesis — "reach equals exposure"
 
 - You act on the world only as far as you've **opened** to it; you choose when and toward whom.
 - Your home's safety is **obscurity — being unfound — not an inviolable wall**. A **sealed** planet-base is safe _while hidden_ but **mortal**: venture enough and you are eventually found and raidable (see [[coordinates|Coordinates & Obscurity]]).
 - "MAD in space" — mutual vulnerability breeds deterrence, alliances, and "cover my Gate while I trade" pacts.
-- This is the spine of the whole design; the survival/PvP model is [[mask-energy|Mask Energy]] + [[coordinates|obscurity]]. **Why:** it delivers the aggressor fantasy (raiding, looting) without the defender tax (babysitting, decay, offline loss) — the genre's persistent-shared-world-plus-offline-vulnerability is the thing it rejects. [decided]
+- This is the spine of the whole design; the survival/PvP model is [[mask-energy|Mask Energy]] + [[coordinates|obscurity]]. **Why:** it delivers the aggressor fantasy (raiding, looting) without the defender tax (babysitting, decay, offline loss) — the genre's persistent-shared-world-plus-offline-vulnerability is the thing it rejects. [current call]
 
 ## What you can and can't lose
 
@@ -40,7 +40,7 @@ Entry point to the Gaters lore. Short by design — link out.
 
 - Gates **woke sealed** and **cannot be manufactured** — only found, claimed, repaired. Their finiteness is the root of all conflict.
 - Who built them, and why, is **unknown to everyone by design** — see [[the-builders|The Builders]], the long-game mystery engine. Do not invent Builder lore.
-- How gating works (bound to real physics) is in [[gate-physics|Gate Physics]]; the object itself is [[Gates]]. [decided]
+- How gating works (bound to real physics) is in [[gate-physics|Gate Physics]]; the object itself is [[Gates]]. [current call]
 
 ## The mystery
 

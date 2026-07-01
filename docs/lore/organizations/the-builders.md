@@ -9,7 +9,7 @@ updated: 2026-06-28
 
 # The Builders
 
-The precursor civilization that made the Gates — **unknown by design**. [decided]
+The precursor civilization that made the Gates — **unknown by design**. [current call]
 
 ## What is known
 

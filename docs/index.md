@@ -9,7 +9,7 @@ Everything here is a **working draft we're happy with — nothing is locked.** P
 because they're final. Bring better reasoning and we re-decide (see "Nothing is locked"
 in CLAUDE.md). Inline tags say how settled a claim is:
 
-- **[decided]** — current best call + its _why_. Changeable: surface the conflict and re-decide.
+- **[current call]** — the call we'd make today + its _why_; **never locked**. Bring better reasoning and we re-decide.
 - **[tentative]** — leaning this way, not committed.
 - **[open]** — unresolved; tracked in [[open-questions|Open Questions]].
 

@@ -18,7 +18,7 @@ Trivial change (a tag flip, a typo, a path fix)? Skip this — just edit.
    - Tighten for clarity, coherence, and flow; cut what the section doesn't need.
    - **Max 240 characters per paragraph.**
    - Preserve the frontmatter, the wikilinks (`[[basename|Display]]`), and the
-     `[decided]/[tentative]/[open]` tags. Do not invent content or expand a topic
+     `[current call]/[tentative]/[open]` tags. Do not invent content or expand a topic
      CLAUDE.md defers.
    - Hold the page's altitude: a high-level page stays high-level (the one
      exception is gate-physics, which goes deep).

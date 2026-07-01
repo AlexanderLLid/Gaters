@@ -45,7 +45,7 @@ things first. Shorthand: "core loop first".
 Build in this order — each layer depends on the one above, and a late change high
 up reworks everything below.
 
-1. Experience [decided] - reach equals exposure; aggressor fantasy, no defender
+1. Experience [current call] - reach equals exposure; aggressor fantasy, no defender
    tax. See [[World Overview]], [[pillars|Pillars]].
 2. Core loop - moment / session / long-term. Documented in [[Systems Overview]];
    link there, do not restate.
@@ -84,7 +84,7 @@ Rules:
 - **Commit order, not waterfall.** Treat each layer as provisionally fixed, build
   down, revisit up when a lower layer exposes a flaw above.
 - **Discovery exception.** Bottom-up prototyping to find the fun is research, not
-  construction. Gaters is past discovery (the fantasy is [decided]), so construction
+  construction. Gaters is past discovery (the fantasy is [current call]), so construction
   runs top-down.
 
 ## Follow recorded decisions
@@ -154,7 +154,7 @@ Record a decision only when it is hard to reverse, surprising without context, a
 trade-off — i.e. when a future agent could plausibly re-make it _differently_. Capture the
 _why_ and what was rejected; never record just to preserve history. `docs/open-questions.md`
 is the unresolved backlog; a settled item is folded into its concept page and its page tag
-flips to `[decided]`.
+flips to `[current call]` (a working call, never a lock).
 
 A decision being **actively worked** lives in one holding doc (a `*-options.md` at the `docs/`
 root) plus an `open-questions.md` entry. On resolution it folds into its concept page (or an
