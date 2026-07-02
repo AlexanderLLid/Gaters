@@ -45,7 +45,7 @@ in CLAUDE.md). Inline tags say how settled a claim is:
 
 ### Gate & survival spine
 
-- [[Gates]] — the central object; dialing, exposure states (sealed/port/gate-open), presence.
+- [[Gates]] — the central object; dialing, sealed/open state, presence.
 - [[gate-physics|Gate Physics]] — gating bound to real physics (the deep page).
 - [[mask-energy|Mask Energy]] — survival + combat resource; sustaining field; the field-radius / away-reserve split.
 

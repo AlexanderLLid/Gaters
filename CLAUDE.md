@@ -127,6 +127,12 @@ Page types, frontmatter, and how to start a new page live in `docs/_templates/RE
   rigid class trees.
 - **Code section:** leave as a placeholder until the game project exists. Once it
   does, systems pages list the classes/paths that implement them.
+- **No graveyard comments.** When removing a mechanic, don't leave "was X, now removed"
+  narration on the pages that referenced it — just state the current model. Don't reference,
+  explain, or keep commented-out versions of old/deleted concepts (in docs or, later, code) —
+  delete them outright. If it leaves something unresolved (e.g. a trap's counter is gone), flag
+  it **open** and record the why/what-broke once in `docs/open-questions.md`, not repeated
+  inline everywhere it's touched.
 
 ## Contradiction handling
 

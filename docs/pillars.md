@@ -2,15 +2,15 @@
 
 The cores that must work. Full detail lives in the concept pages — this is the focusing list.
 
-> Organized by **failure mode**, not by object — each core is something that can fail on its own and take the game down. Don't fold cores into the Gate just because they're Gate states (presence, tiered exposure and mask energy all are); nesting by object collapses the list and hides the distinct failures.
+> Organized by **failure mode**, not by object — each core is something that can fail on its own and take the game down. Don't fold cores into the Gate just because they're Gate states (presence and mask energy both are); nesting by object collapses the list and hides the distinct failures.
 
 **Thesis — reach equals exposure** (see [[World Overview]]). Aggressor fantasy, no defender tax.
 
 1. **The Gate** — the one object everything routes through.
    - Travel, mask-energy source, exposure surface, economy sink.
    - Finite and unbuildable: found / claimed / repaired / relocated / tamed.
-2. **Tiered exposure** — sealed / port-open / gate-open.
-   - Safe by default; risk opt-in and graduated (trade risks cargo, raid risks vault).
+2. **Binary exposure** — sealed / open.
+   - Safe by default; risk is opt-in. How trade risk differs from raid risk is **open** (see open-questions.md).
 3. **Presence + siege timer** — the babysitting fix.
    - Open only while online and choosing it.
    - Raid commits → Gate locked open for a bounded fight.
@@ -34,7 +34,7 @@ The cores that must work. Full detail lives in the concept pages — this is the
 Each is a way the exposure model could collapse; the design's counter is named.
 
 - **Turtle equilibrium** — if sealed = safe forever with no downside, everyone bunkers. _Counter:_ the [[economy|economy forces exposure]] (sealed stagnates), and sealing buys obscurity, not immunity ([[coordinates|the home is mortal]]).
-- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ tiered exposure — [[gates|port-open]] risks cargo, not the vault.
+- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ **open** — no mechanic currently stops this (open-questions.md #23).
 - **Offline-dodge** — instant-seal mid-raid kills raiding; can't-close traps you online. _Counter:_ presence + the committed [[raiding|siege clock]] (opt-in, finite, no offline jump).
 - **Zerg pile-on** — if opening exposes you to everyone, mass wins. _Counter:_ [[raiding|bilateral directional tunnels]] (contained duels).
 - **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill [[potential|frontier-visibility]] (a whale can't see a small player's frontier pushes to harvest their shares).
@@ -44,7 +44,7 @@ Each is a way the exposure model could collapse; the design's counter is named.
 
 Two risks, de-risked differently. Don't conflate them.
 
-- **Is the loop fun? — greybox-answerable.** Do the exposure states, the bilateral tunnel, the siege clock, and real PvP combat feel good moment-to-moment? Build a **greybox proof** before any art. Cheap, early, and _necessary but not sufficient_.
+- **Is the loop fun? — greybox-answerable.** Do the sealed/open state, the bilateral tunnel, the siege clock, and real PvP combat feel good moment-to-moment? Build a **greybox proof** before any art. Cheap, early, and _necessary but not sufficient_.
 - **Will the population open up rather than turtle? — only shows at scale.** The real make-or-break, and a greybox **cannot** settle it: open-vs-bunker is an emergent **equilibrium** of a live economy — it needs hundreds of players, market depth, and social pressure before it stabilises. Five testers say nothing about where 500 land. Treat it **assume-and-commit** ([[Systems Overview]]): reason from games that ran the experiment (Rust, EVE, Albion, Foxhole), model the [[economy|economic pressure]], and prove it only at a **scaled paid playtest**. The biggest risk is the one you can't cheaply prove.
 - **Minimum viable slice:** sealed/open states, a bilateral raid tunnel, loot worth taking, economic pressure against permanent sealing, real PvP combat. **Ground Gates only**; space Gates later.
 - **Design for success enabling expansion, not requiring it** — a working small version is a complete thing, not a broken large one. (Build-cost detail: [technical-challenges.md](technical-challenges.md).)
