@@ -21,10 +21,10 @@ Mechanic IDs in parentheses point to the concept page that owns the mechanic; **
   - **Unknown space** to probe/blind-dial, and **signatures to trace**. ([[coordinates|COORD-2]], [[the-wake|WAKE-1]])
   - **Coordinates as a valuable output** — tradeable, stealable intel (their "loot"). ([[coordinates|COORD-1]])
   - **Compounding discovery** — early scouting becomes a hit-list others pay for. ([[coordinates|COORD-1]])
-- **Trader / economist** [tentative]: hub routing, tolls, tithe; how much a trade run risks vs. a raid is **open** (tiered exposure removed, no replacement decided — see open-questions.md).
+- **Trader / economist** [tentative]: hub routing, tolls, tithe; how much a trade run risks vs. a raid is **open** (open-questions.md #23).
   - **Resource asymmetry** between worlds — a reason goods move. ([[world-types|REGION-1]])
   - **Routes and a market** — hub routing, direct dial, access lists. ([[hub-worlds|HUB-1]], [[economy|TRADE-1/ECON-2]])
-  - **Risk on cargo vs. the vault** — ⚠ open, was port-open protection. ([[gates|Gates]])
+  - **Risk on cargo vs. the vault** — ⚠ open. ([[gates|Gates]])
   - **Sinks** (tolls, tithe) that keep it flowing. ([[economy|ECON-3]])
 - **Conqueror / warlord** [tentative]: the ARK "take a whole base" fantasy — take **and hold**, not just loot-and-leave.
   - **Exposed bases/territory worth capturing** with real value, not husks. ([[holdings|HOLD-1]], [[raiding|LOOT-1]])

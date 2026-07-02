@@ -34,7 +34,7 @@ The cores that must work. Full detail lives in the concept pages — this is the
 Each is a way the exposure model could collapse; the design's counter is named.
 
 - **Turtle equilibrium** — if sealed = safe forever with no downside, everyone bunkers. _Counter:_ the [[economy|economy forces exposure]] (sealed stagnates), and sealing buys obscurity, not immunity ([[coordinates|the home is mortal]]).
-- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ **open** — the tiered-exposure fix (port-open risking cargo, not the vault) was removed; no replacement decided yet. Tracked in open-questions.md.
+- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ **open** — no mechanic currently stops this (open-questions.md #23).
 - **Offline-dodge** — instant-seal mid-raid kills raiding; can't-close traps you online. _Counter:_ presence + the committed [[raiding|siege clock]] (opt-in, finite, no offline jump).
 - **Zerg pile-on** — if opening exposes you to everyone, mass wins. _Counter:_ [[raiding|bilateral directional tunnels]] (contained duels).
 - **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill [[potential|frontier-visibility]] (a whale can't see a small player's frontier pushes to harvest their shares).
