@@ -80,7 +80,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 ### Why / rejected
 
 - **Network = mesh-with-a-heart**, chosen over pure hub-and-spoke — spokes would break the bilateral raid tunnel and the direct-dial-vs-hub economy.
-- **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the Rift cosmology; held for frontier worlds later).
+- **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the instability/misdial story; held for frontier worlds later).
 - **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Coalition as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with the players (corps and groups).
 
 ### Open
@@ -129,7 +129,7 @@ Canonical order of events. A date conflict with this section is a hard contradic
   - **Built and spread the Gate network** across the galaxy (why it's galaxy-spanning).
   - **Seeded living, breathable worlds** as arenas (why most Gate-worlds have life — and a living substrate avatars can be grown or sustained from).
   - **Set up selection to scale: planet-level first, then galaxy-wide** as the network wakes and connects. Early game = local competition; late game = the arenas wire together into galaxy-scale selection.
-- **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable and Rifts proliferate.
+- **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable and misdials proliferate.
 
 ### Why this candidate is strong
 

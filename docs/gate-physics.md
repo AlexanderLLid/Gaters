@@ -27,14 +27,15 @@ real requirement, packaged.
   This is the real realism ceiling, and the in-world reason cores are scarce and
   Gates **cannot be mass-produced**. [GROUNDED background.]
 
-## Stable vs unstable — Gate vs Rift
+## Stable vs unstable — propped vs un-propped
 
 An un-propped wormhole (the Schwarzschild / Einstein–Rosen bridge) is
 non-traversable: it **pinches off faster than light can cross it** (Fuller–Wheeler
-1962). [GROUNDED.] That _is_ a **Rift** — a throat with no exotic-matter support,
-collapsing on its light-crossing time. A Gate is the same throat held open by a
-core. So **Gate vs Rift = propped vs un-propped** — one physics, two states.
-(Rifts appearing _near_ Gates: [CONCEIT] — GR has no regional "thin spacetime".)
+1962). [GROUNDED.] An **un-propped throat** — no exotic-matter support — collapses
+on its light-crossing time; a Gate is the same throat held open by a core. One
+physics, two states. A **misdial** ([[systems#Gates|FRONTIER-2]]) is a lane that
+arced open without support and is already dying; **overdrive** collapses a driven
+throat back to the same un-propped state.
 
 ## Energy cost
 
@@ -66,7 +67,7 @@ building bigger hardware: the Builder ring is fixed, the aperture is a runtime v
 inequality** caps one ring (bigger throats force the walls Planck-thin → collapse), so
 fleet-wide apertures need multiple rings combined — a megastructure of **found** segments,
 never fabrication. [GROUNDED ceiling.] Overdrive one ring past the cap and it collapses to
-the un-propped state — a Rift. This is the physics under the driven aperture
+the un-propped state. This is the physics under the driven aperture
 ([[systems#Gates|Gates]]) and the gate-overload bomb.
 
 ## The dome — protecting transit, clearing builds
@@ -102,8 +103,8 @@ _count_ (a degree-N node sits on more cycles), never the loop _kind_ — the con
 lives on connections, not on mouths-per-planet.
 
 - **Parked lever:** chronology protection gives a physics-backed reason the network
-  polices its own topology — a dial that would close a critical loop fails, destabilises
-  (a Rift), or is refused by Builder safeties. Available to carry lane availability /
+  polices its own topology — a dial that would close a critical loop fails, collapses,
+  or is refused by Builder safeties. Available to carry lane availability /
   listings / misdial behaviour when the network layer is designed. [STRETCH when used as
   a mechanic — the pruning-as-designed-safety is Builder engineering on a real
   conjecture.]
@@ -115,7 +116,8 @@ lives on connections, not on mouths-per-planet.
 
 - A sealed-but-sub-traversable default state (GR throats are open or collapsed).
 - A life-support field that weakens with radius.
-- Rifts clustering near Gates.
+- Self-misdial — an active throat spontaneously arcing open a second, un-propped lane
+  (FRONTIER-2); real throats don't breed.
 - The gate dome: a protective field that shields transit and destroys only _built_ matter
   (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
 
