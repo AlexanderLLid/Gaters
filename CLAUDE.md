@@ -59,6 +59,10 @@ layer depends on the one above:
   independently.
 - **Additions must earn it** — the greybox ladder enforces this: retune upstream or answer
   with one line of fiction before minting a mechanic. When in doubt, stub and defer.
+- **Prefer game-state mechanics.** When exploring a mechanic, first ask whether ordinary
+  game data can carry it: ownership, logs, routes, claims, damage, cargo class, heat,
+  presence, deaths, scans, or server-authoritative events. A new hidden meter or bespoke
+  state needs a reason existing state cannot express it.
 - **Balance is orthogonal.** Set structural ratios (shapes, which value dominates); defer
   calibrated values to playtest. Numbers never live in prose — name the tunables, say the
   values land in data.

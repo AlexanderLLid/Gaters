@@ -33,6 +33,8 @@ Items carry stable IDs (**#N**); IDs are never reused, so gaps are normal.
 - **#21 Engine choice — Unity vs. Unreal (vs. Godot).** Undecided; full comparison and the tip-factors in `raw/engine-comparison.md`. Blockers to resolve first: art identity (#7), whether the agent pipeline holds up (needs a throwaway prototype), the base object-count budget. When chosen → record in [[systems#Technical challenges — and the Gate mechanics that ease them|Technical challenges]] with the why and what was rejected.
 - **#22 Multi-gate homes** — _parked._ Frontier/procedural worlds seat multiple Gates (FRONTIER-3); **homes stay single-gate**. Blocker: a second gate on claimed soil is an **overland backdoor** — an attacker dials the world's other gate and walks to the base under away reserve, reaching a home **without finding it** (breaks binary exposure and obscurity at once). Revisit only with a closer, e.g. claiming any gate claims the world's whole gate set, each extra gate an independent exposure surface/coordinate the owner can seal or open (`reach = exposure` as real estate — richer worlds cost more doors). ([[systems#Gates|Gates]], [[systems#Coordinates & obscurity|Coordinates]])
 
+- **#23 Gate heat / resonance hunting vs. avatar-shares** - _candidate simplification, not adopted._ Explore replacing the current avatar-share coordinate hunt (SHARE-1) with local Gate heat, coarse Gate event logs, heat samples, and confidence-ranked resonance leads. Goal: make PvP discovery a hunt through recent activity rather than a directory or a static coordinate leak. See [[#Hunt model - Gate heat, samples, leads|Hunt model]].
+
 ## Wanted later (decided, deferred)
 
 Things we've decided we want but are deferring. _Intended_, not undecided. When an item
@@ -60,6 +62,31 @@ into [[systems]] when one is adopted.
 ### Catalogued — not yet integrated [open]
 
 - **Dial-into-a-star** (route a tunnel through a sun; exotic super-weapon behind disabled safeties) · **Safeties as a tech resource** (research/disable Builder safety protocols for weapon-grade uses) · **Comms through a sealed Gate** (data/radio pass while the aperture is shut — diplomacy, ransom) · **Subspace relay / data network** (Gates carry data; control = information control) · **Recon probes** (scout before committing) · **Gate bridges** (chained call-forwarding — the cheap-distance basis for hubs) · **Harvested / relocatable Gates** (claim and move found orbital Gates) · **Reprogram-the-route** (a relay controller reroutes/traps traffic) · **Network self-update as a worm vector** · **Proximity priority conflicts** (a competing Gate suppresses a rival's) · **Time/exotic physics** (solar-flare time travel, black-hole dilation; the ~38-min cap already borrowed as the siege ceiling) · **EVE economy/access layer** (access lists, tolls, mass×distance fuel, a hard mass cap forcing big fleets onto Supergates, plantable beacons, area jammers, killable Gates).
+
+### Hunt model - Gate heat, samples, leads
+
+_Candidate simplification, not adopted. If taken, fold into [[systems#Coordinates & obscurity|Coordinates & Obscurity]] and retire the duplicate machinery listed below._
+
+Core read: **Gate use leaves heat; heat can be sampled; samples narrow to leads; enough leads can become raid access.** A player is not unsafe because they are offline. They are unsafe because recent, valuable, repeated, violent, or large-scale Gate use left scannable evidence.
+
+- **Gate heat:** meaningful Gate events add residual throat stress: open duration, aperture size, transferred mass, repeated route use, claim activity, combat near a Gate, structure damage, and extraction. No special "raid tunnel" exists; a raid is just a loud pattern of normal Gate events.
+- **Gate event ledger:** the server records coarse Gate events that would likely exist anyway for persistence, debugging, anti-cheat, and world state. Gameplay reads aggregates ("recent heavy transfer", "combat near this Gate", "same source signature"), not a private debug transcript.
+- **Builder diagnostic lore:** the Builders did not make PvP radar. Gates need maintenance diagnostics for phase drift, instability, unsafe dials, cooldown, and misdial risk. Humans repurpose those diagnostics as hunting tools.
+- **Heat samples:** players collect local evidence from Gate mouths, cleared PvE sites, extraction points, combat scars, corpses, camps, probes, wrecks, outposts, and stolen logs.
+- **Resonance matching:** a sample is a damaged partial fingerprint. Scanners filter huge search spaces by recent heat, route/distance band, and phase match, then return a few confidence-ranked leads instead of a directory of possible Gates.
+- **Lead escalation:** one sample gives weak leads; two matching samples point to a likely route or staging Gate; several samples plus cost can produce a route key / raid access.
+- **Safety rule:** clues reveal activity first, identity second, home last. PvE exploration exposes the run, site, route, or staging point before it exposes the true home.
+- **Endgame rule:** large houses create more heat through repeated routes, claims, logistics, and public infrastructure, so they become naturally easier to hunt without a separate "big clan is public" rule.
+
+If adopted, this likely makes these parts unnecessary or smaller:
+
+- **Avatar-share findability as the primary loop** (SHARE-1): fielded avatars would not need to shed pieces of the home coordinate by default.
+- **Geohash threshold math:** hunting would narrow by samples and confidence leads, not by collecting _k_ static coordinate shares.
+- **Re-key cadence as the master offline-safety knob:** heat decay, sample lifetime, stolen-log lifetime, scan confidence, and raid-access cost become the tuning surface instead.
+- **Current-epoch share anti-decoy rules:** no need for every avatar to carry a current home share just to prevent clean decoys.
+- **Static coordinate leak recovery:** the Reddit problem is reduced because raid access comes from in-game samples, route keys, and controlled logs rather than a copyable text address.
+- **Separate trade exposure mode:** trade can be made quieter or louder by ordinary heat inputs (mass, value class, repetition, public hub use) instead of a special port-open state.
+- **Some bespoke "active Gate signature" language:** active/hot Gates are found through the same heat/sample system rather than a second trace mechanic.
 
 ### Implied objects [tentative, deferred]
 
