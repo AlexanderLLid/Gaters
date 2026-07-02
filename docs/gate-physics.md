@@ -1,12 +1,3 @@
----
-type: system
-status: draft
-tags: []
-sources: []
-aliases: [Gate Physics]
-updated: 2026-06-27
----
-
 # Gate Physics
 
 The one area we go deep. Gating must bind to real physics, so every claim is
@@ -16,7 +7,7 @@ never dress it as real). Add new physics claims here and tag them.
 
 ## Basis — a traversable wormhole
 
-A [[Gates|Gate]] is a **traversable wormhole**: a Morris–Thorne throat joining two
+A [[systems#Gates|Gate]] is a **traversable wormhole**: a Morris–Thorne throat joining two
 distant mouths, with no horizon, finite tidal forces, and two-way passage.
 [STRETCH — the general-relativity solution exists; no known matter realizes it.]
 Lineage: Einstein–Rosen bridge (1935) → Morris–Thorne (1988).
@@ -36,14 +27,15 @@ real requirement, packaged.
   This is the real realism ceiling, and the in-world reason cores are scarce and
   Gates **cannot be mass-produced**. [GROUNDED background.]
 
-## Stable vs unstable — Gate vs Rift
+## Stable vs unstable — propped vs un-propped
 
 An un-propped wormhole (the Schwarzschild / Einstein–Rosen bridge) is
 non-traversable: it **pinches off faster than light can cross it** (Fuller–Wheeler
-1962). [GROUNDED.] That _is_ a **Rift** — a throat with no exotic-matter support,
-collapsing on its light-crossing time. A Gate is the same throat held open by a
-core. So **Gate vs Rift = propped vs un-propped** — one physics, two states.
-(Rifts appearing _near_ Gates: [CONCEIT] — GR has no regional "thin spacetime".)
+1962). [GROUNDED.] An **un-propped throat** — no exotic-matter support — collapses
+on its light-crossing time; a Gate is the same throat held open by a core. One
+physics, two states. A **misdial** ([[systems#Gates|FRONTIER-2]]) is a lane that
+arced open without support and is already dying; **overdrive** collapses a driven
+throat back to the same un-propped state.
 
 ## Energy cost
 
@@ -75,7 +67,8 @@ building bigger hardware: the Builder ring is fixed, the aperture is a runtime v
 inequality** caps one ring (bigger throats force the walls Planck-thin → collapse), so
 fleet-wide apertures need multiple rings combined — a megastructure of **found** segments,
 never fabrication. [GROUNDED ceiling.] Overdrive one ring past the cap and it collapses to
-the un-propped state — a Rift. This is the physics under the driven aperture ([[gates|Gates]]) and the gate-overload bomb.
+the un-propped state. This is the physics under the driven aperture
+([[systems#Gates|Gates]]) and the gate-overload bomb.
 
 ## The dome — protecting transit, clearing builds
 
@@ -88,29 +81,52 @@ sized to the throat, that makes transit survivable and whose radius scales with 
 power. [CONCEIT — projected force fields aren't real; same conceit family as the mask
 field.] The dome **destroys player-built structures** in its radius but spares natural
 terrain — it senses _construction, not material_. [CONCEIT — a Builder discriminator; no
-physics tells manufacture from nature.] So a Gate can never be walled in (the [[combat|dome]]); the
-tidal lethality is the GROUNDED reason something has to clear, the dome is the engineered
-how.
+physics tells manufacture from nature.] So a Gate can never be walled in (the
+[[systems#Combat|dome]]); the tidal lethality is the GROUNDED reason something has to
+clear, the dome is the engineered how.
+
+## Multiple Gates & the network
+
+Nothing in GR forbids many mouths in one region: each ring props its own independent
+throat ([[systems#Gates|GATE-2]]), and mouths are localized objects — a multi-gate planet
+(FRONTIER-3) is physics-clean. [GROUNDED] Two mouths at mutual rest in the same
+gravitational potential accumulate **no clock desync between themselves**, so a
+multi-gate planet is internally time-consistent; desync needs different histories
+(motion, different potentials — the same physics as §Time). [GROUNDED]
+
+The real hazard is the **network's cycles, not its nodes**: a chain of wormholes, each
+individually safe, can collectively close a timelike curve (**Visser's Roman ring**,
+1997). [GROUNDED] The standard resolution is **Hawking's chronology protection
+conjecture** (1992): quantum back-reaction destroys a throat at the brink of forming a
+closed loop. [GROUNDED conjecture.] A multi-gate planet raises the network's loop
+_count_ (a degree-N node sits on more cycles), never the loop _kind_ — the constraint
+lives on connections, not on mouths-per-planet.
+
+- **Parked lever:** chronology protection gives a physics-backed reason the network
+  polices its own topology — a dial that would close a critical loop fails, collapses,
+  or is refused by Builder safeties. Available to carry lane availability /
+  listings / misdial behaviour when the network layer is designed. [STRETCH when used as
+  a mechanic — the pruning-as-designed-safety is Builder engineering on a real
+  conjecture.]
+- Gate-vs-gate **proximity interference** (one Gate suppressing a neighbour, minimum
+  spacing) has no physical basis — Ford–Roman constraints are per-throat. If adopted,
+  tag it [CONCEIT].
 
 ## Pure conceits (do not claim physics)
 
 - A sealed-but-sub-traversable default state (GR throats are open or collapsed).
 - A life-support field that weakens with radius.
-- Rifts clustering near Gates.
+- Self-misdial — an active throat spontaneously arcing open a second, un-propped lane
+  (FRONTIER-2); real throats don't breed.
 - The gate dome: a protective field that shields transit and destroys only _built_ matter
   (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
 
-## Code
-
-Placeholder until the Unity project exists.
-
-## Open questions
+## Open
 
 - Pick one self-consistent story for "sealed by default" that doesn't contradict
   collapse physics (a mechanical shutter? a throat kept collapsed and re-kindled?).
 - Decide whether a power core **is** the exotic matter, or powers a device that
   confines it.
-- Tracked with the rest in open-questions.md.
 
 ## References
 
@@ -118,3 +134,4 @@ Placeholder until the Unity project exists.
 - Morris, Thorne & Yurtsever, _Phys. Rev. Lett._ **61**, 1446 (1988) — wormhole time desync.
 - Einstein & Rosen, _Phys. Rev._ **48**, 73 (1935); Fuller & Wheeler, _Phys. Rev._ **128**, 919 (1962) — bridge collapse.
 - Ford & Roman, _Phys. Rev. D_ **53**, 5496 (1996) — quantum inequalities. Visser, _Lorentzian Wormholes_ (1995).
+- Hawking, _Phys. Rev. D_ **46**, 603 (1992) — chronology protection conjecture. Visser, _Phys. Rev. D_ **55**, 5212 (1997) — the Roman ring (wormhole networks vs. chronology).

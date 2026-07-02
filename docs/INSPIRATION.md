@@ -29,7 +29,7 @@ enters the lore or systems wikis.
 ## Visual direction (deferred)
 
 Art is **deferred until after greybox validation** [current call]; final identity is open
-(open-questions #6). Captured here so it isn't re-litigated.
+(questions.md #7). Captured here so it isn't re-litigated.
 
 - **Touchstones:** Minecraft, Valheim, No Man's Sky. **NMS is the aspirational visual
   target**; the Gate structure deliberately sidesteps NMS's hardest engineering problem
@@ -45,51 +45,48 @@ Art is **deferred until after greybox validation** [current call]; final identit
 ## Feel
 
 - **Accidental discovery is core.** The best moments are unscripted — stumbling
-  through a Rift into something you weren't meant to find, an emergent interaction
+  through a misdial into something you weren't meant to find, an emergent interaction
   no quest pointed you at, a mechanic that combines in ways the designers didn't
   spell out. Reward curiosity and experimentation over following a marker. Design
   for surprise, not a guided tour.
 - **Endgame = EVE × Solo Leveling × ARK.** A player-driven world of blocs, territory,
   and real loss (EVE) wearing the underdog punch-up power fantasy (Solo Leveling),
   built on the tame-and-build survival loop (ARK): you raid _up_, the strong are the
-  prize, and nobody babysits a base — _except_ a huge tribe, whose reach keeps it
+  prize, and nobody babysits a base — _except_ a huge house, whose reach keeps it
   permanently exposed. This is the "no defender tax" thesis taken to its endgame, not
-  a new rule (see `pillars.md`, [[World Overview]]).
+  a new rule (see [[systems]], [[world]]).
 
 ## Wants — no home yet
 
-Things I want in, but don't know how they fit the lore or systems yet.
+Things I want in, but don't know how they fit the lore or systems yet. All of it is
+**Gate technology** — every variant below is one knob turned on the existing model
+(dial-out / misdial, the away reserve, Potential visibility, listings, extraction).
+Pure inspo, nothing decided.
 
-- **Red Rifts (Solo Leveling).** A Rift can "go red" — it locks, and you can't
-  leave until some condition/quest inside is cleared. A high-stakes mode where
-  entering means committing. No idea how this squares with our Rift model yet.
-
-### Rift variants — idea bank
-
-Each is one knob turned on the existing Rift model (countdown, sealed/open,
-exposure-gated visibility, extraction). Pure inspo, nothing decided.
-
-- **Double / nested Rift** — a second rift inside the first; going deeper strands
-  you another layer from home. A natural delivery vehicle for the red-rift lock.
-- **Beacon Rift** — opening it lights you up for a loot premium. A 10-min
-  countdown starts and 3 tribes near your Potential get an opt-in prompt to "lock
-  on" — accept and they get your coordinates and a window to hit you. Consensual
-  PvP both ways, self-balanced by Potential, a defend-the-clock event with a known
-  threat count. Open: do the 3 see each other; what do attackers risk to lock in;
-  rewards for surviving vs. breaching.
-- **Collapsing-fast Rift** — abnormally short countdown; smash-and-grab, no clean
-  extract.
-- **No-recall Rift** — consciousness-link jammed inside; extraction is the only
-  way out.
-- **Inverted Rift** — visible only to players _above_ the opener's Potential; the
-  underdog baits the strong.
-- **Blind Rift** — rank/contents not telegraphed; gamble on what's behind it.
-- **Coordinate Rift** — guaranteed coordinate-shares inside; a Coalition-seeded
+- **Gate sensors (the enabler).** Tech that senses _through_ a throat before you
+  commit — world rank, hostiles, dead-house tier, loot signature. Blind dialing is
+  the default; sensor tiers turn gambles into informed raids. This one knob
+  (telegraphed vs. blind) makes most variants below fair, and higher-tier PvE
+  worlds readable. (cf. **Recon probes** in the option bank, [[questions]].)
+- **Locked lane (Solo Leveling's red gate).** A lane that jams recall and re-dial
+  until a condition inside is cleared — entering means committing. High-stakes
+  opt-in mode built on the away reserve.
+- **Beacon dial.** Deliberately overdrive/light your Gate for a loot premium: K
+  houses near your Potential get your coordinate and a bounded window. Consensual
+  PvP both ways, a defend-the-clock event. (Half-lives in FRONTIER-3 events
+  already.)
+- **Nested misdial.** The far world's gate misdials deeper mid-run — another layer
+  from home, stacking away-reserve pressure. Natural delivery vehicle for the lock.
+- **Fast-collapse lane** — abnormally short window; smash-and-grab, no clean extract.
+- **Blind lane** — no sensor reading possible; rank/contents a pure gamble.
+- **Inverted visibility** — a push visible only to players _above_ the opener's
+  Potential; the underdog baits the strong.
+- **Share-cache world** — guaranteed coordinate-shares inside; a Coalition-seeded
   home-hunt event.
-- **Recurring Rift** — same world each time it opens; becomes known and contested,
-  a soft persistent zone without the hosting cost.
-- **Anchored Rift** — doesn't collapse on schedule; a Rift mid-tame, precursor to
-  a new Gate.
+- **Recurring world** — the same world re-listed on a cycle; becomes known and
+  contested, a soft persistent zone without the hosting cost.
+- **Anchored lane** — a lane that refuses to collapse; the precursor to claiming a
+  new Gate (ties to the imprint pipeline).
 
 ## Counter — overused, don't ship
 
@@ -119,7 +116,7 @@ if reskinned.
 Take the patterns above, never the proper nouns.
 
 No named characters, coined terms, items, factions, or art from these works
-enters canon. Borrow the skeleton, invent the flesh — Gaters travel through
-**Rifts**, not Stargates; grow strong by our own named means, not "the System."
+enters canon. Borrow the skeleton, invent the flesh — Gaters dial
+**Gates** of our own expression, not Stargates; grow strong by our own named means, not "the System."
 If a name or phrase would make someone say "that's straight from X," it doesn't
 ship.

@@ -2,7 +2,7 @@
 
 Decision-support, **not a decision**. Captures the differences that matter for Gaters
 so the engine call can be made later. No verdict here. When chosen → write an ADR with
-the why and what was rejected (see [[open-questions]]). Sources at the bottom; figures
+the why and what was rejected (see questions.md #21). Sources at the bottom; figures
 are mid-2026.
 
 Third option (Godot) listed for completeness but not a serious contender for a 3D
@@ -42,7 +42,7 @@ These are where the generic comparison meets _this_ game.
   player-placed pieces, not the engine (Satisfactory's heavy frames are megafactories, not
   Lumen). And in _raids_ the defender's build size sets the attacker's load. This is the
   load-bearing optimization concern whichever engine wins.
-- **Art identity is still open** (NMS-lush vs. low-poly-stylized — see open-questions #6/#8/#17).
+- **Art identity is still open** (NMS-lush vs. low-poly-stylized — see questions.md #7/#6).
   Unreal's fidelity edge only pays off for the lush path; for stylized/low-poly it's neutral
   and Unity's iteration speed counts for more.
 - **EU / Copenhagen legal (engine-independent, but affects the asset pipeline).** EU AI Act
@@ -88,7 +88,7 @@ genre":
   identity · value built-in replication for the raid netcode.
 - **Toward Unity:** want fastest iteration / gentlest ramp · stylized-low-poly art (fidelity
   edge wasted) · prefer C# · lean on the cheapest/largest asset store.
-- **Still unknown / blockers to resolve first:** art identity (open-questions #6/#8/#17),
+- **Still unknown / blockers to resolve first:** art identity (questions.md #7/#6),
   whether the agent pipeline actually holds up (needs a throwaway prototype), and the base
   object-count budget.
 
