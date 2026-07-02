@@ -16,7 +16,7 @@ are Gate states; nesting by object collapses the list and hides the distinct fai
    - Travel, mask-energy source, exposure surface, economy sink.
    - Finite and unbuildable: found / claimed / repaired / relocated / tamed.
 2. **Binary exposure** — sealed / open.
-   - Safe by default; risk is opt-in. How trade risk differs from raid risk is **open** ([[questions]] #2).
+   - Safe by default; risk is opt-in. Trade risks cargo and avatar, never the vault — the travel/raid dial split (GATE-3).
 3. **Presence + siege timer** — the babysitting fix.
    - Open only while online and choosing it.
    - Raid commits → Gate locked open for a bounded fight.
@@ -55,7 +55,7 @@ Each is a way the exposure model could collapse; the design's counter is named. 
 every proposal against these.
 
 - **Turtle equilibrium** — if sealed = safe forever with no downside, everyone bunkers. _Counter:_ the economy forces exposure (sealed stagnates), and sealing buys obscurity, not immunity (the home is mortal).
-- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ **open** — no mechanic currently stops this ([[questions]] #2).
+- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ travel dials spin down behind you and a sealed home admits only its claimant (GATE-3/4) — a trade run stakes cargo + avatar; the vault is reachable only via shares.
 - **Offline-dodge** — instant-seal mid-raid kills raiding; can't-close traps you online. _Counter:_ presence + the committed siege clock (opt-in, finite, no offline jump).
 - **Zerg pile-on** — if opening exposes you to everyone, mass wins. _Counter:_ bilateral directional tunnels (contained duels).
 - **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill frontier-visibility (a whale can't see a small player's frontier pushes to harvest their shares).
@@ -72,7 +72,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - Owning a planet means **owning its Gate** — the reason bases are planets, not an arbitrary rule.
 - Gate finiteness (found, never manufactured) is the root of all conflict; opening your Gate is how you reach the world _and_ how you become reachable.
 - **Woke sealed; unmanufacturable.** The network came online with every aperture shut (safe-by-default), and Gates can only be **found, claimed, repaired** — never built (GATE-1).
-- **Travel is one-way and directional.** The _dialing_ side opens the tunnel and pays the power, so a raid is inherently the attacker pushing through a tunnel they opened.
+- **Travel is directional; tunnels don't linger (GATE-3).** The _dialing_ side opens the tunnel and pays the power; a travel dial spins down once you've crossed, and only a raid locks a tunnel open (SIEGE-1) — so a raid is inherently the attacker pushing through a tunnel they opened. **Any gate dials out for whoever stands at it and pays the core** — getting home is a new dial, so your ride is the core you carry.
 - **One ring props one live tunnel at a time (GATE-2).** A throat joins exactly two mouths ([[gate-physics|Gate Physics]]), so a Gate never holds multiple simultaneous connections — multi-party arrivals at one world are **sequential dials**, never held tunnels. Multi-tunnel exists only as multiple rings (Supergates, deferred).
 - **Fire and momentum pass through** a live Gate — breaching is a firefight at the aperture, not a loading screen (see [[gate-physics|Gate Physics]], [[#Combat|Combat]]).
 - **Dialing needs the target's coordinates** — a planet whose coordinate nobody has assembled is effectively hidden (see [[#Coordinates & obscurity|Coordinates & Obscurity]]).
@@ -84,10 +84,20 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired, never new-built.
 - **Overdrive** one ring past its ceiling and the throat destabilises into an uncontrolled, self-collapsing lane (the gate-overload bomb).
 
-### Gate variation — the Builder "config" [tentative — rough idea]
+### Gate variation — traits on a Builder "config" (VAR-1) [current call]
 
-- **Loose idea, needs tuning — nothing depends on it.** Gates differ (field size, stability, what they dial, what grows there) maybe because each carries a small Builder-seeded **config** the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out imperfectly/variously tuned. That imperfection is the variety.
-- Just an explainer for _why gates aren't all the same_. It doesn't touch dialing/findability (still coordinates), it's **not** a selection system (explored and rejected — [[questions]] #20), and the _why_ behind the probes stays parked. Shape it properly if/when it matters.
+- Each gate carries a small Builder-seeded **config** the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out variously tuned. That imperfection is the variety.
+- Variation lives on a **few trait axes**, rolled per gate: **memory** (logs crossings sharp ↔ blank — see GATE-4), **senses** (pattern-reading keen ↔ dim), **field** (wide ↔ narrow), **stability** (steady ↔ misdial-prone). No authored type catalogue — players name the combos.
+- **Safety never varies:** every gate wakes sealed, fails closed, projects the dome, and no gate records coordinates. Traits touch senses and tuning, never the invariants.
+- It doesn't touch dialing/findability (still coordinates), it's **not** a selection system (explored and rejected — [[questions]] #20), and the _why_ behind the probes stays parked.
+
+### What a gate senses and remembers (GATE-4) [current call]
+
+- **The gate reads whatever crosses it** — the network is a pattern-reading machine (its observable function; see [[world#Behind the curtain — the Builders' truth|behind the curtain]]). A crossing is sensed as **pattern + mass + moment**, never a coordinate: the network routes addresses but never discloses them, so no gate's memory can leak a home — obscurity holds by construction.
+- **Dialing reveals nothing; crossing does.** Identity is read at the throat, not at the handshake — an incoming dial stays anonymous until someone comes through (the no-caller-ID rule, USE-1).
+- **Memory is a trait, not a constant** (VAR-1): some gates log crossings sharp and deep, some are near-blind, some remember nothing. A blank gate is a smuggler's route; a sharp one is a customs post.
+- **Humans read; they never write.** A gate's memory can't be edited or disabled — only read at its console (public at unowned/listed gates, private at yours), and your home gate's memory is a **raidable asset** beside the coordinate DB. All identity above it is **human ledgers over gate-read patterns**: the Coalition maps patterns to charters; peers get recognition — "the same being that crossed yesterday" — never names ([[questions]] #8). Fooling the sensor means damping Builder tech: rare, scavenged, imperfect.
+- **A sealed gate admits only its claimant.** The one crossing a sealed gate accepts is its bonded owner returning home — sealed-to-the-world, open-to-you (the pattern-keyed refinement of PRES-1; a [[gate-physics|conceit]]).
 
 ### Presence (PRES-1)
 
@@ -97,8 +107,8 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 ### Reaching the frontier — dial out (FRONTIER-1)
 
-- **Two things you can dial:** a **claimed coordinate you've assembled** (a raid — needs shares), or **out into the unclaimed frontier** (expansion). You can't pick _which_ frontier world — dialing an unclaimed address lands you at a **random** one; **claimed homes are off the pool**, so no one is ever dropped onto occupied soil (preserves obscurity).
-- **Frontier travel is one-way** — you can't return the way you came; you arrive, and the away-reserve clock is already ticking. Push your luck against it for loot, or **claim the far Gate** before it runs out.
+- **Three things you can dial:** a **claimed coordinate you've assembled** (someone else's — a raid, needs shares; your own — the ride home), a **listed** world (hubs, the Safe Core — the broker's public lanes), or **out into the unclaimed frontier** (expansion). You can't pick _which_ frontier world — dialing an unclaimed address lands you at a **random** one; **claimed homes are off the pool**, so no one is ever dropped onto occupied soil (preserves obscurity).
+- **A frontier run is pay-to-extract.** You arrive with the away-reserve clock ticking and your ride home in your pack: an exit dial from the world's gate burns a carried core (GATE-3, ECON-2), and whoever downs you loots your ticket with the rest. Push your luck for loot and dial out in time, **claim the far Gate** to stay, or recall — the emergency exit (keep yourself, lose the run).
 - **The frontier world _is_ the contact surface** — there is no second travel phenomenon. It runs on three planet runtime-states: a **database row** when empty, a **cheap solo PvE tick** when you're there alone (build/loot in peace), a **server-authoritative contested instance** when others arrive (PvPvE). Persistent as a row, ephemeral as an instance → a bigger frontier costs no more to host until it's actually fought over.
 - **Who can reach you there** scales with Potential and findability — small/quiet pushes draw few rivals; big ones are visible. Same obscurity economy as home, no separate rule.
 - **Claiming the far Gate** (imprint) converts a frontier world into your soil and a forward respawn — this is how **new Gates** enter your holdings. Finite but slowly replenishing; pacing open ([[questions]] #9).
@@ -116,6 +126,8 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - **Why ring-fixed, aperture-driven:** it keeps the canon rule "Gates are found, never fabricated" intact while still giving a tier ladder — you drive the same found ring harder, you never build a bigger one. Exceeding one ring means reassembling found segments, so the rule holds.
 - **Rejected — "Builders made rings in many fixed sizes; tier up by claiming a bigger ring":** makes the aperture hardware-fixed, conflicting with the driven aperture and with the dome flexing as the throat widens.
+- **Why pay-to-extract (GATE-3 — any gate dials for whoever pays):** one dialing rule everywhere (home, hub, frontier — no bonded-operator special case), trade returns work without leaving the home open, and the tension moves to the carried ticket (lootable) and the exit gates anyone can camp. **Rejected — one-way frontier travel** (return only by claiming or recall): more claim-or-die drama, but it collapses the trade return trip and needs a second rule for who may operate a gate.
+- **Why traits, not a type catalogue (VAR-1):** a handful of axes rolled per gate gives the map texture (smuggler routes, customs posts) with nothing to author or balance per class; players name the combos. **Rejected — an authored catalogue of fixed gate types:** a taxonomy to content-fill, and hardware-fixed classes were already rejected once (the tier ladder).
 - **Why one cosmology (FRONTIER-1):** the uncontrolled lane is the same phenomenon as the Gate, just un-propped ([[gate-physics|Gate Physics]]) — so there is no second travel system. Travel out, the push-your-luck timer, the contact surface, and the new-Gate pipeline are all the **Gate dialing the frontier**; the contest reuses the planet runtime-states instead of a bespoke instance type. One fewer system to balance, and the away-reserve replaces a separate collapse clock.
 - **Rejected — "Rifts", a standalone uncontrolled-portal concept with its own extraction system** (Sealed/Open instances, Host/Scavenger, corpse-share drops as its own layer): a second cosmology, hand-balanced and duplicative. The contested frontier world delivers the same extraction loop on instancing we already have; the underdog-crashes-a-bigger-op fantasy stays **emergent** (a weak player can still walk into a contested world). Everything the concept did is now the Gate: uncontrolled openings are **misdials**, collapse timing is the un-propped throat's own physics.
 
@@ -164,7 +176,7 @@ aggressor thrill without the defender tax. [decided core fantasy]
 ### Raid value floor (anti-husk, LOOT-1)
 
 - A breached target must be worth the trip. The floor is a **server-minted, tier-scaled bounty** (not a skim of the owner's stockpile), sized so yield ≥ the core cost to dial that tier — the inequality that kills dry holes. Minted from the visible Gate tier, so there's nothing to "spend before it's stolen."
-- Also lootable: the coordinate DB (the map) on a breach, and a **coordinate-share** from every killed avatar.
+- Also lootable: the coordinate DB (the map) and the home gate's memory (GATE-4 — the owner's routes and habits) on a breach, and a **coordinate-share** from every killed avatar.
 
 ### Offline raiding
 
@@ -220,7 +232,7 @@ Neutral, **lawless commerce crossroads** — trade routing nodes you can capture
 - Cheap-distance routing to reach distant partners affordably (vs. an expensive direct dial), and a capturable territorial prize for the conqueror — without being the home for open PvP (that's contested frontier worlds).
 - A hub has **no woken-sealed Gate of its own**, so you **cannot turtle** there — it's always live and exposed. But the **designed PvP contest lives on contested frontier worlds**, not here; PvP at a hub is incidental (over cargo), not an arena.
 - **Routing:** distant trade hops through hubs for far less power than one long jump (the in-world basis for cheap distance). Direct-dial is the private, expensive alternative.
-- **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or gate-locked), and gain **intel** on who moves through. Capture-to-tax is the conqueror's take-and-hold prize — a **registry charter flip** (HOLD-1), defended by presence.
+- **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or barred — control of the consoles and the ground, never the gate itself), and gain **intel** on who moves through (first read of the hub gate's memory, GATE-4). Capture-to-tax is the conqueror's take-and-hold prize — a **registry charter flip** (HOLD-1), defended by presence.
 - **Relation to the other surfaces:** Safe Core = policed safe commerce; **hubs** = lawless commerce; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs for commerce.
 
 - Tunables: toll rates, routing-cost reduction, capture rules.
@@ -418,7 +430,7 @@ _Stub — drivers/sinks framed, numbers open._
 - **Stagnation pressure** (ECON-1) — sealed bases don't grow; growth needs imports — the engine that makes players open up. A peaceful homesteader still progresses to a **soft ceiling**, then plateaus (PROG-2) — a ceiling, not a leak, never an upkeep tax.
 - **Power cores** — scarce, scavenged Gate fuel; the primary consumable behind activation.
 - **Activation cost** (ECON-2) = `gate tier × distance band × tier-gap multiplier`. Bands: local / regional / cross-map ≈ power cell / partial core / full core.
-- **Trade** (TRADE-1) — routed cheaply through hubs (toll + exposure) or dialed direct (private, expensive). Driven by **biome resource asymmetry** (REGION-1). ⚠ How much a trade run risks vs. a raid is open ([[questions]] #2).
+- **Trade** (TRADE-1) — routed cheaply through hubs (toll + exposure: listed gates remember traffic, GATE-4) or dialed direct (private, expensive); blank-memory gates are the smugglers' premium routes. Driven by **biome resource asymmetry** (REGION-1). A trade run stakes **cargo + avatar, never the vault** — the vault is reachable only via shares.
 - **Sinks** (ECON-3) — hub tolls + the Coalition tithe.
 - Open: concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
 
@@ -461,10 +473,10 @@ Mechanic IDs point to the section that owns the mechanic; **⚠ = gap** (no mech
   - **Unknown space** to probe/blind-dial, and **signatures to trace**. (COORD-2)
   - **Coordinates as a valuable output** — tradeable, stealable intel (their "loot"). (COORD-1)
   - **Compounding discovery** — early scouting becomes a hit-list others pay for. (COORD-1)
-- **Trader / economist** [tentative]: hub routing, tolls, tithe; how much a trade run risks vs. a raid is **open** ([[questions]] #2).
+- **Trader / economist** [tentative]: hub routing, tolls, tithe; a run stakes cargo + avatar, never the vault (TRADE-1).
   - **Resource asymmetry** between worlds — a reason goods move. (REGION-1)
   - **Routes and a market** — hub routing, direct dial, access lists. (HUB-1, TRADE-1/ECON-2)
-  - **Risk on cargo vs. the vault** — ⚠ open.
+  - **Risk on cargo, never the vault** — route choice is the risk knob: remembered hub lanes cheap and exposed, blank gates and direct dials private and dear. (GATE-3/4, TRADE-1)
   - **Sinks** (tolls, tithe) that keep it flowing. (ECON-3)
 - **Conqueror / warlord** [tentative]: the ARK "take a whole base" fantasy — take **and hold**, not just loot-and-leave.
   - **Exposed bases/territory worth capturing** with real value, not husks. (HOLD-1, LOOT-1)

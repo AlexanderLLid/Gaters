@@ -53,7 +53,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 - Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Coalition's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
 - When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and houses alike ([[systems#Potential|HOUSE-1]]). It does not pick winners; it lists access and lets them compete.
-- It **records charter standing** — a ledger entry, _not_ physical immunity: a found home is still raidable.
+- It **records charter standing** — a ledger entry, _not_ physical immunity: a found home is still raidable. Charters key to the gate-read **pattern** sampled at chartering ([[systems#Gates|GATE-4]]) — the Coalition's ledger sits on top of what gates sense; it owns no gate tech of its own.
 - It brokers **nothing past the frontier edge** — no listings, no standing, no cut; past that line "reach equals exposure" is the only law.
 
 ### Gate availability (the patch channel)

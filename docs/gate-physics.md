@@ -120,6 +120,10 @@ lives on connections, not on mouths-per-planet.
   (FRONTIER-2); real throats don't breed.
 - The gate dome: a protective field that shields transit and destroys only _built_ matter
   (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
+- Pattern-reading and memory at the throat (GATE-4): a sensor that reads what crosses and
+  a log humans can read but never write or disable; and the sealed state discriminating
+  its claimant (the owner crossing home through an otherwise-shut gate). Same conceit
+  family as sealed-by-default.
 
 ## Open
 
