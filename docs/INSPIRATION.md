@@ -56,6 +56,38 @@ Art is **deferred until after greybox validation** [current call]; final identit
   permanently exposed. This is the "no defender tax" thesis taken to its endgame, not
   a new rule (see [[systems]], [[world]]).
 
+## Wants — no home yet
+
+Things I want in, but don't know how they fit the lore or systems yet. All of it is
+**Gate technology** — every variant below is one knob turned on the existing model
+(dial-out / misdial, the away reserve, Potential visibility, listings, extraction).
+Pure inspo, nothing decided.
+
+- **Gate sensors (the enabler).** Tech that senses _through_ a throat before you
+  commit — world rank, hostiles, dead-house tier, loot signature. Blind dialing is
+  the default; sensor tiers turn gambles into informed raids. This one knob
+  (telegraphed vs. blind) makes most variants below fair, and higher-tier PvE
+  worlds readable. (cf. **Recon probes** in the option bank, [[questions]].)
+- **Locked lane (Solo Leveling's red gate).** A lane that jams recall and re-dial
+  until a condition inside is cleared — entering means committing. High-stakes
+  opt-in mode built on the away reserve.
+- **Beacon dial.** Deliberately overdrive/light your Gate for a loot premium: K
+  houses near your Potential get your coordinate and a bounded window. Consensual
+  PvP both ways, a defend-the-clock event. (Half-lives in FRONTIER-3 events
+  already.)
+- **Nested misdial.** The far world's gate misdials deeper mid-run — another layer
+  from home, stacking away-reserve pressure. Natural delivery vehicle for the lock.
+- **Fast-collapse lane** — abnormally short window; smash-and-grab, no clean extract.
+- **Blind lane** — no sensor reading possible; rank/contents a pure gamble.
+- **Inverted visibility** — a push visible only to players _above_ the opener's
+  Potential; the underdog baits the strong.
+- **Share-cache world** — guaranteed coordinate-shares inside; a Coalition-seeded
+  home-hunt event.
+- **Recurring world** — the same world re-listed on a cycle; becomes known and
+  contested, a soft persistent zone without the hosting cost.
+- **Anchored lane** — a lane that refuses to collapse; the precursor to claiming a
+  new Gate (ties to the imprint pipeline).
+
 ## Counter — overused, don't ship
 
 Tropes that read as derivative the moment a player recognizes them. Avoid even
