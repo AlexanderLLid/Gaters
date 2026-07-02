@@ -84,6 +84,33 @@ physics tells manufacture from nature.] So a Gate can never be walled in (the
 [[systems#Combat|dome]]); the tidal lethality is the GROUNDED reason something has to
 clear, the dome is the engineered how.
 
+## Multiple Gates & the network
+
+Nothing in GR forbids many mouths in one region: each ring props its own independent
+throat ([[systems#Gates|GATE-2]]), and mouths are localized objects — a multi-gate planet
+(FRONTIER-3) is physics-clean. [GROUNDED] Two mouths at mutual rest in the same
+gravitational potential accumulate **no clock desync between themselves**, so a
+multi-gate planet is internally time-consistent; desync needs different histories
+(motion, different potentials — the same physics as §Time). [GROUNDED]
+
+The real hazard is the **network's cycles, not its nodes**: a chain of wormholes, each
+individually safe, can collectively close a timelike curve (**Visser's Roman ring**,
+1997). [GROUNDED] The standard resolution is **Hawking's chronology protection
+conjecture** (1992): quantum back-reaction destroys a throat at the brink of forming a
+closed loop. [GROUNDED conjecture.] A multi-gate planet raises the network's loop
+_count_ (a degree-N node sits on more cycles), never the loop _kind_ — the constraint
+lives on connections, not on mouths-per-planet.
+
+- **Parked lever:** chronology protection gives a physics-backed reason the network
+  polices its own topology — a dial that would close a critical loop fails, destabilises
+  (a Rift), or is refused by Builder safeties. Available to carry lane availability /
+  listings / misdial behaviour when the network layer is designed. [STRETCH when used as
+  a mechanic — the pruning-as-designed-safety is Builder engineering on a real
+  conjecture.]
+- Gate-vs-gate **proximity interference** (one Gate suppressing a neighbour, minimum
+  spacing) has no physical basis — Ford–Roman constraints are per-throat. If adopted,
+  tag it [CONCEIT].
+
 ## Pure conceits (do not claim physics)
 
 - A sealed-but-sub-traversable default state (GR throats are open or collapsed).
@@ -105,3 +132,4 @@ clear, the dome is the engineered how.
 - Morris, Thorne & Yurtsever, _Phys. Rev. Lett._ **61**, 1446 (1988) — wormhole time desync.
 - Einstein & Rosen, _Phys. Rev._ **48**, 73 (1935); Fuller & Wheeler, _Phys. Rev._ **128**, 919 (1962) — bridge collapse.
 - Ford & Roman, _Phys. Rev. D_ **53**, 5496 (1996) — quantum inequalities. Visser, _Lorentzian Wormholes_ (1995).
+- Hawking, _Phys. Rev. D_ **46**, 603 (1992) — chronology protection conjecture. Visser, _Phys. Rev. D_ **55**, 5212 (1997) — the Roman ring (wormhole networks vs. chronology).
