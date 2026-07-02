@@ -1,12 +1,3 @@
----
-type: system
-status: draft
-tags: []
-sources: []
-aliases: [Gate Physics]
-updated: 2026-06-27
----
-
 # Gate Physics
 
 The one area we go deep. Gating must bind to real physics, so every claim is
@@ -16,7 +7,7 @@ never dress it as real). Add new physics claims here and tag them.
 
 ## Basis — a traversable wormhole
 
-A [[Gates|Gate]] is a **traversable wormhole**: a Morris–Thorne throat joining two
+A [[systems#Gates|Gate]] is a **traversable wormhole**: a Morris–Thorne throat joining two
 distant mouths, with no horizon, finite tidal forces, and two-way passage.
 [STRETCH — the general-relativity solution exists; no known matter realizes it.]
 Lineage: Einstein–Rosen bridge (1935) → Morris–Thorne (1988).
@@ -75,7 +66,8 @@ building bigger hardware: the Builder ring is fixed, the aperture is a runtime v
 inequality** caps one ring (bigger throats force the walls Planck-thin → collapse), so
 fleet-wide apertures need multiple rings combined — a megastructure of **found** segments,
 never fabrication. [GROUNDED ceiling.] Overdrive one ring past the cap and it collapses to
-the un-propped state — a Rift. This is the physics under the driven aperture ([[gates|Gates]]) and the gate-overload bomb.
+the un-propped state — a Rift. This is the physics under the driven aperture
+([[systems#Gates|Gates]]) and the gate-overload bomb.
 
 ## The dome — protecting transit, clearing builds
 
@@ -88,9 +80,9 @@ sized to the throat, that makes transit survivable and whose radius scales with 
 power. [CONCEIT — projected force fields aren't real; same conceit family as the mask
 field.] The dome **destroys player-built structures** in its radius but spares natural
 terrain — it senses _construction, not material_. [CONCEIT — a Builder discriminator; no
-physics tells manufacture from nature.] So a Gate can never be walled in (the [[combat|dome]]); the
-tidal lethality is the GROUNDED reason something has to clear, the dome is the engineered
-how.
+physics tells manufacture from nature.] So a Gate can never be walled in (the
+[[systems#Combat|dome]]); the tidal lethality is the GROUNDED reason something has to
+clear, the dome is the engineered how.
 
 ## Pure conceits (do not claim physics)
 
@@ -100,17 +92,12 @@ how.
 - The gate dome: a protective field that shields transit and destroys only _built_ matter
   (the tidal lethality it answers is real; the field and the build-vs-nature sense are not).
 
-## Code
-
-Placeholder until the Unity project exists.
-
-## Open questions
+## Open
 
 - Pick one self-consistent story for "sealed by default" that doesn't contradict
   collapse physics (a mechanical shutter? a throat kept collapsed and re-kindled?).
 - Decide whether a power core **is** the exotic matter, or powers a device that
   confines it.
-- Tracked with the rest in open-questions.md.
 
 ## References
 

@@ -29,7 +29,7 @@ enters the lore or systems wikis.
 ## Visual direction (deferred)
 
 Art is **deferred until after greybox validation** [current call]; final identity is open
-(open-questions #6). Captured here so it isn't re-litigated.
+(questions.md #7). Captured here so it isn't re-litigated.
 
 - **Touchstones:** Minecraft, Valheim, No Man's Sky. **NMS is the aspirational visual
   target**; the Gate structure deliberately sidesteps NMS's hardest engineering problem
@@ -54,7 +54,7 @@ Art is **deferred until after greybox validation** [current call]; final identit
   built on the tame-and-build survival loop (ARK): you raid _up_, the strong are the
   prize, and nobody babysits a base — _except_ a huge tribe, whose reach keeps it
   permanently exposed. This is the "no defender tax" thesis taken to its endgame, not
-  a new rule (see `pillars.md`, [[World Overview]]).
+  a new rule (see [[systems]], [[world]]).
 
 ## Wants — no home yet
 
