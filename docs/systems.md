@@ -143,8 +143,12 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 - **On your own soil / inside a field:** soft failure — emergency recall to the Gate, no loss (a leash, not a punishment).
 - **In hostile territory:** hard failure — you go down, lootable. The real risk that stops raiding from being a free teleport home.
 
+### Consumables — boosts, never meters (MASK-4)
+
+- Food and the like are **optional buffs to body/PvE stats only** — never depletion meters (nothing punishes their absence), and **never a mask number** (reserve, drain, regen): the mask is also the health bar, so a mask-touching buff would pump the raid clock — the rejected fuel-hoarder camp ([[#Raiding|Raiding]]). [current call]
+
 - Tunables: drain curve, field-gradient shape, away-reserve-vs-Gate-power curve.
-- Open: what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. a capped player upgrade; whether any survival meters exist beyond the mask.
+- Open: what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. a capped player upgrade.
 
 ## Raiding
 
@@ -240,7 +244,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 - You pilot a **disposable avatar** — genuinely present and **mortal**. What's fixed is that you can lose the body without losing yourself.
 - **Only the avatar dies.** Death drops the body + carried gear (lootable); you respawn at an anchor. This is the in-world license for raiding, PvP, and conquest — killing a gater never deletes them.
 - **Avatar roster:** develop **multiple avatars** (tuned for different worlds), **pilot one at a time**. One live body, never simultaneous presence.
-- **Anchor = where you respawn.** Newcomers: the **Safe Core** hub (always available). Claim a Gate and build a forward facility → respawn there to hold the world.
+- **Anchor = where you respawn.** Newcomers: the **Safe Core** hub (always available; arrival flow in [[#First hour — the earned mask|First hour]]). Claim a Gate and build a forward facility → respawn there to hold the world.
 
 ### Recall
 
@@ -432,6 +436,14 @@ _Stub — drivers + the homesteader ceiling decided; tech tree open._
 - **Character progression = two-layer mind/avatar XP** — see [[#Presence, respawn & XP|Presence, respawn & XP]] (XP-1).
 - **Sealed soft ceiling (PROG-2):** a fully-sealed homesteader progresses **forever up to a soft ceiling** (frontier tiers need opening), then plateaus — never decays, never punished. Safe because a never-leaver stays unfound.
 - Open: the actual tech tree, research mechanics, gear tiers; the Supergate (PROG-1) endgame specifics.
+
+## First hour — the earned mask
+
+_Stub — the shape is set (BOOT-1); intro-flow details are content, deferred._
+
+- **BOOT-1** [tentative]: a newcomer gets a **loaner mask on a small fixed reserve** — the away-clock number for a gater with no home Gate yet ([[#Mask energy|MASK-3]]). The first Gate is claimed through a Coalition-**listed** starter lane ([[world#United Gate Coalition|the patch channel]]): reach and imprint a dormant Gate before the reserve dies — the real claim verb ([[#Gates|FRONTIER-1]]), taught by doing it.
+- Survival pressure exists **only here** and retires at the first claim — after it, no meter (consumables are boosts, MASK-4).
+- Open: intro flow and failure handling; starter-band curation; loaner reserve length; the post-claim agenda.
 
 ## Player archetypes
 
