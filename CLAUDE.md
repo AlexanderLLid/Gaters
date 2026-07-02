@@ -86,6 +86,10 @@ layer depends on the one above:
 ## Conventions
 
 - **Bullets are the default**; prose only as a short framing line above a list.
+- **Naming: plain, globally understood English words.** A canonical term must be readable
+  by a non-native player without a dictionary — no region-bound or legalistic register
+  (charter, writ), no borrowed genre nouns (the IP line in [[systems]]). Test: does the
+  word work in a sentence said by a 14-year-old in any country?
 - Cross-link with heading wikilinks: `[[systems#Raiding|Raiding]]`, `[[world#The mystery]]`,
   `[[questions]]`, same-file `[[#Combat|Combat]]`.
 - Anchor claims to sources: cite inline as `(src: raw/file.md)`. Prefer anchoring over

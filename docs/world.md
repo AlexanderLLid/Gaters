@@ -30,7 +30,7 @@ The place-types, kept high-level. They double as the unlock ladder (see [[system
 - **Surface worlds** — the starting tier (only short-range Gates have woken); larger and richer worlds as you progress. Each world's seed rolls a **biome tag set**, so one world's output is another's missing input — the base trade driver (REGION-1).
 - **Hub worlds** — neutral, **lawless commerce crossroads**: trade routing + tolls, **capturable for tax control**; the open PvP contest lives on contested frontier worlds, not here. See [[systems#Hub worlds|Hub Worlds]].
 - **The Safe Core** — the Coalition-policed market and new-player spawn; safe commerce, always reachable.
-- **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) give it its flavour; claim its Gate to make it yours.
+- **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) and the husk bases of **dead houses** ([[systems#Potential|HOUSE-2]]) give it its flavour; a world can seat several Gates (FRONTIER-3); claim one to make it yours.
 - **Later (wants to have)** — orbital / space Gates, hub/relay Gates, megastructure / Supergate sites: see [[questions]], Roadmap.
 - Open: the network's true extent (one system / many / galaxies).
 
@@ -52,7 +52,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 ### What it is
 
 - Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Coalition's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
-- When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and groups/clans alike. It does not pick winners; it lists access and lets them compete.
+- When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and houses alike ([[systems#Potential|HOUSE-1]]). It does not pick winners; it lists access and lets them compete.
 - It **records charter standing** — a ledger entry, _not_ physical immunity: a found home is still raidable.
 - It brokers **nothing past the frontier edge** — no listings, no standing, no cut; past that line "reach equals exposure" is the only law.
 

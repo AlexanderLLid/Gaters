@@ -52,7 +52,7 @@ Art is **deferred until after greybox validation** [current call]; final identit
 - **Endgame = EVE × Solo Leveling × ARK.** A player-driven world of blocs, territory,
   and real loss (EVE) wearing the underdog punch-up power fantasy (Solo Leveling),
   built on the tame-and-build survival loop (ARK): you raid _up_, the strong are the
-  prize, and nobody babysits a base — _except_ a huge tribe, whose reach keeps it
+  prize, and nobody babysits a base — _except_ a huge house, whose reach keeps it
   permanently exposed. This is the "no defender tax" thesis taken to its endgame, not
   a new rule (see [[systems]], [[world]]).
 
@@ -72,7 +72,7 @@ exposure-gated visibility, extraction). Pure inspo, nothing decided.
 - **Double / nested Rift** — a second rift inside the first; going deeper strands
   you another layer from home. A natural delivery vehicle for the red-rift lock.
 - **Beacon Rift** — opening it lights you up for a loot premium. A 10-min
-  countdown starts and 3 tribes near your Potential get an opt-in prompt to "lock
+  countdown starts and 3 houses near your Potential get an opt-in prompt to "lock
   on" — accept and they get your coordinates and a window to hit you. Consensual
   PvP both ways, self-balanced by Potential, a defend-the-clock event with a known
   threat count. Open: do the 3 see each other; what do attackers risk to lock in;

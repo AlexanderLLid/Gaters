@@ -73,6 +73,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - Gate finiteness (found, never manufactured) is the root of all conflict; opening your Gate is how you reach the world _and_ how you become reachable.
 - **Woke sealed; unmanufacturable.** The network came online with every aperture shut (safe-by-default), and Gates can only be **found, claimed, repaired** — never built (GATE-1).
 - **Travel is one-way and directional.** The _dialing_ side opens the tunnel and pays the power, so a raid is inherently the attacker pushing through a tunnel they opened.
+- **One ring props one live tunnel at a time (GATE-2).** A throat joins exactly two mouths ([[gate-physics|Gate Physics]]), so a Gate never holds multiple simultaneous connections — multi-party arrivals at one world are **sequential dials**, never held tunnels. Multi-tunnel exists only as multiple rings (Supergates, deferred).
 - **Fire and momentum pass through** a live Gate — breaching is a firefight at the aperture, not a loading screen (see [[gate-physics|Gate Physics]], [[#Combat|Combat]]).
 - **Dialing needs the target's coordinates** — a planet whose coordinate nobody has assembled is effectively hidden (see [[#Coordinates & obscurity|Coordinates & Obscurity]]).
 
@@ -102,6 +103,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Who can reach you there** scales with Potential and findability — small/quiet pushes draw few rivals; big ones are visible. Same obscurity economy as home, no separate rule.
 - **Claiming the far Gate** (imprint) converts a frontier world into your soil and a forward respawn — this is how **new Gates** enter your holdings. Finite but slowly replenishing; pacing open ([[questions]] #9).
 - **Creatures, biome variety, loot** come from the frontier world's tags — see [[world#World types|World Types]] (REGION-1) and [[#Taming|Taming]] (TAME-1).
+- **A frontier world can seat multiple Gates (FRONTIER-3).** The seed rolls 1–N Gates per world; each can host a **dead-house base** ([[#Potential|HOUSE-2]]). Several houses reaching the same listed world arrive through **different Gates** (sequential dials — GATE-2 holds), which is the multi-party PvPvE mechanism: an event is just a multi-gate world getting listed (the broker patch channel, [[world#United Gate Coalition|Coalition]]). **Homes stay single-gate** — a second gate on claimed soil is an overland backdoor around obscurity; parked ([[questions]] #22).
 
 ### Self-misdial — the uncontrolled lane (FRONTIER-2)
 
@@ -291,14 +293,14 @@ The player-facing read of SHARE-1; the mechanism is above, not restated.
 - "Safe" is never a wall — it's a **high probability of staying unfound**. A sealed Gate can't be cold-breached; a home whose coordinate someone has assembled is raidable, rarely even while you're offline.
 - The odds move with **how you play, not a toggle**:
   - **Quiet, small, mostly sealed** → odds strongly in your favor: few avatars fielded = few shares shed; low Potential keeps you off big hunters' reach.
-  - **Loud, large, always out** → odds against you: many avatars leak shares fast; high Potential makes you visible and reachable; big tribes are findable by construction (endgame siege targets).
+  - **Loud, large, always out** → odds against you: many avatars leak shares fast; high Potential makes you visible and reachable; big houses are findable by construction (endgame siege targets).
 - **Offline tends _toward_ safety, not away from it.** Sealing (fail-closed) sheds no new shares while you're away, and re-key — cheap/automatic while sealed — voids shares a hunter already collected. Quiet-and-safe last week ≈ still safe after a week away; loud-and-found before logging off is not. How strongly offline favors you is the **re-key cadence** (the master knob, SHARE-1).
 - `reach = exposure` read as probability: the small are nearly unraidable, the big are worth the siege.
 
 ### Consequence — uphill relocates
 
 - Home raids are gated by **finding** (assembling shares), not a power wall. Anti-whale-farm protection moves to frontier-visibility ([[#Potential|Potential]]).
-- Ownership is the **tribe**: one shared coordinate, every member sheds shares of it — so big tribes are inherently **leaky** (endgame siege targets) and solos stay stealthy. `reach = exposure` at the group level.
+- Ownership is the **house**: one shared coordinate, every member sheds shares of it — so big houses are inherently **leaky** (endgame siege targets) and solos stay stealthy. `reach = exposure` at the group level.
 
 ### Why / rejected
 
@@ -308,7 +310,7 @@ The player-facing read of SHARE-1; the mechanism is above, not restated.
 - **Rejected — permanent coordinates:** a leak is forever; re-key is the recovery valve.
 
 - Tunables: threshold _k_, share decay, re-key cost/cadence, reveal flavor (prefix-narrowing default vs. triangulation).
-- Open: where "return home" lands if the home was wiped while you were away ([[questions]] #13); tribe shared-ownership sub-rules (#14).
+- Open: where "return home" lands if the home was wiped while you were away ([[questions]] #13); house shared-ownership sub-rules (#14).
 
 ## Potential
 
@@ -319,13 +321,13 @@ frontier visibility and the raid clock. [tentative]
 
 ### Model (POT-1)
 
-- **One sticky high-water-mark per tribe**, aggregating:
+- **One sticky high-water-mark per house**, aggregating:
   - **Gate capability** — highest Gate tier you can field/power (your reach ceiling).
   - **Footprint** — territory + holdings held.
   - **Tech depth** — how far up the tree you've unlocked.
-  - **Roster** — active members/avatars (makes a tribe read bigger than a solo).
+  - **Roster** — active members/avatars (makes a house read bigger than a solo).
 - **High-water-mark** — rises as you grow, **falls only on genuine dismantling**; no powering-down to dodge.
-- **Account/tribe-wide** — closes smurfing; strength can't be hidden behind a small avatar.
+- **Account/house-wide** — closes smurfing; strength can't be hidden behind a small avatar.
 - **Progression = Potential climbing.**
 
 ### What it drives
@@ -335,22 +337,31 @@ frontier visibility and the raid clock. [tentative]
 - **Raid clock** — the away-reserve keys off home-Gate power, a Potential component.
 - **Not** home-raid eligibility — that's gated by **finding** (shares).
 
-### Tribe is the ownership primitive (TRIBE-1)
+### House is the ownership primitive (HOUSE-1)
 
-- The unit that owns a home, holds a coordinate, and carries Potential is a **tribe**; a **solo player is a tribe of one** (no separate code path).
-- Roster is a real component, so a big tribe reads bigger — and **sheds more shares of the same coordinate**, so it's inherently findable. `reach = exposure` at the group level.
+- The unit that owns a home, holds a coordinate, and carries Potential is a **house**; a **solo player is a house of one** (no separate code path).
+- Roster is a real component, so a big house reads bigger — and **sheds more shares of the same coordinate**, so it's inherently findable. `reach = exposure` at the group level.
+- Word convention: **house = the people, home = the place.** "House" never means a building.
+
+### NPC houses — dead houses (HOUSE-2)
+
+- Every ownership / defense / raid mechanic is written against a **house**, so an AI base is just a house whose owner is an NPC — a **dead house**: the registry row of a gater the frontier ate, base intact, defences running on automation (the same frozen-snapshot AI as [[#Holdings|Holdings]]). [current call]
+- **Reuse is the point:** Potential rating (visibility/tiering), the dome, the aperture fight, the muster cap (AI defenders count toward K), the loot floor (the bounty is server-minted either way), and the attacker's away-reserve clock all apply unchanged — one code path for AI bases and player bases.
+- Dead-house bases seed **procedural frontier worlds** ([[#Gates|FRONTIER-3]]): PvE raid content that trains the raid loop, keeps it alive at low population, and lets the greybox prove the raid fantasy without hundreds of players.
+- **PvE-dodge guard:** if a dead house of equal tier yields player-tier loot at zero social risk, nobody raids players — dead-house loot sits **below** player loot at tier (knob lands with the frontier-vs-raid loot balance, [[questions]] #10).
 
 ### Why / rejected
 
-- **Why one sticky high-water-mark, account/tribe-wide:** it closes the two dodges at once — you can't power down to look weak, and you can't hide strength behind a small avatar (smurfing). Falling only on genuine dismantling means "raid longer = build more" feeds growth into capability.
-- **Why the tribe is the primitive:** one ownership model, not two; and the big-tribe-is-leaky consequence (more members shedding the same coordinate) makes findability scale with size for free.
+- **Why one sticky high-water-mark, account/house-wide:** it closes the two dodges at once — you can't power down to look weak, and you can't hide strength behind a small avatar (smurfing). Falling only on genuine dismantling means "raid longer = build more" feeds growth into capability.
+- **Why the house is the primitive:** one ownership model, not two; and the big-house-is-leaky consequence (more members shedding the same coordinate) makes findability scale with size for free.
+- **Why "house" (the word):** the ownership noun must be a plain, globally understood English word that scales solo → corp → space-scale bloc; the dynastic register fits the EVE-flavoured endgame. **Rejected — tribe:** ARK's noun (the IP line). **Rejected — charter:** legalistic/UK register, fails the global-English test; "charter" stays the Coalition permission word (charter standing, clearance). **Rejected — clan / crew / company:** Rust's word / doesn't own an empire / collides with in-fiction corporations.
 - **Rejected — live power draw:** dodgeable by powering down.
 - **Rejected — separate metrics** for reach / stamina / visibility: one number is simpler; split only if tuning forces it.
-- **Rejected — solo homes + loose alliances:** no shared fortress; "wipe a tribe" would mean hunting each member's base, undercutting the ARK fantasy.
-- **Rejected — hybrid (solo homes + tribe-only holdings):** keeps two ownership models; tribe-of-one unifies them.
+- **Rejected — solo homes + loose alliances:** no shared fortress; "wipe a house" would mean hunting each member's base, undercutting the ARK fantasy.
+- **Rejected — hybrid (solo homes + house-only holdings):** keeps two ownership models; house-of-one unifies them.
 
 - Tunables: the curve converting the four components into the number; component weights.
-- Open: component weights and the climb curve; tribe shared-ownership sub-rules ([[questions]] #14).
+- Open: component weights and the climb curve; house shared-ownership sub-rules ([[questions]] #14).
 
 ## Holdings
 
