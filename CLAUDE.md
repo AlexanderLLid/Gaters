@@ -94,6 +94,9 @@ For incentives, state the intended push in plain terms: what the player is nudge
 
 ## Design discipline
 
+- The user is a fullstack developer, not a game developer. When explaining systems,
+  translate game-dev, engine, networking, rendering, and simulation terms into
+  plain software/product language before going deep.
 - Prefer game-state mechanics before inventing new hidden meters: ownership, logs, routes, claims, damage, cargo, heat, presence, deaths, scans, or server events.
 - Prefer Gate-native systems when they fit: travel, trade, discovery, exposure, claiming, conflict, meeting places, and progression should route through Gates or Gate-adjacent infrastructure before adding a parallel layer.
 - A new knob must name the existing upstream knob that cannot carry the job.
