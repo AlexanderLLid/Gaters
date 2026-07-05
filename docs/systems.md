@@ -5,64 +5,56 @@ in [[gate-physics|Gate Physics]]; unresolved questions in [[questions]]. Numbers
 live in prose — each mechanic names its tunables; values land in data at playtest.
 Code references stay placeholders until the game project exists.
 
-## Thesis & pillars
+## Design pillars
 
-**Thesis — reach equals exposure** (see [[world]]). Aggressor fantasy, no defender tax.
-The pillars are organized by **failure mode**, not by object — each is something that can
-fail on its own and take the game down. Don't fold cores into the Gate just because they
-are Gate states; nesting by object collapses the list and hides the distinct failures.
-
-1. **The Gate** — the one object everything routes through.
-   - Travel, mask-energy source, exposure surface, economy sink.
-   - Finite and unbuildable: found / claimed / repaired / relocated / tamed.
-2. **Binary exposure** — sealed / open.
-   - Safe by default; risk is opt-in. How trade risk differs from raid risk is **open** ([[questions]] #2).
-3. **Presence + siege timer** — the babysitting fix.
-   - Open only while online and choosing it.
-   - Raid commits → Gate locked open for a bounded fight.
-4. **Mask energy — two decoupled numbers.**
-   - Field radius = soft world border + studio expansion lever.
-   - Away reserve = raider's clock on hostile soil.
-   - Must stay separate or world-growth nerfs raids.
-5. **Contained conflict.**
-   - Bilateral directional tunnels (anti-zerg).
-   - Asymmetric uphill-only reach (anti-whale — see [[#Potential|Potential]]).
-6. **Stagnation economy** — the counterforce that makes players open up.
-7. **Gate-based instancing** — what makes it buildable solo.
-   - empty row → solo (cheap server tick) → contested (full server instance).
-   - Server cost ∝ online players, not world size.
-8. **The uncontrolled lane (misdials)** — the engagement engine: opportunity out, never invasion in (outbound only, active Gates only).
-
-**Gate on all of it:** will players actually open their Gates? Make-or-break — and the one
-thing a greybox **can't** settle: it's a population equilibrium, not a feel (see
-[[#Validation — two questions, two scales|Validation]]).
+- **Reach equals exposure** - growth requires opening outward; opening outward creates risk.
+  - **Why:** the survival/PvP model depends on action creating vulnerability.
+- **Mode by action, not by server** - players choose today's risk by what they do with Gates, not by joining a permanent PvE/PvP world.
+  - **Why:** real life changes day to day; a player should be able to build quietly, explore, trade, raid, or join a war without abandoning their identity or swapping servers.
+- **Bodies die, players persist** - avatars, gear, homes, holdings, and empires can be lost; player existence cannot.
+  - **Why:** PvP needs real stakes without account deletion or an ARK/Rust sleeping-body punishment.
+- **Safety is obscurity** - a quiet home is hard to locate, not invulnerable.
+  - **Why:** invulnerable homes kill raid stakes; guaranteed vulnerability creates defender tax.
+- **No defender tax** - absence must not create routine loss, decay, or chores.
+  - **Why:** players should be excited to log in, never obligated on pain of loss.
+- **Finite Gates drive conflict** - Gates are found, claimed, repaired, and fought over; players never manufacture them.
+  - **Why:** finite infrastructure creates conflict without arbitrary scarcity.
+- **The Gate is the seam** - travel, trade, raiding, claiming, discovery, and exposure all route through Gates.
+  - **Why:** one central object keeps the design legible and avoids parallel systems.
+- **Explain rules, not the soul** - avatar continuity works operationally; the metaphysics stay part of the Builder mystery.
+  - **Why:** over-explaining consciousness creates contradictions and weakens the central mystery.
 
 ## Core loop [tentative]
 
-The cycle the thesis produces, at three scales. Documented here only — other sections
-link here, they don't restate it.
+The cycle the thesis produces, at three scales. Documented here only; other sections
+link here, they do not restate it.
 
-- **Moment-to-moment** — sealed solo PvE: explore, gather, build. To act you open the Gate and accept risk → push a directional raid tunnel under a mask-energy leash, or defend under a siege timer you opted into.
-- **Session** — log in (stuff intact, no decay) → stay sealed and build, or open to trade / raid / visit a hub world → resolve finite engagements → reseal and log off. No maintenance obligation.
-- **Long-term** — grow the base, raise charter clearance, climb Region/World tiers and Potential as more of the network wakes → fleet-scale play and the mystery payoff. No base to babysit.
+- **Moment-to-moment** - build, gather, scan, and solo PvE while quiet; open a Gate to trade, raid, explore, or contest, accepting the exposure that action creates.
+- **Session** - log in with no decay chore; choose today's risk surface through Gate use; resolve finite engagements; close tunnels when done.
+- **Long-term** - grow the base, raise charter clearance, climb world tiers and Potential as more of the network wakes; no base to babysit.
 
-> Emergent multiplayer behavior (will players open up, will deterrence hold) is
-> **assume-and-commit** — validated at playtest scale, not by greybox.
+- **Validation note:** whether players actually open up is a population equilibrium, not a greybox feel test; see [[#Validation — two questions, two scales|Validation]].
 
-## Design traps (failure modes to avoid)
+## Failure modes
 
-Each is a way the exposure model could collapse; the design's counter is named. Test
-every proposal against these.
+Each is a way the exposure model can collapse. Test every proposal against these.
 
-- **Turtle equilibrium** — if sealed = safe forever with no downside, everyone bunkers. _Counter:_ the economy forces exposure (sealed stagnates), and sealing buys obscurity, not immunity (the home is mortal).
-- **Trade-suicide** — if trading exposes the vault like raiding, every economic act invites a wipe. _Counter:_ **open** — no mechanic currently stops this ([[questions]] #2).
-- **Offline-dodge** — instant-seal mid-raid kills raiding; can't-close traps you online. _Counter:_ presence + the committed siege clock (opt-in, finite, no offline jump).
-- **Zerg pile-on** — if opening exposes you to everyone, mass wins. _Counter:_ bilateral directional tunnels (contained duels).
-- **Whale / newbie-farming** — a megabase griefing small players kills retention. _Counter:_ obscurity + uphill frontier-visibility (a whale can't see a small player's frontier pushes to harvest their shares).
-- **Doorstep kill-box** — walling the aperture into a sealed box nullifies raiding. _Counter:_ the dome destroys manual builds (not terrain) — fortify the perimeter at range, never the doorstep.
+- **TURTLE-1 Turtle equilibrium** - if quiet play is optimal forever, everyone bunkers.
+  - **Counter:** quiet play has a soft ceiling; growth needs exposure.
+- **TRADE-SUICIDE-1 Trade-suicide** - if trade exposes the vault like raiding, nobody trades.
+  - **Counter:** trade is emergent and in-person, never a required home storefront or remote market; PvE scarcity is solved primarily through exploration/frontier play.
+- **OFFLINE-DODGE-1 Offline dodge** - instant closing mid-raid cancels raiding.
+  - **Counter:** committed tunnels, siege clocks, and finite engagements.
+- **ZERG-1 Zerg pile-on** - if opening exposes you to everyone, mass always wins.
+  - **Counter:** bilateral directional tunnels and visibility limits.
+- **WHALE-1 Newbie farming** - if large houses can locate small houses easily, retention dies.
+  - **Counter:** obscurity plus uphill frontier visibility.
+- **DOORSTEP-1 Doorstep kill-box** - if the Gate can be walled in, raids become spawn cheese.
+  - **Counter:** the Gate dome clears the aperture.
+- **PERMA-LEAK-1 Permanent coordinate leak** - if one leak lasts forever, one mistake dooms a home.
+  - **Counter:** stale intel, address rotation, heat decay, relocation, or another recovery valve.
 
-Plus the healthy/toxic line: players should be _excited_ to log in, **never** _obligated_
-on pain of loss — anything that punishes an absent player has reinvented decay.
+- **Healthy/toxic line:** players should be excited to log in, never obligated on pain of loss; anything that punishes an absent player has reinvented decay.
 
 ## Gates
 
@@ -71,7 +63,8 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - Owning a planet means **owning its Gate** — the reason bases are planets, not an arbitrary rule.
 - Gate finiteness (found, never manufactured) is the root of all conflict; opening your Gate is how you reach the world _and_ how you become reachable.
-- **Woke sealed; unmanufacturable.** The network came online with every aperture shut (safe-by-default), and Gates can only be **found, claimed, repaired** — never built (GATE-1).
+- **Woke closed; unmanufacturable.** The network came online with every aperture shut, and Gates can only be **found, claimed, repaired** — never built (GATE-1).
+- **Closed / open are connection states.** Closed = no active tunnel; open = one active tunnel exists. Safety comes from coordinate obscurity, not from the word "closed."
 - **Travel is one-way and directional.** The _dialing_ side opens the tunnel and pays the power, so a raid is inherently the attacker pushing through a tunnel they opened.
 - **One ring props one live tunnel at a time (GATE-2).** A throat joins exactly two mouths ([[gate-physics|Gate Physics]]), so a Gate never holds multiple simultaneous connections — multi-party arrivals at one world are **sequential dials**, never held tunnels. Multi-tunnel exists only as multiple rings (Supergates, deferred).
 - **Fire and momentum pass through** a live Gate — breaching is a firefight at the aperture, not a loading screen (see [[gate-physics|Gate Physics]], [[#Combat|Combat]]).
@@ -89,15 +82,17 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Loose idea, needs tuning — nothing depends on it.** Gates differ (field size, stability, what they dial, what grows there) maybe because each carries a small Builder-seeded **config** the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out imperfectly/variously tuned. That imperfection is the variety.
 - Just an explainer for _why gates aren't all the same_. It doesn't touch dialing/findability (still coordinates), it's **not** a selection system (explored and rejected — [[questions]] #20), and the _why_ behind the probes stays parked. Shape it properly if/when it matters.
 
-### Presence (PRES-1)
+### Connection state (PRES-1)
 
-- A Gate is **open only while the owner is online and choosing it**; logging off **seals** it (the Gate fails closed — a Builder conceit, like the dome). Sealing is a **spin-down**, not a switch. Sealed = no cold breach through the shut throat (comms still pass — [[questions]] #12).
-- Presence stops a _cold_ breach, but no longer grants immunity: a **found** home can be raided, rarely, even offline. The babysitting tax died from **obscurity**, not a wall.
-- **Offline tends _toward_ safety, not away from it** — sealing sheds no new shares and re-key voids those already taken, so logging off lowers your odds of being found, it doesn't raise them.
+- **Closed** — no active tunnel exists. Closing ends current contact; it does not erase coordinate intel someone already has.
+- **Open** — one active tunnel exists. Travel, trade, raids, and exposure happen through open Gates.
+- **Presence stops cold contact, not discovery.** A closed Gate cannot be entered through a shut throat, but a located home is still a valid raid target under the raid rules.
+- **Offline tends _toward_ safety, not away from it.** A quiet closed Gate sheds fewer traces, so logging off lowers your odds of being located; it does not make a located home magically invulnerable.
+- **Open:** exact spin-down, grace-window, and offline raid timings.
 
 ### Reaching the frontier — dial out (FRONTIER-1)
 
-- **Two things you can dial:** a **claimed coordinate you've assembled** (a raid — needs shares), or **out into the unclaimed frontier** (expansion). You can't pick _which_ frontier world — dialing an unclaimed address lands you at a **random** one; **claimed homes are off the pool**, so no one is ever dropped onto occupied soil (preserves obscurity).
+- **Two things you can dial:** a **claimed coordinate you've assembled** (a raid — needs current intel), or **out into the unclaimed frontier** (expansion). You can't pick _which_ frontier world — dialing an unclaimed address lands you at a **random** one; **claimed homes are off the pool**, so no one is ever dropped onto occupied soil (preserves obscurity).
 - **Frontier travel is one-way** — you can't return the way you came; you arrive, and the away-reserve clock is already ticking. Push your luck against it for loot, or **claim the far Gate** before it runs out.
 - **The frontier world _is_ the contact surface** — there is no second travel phenomenon. It runs on three planet runtime-states: a **database row** when empty, a **cheap solo PvE tick** when you're there alone (build/loot in peace), a **server-authoritative contested instance** when others arrive (PvPvE). Persistent as a row, ephemeral as an instance → a bigger frontier costs no more to host until it's actually fought over.
 - **Who can reach you there** scales with Potential and findability — small/quiet pushes draw few rivals; big ones are visible. Same obscurity economy as home, no separate rule.
@@ -109,7 +104,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - The network is unstable (the Wake). An **active** Gate channels energy through that frayed fabric and the strain occasionally **arcs open a lane by itself** — an un-propped throat ([[gate-physics|Gate Physics]]) onto a random frontier world. You didn't dial it; you didn't pay a core.
 - **Outbound only — not a backdoor.** It opens a lane _out_; it never drops anyone onto your soil (homes stay off the random pool). You can always **manually close** it; left open, the un-propped throat collapses on its own countdown.
-- **Only an active Gate misdials.** A sealed/offline Gate channels nothing, so it can't — "never while logged off" follows from the physics, not a bolted-on rule.
+- **Only an active Gate misdials.** A closed/offline Gate channels nothing, so it can't — "never while logged off" follows from the physics, not a bolted-on rule.
 - It's the in-world face of rising instability: **more Gate activity → more misdials → harsher pulls** — the difficulty ramp and the visible symptom of the central mystery.
 
 ### Why / rejected
@@ -129,7 +124,9 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 
 - A **natural raider timer** (away from a sustaining field you're on a depleting budget) and an **asymmetric home-soil advantage** (topped up at home, on a clock in enemy territory).
 - It _is_ the combat resource — **no separate health bar** (see [[#Combat|Combat]]).
-- The player wears a life-support **mask** powered by a field drawn from the Gate (framed as projected energy; exact physics open — a [[gate-physics|conceit]]).
+- The player wears a **mask** powered by a field drawn from the Gate (framed as projected energy; exact physics open — a [[gate-physics|conceit]]).
+- The mask is the gater's required interface: life support, HUD, scanner, claim key, sync/continuity buffer, field battery, and black box.
+- The mask is the in-world UI: health, reserve, field strength, compass, scanner results, Gate diagnostics, claim progress, route data, comms, alerts, and sync status.
 - **The sustaining field (MASK-2)** — each active Gate projects a bubble; inside it the mask tops up (effectively unlimited time on your own soil). It **weakens on a gradient** outward — the game's **soft world border**: a cost/risk curve, not a wall. The dangerous fringe is where the frontier lies.
 
 ### The two-number split (MASK-3) — load-bearing
@@ -152,23 +149,23 @@ The headline fantasy: open a tunnel to a target, breach, take loot, withdraw —
 aggressor thrill without the defender tax. [decided core fantasy]
 
 - **Directional bilateral tunnels (TUNNEL-1).** Opening a Gate is not shields-down to the galaxy — it's a **two-way tunnel to one planet**. The target can counter-attack through it, but **third parties cannot pile in** unless they open their own Gates. Each raid is a **duel/feud**, not a free-for-all (anti-zerg).
-- **Finding is the gate.** You raid a home only by assembling its coordinate — never via a hub shortcut into an unfound home.
+- **Finding is the gate.** You raid a home only by assembling current coordinate intel — never via a hub shortcut into an unknown home.
 - **The raid clock = the attacker's away reserve** (SIEGE-1). Initiating a raid **locks the Gate open** until the clock runs out (so the defender can't slam the door — the offline-dodge fix). The clock is **fixed by the attacker's home-Gate power** at dial time, **un-pumpable**, and capped by the **~38-min** wormhole ceiling ([[gate-physics|physics]]). Raid length is a curve of your own base size.
 - **The breach is a fight, not a wall.** An active Gate projects a dome that can't be walled in; past it you're in the defender's prepared fire-lanes.
 
 ### Two modes (kept separate)
 
-- **Home raid** — direct Gate, bilateral feud; contained, opt-in, governed by presence + the clock. Can take build, stock, and the civilization itself once found — but **never the player's existence**.
+- **Home raid** — direct Gate, bilateral feud; contained, opt-in, governed by presence + the clock. Can take build, stock, and the civilization itself once located — but **never the player's existence**.
 - **Hub / frontier contest** — many-vs-many lives at hubs (capture) and on contested frontier worlds (extraction), which you choose to walk into. Guardrail: a hub may lower _travel cost_ to a doorstep, never the _target's defenses_.
 
 ### Raid value floor (anti-husk, LOOT-1)
 
 - A breached target must be worth the trip. The floor is a **server-minted, tier-scaled bounty** (not a skim of the owner's stockpile), sized so yield ≥ the core cost to dial that tier — the inequality that kills dry holes. Minted from the visible Gate tier, so there's nothing to "spend before it's stolen."
-- Also lootable: the coordinate DB (the map) on a breach, and a **coordinate-share** from every killed avatar.
+- Also lootable: the coordinate DB (the map) on a breach, plus mask data / exposure samples from killed avatars. Exact hunting payload is open.
 
 ### Offline raiding
 
-- Bounded, two ways only: a **found** home (rare) and an exposed [[#Holdings|holding]] (always contestable, no search). Neither costs your existence.
+- Bounded, two ways only: a **located** home (rare) and an exposed [[#Holdings|holding]] (always contestable, no search). Neither costs your existence.
 
 ### Why / rejected
 
@@ -218,13 +215,43 @@ Third-person, gear-and-positioning PvP — the model resolved enough to greybox.
 Neutral, **lawless commerce crossroads** — trade routing nodes you can capture for the tax. [tentative]
 
 - Cheap-distance routing to reach distant partners affordably (vs. an expensive direct dial), and a capturable territorial prize for the conqueror — without being the home for open PvP (that's contested frontier worlds).
-- A hub has **no woken-sealed Gate of its own**, so you **cannot turtle** there — it's always live and exposed. But the **designed PvP contest lives on contested frontier worlds**, not here; PvP at a hub is incidental (over cargo), not an arena.
+- A hub has **no private home Gate of its own**, so you **cannot turtle** there — it's always live and exposed. But the **designed PvP contest lives on contested frontier worlds**, not here; PvP at a hub is incidental (over cargo), not an arena.
 - **Routing:** distant trade hops through hubs for far less power than one long jump (the in-world basis for cheap distance). Direct-dial is the private, expensive alternative.
 - **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or gate-locked), and gain **intel** on who moves through. Capture-to-tax is the conqueror's take-and-hold prize — a **registry charter flip** (HOLD-1), defended by presence.
-- **Relation to the other surfaces:** Safe Core = policed safe commerce; **hubs** = lawless commerce; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs for commerce.
+- **Relation to the other surfaces:** Safe Core = policed spawn/services/meeting; **hubs** = lawless routing crossroads; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs/jump stations for travel and optional barter.
 
 - Tunables: toll rates, routing-cost reduction, capture rules.
 - Open: whether long-distance dialing needs **jump / relay servers** (hop-routing) to stop one-jump reach being too strong (parked — [[questions]] #16). Hub capture-defence specifics.
+
+## Trade, scarcity & meeting places
+
+Trade is **emergent and in-person**, not a required economy pillar. PvE progression should
+work without a trade-station layer: missing resources come mainly from exploration,
+frontier worlds, dead houses, taming loops, biome variety, and crafting substitutions.
+[current call]
+
+- **No trade stations.** Do not add AI broker stations, station stock, escrow, pickup keys, contract boards, global seller directories, or reputation scores as the default trade solution.
+- **Players can still trade by meeting.** If two players physically meet at the Safe Core, a hub, a jump station, a frontier camp, or another agreed point, they can barter, inspect goods, bring escorts, scam, ambush, or make private deals.
+- **Jump stations are Gate-native meeting points.** They exist because that world's Gate has a relay/routing config: refuel, call-forward, lane-stabilize, or bridge sectors at lower cost than a direct long dial. They create traffic because travel needs them, not because the game placed a shop there.
+- **The Gate is still the seam.** Goods move because players carry them through Gates. Discovering a jump station, safe route, or useful meeting point means discovering a useful coordinate in the Gate network.
+- **Discovery stays in-game.** Useful routes and meeting places are valuable intel. Third-party markets can arrange meetings, but they cannot execute trades without in-game access, travel, cargo, timing, trust, and risk.
+- **No global auction house.** No universal item search, remote buyout, or safe delivery. Trade should not replace exploration or frontier play with menu optimization.
+- **Trade risk attaches to carried cargo and routes.** Moving goods creates physical exposure through cargo mass, aperture/open duration, repeated route use, hub/jump-station traffic, and public presence at Gate sites. Item price is not magic Gate heat; value only matters socially when players reveal, guard, advertise, or fight over it.
+- **Home exposure is escalation, not the trade default.** A normal in-person trade can create route traces and weak leads through repeated behaviour, but it should not grant home raid access by itself.
+- **Solo PvE must not require trade.** Resource asymmetry should make exploration and frontier routing valuable, but missing inputs need fallback paths: local substitutes, alternate recipes, dead-house loot, biome travel, or lower-efficiency local production.
+
+### Why / rejected
+
+- **Why no trade stations:** ARK-style PvE can work without formal trade; adding markets early risks menu optimization, courier chores, extra AI economy work, and a parallel system beside exploration.
+- **Why physical trade remains:** players should be able to barter when they meet, but the game does not need to turn that into a full economy pillar.
+- **Why jump stations stay:** jump stations are roads, not markets. They create natural contact by solving travel/routing, a Gate-native need.
+- **Rejected — direct public home shops:** makes trade either home-suicide or invulnerable shopping, both bad.
+- **Rejected — global auction house / universal search:** turns trade into menu optimization and erases local scarcity.
+- **Rejected — formal contracts, escrow, pickup keys, and reputation scores:** too much market bureaucracy for the current direction; trust is personal, and reliable trade happens by physically meeting at safer places.
+- **Rejected — AI trade stations as default:** solves meeting convenience by adding stock logic, station economy, market UI, and balance problems before the PvE loop proves it needs them.
+
+- Tunables: cargo mass caps, jump-station routing discounts, hub tolls, fallback recipe efficiency, dead-house/resource loot balance.
+- Open: whether formal trade infrastructure is needed later; how much hub/jump traffic contributes to heat ([[#Coordinates & obscurity|Coordinates & obscurity]]).
 
 ## Presence, respawn & XP
 
@@ -234,6 +261,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 [[questions]], Avatar origin.** Only the origin-agnostic baseline here is decided. [decided; origin open]
 
 - Sets the design's floor: civilizations and bodies are **mortal** but the **player is never deleted** — selection without extinction, made literal (the vehicle dies, you continue).
+- The exact metaphysics are unknown in-world: transfer, projection, copying, succession, or something stranger. The Coalition certifies continuity; it does not explain it.
 
 ### Presence & respawn (LINK-1)
 
@@ -255,6 +283,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 ### Claiming, attunement & the tether
 
 - A Gate you've **claimed** is your respawn anchor and **fully sustains** you (home soil). A foreign Gate sustains only partially → the away-clock. Beyond all Gate range, the avatar can't stay knit and fails. The **mask** is the avatar tech that draws this stabilizing field (see [[#Mask energy|Mask Energy]]).
+- A fielded mask carries enough home/house imprint to return, sync, and recognize full sustain. This may become part of the exposure model, but the exact hunting mechanic is open.
 
 ### Why / rejected
 
@@ -264,53 +293,102 @@ avatar physically is, where it comes from, and how your mind connects is open �
 - Tunables: re-level curve, recall/abandon cost, away-clock length, respawn time.
 - Open: disconnect / AFK / grace-window timings; exact respawn location chain when a forward facility is lost (fall back to Safe Core).
 
-## Coordinates & obscurity
+## Claiming
 
-How hidden homes get found — the mechanism behind the **mortal home**: protection is
-obscurity (a re-keyable share-trail), not invulnerability. [tentative]
+The ownership act: a living gater turns an unclaimed Gate into a home, holding, or house
+asset. Claiming is a consciousness test disguised as property. [tentative]
 
-- Gives real, ARK-style stakes back (a home _can_ be wiped) **without** the defender tax. The tax came from the **certainty** of offline loss; hidden coordinates remove the certainty, not the possibility.
-- Only your **existence** is unloseable; your **civilization is mortal**.
-
-### Coordinates as intel (COORD-1)
-
-- You never build a new Gate; you **dial from the one you own** and save the **coordinate** — a re-dialable address in your homebase **coordinate database**.
-- The DB is a **raidable asset** — a breach can steal the **map** (scouted planets and routes).
-- A bookmark removes the _discovery_ cost, never the _travel_ cost (re-dialing still burns distance-scaled fuel).
-- **Blind exploration-dialing** (dial the unknown for a fuel cost → a random planet of random richness/danger) is the variable-ratio hook for explorers. [leaning yes]
-
-### Found by avatar-shares (SHARE-1)
-
-- A home coordinate is a **geohash**; **every fielded avatar carries a share** of it.
-- **Loot a dead avatar → get its share.** Below a threshold = a coarse region (hunt/scout, can't dial); at/above threshold = the exact dialable coordinate. Shares are **tradeable intel** — buy the last one you need in the Safe Core.
-- **Epoch-bound, re-keyable.** Re-keying your address **voids every share already collected**. Cheap/automatic while sealed at home. **Re-key cost/cadence is the master knob** for the online:offline raid ratio.
-- **Anti-dodge:** every fielded avatar carries a _current-epoch_ share (no clean decoy avatars); shares die on re-key (no infinite banking).
-
-### The odds — what "safe" promises (player-facing)
-
-The player-facing read of SHARE-1; the mechanism is above, not restated.
-
-- "Safe" is never a wall — it's a **high probability of staying unfound**. A sealed Gate can't be cold-breached; a home whose coordinate someone has assembled is raidable, rarely even while you're offline.
-- The odds move with **how you play, not a toggle**:
-  - **Quiet, small, mostly sealed** → odds strongly in your favor: few avatars fielded = few shares shed; low Potential keeps you off big hunters' reach.
-  - **Loud, large, always out** → odds against you: many avatars leak shares fast; high Potential makes you visible and reachable; big houses are findable by construction (endgame siege targets).
-- **Offline tends _toward_ safety, not away from it.** Sealing (fail-closed) sheds no new shares while you're away, and re-key — cheap/automatic while sealed — voids shares a hunter already collected. Quiet-and-safe last week ≈ still safe after a week away; loud-and-found before logging off is not. How strongly offline favors you is the **re-key cadence** (the master knob, SHARE-1).
-- `reach = exposure` read as probability: the small are nearly unraidable, the big are worth the siege.
-
-### Consequence — uphill relocates
-
-- Home raids are gated by **finding** (assembling shares), not a power wall. Anti-whale-farm protection moves to frontier-visibility ([[#Potential|Potential]]).
-- Ownership is the **house**: one shared coordinate, every member sheds shares of it — so big houses are inherently **leaky** (endgame siege targets) and solos stay stealthy. `reach = exposure` at the group level.
+- **Blood + mask + intent (CLAIM-1).** Blood proves living biological substrate; the mask proves recognized gater continuity; intent proves agency.
+  - **Line:** a claim is written in blood and keyed by the mask.
+- **The Gate registers claim patterns.** It does not understand human property law.
+- **The Coalition registers legal ownership.** It maps claim patterns into houses, permissions, standing, tithe, and charter records.
+- **Robots can assist, not claim.** Robots can scan, build, fight, carry, and repair, but the network tests embodied biological consciousness.
+- **A house is a shared claim pattern.** A solo is a house of one; a group is several claimants bound to one legal owner.
 
 ### Why / rejected
 
-- **Why mortal, not safe:** a perfectly-safe home makes the apex base un-raidable — inverts `reach = exposure` where it should bite, kills real stakes. Obscurity restores them without the tax (the tax was the _certainty_ of loss, not the possibility).
-- **Rejected — inviolable home:** removes home stakes, makes the frontier pointless to leave.
-- **Rejected — presence-gated wipe** (home falls only to a present defender): a no-show abuses it; obscurity makes it unneeded.
-- **Rejected — permanent coordinates:** a leak is forever; re-key is the recovery valve.
+- **Why blood:** claiming needs a concrete biological act, not just a UI button.
+- **Why Coalition ownership:** the unavoidable global registry becomes lore instead of just backend.
+- **Rejected — robot claimants:** would undercut the biological consciousness test and the avatar premise.
 
-- Tunables: threshold _k_, share decay, re-key cost/cadence, reveal flavor (prefix-narrowing default vs. triangulation).
-- Open: where "return home" lands if the home was wiped while you were away ([[questions]] #13); house shared-ownership sub-rules (#14).
+## Coordinates & obscurity
+
+How hidden homes get reached. The primary loop is **Gate heat -> samples -> leads**:
+Gate use leaves evidence, players collect damaged evidence, and enough matching evidence
+can escalate into temporary raid access. [current call; tuning open]
+
+- **Safety is coordinate obscurity, not closed-state immunity.**
+  - **Why:** this gives homes real stakes without recreating routine offline loss.
+- **Only your existence is unloseable.**
+  - **Why:** civilization can be mortal while the player persists.
+
+### Coordinate knowledge
+
+- **Unknown (COORD-1)** — another player does not have enough current intel to dial you.
+  - **Serves:** BUILDER-1, HOMESTEAD-1.
+  - **Prevents:** WHALE-1.
+- **Traced (COORD-2)** — another player has heat samples, route fragments, jump/hub logs, signatures, corpse data, or other clues.
+  - **Serves:** RAIDER-1, EXPLORER-2.
+- **Located (COORD-3)** — another player has enough current intel to dial you.
+  - **Serves:** RAIDER-1, CONQUEROR-1.
+  - **Risks:** DENY-OFFLINE-1.
+- **Stale (COORD-4)** — old intel no longer completes a dial.
+  - **Serves:** BUILDER-1, HOMESTEAD-1.
+  - **Prevents:** PERMA-LEAK-1.
+
+### Coordinates as intel
+
+- **Coordinate database (COORD-5)** — a homebase record of known routes and coordinates.
+  - The database is a raidable asset.
+  - A bookmark removes discovery cost, never travel cost.
+  - **Serves:** RAIDER-3, EXPLORER-2, TRADER-2.
+- **Dial out (COORD-6)** — spend power to reach a random unclaimed frontier Gate.
+  - Explorers do not need target intel to find new worlds.
+  - Claimed homes are not in the random frontier pool.
+  - **Serves:** EXPLORER-1, EXPLORER-4, HOMESTEAD-4.
+- **Dial known (COORD-7)** — open a tunnel to a saved coordinate.
+  - **Serves:** TRADER-2, RAIDER-1, CONQUEROR-1.
+
+### Exposure requirements
+
+- **Activity creates traces (EXPOSE-1)** — opening Gates, moving mass, fighting, claiming, trading, and repeated routing leave evidence.
+  - **Serves:** RAIDER-1, EXPLORER-2.
+  - **Prevents:** TURTLE-1.
+  - **Risks:** TRADE-SUICIDE-1.
+- **Quiet play leaks less (EXPOSE-2)** — closed, small, low-traffic homes are hard to locate.
+  - **Serves:** BUILDER-1, HOMESTEAD-1.
+  - **Prevents:** WHALE-1.
+- **Big houses leak more (EXPOSE-3)** — more members, routes, masks, cargo, and claims create more traces.
+  - **Serves:** RAIDER-1, CONQUEROR-3.
+  - **Prevents:** megahouses becoming invisible.
+- **Old home intel needs a recovery valve (EXPOSE-4)** — stale intel, address rotation, heat decay, relocation, or another mechanism must prevent one leak from dooming a home forever.
+  - **Serves:** BUILDER-1, HOMESTEAD-1.
+  - **Prevents:** PERMA-LEAK-1.
+  - **Risks:** TURTLE-1 if too cheap.
+
+### Gate heat, samples & leads (EXPOSE-5)
+
+- **Gate heat is event evidence, not magic danger.** It is the gameplay read of coarse Gate events the server likely logs anyway: source/destination band, open duration, aperture size, transferred mass, hub/jump traffic, claims, combat near a Gate, structure damage, extraction, deaths, and repeated route use.
+- **Heat is physical first.** Cargo mass, aperture, duration, repetition, and public Gate-site presence can create heat. Item price does **not** create Gate heat by itself; value matters only when players reveal, guard, advertise, or fight over it.
+- **Samples are player-facing fragments.** Players do not read the backend ledger. They collect samples from Gate mouths, jump stations, hubs, dead houses, wrecks, camps, corpses, cargo routes, stolen logs, probes, and combat scars.
+- **Leads escalate gradually.** One sample points to activity; matching samples point to a route, jump/hub point, staging Gate, house signature, or confidence band; only repeated/matching/recent evidence plus cost can become temporary raid access.
+- **Reveal order:** activity first, route/meeting point second, identity third, home last. A normal trade or frontier run should expose the run before it exposes the true home.
+- **Recency matters.** Heat decays, samples expire, logs go stale, and raid access is temporary. This is the recovery valve that stops one copied clue from dooming a home forever.
+- **Avatar/mask data is supporting evidence.** A killed avatar or looted mask can provide a sample, signature, or route clue, but fielded avatars do not shed permanent home-address shards by default.
+- **AI and player actors use the same path.** Dead houses, AI route traffic, automated defences, hubs, jump stations, and player houses all create/read heat through the same Gate event model where possible.
+
+### Why / rejected
+
+- **Why mortal, not safe:** a perfectly safe home makes the apex base unraidable and kills real stakes.
+- **Why obscurity:** the tax was the certainty of loss, not the possibility; hidden coordinates remove the certainty without deleting raids.
+- **Why heat/samples/leads:** it makes findability a hunt through recent activity, reuses logs the game already needs, and lets trade expose cargo/route/station presence without defaulting to home exposure.
+- **Rejected — inviolable home:** removes home stakes and makes the frontier pointless to leave.
+- **Rejected — presence-gated wipe:** a no-show abuses it; obscurity makes it unnecessary.
+- **Rejected — permanent avatar-share as primary loop:** one corpse or copied address would recreate permanent coordinate doom and make trade/frontier play too brittle.
+- **Rejected — raw backend radar:** players see samples, leads, and confidence, not a private debug transcript.
+
+- Tunables: heat weights, decay curves, sample lifetime, lead confidence thresholds, raid-access cost/duration, station-log lifetime.
+- Open: exact scan tools/UI; where return/recall lands if the home was wiped while you were away ([[questions]] #13); house shared-ownership sub-rules ([[questions]] #14).
 
 ## Potential
 
@@ -335,12 +413,12 @@ frontier visibility and the raid clock. [tentative]
 - **Frontier visibility** — a contested frontier world is visible/reachable to players ≤ the pusher's Potential, so a whale can't see (or farm) a small player's pushes. This is the anti-whale guardrail (`reach = exposure`); see [[#Gates|Gates]] FRONTIER-1.
 - **Frontier/hub tiering** — near-peers meet by construction.
 - **Raid clock** — the away-reserve keys off home-Gate power, a Potential component.
-- **Not** home-raid eligibility — that's gated by **finding** (shares).
+- **Not** home-raid eligibility — that's gated by **locating** the target through the exposure model.
 
 ### House is the ownership primitive (HOUSE-1)
 
 - The unit that owns a home, holds a coordinate, and carries Potential is a **house**; a **solo player is a house of one** (no separate code path).
-- Roster is a real component, so a big house reads bigger — and **sheds more shares of the same coordinate**, so it's inherently findable. `reach = exposure` at the group level.
+- Roster is a real component, so a big house reads bigger — and creates more traces through members, routes, masks, cargo, and claims. `reach = exposure` at the group level.
 - Word convention: **house = the people, home = the place.** "House" never means a building.
 
 ### NPC houses — dead houses (HOUSE-2)
@@ -370,7 +448,7 @@ Assets staked _outside_ your home sustaining field — the one place the design 
 
 - Serves three archetype gaps in one layer: the offline raider's _ambition_ (siphon exposed output, never the home), the builder's "build exposed for a payoff," and a forward-reach option the home field can't reach.
 - A new object class: a forward node, claimed resource tap, or off-site cache. **Space-gate holdings** and **captured hubs** are the top-tier cases.
-- It has **no woken-sealed Gate of its own**, so there's **nothing to seal** — the same reason space gates can't be turtled. (The home itself is mortal-but-must-be-found; a holding is the **always-on, no-search** target.)
+- It has **no private home Gate of its own**, so there is no quiet/closed home state to hide behind — the same reason space Gates can't be turtled. (The home itself is mortal-but-must-be-located; a holding is the **always-on, no-search** target.)
 
 ### The mechanic — flow-tap, no window
 
@@ -398,7 +476,7 @@ _Stub — narrow scope decided (TAME-1), specifics open._
 - **Narrow yes:** include **taming**; decline deep ARK-style breeding/genetics (a babysitting chore by construction — the exact pain Gaters is built to remove).
 - **Source:** creatures come **only from frontier worlds** — a monster-spill rolls a `tameable` tag; world rank scales rarity. No new spawn system.
 - **Taming is a frontier-clear objective, not a feed-and-wait timer** — subdue under the away-reserve leash; an event, not a maintenance state.
-- **Lineage is a home-anchored record** (safe while unfound); the living animal is the **exposed wager** (costs a core; can die and be looted; the registry entry survives).
+- **Lineage is a home-anchored record** (safe while unknown); the living animal is the **exposed wager** (costs a core; can die and be looted; the registry entry survives).
 - **"Breeding" is shallow and lossless** — combine two registry entries for a blended/mutated re-roll; no timer.
 - Open: tameable roll rate per frontier-world rank, blend odds, instantiation core-cost — or **defer the whole fork** for the greybox.
 
@@ -406,20 +484,21 @@ _Stub — narrow scope decided (TAME-1), specifics open._
 
 _Stub — the anti-decay rule is decided (BUILD-1); build depth is open (BUILD-2)._
 
-- Building on your sealed planet-base is a loved pillar (ARK / Valheim). **No persistent base decay / upkeep** [current call] — the central thing being designed out.
+- Building on your quiet planet-base is a loved pillar (ARK / Valheim). **No persistent base decay / upkeep** [current call] — the central thing being designed out.
 - Defence is the **perimeter at range**, never doorstep cheese — the dome forbids walling the aperture.
-- Safe on sealed soil; offline loss only if the home is **found** (rare), never from neglect.
+- Safe while unknown; offline loss only if the home is **located** (rare), never from neglect.
 - Open: build depth, materials, structure types, buildable defences, grid vs. free-form, anything analogous to taming.
 
 ## Economy
 
 _Stub — drivers/sinks framed, numbers open._
 
-- **Stagnation pressure** (ECON-1) — sealed bases don't grow; growth needs imports — the engine that makes players open up. A peaceful homesteader still progresses to a **soft ceiling**, then plateaus (PROG-2) — a ceiling, not a leak, never an upkeep tax.
+- **Stagnation pressure** (ECON-1) — quiet bases plateau; growth needs imports — the engine that makes players open up. A peaceful homesteader still progresses to a **soft ceiling**, then plateaus (PROG-2) — a ceiling, not a leak, never an upkeep tax.
 - **Power cores** — scarce, scavenged Gate fuel; the primary consumable behind activation.
 - **Activation cost** (ECON-2) = `gate tier × distance band × tier-gap multiplier`. Bands: local / regional / cross-map ≈ power cell / partial core / full core.
-- **Trade** (TRADE-1) — routed cheaply through hubs (toll + exposure) or dialed direct (private, expensive). Driven by **biome resource asymmetry** (REGION-1). ⚠ How much a trade run risks vs. a raid is open ([[questions]] #2).
-- **Sinks** (ECON-3) — hub tolls + the Coalition tithe.
+- **Trade** (TRADE-1) — optional, physical, and in-person; players may barter when they meet at hubs, jump stations, the Safe Core, frontier camps, or agreed points. It is not the main answer to PvE scarcity.
+- **Resource asymmetry** (REGION-1) — worlds differ so exploration, frontier routing, dead-house raids, taming, and substitutions matter. Trade can help socially, but the PvE loop must not depend on a market.
+- **Sinks** (ECON-3) — hub tolls + jump-station routing fees + activation costs + the Coalition tithe.
 - Open: concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
 
 ## Progression
@@ -430,76 +509,86 @@ _Stub — drivers + the homesteader ceiling decided; tech tree open._
 - **Gate tiers are driven, not built** — see [[#Gates|Gates]] and [[gate-physics|Gate Physics]].
 - **No base decay** anywhere (BUILD-1).
 - **Character progression = two-layer mind/avatar XP** — see [[#Presence, respawn & XP|Presence, respawn & XP]] (XP-1).
-- **Sealed soft ceiling (PROG-2):** a fully-sealed homesteader progresses **forever up to a soft ceiling** (frontier tiers need opening), then plateaus — never decays, never punished. Safe because a never-leaver stays unfound.
+- **Quiet soft ceiling (PROG-2):** a mostly quiet homesteader progresses **forever up to a soft ceiling** (frontier tiers need opening), then plateaus — never decays, never punished. Safe because a never-leaver stays unknown.
 - Open: the actual tech tree, research mechanics, gear tiers; the Supergate (PROG-1) endgame specifics.
 
-## Player archetypes
+## Player requirements
 
-The playstyles Gaters expects, sorted by how the balance thesis treats each. **Test every
-proposal against this set** the same way it's tested against the design traps: a decision
-that silently starves a _served_ style, or revives a _denied_ one, is a blocking flag.
+The playstyles Gaters expects, sorted by how the balance thesis treats each. Test every
+proposal against this set: a decision that silently starves a served style, or revives a
+denied one, is a blocking flag.
 
-Reference pull: **Rust** (raiding/offline-raiding, zergs, solo grinders, road PvP,
-trader-bandits — the toxicity reacted to); **ARK** (taming/breeding, mega-tribes farming
-newbies, elaborate bases, PvE homesteaders); **Valheim** (co-op, building-for-joy with no
-decay, exploration, boss progression — its largest audience never PvPs).
+### Served
 
-Mechanic IDs point to the section that owns the mechanic; **⚠ = gap** (no mechanic yet).
+- **Raider**
+  - **RAIDER-1 Find targets** — raiders need ways to locate valuable targets.
+  - **RAIDER-2 Breach** — raids need a bounded fight, not wall math.
+  - **RAIDER-3 Loot** — targets must hold value worth the risk.
+  - **RAIDER-4 Extract** — raiders need a way home with stolen goods.
+  - **RAIDER-5 Anonymity** — raiders need peer-facing anonymity until commitment.
+- **Builder**
+  - **BUILDER-1 Safe home** — builders need long-term homes without decay or chores.
+  - **BUILDER-2 Build depth** — structures, defenses, production, and layout must matter.
+  - **BUILDER-3 Fair defense** — defense happens around the perimeter, not doorstep cheese.
+  - **BUILDER-4 Exposed building** — forward bases and holdings need upside worth the risk.
+- **Explorer**
+  - **EXPLORER-1 Unknown frontier** — explorers need unknown Gates/worlds to discover.
+  - **EXPLORER-2 Valuable intel** — coordinates, routes, traces, and signatures must be useful loot.
+  - **EXPLORER-3 Compounding maps** — early scouting should become late-game leverage.
+  - **EXPLORER-4 Blind dialing** — random frontier discovery must work without target intel.
+- **Conqueror**
+  - **CONQUEROR-1 Holdings** — exposed assets must be worth taking.
+  - **CONQUEROR-2 Capture** — conquest needs take-and-hold mechanics.
+  - **CONQUEROR-3 Peer targets** — conquest should aim at peer-or-greater rivals.
+  - **CONQUEROR-4 Mortal empire** — empires can fall; players persist.
+- **Homesteader**
+  - **HOMESTEAD-1 Quiet safety** — quiet players should be hard to locate.
+  - **HOMESTEAD-2 No chores** — long-term building should not require upkeep babysitting.
+  - **HOMESTEAD-3 Soft ceiling** — staying quiet should progress for a long time, then plateau.
+  - **HOMESTEAD-4 Solo PvE** — frontier PvE should remain valuable without forcing PvP.
+- **Tamer**
+  - **TAME-1 Frontier creatures** — creatures should come from frontier worlds.
+  - **TAME-2 Narrow depth** — taming exists; deep ARK-style breeding/upkeep does not dominate.
 
-### Served — the loved pillars; each needs a satisfying standalone loop
+### Routed
 
-- **Raider** [decided — core fantasy]: open an uphill tunnel → breach the protected **dome** → take loot / the coordinate DB / the control device → withdraw. The headline.
-  - **Find targets** — active gates radiate a traceable signature (running = detectable, sealed = dark), plus stolen coordinate DBs, blind-dial, bought intel. (COORD-1/2)
-  - Targets that hold **real value** — not husks worth less than the away-reserve window. (LOOT-1)
-  - A breach that's a **fight, not a wall** (dome + aperture combat) inside the clock. (GATE-1, SIEGE-1, COMBAT-1/2)
-  - An **extraction path** home, and **anonymity** (raid without leaking your own coordinate). (TUNNEL-1, USE-1)
-- **Builder** [tentative]: build freely on sealed soil; no decay; defence is the perimeter at range, never doorstep cheese.
-  - **Safe sealed soil** — no decay; offline loss only if the home is **found** (rare), never from neglect. (BUILD-1)
-  - **Build depth** worth the hours (structures, defences, production). (⚠ BUILD-2 open)
-  - A reason _and_ a way to build **exposed** too (forward bases) that pays for the risk. (HOLD-1)
-- **Explorer / scout** [tentative]: dial or probe unknown coordinates, map the network, blind-dial as a slot machine; early scouting becomes a late-game hit list.
-  - **Unknown space** to probe/blind-dial, and **signatures to trace**. (COORD-2)
-  - **Coordinates as a valuable output** — tradeable, stealable intel (their "loot"). (COORD-1)
-  - **Compounding discovery** — early scouting becomes a hit-list others pay for. (COORD-1)
-- **Trader / economist** [tentative]: hub routing, tolls, tithe; how much a trade run risks vs. a raid is **open** ([[questions]] #2).
-  - **Resource asymmetry** between worlds — a reason goods move. (REGION-1)
-  - **Routes and a market** — hub routing, direct dial, access lists. (HUB-1, TRADE-1/ECON-2)
-  - **Risk on cargo vs. the vault** — ⚠ open.
-  - **Sinks** (tolls, tithe) that keep it flowing. (ECON-3)
-- **Conqueror / warlord** [tentative]: the ARK "take a whole base" fantasy — take **and hold**, not just loot-and-leave.
-  - **Exposed bases/territory worth capturing** with real value, not husks. (HOLD-1, LOOT-1)
-  - A way to **take _and_ hold** — capture transfers the asset; defending it is the game. Routed to always-live capture targets (hubs for toll control, space gates) — a registry charter flip held by presence, not a decaying home-side claim. (HOLD-1, HUB-1)
-  - **Peer-or-greater targets only** (uphill) — conquest, not newbie-farming. (REACH-1)
-  - **Takes the empire, never the _existence_** — conquest can wipe a found home/civilization, but never the player. (LINK-1)
+- **Trader**
+  - **TRADER-1 Resource asymmetry** — worlds need different outputs, but the primary answer is exploration/frontier play rather than a market.
+  - **TRADER-2 In-person exchange** — trading is valid when players physically meet at hubs, jump stations, the Safe Core, frontier camps, or agreed points.
+  - **TRADER-3 Cargo risk** — trade risks carried cargo and route exposure, not default home exposure.
+  - **TRADER-4 No market pillar** — no trade stations, contracts, escrow, reputation scores, or global auction house by default.
+- **PvP brawler**
+  - **BRAWLER-1 Quick combat** — combat-focused players need fast fights.
+  - **BRAWLER-2 Arena surface** — brawling belongs on contested frontier worlds, space Gates, or other always-live surfaces.
+- **Clan / zerg**
+  - **GROUP-1 Large objectives** — large groups need objectives worth coordinating around.
+  - **GROUP-2 No punch-down** — large groups must not easily farm solos/newbies.
+  - **GROUP-3 Group payoff** — group play needs rewards that justify organization overhead.
 
-### Redirected — valid, but funnelled to a designated arena, never onto sleeping homes
+### Denied
 
-- **PvP brawler / roamer** [tentative]: combat for its own sake → contested frontier worlds, space gates (no longer hubs).
-  - An **always-live arena** — no territory required to join.
-  - **Combat fun on its own**, quick in/out. (COMBAT-1)
-- **Clan / group / zerg** [tentative]: coordinated mass → **hub captures (toll control), big frontier pushes, Supergate events**; cannot punch down (uphill frontier-visibility), so kept off solos and newbies.
-  - **Large-scale objectives** that reward coordination. (HUB-1, PROG-1)
-  - A hard **can't-punch-down** floor — kept off solos / newbies' existence. (REACH-1)
-  - **Group-only payoffs** worth the org overhead. (PROG-1)
+- **Offline raider as default**
+  - **DENY-OFFLINE-1 Rare offline raids** — homes can be raided if located, but offline raiding must not be routine.
+  - **DENY-OFFLINE-2 No sleeping body** — the player's real body is not in-world as an offline target.
+- **Megabase newbie farmer**
+  - **DENY-WHALE-1 Obscurity wall** — strong players should not easily find small quiet homes.
+  - **DENY-WHALE-2 Uphill visibility** — frontier visibility should keep whales away from low-power targets.
+- **Turtle / babysitter**
+  - **DENY-TURTLE-1 No permanent bunker meta** — staying quiet is safe but capped.
+  - **DENY-TURTLE-2 No obligation** — players should never feel forced to log in to prevent decay/loss.
 
-### Denied — the ARK/Rust pain the design exists to remove; scenarios must confirm each stays dead
+### Why
 
-- **Offline raider** [decided — reframed]: a sleeping player's **existence** stays denied (the body is on Earth). Their **home** is no longer immune — a **found** coordinate can be raided offline — but this is **rare** (you must find them; offline raids skew to the recently-active), not the ARK certainty. Their exposed holdings stay always-contestable without any search.
-- **Megabase newbie-farmer** [decided — denied]: blocked by **obscurity + uphill frontier-visibility** — a whale can't see a small player's frontier pushes to harvest their shares.
-- **Turtle / babysitter** [decided — denied as a _dominant_ style]: sealing buys **obscurity, not immunity** (the home is mortal) and stays stagnant; the aperture cannot be cheese-fortified.
-
-### Resolved forks — were undecided; now served at a defined scope
-
-- **Tamer / breeder** [tentative — narrow yes]: include taming (frontier-sourced companions); decline deep ARK breeding/genetics (a babysitting chore by construction).
-- **Peaceful homesteader** [tentative — served]: Valheim's largest audience never opens — build, explore, run solo PvE on the frontier forever, progressing to a **soft ceiling** (PROG-2), never punished for staying sealed. Safe because a never-leaver stays **unfound**, not by an inviolable wall.
+- **Why Served / Routed / Denied:** some fantasies are pillars, some are valid only on the right surface, and some recreate the ARK/Rust pain the design exists to remove.
+- **Why IDs:** mechanics can list **Serves / Prevents / Risks / Test** instead of carrying long rationale every time.
 
 ## Validation — two questions, two scales
 
 Two risks, de-risked differently. Don't conflate them.
 
-- **Is the loop fun? — greybox-answerable.** Do the sealed/open state, the bilateral tunnel, the siege clock, and real PvP combat feel good moment-to-moment? Build a **greybox proof** before any art. Cheap, early, and _necessary but not sufficient_.
+- **Is the loop fun? — greybox-answerable.** Do the closed/open Gate state, obscurity/located coordinate state, the bilateral tunnel, the siege clock, and real PvP combat feel good moment-to-moment? Build a **greybox proof** before any art. Cheap, early, and _necessary but not sufficient_.
 - **Will the population open up rather than turtle? — only shows at scale.** The real make-or-break, and a greybox **cannot** settle it: open-vs-bunker is an emergent **equilibrium** of a live economy — it needs hundreds of players, market depth, and social pressure before it stabilises. Five testers say nothing about where 500 land. Treat it **assume-and-commit**: reason from games that ran the experiment (Rust, EVE, Albion, Foxhole), model the economic pressure, and prove it only at a **scaled paid playtest**. The biggest risk is the one you can't cheaply prove.
-- **Minimum viable slice:** sealed/open states, a bilateral raid tunnel, loot worth taking, economic pressure against permanent sealing, real PvP combat. **Ground Gates only**; space Gates later.
+- **Minimum viable slice:** closed/open Gate state, obscurity/located coordinate state, a bilateral raid tunnel, loot worth taking, economic pressure against permanent quiet play, real PvP combat. **Ground Gates only**; space Gates later.
 - **Design for success enabling expansion, not requiring it** — a working small version is a complete thing, not a broken large one.
 
 ## Technical challenges — and the Gate mechanics that ease them
@@ -518,8 +607,8 @@ Each is a genre-standard hard problem the design has already traded away. Don't 
 them; just don't break the fiction that pays for them.
 
 - **Seamless space-to-surface flight** → **Gate loads.** NMS's hardest engineering problem is sidestepped: you never fly planet-to-space continuously, you dial and load.
-- **A persistent shared world to simulate 24/7** → **presence requirement + sealed-by-default.** A Gate is open only while its owner is online and chose it. Offline = sealed = nothing to simulate. No offline base sim, no decay tick, no sleeping-base economy. The single biggest server saving, and it's a _gameplay pillar_.
-- **An authority transition between solo and contested play** → **server-authoritative always.** One authority owns each planet at all times, so there is no transition between authority models to reconcile or exploit. The cost cap comes from the presence requirement: only online players' planets are simulated, and solo/sealed building — having no adversary — ticks cheaply.
+- **A persistent shared world to simulate 24/7** → **presence requirement + closed-by-default.** A Gate is open only while its owner is online and chose it. Offline = closed/quiet = little to simulate. No offline base sim, no decay tick, no sleeping-base economy. The single biggest server saving, and it's a _gameplay pillar_.
+- **An authority transition between solo and contested play** → **server-authoritative always.** One authority owns each planet at all times, so there is no transition between authority models to reconcile or exploit. The cost cap comes from the presence requirement: only online players' planets are simulated, and quiet solo building — having no adversary — ticks cheaply.
 - **World-size-proportional cost** → **three-state planet + seed-plus-deltas.** A planet is a DB row (**empty**) → a cheap server-side tick (**solo**) → a full spun-up instance (**contested**). Server cost ∝ online players, not world size.
 - **Massive concurrent battles as the default** → **bilateral directional tunnels.** A raid is a two-party instance, not an N-body shared zone. Trivially shardable; no thundering-herd simulation in the common case.
 - **Unbounded session / instance lifetime** → **away-reserve clock, ~38-min ceiling.** Contested instances are short-lived by fiction, so they're cheap to spin up and tear down and never leak.

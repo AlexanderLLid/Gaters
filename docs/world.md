@@ -7,13 +7,14 @@ The Gaters world bible in one file. Mechanics live in [[systems]]; the deep phys
 
 - A long-dormant, galaxy-spanning network of ancient **Gates** suddenly switches on (see [[#Timeline & the Wake|The Wake]]).
 - Each player controls a single **planet-base** sitting on one [[systems#Gates|Gate]]. The [[#United Gate Coalition|United Gate Coalition]] charters independent **gaters** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
-- Players are **human** — people who found a Gate and stepped through (multi-species / post-human / alien rejected as scope with no payoff this phase).
+- Players are **human** — registered gaters using disposable biological avatars through the Gate network (multi-species / post-human / alien rejected as scope with no payoff this phase).
 - The central conflict is a **gold rush over finite, un-manufacturable Gate infrastructure**. Reach and wealth require **opening your Gate and venturing out** — and venturing is what exposes you: acting is how your home is eventually **found** and made raidable. [current call]
 
 ## Design thesis — "reach equals exposure"
 
 - You act on the world only as far as you've **opened** to it; you choose when and toward whom.
-- Your home's safety is **obscurity — being unfound — not an inviolable wall**. A **sealed** planet-base is safe _while hidden_ but **mortal**: venture enough and you are eventually found and raidable (see [[systems#Coordinates & obscurity|Coordinates & Obscurity]]).
+- Your home's safety is **obscurity — being unknown — not an inviolable wall**. A closed planet-base is quiet, but not magically immune: venture enough and your coordinate can become located and raidable (see [[systems#Coordinates & obscurity|Coordinates & Obscurity]]).
+- **Mode by action, not by server:** PvE, PvP, trade, scouting, and conquest share one universe; the Gate determines the current risk surface.
 - "MAD in space" — mutual vulnerability breeds deterrence, alliances, and "cover my Gate while I trade" pacts.
 - This is the spine of the whole design; the survival/PvP model is [[systems#Mask energy|Mask Energy]] + obscurity. **Why:** it delivers the aggressor fantasy (raiding, looting) without the defender tax (babysitting, decay, offline loss) — the genre's persistent-shared-world-plus-offline-vulnerability is the thing it rejects. [current call]
 
@@ -26,10 +27,11 @@ The Gaters world bible in one file. Mechanics live in [[systems]]; the deep phys
 
 The place-types, kept high-level. They double as the unlock ladder (see [[systems#Progression|Progression]]). [tentative]
 
-- **Home planet-base** — your claimed world on a single Gate; the seat of building and solo PvE. Safe **while unfound**, not merely while sealed.
-- **Surface worlds** — the starting tier (only short-range Gates have woken); larger and richer worlds as you progress. Each world's seed rolls a **biome tag set**, so one world's output is another's missing input — the base trade driver (REGION-1).
+- **Home planet-base** — your claimed world on a single Gate; the seat of building and solo PvE. Safe **while unknown**, not because "closed" means invulnerable.
+- **Surface worlds** — the starting tier (only short-range Gates have woken); larger and richer worlds as you progress. Each world's seed rolls a **biome tag set**, so one world's output shapes what you seek through exploration, frontier routes, dead houses, taming, substitution, or optional barter.
 - **Hub worlds** — neutral, **lawless commerce crossroads**: trade routing + tolls, **capturable for tax control**; the open PvP contest lives on contested frontier worlds, not here. See [[systems#Hub worlds|Hub Worlds]].
-- **The Safe Core** — the Coalition-policed market and new-player spawn; safe commerce, always reachable.
+- **Jump-station worlds** — discovered worlds whose Gate has relay/routing config: refuel, lane-stabilize, bridge sectors, or make long travel cheaper. Natural crossroads where non-traders also pass through, creating organic player contact.
+- **The Safe Core** — the Coalition-policed new-player spawn and service floor; always reachable, safe for meeting and optional barter, but not a global market.
 - **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) and the husk bases of **dead houses** ([[systems#Potential|HOUSE-2]]) give it its flavour; a world can seat several Gates (FRONTIER-3); claim one to make it yours.
 - **Later (wants to have)** — orbital / space Gates, hub/relay Gates, megastructure / Supergate sites: see [[questions]], Roadmap.
 - Open: the network's true extent (one system / many / galaxies).
@@ -40,7 +42,7 @@ The precursor civilization that made the Gates — **unknown by design**. [curre
 
 - They built the Gate network and then vanished. **Nothing else is established.**
 - Who they were and why they built it is hidden from everyone, including the Coalition.
-- Their engineering encodes deliberate conceits we _do_ see: Gates **woke sealed**, **fail closed** without an operator, and project an un-wallable [[systems#Combat|dome]]. One principle — _the Gate guards what's behind it unless actively driven open_ — generates all three.
+- Their engineering encodes deliberate conceits we _do_ see: Gates **woke closed**, fail closed without an operator, and project an un-wallable [[systems#Combat|dome]]. One principle — _a Gate cannot be permanently silenced or blocked_ — generates the dome and the closed-by-default state.
 - Their ignorance is deliberate — the long-game **mystery engine**. The Wake and the rising instability point back to them; the hidden truth of _what_ woke the Gates is the central mystery. Candidate truths tracked in [[questions]]. [tentative]
 - A standing hook: _why_ did the Builders forbid walling a Gate (the dome)? A Gate that can never be entombed can always be reached _through_ — left unanswered per Builders-unknown.
 - **Do not invent** their history, names, appearance, or motives. Resolve only when the mystery payoff requires it.
@@ -53,7 +55,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 - Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Coalition's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
 - When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and houses alike ([[systems#Potential|HOUSE-1]]). It does not pick winners; it lists access and lets them compete.
-- It **records charter standing** — a ledger entry, _not_ physical immunity: a found home is still raidable.
+- It **records charter standing** — a ledger entry, _not_ physical immunity: a located home is still raidable.
 - It brokers **nothing past the frontier edge** — no listings, no standing, no cut; past that line "reach equals exposure" is the only law.
 
 ### Gate availability (the patch channel)
@@ -92,7 +94,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 Canonical order of events. A date conflict with this section is a hard contradiction.
 
-- **Before** — the **Builders'** era, then an indeterminate **dormancy** of the sealed network. Nothing dated is established — do not invent.
+- **Before** — the **Builders'** era, then an indeterminate **dormancy** of the closed network. Nothing dated is established — do not invent.
 - **Year zero — The Wake.** In-world **year x**: humans found a dormant Gate on Earth and learned to open it. Gameplay begins some years maybe after, in a land rush "that started five minutes ago." _Placeholder name_ (open). Why the Gate woke, how long it was dormant, what (if anything) is behind it — all open; do not invent. [tentative]
 - **Over the game's life** — rising **misdial** frequency and harsher frontier pulls: the difficulty ramp and the visible symptom of the mystery (see [[systems#Gates|Gates]]). Not a fixed calendar; a trend. [tentative]
 
@@ -115,25 +117,32 @@ Canonical order of events. A date conflict with this section is a hard contradic
 
 ### What players can observe (fair to make canon)
 
-- The system **selects for the fittest gene**, keys to **DNA**, **discards vehicles**, and **propagates patterns**. It behaves like a galaxy-scale survival-of-the-fittest engine. This is visible and provable in-world.
+- The system tests **embodied biological consciousness**: living bodies, masks, claims, adaptation, territory, cooperation, betrayal, and recovery under pressure.
+- It accepts robots as tools, but not as claimants. A robot can assist, repair, scan, fight, and build; it cannot blood a Gate.
+- Gates behave like research machines as much as roads: they move candidates, record traces, enforce claims, expose activity, and lock deeper Builder knowledge behind survival and adaptation.
 
 ### What stays the mystery (parked)
 
-- **Bred for what, and for whom?** Who or what collects the "best gene" when the engine finds it? This is the question the game dangles, never answers early.
+- **Preserved for what, and for whom?** Who or what receives the successful consciousness pattern when the machine finds it? This is the question the game dangles, never answers early.
 
 ### The leading candidate truth [tentative — behind the curtain]
 
-- **The Builders were dying.** Their own biology failed them — they could not save _themselves_.
-- **So they built a successor-breeding machine.** Unable to persist as individuals, they aimed to cultivate a worthy **gene** to inherit what they couldn't keep. Selection without extinction is their design philosophy, not just a game thesis.
+- **The Builders were dying.** Their own biology failed them — disease, genetic collapse, or a deeper substrate failure in the kind of life they were.
+- **They could build machines, but not certainty.** They had AI, probes, masks, and maybe avatar systems, but they could not prove that upload/copy/successor continuity preserved the real light of consciousness.
+- **So they built a consciousness-preservation machine.** Not a road network first: a research system built to find, grow, and test viable biological carriers of consciousness.
 - **They seeded the galaxy with von Neumann probes** (self-replicating craft). The probes:
-  - **Built and spread the Gate network** across the galaxy (why it's galaxy-spanning).
-  - **Seeded living, breathable worlds** as arenas (why most Gate-worlds have life — and a living substrate avatars can be grown or sustained from).
-  - **Set up selection to scale: planet-level first, then galaxy-wide** as the network wakes and connects. Early game = local competition; late game = the arenas wire together into galaxy-scale selection.
-- **The Wake** = the machine (or its trigger) switching on the selection program — which is also why the network is unstable and misdials proliferate.
+  - **Built and spread the Gate network** across the galaxy.
+  - **Seeded living, breathable worlds** as candidate environments.
+  - **Built Gates as research stations, test chambers, vault locks, and transport mouths.**
+  - **Iterated Gate configurations** over long timescales, explaining why Gates vary without making the Builders sloppy.
+  - **Recorded survival, claim, cooperation, betrayal, trade, violence, adaptation, and recovery** as useful data, not just genetics.
+- **The Gates arrived too late to save the Builders.** A Gate can only connect completed endpoints; probes had to travel physically, build mouths, seed/test worlds, and then connect them. The first useful escape route opened after the last Builder died.
+- **Earth may be a wild result.** A probe may have visited Earth too early, marked it immature, and left behind a dormant Gate-seed or marker. Humans evolved naturally outside the main seeded experiment.
+- **The Wake** = the machine noticing unseeded consciousness when humanity activated or disturbed the dormant Earth Gate. The network is now pulling humans into the experiment.
 
 ### Why this candidate is strong
 
-- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, the gene-as-unit theme, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
+- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, biological avatars, blood-claiming, robot limits, the dome, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
 - It needs **no benevolent caretaker** — the makers are indifferent/dead; the machine just runs. Fits "cosmic unease."
 - Compatible with the open candidate truths (outside signal / tripwire / Coalition lie): the "best gene" could be cultivated _for_ whatever woke the network, or the Wake _is_ the tripwire that started selection. Keep these convergent, not contradictory.
 
