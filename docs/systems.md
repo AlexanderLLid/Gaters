@@ -1,8 +1,9 @@
 # Systems
 
 The Gaters mechanics bible in one file. The world it serves is [[world]]; the deep physics
-in [[gate-physics|Gate Physics]]; unresolved questions in [[questions]]. Numbers never
-live in prose — each mechanic names its tunables; values land in data at playtest.
+in [[gate-physics|Gate Physics]]. System-local open questions live beside the mechanics
+they affect; big cross-cutting forks live in [[questions]]. Numbers never live in prose —
+each mechanic names its tunables; values land in data at playtest.
 Code references stay placeholders until the game project exists.
 
 ## Design pillars
@@ -17,10 +18,12 @@ Code references stay placeholders until the game project exists.
   - **Why:** invulnerable homes kill raid stakes; guaranteed vulnerability creates defender tax.
 - **No defender tax** - absence must not create routine loss, decay, or chores.
   - **Why:** players should be excited to log in, never obligated on pain of loss.
-- **Finite Gates drive conflict** - Gates are found, claimed, repaired, and fought over; players never manufacture them.
-  - **Why:** finite infrastructure creates conflict without arbitrary scarcity.
+- **Finite Gates drive conflict** - at the current layer, Gates are found, claimed, repaired, and fought over; whether players can ever manufacture or grow new Gates is open.
+  - **Why:** finite infrastructure creates conflict without arbitrary scarcity, while leaving the long-term Gate-creation question undecided.
 - **The Gate is the seam** - travel, trade, raiding, claiming, discovery, and exposure all route through Gates.
   - **Why:** one central object keeps the design legible and avoids parallel systems.
+- **Play stays Gate-proximate** - important action must be pulled toward active Gates: homes, dead houses, raid fronts, high-value resources, AI bases, claims, and contested objectives should live close enough to Gates that one generated chunk can carry a session.
+  - **Why:** this keeps the Gate as the real centre of play, makes local procedural generation viable for a solo build, and prevents "the whole planet" from becoming the actual required play space.
 - **Explain rules, not the soul** - avatar continuity works operationally; the metaphysics stay part of the Builder mystery.
   - **Why:** over-explaining consciousness creates contradictions and weakens the central mystery.
 
@@ -34,6 +37,25 @@ link here, they do not restate it.
 - **Long-term** - grow the base, raise charter clearance, climb world tiers and Potential as more of the network wakes; no base to babysit.
 
 - **Validation note:** whether players actually open up is a population equilibrium, not a greybox feel test; see [[#Validation — two questions, two scales|Validation]].
+
+## First prototype priority — PvPvE raiding [current call]
+
+The first real build should prove the **Gate-proximate PvPvE raid surface**: your home
+Gate gets or finds a dial to a generated world chunk with one raidable AI/dead-house base,
+basic defenders, loot, extraction, and reset/retry. Do not spend the first proof on
+markets, galaxy-scale routing, full MMO hosting, space, taming depth, or perfect portal
+rendering.
+
+- **Core question** - can the game generate a local Gate site that is fun and valid to raid?
+  - **Includes:** home-Gate dial offer, sensor reading, terrain chunk, Gate placement, dome/no-build clearance, base platform/foundation, modular AI/dead-house base, pathable defenders, reachable loot, extraction/recall, and save/reload of the generated result.
+  - **Excludes:** proving that PvP itself is fun. Rust/ARK/EVE already prove the appetite for raiding, loss, alliances, betrayal, and loot pressure; Gaters must prove its Gate-native delivery.
+- **AI/dead-house bases are the first PvE target** - they train the raid loop, work at low population, and let the generator be tested without waiting for a player economy.
+  - **Test:** generate many seeds; reject any base that blocks the Gate dome, has unreachable loot, traps defenders, has no attack lane, or exceeds the object/performance budget.
+- **Gate sensors make the raid a wager** - before committing, the home Gate can return an imperfect read on the far Gate's value, danger, base tier, defenders, loot signature, instability, or weirdness. Better sensors reduce uncertainty; no sensor or a bad read makes the dial a gamble.
+- **Bad reads create the Solo Leveling twist** - a lane can be misranked, turn hostile after entry, lock recall/re-dial until a condition is cleared, reveal a hidden second base, or become a double-site. These are special lane modifiers, not a separate travel system.
+- **Player bases come after generated raid sites** - free building matters, but the first prototype needs predictable platform/foundation sites so AI bases and validation can work.
+- **Gate network logic is not the hard first proof** - coordinates, heat, ownership, and route records are normal software systems; keep them stubbed until generated raid sites work.
+- **Success condition** - a solo dev can press "new seed" and repeatedly get a playable Gate-adjacent raid: approach, breach, fight AI, loot, extract, reload.
 
 ## Failure modes
 
@@ -62,8 +84,8 @@ The central object: every planet-base sits on a Gate, and all reach flows throug
 deep physics treatment is [[gate-physics|Gate Physics]]; this section is the game model.
 
 - Owning a planet means **owning its Gate** — the reason bases are planets, not an arbitrary rule.
-- Gate finiteness (found, never manufactured) is the root of all conflict; opening your Gate is how you reach the world _and_ how you become reachable.
-- **Woke closed; unmanufacturable.** The network came online with every aperture shut, and Gates can only be **found, claimed, repaired** — never built (GATE-1).
+- Gate finiteness at the current layer is the root of all conflict; opening your Gate is how you reach the world _and_ how you become reachable.
+- **Woke closed; Gate creation open.** The network came online with every aperture shut. For the current design layer, Gates are **found, claimed, and repaired**; whether players can ever manufacture, grow, print, or otherwise create new Gates stays open (GATE-1).
 - **Closed / open are connection states.** Closed = no active tunnel; open = one active tunnel exists. Safety comes from coordinate obscurity, not from the word "closed."
 - **Travel is one-way and directional.** The _dialing_ side opens the tunnel and pays the power, so a raid is inherently the attacker pushing through a tunnel they opened.
 - **One ring props one live tunnel at a time (GATE-2).** A throat joins exactly two mouths ([[gate-physics|Gate Physics]]), so a Gate never holds multiple simultaneous connections — multi-party arrivals at one world are **sequential dials**, never held tunnels. Multi-tunnel exists only as multiple rings (Supergates, deferred).
@@ -74,7 +96,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - The **ring is fixed**; the **aperture** is a runtime variable set by how much exotic matter (power cores) you channel, capped per ring by the **Ford–Roman quantum inequality** ([[gate-physics|Gate Physics]]).
 - **Standard → Heavy** = one ring fed lightly vs. hard (wider aperture, bigger payload, bigger dome, more cost).
-- **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired, never new-built.
+- **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired at the current layer, with true new-building still open.
 - **Overdrive** one ring past its ceiling and the throat destabilises into an uncontrolled, self-collapsing lane (the gate-overload bomb).
 
 ### Gate variation — the Builder "config" [tentative — rough idea]
@@ -88,17 +110,18 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Open** — one active tunnel exists. Travel, trade, raids, and exposure happen through open Gates.
 - **Presence stops cold contact, not discovery.** A closed Gate cannot be entered through a shut throat, but a located home is still a valid raid target under the raid rules.
 - **Offline tends _toward_ safety, not away from it.** A quiet closed Gate sheds fewer traces, so logging off lowers your odds of being located; it does not make a located home magically invulnerable.
-- **Open:** exact spin-down, grace-window, and offline raid timings.
+- **Open:** exact spin-down, grace-window, and offline raid timings; what can pass through or be sensed while closed, including comms, diagnostics, registry state, trace sampling, and whether goods/energy/people are fully blocked.
 
 ### Reaching the frontier — dial out (FRONTIER-1)
 
 - **Two things you can dial:** a **claimed coordinate you've assembled** (a raid — needs current intel), or **out into the unclaimed frontier** (expansion). You can't pick _which_ frontier world — dialing an unclaimed address lands you at a **random** one; **claimed homes are off the pool**, so no one is ever dropped onto occupied soil (preserves obscurity).
+- **Raid-lane offers** — your home Gate can surface or discover candidate lanes to frontier Gates with AI/dead-house bases. A lane is described by a **sensor reading**, not perfect truth: estimated value, danger, base tier, defenders, loot signature, instability, and special modifiers can be missing, vague, or wrong.
 - **Frontier travel is one-way** — you can't return the way you came; you arrive, and the away-reserve clock is already ticking. Push your luck against it for loot, or **claim the far Gate** before it runs out.
 - **The frontier world _is_ the contact surface** — there is no second travel phenomenon. It runs on three planet runtime-states: a **database row** when empty, a **cheap solo PvE tick** when you're there alone (build/loot in peace), a **server-authoritative contested instance** when others arrive (PvPvE). Persistent as a row, ephemeral as an instance → a bigger frontier costs no more to host until it's actually fought over.
 - **Who can reach you there** scales with Potential and findability — small/quiet pushes draw few rivals; big ones are visible. Same obscurity economy as home, no separate rule.
-- **Claiming the far Gate** (imprint) converts a frontier world into your soil and a forward respawn — this is how **new Gates** enter your holdings. Finite but slowly replenishing; pacing open ([[questions]] #9).
+- **Claiming the far Gate** (imprint) converts a frontier world into your soil and a forward respawn — this is how **new Gates** enter your holdings. Finite but slowly replenishing; pacing open.
 - **Creatures, biome variety, loot** come from the frontier world's tags — see [[world#World types|World Types]] (REGION-1) and [[#Taming|Taming]] (TAME-1).
-- **A frontier world can seat multiple Gates (FRONTIER-3).** The seed rolls 1–N Gates per world; each can host a **dead-house base** ([[#Potential|HOUSE-2]]). Several houses reaching the same listed world arrive through **different Gates** (sequential dials — GATE-2 holds), which is the multi-party PvPvE mechanism: an event is just a multi-gate world getting listed (the broker patch channel, [[world#United Gate Coalition|Coalition]]). **Homes stay single-gate** — a second gate on claimed soil is an overland backdoor around obscurity; parked ([[questions]] #22).
+- **A frontier world can seat multiple Gates (FRONTIER-3).** The seed rolls 1–N Gates per world; each can host a **dead-house base** ([[#Potential|HOUSE-2]]). Several houses reaching the same listed world arrive through **different Gates** (sequential dials — GATE-2 holds), which is the multi-party PvPvE mechanism: an event is just a multi-gate world getting listed (the broker patch channel, [[world#United Gate Coalition|Coalition]]). **Homes stay single-gate** — a second gate on claimed soil is an overland backdoor around obscurity.
 
 ### Self-misdial — the uncontrolled lane (FRONTIER-2)
 
@@ -107,9 +130,23 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Only an active Gate misdials.** A closed/offline Gate channels nothing, so it can't — "never while logged off" follows from the physics, not a bolted-on rule.
 - It's the in-world face of rising instability: **more Gate activity → more misdials → harsher pulls** — the difficulty ramp and the visible symptom of the central mystery.
 
+### Open questions — Gates
+
+- **Frontier pacing** — player-driven frontier claiming vs. Coalition-paced expansion: who controls world-growth pacing?
+- **Frontier specifics** — rank scale, frontier-loot vs. raid-loot balance, dead-house discount, gates-per-world distribution, and self-misdial rate/trigger.
+- **Multi-gate homes** — parked. Frontier/procedural worlds can seat multiple Gates; homes stay single-gate unless a closer solves the overland-backdoor problem. A possible closer is claiming the whole world gate set, with each extra Gate becoming its own exposure surface.
+
+### Sensor readings & lane twists (FRONTIER-4)
+
+- **Sensors read through the Gate before commitment** — either built into the home Gate or sent as a probe/scan. They estimate the far site's rank, value, defenders, terrain, loot signature, instability, and special rules.
+- **Readings are probabilistic** — sensor tier controls confidence, not truth. A cheap scan might say "high value / low hostile count" and be wrong; a better scan narrows ranges, detects instability, or spots hidden structures.
+- **Lane twists are the dungeon surprise** — a lane can be misranked, locked, blind, double-layered, fast-collapsing, defender-heavy, or richer than advertised. The player sees enough warning to choose a risk, never enough to solve the run from the menu.
+- **A red/locked lane is opt-in once read, committed once entered** — it can jam recall, re-dial, or clean extraction until a condition is cleared, but it should be telegraphed as abnormal before entry unless the twist is explicitly "bad scan."
+- **Generation framework** — raid lanes should expose configurable modifiers such as `normal`, `bad_read`, `locked`, `blind`, `double_site`, `fast_collapse`, `defender_heavy`, and `rich_signature`. Their probabilities belong in data/scripts, not prose.
+
 ### Why / rejected
 
-- **Why ring-fixed, aperture-driven:** it keeps the canon rule "Gates are found, never fabricated" intact while still giving a tier ladder — you drive the same found ring harder, you never build a bigger one. Exceeding one ring means reassembling found segments, so the rule holds.
+- **Why ring-fixed, aperture-driven:** it keeps early progression on found Gate infrastructure while still giving a tier ladder — you drive the same found ring harder before any later Gate-creation question matters. Exceeding one ring means reassembling found segments at the current layer.
 - **Rejected — "Builders made rings in many fixed sizes; tier up by claiming a bigger ring":** makes the aperture hardware-fixed, conflicting with the driven aperture and with the dome flexing as the throat widens.
 - **Why one cosmology (FRONTIER-1):** the uncontrolled lane is the same phenomenon as the Gate, just un-propped ([[gate-physics|Gate Physics]]) — so there is no second travel system. Travel out, the push-your-luck timer, the contact surface, and the new-Gate pipeline are all the **Gate dialing the frontier**; the contest reuses the planet runtime-states instead of a bespoke instance type. One fewer system to balance, and the away-reserve replaces a separate collapse clock.
 - **Rejected — "Rifts", a standalone uncontrolled-portal concept with its own extraction system** (Sealed/Open instances, Host/Scavenger, corpse-share drops as its own layer): a second cosmology, hand-balanced and duplicative. The contested frontier world delivers the same extraction loop on instancing we already have; the underdog-crashes-a-bigger-op fantasy stays **emergent** (a weak player can still walk into a contested world). Everything the concept did is now the Gate: uncontrolled openings are **misdials**, collapse timing is the un-propped throat's own physics.
@@ -128,6 +165,7 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 - The mask is the gater's required interface: life support, HUD, scanner, claim key, sync/continuity buffer, field battery, and black box.
 - The mask is the in-world UI: health, reserve, field strength, compass, scanner results, Gate diagnostics, claim progress, route data, comms, alerts, and sync status.
 - **The sustaining field (MASK-2)** — each active Gate projects a bubble; inside it the mask tops up (effectively unlimited time on your own soil). It **weakens on a gradient** outward — the game's **soft world border**: a cost/risk curve, not a wall. The dangerous fringe is where the frontier lies.
+- **Gate-proximate content (MASK-4)** — the field is also a content-shaping rule: valuable resources, dead houses, AI bases, claims, return paths, and raidable structures should cluster around Gate fields rather than scatter across a full planet. Worlds can imply huge scale, but the playable/generated chunk for a session lives near the Gate.
 
 ### The two-number split (MASK-3) — load-bearing
 
@@ -141,7 +179,7 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 - **In hostile territory:** hard failure — you go down, lootable. The real risk that stops raiding from being a free teleport home.
 
 - Tunables: drain curve, field-gradient shape, away-reserve-vs-Gate-power curve.
-- Open: what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. a capped player upgrade; whether any survival meters exist beyond the mask.
+- **Open:** what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. capped player upgrade; confirm asymmetric mask-at-zero; whether any survival meters exist beyond mask energy and how minimal they must be.
 
 ## Raiding
 
@@ -174,7 +212,7 @@ aggressor thrill without the defender tax. [decided core fantasy]
 - **Rejected — a separate defender-set siege timer:** unneeded; the attacker's fixed clock already bounds the fight once the Gate locks open.
 
 - Tunables: clock curve vs. Gate power, bounty size per tier, mass caps.
-- Open: matchmaking / instancing of bilateral tunnels; transponder / no-caller-ID details (USE-1).
+- **Open:** matchmaking / instancing of bilateral tunnels; transponder / no-caller-ID details; what peers can and can't trace of a raider's identity while the Coalition still knows every registered gater.
 
 ## Combat
 
@@ -221,7 +259,7 @@ Neutral, **lawless commerce crossroads** — trade routing nodes you can capture
 - **Relation to the other surfaces:** Safe Core = policed spawn/services/meeting; **hubs** = lawless routing crossroads; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs/jump stations for travel and optional barter.
 
 - Tunables: toll rates, routing-cost reduction, capture rules.
-- Open: whether long-distance dialing needs **jump / relay servers** (hop-routing) to stop one-jump reach being too strong (parked — [[questions]] #16). Hub capture-defence specifics.
+- **Open:** whether long-distance dialing needs **jump / relay servers** (hop-routing) to stop one-jump reach being too strong. Hub capture-defence specifics.
 
 ## Trade, scarcity & meeting places
 
@@ -291,7 +329,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 - **Rejected — piloting multiple avatars at once (multibox):** sequential roster only, so presence stays a real constraint.
 
 - Tunables: re-level curve, recall/abandon cost, away-clock length, respawn time.
-- Open: disconnect / AFK / grace-window timings; exact respawn location chain when a forward facility is lost (fall back to Safe Core).
+- **Open:** disconnect / AFK / grace-window timings; exact respawn location chain when a forward facility is lost or when your home is wiped mid-run, likely falling back to Safe Core or another starter/operator anchor.
 
 ## Claiming
 
@@ -388,7 +426,7 @@ can escalate into temporary raid access. [current call; tuning open]
 - **Rejected — raw backend radar:** players see samples, leads, and confidence, not a private debug transcript.
 
 - Tunables: heat weights, decay curves, sample lifetime, lead confidence thresholds, raid-access cost/duration, station-log lifetime.
-- Open: exact scan tools/UI; where return/recall lands if the home was wiped while you were away ([[questions]] #13); house shared-ownership sub-rules ([[questions]] #14).
+- **Open:** exact scan tools/UI; where return/recall lands if the home was wiped while you were away; house shared-ownership sub-rules for address rotation, stale-intel recovery, member churn, old access, route data, betrayal risk, and who may recall to shared home defense.
 
 ## Potential
 
@@ -426,7 +464,7 @@ frontier visibility and the raid clock. [tentative]
 - Every ownership / defense / raid mechanic is written against a **house**, so an AI base is just a house whose owner is an NPC — a **dead house**: the registry row of a gater the frontier ate, base intact, defences running on automation (the same frozen-snapshot AI as [[#Holdings|Holdings]]). [current call]
 - **Reuse is the point:** Potential rating (visibility/tiering), the dome, the aperture fight, the muster cap (AI defenders count toward K), the loot floor (the bounty is server-minted either way), and the attacker's away-reserve clock all apply unchanged — one code path for AI bases and player bases.
 - Dead-house bases seed **procedural frontier worlds** ([[#Gates|FRONTIER-3]]): PvE raid content that trains the raid loop, keeps it alive at low population, and lets the greybox prove the raid fantasy without hundreds of players.
-- **PvE-dodge guard:** if a dead house of equal tier yields player-tier loot at zero social risk, nobody raids players — dead-house loot sits **below** player loot at tier (knob lands with the frontier-vs-raid loot balance, [[questions]] #10).
+- **PvE-dodge guard:** if a dead house of equal tier yields player-tier loot at zero social risk, nobody raids players — dead-house loot sits **below** player loot at tier.
 
 ### Why / rejected
 
@@ -439,7 +477,7 @@ frontier visibility and the raid clock. [tentative]
 - **Rejected — hybrid (solo homes + house-only holdings):** keeps two ownership models; house-of-one unifies them.
 
 - Tunables: the curve converting the four components into the number; component weights.
-- Open: component weights and the climb curve; house shared-ownership sub-rules ([[questions]] #14).
+- **Open:** component weights and the climb curve; house shared-ownership sub-rules, including who may rotate/stabilize the house address, how leaving/kicking affects old access and route data, and how the muster cap counts a house vs. a solo.
 
 ## Holdings
 
@@ -499,7 +537,7 @@ _Stub — drivers/sinks framed, numbers open._
 - **Trade** (TRADE-1) — optional, physical, and in-person; players may barter when they meet at hubs, jump stations, the Safe Core, frontier camps, or agreed points. It is not the main answer to PvE scarcity.
 - **Resource asymmetry** (REGION-1) — worlds differ so exploration, frontier routing, dead-house raids, taming, and substitutions matter. Trade can help socially, but the PvE loop must not depend on a market.
 - **Sinks** (ECON-3) — hub tolls + jump-station routing fees + activation costs + the Coalition tithe.
-- Open: concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
+- **Open:** concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
 
 ## Progression
 
@@ -586,9 +624,10 @@ denied one, is a blocking flag.
 
 Two risks, de-risked differently. Don't conflate them.
 
-- **Is the loop fun? — greybox-answerable.** Do the closed/open Gate state, obscurity/located coordinate state, the bilateral tunnel, the siege clock, and real PvP combat feel good moment-to-moment? Build a **greybox proof** before any art. Cheap, early, and _necessary but not sufficient_.
+- **Is the Gate-native raid site feasible? — greybox-answerable.** Can a generated Gate-proximate world chunk produce a valid raid: terrain, Gate, dome clearance, AI/dead-house base, defenders, loot, extraction, and save/reload? Build this **greybox proof** before art polish or galaxy-scale systems. Cheap, early, and _necessary but not sufficient_.
 - **Will the population open up rather than turtle? — only shows at scale.** The real make-or-break, and a greybox **cannot** settle it: open-vs-bunker is an emergent **equilibrium** of a live economy — it needs hundreds of players, market depth, and social pressure before it stabilises. Five testers say nothing about where 500 land. Treat it **assume-and-commit**: reason from games that ran the experiment (Rust, EVE, Albion, Foxhole), model the economic pressure, and prove it only at a **scaled paid playtest**. The biggest risk is the one you can't cheaply prove.
-- **Minimum viable slice:** closed/open Gate state, obscurity/located coordinate state, a bilateral raid tunnel, loot worth taking, economic pressure against permanent quiet play, real PvP combat. **Ground Gates only**; space Gates later.
+- **Minimum viable slice:** one generated ground Gate site, one generated AI/dead-house base, valid dome clearance, pathable defenders, loot worth taking, extraction/recall, and persistence of the generated result. Closed/open, obscurity, coordinates, heat, economy, and real PvP can stay stubbed until the generated raid surface works. **Ground Gates only**; space Gates later.
+- **Open:** whether players actually open their Gates remains a population-equilibrium question, not a solo greybox question.
 - **Design for success enabling expansion, not requiring it** — a working small version is a complete thing, not a broken large one.
 
 ## Technical challenges — and the Gate mechanics that ease them
@@ -612,7 +651,7 @@ them; just don't break the fiction that pays for them.
 - **World-size-proportional cost** → **three-state planet + seed-plus-deltas.** A planet is a DB row (**empty**) → a cheap server-side tick (**solo**) → a full spun-up instance (**contested**). Server cost ∝ online players, not world size.
 - **Massive concurrent battles as the default** → **bilateral directional tunnels.** A raid is a two-party instance, not an N-body shared zone. Trivially shardable; no thundering-herd simulation in the common case.
 - **Unbounded session / instance lifetime** → **away-reserve clock, ~38-min ceiling.** Contested instances are short-lived by fiction, so they're cheap to spin up and tear down and never leak.
-- **Bounding the simulated volume** → **mask field + the dome.** Only the area around an _active_ Gate needs simulating; the field radius is the soft world border and the dome bounds the combat arena.
+- **Bounding the simulated volume** → **mask field + the dome.** Only the area around an _active_ Gate needs simulating because mechanics intentionally keep meaningful play near Gates; the field radius is the soft world border and the dome bounds the combat arena.
 - **Infinite/contiguous procedural universe** → **discrete, seedable planets loaded one at a time.** Each planet is an isolated bounded chunk behind a `PlanetGenerator` abstraction.
 
 ### Part B — the technical residue, ranked, with the lever for each
@@ -622,7 +661,7 @@ What the Gate fiction does _not_ already pay for. Ranked by severity for a solo 
 1. **Two worlds, live, through an open Gate — _highest_.** "A firefight at the aperture, not a loading screen" means rendering and simulating **two planets at once** through a portal — the Portal/Prey rendering problem, plus two physics scenes, plus netcode spanning them. Levers: **the dome bounds the portal** (you never render the whole far planet — only what's visible through the throat, and the dome caps that radius); **the aperture is the only shared volume** (both sides simulate their own planet; only the throat region is co-simulated); **graceful-degrade fallback** — the aperture degrades to a shared staging volume both sides load into; greybox can ship the cheap version first.
 2. **Networked physics across an authority boundary — _high_.** "Momentum conserved through the Gate" means a physics object changes authority mid-flight — a classic netcode trap. Lever: the **aperture is the single transfer plane**, and the **mass cap** bounds how many such objects exist at once.
 3. **Instance orchestration, cold-start, spin-up latency — _medium_.** Spinning up a contested instance the moment a raid commits, cheaply and fast. Lever: the **dial → tunnel-open sequence is a provisioning window** — the diegetic "dialing" animation covers instance cold-start; both endpoints known in advance; uphill-only shrinks the pool; the ~38-min cap makes instances short and self-terminating. (Greybox: a listen-server removes orchestration entirely.)
-4. **The one irreducible shared state — the registry — _medium_.** Claims, coordinates, who-holds-what: a global, consistent, persistent dataset — the one component instancing can't remove; couples to raider anonymity ([[questions]] #8). Lever: it's a **database problem, not a simulation problem**. The Coalition _is_ the natural home for centralized state (lore = the schema); the registry knows owners, but the raid tunnel need not expose the attacker until commit (transponder model). Keep the registry small (metadata only).
+4. **The one irreducible shared state — the registry — _medium_.** Claims, coordinates, who-holds-what: a global, consistent, persistent dataset — the one component instancing can't remove; couples to raider anonymity. Lever: it's a **database problem, not a simulation problem**. The Coalition _is_ the natural home for centralized state (lore = the schema); the registry knows owners, but the raid tunnel need not expose the attacker until commit (transponder model). Keep the registry small (metadata only).
 5. **The many-vs-many exception — hubs, server events — _medium, but cappable_.** Explicitly many-vs-many surfaces are where "instancing makes it cheap" breaks. Lever: they are **few, optional, and bounded** — hubs hard-capped in concurrency, uncontrolled lanes temporary by fiction (they collapse on a countdown). Keep them out of the greybox.
 6. **Procedural generation breadth — _medium, already deferred_.** Lever: the **`PlanetGenerator` abstraction from day one** — greybox ships a trivial generator; richness lands later. Field radius bounds how much of each planet must be generated.
 7. **The web export's real ceiling — _low-medium_.** A web build as a playtest funnel can't match native. Lever: scope it as a **demo slice** — a single planet, a single raid; a web client can host/join one bilateral instance without the full backend.
@@ -634,6 +673,7 @@ Fiction choices that double as architecture — each closes a technical hole, no
 
 - **"Dialing is a sequence, not an instant"** — the dial animation is the instance-provisioning window. Pays #3.
 - **The dome radius as the render/sim bound** — also caps the portal frustum and dual-sim volume. Pays #1.
+- **Gate-proximate content as a rule** — resources, AI bases, dead houses, claims, and objectives should be generated near Gate fields by default. Pays #6 and keeps local chunks sufficient for the prototype.
 - **Mass cap / manifest on what crosses** — bounds physics objects transferring at the aperture. Pays #2.
 - **The Coalition registry as the one sanctioned global DB** — centralize _all_ unavoidable shared state into the Coalition fiction; everything else stays instanced. Pays #4.
 - **Uncontrolled lanes collapse on a countdown** — the auto-teardown that keeps the many-vs-many case bounded. Pays #5.

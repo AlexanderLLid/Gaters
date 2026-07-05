@@ -7,6 +7,11 @@ the current docs in place as if it had always been that way. Do not add migratio
 Do not branch, commit, or push unless asked. This repo holds design docs only; the game
 project will be a sibling folder later. `docs/` is an Obsidian vault.
 
+CLAUDE.md holds collaboration rules, editing rules, and stable design discipline only. Do
+not store changing game requirements, concrete mechanics, balance calls, feature examples,
+or canon here; those belong in `docs/world.md`, `docs/systems.md`, `docs/questions.md`,
+or `docs/INSPIRATION.md`.
+
 ## Source of truth
 
 - `docs/world.md` - current world, premise, factions, timeline, mystery, and hidden truth.
@@ -97,6 +102,10 @@ For incentives, state the intended push in plain terms: what the player is nudge
 - The user is a fullstack developer, not a game developer. When explaining systems,
   translate game-dev, engine, networking, rendering, and simulation terms into
   plain software/product language before going deep.
+- Prefer **systemic / multi-use mechanics**: one mechanic should unlock several
+  requirements whenever possible. The user values lazy, high-leverage reuse, so
+  look for mechanics that can serve multiple surfaces before proposing bespoke
+  one-off systems. Keep concrete mechanic examples in the design docs, not here.
 - Prefer game-state mechanics before inventing new hidden meters: ownership, logs, routes, claims, damage, cargo, heat, presence, deaths, scans, or server events.
 - Prefer Gate-native systems when they fit: travel, trade, discovery, exposure, claiming, conflict, meeting places, and progression should route through Gates or Gate-adjacent infrastructure before adding a parallel layer.
 - A new knob must name the existing upstream knob that cannot carry the job.
