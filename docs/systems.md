@@ -144,6 +144,19 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **A red/locked lane is opt-in once read, committed once entered** — it can jam recall, re-dial, or clean extraction until a condition is cleared, but it should be telegraphed as abnormal before entry unless the twist is explicitly "bad scan."
 - **Generation framework** — raid lanes should expose configurable modifiers such as `normal`, `bad_read`, `locked`, `blind`, `double_site`, `fast_collapse`, `defender_heavy`, and `rich_signature`. Their probabilities belong in data/scripts, not prose.
 
+### First session (START-1) [tentative]
+
+How a fresh charter becomes a house with a home. The tutorial is the raid loop at floor
+difficulty on the existing generator — no bespoke tutorial content, world, or NPC.
+
+- **The charter kit** — registration at the Safe Core issues the mask and one power core.
+- **Until first claim, the Safe Core anchor counts as home at floor power** — the existing away-reserve-vs-Gate-power curve covers a gater with no Gate; no new knob.
+- **The first dial is a reclamation listing** — a broker-listed lane to a low-rank frontier world with one husk-tier dead house (minimal defenders, a replacement core in the loot): breach, loot, imprint the Gate = first home.
+  - **Serves:** every archetype's hour one; trains RAIDER-1..4 verbs at zero stakes.
+  - **Prevents:** WHALE-1 (floor tiering), TURTLE-1 (the first act is opening outward).
+- **Fail-safe** — recall to the Safe Core costs the run, never the retry; claim pacing bounds re-roll shopping.
+- **Starts are listings** — any onboarding variant ships as a broker listing row, never a new system (parked variants: [[questions]] #25).
+
 ### Why / rejected
 
 - **Why ring-fixed, aperture-driven:** it keeps early progression on found Gate infrastructure while still giving a tier ladder — you drive the same found ring harder before any later Gate-creation question matters. Exceeding one ring means reassembling found segments at the current layer.
