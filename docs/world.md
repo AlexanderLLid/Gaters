@@ -31,7 +31,7 @@ The place-types, kept high-level. They double as the unlock ladder (see [[system
 - **Surface worlds** — the starting tier (only short-range Gates have woken); larger and richer worlds as you progress. Each world's seed rolls a **biome tag set**, so one world's output shapes what you seek through exploration, frontier routes, dead houses, taming, substitution, or optional barter.
 - **Hub worlds** — neutral, **lawless commerce crossroads**: trade routing + tolls, **capturable for tax control**; the open PvP contest lives on contested frontier worlds, not here. See [[systems#Hub worlds|Hub Worlds]].
 - **Jump-station worlds** — discovered worlds whose Gate has relay/routing config: refuel, lane-stabilize, bridge sectors, or make long travel cheaper. Natural crossroads where non-traders also pass through, creating organic player contact.
-- **The Safe Core** — the Coalition-policed new-player spawn and service floor; always reachable, safe for meeting and optional barter, but not a global market.
+- **Operator hubs** — the policed spawn and service floors, run by chartered **operator companies** (global in-world firms; a small launch set, count is data; unnamed until content needs them). A gater registers, spawns, falls back to, meets, barters, and gets recruited on an operator's floor — safe for meeting, not a global market. How the always-reachable safety floor is guaranteed is open — see [[questions]] #28.
 - **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) and the husk bases of **dead houses** ([[systems#Potential|HOUSE-2]]) give it its flavour; a world can seat several Gates (FRONTIER-3); claim one to make it yours.
 - **Later (wants to have)** — orbital / space Gates, hub/relay Gates, megastructure / Supergate sites: see [[questions]], Roadmap.
 - Open: the network's true extent (one system / many / galaxies).
@@ -53,7 +53,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 ### What it is
 
-- Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Coalition's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
+- An **institution, not a place** — the charter registry and exchange. The physical floors where gaters spawn, register, and meet are **operator hubs**: found Builder **nexus structures** (multi-Gate sites) run by chartered operator companies under Coalition terms. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a mesh with a few bright nodes).
 - When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and houses alike ([[systems#Potential|HOUSE-1]]). It does not pick winners; it lists access and lets them compete.
 - It **records charter standing** — a ledger entry, _not_ physical immunity: a located home is still raidable.
 - It brokers **nothing past the frontier edge** — no listings, no standing, no cut; past that line "reach equals exposure" is the only law.
@@ -61,9 +61,9 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 ### Gate availability (the patch channel)
 
 - **Demand-driven dialing (the frontier default):** a world is an empty database row until a player spends a core and supplies coordinates — dialing _is_ provisioning, so an instance exists only while someone pays to sustain it.
-- **Exchange listings (the published core):** the Coalition **opens lanes for dialing** as the network stabilises and publishes them — a server-side allowlist the studio controls. It is the lever for staged rollout and content drops, delivered diegetically as **broker bulletins / new listings** ("broker as patch channel"). The Safe Core is always listed; new tiers ship as new listings.
+- **Exchange listings (the published core):** the Coalition **opens lanes for dialing** as the network stabilises and publishes them — a server-side allowlist the studio controls. It is the lever for staged rollout and content drops, delivered diegetically as **broker bulletins / new listings** ("broker as patch channel"). Operator hubs are always listed; new tiers ship as new listings.
 - Invariant: listings govern reaching **others'/new** worlds, never **your own** home Gate — so the no-offline-loss-by-neglect guarantee is untouched.
-- It **controls** its own **exchange floor** — the Safe Core, policed and safe for commerce. Its grip there is **total**; on the frontier it is **absent** (it brokers access, nothing more). That contrast — iron hub, lawless frontier — is the shape of its power, distinct from the lawless hub crossroads.
+- Its writ runs on **operator-hub floors** — policed and safe for commerce under charter terms (whose muscle does the policing is open, [[questions]] #28). There its grip is **total**; on the frontier it is **absent** (it brokers access, nothing more). That contrast — policed floors, lawless frontier — is the shape of its power, distinct from the lawless hub crossroads.
 
 ### Hands-off by design — can't hold it, doesn't want to
 

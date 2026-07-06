@@ -149,12 +149,12 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 How a fresh charter becomes a house with a home. The tutorial is the raid loop at floor
 difficulty on the existing generator — no bespoke tutorial content, world, or NPC.
 
-- **The charter kit** — registration at the Safe Core issues the mask and one power core.
-- **Until first claim, the Safe Core anchor counts as home at floor power** — the existing away-reserve-vs-Gate-power curve covers a gater with no Gate; no new knob.
+- **The charter kit** — registration at an operator hub issues the mask and one power core.
+- **Until first claim, the hub anchor counts as home at floor power** — the existing away-reserve-vs-Gate-power curve covers a gater with no Gate; no new knob.
 - **The first dial is a reclamation listing** — a broker-listed lane to a low-rank frontier world with one husk-tier dead house (minimal defenders, a replacement core in the loot): breach, loot, imprint the Gate = first home.
   - **Serves:** every archetype's hour one; trains RAIDER-1..4 verbs at zero stakes.
   - **Prevents:** WHALE-1 (floor tiering), TURTLE-1 (the first act is opening outward).
-- **Fail-safe** — recall to the Safe Core costs the run, never the retry; claim pacing bounds re-roll shopping.
+- **Fail-safe** — recall to the hub anchor costs the run, never the retry; claim pacing bounds re-roll shopping.
 - **Starts are listings** — any onboarding variant ships as a broker listing row, never a new system (parked variants: [[questions]] #25).
 
 ### Why / rejected
@@ -269,7 +269,7 @@ Neutral, **lawless commerce crossroads** — trade routing nodes you can capture
 - A hub has **no private home Gate of its own**, so you **cannot turtle** there — it's always live and exposed. But the **designed PvP contest lives on contested frontier worlds**, not here; PvP at a hub is incidental (over cargo), not an arena.
 - **Routing:** distant trade hops through hubs for far less power than one long jump (the in-world basis for cheap distance). Direct-dial is the private, expensive alternative.
 - **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or gate-locked), and gain **intel** on who moves through. Capture-to-tax is the conqueror's take-and-hold prize — a **registry charter flip** (HOLD-1), defended by presence.
-- **Relation to the other surfaces:** Safe Core = policed spawn/services/meeting; **hubs** = lawless routing crossroads; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs/jump stations for travel and optional barter.
+- **Relation to the other surfaces:** operator hubs = policed spawn/services/meeting ([[world#World types|World Types]], [[questions]] #28); **crossroads hubs** = lawless routing crossroads; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, operator hubs + crossroads/jump stations for travel and optional barter.
 
 - Tunables: toll rates, routing-cost reduction, capture rules.
 - **Open:** whether long-distance dialing needs **jump / relay servers** (hop-routing) to stop one-jump reach being too strong. Hub capture-defence specifics.
@@ -282,7 +282,7 @@ frontier worlds, dead houses, taming loops, biome variety, and crafting substitu
 [current call]
 
 - **No trade stations.** Do not add AI broker stations, station stock, escrow, pickup keys, contract boards, global seller directories, or reputation scores as the default trade solution.
-- **Players can still trade by meeting.** If two players physically meet at the Safe Core, a hub, a jump station, a frontier camp, or another agreed point, they can barter, inspect goods, bring escorts, scam, ambush, or make private deals.
+- **Players can still trade by meeting.** If two players physically meet at an operator hub, a crossroads hub, a jump station, a frontier camp, or another agreed point, they can barter, inspect goods, bring escorts, scam, ambush, or make private deals.
 - **Jump stations are Gate-native meeting points.** They exist because that world's Gate has a relay/routing config: refuel, call-forward, lane-stabilize, or bridge sectors at lower cost than a direct long dial. They create traffic because travel needs them, not because the game placed a shop there.
 - **The Gate is still the seam.** Goods move because players carry them through Gates. Discovering a jump station, safe route, or useful meeting point means discovering a useful coordinate in the Gate network.
 - **Discovery stays in-game.** Useful routes and meeting places are valuable intel. Third-party markets can arrange meetings, but they cannot execute trades without in-game access, travel, cargo, timing, trust, and risk.
@@ -319,7 +319,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 - You pilot a **disposable avatar** — genuinely present and **mortal**. What's fixed is that you can lose the body without losing yourself.
 - **Only the avatar dies.** Death drops the body + carried gear (lootable); you respawn at an anchor. This is the in-world license for raiding, PvP, and conquest — killing a gater never deletes them.
 - **Avatar roster:** develop **multiple avatars** (tuned for different worlds), **pilot one at a time**. One live body, never simultaneous presence.
-- **Anchor = where you respawn.** Newcomers: the **Safe Core** hub (always available). Claim a Gate and build a forward facility → respawn there to hold the world.
+- **Anchor = where you respawn.** Newcomers: an **operator hub** (one is always available — the guarantee mechanism is open, [[questions]] #28). Claim a Gate and build a forward facility → respawn there to hold the world.
 
 ### Recall
 
@@ -342,7 +342,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 - **Rejected — piloting multiple avatars at once (multibox):** sequential roster only, so presence stays a real constraint.
 
 - Tunables: re-level curve, recall/abandon cost, away-clock length, respawn time.
-- **Open:** disconnect / AFK / grace-window timings; exact respawn location chain when a forward facility is lost or when your home is wiped mid-run, likely falling back to Safe Core or another starter/operator anchor.
+- **Open:** disconnect / AFK / grace-window timings; exact respawn location chain when a forward facility is lost or when your home is wiped mid-run, likely falling back to an operator-hub anchor.
 
 ## Claiming
 
@@ -547,7 +547,7 @@ _Stub — drivers/sinks framed, numbers open._
 - **Stagnation pressure** (ECON-1) — quiet bases plateau; growth needs imports — the engine that makes players open up. A peaceful homesteader still progresses to a **soft ceiling**, then plateaus (PROG-2) — a ceiling, not a leak, never an upkeep tax.
 - **Power cores** — scarce, scavenged Gate fuel; the primary consumable behind activation.
 - **Activation cost** (ECON-2) = `gate tier × distance band × tier-gap multiplier`. Bands: local / regional / cross-map ≈ power cell / partial core / full core.
-- **Trade** (TRADE-1) — optional, physical, and in-person; players may barter when they meet at hubs, jump stations, the Safe Core, frontier camps, or agreed points. It is not the main answer to PvE scarcity.
+- **Trade** (TRADE-1) — optional, physical, and in-person; players may barter when they meet at operator hubs, crossroads hubs, jump stations, frontier camps, or agreed points. It is not the main answer to PvE scarcity.
 - **Resource asymmetry** (REGION-1) — worlds differ so exploration, frontier routing, dead-house raids, taming, and substitutions matter. Trade can help socially, but the PvE loop must not depend on a market.
 - **Sinks** (ECON-3) — hub tolls + jump-station routing fees + activation costs + the Coalition tithe.
 - **Open:** concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
@@ -605,7 +605,7 @@ denied one, is a blocking flag.
 
 - **Trader**
   - **TRADER-1 Resource asymmetry** — worlds need different outputs, but the primary answer is exploration/frontier play rather than a market.
-  - **TRADER-2 In-person exchange** — trading is valid when players physically meet at hubs, jump stations, the Safe Core, frontier camps, or agreed points.
+  - **TRADER-2 In-person exchange** — trading is valid when players physically meet at operator hubs, crossroads hubs, jump stations, frontier camps, or agreed points.
   - **TRADER-3 Cargo risk** — trade risks carried cargo and route exposure, not default home exposure.
   - **TRADER-4 No market pillar** — no trade stations, contracts, escrow, reputation scores, or global auction house by default.
 - **PvP brawler**
