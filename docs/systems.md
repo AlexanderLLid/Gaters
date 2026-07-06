@@ -103,6 +103,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - **Loose idea, needs tuning — nothing depends on it.** Gates differ (field size, stability, what they dial, what grows there) maybe because each carries a small Builder-seeded **config** the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out imperfectly/variously tuned. That imperfection is the variety.
 - Just an explainer for _why gates aren't all the same_. It doesn't touch dialing/findability (still coordinates), it's **not** a selection system (explored and rejected — [[questions]] #20), and the _why_ behind the probes stays parked. Shape it properly if/when it matters.
+- **Leading concrete example under exploration:** a **selective aperture** — the throat sorts what crosses. The [[#Combat|dome]] already sorts _built vs. natural_; a **bio-filter** gate would pass living matter and reject inert/manufactured. This gives "config" a concrete, cheap axis — **admission rules at the throat**, riding on the transfer-manifest the netcode already needs — see [[questions]] #25.
 
 ### Connection state (PRES-1)
 
