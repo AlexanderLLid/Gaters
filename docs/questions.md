@@ -1,39 +1,25 @@
 # Questions
 
-The living backlog: undecided design questions, parked explorations, deferred wants, and
-option banks. When an item settles, fold the call (its _why_ + what was rejected) into the
-owning section of [[world]] / [[systems]] as `Why / rejected`, flip that section's tag
-`[tentative]→[current call]`, and delete the item here. Big decision-support reports live
-in `raw/` and are pointed to from their item.
+The living backlog for **big cross-cutting forks**, parked explorations, deferred wants,
+and option banks. System-local open questions live beside their owning mechanics in
+[[systems]] or [[world]]. When an item settles, fold the call (its _why_ + what was
+rejected) into the owning section as `Why / rejected`, flip that section's tag
+`[tentative]→[current call]`, and delete the item here. Big decision-support reports
+live in `raw/` and are pointed to from their item.
 
 Items carry stable IDs (**#N**); IDs are never reused, so gaps are normal.
 
 ## Open questions
 
-- **#1 Is the core fun real, and will players open their Gates?** Two questions, two scales: the greybox proves the loop is _fun_; whether the population actually _opens up_ is an equilibrium that only resolves at playtest scale, not greybox — **assume-and-commit** ([[systems#Validation — two questions, two scales|Validation]]).
-- **#2 Trade risk model — tiered exposure removed.** Gates were sealed / port-open / gate-open: port-open let trade risk cargo without exposing the vault, and was the named counter to the **trade-suicide** trap and the basis of the Trader archetype. Exposure is now **binary — sealed / open**; nothing currently stops a trade run from carrying the same breach risk as a raid. Needs either a new mechanic or a decision that trade is meant to carry full risk. Touches [[systems#Design traps (failure modes to avoid)|traps]], [[systems#Economy|Economy]] (TRADE-1), the Trader archetype.
-- **#3 How hard should stagnation push** without becoming upkeep? Strong enough to push players out, not so strong it's a disguised upkeep tax. The homesteader sub-case is resolved (PROG-2: a soft ceiling, not a leak); the general faucet/sink line is open. ([[systems#Economy|Economy]])
-- **#4 Which mystery truth is canon** (outside signal / tripwire / Coalition lie)? The Coalition's motive is decided (threat-to-Earth reconnaissance) — it colours but does **not** pick the truth; the three candidates stay open. ([[world#The mystery|The mystery]], [[world#Behind the curtain — the Builders' truth|behind the curtain]])
-- **#5 Avatar origin** — what the avatar physically is, where the body comes from, how the mind connects. Full options report + recommendation in `raw/avatar-origin-options.md` (4 archetypes: printed/cloned, seeded-evolved organism, mask-kernel, creature/symbiote; 6 invariants treated as settled). The **body-flavor pick is not made** — until it is, every doc uses only the origin-agnostic baseline (disposable avatar, respawn at an anchor, mask, coordinate-shares, two-layer XP). Touches [[systems#Presence, respawn & XP|Presence & Respawn]], [[systems#Mask energy|Mask Energy]], [[systems#Coordinates & obscurity|Coordinates]], [[world#United Gate Coalition|Coalition]].
+- **#4 Which Wake trigger is canon** (outside signal / tripwire / Coalition lie / unseeded-consciousness alert)? The behind-the-curtain direction is now **Builder consciousness-preservation research machine**; the specific Wake trigger stays open. ([[world#The mystery|The mystery]], [[world#Behind the curtain — the Builders' truth|behind the curtain]])
+- **#5 Avatar origin** — what the avatar physically is, where the body comes from, how the mind connects. Full options report in `raw/avatar-origin-options.md`, but raw notes are not current truth. The **body-flavor pick is not made** — until it is, every doc uses only the origin-agnostic baseline (disposable avatar, respawn at an anchor, mask, two-layer XP, possible mask-derived exposure data). Touches [[systems#Presence, respawn & XP|Presence & Respawn]], [[systems#Mask energy|Mask Energy]], [[systems#Coordinates & obscurity|Coordinates]], [[world#United Gate Coalition|Coalition]].
 - **#6 Theme/genre fork — commit the whole game to precursor-tech hybrid?** The leaning is adopted in the combat spine (COMBAT-1: bow/melee → scavenged Builder tech → fleets) and the tamer fork resolved narrow (TAME-1); committing the **whole** game (art identity #7, setting/tone register) is broader than the combat model and not yet signed off. Rejected alternatives: pure sci-fi (leaves art + combat open) and pure fantasy reskin (discards the [[gate-physics|Gate Physics]] depth and the space-scale endgame). Scope guards if taken: "easy to use" means _traverse_, not _master_ (dialing stays hard, maps onto the Standard→Heavy→Supergate ladder); fleet combat sits at the _top_ of the climb. Couples to #4, #7, #19.
 - **#7 Final art identity** — NMS-lush vs. low-poly-stylized; two target identities, look deferred until after greybox. Touchstones and the leaning path (low-poly flat-shaded + strong post-processing) in `INSPIRATION.md`.
-- **#8 Raider anonymity vs. the central registry.** The Coalition **registers every gater**, so it always knows your identity — anonymity is purely **peer-facing** (other players don't see caller ID), never Coalition-facing. The open part is only what peers can/can't trace. ([[world#United Gate Coalition|Coalition]], [[systems#Raiding|Raiding]])
-- **#9 Player-driven frontier-claiming vs. Coalition-paced expansion** — who controls world-growth pacing? Claimed frontier Gates are finite but slowly replenishing; the pacing knob is unassigned. ([[systems#Gates|Gates]] FRONTIER-1, [[world#United Gate Coalition|Coalition]])
-- **#10 Frontier-world specifics** — rank scale (E–S vs. 1–10), frontier-loot vs. raid-loot balance (including the dead-house discount: PvE base loot < player-base loot at tier, HOUSE-2), gates-per-world distribution (FRONTIER-3), and the self-misdial rate/trigger (FRONTIER-2). ([[systems#Gates|Gates]], [[world#World types|World Types]])
-- **#11 Mask/field specifics** — gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. capped player upgrade; confirm asymmetric mask-at-zero. ([[systems#Mask energy|Mask Energy]])
-- **#12 "Sealed = isolated" vs. "comms pass through a sealed Gate"** — confirm the split (info yes; goods/energy/people no). ([[systems#Gates|Gates]] PRES-1)
-- **#13 Return-home when the home was wiped mid-run** — frontier travel is one-way out (recall is the way back); if your home was destroyed while you were out, where does recall land you? Likely a starter/operator anchor — undefined. ([[systems#Gates|Gates]], [[systems#Presence, respawn & XP|Recall]])
-- **#14 House shared-ownership sub-rules** — who may re-key the shared coordinate (any member vs. leader-only) and what happens if they're offline while the house is being found; member churn (does leaving/being kicked force a re-key; can a defector sell the coordinate); defense (who may recall to the shared home; how the muster cap counts a house vs. a solo). ([[systems#Potential|Potential]] HOUSE-1, [[systems#Coordinates & obscurity|Coordinates]])
-- **#15 Survival meters beyond mask energy** — any, and how minimal? ([[systems#Mask energy|Mask Energy]])
-- **#16 Long-distance dialing may be too strong** — reaching very far in one jump might be OP; likely mitigation is **jump / relay servers** (hop-routing through intermediary nodes, cf. Gate bridges in the option bank) rather than cheap direct long jumps. _Parked — revisit later._ ([[systems#Economy|Economy]], [[systems#Hub worlds|Hub Worlds]])
 - **#17 Does the title "Gaters" survive** the phonetics ("gators" / "gaiters"), searchability, and harassment concerns? (Player term settled: gater.)
 - **#18 Why did the Builders forbid walling a Gate?** The dome is a deliberate anti-enclosure feature — a Gate that can never be entombed can always be reached _through_. Mystery hook; rhymes with #4. Left unanswered per Builders-unknown.
 - **#19 Is Earth the only species the Gates woke for?** _Parked; canonical answer-in-waiting._ The synchronized Wake plausibly lit **many** species' Gates at once — making the simultaneity itself evidence the threat is real, and scaling the natural-selection frame into three rings (player vs. player → humanity vs. other woken species → all vs. the threat). **Not** "rival Coalitions" — a Coalition is a human institution, contingent; rivals at scale are **alien polities that answered the Wake differently** (a hive, a sovereign, a machine intelligence, or no central body at all). Open fork: **do other species respawn, or really die?** — decides whether "only avatars die" is a human edge or a human weakness. If taken, soften "threat to Earth" → "threat to the woken worlds." Touches players-are-human ([[world#Premise|Premise]]), [[world#United Gate Coalition|Coalition]], #4. Roadmap-scale, not launch.
 - **#20 Gate-DNA findability overhaul** — _explored 2026-06-29, **not adopted**; parked._ Explored replacing avatar-shares with a **two-factor lock** (dialing needs position _and_ DNA), re-key = mutating a Gate's config-genome, leak via goods + connecting, plus a gate-selection layer (probes breeding gates). _Survivor, kept:_ gate-config-as-genome explaining gate variety — folded tentatively into [[systems#Gates|Gates]]. _Blockers that stopped adoption:_ (1) the two-factor lock leaks position only when the victim dials a hunter-controlled gate, so an active trader can grow yet stay unraidable — **reopens the turtle-equilibrium trap**; (2) the gate-selection layer has **no cull** (nothing kills a bad-arena gate → drift, not selection), and uncontrolled misdials plausibly come from unstable/bad gates, which inverts it. Revisit only with fixes for both.
 - **#21 Engine choice — Unity vs. Unreal (vs. Godot).** Undecided; full comparison and the tip-factors in `raw/engine-comparison.md`. Blockers to resolve first: art identity (#7), whether the agent pipeline holds up (needs a throwaway prototype), the base object-count budget. When chosen → record in [[systems#Technical challenges — and the Gate mechanics that ease them|Technical challenges]] with the why and what was rejected.
-- **#22 Multi-gate homes** — _parked._ Frontier/procedural worlds seat multiple Gates (FRONTIER-3); **homes stay single-gate**. Blocker: a second gate on claimed soil is an **overland backdoor** — an attacker dials the world's other gate and walks to the base under away reserve, reaching a home **without finding it** (breaks binary exposure and obscurity at once). Revisit only with a closer, e.g. claiming any gate claims the world's whole gate set, each extra gate an independent exposure surface/coordinate the owner can seal or open (`reach = exposure` as real estate — richer worlds cost more doors). ([[systems#Gates|Gates]], [[systems#Coordinates & obscurity|Coordinates]])
-
-- **#23 Gate heat / resonance hunting vs. avatar-shares** - _candidate simplification, not adopted._ Explore replacing the current avatar-share coordinate hunt (SHARE-1) with local Gate heat, coarse Gate event logs, heat samples, and confidence-ranked resonance leads. Goal: make PvP discovery a hunt through recent activity rather than a directory or a static coordinate leak. See [[#Hunt model - Gate heat, samples, leads|Hunt model]].
 
 ## Wanted later (decided, deferred)
 
@@ -61,32 +47,7 @@ into [[systems]] when one is adopted.
 
 ### Catalogued — not yet integrated [open]
 
-- **Dial-into-a-star** (route a tunnel through a sun; exotic super-weapon behind disabled safeties) · **Safeties as a tech resource** (research/disable Builder safety protocols for weapon-grade uses) · **Comms through a sealed Gate** (data/radio pass while the aperture is shut — diplomacy, ransom) · **Subspace relay / data network** (Gates carry data; control = information control) · **Recon probes** (scout before committing) · **Gate bridges** (chained call-forwarding — the cheap-distance basis for hubs) · **Harvested / relocatable Gates** (claim and move found orbital Gates) · **Reprogram-the-route** (a relay controller reroutes/traps traffic) · **Network self-update as a worm vector** · **Proximity priority conflicts** (a competing Gate suppresses a rival's) · **Time/exotic physics** (solar-flare time travel, black-hole dilation; the ~38-min cap already borrowed as the siege ceiling) · **EVE economy/access layer** (access lists, tolls, mass×distance fuel, a hard mass cap forcing big fleets onto Supergates, plantable beacons, area jammers, killable Gates).
-
-### Hunt model - Gate heat, samples, leads
-
-_Candidate simplification, not adopted. If taken, fold into [[systems#Coordinates & obscurity|Coordinates & Obscurity]] and retire the duplicate machinery listed below._
-
-Core read: **Gate use leaves heat; heat can be sampled; samples narrow to leads; enough leads can become raid access.** A player is not unsafe because they are offline. They are unsafe because recent, valuable, repeated, violent, or large-scale Gate use left scannable evidence.
-
-- **Gate heat:** meaningful Gate events add residual throat stress: open duration, aperture size, transferred mass, repeated route use, claim activity, combat near a Gate, structure damage, and extraction. No special "raid tunnel" exists; a raid is just a loud pattern of normal Gate events.
-- **Gate event ledger:** the server records coarse Gate events that would likely exist anyway for persistence, debugging, anti-cheat, and world state. Gameplay reads aggregates ("recent heavy transfer", "combat near this Gate", "same source signature"), not a private debug transcript.
-- **Builder diagnostic lore:** the Builders did not make PvP radar. Gates need maintenance diagnostics for phase drift, instability, unsafe dials, cooldown, and misdial risk. Humans repurpose those diagnostics as hunting tools.
-- **Heat samples:** players collect local evidence from Gate mouths, cleared PvE sites, extraction points, combat scars, corpses, camps, probes, wrecks, outposts, and stolen logs.
-- **Resonance matching:** a sample is a damaged partial fingerprint. Scanners filter huge search spaces by recent heat, route/distance band, and phase match, then return a few confidence-ranked leads instead of a directory of possible Gates.
-- **Lead escalation:** one sample gives weak leads; two matching samples point to a likely route or staging Gate; several samples plus cost can produce a route key / raid access.
-- **Safety rule:** clues reveal activity first, identity second, home last. PvE exploration exposes the run, site, route, or staging point before it exposes the true home.
-- **Endgame rule:** large houses create more heat through repeated routes, claims, logistics, and public infrastructure, so they become naturally easier to hunt without a separate "big clan is public" rule.
-
-If adopted, this likely makes these parts unnecessary or smaller:
-
-- **Avatar-share findability as the primary loop** (SHARE-1): fielded avatars would not need to shed pieces of the home coordinate by default.
-- **Geohash threshold math:** hunting would narrow by samples and confidence leads, not by collecting _k_ static coordinate shares.
-- **Re-key cadence as the master offline-safety knob:** heat decay, sample lifetime, stolen-log lifetime, scan confidence, and raid-access cost become the tuning surface instead.
-- **Current-epoch share anti-decoy rules:** no need for every avatar to carry a current home share just to prevent clean decoys.
-- **Static coordinate leak recovery:** the Reddit problem is reduced because raid access comes from in-game samples, route keys, and controlled logs rather than a copyable text address.
-- **Separate trade exposure mode:** trade can be made quieter or louder by ordinary heat inputs (mass, value class, repetition, public hub use) instead of a special port-open state.
-- **Some bespoke "active Gate signature" language:** active/hot Gates are found through the same heat/sample system rather than a second trace mechanic.
+- **Dial-into-a-star** (route a tunnel through a sun; exotic super-weapon behind disabled safeties) · **Safeties as a tech resource** (research/disable Builder safety protocols for weapon-grade uses) · **Comms through a closed Gate** (data/radio pass while the aperture is shut — diplomacy, ransom) · **Subspace relay / data network** (Gates carry data; control = information control) · **Recon probes** (scout before committing) · **Gate bridges** (chained call-forwarding — the cheap-distance basis for hubs) · **Harvested / relocatable Gates** (claim and move found orbital Gates) · **Reprogram-the-route** (a relay controller reroutes/traps traffic) · **Network self-update as a worm vector** · **Proximity priority conflicts** (a competing Gate suppresses a rival's) · **Time/exotic physics** (solar-flare time travel, black-hole dilation; the ~38-min cap already borrowed as the siege ceiling) · **EVE economy/access layer** (access lists, tolls, mass×distance fuel, a hard mass cap forcing big fleets onto Supergates, plantable beacons, area jammers, killable Gates).
 
 ### Implied objects [tentative, deferred]
 
@@ -98,3 +59,9 @@ If adopted, this likely makes these parts unnecessary or smaller:
 - **Coordinate database** — the homebase log of discovered coordinates; a raidable asset (the map).
 - **Jammer** — denies Gate-jumping across an area (EVE cyno-jammer analog).
 - **Open:** weapons, armor, building materials, consumables, trade goods, artifacts.
+
+### Resolved calls folded into systems
+
+- **#2 Trade risk model** — resolved into [[systems#Trade, scarcity & meeting places|Trade, scarcity & meeting places]]: trade is optional, physical, and in-person; it risks carried cargo and route exposure before home exposure.
+- **#24 Trade market shape** — resolved into [[systems#Trade, scarcity & meeting places|Trade, scarcity & meeting places]]: no trade stations, global auction house, formal contracts, escrow, pickup keys, or reputation score by default. PvE scarcity is solved mainly by exploration/frontier play, not markets.
+- **#23 Exposure model** — resolved into [[systems#Coordinates & obscurity|Coordinates & obscurity]]: Gate heat / samples / leads is the primary home-location loop. Avatar/mask data is supporting evidence, not a permanent home-address shard.
