@@ -40,7 +40,7 @@ Fix foundations before details:
 3. Failure modes - what each system must prevent.
 4. Core loop - moment / session / long-term.
 5. Gate seam - closed/open, dial out/dial known, dome, field.
-6. Resources - mask energy, power cores, Potential, coordinate knowledge.
+6. Resources - mask energy, power cores, Potential, Gate address knowledge.
 7. Conflict, economy, content - raids, trade, hubs, building, taming, items, biomes.
 
 ## System pattern
@@ -84,15 +84,17 @@ Call out whether each player type is helped, hurt, routed to a different surface
 
 For implementation fit, prefer systems that ride on existing server facts or logs: Gate openings, transfer mass, route endpoints, open duration, claims, deaths, combat, cargo movement, station traffic, and registry changes. Example: **heat** can be a gameplay interpretation of Gate transfer/event logs the backend likely needs anyway, not a separate magic meter.
 
-Also prefer one mechanic path that works for both real players and AI/NPC actors when possible: dead houses, AI station traffic, automated defences, trade stations, and player houses should reuse ownership, Potential, exposure, combat, cargo, and registry rules instead of becoming bespoke systems.
+Also prefer one mechanic path that works for both real players and AI/NPC actors when possible: AI/abandoned bases, AI station traffic, automated defences, trade stations, and player houses should reuse ownership, Potential, exposure, combat, cargo, and registry rules instead of becoming bespoke systems.
 
 For incentives, state the intended push in plain terms: what the player is nudged to do, what they are nudged not to do, and whether the mechanic risks rewarding turtling, griefing, zerging, menu optimization, courier chores, or offline babysitting.
 
 ## Naming
 
 - Use plain, globally understood English.
+- Prefer plain terms first and lore terms second. Example shape: **raid timer** first,
+  lore term in parentheses only if needed.
 - Gate connection state: **Closed / Open**.
-- Coordinate knowledge: **Unknown / Traced / Located / Stale**.
+- Gate address knowledge: **Unknown / Traced / Located / Stale**.
 - Avoid **sealed** for player-facing safety. Use it only when discussing old/ancient dormant-state language if unavoidable.
 - Use **Routed** for valid playstyles that belong on a designated surface, not **Redirected**.
 - Use **house** for the ownership unit; a solo player is a house of one.

@@ -56,7 +56,7 @@ the Morris–Thorne–Yurtsever (1988) time-machine result. [GROUNDED.] A fixed
 
 A Morris–Thorne throat is two-way and transparent: light and matter cross, with
 **momentum and energy conserved**. [GROUNDED.] So "fire and momentum carry through
-an open Gate" is real. "One-way from the dialing side" and "**sealed by default**"
+an open Gate" is real. "One-way from the dialing side" and "**closed by default**"
 are gameplay gating with no physical basis [CONCEIT] — flag them as rules.
 
 ## Aperture size — driven, not built
@@ -114,7 +114,7 @@ lives on connections, not on mouths-per-planet.
 
 ## Pure conceits (do not claim physics)
 
-- A sealed-but-sub-traversable default state (GR throats are open or collapsed).
+- A closed-but-sub-traversable default state (GR throats are open or collapsed).
 - A life-support field that weakens with radius.
 - Self-misdial — an active throat spontaneously arcing open a second, un-propped lane
   (FRONTIER-2); real throats don't breed.
@@ -123,7 +123,7 @@ lives on connections, not on mouths-per-planet.
 
 ## Open
 
-- Pick one self-consistent story for "sealed by default" that doesn't contradict
+- Pick one self-consistent story for "closed by default" that doesn't contradict
   collapse physics (a mechanical shutter? a throat kept collapsed and re-kindled?).
 - Decide whether a power core **is** the exotic matter, or powers a device that
   confines it.

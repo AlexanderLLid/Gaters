@@ -64,7 +64,7 @@ Things I want in, but don't know how they fit the lore or systems yet. All of it
 Pure inspo, nothing decided.
 
 - **Gate sensors (the enabler).** Tech that senses _through_ a throat before you
-  commit — world rank, hostiles, dead-house tier, loot signature. Blind dialing is
+  commit — world rank, hostiles, AI/abandoned-base tier, loot signature. Blind dialing is
   the default; sensor tiers turn gambles into informed raids. This one knob
   (telegraphed vs. blind) makes most variants below fair, and higher-tier PvE
   worlds readable. (cf. **Recon probes** in the option bank, [[questions]].)
