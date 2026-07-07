@@ -27,6 +27,13 @@
 			]
 		},
 		{
+			"Name": "EditorToolset",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+		{
 			"Name": "Terminal",
 			"Enabled": true,
 			"TargetAllowList": [

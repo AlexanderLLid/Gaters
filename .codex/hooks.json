@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(node -e 'try{process.stdout.write(JSON.parse(require(\"fs\").readFileSync(0,\"utf8\")).tool_input.file_path||\"\")}catch{}'); case \"$f\" in *.md|*.markdown) npx --yes prettier --write \"$f\" >/dev/null 2>&1 || true;; esac",
+            "timeout": 120,
+            "statusMessage": "prettier (markdown)"
+          }
+        ]
+      }
+    ]
+  }
+}

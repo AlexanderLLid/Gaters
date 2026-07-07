@@ -1,0 +1,28 @@
+# Unreal generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# IDE/project files generated locally
+.vs/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Local editor settings
+**/Config/DefaultEditorPerProjectUserSettings.ini
+
+# Generated MCP client configs
+.mcp.json
+.codex/config.toml
+.cursor/mcp.json
+.vscode/mcp.json
+.gemini/settings.json
+
+# OS noise
+.DS_Store
+Thumbs.db
