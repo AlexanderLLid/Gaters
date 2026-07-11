@@ -3,6 +3,13 @@
 	"EngineAssociation": "{5679C8C0-428E-A024-C960-1BB6537A2FC7}",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "Prototype",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",

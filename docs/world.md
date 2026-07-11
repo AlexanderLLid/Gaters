@@ -6,8 +6,8 @@ The Gaters world bible in one file. Mechanics live in [[systems]]; the deep phys
 ## Premise
 
 - A long-dormant, galaxy-spanning network of ancient **Gates** suddenly switches on (see [[#Timeline & the Wake|The Wake]]).
-- Each player controls a single **planet-base** sitting on one [[systems#Gates|Gate]]. The [[#United Gate Coalition|United Gate Coalition]] charters independent **gaters** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
-- Players are **human** — registered gaters using disposable biological avatars through the Gate network (multi-species / post-human / alien rejected as scope with no payoff this phase).
+- Each player controls a single **planet-base** sitting on one [[systems#Gates|Gate]]. The [[#Gate Council|Gate Council]] registers independent **gaters** and **guilds** to find, claim, and hold Gate-worlds for a tithe. _Gaters_ is the game's name and the in-world term for a player.
+- Launch players are **human** — registered gaters using disposable biological avatars through the Gate network. Other woken species can claim Gates elsewhere; they are future rivals/content, not launch player species.
 - The central conflict is a **gold rush over finite, un-manufacturable Gate infrastructure**. Reach and wealth require **opening your Gate and venturing out** — and venturing is what exposes you: acting is how your home is eventually **found** and made raidable. [current call]
 
 ## Design thesis — "reach equals exposure"
@@ -31,8 +31,8 @@ The place-types, kept high-level. They double as the unlock ladder (see [[system
 - **Surface worlds** — the starting tier (only short-range Gates have woken); larger and richer worlds as you progress. Each world's seed rolls a **biome tag set**, so one world's output shapes what you seek through exploration, frontier routes, AI/abandoned bases, taming, substitution, or optional barter.
 - **Hub worlds** — neutral, **lawless commerce crossroads**: trade routing + tolls, **capturable for tax control**; the open PvP contest lives on contested frontier worlds, not here. See [[systems#Hub worlds|Hub Worlds]].
 - **Jump-station worlds** — discovered worlds whose Gate has relay/routing config: refuel, lane-stabilize, bridge sectors, or make long travel cheaper. Natural crossroads where non-traders also pass through, creating organic player contact.
-- **The Safe Core** — the Coalition-policed new-player spawn and service floor; always reachable, safe for meeting and optional barter, but not a global market.
-- **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) and the husk bases of **AI/abandoned bases** ([[systems#Potential|HOUSE-2]]) give it its flavour; a world can seat several Gates (FRONTIER-3); claim one to make it yours.
+- **The Safe Core** — the Council-policed new-player spawn and service floor; always reachable, safe for meeting and optional barter, but not a global market.
+- **The Frontier** — the unclaimed worlds you reach by **dialing out** ([[systems#Gates|Gates]], FRONTIER-1); the PvE/PvPvE contact surface where "reach equals exposure" rules. A frontier world is a database row until visited, a **solo PvE** tick when you're there alone, a **contested** instance when others arrive. Its biome tag set (REGION-1) plus monster-spill ([[systems#Taming|Taming]], TAME-1) and the husk bases of **AI/abandoned bases** ([[systems#Potential|GUILD-2]]) give it its flavour; a world can seat several Gates (FRONTIER-3); claim one to make it yours.
 - **Later (wants to have)** — orbital / space Gates, hub/relay Gates, megastructure / Supergate sites: see [[questions]], Roadmap.
 - Open: the network's true extent (one system / many / galaxies).
 
@@ -41,36 +41,36 @@ The place-types, kept high-level. They double as the unlock ladder (see [[system
 The precursor civilization that made the Gates — **unknown by design**. [current call]
 
 - They built the Gate network and then vanished. **Nothing else is established.**
-- Who they were and why they built it is hidden from everyone, including the Coalition.
+- Who they were and why they built it is hidden from everyone, including the Gate Council.
 - Their engineering encodes deliberate conceits we _do_ see: Gates **woke closed**, fail closed without an operator, and project an un-wallable [[systems#Combat|dome]]. One principle — _a Gate cannot be permanently silenced or blocked_ — generates the dome and the closed-by-default state.
 - Their ignorance is deliberate — the long-game **mystery engine**. The Wake and the rising instability point back to them; the hidden truth of _what_ woke the Gates is the central mystery. Candidate truths tracked in [[questions]]. [tentative]
 - A standing hook: _why_ did the Builders forbid walling a Gate (the dome)? A Gate that can never be entombed can always be reached _through_ — left unanswered per Builders-unknown.
 - **Do not invent** their history, names, appearance, or motives. Resolve only when the mystery payoff requires it.
 
-## United Gate Coalition
+## Gate Council
 
-The network's **clearinghouse** — not a government but an **offhand broker**. It doesn't run the Gates (the Builders' machine does) or rule the frontier; it lists which Gates can be reached, brokers charters to anyone who pays, and clips a cut. **Indifferent by construction** — it profits on transaction volume, not on who wins. [tentative]
+The network's **clearinghouse** — not a government but a neutral registry and broker. It doesn't run the Gates (the Builders' machine does) or rule the frontier; it lists which Gates can be reached, brokers access to anyone who pays, and clips a cut. **Indifferent by construction** — it profits on transaction volume, not on who wins. [tentative]
 
 ### What it is
 
-- Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Coalition's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
-- When the Wake brought Earth's lane online, the Coalition — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and houses alike ([[systems#Potential|HOUSE-1]]). It does not pick winners; it lists access and lets them compete.
-- It **records charter standing** — a ledger entry, _not_ physical immunity: a located home is still raidable.
+- Seated at the network's **central nexus** — a Builder megastructure of Gates that is the safe core, the Council's exchange floor, and the new-player spawn. Out in the network, Gates still dial **point-to-point** (a mesh), and lawless hubs sit in the frontier (a "mesh with a heart").
+- When the Wake brought Earth's lane online, the Gate Council — holding more network than it can claim alone — **brokered access for a tithe** to all comers on the same terms: solo prospectors, corporations, and guilds alike ([[systems#Potential|GUILD-1]]). It does not pick winners; it lists access and lets them compete.
+- It **records access standing** — a ledger entry, _not_ physical immunity: a located home is still raidable.
 - It brokers **nothing past the frontier edge** — no listings, no standing, no cut; past that line "reach equals exposure" is the only law.
 
 ### Gate availability (the patch channel)
 
 - **Demand-driven dialing (the frontier default):** a world is an empty database row until a player spends a core and supplies coordinates — dialing _is_ provisioning, so an instance exists only while someone pays to sustain it.
-- **Exchange listings (the published core):** the Coalition **opens lanes for dialing** as the network stabilises and publishes them — a server-side allowlist the studio controls. It is the lever for staged rollout and content drops, delivered diegetically as **broker bulletins / new listings** ("broker as patch channel"). The Safe Core is always listed; new tiers ship as new listings.
+- **Exchange listings (the published core):** the Gate Council **opens lanes for dialing** as the network stabilises and publishes them — a server-side allowlist the studio controls. It is the lever for staged rollout and content drops, delivered diegetically as **broker bulletins / new listings** ("broker as patch channel"). The Safe Core is always listed; new tiers ship as new listings.
 - Invariant: listings govern reaching **others'/new** worlds, never **your own** home Gate — so the no-offline-loss-by-neglect guarantee is untouched.
 - It **controls** its own **exchange floor** — the Safe Core, policed and safe for commerce. Its grip there is **total**; on the frontier it is **absent** (it brokers access, nothing more). That contrast — iron hub, lawless frontier — is the shape of its power, distinct from the lawless hub crossroads.
 
 ### Hands-off by design — can't hold it, doesn't want to
 
-- **It can't.** The network is Builder tech the Coalition only half-decodes — too vast and alien to police or hold back. It can open lanes and clip a cut; it **cannot steer the frontier.** The selection, the frontier, what the network is _for_ — all the machine's, beyond its reach (it may not even see what the machine is doing).
+- **It can't.** The network is Builder tech the Gate Council only half-decodes — too vast and alien to police or hold back. It can open lanes and clip a cut; it **cannot steer the frontier.** The selection, the frontier, what the network is _for_ — all the machine's, beyond its reach (it may not even see what the machine is doing).
 - **It doesn't want to.** What the frontier yields — resources, energy, salvaged Builder tech — flows **back to Earth, which needs it.** Loosing thousands of self-interested gaters is the fastest way to extract that windfall, so hands-off is the **strategy, not a failure**: open the floodgates, skim the flow. _(How badly Earth needs it, and what "it" is, stays open — don't over-specify.)_ [tentative]
-- This is the in-world **license for the competitive sandbox**: claiming, raiding, trading, sprawling are all permitted because the Coalition **gains from the churn and couldn't curb it anyway** — past its writ, "reach equals exposure" is the only law.
-- **Two layers hold here too:** the honest surface motive — _get rich, feed Earth_ — is real; the hidden truth, that the frontier _is_ the gene-selection engine, is something the Coalition neither built nor sees. Patriotic gold rush on top, cosmic indifference underneath.
+- This is the in-world **license for the competitive sandbox**: claiming, raiding, trading, sprawling are all permitted because the Gate Council **gains from the churn and couldn't curb it anyway** — past its reach, "reach equals exposure" is the only law.
+- **Two layers hold here too:** the honest surface motive — _get rich, feed Earth_ — is real; the hidden truth, that the frontier _is_ the selection engine, is something the Gate Council neither built nor sees. Patriotic gold rush on top, cosmic indifference underneath.
 - Its few protective rules are **self-interest, not mercy**: uphill [[systems#Potential|frontier-visibility]] + home obscurity stop the strong from trivially farming the undeveloped — a productive frontier keeps yielding; a curb-stomped one doesn't.
 
 ### The body — a disposable avatar
@@ -83,7 +83,7 @@ The network's **clearinghouse** — not a government but an **offhand broker**. 
 
 - **Network = mesh-with-a-heart**, chosen over pure hub-and-spoke — spokes would break the bilateral raid tunnel and the direct-dial-vs-hub economy.
 - **Certified provisioning**, chosen over pure demand-dialing (gives the studio no rollout/capacity lever) and over per-Gate stability _windows_ (the strongest capacity lever, but it pulls players onto the network's schedule — eroding the no-obligation thesis — and double-books the instability/misdial story; held for frontier worlds later).
-- **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Coalition as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with the players (corps and groups).
+- **Hands-off broker (can't hold it, doesn't want to)**, chosen over the Gate Council as a covert schemer breeding humanity — selection belongs to the Builders' machine. It half-understands the network (can't police it) and profits by piping the frontier's yield back to Earth (won't): PvP stays licensed without a sinister overseer, and the competition sits with players and guilds.
 
 ### Open
 
@@ -100,7 +100,7 @@ Canonical order of events. A date conflict with this section is a hard contradic
 
 ## The mystery
 
-- The Coalition's "we flipped a dormant relay" is a **cover story**; something _else_ woke the network and is using it too. Candidate truths tracked in [[questions]]. [tentative]
+- The Gate Council's "we flipped a dormant relay" is a **cover story**; something _else_ woke the network and is using it too. Candidate truths tracked in [[questions]]. [tentative]
 
 ## Themes & tone
 
@@ -134,17 +134,21 @@ Canonical order of events. A date conflict with this section is a hard contradic
   - **Built and spread the Gate network** across the galaxy.
   - **Seeded living, breathable worlds** as candidate environments.
   - **Built Gates as research stations, test chambers, vault locks, and transport mouths.**
-  - **Iterated Gate configurations** over long timescales, explaining why Gates vary without making the Builders sloppy.
+  - **Built probe stations** where expansion branches could meet, exchange build recipes, refuel, test safe topology, and route around failed links.
+  - **Evolved themselves and their Gate build recipes** over long timescales. Each probe line copied recipes that worked and lost recipes that failed, so Gates vary without making the Builders sloppy.
+  - **Solved local unknowns by selection**: how to survive strange systems, source materials, hold stable mouths, seed test worlds, obey network safeties, and collect useful data.
   - **Recorded survival, claim, cooperation, betrayal, trade, violence, adaptation, and recovery** as useful data, not just genetics.
+- The visible network is the surviving layer of that search. Ruined, inert, unstable, or unreachable branches are the cull; live Gates are the recipes that worked well enough to join the experiment.
 - **The Gates arrived too late to save the Builders.** A Gate can only connect completed endpoints; probes had to travel physically, build mouths, seed/test worlds, and then connect them. The first useful escape route opened after the last Builder died.
 - **Earth may be a wild result.** A probe may have visited Earth too early, marked it immature, and left behind a dormant Gate-seed or marker. Humans evolved naturally outside the main seeded experiment.
 - **The Wake** = the machine noticing unseeded consciousness when humanity activated or disturbed the dormant Earth Gate. The network is now pulling humans into the experiment.
+- **At least two alien claimant types exist** somewhere in the network: individual-bodied peoples and shared-mind / engineered living peoples. Both still need living embodied agency at a Gate; pure robots do not claim.
 
 ### Why this candidate is strong
 
-- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, biological avatars, blood-claiming, robot limits, the dome, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
+- It **retro-explains** a pile of decided mechanics with one stroke: the galaxy-spanning network, the living/breathable worlds, varied Gate recipes, biological avatars, living claims, robot limits, the dome, the planet→galaxy scaling (which doubles as the studio's content/server-expansion lever and fits the existing "more of the network waking" progression driver).
 - It needs **no benevolent caretaker** — the makers are indifferent/dead; the machine just runs. Fits "cosmic unease."
-- Compatible with the open candidate truths (outside signal / tripwire / Coalition lie): the "best gene" could be cultivated _for_ whatever woke the network, or the Wake _is_ the tripwire that started selection. Keep these convergent, not contradictory.
+- Compatible with the open candidate truths (outside signal / tripwire / Council lie): the best surviving consciousness pattern could be cultivated _for_ whatever woke the network, or the Wake _is_ the tripwire that started selection. Keep these convergent, not contradictory.
 
 ### Discipline
 

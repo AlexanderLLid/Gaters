@@ -39,7 +39,7 @@ link here, they do not restate it.
 
 - **Moment-to-moment** - build, gather, scan, and solo PvE while quiet; open a Gate to trade, raid, explore, or contest, accepting the exposure that action creates.
 - **Session** - log in with no decay chore; choose today's risk surface through Gate use; resolve finite engagements; close tunnels when done.
-- **Long-term** - grow the base, raise charter clearance, climb world tiers and Potential as more of the network wakes; no base to babysit.
+- **Long-term** - grow the base, raise Council clearance, climb world tiers and Potential as more of the network wakes; no base to babysit.
 
 - **Validation note:** whether players actually open up is a population equilibrium, not a greybox feel test; see [[#Validation — two questions, two scales|Validation]].
 
@@ -74,7 +74,7 @@ Each is a way the exposure model can collapse. Test every proposal against these
   - **Counter:** committed tunnels, siege clocks, and finite engagements.
 - **ZERG-1 Zerg pile-on** - if opening exposes you to everyone, mass always wins.
   - **Counter:** bilateral directional tunnels and visibility limits.
-- **WHALE-1 Newbie farming** - if large houses can locate small houses easily, retention dies.
+- **WHALE-1 Newbie farming** - if large guilds can locate small guilds easily, retention dies.
   - **Counter:** hidden Gate addresses plus uphill frontier visibility.
 - **DOORSTEP-1 Doorstep kill-box** - if the Gate can be walled in, raids become spawn cheese.
   - **Counter:** the Gate dome clears the Gate opening.
@@ -110,10 +110,17 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Supergate** = past one ring's ceiling — combine multiple **found Builder segments** into a megastructure; recovered and repaired at the current layer, with true new-building still open.
 - **Overdrive** one ring past its ceiling and the tunnel destabilises into an uncontrolled, self-collapsing lane (the gate-overload bomb).
 
-### Gate variation — the Builder "config" [tentative — rough idea]
+### Gate variation — probe-evolved recipes [current call]
 
-- **Loose idea, needs tuning — nothing depends on it.** Gates differ (field size, stability, what they dial, what grows there) maybe because each carries a small Builder-seeded **config** the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] tuned **blind** — they couldn't predict a config's behaviour, so gates came out imperfectly/variously tuned. That imperfection is the variety.
-- Just an explainer for _why gates aren't all the same_. It doesn't touch dialing/findability (still Gate addresses), it's **not** a selection system (explored and rejected — [[questions]] #20), and the _why_ behind the probes stays parked. Shape it properly if/when it matters.
+- Gates differ because the [[world#Behind the curtain — the Builders' truth|von Neumann probes]] did not carry one perfect factory blueprint. Each probe line carried a mutable **build recipe** for itself, its Gate mouths, and the world-seeding package around them.
+- Selection happened before player contact: recipes that could replicate, hold a stable mouth, obey network safeties, and produce useful test worlds spread; recipes that collapsed, stranded themselves, broke topology, or produced useless sites died out, were pruned, or remain as ruins.
+- Visible Gate variation falls into four buckets:
+  - **Physics fit:** field size, stability, aperture ceiling, dome behaviour, and core hunger adapt to local gravity, materials, and energy quality.
+  - **Network fit:** relay behaviour, jump-station value, lane stability, and refusal/failure modes adapt to topology and chronology-safety pressure.
+  - **World fit:** biome tags, life-seeding, resource asymmetry, and Gate-proximate content come from the local seeding recipe.
+  - **Test fit:** some variation is kept because it yields useful survival, claim, cooperation, betrayal, recovery, and adaptation data.
+- Player-facing rule: the recipe is content metadata and lore, not a hidden address key. Dialing, findability, Gate heat, claims, and raids still use the normal Gate-address model.
+- Gate creation stays open: players find, claim, repair, and drive old infrastructure at the current layer; they do not breed or print new Gates.
 
 ### Connection state (PRES-1)
 
@@ -137,7 +144,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 - **Claiming the far Gate** (imprint) converts a frontier world into your soil and a forward respawn — this is how **new Gates** enter your holdings. Finite but slowly replenishing; pacing open.
   - **Serves:** CONQUEROR-1, EXPLORER-1.
 - **Creatures, biome variety, loot** come from the frontier world's tags — see [[world#World types|World Types]] (REGION-1) and [[#Taming|Taming]] (TAME-1).
-- **A frontier world can seat multiple Gates (FRONTIER-3).** The seed rolls 1–N Gates per world; each can host an **AI/abandoned base** ([[#Potential|HOUSE-2]]). Several houses reaching the same listed world arrive through **different Gates** (sequential dials — GATE-2 holds), which is the multi-party PvPvE mechanism: an event is just a multi-gate world getting listed (the broker patch channel, [[world#United Gate Coalition|Coalition]]). **Homes stay single-gate** — a second gate on claimed soil is an overland backdoor around hidden-home safety.
+- **A frontier world can seat multiple Gates (FRONTIER-3).** The seed rolls 1–N Gates per world; each can host an **AI/abandoned base** ([[#Potential|GUILD-2]]). Several guilds reaching the same listed world arrive through **different Gates** (sequential dials — GATE-2 holds), which is the multi-party PvPvE mechanism: an event is just a multi-gate world getting listed (the broker patch channel, [[world#Gate Council|Gate Council]]). **Homes stay single-gate** — a second gate on claimed soil is an overland backdoor around hidden-home safety.
   - **Serves:** BRAWLER-2, GROUP-1.
   - **Risks:** WHALE-1 if homes ever gain extra unhidden Gates.
 
@@ -150,7 +157,7 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 ### Open questions — Gates
 
-- **Frontier pacing** — player-driven frontier claiming vs. Coalition-paced expansion: who controls world-growth pacing?
+- **Frontier pacing** — player-driven frontier claiming vs. Council-paced expansion: who controls world-growth pacing?
 - **Frontier specifics** — rank scale, frontier-loot vs. raid-loot balance, AI/abandoned-base discount, gates-per-world distribution, and self-misdial rate/trigger.
 - **Multi-gate homes** — parked. Frontier/procedural worlds can seat multiple Gates; homes stay single-gate unless a closer solves the overland-backdoor problem. A possible closer is claiming the whole world gate set, with each extra Gate becoming its own exposure surface.
 
@@ -166,6 +173,9 @@ deep physics treatment is [[gate-physics|Gate Physics]]; this section is the gam
 
 - **Why ring-fixed, opening-driven:** it keeps early progression on found Gate infrastructure while still giving a tier ladder — you drive the same found ring harder before any later Gate-creation question matters. Exceeding one ring means reassembling found segments at the current layer.
 - **Rejected — "Builders made rings in many fixed sizes; tier up by claiming a bigger ring":** makes the opening hardware-fixed, conflicting with the driven opening and with the dome flexing as the tunnel widens.
+- **Why probe-evolved recipes:** it explains Gate/world variety, probe adaptation, ruins, bad reads, lane weirdness, and local resource asymmetry with one lever without making the Builders sloppy or adding a second travel/findability system.
+- **Rejected — live Gate breeding / Gate-DNA locks:** explored in [[questions]] #20; it reopened turtle equilibrium and had no clean cull. Probe recipes evolve before play; player-facing findability stays Gate addresses + heat.
+- **Rejected — perfect standardized Gates:** makes every difference an ad hoc exception and fights the frontier-variety loop.
 - **Why one cosmology (FRONTIER-1):** the uncontrolled lane is the same phenomenon as the Gate, just un-propped ([[gate-physics|Gate Physics]]) — so there is no second travel system. Travel out, the push-your-luck timer, the contact surface, and the new-Gate pipeline are all the **Gate dialing the frontier**; the contest reuses the planet runtime-states instead of a bespoke instance type. One fewer system to balance, and the raid timer replaces a separate collapse clock.
 - **Rejected — "Rifts", a standalone uncontrolled-portal concept with its own extraction system** (Sealed/Open instances, Host/Scavenger, corpse-share drops as its own layer): a second cosmology, hand-balanced and duplicative. The contested frontier world delivers the same extraction loop on instancing we already have; the underdog-crashes-a-bigger-op fantasy stays **emergent** (a weak player can still walk into a contested world). Everything the concept did is now the Gate: uncontrolled openings are **misdials**, collapse timing is the un-propped throat's own physics.
 
@@ -191,7 +201,7 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 
 ### The two-number split (MASK-3) — load-bearing
 
-- **Field radius** — how far from your Gate you can roam/build; the **dev-expandable** lever (the Coalition "expands the field" as the studio grows the world).
+- **Field radius** — how far from your Gate you can roam/build; the **dev-expandable** lever (the Gate Council "expands the field" as the studio grows the world).
 - **Raid timer** — how long the mask lasts once you leave a field; the old lore term is **away reserve** if needed.
 - Field radius and raid timer **must stay separate numbers.** If they're one stat, every "expand the field 10%" patch also lets raiders camp enemy soil 10% longer. The raid timer is **fixed by the attacker's home-Gate power** and **un-pumpable** by carried cores or beacons.
   - **Test:** field-radius buffs must not extend raid time.
@@ -202,7 +212,7 @@ Replaces the ARK/Rust hunger-thirst grind with one number tied to the core fanta
 - **In hostile territory:** hard failure — you go down, lootable. The real risk that stops raiding from being a free teleport home.
 
 - Tunables: drain curve, field-gradient shape, raid-timer-vs-Gate-power curve.
-- **Open:** what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Coalition-only vs. capped player upgrade; confirm asymmetric mask-at-zero; whether any survival meters exist beyond mask energy and how minimal they must be.
+- **Open:** what the mask physically is; gradient vs. hard radius (leaning gradient); field radius Council-only vs. capped player upgrade; confirm asymmetric mask-at-zero; whether any survival meters exist beyond mask energy and how minimal they must be.
 
 ## Raiding
 
@@ -245,7 +255,7 @@ aggressor thrill without the defender tax. [decided core fantasy]
 - **Rejected — a separate defender-set siege timer:** unneeded; the attacker's fixed clock already bounds the fight once the Gate locks open.
 
 - Tunables: clock curve vs. Gate power, bounty size per tier, mass caps.
-- **Open:** matchmaking / instancing of bilateral tunnels; transponder / no-caller-ID details; what peers can and can't trace of a raider's identity while the Coalition still knows every registered gater.
+- **Open:** matchmaking / instancing of bilateral tunnels; transponder / no-caller-ID details; what peers can and can't trace of a raider's identity while the Gate Council still knows every registered gater.
 
 ## Combat
 
@@ -292,12 +302,13 @@ Third-person, gear-and-positioning PvP — the model resolved enough to greybox.
 
 Neutral, **lawless commerce crossroads** — trade routing nodes you can capture for the tax. [tentative]
 
+- **Origin:** a hub is the human use of an old probe station, not a city the Builders made for people. Von Neumann probes built multi-Gate junctions where separate expansion branches met; each Gate mouth points at a different branch or region so probes could exchange build recipes, refuel, test safe topology, and route around failed links.
 - Cheap-distance routing to reach distant partners affordably (vs. an expensive direct dial), and a capturable territorial prize for the conqueror — without being the home for open PvP (that's contested frontier worlds).
   - **Serves:** TRADER-2, CONQUEROR-1, GROUP-1.
 - A hub has **no private home Gate of its own**, so you **cannot turtle** there — it's always live and exposed. But the **designed PvP contest lives on contested frontier worlds**, not here; PvP at a hub is incidental (over cargo), not an arena.
   - **Prevents:** TURTLE-1.
 - **Routing:** distant trade hops through hubs for far less power than one long jump (the in-world basis for cheap distance). Direct-dial is the private, expensive alternative.
-- **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or gate-locked), and gain **intel** on who moves through. Capture-to-tax is the conqueror's take-and-hold prize — a **registry charter flip** (HOLD-1), defended by presence.
+- **Optionally capturable:** hold the relay/core and you can **tax** traffic, **throttle** (allies cheap, enemies expensive or gate-locked), and gain **intel** on who moves through. Capture-to-tax is the conqueror's take-and-hold prize — a **registry control flip** (HOLD-1), defended by presence.
 - **Relation to the other surfaces:** Safe Core = policed spawn/services/meeting; **hubs** = lawless routing crossroads; contested **frontier worlds** = the contest/extraction surface. Hot frontier for contest, Safe Core + hubs/jump stations for travel and optional barter.
 
 - Tunables: toll rates, routing-cost reduction, capture rules.
@@ -344,7 +355,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 [[questions]], Avatar origin.** Only the origin-agnostic baseline here is decided. [decided; origin open]
 
 - Sets the design's floor: civilizations and bodies are **mortal** but the **player is never deleted** — selection without extinction, made literal (the vehicle dies, you continue).
-- The exact metaphysics are unknown in-world: transfer, projection, copying, succession, or something stranger. The Coalition certifies continuity; it does not explain it.
+- The exact metaphysics are unknown in-world: transfer, projection, copying, succession, or something stranger. The Gate Council certifies continuity; it does not explain it.
 
 ### Presence & respawn (LINK-1)
 
@@ -369,7 +380,7 @@ avatar physically is, where it comes from, and how your mind connects is open �
 
 - A Gate you've **claimed** is your respawn anchor and **fully sustains** you (home soil). A foreign Gate sustains only partially → the away-clock. Beyond all Gate range, the avatar can't stay knit and fails. The **mask** is the avatar tech that draws this stabilizing field (see [[#Mask energy|Mask Energy]]).
   - **Serves:** BUILDER-1, RAIDER-2.
-- A fielded mask carries enough home/house imprint to return, sync, and recognize full sustain. This may become part of the exposure model, but the exact hunting mechanic is open.
+- A fielded mask carries enough home/guild imprint to return, sync, and recognize full sustain. This may become part of the exposure model, but the exact hunting mechanic is open.
   - **Risks:** TRADE-SUICIDE-1, PERMA-LEAK-1.
 
 ### Why / rejected
@@ -382,25 +393,25 @@ avatar physically is, where it comes from, and how your mind connects is open �
 
 ## Claiming
 
-The ownership act: a living gater turns an unclaimed Gate into a home, holding, or house
-asset. Claiming is a consciousness test disguised as property. [tentative]
+The ownership act: a living claimant at an unowned Gate turns it into a home, holding, or
+guild asset. [tentative]
 
-- **Blood + mask + intent (CLAIM-1).** Blood proves living biological substrate; the mask proves recognized gater continuity; intent proves agency.
-  - **Line:** a claim is written in blood and keyed by the mask.
+- **Claiming is a short action at the Gate (CLAIM-1).** For launch players, the claimant is a registered human gater; alien claimants use the same rule if the network recognizes them.
   - **Serves:** CONQUEROR-1, EXPLORER-1.
-- **The Gate registers claim patterns.** It does not understand human property law.
-- **The Coalition registers legal ownership.** It maps claim patterns into houses, permissions, standing, tithe, and charter records.
-  - **Serves:** TRADER-2, GROUP-3, CONQUEROR-2.
-- **Robots can assist, not claim.** Robots can scan, build, fight, carry, and repair, but the network tests embodied biological consciousness.
+- **Living agency is the test.** The network accepts embodied living claimants, not remote commands or pure automation.
   - **Test:** assisted automation never counts as a claimant.
-- **A house is a shared claim pattern.** A solo is a house of one; a group is several claimants bound to one legal owner.
+- **The Gate Council registers human ownership.** It maps Gate ownership into guilds, permissions, standing, tithe, and access records.
+  - **Serves:** TRADER-2, GROUP-3, CONQUEROR-2.
+- **A guild is the human owner record.** A solo is a guild of one; a group is several claimants bound to one legal owner.
   - **Serves:** BUILDER-1, GROUP-3, CONQUEROR-2.
+- Robots can assist, not claim: they can scan, build, fight, carry, and repair, but they cannot own a Gate.
 
 ### Why / rejected
 
-- **Why blood:** claiming needs a concrete biological act, not just a UI button.
-- **Why Coalition ownership:** the unavoidable global registry becomes lore instead of just backend.
-- **Rejected — robot claimants:** would undercut the biological consciousness test and the avatar premise.
+- **Why living agency:** it lets humans and alien rivals claim through one rule while preserving the Builder consciousness-test premise.
+- **Why Council ownership:** the unavoidable global registry becomes lore instead of just backend.
+- **Rejected — human-only claims:** blocks alien rivals and shrinks the Wake.
+- **Rejected — robot claimants:** would undercut the living-consciousness test and the avatar premise.
 
 ## Coordinates & obscurity
 
@@ -450,7 +461,7 @@ escalate into temporary raid access. [current call; tuning open]
 - **Quiet play leaks less (EXPOSE-2)** — closed, small, low-traffic homes are hard to locate.
   - **Serves:** BUILDER-1, HOMESTEAD-1.
   - **Prevents:** WHALE-1.
-- **Big houses leak more (EXPOSE-3)** — more members, routes, masks, cargo, and claims create more traces.
+- **Big guilds leak more (EXPOSE-3)** — more members, routes, masks, cargo, and claims create more traces.
   - **Serves:** RAIDER-1, CONQUEROR-3.
   - **Prevents:** DENY-WHALE-1.
 - **Old home intel needs a recovery valve (EXPOSE-4)** — stale intel, address rotation, heat decay, relocation, or another mechanism must prevent one leak from dooming a home forever.
@@ -463,11 +474,11 @@ escalate into temporary raid access. [current call; tuning open]
 - **Gate heat is event evidence, not magic danger.** It is the gameplay read of coarse Gate events the server likely logs anyway: source/destination band, open duration, Gate opening size, transferred mass, hub/jump traffic, claims, combat near a Gate, structure damage, extraction, deaths, and repeated route use.
 - **Heat is physical first.** Cargo mass, Gate opening size, duration, repetition, and public Gate-site presence can create heat. Item price does **not** create Gate heat by itself; value matters only when players reveal, guard, advertise, or fight over it.
 - **Samples are player-facing fragments.** Players do not read the backend ledger. They collect samples from Gate mouths, jump stations, hubs, AI/abandoned bases, wrecks, camps, corpses, cargo routes, stolen logs, probes, and combat scars.
-- **Leads escalate gradually.** One sample points to activity; matching samples point to a route, jump/hub point, staging Gate, house signature, or confidence band; only repeated/matching/recent evidence plus cost can reveal a temporary Gate address for raiding.
+- **Leads escalate gradually.** One sample points to activity; matching samples point to a route, jump/hub point, staging Gate, guild signature, or confidence band; only repeated/matching/recent evidence plus cost can reveal a temporary Gate address for raiding.
 - **Reveal order:** activity first, route/meeting point second, identity third, home last. A normal trade or frontier run should expose the run before it exposes the true home.
 - **Recency matters.** Heat decays, samples expire, logs go stale, and raid access is temporary. This is the recovery valve that stops one copied clue from dooming a home forever.
 - **Avatar/mask data is supporting evidence.** A killed avatar or looted mask can provide a sample, signature, or route clue, but fielded avatars do not shed permanent home-address shards by default.
-- **AI and player actors use the same path.** AI/abandoned bases, AI route traffic, automated defences, hubs, jump stations, and player houses all create/read heat through the same Gate event model where possible.
+- **AI and player actors use the same path.** AI/abandoned bases, AI route traffic, automated defences, hubs, jump stations, and player guilds all create/read heat through the same Gate event model where possible.
 
 ### Why / rejected
 
@@ -480,7 +491,7 @@ escalate into temporary raid access. [current call; tuning open]
 - **Rejected — raw backend radar:** players see samples, leads, and confidence, not a private debug transcript.
 
 - Tunables: heat weights, decay curves, sample lifetime, lead confidence thresholds, raid-access cost/duration, station-log lifetime.
-- **Open:** exact scan tools/UI; where return/recall lands if the home was wiped while you were away; house shared-ownership sub-rules for address rotation, stale-intel recovery, member churn, old access, route data, betrayal risk, and who may recall to shared home defense.
+- **Open:** exact scan tools/UI; where return/recall lands if the home was wiped while you were away; guild shared-ownership sub-rules for address rotation, stale-intel recovery, member churn, old access, route data, betrayal risk, and who may recall to shared home defense.
 
 ## Potential
 
@@ -493,13 +504,13 @@ frontier visibility and the raid clock. [tentative]
 
 ### Model (POT-1)
 
-- **One sticky high-water-mark per house**, aggregating:
+- **One sticky high-water-mark per guild**, aggregating:
   - **Gate capability** — highest Gate tier you can field/power (your reach ceiling).
   - **Footprint** — territory + holdings held.
   - **Tech depth** — how far up the tree you've unlocked.
-  - **Roster** — active members/avatars (makes a house read bigger than a solo).
+  - **Roster** — active members/avatars (makes a guild read bigger than a solo).
 - **High-water-mark** — rises as you grow, **falls only on genuine dismantling**; no powering-down to dodge.
-- **Account/house-wide** — closes smurfing; strength can't be hidden behind a small avatar.
+- **Account/guild-wide** — closes smurfing; strength can't be hidden behind a small avatar.
 - **Progression = Potential climbing.**
 
 ### What it drives
@@ -509,15 +520,16 @@ frontier visibility and the raid clock. [tentative]
 - **Raid clock** — the raid timer keys off home-Gate power, a Potential component.
 - **Not** home-raid eligibility — that's gated by **locating** the target through the exposure model.
 
-### House is the ownership primitive (HOUSE-1)
+### Guild is the ownership primitive (GUILD-1)
 
-- The unit that owns a home, holds a Gate address, and carries Potential is a **house**; a **solo player is a house of one** (no separate code path).
-- Roster is a real component, so a big house reads bigger — and creates more traces through members, routes, masks, cargo, and claims. `reach = exposure` at the group level.
-- Word convention: **house = the people, home = the place.** "House" never means a building.
+- The unit that owns a home, holds a Gate address, and carries Potential is a **guild**; a **solo player is a guild of one** (no separate code path).
+- Roster is a real component, so a big guild reads bigger — and creates more traces through members, routes, masks, cargo, and claims. `reach = exposure` at the group level.
+- **Great Guild** is status, not a separate object: a guild that reaches enough claims, holdings, roster, map value, and Gate power can become one; a Great Guild can lose that status.
+- Word convention: **guild = the people, home = the place.** "Guild" never means a building.
 
-### AI/abandoned bases (HOUSE-2)
+### AI/abandoned bases (GUILD-2)
 
-- Every ownership / defense / raid mechanic is written against a **house**, so an AI base is just a house whose owner is an NPC or gone — an **abandoned base**: the registry row of a gater the frontier ate, base intact, defences running on automation (the same frozen-snapshot AI as [[#Holdings|Holdings]]). [current call]
+- Every ownership / defense / raid mechanic is written against a **guild**, so an AI base is just a guild registry row whose claimants are NPCs, missing, or gone — an **abandoned base**: the registry row of a gater the frontier ate, base intact, defences running on automation (the same frozen-snapshot AI as [[#Holdings|Holdings]]). [current call]
 - **Reuse is the point:** Potential rating (visibility/tiering), the dome, the Gate-opening fight, the defender cap (AI defenders count toward K), the loot floor (the bounty is server-minted either way), and the attacker's raid timer all apply unchanged — one code path for AI bases and player bases.
 - AI/abandoned bases seed **procedural frontier worlds** ([[#Gates|FRONTIER-3]]): PvE raid content that trains the raid loop, keeps it alive at low population, and lets the greybox prove the raid fantasy without hundreds of players.
   - **Serves:** RAIDER-3, HOMESTEAD-4, EXPLORER-1.
@@ -526,16 +538,17 @@ frontier visibility and the raid clock. [tentative]
 
 ### Why / rejected
 
-- **Why one sticky high-water-mark, account/house-wide:** it closes the two dodges at once — you can't power down to look weak, and you can't hide strength behind a small avatar (smurfing). Falling only on genuine dismantling means "raid longer = build more" feeds growth into capability.
-- **Why the house is the primitive:** one ownership model, not two; and the big-house-is-leaky consequence (more members shedding the same Gate address clues) makes findability scale with size for free.
-- **Why "house" (the word):** the ownership noun must be a plain, globally understood English word that scales solo → corp → space-scale bloc; the dynastic register fits the EVE-flavoured endgame. **Rejected — tribe:** ARK's noun (the IP line). **Rejected — charter:** legalistic/UK register, fails the global-English test; "charter" stays the Coalition permission word (charter standing, clearance). **Rejected — clan / crew / company:** Rust's word / doesn't own an empire / collides with in-fiction corporations.
+- **Why one sticky high-water-mark, account/guild-wide:** it closes the two dodges at once — you can't power down to look weak, and you can't hide strength behind a small avatar (smurfing). Falling only on genuine dismantling means "raid longer = build more" feeds growth into capability.
+- **Why the guild is the primitive:** one ownership model, not two; and the big-guild-is-leaky consequence (more members shedding the same Gate address clues) makes findability scale with size for free.
+- **Why "guild" (the word):** plain global-English, instantly reads as player organization, and scales solo → friend group → Great Guild without implying bloodline, corporation, or state. **Rejected — tribe:** ARK's noun (the IP line). **Rejected — charter / writ:** legalistic register. **Rejected — clan / crew / company / house:** borrowed genre baggage, too small, corporate fiction, or dynastic register.
+- **Rejected — fixed global guilds / parent-guild ladder:** too much setup; the Gate Council is the neutral registry, while Great Guild status emerges from play.
 - **Rejected — live power draw:** dodgeable by powering down.
 - **Rejected — separate metrics** for reach / stamina / visibility: one number is simpler; split only if tuning forces it.
-- **Rejected — solo homes + loose alliances:** no shared fortress; "wipe a house" would mean hunting each member's base, undercutting the ARK fantasy.
-- **Rejected — hybrid (solo homes + house-only holdings):** keeps two ownership models; house-of-one unifies them.
+- **Rejected — solo homes + loose alliances:** no shared fortress; "wipe a guild" would mean hunting each member's base, undercutting the ARK fantasy.
+- **Rejected — hybrid (solo homes + guild-only holdings):** keeps two ownership models; guild-of-one unifies them.
 
 - Tunables: the curve converting the four components into the number; component weights.
-- **Open:** component weights and the climb curve; house shared-ownership sub-rules, including who may rotate/stabilize the house address, how leaving/kicking affects old access and route data, and how the defender cap counts a house vs. a solo.
+- **Open:** component weights and the climb curve; guild shared-ownership sub-rules, including who may rotate/stabilize the guild address, how leaving/kicking affects old access and route data, and how the defender cap counts a guild vs. a solo.
 
 ## Holdings
 
@@ -554,7 +567,7 @@ Assets staked _outside_ your home sustaining field — the one place the design 
 - **Winning denies; it doesn't bleed.** Taking a holding flips it **dormant/neutral** (owner stops the trickle) and grants the attacker a **one-time, capped buffer** — **never an ongoing stream diverted to the attacker.** So there's no "a rival is paid by my node while I sleep" meter, and **no reclaim obligation**: you re-tap it next time you play, as normal play.
 - **On-thesis:** the worst an offline player loses to this layer is one capped buffer of output they weren't collecting — never structures, stock, progress, or existence. That's "I missed a trickle," not the ARK/Rust offline-wipe.
   - **Prevents:** DENY-OFFLINE-1, DENY-TURTLE-2.
-- **Conqueror's take-and-hold** routes here and to hubs / space gates — capture is a **registry charter flip** defended by presence in an opt-in arena, not a decaying home-side claim.
+- **Conqueror's take-and-hold** routes here and to hubs / space gates — capture is a **registry control flip** defended by presence in an opt-in arena, not a decaying home-side claim.
   - **Serves:** CONQUEROR-2.
 - **Cost fit:** a holding is a DB row at rest; it spins a Contested instance only when an attacker is online and pays to dial it, so server load stays ∝ active raiders.
 
@@ -611,7 +624,7 @@ _Stub — drivers/sinks framed, numbers open._
   - **Prevents:** TRADE-SUICIDE-1.
 - **Resource asymmetry** (REGION-1) — worlds differ so exploration, frontier routing, AI/abandoned-base raids, taming, and substitutions matter. Trade can help socially, but the PvE loop must not depend on a market.
   - **Serves:** TRADER-1, EXPLORER-1.
-- **Sinks** (ECON-3) — hub tolls + jump-station routing fees + activation costs + the Coalition tithe.
+- **Sinks** (ECON-3) — hub tolls + jump-station routing fees + activation costs + the Gate Council tithe.
   - **Serves:** TRADER-4.
 - **Open:** concrete currencies, resource taxonomy, crafting inputs, faucet/sink balance; how hard stagnation pushes without becoming upkeep; whether long jumps need jump/relay servers.
 
@@ -619,7 +632,7 @@ _Stub — drivers/sinks framed, numbers open._
 
 _Stub — drivers + the homesteader ceiling decided; tech tree open._
 
-- Two in-world drivers gate one tier ladder: **rising charter clearance** and **more of the Gate network waking**. Ladder: surface worlds → larger/richer → orbital/space Gates → relay/hub Gates → megastructure/Supergates.
+- Two in-world drivers gate one tier ladder: **rising Council clearance** and **more of the Gate network waking**. Ladder: surface worlds → larger/richer → orbital/space Gates → relay/hub Gates → megastructure/Supergates.
 - **Gate tiers are driven, not built** — see [[#Gates|Gates]] and [[gate-physics|Gate Physics]].
 - **No base decay** anywhere (BUILD-1).
 - **Character progression = two-layer mind/avatar XP** — see [[#Presence, respawn & XP|Presence, respawn & XP]] (XP-1).
@@ -739,7 +752,7 @@ What the Gate fiction does _not_ already pay for. Ranked by severity for a solo 
 1. **Two worlds, live, through an open Gate — _highest_.** "A firefight at the Gate opening, not a loading screen" means rendering and simulating **two planets at once** through a portal — the Portal/Prey rendering problem, plus two physics scenes, plus netcode spanning them. Levers: **the dome bounds the portal** (you never render the whole far planet — only what's visible through the tunnel, and the dome caps that radius); **the Gate opening is the only shared volume** (both sides simulate their own planet; only the tunnel-mouth region is co-simulated); **graceful-degrade fallback** — the Gate opening degrades to a shared staging volume both sides load into; greybox can ship the cheap version first.
 2. **Networked physics across an authority boundary — _high_.** "Momentum conserved through the Gate" means a physics object changes authority mid-flight — a classic netcode trap. Lever: the **Gate opening is the single transfer plane**, and the **mass cap** bounds how many such objects exist at once.
 3. **Instance orchestration, cold-start, spin-up latency — _medium_.** Spinning up a contested instance the moment a raid commits, cheaply and fast. Lever: the **dial → tunnel-open sequence is a provisioning window** — the diegetic "dialing" animation covers instance cold-start; both endpoints known in advance; uphill-only shrinks the pool; the ~38-min cap makes instances short and self-terminating. (Greybox: a listen-server removes orchestration entirely.)
-4. **The one irreducible shared state — the registry — _medium_.** Claims, Gate addresses, who-holds-what: a global, consistent, persistent dataset — the one component instancing can't remove; couples to raider anonymity. Lever: it's a **database problem, not a simulation problem**. The Coalition _is_ the natural home for centralized state (lore = the schema); the registry knows owners, but the raid tunnel need not expose the attacker until commit (transponder model). Keep the registry small (metadata only).
+4. **The one irreducible shared state — the registry — _medium_.** Claims, Gate addresses, who-holds-what: a global, consistent, persistent dataset — the one component instancing can't remove; couples to raider anonymity. Lever: it's a **database problem, not a simulation problem**. The Gate Council _is_ the natural home for centralized state (lore = the schema); the registry knows owners, but the raid tunnel need not expose the attacker until commit (transponder model). Keep the registry small (metadata only).
 5. **The many-vs-many exception — hubs, server events — _medium, but cappable_.** Explicitly many-vs-many surfaces are where "instancing makes it cheap" breaks. Lever: they are **few, optional, and bounded** — hubs hard-capped in concurrency, uncontrolled lanes temporary by fiction (they collapse on a countdown). Keep them out of the greybox.
 6. **Procedural generation breadth — _medium, already deferred_.** Lever: the **`PlanetGenerator` abstraction from day one** — greybox ships a trivial generator; richness lands later. Field radius bounds how much of each planet must be generated.
 7. **The web export's real ceiling — _low-medium_.** A web build as a playtest funnel can't match native. Lever: scope it as a **demo slice** — a single planet, a single raid; a web client can host/join one bilateral instance without the full backend.
@@ -753,7 +766,7 @@ Fiction choices that double as architecture — each closes a technical hole, no
 - **The dome radius as the render/sim bound** — also caps the portal frustum and dual-sim volume. Pays #1.
 - **Gate-proximate content as a rule** — resources, AI/abandoned bases, claims, and objectives should be generated near Gate fields by default. Pays #6 and keeps local chunks sufficient for the prototype.
 - **Mass cap / manifest on what crosses** — bounds physics objects transferring at the Gate opening. Pays #2.
-- **The Coalition registry as the one sanctioned global DB** — centralize _all_ unavoidable shared state into the Coalition fiction; everything else stays instanced. Pays #4.
+- **The Gate Council registry as the one sanctioned global DB** — centralize _all_ unavoidable shared state into the Council fiction; everything else stays instanced. Pays #4.
 - **Uncontrolled lanes collapse on a countdown** — the auto-teardown that keeps the many-vs-many case bounded. Pays #5.
 
 ### What the greybox must prove (technical subset)
