@@ -42,8 +42,11 @@ say so — never invent holes to fill a quota.
 - **Inheritance:** a path minting a new knob must name why an existing upstream knob
   cannot carry it.
 - Shape, per path: **the fiction → the lever it licenses → its trade-off → the trap it
-  avoids or risks.** Then **always recommend** one, with the one-line why, and a short
-  concrete walkthrough of the recommendation in motion.
+  avoids or risks.** Run a **consequence pass** for each path. Under **If chosen:** list
+  the concrete downstream changes to player experience, existing mechanics/levers, and
+  canon; include each affected area once. The path is complete when every affected
+  existing call is accounted for. Then **always recommend** one, with the one-line why,
+  and a short concrete walkthrough of the recommendation in motion.
 
 ## 4. Grill
 

@@ -11,10 +11,8 @@
 #include "GatersRaider.h"
 #include "GatersScatter.h"
 #include "GatersWorldDiff.h"
-#include "Components/HierarchicalInstancedStaticMeshComponent.h"
 #include "GeometryScript/MeshNormalsFunctions.h"
 #include "GeometryScript/MeshPrimitiveFunctions.h"
-#include "GeometryScript/MeshUVFunctions.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Materials/MaterialInterface.h"
 #include "Kismet/GameplayStatics.h"
@@ -68,17 +66,20 @@ void AGatersChunk::BeginPlay()
 	MarkResourceZones();
 	LoadDiff();
 
-	int32 Spawned = 0, Replayed = 0, Claimed = 0, GrassCount = 0;
+	int32 Spawned = 0, Replayed = 0, Claimed = 0;
 	int64 Sum = 0;
-	SpawnGrass(GrassCount);
 	SpawnScatter(Spawned, Sum, Replayed);
 	SpawnClaimMarkers(Claimed);
 	int32 StampCount = 0, StampReplayed = 0;
 	StampBase(StampCount, StampReplayed);
 
-	static const TCHAR* PresetNames[] = { TEXT("plains"), TEXT("hills"), TEXT("broken") };
-	Report(FString::Printf(TEXT("SITE seed=%d preset=%s archetype=none"), Seed, PresetNames[TerrainPreset]));
-	Report(FString::Printf(TEXT("SCATTER n=%d sum=%lld grass=%d"), Spawned, Sum, GrassCount));
+	const FVector2D BaseSite(BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
+		BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)));
+	Report(FString::Printf(TEXT("SITE seed=%d environment=%s water=%s base_valid=%s base=(%.0f,%.0f) drop=%.0f"),
+		Seed, *Environment.Name(), Environment.HasWater() ? TEXT("yes") : TEXT("no"),
+		bHaveBaseSite ? TEXT("yes") : TEXT("no"), BaseSite.X, BaseSite.Y,
+		Environment.FootprintDrop(BaseSite, BaseFootprintRadius)));
+	Report(FString::Printf(TEXT("SCATTER n=%d sum=%lld"), Spawned, Sum));
 	Report(FString::Printf(TEXT("DIFF entries=%d replayed=%d"), DiffEntries.Num(), Replayed));
 	Report(FString::Printf(TEXT("CLAIM plots=%d claimed=%d"), PlotCenters.Num(), Claimed));
 	Report(FString::Printf(TEXT("STAMP pieces=%d replayed=%d"), StampCount, StampReplayed));
@@ -95,22 +96,27 @@ void AGatersChunk::InitStream()
 
 void AGatersChunk::RollSite()
 {
-	TerrainPreset = Stream.RandRange(0, 2);
-	BaseAngle = Stream.FRandRange(0.f, 360.f);
-	BaseDist = Stream.FRandRange(2800.f, 4500.f);
-	NoiseOffset.X = Stream.FRandRange(-100000.f, 100000.f);
-	NoiseOffset.Y = Stream.FRandRange(-100000.f, 100000.f);
-
-	static const float Magnitudes[] = { 150.f, 300.f, 500.f };
-	static const float Frequencies[] = { 0.0004f, 0.0005f, 0.0009f };
-	NoiseMagnitude = Magnitudes[TerrainPreset];
-	NoiseFrequency = Frequencies[TerrainPreset];
+	Environment = FGatersEnvironment::FromSeed(Seed, ChunkSize);
+	FVector2D BaseSite = FVector2D::ZeroVector;
+	bHaveBaseSite = Environment.FindBaseSite(
+		MinBaseDistance, MaxBaseDistance, BaseFootprintRadius, MaxFoundationDrop, BaseSite);
+	if (!bHaveBaseSite)
+	{
+		BaseAngle = Stream.FRandRange(0.f, 360.f);
+		BaseDist = FMath::Lerp(MinBaseDistance, MaxBaseDistance, 0.5f);
+		return;
+	}
+	BaseAngle = FMath::RadiansToDegrees(FMath::Atan2(BaseSite.Y, BaseSite.X));
+	BaseDist = BaseSite.Size();
 }
 
 float AGatersChunk::GroundHeight(float LocalX, float LocalY) const
 {
-	const FVector2D P((LocalX + NoiseOffset.X) * NoiseFrequency, (LocalY + NoiseOffset.Y) * NoiseFrequency);
-	return FMath::PerlinNoise2D(P) * NoiseMagnitude;
+	const FVector2D Point(LocalX, LocalY);
+	const float RawHeight = Environment.HeightAt(Point);
+	const float GateBlend = FMath::SmoothStep(
+		PadRadius, PadRadius + 800.f, static_cast<float>(Point.Size()));
+	return FMath::Lerp(0.f, RawHeight, GateBlend);
 }
 
 FVector AGatersChunk::CellCenterLocal(int32 I, int32 J) const
@@ -127,7 +133,8 @@ void AGatersChunk::BuildGround()
 
 	FGeometryScriptPrimitiveOptions PrimOptions;
 	UGeometryScriptLibrary_MeshPrimitiveFunctions::AppendRectangleXY(
-		TargetMesh, PrimOptions, FTransform::Identity, ChunkSize, ChunkSize, 64, 64);
+		TargetMesh, PrimOptions, FTransform::Identity, ChunkSize, ChunkSize,
+		TerrainResolution, TerrainResolution);
 
 	// ground IS GroundHeight(): displace vertices with the same pure function the
 	// analysis grid samples, so heights need no traces and stay exact math per seed
@@ -149,84 +156,45 @@ void AGatersChunk::BuildGround()
 	FGeometryScriptCalculateNormalsOptions NormalsOptions;
 	UGeometryScriptLibrary_MeshNormalsFunctions::RecomputeNormals(TargetMesh, NormalsOptions);
 
-	// tile the megascans moss at ~3 m per repeat instead of one stretch over the island
-	UGeometryScriptLibrary_MeshUVFunctions::ScaleMeshUVs(TargetMesh, 0,
-		FVector2D(ChunkSize / 300.f, ChunkSize / 300.f), FVector2D::ZeroVector,
-		FGeometryScriptMeshSelection());
-	// Nordic Moss: plain opaque M_MS_Srf parent — Mossy_Forest_Floor's parent is the
-	// transmission variant, which renders a dynamic mesh invisible
+	// A plain native material keeps imported art out of generation. Blender meshes can
+	// replace decoration independently later.
 	if (UMaterialInterface* Ground = LoadObject<UMaterialInterface>(nullptr,
-		TEXT("/Game/Fab/Megascans/Surfaces/Nordic_Moss_se4rwei/Raw/se4rwei_tier_0/Materials/MI_se4rwei.MI_se4rwei")))
+		TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial")))
 	{
-		// push the yellowish moss toward lush green (quixel master exposes Albedo Tint)
 		UMaterialInstanceDynamic* Mid = UMaterialInstanceDynamic::Create(Ground, this);
-		Mid->SetVectorParameterValue(TEXT("Albedo Tint"), FLinearColor(0.6f, 0.95f, 0.45f));
+		FLinearColor Tint(0.13f, 0.32f, 0.12f);
+		switch (Environment.Type)
+		{
+		case EGatersEnvironment::Mountains: Tint = FLinearColor(0.22f, 0.25f, 0.23f); break;
+		case EGatersEnvironment::Canyon: Tint = FLinearColor(0.45f, 0.16f, 0.06f); break;
+		case EGatersEnvironment::Archipelago: Tint = FLinearColor(0.22f, 0.38f, 0.13f); break;
+		default: break;
+		}
+		Mid->SetVectorParameterValue(TEXT("Color"), Tint);
 		Comp->SetMaterial(0, Mid);
 	}
 
 	Comp->SetCollisionProfileName(TEXT("BlockAll"));
 	Comp->EnableComplexAsSimpleCollision();
 	Comp->UpdateCollision(false);
-}
 
-void AGatersChunk::SpawnGrass(int32& OutGrass)
-{
-	OutGrass = 0;
-	static const TCHAR* GrassMeshes[] = {
-		TEXT("/Game/Fab/Megascans/Plants/Wild_Grass_vlkhcbxia/Raw/vlkhcbxia_tier_0/StaticMeshes/SM_vlkhcbxia_VarA.SM_vlkhcbxia_VarA"),
-		TEXT("/Game/Fab/Megascans/Plants/Wild_Grass_vlkhcbxia/Raw/vlkhcbxia_tier_0/StaticMeshes/SM_vlkhcbxia_VarC.SM_vlkhcbxia_VarC"),
-		TEXT("/Game/Fab/Megascans/Plants/Wild_Grass_vlkhcbxia/Raw/vlkhcbxia_tier_0/StaticMeshes/SM_vlkhcbxia_VarE.SM_vlkhcbxia_VarE"),
-		TEXT("/Game/Fab/Megascans/Plants/Wild_Grass_vlkhcbxia/Raw/vlkhcbxia_tier_0/StaticMeshes/SM_vlkhcbxia_VarG.SM_vlkhcbxia_VarG") };
-
-	TArray<UHierarchicalInstancedStaticMeshComponent*> GrassLayers;
-	for (const TCHAR* Path : GrassMeshes)
+	if (Environment.HasWater())
 	{
-		UStaticMesh* GrassMesh = LoadObject<UStaticMesh>(nullptr, Path);
-		if (!GrassMesh)
+		UStaticMesh* PlaneMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Plane.Plane"));
+		UMaterialInterface* WaterMaterial = LoadObject<UMaterialInterface>(
+			nullptr, TEXT("/Game/Gaters/Materials/MI_Claimed.MI_Claimed"));
+		if (PlaneMesh && WaterMaterial)
 		{
-			continue;
-		}
-		UHierarchicalInstancedStaticMeshComponent* Hism =
-			NewObject<UHierarchicalInstancedStaticMeshComponent>(this);
-		Hism->SetStaticMesh(GrassMesh);
-		Hism->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-		Hism->SetCastShadow(false);
-		Hism->SetCullDistances(7000, 14000);
-		Hism->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-		Hism->RegisterComponent();
-		GrassLayers.Add(Hism);
-	}
-	if (GrassLayers.IsEmpty())
-	{
-		return;
-	}
-
-	// grass is pure decoration: its own stream so it never shifts the main stream's
-	// draw sequence — existing seeds must keep generating identical worlds
-	FRandomStream GrassStream(static_cast<int32>(
-		FMath::Fmod(FMath::Sin((Seed + 101) * 12.9898) * 100000000.0, 2147483647.0)));
-
-	for (int32 I = 0; I < GridN; ++I)
-	{
-		for (int32 J = 0; J < GridN; ++J)
-		{
-			const int32 Cat = CellGrid[I * GridN + J];
-			if (Cat == Steep || Cat == Reserved)
-			{
-				continue;
-			}
-			const FVector Center = CellCenterLocal(I, J);
-			for (int32 K = 0; K < GrassPerCell; ++K)
-			{
-				const float X = Center.X + GrassStream.FRandRange(-CellSize * 0.5f, CellSize * 0.5f);
-				const float Y = Center.Y + GrassStream.FRandRange(-CellSize * 0.5f, CellSize * 0.5f);
-				const FTransform Xf(
-					FRotator(0.f, GrassStream.FRandRange(0.f, 360.f), 0.f),
-					FVector(X, Y, GroundHeight(X, Y)),
-					FVector(GrassStream.FRandRange(1.1f, 1.9f)));
-				GrassLayers[OutGrass % GrassLayers.Num()]->AddInstance(Xf, /*bWorldSpace*/ false);
-				++OutGrass;
-			}
+			WaterPlane = NewObject<UStaticMeshComponent>(this, TEXT("GeneratedWater"));
+			WaterPlane->SetStaticMesh(PlaneMesh);
+			WaterPlane->SetMaterial(0, WaterMaterial);
+			WaterPlane->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+			WaterPlane->SetCastShadow(false);
+			WaterPlane->SetRelativeLocation(FVector(0.f, 0.f, Environment.WaterHeight + 5.f));
+			const FVector MeshSize = PlaneMesh->GetBoundingBox().GetSize();
+			WaterPlane->SetRelativeScale3D(FVector(ChunkSize / MeshSize.X, ChunkSize / MeshSize.Y, 1.f));
+			WaterPlane->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+			WaterPlane->RegisterComponent();
 		}
 	}
 }
@@ -240,9 +208,9 @@ void AGatersChunk::AnalyzeSite()
 	const FVector BaseLocal(BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
 		BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)), 0.f);
 	const float PadReserveSq = FMath::Square(PadRadius + 200.f);
-	const float BaseReserveSq = FMath::Square(1900.f);
+	const float BaseReserveSq = FMath::Square(2400.f);
 
-	int32 FlatCount = 0, SlopeCount = 0, SteepCount = 0;
+	int32 FlatCount = 0, SlopeCount = 0, SteepCount = 0, WaterCount = 0;
 	for (int32 I = 0; I < GridN; ++I)
 	{
 		for (int32 J = 0; J < GridN; ++J)
@@ -262,6 +230,11 @@ void AGatersChunk::AnalyzeSite()
 				(FVector2D(Local) - FVector2D(BaseLocal)).SizeSquared() < BaseReserveSq)
 			{
 				Cat = Reserved;
+			}
+			else if (Environment.HasWater() && HeightGrid[Idx] <= Environment.WaterHeight + 50.f)
+			{
+				Cat = Water;
+				++WaterCount;
 			}
 			else if (NormalZ >= FlatNormalZ) { Cat = Flat; ++FlatCount; }
 			else if (NormalZ >= SlopeNormalZ) { Cat = Slope; ++SlopeCount; }
@@ -305,8 +278,8 @@ void AGatersChunk::AnalyzeSite()
 		}
 	}
 
-	Report(FString::Printf(TEXT("PLOTS buildable=%d flat=%d slope=%d steep=%d"),
-		PlotCenters.Num(), FlatCount, SlopeCount, SteepCount));
+	Report(FString::Printf(TEXT("PLOTS buildable=%d flat=%d slope=%d steep=%d water=%d"),
+		PlotCenters.Num(), FlatCount, SlopeCount, SteepCount, WaterCount));
 }
 
 void AGatersChunk::MarkResourceZones()
@@ -521,7 +494,7 @@ void AGatersChunk::StampBase(int32& OutStamped, int32& OutReplayed)
 			HMin = FMath::Min(HMin, H);
 			HMax = FMath::Max(HMax, H);
 		}
-		if (HMax - HMin > 350.f)
+		if (HMax - HMin > MaxFoundationDrop)
 		{
 			return false; // too much stilt - reject the site
 		}

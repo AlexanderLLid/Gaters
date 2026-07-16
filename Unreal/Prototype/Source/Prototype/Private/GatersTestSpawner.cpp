@@ -1,13 +1,18 @@
 #include "GatersTestSpawner.h"
 
+#include "Camera/CameraActor.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 #include "GatersChunk.h"
 #include "Kismet/GameplayStatics.h"
+#include "Misc/CommandLine.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
+#include "Misc/Parse.h"
 #include "TimerManager.h"
+#include "UnrealClient.h"
 
 void UGatersTestSpawner::OnWorldBeginPlay(UWorld& InWorld)
 {
@@ -43,6 +48,8 @@ void UGatersTestSpawner::OnWorldBeginPlay(UWorld& InWorld)
 	{
 		Seed = FCString::Atoi(*SeedText);
 	}
+	FParse::Value(FCommandLine::Get(), TEXT("GatersSeed="), Seed);
+	CurrentSeed = Seed;
 
 	bool bHaveChunk = false;
 	for (TActorIterator<AGatersChunk> It(&InWorld); It; ++It)
@@ -74,6 +81,26 @@ void UGatersTestSpawner::PlacePlayerOnIsland()
 {
 	if (APawn* Pawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0))
 	{
+		if (FParse::Param(FCommandLine::Get(), TEXT("GatersGallery")))
+		{
+			const FVector CameraLocation = IslandOrigin + FVector(22000.f, -22000.f, 18000.f);
+			const FRotator CameraRotation(-30.f, 135.f, 0.f);
+			if (ACameraActor* Camera = GetWorld()->SpawnActor<ACameraActor>(CameraLocation, CameraRotation))
+			{
+				if (APlayerController* Controller = UGameplayStatics::GetPlayerController(GetWorld(), 0))
+				{
+					Controller->SetViewTarget(Camera);
+					Pawn->SetActorHiddenInGame(true);
+				}
+			}
+			const FString GalleryDir = FPaths::ProjectSavedDir() / TEXT("EnvironmentGallery");
+			IFileManager::Get().MakeDirectory(*GalleryDir, true);
+			const FString Screenshot = GalleryDir / FString::Printf(TEXT("seed-%d.png"), CurrentSeed);
+			FScreenshotRequest::RequestScreenshot(Screenshot, false, false);
+			UE_LOG(LogTemp, Display, TEXT("[GatersTestSpawner] gallery=%s"), *Screenshot);
+			return;
+		}
+
 		// gate pad plinth top is at +500 local; drop the player just above it
 		Pawn->TeleportTo(IslandOrigin + FVector(0.f, 0.f, 640.f), FRotator(0.f, 0.f, 0.f));
 	}

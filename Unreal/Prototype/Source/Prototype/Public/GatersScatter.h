@@ -5,7 +5,6 @@
 #include "GatersScatter.generated.h"
 
 class AGatersChunk;
-class USkeletalMeshComponent;
 class UStaticMeshComponent;
 
 // Greybox harvestable stand-in (tree/rock). Identity carrier: ScatterId is the
@@ -25,10 +24,6 @@ public:
 
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UStaticMeshComponent> Mesh;
-
-	// real tree visual (Megaplants are skeletal for wind); cone stays the touch trigger
-	UPROPERTY(VisibleAnywhere)
-	TObjectPtr<USkeletalMeshComponent> TreeComp;
 
 protected:
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;

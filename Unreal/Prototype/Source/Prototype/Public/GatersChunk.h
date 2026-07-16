@@ -2,9 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "DynamicMeshActor.h"
+#include "GatersEnvironment.h"
 #include "GatersChunk.generated.h"
 
 class AGatersScatter;
+class UStaticMeshComponent;
 
 // C++ port of the BP_TerrainChunk worldgen/diff core. One chunk around one Gate is the
 // whole generated world; ground is an immutable pure function of Seed; every change is a
@@ -23,16 +25,31 @@ public:
 	int32 Seed = 7;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
-	float ChunkSize = 12000.f;
+	float ChunkSize = 30000.f;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	float PadRadius = 1000.f;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
-	int32 GridN = 25;
+	int32 GridN = 61;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	float CellSize = 500.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters")
+	int32 TerrainResolution = 128;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters")
+	float MinBaseDistance = 6000.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters")
+	float MaxBaseDistance = 10800.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters")
+	float BaseFootprintRadius = 900.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters")
+	float MaxFoundationDrop = 350.f;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	float FlatNormalZ = 0.94f;
@@ -48,9 +65,6 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	float RockChance = 0.05f;
-
-	UPROPERTY(EditAnywhere, Category = "Gaters")
-	int32 GrassPerCell = 14;
 
 	// debug/test hook: set true (editor or MCP) to destroy one stamped piece through
 	// the real destruction path — stands in for raid damage until combat exists
@@ -76,16 +90,14 @@ protected:
 
 private:
 	// grid categories
-	enum ECell : int32 { Flat = 0, Slope = 1, Steep = 2, Reserved = 3, Resource = 4 };
+	enum ECell : int32 { Flat = 0, Slope = 1, Steep = 2, Reserved = 3, Resource = 4, Water = 5 };
 
 	// pure seed-derived state
 	FRandomStream Stream;
-	int32 TerrainPreset = 0;
-	float NoiseMagnitude = 150.f;
-	float NoiseFrequency = 0.0004f;
+	FGatersEnvironment Environment;
 	float BaseAngle = 0.f;
 	float BaseDist = 3000.f;
-	FVector2D NoiseOffset = FVector2D::ZeroVector;
+	bool bHaveBaseSite = false;
 
 	TArray<int32> CellGrid;
 	TArray<float> HeightGrid;
@@ -99,7 +111,6 @@ private:
 	void AnalyzeSite();
 	void MarkResourceZones();
 	void LoadDiff();
-	void SpawnGrass(int32& OutGrass);
 	void SpawnScatter(int32& OutSpawned, int64& OutSum, int32& OutReplayed);
 	void SpawnClaimMarkers(int32& OutClaimed);
 	void StampBase(int32& OutStamped, int32& OutReplayed);
@@ -108,6 +119,9 @@ private:
 	// stamp id -> spawned piece, for diff bookkeeping on destruction
 	UPROPERTY()
 	TMap<TObjectPtr<AActor>, int32> StampedPieces;
+
+	UPROPERTY(Transient)
+	TObjectPtr<UStaticMeshComponent> WaterPlane;
 
 	// ground is this function — vertices are displaced with it, so it needs no traces
 	float GroundHeight(float LocalX, float LocalY) const;

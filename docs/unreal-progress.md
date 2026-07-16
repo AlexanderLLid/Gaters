@@ -5,50 +5,40 @@ being built. Not canon, not the plan (that's [[prototype-plan]]). Updated in pla
 
 ## Works now (map: /Game/Gaters/Maps/Lvl_GateGreybox)
 
-- Home Gate (BP_Gate) with three lane-card pads: approach prints 3 rolled lane cards
-  (danger / value / stability), stepping on a pad dials that lane and teleports to the
-  far site. Readings are always true for now (lane twists not built).
-- Far site: seeded terrain chunk (BP_TerrainChunk — Perlin heightfield, walkable, flat
-  Gate plinth), far Gate ring, EXTRACT HOME pad teleports back.
-- Run-pressure placeholder (BP_RunClock): drains while on the far site, resets on
-  leaving, at zero recalls the player home ("run failed").
-- All Blueprint, authored via the Unreal MCP; verified in PIE via spawn/teleport + log
-  reading each step.
+- `UGatersTestSpawner` creates one C++ raid island and places the player on its Gate pad.
+- `AGatersChunk` builds deterministic terrain, categories, scatter, plots, an EBS base,
+  loot, and seed+diff persistence.
+- `AGatersRaider` can raid any generated base that exposes `Breakable` and `RaidLoot`.
+- Seed override: `Saved/TestSeed.txt` in PIE or `-GatersSeed=N` for command-line runs.
 
-## Varied base generation (plan priority 4) — working
+## Environment families + base placement — working
 
-The terrain chunk IS the site generator (BP_TerrainChunk). One RandomStream(Seed) rolls
-everything; the seed is the save. Base structures are appended into the same dynamic
-mesh (no actors, collision free); only loot is a spawned actor (BP_LootCube, touch →
-taken). Change Seed on the FarTerrain instance = new site.
+`FGatersEnvironment` is a pure seed model consumed by `AGatersChunk`: no actors/assets,
+so its terrain and placement rules can be swept in automation before a map is loaded.
 
-- Rolls per seed: terrain preset (plains/hills/broken), base archetype, base
-  bearing/distance from the Gate pad, layout pieces, defender positions, loot spot.
-- Archetypes: compound (walled ring on a plinth, 1-2 entrances), outpost (tower +
-  crates), ruin (scattered broken walls). Defenders are marker cones for now.
-- Per-seed report prints on arrival: SITE (seed/preset/archetype), TAGS (bearing, dist,
-  pieces, entrances, defenders), CHECK (pad_clear, loot_reach, triangle count).
-- Verified across 6 seeds in one sweep: all checks pass, ~8.6-8.9k tris per site.
-- Gotcha fixed: FRandomStream first draws correlate linearly for nearby seeds; the seed
-  is sin-hashed before stream init (the shader-hash trick) to decorrelate.
-
-Not done: real defender AI, per-piece destructible walls (structures are one mesh),
-loot-reach check is by-construction only (no navmesh trace), lane twists / bad reads.
+- Chunk: 300 m, 128x128 terrain mesh, 61x61 analysis grid at 5 m cells.
+- Families: lowlands, mountains with flat valleys, canyon with cliff walls/river, and
+  archipelago with dry islands/submerged ground. Gate clearing is blended into the pure
+  height function; water is a no-collision surface.
+- Base site search scans a ring around the Gate and accepts only dry footprints inside
+  the foundation-drop rule; the base then stamps unchanged onto that site.
+- Automation: determinism, all-family reachability/relief, cliff-scale canyon steps, and
+  valid base sites across 128 seeds. All four tests pass; representative sampled relief
+  is logged with the result.
+- Real-map sweep: seeds `0/2/4/7` = mountains/archipelago/lowlands/canyon; all report
+  `base_valid=yes`. Run `Scripts/RunEnvironmentSweep.ps1` to repeat, or add
+  `-CaptureGallery` for fixed-camera PNGs under `Saved/EnvironmentGallery/`.
+- Presentation is deliberately asset-light: one native color material per family and
+  cone/sphere scatter slots. No Megascans, Megaplants, or grass loads sit in generation;
+  later Blender meshes replace the slots without changing seed identity or persistence.
+- Terrain changed seed meaning, so `GatersGenVersion=2`; old diffs are discarded safely.
 
 ## Site analysis — where bases can go (working)
 
-After terrain build, AnalyzeSite scans a 25x25 grid (5 m cells, trace-down) and
-classifies each cell by surface normal: flat / slope / steep, with cells on the Gate
-and base plinths marked reserved. 3x3 all-flat clusters become buildable plots
-(spaced >= 15 m), drawn as green debug rings, stored in PlotCenters for later
-consumers (base stamping, player-build rules). Report line per seed:
-`PLOTS buildable=N flat=F slope=S steep=T`. Verified: plains seed -> 53 plots,
-broken seed -> 2 plots; reserved plinths stay marker-free. Slope thresholds
-(normal.z 0.94 / 0.77) and plot size/spacing are the tunables.
-
-Direction note: base _content_ is intentionally not generated anymore — the plan is
-plots + categories now, and stamping bases onto plots later via the building-system
-borrow.
+`AnalyzeSite` classifies the 61x61 grid as flat / slope / steep / reserved / water /
+resource. Submerged cells never receive scatter, plots, or bases. The `PLOTS`
+report includes water count; slope thresholds, plot size/spacing, and water clearance
+remain tunables.
 
 ## Easy Building System V10 — migrated in, demo verified
 
@@ -168,32 +158,22 @@ raids 2-3 walked through the persisted hole in 6.7 s with 0 broken — raid dama
 world damage, exactly the materialization model. Next rungs when wanted: N-seed headless
 sweep, defender pawns (AIPerception patrol), per-tier piece HP.
 
-## Environment pass — Megascans nature + atmosphere (working)
+## Environment presentation + visual sweep — working
 
-The island now reads as a real place: Megascans/Megaplants nature (free, claimed on
-Fab by the user) + a lighting/post pass. Everything visual stays seed-safe: grass and
-variant picks use a separate stream / id-hash, so existing seeds generate identical
-worlds; GenVersion unchanged.
+Terrain shape carries the environment identity; imported nature is not a generator
+dependency. Dressing still uses stable seed-derived IDs, so art replacement cannot shift
+terrain, bases, or persistence.
 
-- **Trees**: Megaplants Norway Spruce + Common Hazel (skeletal, Nanite Assemblies).
-  Attached as visuals on the scatter actors; the old cone stays as the invisible
-  touch-trigger. Scale normalized from measured bounds per species (hazel is a bush —
-  ~4.5 m, spruce 12-17 m). **Both `r.Nanite.AllowAssemblies=1` AND `r.Nanite.Foliage=1`
-  are required** (DefaultEngine.ini [SystemSettings]) or the trees render as bare stems.
-- **Rocks**: Nordic Beach Rock + Tundra Mossy Boulder meshes, bounds-normalized.
-- **Grass**: ~7.8k instances across 4 HISM layers (4 Wild Grass variants), 14/cell on
-  non-steep non-reserved cells, cull 70-140 m, no collision/shadow. Own random stream.
-- **Ground**: Nordic Moss MI on the dynamic mesh, UVs tiled ~3 m via ScaleMeshUVs,
-  green push via MID Albedo Tint. Gotcha: Mossy_Forest_Floor's MI parent is
-  M_MS_Srf_**Trm** (transmission) — it renders a dynamic mesh invisible; use the
-  plain M_MS_Srf surfaces.
-- **Atmosphere** (map actors, tuned via MCP): sun pitch -32 warm 8 lux soft shadows,
-  volumetric height fog, post: saturation 1.22, contrast 1.08, bloom 0.45, locked
-  exposure, light vignette. UNSAVED until someone presses Ctrl+Shift+S in the editor —
-  MCP cannot save map actors; same for the NavMeshBoundsVolume.
-- Fab's Megaplants add enabled the ProceduralVegetationEditor plugin in the uproject;
-  the editor's rebuild prompt after that is flaky — build from the command line.
-- Cold first PIE after these assets: 1-3.5 min (shader + Nanite compile, one-time).
+- **Ground**: native flat-color material, selected by family; normals show the generated
+  landform without texture noise hiding it.
+- **Scatter**: cone trees and sphere rocks are explicit Blender-ready mesh slots using
+  the existing simple materials. Placement and diff IDs stay unchanged when art lands.
+- **Water**: one no-collision surface for canyon/archipelago seeds; dry/submerged state is
+  derived from the same height function the mesh uses.
+- **Visual regression path**: `RunEnvironmentSweep.ps1 -CaptureGallery` launches the real
+  map offscreen, moves to one fixed aerial camera, and writes one PNG per seed. The
+  representative gallery caught the original lowlands profile passing numeric checks
+  while still reading flat; its rolling-relief floor is now covered by automation.
 
 ## Worldgen steps 3-5: resource zones, scatter identity, diff persistence — working
 

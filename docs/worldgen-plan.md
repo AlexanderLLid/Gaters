@@ -27,23 +27,25 @@ Everything below exists to make those five lines true.
 ## The stack — each layer feeds the next
 
 1. **Frame** — one chunk around one Gate is the whole generated world. [decided, done]
-2. **Ground** — seeded heightfield, terrain presets (plains / hills / broken), flat
-   plinths for Gate and base. [done v1]
+2. **Ground** — one 300 m seeded heightfield at 128x128 resolution; explicit lowlands,
+   mountains, canyon, and archipelago families; a clear Gate pad; water where the family
+   calls for it. [done v2]
    - **Ground is immutable [current call].** Nothing edits terrain after generation —
      not the generator, not players. Bases and content conform to the ground via
      foundation skirts (built down from a level floor to meet dirt); a **max-drop rule**
      in the spot test rejects sites that would need too much stilt. Terrain stays a pure
      function of the seed, so world reconstruction is exact math and diffs only ever
-     describe objects. The current plinths are greybox stand-ins for foundation skirts;
-     the skirt moves into the base stamp later, out of the terrain.
-   - Tunables: preset magnitude/frequency table, chunk size, plinth radii, max
-     foundation drop.
+     describe objects. Bases use foundation skirts on the raw terrain; only the Gate has
+     a generated clearing/platform.
+   - Tunables: family shape parameters, chunk size/resolution, Gate clearing, water
+     height, base search ring, footprint radius, max foundation drop.
 3. **Categories** — the ground classifies itself: flat / slope / steep, buildable plots,
-   reserved zones, **resource zones** — regions where harvestable scatter clusters.
-   [done v1 incl. resource zones] [current call: current set; richer tags (high ground,
-   chokepoints, water line) wait for the systems that read them]
-4. **Dressing with stable identity** — greybox scatter (tree/rock stand-ins) where every
-   instance has a deterministic seed-derived ID. [done v1 — ID = grid cell index]
+   reserved zones, water, **resource zones** — regions where harvestable scatter
+   clusters. [done v2] [current call: richer tags (high ground, chokepoints) wait for a
+   raid evaluator that reads them]
+4. **Dressing with stable identity** — native greybox scatter (cone/sphere asset slots)
+   where every instance has a deterministic seed-derived ID. [done v2 — ID = grid cell
+   index; imported foliage is not part of generation]
    - The prototype question is **identity, not looks**: tree #47 is the same tree every
      regeneration. Pretty forests are a content pass (PCG), not a feasibility question.
 5. **Persistence: seed + change-list** — the core unknown. [proven — two diff types]
@@ -52,9 +54,9 @@ Everything below exists to make those five lines true.
    - Proven: chop and claim entries in one per-seed SaveGame slot → redial replays both;
      survives editor restart; per-seed slots isolate cleanly ([[unreal-progress]]).
 6. **Base stamping** — assemble real bases on buildable plots from modular pieces.
-   [waits on the building-system borrow; the grid/placement proof already exists]
-7. **Content passes** — PCG visual dressing, biome variety, creatures, water, resources
-   with real yields. [defer — content, not feasibility]
+   [done v1: EBS pieces, three archetypes, terrain-aware site search]
+7. **Content passes** — PCG visual dressing, biome art, creatures, and resources with
+   real yields. [defer — content, not feasibility; greybox water surface exists]
 
 ## Feasibility unknowns (the actual prototype list)
 
@@ -66,17 +68,17 @@ Everything below exists to make those five lines true.
 - **U3 — ground self-knowledge as gameplay data.** Categories and plots readable by game
   logic, not just visuals. [proven v1 — plots array + report]
 - **U4 — generation budget.** A full seed (ground + analysis + scatter) must build fast
-  enough to feel like "dialing", not "loading". Measure per seed; the report gets a
-  generation-time line. Budget is a tunable, not a hope. [measured — 170-260 ms per full
-  seed across presets (`GEN ms=` line); well inside dialing territory]
+   enough to feel like "dialing", not "loading". Measure per seed; the report gets a
+   generation-time line. Budget is a tunable, not a hope. [open after v2 — the rendered
+   seed sweep is stable; remeasure warm PIE before setting the budget]
 - **U5 — deterministic variety.** Nearby seeds must produce unrelated worlds. [proven —
-  sin-hash scramble; keep the seed-sweep test when generation changes]
+  four family tests + 128-seed base-site sweep; keep both when generation changes]
 
 ## Borrow or stub (solved elsewhere — never prototype)
 
 - Destructible-tree mechanics, harvest interactions, falling props (Valheim/Rust-proven).
 - Scatter rendering at scale (instanced meshes; PCG when visuals matter).
-- Water plane, sky, weather, biome art, foliage.
+- Water simulation, sky, weather, biome art, foliage.
 - Building mechanics (Easy Building System V10 is the designated borrow, [[unreal-progress]]).
 - AI navigation and defenders.
 - Save-file plumbing (the diff format is ours; writing files is not).
@@ -103,14 +105,18 @@ Everything below exists to make those five lines true.
        regeneration; proves the diff format carries more than one change type._
 7. [x] Generation budget: time the full build per seed, print it. — _Check: within budget
        tunable across presets; if not, that is real feasibility data._
-8. [ ] Then base stamping (building-system pieces on plots) and PCG content passes —
-       these graduate out of this plan into content work.
+8. [x] Base stamping + explicit environment families + water-aware placement. — _Check:
+       seeds 0/2/4/7 produce mountains/archipelago/lowlands/canyon, each with a valid base._
+9. [ ] Stop worldgen work until raid evaluation exposes a missing terrain tag or invalid
+       site; PCG art remains content work.
 
 ## Validation report (extends the existing per-seed print)
 
-`SITE` / `TAGS` / `CHECK` / `PLOTS` as today, plus `SCATTER n= ids_stable=`,
-`DIFF entries= replayed=`, `GEN ms=`. A seed is healthy when every line passes; a
-failing line names the layer that broke.
+`SITE environment= water= base_valid= base= drop=` / `PLOTS ... water=` / `BASE` /
+`SCATTER` / `DIFF` / `STAMP` / `GEN ms=`. `Scripts/RunEnvironmentSweep.ps1` runs seed
+sets through the real map and prints those lines; `-CaptureGallery` also writes one
+fixed-camera image per seed. A failing line names the layer; the gallery catches shapes
+that pass numeric checks but still read flat.
 
 ### Why / rejected
 
@@ -120,6 +126,8 @@ failing line names the layer that broke.
   coupling with regeneration is exactly where it can silently fail.
 - **Why identity-not-looks for dressing:** all-trees-destructible is industry-proven
   (Valheim, Rust, Fortnite); only stable identity across regeneration is ours to prove.
+- **Why explicit families:** traversal needs different shapes, not one Perlin surface with
+  a larger amplitude. Rejected: more presets that only retune magnitude/frequency.
 - **Rejected — proving PCG now:** tool choice, not feasibility; it joins at the content
   pass driven by the same seed and categories.
 - **Why immutable ground / rejected terrain-bending:** flattening terrain under bases
