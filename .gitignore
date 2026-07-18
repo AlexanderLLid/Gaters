@@ -3,6 +3,7 @@ Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
+/Unreal/Prototype/Content/Gaters/Generated/
 
 # IDE/project files generated locally
 .vs/

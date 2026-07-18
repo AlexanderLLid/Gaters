@@ -21,6 +21,7 @@ public:
 private:
 	UFUNCTION()
 	void PlacePlayerOnIsland();
+	void CaptureTraversalGallery();
 
 	FVector IslandOrigin = FVector(18500.f, 40000.f, 0.f);
 	int32 CurrentSeed = 7;

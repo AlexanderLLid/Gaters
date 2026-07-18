@@ -99,11 +99,42 @@ layer depends on the one above:
   memory.
 - Split static data (Definition) from runtime state (Instance); prefer tags over rigid
   class trees.
+- Generated content boundary: versioned recipes, contracts, and source artifacts are
+  authoritative; Unreal assets and Actors are derived outputs behind adapters.
 
 ## Skills
 
+- `.agents/skills/` is authoritative; `.claude/skills/` is a byte-identical discovery
+  mirror. Update both together and run `research/Test-SharedAgentDocs.ps1`.
 - **greybox** — the standing mode; runs on every doc/design task.
 - **explore** — the session loop for working a question: options → grill → decide →
   fold in.
+- **improving-workflows** — postmortem for a followed workflow that still failed;
+  records shared evidence and proposes the smallest skill correction.
 
 Keep this schema lean. Add a short rule when a mistake repeats, not an essay.
+
+## Parallel workstreams
+
+- For work in a long-lived chat, follow `.agents/workstreams/README.md`; it alone defines
+  roles, ownership, startup, exchange, and closeout.
+- Dated files under `.agents/plans/` and `.agents/reports/` are execution snapshots and
+  evidence, not current status. Current capability status comes only from
+  `research/machines.json`; current coordination comes only from `.agents/workstreams/`.
+
+### Builder stance
+
+For capability or implementation work, invoke `finding-magic-machines`; its skill owns
+the method. A builder closes work only after independent evidence either promotes the
+machine or records the falsified guarantee and next isolated experiment.
+
+## Research registry
+
+- `research/machines.json` is the single source of truth for magic-machine contracts,
+  dependencies, status, verification, champions, and target waves. Reports and plans may
+  cite machine IDs but never copy the graph.
+- Run `research/Show-MachineRegistry.ps1 -Format Summary` for the current build waves,
+  `-Format Mermaid` for an overview, and `research/Test-MachineRegistry.ps1` after edits.
+- Machine changes follow `.agents/workstreams/README.md`: integrate the registry or raise
+  an `INTEGRATE` exchange. Registry edits must pass
+  `research/Test-MachineRegistry.ps1`.

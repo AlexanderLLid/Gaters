@@ -8,6 +8,15 @@ int32 ScrambleSeed(int32 Seed)
 		FMath::Sin((Seed + 1) * 12.9898) * 100000000.0,
 		2147483647.0));
 }
+
+float SeedUnit(int32 Seed, uint32 Salt)
+{
+	uint32 Hash = static_cast<uint32>(Seed) + 0x9e3779b9u * (Salt + 1u);
+	Hash = (Hash ^ (Hash >> 16)) * 0x7feb352du;
+	Hash = (Hash ^ (Hash >> 15)) * 0x846ca68bu;
+	Hash ^= Hash >> 16;
+	return (Hash & 0x00ffffffu) / static_cast<float>(0x01000000u);
+}
 }
 
 FGatersEnvironment FGatersEnvironment::FromSeed(int32 InSeed, float InChunkSize)
@@ -24,17 +33,22 @@ FGatersEnvironment FGatersEnvironment::FromSeed(int32 InSeed, float InChunkSize)
 	Result.RotationRadians = Random.FRandRange(0.f, 2.f * PI);
 	Result.Phase = Random.FRandRange(-PI, PI);
 
-	switch (Result.Type)
+	if (Result.Type == EGatersEnvironment::Canyon)
 	{
-	case EGatersEnvironment::Canyon:
+		Result.Hydrology = EGatersHydrology::River;
 		Result.WaterHeight = -1350.f;
-		break;
-	case EGatersEnvironment::Archipelago:
-		Result.WaterHeight = 0.f;
-		break;
-	default:
-		Result.WaterHeight = -100000.f;
-		break;
+	}
+	else if (Result.Type == EGatersEnvironment::Archipelago)
+	{
+		Result.Hydrology = EGatersHydrology::Ocean;
+		Result.WaterHeight = -200.f;
+	}
+	else if (FMath::Abs(InSeed) % 3 == 2)
+	{
+		Result.Hydrology = EGatersHydrology::Lakes;
+		// Local terrain is normalized to the arrival pad at Z=0. Lake datum must
+		// remain below that pad; basin modifiers expose the water selectively.
+		Result.WaterHeight = -200.f;
 	}
 	return Result;
 }
@@ -44,6 +58,13 @@ FVector2D FGatersEnvironment::Rotate(const FVector2D& Point) const
 	const float C = FMath::Cos(RotationRadians);
 	const float S = FMath::Sin(RotationRadians);
 	return FVector2D(C * Point.X - S * Point.Y, S * Point.X + C * Point.Y);
+}
+
+FVector2D FGatersEnvironment::LakeCenter(int32 Index) const
+{
+	const float Angle = Phase + (Index == 0 ? 0.f : 2.2f);
+	const float Distance = Index == 0 ? 6500.f : 10500.f;
+	return FVector2D(FMath::Cos(Angle) * Distance, FMath::Sin(Angle) * Distance);
 }
 
 float FGatersEnvironment::Fractal(const FVector2D& Point, float Frequency, int32 Octaves) const
@@ -64,6 +85,7 @@ float FGatersEnvironment::Fractal(const FVector2D& Point, float Frequency, int32
 
 float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 {
+	float BaseHeight = 0.f;
 	switch (Type)
 	{
 	case EGatersEnvironment::Lowlands:
@@ -71,17 +93,23 @@ float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 		const float Broad = Fractal(Point, 0.000055f, 2) * 1150.f;
 		const float Rolling = Fractal(
 			Point + FVector2D(-11000.f, 7000.f), 0.00014f, 3) * 875.f;
-		return Broad + Rolling;
+		BaseHeight = Broad + Rolling;
+		break;
 	}
 
 	case EGatersEnvironment::Mountains:
 	{
-		const float Broad = Fractal(Point, 0.000055f, 2);
-		const float RidgeNoise = Fractal(Point + FVector2D(17000.f, -9000.f), 0.00015f, 3);
-		const float Ridge = 1.f - FMath::Abs(RidgeNoise);
-		const float MountainMask = FMath::SmoothStep(0.48f, 0.82f, Ridge);
-		return MountainMask * 4200.f + Broad * 260.f
-			+ Fractal(Point, 0.00065f, 2) * 80.f - 900.f;
+		const float Broad = Fractal(Point, 0.000032f, 3);
+		const float RidgeNoise = Fractal(
+			Point + FVector2D(17000.f, -9000.f), 0.000055f, 3);
+		const float Ridge = FMath::Pow(
+			FMath::Clamp(1.f - FMath::Abs(RidgeNoise) * 1.8f, 0.f, 1.f), 4.f);
+		const float Massif = FMath::SmoothStep(-0.12f, 0.36f, Broad);
+		const float MassifCore = FMath::SmoothStep(0.12f, 0.45f, Broad);
+		const float Base = 350.f + Broad * 500.f;
+		BaseHeight = Base + Massif * 800.f + MassifCore * Ridge * 5200.f
+			+ Fractal(Point, 0.00028f, 2) * 60.f;
+		break;
 	}
 
 	case EGatersEnvironment::Canyon:
@@ -92,19 +120,62 @@ float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 		const float CanyonMask = 1.f - FMath::SmoothStep(550.f, 2300.f, Distance);
 		const float Plateau = 950.f + Fractal(Point, 0.00011f, 3) * 350.f;
 		const float Terraced = FMath::GridSnap(Plateau, 180.f);
-		return Terraced - CanyonMask * 2900.f + Fractal(Point, 0.00075f, 2) * 90.f;
+		BaseHeight = Terraced - CanyonMask * 2900.f + Fractal(Point, 0.00075f, 2) * 90.f;
+		break;
 	}
 
 	case EGatersEnvironment::Archipelago:
 	{
-		const float Radius = Point.Size() / (ChunkSize * 0.5f);
-		const float EdgeSink = FMath::Square(FMath::Max(0.f, Radius - 0.62f)) * 5200.f;
-		const float Islands = Fractal(Point, 0.00016f, 4) * 1150.f;
-		const float CenterIsland = FMath::Exp(-FMath::Square(Radius * 2.4f)) * 900.f;
-		return Islands + CenterIsland + 180.f - EdgeSink;
+		const FVector2D P = Rotate(Point);
+		const float ArrivalMass = 1.f - FMath::SmoothStep(
+			3500.f, 9200.f, static_cast<float>(P.Size()));
+		const FVector2D BaseShelfCenter(
+			FMath::Cos(Phase) * 6500.f, FMath::Sin(Phase) * 6500.f);
+		const float BaseShelfMass = 1.f - FMath::SmoothStep(
+			1600.f, 2800.f, static_cast<float>((P - BaseShelfCenter).Size()));
+		float LandMass = FMath::Max(ArrivalMass, BaseShelfMass);
+		const int32 SatelliteCount = 1 + static_cast<int32>(
+			FMath::Fmod(FMath::Abs(static_cast<double>(ScrambleSeed(Seed))), 3.0));
+		for (int32 IslandIndex = 0; IslandIndex < SatelliteCount; ++IslandIndex)
+		{
+			const uint32 Salt = static_cast<uint32>(IslandIndex) * 4u + 2u;
+			const float EvenSpacing = 2.f * PI * IslandIndex / SatelliteCount;
+			const float Angle = Phase + EvenSpacing
+				+ FMath::Lerp(-0.18f, 0.18f, SeedUnit(Seed, Salt));
+			const float Distance = FMath::Lerp(12000.f, 13000.f, SeedUnit(Seed, Salt + 1u));
+			const float InnerRadius = FMath::Lerp(1800.f, 2500.f, SeedUnit(Seed, Salt + 2u));
+			const float OuterRadius = InnerRadius
+				+ FMath::Lerp(1400.f, 2000.f, SeedUnit(Seed, Salt + 3u));
+			const FVector2D Center(
+				FMath::Cos(Angle) * Distance, FMath::Sin(Angle) * Distance);
+			const float IslandMass = 1.f - FMath::SmoothStep(
+				InnerRadius, OuterRadius, static_cast<float>((P - Center).Size()));
+			LandMass = FMath::Max(LandMass, IslandMass);
+		}
+		const float CoastVariation = Fractal(
+			Point + FVector2D(7300.f, -5100.f), 0.00012f, 3) * 0.16f;
+		const float SurfaceVariation = Fractal(Point, 0.00042f, 2) * 90.f;
+		BaseHeight = -480.f + (LandMass + CoastVariation) * 1250.f + SurfaceVariation;
+		break;
 	}
 	}
-	return 0.f;
+
+	if (Hydrology == EGatersHydrology::Lakes)
+	{
+		// Lakes are terrain depressions, not a world-wide flood. Two broad,
+		// deterministic basins keep water local while remaining asset-free.
+		const FVector2D LakeA = LakeCenter(0);
+		const FVector2D LakeB = LakeCenter(1);
+		const float BasinA = 1.f - FMath::SmoothStep(1700.f, 3600.f,
+			static_cast<float>((Point - LakeA).Size()));
+		const float BasinB = 1.f - FMath::SmoothStep(1400.f, 3100.f,
+			static_cast<float>((Point - LakeB).Size()));
+		const float Basin = FMath::Max(BasinA, BasinB);
+		const float LakeFloor = WaterHeight - 120.f
+			+ Fractal(Point + FVector2D(4100.f, 2300.f), 0.0004f, 2) * 45.f;
+		BaseHeight = FMath::Lerp(BaseHeight, FMath::Min(BaseHeight, LakeFloor), Basin);
+	}
+	return BaseHeight;
 }
 
 float FGatersEnvironment::FootprintDrop(const FVector2D& Center, float Radius) const
@@ -181,7 +252,20 @@ bool FGatersEnvironment::FindBaseSite(
 
 bool FGatersEnvironment::HasWater() const
 {
-	return Type == EGatersEnvironment::Canyon || Type == EGatersEnvironment::Archipelago;
+	return Hydrology != EGatersHydrology::Dry;
+}
+
+TArray<FGatersWaterSurface> FGatersEnvironment::WaterSurfaces() const
+{
+	if (Hydrology == EGatersHydrology::Lakes)
+	{
+		return { { LakeCenter(0), 3600.f }, { LakeCenter(1), 3100.f } };
+	}
+	if (HasWater())
+	{
+		return { { FVector2D::ZeroVector, ChunkSize * 8.f } };
+	}
+	return {};
 }
 
 FString FGatersEnvironment::Name() const
@@ -192,6 +276,18 @@ FString FGatersEnvironment::Name() const
 	case EGatersEnvironment::Mountains: return TEXT("mountains");
 	case EGatersEnvironment::Canyon: return TEXT("canyon");
 	case EGatersEnvironment::Archipelago: return TEXT("archipelago");
+	}
+	return TEXT("unknown");
+}
+
+FString FGatersEnvironment::HydrologyName() const
+{
+	switch (Hydrology)
+	{
+	case EGatersHydrology::Dry: return TEXT("dry");
+	case EGatersHydrology::Lakes: return TEXT("lakes");
+	case EGatersHydrology::River: return TEXT("river");
+	case EGatersHydrology::Ocean: return TEXT("ocean");
 	}
 	return TEXT("unknown");
 }

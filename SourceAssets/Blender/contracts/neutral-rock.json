@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "assetId": "gaters.fixture.neutral-rock",
+  "assetVersion": 1,
+  "generatorVersion": 1,
+  "artifactPolicy": {
+    "contract": "authoritative",
+    "generator": "authoritative",
+    "blend": "derived-reproducible"
+  },
+  "styleNeutral": true,
+  "selectedStyle": null,
+  "dimensionsMeters": [2.4, 1.8, 1.5],
+  "materialMeaning": "neutral-stone-placeholder",
+  "representations": [
+    {"role": "near", "subdivisions": 4},
+    {"role": "mid", "subdivisions": 3},
+    {"role": "far", "subdivisions": 2}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": 1,
+  "artifactPolicy": {
+    "brief": "authoritative",
+    "generator": "authoritative",
+    "blend": "derived-reproducible"
+  },
+  "assetId": "motion.neutral-step",
+  "assetVersion": 1,
+  "selectedStyle": null,
+  "styleNeutral": true,
+  "skeleton": {
+    "bones": [
+      { "name": "root", "parent": null, "headMeters": [0.0, 0.0, 0.0], "tailMeters": [0.0, 0.0, 0.2] },
+      { "name": "pelvis", "parent": "root", "headMeters": [0.0, 0.0, 0.2], "tailMeters": [0.0, 0.0, 0.9] },
+      { "name": "spine", "parent": "pelvis", "headMeters": [0.0, 0.0, 0.9], "tailMeters": [0.0, 0.0, 1.5] },
+      { "name": "foot_l", "parent": "pelvis", "headMeters": [0.0, 0.18, 0.2], "tailMeters": [0.3, 0.18, 0.2] },
+      { "name": "foot_r", "parent": "pelvis", "headMeters": [0.0, -0.18, 0.2], "tailMeters": [0.3, -0.18, 0.2] }
+    ]
+  },
+  "clip": {
+    "name": "A_NeutralStep",
+    "fps": 30,
+    "startFrame": 1,
+    "endFrame": 31,
+    "rootSamplesMeters": [
+      { "frame": 1, "location": [0.0, 0.0, 0.0] },
+      { "frame": 16, "location": [0.5, 0.0, 0.0] },
+      { "frame": 31, "location": [1.0, 0.0, 0.0] }
+    ],
+    "footLiftMeters": 0.12,
+    "events": [
+      { "name": "contact.left", "frame": 1 },
+      { "name": "contact.right", "frame": 16 },
+      { "name": "contact.left", "frame": 31 }
+    ]
+  }
+}

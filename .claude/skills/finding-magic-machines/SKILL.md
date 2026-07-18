@@ -43,12 +43,16 @@ the dream, reuse existing machinery, then build forward from falsifiable gaps.
    ends at a verified Borrow node or an isolated prototype that can falsify its guarantee.
 8. **Reverse the graph.** Present topological build waves: Borrow, then Adapt, then Build.
    Done when evidence gates every node before it unlocks consumers.
-9. **Loop from evidence.** Restart at the first failed guarantee after each prototype.
+9. **Close the verification loop.** For every Adapt or Build node, name an
+   independent verifier, held-out challenge set, diagnostic failure artifact, and
+   champion-challenger promotion gate. Preserve every run immutably. Done when a
+   failed guarantee identifies the next experiment without replacing the champion.
+10. **Loop from evidence.** Restart at the first failed guarantee after each prototype.
    Done when the next seed machine addresses the observed failure.
 
 ## Output contract
 
-| Node | Unlocks | AND/OR/SEQUENCE | Borrow/Adapt/Build | Contract | Work deleted | Evidence |
+| Node | Unlocks | AND/OR/SEQUENCE | Borrow/Adapt/Build | Contract | Work deleted | Verifier | Challenge set | Promotion gate |
 |---|---|---|---|---|---|---|
 
 End with seed nodes, falsifying experiments, first build wave, and unlocked dream
@@ -64,6 +68,7 @@ The compiler may use `Borrow: Unreal Geometry/PCG`, `Adapt: semantic contacts`, 
 
 - **Optimization:** work remains, only faster.
 - **Oracle:** no contract or falsifiable guarantee.
+- **Self-judge:** the machine scores itself with the assumptions that produced its output.
 - **Reinvention:** a matching existing machine is ignored.
 - **Synonym edge:** a dependency renames its parent.
 - **Catalogue:** nodes lack typed causal edges.

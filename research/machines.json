@@ -1,0 +1,1124 @@
+{
+  "schemaVersion": 1,
+  "dreamMachine": "research.autonomous-living-world-researcher",
+  "currentFocus": "evaluation.motion-mechanical",
+  "outcome": "Given a bounded world brief, generate, materialize, simulate, evaluate, and iteratively improve a reproducible stylized playable world with terrain, resources, settlements, raidable bases, species, inhabitants, assets, and motion without manual content authoring.",
+  "enginePolicy": {
+    "gatersOwns": "Deterministic recipes, semantic generation, stable gameplay identity, diffs, content contracts, evaluators, experiment evidence, and optimizer decisions.",
+    "unrealOwns": "Rendering and instancing, mesh/component lifecycle, physics, navigation runtime, animation runtime, profiling APIs, and scalable engine subsystems when their contracts fit.",
+    "adoptionRule": "Borrow an Unreal subsystem when it deletes work without replacing deterministic recipe identity; otherwise isolate the smallest adapter and preserve evidence for later replacement.",
+    "currentExceptions": "Runtime terrain and content cells are custom and provisional because seed facts are generated on demand. Repeated resource and claim visuals use native ISM rendering and collision with a Gaters full recipe-ID/diff adapter, but player-facing touch feel still needs live visual confirmation. Physical-fit classifies typed terrain contacts and AABB clearance from immutable evidence while keeping attachment contacts explicitly pending; attachment solving, intended embed depth, navigation, and engine collision-shape evidence remain pending. Destructible base pieces intentionally remain unique actors. PCG, World Partition, Mass, Nanite policy, GPU draw-call capture, and animation profiling are not yet integrated."
+  },
+  "machines": [
+    {
+      "id": "research.registry",
+      "name": "Research Registry",
+      "domain": "research",
+      "outcome": "One authoritative graph owns machine contracts, dependencies, status, verification, champions, and target waves.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [],
+      "verifier": "Registry validator checks identity, required fields, dependency targets, waves, and cycles.",
+      "challengeSet": "Duplicate IDs, missing dependencies, cycles, invalid source/status, and later-wave prerequisites.",
+      "failureArtifact": "Validation errors naming the machine, field, or dependency edge.",
+      "promotionGate": "Both agent runtimes read the same valid registry and all overview formats derive from it.",
+      "workDeleted": "Reconciling separate roadmaps and manually maintained capability diagrams."
+    },
+    {
+      "id": "world.recipe",
+      "name": "World Recipe",
+      "domain": "world",
+      "outcome": "A deterministic pure-data world identity exists before Unreal actors and visual assets.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [],
+      "verifier": "Unreal automation validates canonical checksum, stable nodes, transforms, and semantic keys.",
+      "challengeSet": "Repeated seeds, changed seeds, duplicate IDs, missing required arrival site, invalid transforms, mismatched base sites, and moved site or route nodes.",
+      "failureArtifact": "Validation errors plus canonical recipe checksum and node list.",
+      "promotionGate": "All recipe automation passes and duplicate sweeps produce identical checksums.",
+      "workDeleted": "Coupling generators, persistence, evaluation, and materialization to spawned actors.",
+      "champion": "schema-6"
+    },
+    {
+      "id": "world.terrain-generator",
+      "name": "Terrain Family Generator",
+      "domain": "world",
+      "outcome": "Seeds deterministically produce bounded lowland, mountain, canyon, or archipelago landforms with orthogonal dry, lake, river, or ocean hydrology and one playable arrival-to-base terrain route.",
+      "source": "Adapt",
+      "status": "verified",
+      "targetWave": 0,
+      "requires": [],
+      "verifier": "Environment and navigation automation measure determinism, signed elevation, relief, local water footprints, cliffs, buildable coverage, valid base footprints, arrival escape, and base reachability; paired fixed-camera clean and traversal captures expose visual failures.",
+      "challengeSet": "Representative family seeds, water and cliff barriers, a broad base-site seed sweep, a runtime archipelago topology sweep, held-out dry-mountain seed 0, runtime archipelago seed 2, and mountain-lake seed 53 at runtime dimensions.",
+      "failureArtifact": "Seed, environment family, sampled terrain profile, failed terrain assertion, and hashed clean/traversal PNG pair.",
+      "promotionGate": "Every family remains reachable and held-out seeds retain deterministic playable footprints.",
+      "workDeleted": "Hand-authoring the macro terrain for every test world.",
+      "champion": "generator-9"
+    },
+    {
+      "id": "evaluation.terrain-metrics",
+      "name": "Terrain Metrics Evaluator",
+      "domain": "evaluation",
+      "outcome": "Every terrain seed yields an independent versioned vector for signed elevation, relief, water, roughness, cliffs, and buildable coverage.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 0,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator"] }
+      ],
+      "verifier": "Automation compares repeated evaluations and family-relative expectations.",
+      "challengeSet": "All terrain families, repeated seeds, boundary values for every fraction, and held-out seed 53 crater and local-hydrology failures.",
+      "failureArtifact": "Versioned EVAL vector with the seed and environment family.",
+      "promotionGate": "Repeated evaluations match and no metric collapses distinct terrain families.",
+      "workDeleted": "Opening random seeds merely to discover whether their terrain differs.",
+      "champion": "evaluator-3"
+    },
+    {
+      "id": "runtime.seed-diff",
+      "name": "Seed and Diff Reconstruction",
+      "domain": "runtime",
+      "outcome": "A seed plus stable changes reconstructs harvested, claimed, destroyed, and persistent world state.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe"] }
+      ],
+      "verifier": "Replay tests compare reconstructed state and stable recipe IDs.",
+      "challengeSet": "Destroyed base pieces, chopped scatter, claimed plots, and generator-version mismatch.",
+      "failureArtifact": "Diff key, recipe node ID, generator version, and replay mismatch.",
+      "promotionGate": "Every supported mutation round-trips across a seed sweep without saving the full spawned world.",
+      "workDeleted": "Serializing complete generated levels and losing deterministic provenance."
+    },
+    {
+      "id": "runtime.placeholder-materializer",
+      "name": "Placeholder Materializer",
+      "domain": "runtime",
+      "outcome": "A World Recipe becomes a playable greybox using Unreal meshes, components, native ISM batches, and lightweight gameplay actors.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe"] }
+      ],
+      "verifier": "Recipe, site, scatter, base stamp, claim-marker, and generation reports remain deterministic; compiler-aligned scatter terrain contacts and their final transforms are preserved exactly by the visual plan, held-out worlds retain exact gameplay counts while repeated visuals compile to four native Unreal ISM batches with zero per-item carrier actors, and an accepted generated rock replaces its optional engine placeholder through the catalog.",
+      "challengeSet": "Multiple terrain families, present and missing optional generated assets, replayed diffs, invalid recipes, and interrupted materialization.",
+      "failureArtifact": "Recipe node ID, semantic key, actor/component spawn failure, native batch diagnostic, and sweep log.",
+      "promotionGate": "Materialization preserves recipe identity and current worldgen automation passes.",
+      "workDeleted": "Hand-placing every generated test artifact in Unreal.",
+      "champion": "materializer-6-transform-preserving"
+    },
+    {
+      "id": "runtime.terrain-cell-streaming",
+      "name": "Runtime Terrain Cell Streaming",
+      "domain": "runtime",
+      "outcome": "On-demand seed terrain loads and unloads bounded mesh cells around a runtime source without seams or changing terrain identity.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator", "runtime.placeholder-materializer"] }
+      ],
+      "verifier": "Automation checks cell coordinates, desired sets, directional prefetch, and seams; held-out runtime worlds hold nine generated terrain cells and gallery mode expands the same contract.",
+      "challengeSet": "Cell boundaries, fast directional movement, world edges, multiple streaming sources, regeneration, large view distance, persistence, and server authority.",
+      "failureArtifact": "Seed, source cell, desired/loaded cell sets, seam samples, load/unload log, and performance trace.",
+      "promotionGate": "No seam, identity, traversal, or budget regression across held-out worlds and moving-source tests.",
+      "workDeleted": "Generating and retaining the entire runtime seed world at once.",
+      "champion": "custom-runtime-cells-1",
+      "nativeFit": "Provisional custom adapter. Unreal owns actor/component lifecycle; World Partition remains unevaluated for persistent macro-world storage and does not itself generate this seed-derived runtime mesh."
+    },
+    {
+      "id": "content.semantic-keys",
+      "name": "Semantic Content Keys",
+      "domain": "content",
+      "outcome": "World data requests capabilities such as wood walls or heavy attacks without naming Blender or Unreal files.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe"] }
+      ],
+      "verifier": "Recipe tests reject missing base-piece keys and canonicalize key changes.",
+      "challengeSet": "Asset replacement, missing keys, renamed files, and two sources satisfying one semantic request.",
+      "failureArtifact": "Unresolved semantic key and consuming recipe node ID.",
+      "promotionGate": "No generator stores tool-specific asset paths and compatible replacements require no generator change.",
+      "workDeleted": "Editing generator code whenever an asset file or source changes."
+    },
+    {
+      "id": "content.existing-assets",
+      "name": "Existing Asset Source",
+      "domain": "content",
+      "outcome": "Current primitive, EBS, Fab, and project assets provide fixtures while autonomous factories mature.",
+      "source": "Borrow",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [],
+      "verifier": "Asset can be imported or loaded for contract inspection.",
+      "challengeSet": "Representative building, vegetation, character, and broken fixture assets.",
+      "failureArtifact": "Source path and import/load error.",
+      "promotionGate": "At least one fixture exists for every contract being prototyped.",
+      "workDeleted": "Blocking all system work on final generated art."
+    },
+    {
+      "id": "content.style-contract",
+      "name": "Stylized Art Contract",
+      "domain": "content",
+      "outcome": "Generated assets share explicit silhouette, proportion, detail, material, palette, and readability constraints.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["research.registry"] }
+      ],
+      "verifier": "Reference renders and measurable mesh/material limits are checked independently of the producing tool.",
+      "challengeSet": "Environment, building, humanoid, creature, weapon, and animation silhouettes at gameplay camera distances.",
+      "failureArtifact": "Rendered turntable, failed style dimension, and source artifact version.",
+      "promotionGate": "Human pairwise review consistently recognizes compatible outputs and rejects deliberate counterexamples.",
+      "workDeleted": "Prompting each asset independently and repairing a visually incoherent world afterward.",
+      "champion": "gaters.clean-midpoly-painted-1"
+    },
+    {
+      "id": "content.asset-contract",
+      "name": "Asset Contract",
+      "domain": "content",
+      "outcome": "Every usable asset declares scale, orientation, bounds, contacts, clearance, collision, ports, render class, and persistence behavior.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.semantic-keys", "content.style-contract"] }
+      ],
+      "verifier": "Contract fixtures are inspected without invoking a world generator.",
+      "challengeSet": "Incorrect scale, pivot, collision, door clearance, contact surface, socket, and skeleton fixtures.",
+      "failureArtifact": "Asset ID with failed contract field and measured value.",
+      "promotionGate": "Every deliberately broken fixture fails for its intended reason and valid substitutes pass.",
+      "workDeleted": "Per-generator asset-fitting rules and repeated visual integration debugging."
+    },
+    {
+      "id": "tool.unreal-content-importer",
+      "name": "Unreal Content Importer",
+      "domain": "tooling",
+      "outcome": "Machine-produced meshes, rigs, animations, materials, and metadata import reproducibly into Unreal.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.asset-contract"] }
+      ],
+      "verifier": "Repeatable headless imports report expected Unreal asset classes, skeleton bindings, scale, metadata, and measured native evidence. The static fixture imports three Blender FBXs as one Unreal Static Mesh with LOD0/1/2. The motion fixture imports a native Skeletal Mesh, Skeleton, and one-second Anim Sequence twice with stable five-bone hierarchy, 44x53x123 cm bounds, 31 keys, and 0/50/100 cm root samples.",
+      "challengeSet": "Static meshes, multi-file native LOD chains, skeletal meshes, animation clips, materials, fresh imports, reimports, compounded unit conversion, extra armature roots, transport nondeterminism, and malformed exports.",
+      "failureArtifact": "Source manifest/artifact, import settings, Unreal log, measured LOD/bounds/hierarchy/timing/root-path report, and rejected object path.",
+      "promotionGate": "Repeated imports are idempotent and produce contract-equivalent Unreal assets.",
+      "workDeleted": "Manual export dialogs, import dialogs, LOD assignment, renaming, and reimport setup.",
+      "champion": "content-import-2-static-lod-neutral-motion"
+    },
+    {
+      "id": "tool.blender-operator",
+      "name": "Autonomous Blender Operator",
+      "domain": "tooling",
+      "outcome": "An LLM-controlled Blender process creates and repairs versioned meshes, rigs, materials, and animation source artifacts.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.asset-contract", "content.style-contract"] }
+      ],
+      "verifier": "Headless static and motion harnesses rebuild twice, clear stale derived output, reopen their derived blends, and compare semantic evidence rather than FBX bytes. Static evidence covers geometry, representation detail, bounds, and material meaning; motion evidence covers a five-bone hierarchy, complete weights, 30 fps timing, root samples, contact markers, and a non-empty Unreal FBX transport.",
+      "challengeSet": "Fresh creation, deterministic repair, stale output, malformed contracts, re-opened source artifacts, export axis/unit conversion, extra armature roots, weights, timing, root path, contact markers, decreasing near/mid/far detail, and nondeterministic transport metadata.",
+      "failureArtifact": "Blender file, operation transcript, render, validation output, and export artifact.",
+      "promotionGate": "The same brief can be reproduced or repaired without human modeling, rigging, or keyframing.",
+      "workDeleted": "Manual Blender content authoring and tool operation.",
+      "champion": "headless-assets-2-static-lod-neutral-motion"
+    },
+    {
+      "id": "content.asset-intake-linter",
+      "name": "Asset Intake Linter",
+      "domain": "content",
+      "outcome": "Only assets satisfying their declared contract enter the content catalog.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.asset-contract", "tool.unreal-content-importer"] },
+        { "type": "OR", "machines": ["content.existing-assets", "tool.blender-operator"] }
+      ],
+      "verifier": "Repeatable headless static-mesh import plus real static and skeletal fixtures classify valid contracts and deliberate bounds, pivot, unit, render-class, collision, socket, and bone-port failures.",
+      "challengeSet": "Static and skeletal assets; contract units; bounds center/extent; none/simple/complex collision; static sockets; skeletal bones/sockets; wrong render class; repeated import identity.",
+      "failureArtifact": "Asset ID, imported object path or fixture, failed contract check, declared value, and measured value.",
+      "promotionGate": "No rejected fixture reaches the catalog and all accepted fixtures materialize in their test scene.",
+      "workDeleted": "Discovering broken assets only after a generated world is opened.",
+      "champion": "static-skeletal-2"
+    },
+    {
+      "id": "content.catalog",
+      "name": "Contracted Content Catalog",
+      "domain": "content",
+      "outcome": "Semantic queries resolve to compatible versioned assets without exposing their production tool or file path.",
+      "source": "Adapt",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.semantic-keys", "content.asset-intake-linter"] }
+      ],
+      "verifier": "Pure queries and imported-mesh fixtures check semantic/style matching, collision, render class, bounds, required ports, deterministic version selection, placeholder replacement, withdrawal fallback, and runtime adoption of the generated native-LOD rock.",
+      "challengeSet": "Missing key, multiple candidates, incompatible collision/render class/bounds/ports, rejected intake, generated-art/placeholder swap, and withdrawn champion.",
+      "failureArtifact": "Query, candidate asset IDs, stable rejection rules, messages, and selected champion contract.",
+      "promotionGate": "Generators consume semantic keys only and fixture substitutions preserve gameplay contracts.",
+      "workDeleted": "Hand-selecting content and wiring each asset source into each generator.",
+      "champion": "catalog-3-generated-environment-adoption"
+    },
+    {
+      "id": "world.terrain-semantic-field",
+      "name": "Terrain Semantic Field",
+      "domain": "world",
+      "outcome": "Generators and evaluators query one deterministic materialized-height grid classified as flat, slope, steep, or water.",
+      "source": "Adapt",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator"] }
+      ],
+      "verifier": "Unreal automation checks repeated-query determinism, exhaustive categories, the current flattened arrival pad adapter, archipelago water, canyon cliffs, and walkable terrain.",
+      "challengeSet": "Repeated seeds, arrival-pad blending, water terrain, steep terrain, walkable terrain, and environment-family boundaries.",
+      "failureArtifact": "Seed, query bounds, returned semantic samples, and expected classification.",
+      "promotionGate": "Chunk site and traversability analysis consume the field, repeated queries match, and representative real seeds retain deterministic classifications.",
+      "workDeleted": "Each placement system independently resampling and interpreting terrain.",
+      "champion": "field-2"
+    },
+    {
+      "id": "evaluation.structural",
+      "name": "Structural Recipe Evaluator",
+      "domain": "evaluation",
+      "outcome": "Invalid identities, transforms, overlaps, budgets, required relationships, and content contracts fail before Unreal loads a world.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "content.asset-contract"] }
+      ],
+      "verifier": "Pure automation fixtures require valid recipes to pass and invalid identity, transform, required-content, cardinality, location, budget, link, contract, transformed-port, connectivity, and conservative-bounds overlap cases to emit their intended stable rule IDs.",
+      "challengeSet": "Duplicate and empty IDs, non-finite and non-positive transforms, missing content keys, arrival/base cardinality and location mismatch, node-budget overflow, duplicate links, missing endpoints/contracts/ports, misaligned ports, invalid contract bounds, disconnected pieces, touching bounds, and penetrating bounds.",
+      "failureArtifact": "Stable rule ID, message, involved node IDs, and measured/limit values when applicable.",
+      "promotionGate": "Relationship, port, contract-bound, overlap, and budget fixtures diagnose known failures without rendering while valid generated recipes remain accepted.",
+      "workDeleted": "Watching or playing obviously broken generated seeds.",
+      "champion": "evaluator-3"
+    },
+    {
+      "id": "runtime.navigation-query",
+      "name": "Navigation and Spatial Query Substrate",
+      "domain": "runtime",
+      "outcome": "Generated terrain exposes deterministic walkability, connected regions, reachability, and shortest grid paths before actors spawn.",
+      "source": "Adapt",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.placeholder-materializer", "world.terrain-semantic-field"] }
+      ],
+      "verifier": "Automation fixtures assert reachable corridors, water barriers, trapped starts, deterministic shortest paths, and component counts.",
+      "challengeSet": "Flat and sloped corridors, cliffs, water separations, isolated cells, split regions, and repeated path queries.",
+      "failureArtifact": "Semantic grid, query endpoints, reachable mask, component count, sampled path, and path cost.",
+      "promotionGate": "Golden queries separate reachable and unreachable fixtures and representative generated terrain routes pass.",
+      "workDeleted": "Writing separate terrain-connectivity logic in every generator and manually traversing every seed.",
+      "champion": "terrain-grid-1"
+    },
+    {
+      "id": "runtime.world-compiler",
+      "name": "World Compiler",
+      "domain": "runtime",
+      "outcome": "One adapter compiles World Recipes through the catalog into placeholder or finished Unreal worlds without semantic drift.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "content.catalog", "runtime.placeholder-materializer"] }
+      ],
+      "verifier": "Pure manifest fixtures preserve checksum, nodes, links, transforms, catalog swaps, the exact selected asset contract and native mesh reference, placeholders, required-content errors, representation, stable IDs, kind queries, source-recipe matching, and contract-driven scatter ground alignment; independent recipe/catalog, compile, fit, and native materialization stages pass held-out mountain, archipelago, lowland, and canyon seeds with 240-756 matched nodes and zero compiler diagnostics.",
+      "challengeSet": "Catalog swaps, missing optional decoration, missing required pieces, persistent actors, instanced props, semantic route keys, malformed stable IDs, invalid contracts, stale recipes, and live base/scatter/plot/site/route consumption.",
+      "failureArtifact": "Recipe checksum, node ID, semantic key, selected artifact ID, transform, representation, and typed compiler diagnostic.",
+      "promotionGate": "Recipe-preserving rematerialization passes for held-out worlds.",
+      "workDeleted": "Bespoke spawning and asset resolution embedded in each generator.",
+      "champion": "compiler-8-scatter-contact-fit"
+    },
+    {
+      "id": "evaluation.traversability",
+      "name": "Traversability Evaluator",
+      "domain": "evaluation",
+      "outcome": "Seeds with trapped starts, unreachable usable ground, disconnected regions, or invalid critical routes fail automatically.",
+      "source": "Adapt",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "runtime.navigation-query"] }
+      ],
+      "verifier": "Golden reachable, split, and trapped fixtures plus representative real family seeds produce expected connectivity, escape, and critical-route results.",
+      "challengeSet": "Spawn pits, mountain bowls, islands, cliffs, water barriers, disconnected usable ground, arrival-to-base routes, and seed 53 at the 4 km runtime contract.",
+      "failureArtifact": "Seed, connected-component map, failed route, slope/water barrier, and nearest reachable alternative.",
+      "promotionGate": "Known-bad fixtures fail for the intended reason and lowland, mountain, archipelago, and canyon seeds escape and reach their base.",
+      "workDeleted": "Discovering only in play that the player spawned somewhere they cannot escape.",
+      "champion": "evaluator-1"
+    },
+    {
+      "id": "research.run-archive",
+      "name": "Immutable Experiment Run Archive",
+      "domain": "research",
+      "outcome": "Every candidate stores exact machine, generator, recipe, evaluator, artifact, parameter, metric, and provenance versions.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["research.registry", "world.recipe", "evaluation.terrain-metrics"] }
+      ],
+      "verifier": "Schema-7 append, reload, stable candidate identity, missing-field rejection, paired artifact hashing, and versioned terrain/site/materializer/performance projection checks run headlessly; four terrain-family runs explicitly archive runtime.visual-materializer v2, UnrealISM, zero interaction carriers, batch, component, instance, actor, and conservative LOD0 triangle evidence.",
+      "challengeSet": "Interrupted runs, repeated candidates, generator/materializer/evaluator upgrades, missing historical fields, performance evidence mismatch, and artifact loss.",
+      "failureArtifact": "Run ID, rejected record, schema/version mismatch, and preserved raw payload.",
+      "promotionGate": "Runs are append-only, reproducible, explicitly versioned, and project into a shared training view without fabrication.",
+      "workDeleted": "Copying logs manually and losing the evidence needed to compare generator versions.",
+      "champion": "schema-7"
+    },
+    {
+      "id": "research.promotion-gate",
+      "name": "Champion Challenger Promotion Gate",
+      "domain": "research",
+      "outcome": "A challenger replaces a champion only after regression, held-out, diversity, and budget evidence passes.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["research.registry", "research.run-archive"] }
+      ],
+      "verifier": "Synthetic champion/challenger records exercise improvement, regression, tie, and missing-evidence decisions.",
+      "challengeSet": "Metric gaming, one-family improvement, budget regression, evaluator change, and incomplete held-out runs.",
+      "failureArtifact": "Comparison record naming every passed, failed, unknown, and diversity criterion.",
+      "promotionGate": "No champion pointer changes without a complete immutable comparison record.",
+      "workDeleted": "Replacing working generators or assets based on one attractive example."
+    },
+    {
+      "id": "evaluation.performance",
+      "name": "Performance Evaluator",
+      "domain": "evaluation",
+      "outcome": "Generation time, navigation time, actors, instances, triangles, animation cost, memory, and frame budgets are versioned evidence.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.placeholder-materializer", "research.run-archive"] }
+      ],
+      "verifier": "Evaluator-2 automation separates a representative sample from an intentionally excessive fixture across generation, mean-frame, actor, streamed-cell, static-component, instance, and conservative LOD0-triangle budgets; held-out native-ISM v2 runs preserve instances and triangles, hold visible static components at 22-49, and reduce total actors from 224-697 carrier-era counts to 62-88 with zero issues.",
+      "challengeSet": "Dense scatter, large settlements, many agents, interrupted profiling, device-specific profiles, navigation cost, GPU draw calls and drawn triangles, skeletal animation cost, and expensive materials.",
+      "failureArtifact": "Run ID, platform profile, stable budget rule, measured value, limit, recipe checksum, actor breakdown, streamed-cell count, static/instanced component counts, placements, and static/dynamic conservative LOD0 triangles; GPU and animation attribution remain open.",
+      "promotionGate": "A challenger cannot promote when a required target profile regresses beyond its declared tolerance.",
+      "workDeleted": "Discovering content-scale failures only after visual polish.",
+      "champion": "evaluator-2"
+    },
+    {
+      "id": "research.experiment-orchestrator",
+      "name": "Experiment Orchestrator",
+      "domain": "research",
+      "outcome": "Headless jobs choose seeds and parameter candidates, invoke generators/evaluators, preserve failures, and resume safely.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["research.run-archive", "research.promotion-gate", "evaluation.terrain-metrics"] }
+      ],
+      "verifier": "Recorded batches replay identically and interrupted batches resume without duplicate evidence.",
+      "challengeSet": "Process crash, timeout, invalid seed, evaluator failure, duplicate candidate, and mixed generator versions.",
+      "failureArtifact": "Job manifest, process output, partial run record, retry decision, and reproducible command.",
+      "promotionGate": "A fixed experiment manifest yields the same candidate identities and evidence set.",
+      "workDeleted": "Launching, naming, collecting, and correlating every experiment manually."
+    },
+    {
+      "id": "evaluation.physical-fit",
+      "name": "Physical Fit Evaluator",
+      "domain": "evaluation",
+      "outcome": "Assets meet terrain, clearance, collision, attachment, entrance, and navigation tolerances before world promotion.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["content.asset-contract", "world.terrain-semantic-field"] }
+      ],
+      "verifier": "Four Unreal automation fixtures sample the materialized terrain field, keep attachment contacts explicitly pending, and classify aligned, floating, buried, unsupported, whole-asset-blocked, entrance-blocked, and compiled-world placements with stable rule, recipe, and selected-asset IDs. Seed 7 observes 171 compiled placements: 105 valid, 66 issues, 137 evaluated terrain contacts, and 34 pending attachment contacts; compiler contact alignment removes all 33 buried-tree failures.",
+      "challengeSet": "Slopes, cliffs, foundations, doors, bridges, large roots, uneven feet, neighboring structures, placeholder pivots, and terrain-support versus piece-attachment contacts.",
+      "failureArtifact": "Asset and recipe IDs, contact samples, collision overlap, clearance volume, and failed tolerance.",
+      "promotionGate": "All contract-preserving fit policies pass their fixture suite without modifying immutable terrain unexpectedly.",
+      "workDeleted": "Manually measuring terrain contact and clearance failures for every generated asset placement.",
+      "champion": "physical-fit-1-contact-clearance",
+      "nativeFit": "Adapt: Gaters owns deterministic fit policy and causal rule IDs; Unreal will gather navigation and collision evidence at the adapter boundary. The current pure C++ observer consumes selected compiled asset contracts, typed terrain/attachment contacts, materialized terrain samples, transforms, and obstacle bounds. Runtime observation is active, but promotion remains blocked on intended embed-depth representation, attachment solving, and engine collision/navigation evidence."
+    },
+    {
+      "id": "content.environment-asset-factory",
+      "name": "Environment Asset Factory",
+      "domain": "content",
+      "outcome": "Machines produce coherent contracted vegetation, rocks, terrain details, and environmental assemblies without manual modeling.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
+      ],
+      "verifier": "Turntables, contract checks, placement fixtures, repetition descriptors, and performance budgets evaluate each family.",
+      "challengeSet": "Trees, rocks, ground cover, dead variants, scale variants, biome families, and close/far camera distances.",
+      "failureArtifact": "Source artifact, renders, contract report, style dimensions, and placement/performance evidence.",
+      "promotionGate": "A family provides multiple compatible, non-duplicate assets that survive catalog swaps and world placement.",
+      "workDeleted": "Modeling and integrating every environment prop manually."
+    },
+    {
+      "id": "content.building-asset-factory",
+      "name": "Building Asset Factory",
+      "domain": "content",
+      "outcome": "Machines produce modular contracted walls, roofs, floors, openings, foundations, props, and assemblies without manual modeling.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
+      ],
+      "verifier": "Snap, doorway, collision, foundation, destruction, silhouette, and material fixture scenes validate each piece family.",
+      "challengeSet": "Corners, slopes, multiple stories, doors, windows, roof intersections, damaged states, and mixed material tiers.",
+      "failureArtifact": "Piece IDs, assembly recipe, failed port/contact, render, collision, and import report.",
+      "promotionGate": "Generated assemblies remain traversable, structurally valid, replaceable, and visually coherent.",
+      "workDeleted": "Hand-building every modular kit and manually correcting every seam."
+    },
+    {
+      "id": "world.content-cell-generator",
+      "name": "Content Cell Generator",
+      "domain": "world",
+      "outcome": "A bounded terrain cell deterministically yields stable tree and rock opportunities or explicit water, slope, and budget rejection evidence without owning actors or assets.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "world.terrain-semantic-field"] }
+      ],
+      "verifier": "Four pure automation tests cover recipe-v2 repeatability, full recipe identity, final deterministic scatter yaw and scale, non-vacuous cross-cell and cross-world uniqueness, bounded transforms and budgets, spatial coverage, and causal rejection accounting.",
+      "challengeSet": "Dry land, ocean, steep terrain, adjacent cells, different worlds, cell edges, density budgets, and spatial bias.",
+      "failureArtifact": "World seed, cell coordinate, candidate ID, placement transform, and placed/water/steep/budget coverage counts.",
+      "promotionGate": "Held-out terrain cells preserve deterministic identity, valid ground contact, useful distribution, and bounded opportunity counts.",
+      "workDeleted": "Hand-placing resources in each streamed terrain region and debugging empty regions without causal evidence.",
+      "champion": "content-cell-2-recipe-owned-transforms"
+    },
+    {
+      "id": "world.biome-resource-generator",
+      "name": "Biome and Resource Generator",
+      "domain": "world",
+      "outcome": "Terrain semantics become coherent biome regions, vegetation, resource opportunities, landmarks, and travel friction.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.content-cell-generator", "content.environment-asset-factory", "content.catalog"] }
+      ],
+      "verifier": "Pure distribution checks plus dressed fixtures measure coverage, adjacency, accessibility, density, and repetition.",
+      "challengeSet": "All terrain families, biome borders, sparse/dense settings, inaccessible resources, and repeated landmark patterns.",
+      "failureArtifact": "Seed, biome field, resource/landmark nodes, distribution metrics, and responsible rule.",
+      "promotionGate": "Held-out seeds contain reachable resource loops and distinct biome compositions within object budgets.",
+      "workDeleted": "Hand-painting biome content and resource placement for every world."
+    },
+    {
+      "id": "world.site-route-planner",
+      "name": "Site and Route Graph Planner",
+      "domain": "world",
+      "outcome": "Arrival sites, settlements, bases, landmarks, parcels, and critical routes are globally coherent before local decoration.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-semantic-field", "evaluation.structural", "evaluation.traversability"] }
+      ],
+      "verifier": "Pure graph fixtures and a 128-seed runtime-scale sweep check deterministic stable sites, dry flat clearance, separation, required connectivity, and specific failure diagnostics; fixed-camera traversal captures expose role markers and routes.",
+      "challengeSet": "Open grids, unreachable raid bases, no-valid-village fields, all terrain families, held-out seed 0 visual failure, and 128 generated runtime-scale worlds.",
+      "failureArtifact": "Candidate sites, rejected constraints, route graph, connected components, and seed.",
+      "promotionGate": "Every required place has a valid route or the seed fails with a specific unsatisfied constraint.",
+      "workDeleted": "Hoping local random placement accidentally creates a coherent world.",
+      "champion": "planner-1"
+    },
+    {
+      "id": "runtime.visual-materializer",
+      "name": "Visual Materializer",
+      "domain": "runtime",
+      "outcome": "Semantic anchors become instanced terrain dressing and visual assemblies without changing gameplay identity.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.world-compiler", "content.catalog", "evaluation.performance"] }
+      ],
+      "verifier": "Pure automation partitions full stable recipe identities, resolves native instance indices to diff entries, verifies harvest removal and claim-state transition, native collision policy, and catalog-selected mesh propagation; a headless seed-7 run compiled and rendered 72 streamed resource placements through four native ISM batches with no actor carriers.",
+      "challengeSet": "Live player touch feel and visible harvest/claim transitions, dense vegetation, modular assemblies, catalog-driven meshes, LOD transitions, missing optional art, mixed asset sources, collision edge cases, and per-instance persistence.",
+      "failureArtifact": "Recipe node, stable gameplay ID, selected artifact, native ISM batch/index, overlap evidence, diff entry, render capture, and budget trace.",
+      "promotionGate": "Visual improvements do not regress structural or gameplay metrics outside declared tolerances.",
+      "workDeleted": "Per-seed prop dressing, one visible component per repeated placeholder, and hand-converting decoration to efficient instances.",
+      "champion": "unreal-ism-adapter-2",
+      "nativeFit": "Adapt: Unreal UInstancedStaticMeshComponent owns repeated rendering, collision bodies, overlap events, and instance indices. Gaters only groups compiled catalog meshes/transforms, maps ordered indices to stable recipe IDs, and records diffs. Destructive base pieces remain unique; PCG is not used because the recipe already supplies deterministic transforms."
+    },
+    {
+      "id": "runtime.content-cell-streaming",
+      "name": "Runtime Content Cell Streaming",
+      "domain": "runtime",
+      "outcome": "Resource recipes load and unload in lockstep with bounded terrain cells while preserving deterministic identities and persistent world diffs.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.terrain-cell-streaming", "world.content-cell-generator", "runtime.visual-materializer", "runtime.seed-diff"] }
+      ],
+      "verifier": "A headless runtime seed-7 run moved between cell centers, unloaded and loaded nine terrain/content cells twice, recompiled matching recipes, and retained 72 bounded resource instances; pure full-ID automation proves direct instance-to-diff mapping. Live harvest-save-unload-reload evidence remains pending.",
+      "challengeSet": "Repeated boundary crossing, rapid movement, ocean cells, harvested resources, world edges, large load radii, multiple players, and server authority.",
+      "failureArtifact": "Seed, source cell, loaded terrain/content sets, recipe checksum, stable resource IDs, rejection counts, diff entries, and runtime budget trace.",
+      "promotionGate": "Movement never duplicates, loses, or resurrects content and stays within instance, generation, and frame budgets across held-out worlds.",
+      "workDeleted": "Prebuilding every world resource, retaining all resource actors, and writing a second streaming lifecycle beside terrain cells.",
+      "champion": "content-streaming-1",
+      "nativeFit": "Gaters owns deterministic cell recipes and identity; Unreal ISM components own visible batches. The current adapter rematerializes the small bounded loaded set and should be profiled before adopting finer incremental updates."
+    },
+    {
+      "id": "world.environment-generator",
+      "name": "Complete Environment Generator",
+      "domain": "world",
+      "outcome": "A seed produces terrain, water, biomes, resources, landmarks, routes, and contracted visual dressing as one reproducible environment recipe.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator", "world.terrain-semantic-field", "world.biome-resource-generator", "world.site-route-planner", "runtime.visual-materializer", "evaluation.physical-fit"] }
+      ],
+      "verifier": "Layered structural, terrain, traversal, physical-fit, visual, and performance evidence evaluates held-out seeds.",
+      "challengeSet": "Every terrain family, extreme parameter combinations, scarce sites, dense dressing, and catalog swaps.",
+      "failureArtifact": "Environment recipe, seed, layer-specific diagnostics, captures, and versioned metric vector.",
+      "promotionGate": "Held-out environments are reproducible, traversable, resource-viable, diverse, and within budget.",
+      "workDeleted": "Assembling terrain, biomes, resources, routes, and dressing by hand."
+    },
+    {
+      "id": "runtime.activity-system",
+      "name": "Activity and Role Substrate",
+      "domain": "runtime",
+      "outcome": "Agents discover, reserve, execute, and recover from bounded activities declared by places and objects.",
+      "source": "Adapt",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "runtime.navigation-query"] }
+      ],
+      "verifier": "Fixture agents use required activity ports, handle contention, and recover when a reservation becomes unavailable.",
+      "challengeSet": "Occupied slots, unreachable activities, interrupted tasks, destroyed objects, and multiple roles.",
+      "failureArtifact": "Agent/role ID, requested activity, reservation state, route, and recovery decision.",
+      "promotionGate": "Bounded village and defender roles complete deterministic fixture routines without bespoke building logic.",
+      "workDeleted": "Embedding custom behavior code in every building and settlement prop."
+    },
+    {
+      "id": "runtime.combat-simulation",
+      "name": "Combat Simulation Substrate",
+      "domain": "runtime",
+      "outcome": "Placeholder attackers and defenders execute deterministic movement, targeting, attacks, damage, death, and objective interactions.",
+      "source": "Adapt",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "runtime.navigation-query"] }
+      ],
+      "verifier": "Known open and fortified fixtures separate across repeated fixed-policy simulations.",
+      "challengeSet": "Melee, ranged, obstacles, unreachable targets, multiple agents, breach objectives, and deterministic reruns.",
+      "failureArtifact": "Replay, policy/seed, event timeline, paths, damage, objective state, and termination reason.",
+      "promotionGate": "Fixed inputs reproduce and multiple policies expose different tactical weaknesses.",
+      "workDeleted": "Using one manual playthrough or one naive bot as raid evidence."
+    },
+    {
+      "id": "world.settlement-generator",
+      "name": "Settlement Generator",
+      "domain": "world",
+      "outcome": "Routes become coherent villages with parcels, building roles, entrances, activity ports, public space, and decoration anchors.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.site-route-planner", "content.building-asset-factory", "content.catalog", "evaluation.physical-fit", "runtime.activity-system"] }
+      ],
+      "verifier": "Structural and navigation checks verify road access, entrances, roles, activity ports, spacing, and budgets.",
+      "challengeSet": "Small/large sites, slopes, rivers, dense parcels, multiple settlement shapes, and asset substitutions.",
+      "failureArtifact": "Settlement graph, parcel/building IDs, rejected rules, route failures, and render capture.",
+      "promotionGate": "Held-out settlements are connected, inhabitable, distinct, and contract-preserving under catalog swaps.",
+      "workDeleted": "Hand-laying roads, plots, buildings, and village activity for every world."
+    },
+    {
+      "id": "world.base-generator",
+      "name": "Defensive Base Generator",
+      "domain": "world",
+      "outcome": "Sites become raidable bases with approaches, defensive layers, entrances or breach surfaces, defenders, loot, and extraction routes.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.site-route-planner", "content.building-asset-factory", "content.catalog", "evaluation.physical-fit", "runtime.combat-simulation"] }
+      ],
+      "verifier": "Pure topology checks and combat fixtures measure reachability, approach diversity, exposure, cover, defense placement, and budgets.",
+      "challengeSet": "Open, layered, vertical, cave-adjacent, water-adjacent, compact, sprawling, and deliberately sealed bases.",
+      "failureArtifact": "Base graph, recipe IDs, spatial descriptors, failed raid constraint, and combat replay.",
+      "promotionGate": "Held-out bases remain raidable, tactically distinct, and non-degenerate across multiple policies.",
+      "workDeleted": "Hand-authoring every base topology and manually diagnosing unfair layouts."
+    },
+    {
+      "id": "evaluation.settlement",
+      "name": "Settlement Evaluator",
+      "domain": "evaluation",
+      "outcome": "Village coherence, access, role coverage, activity viability, composition, density, and repetition become explainable evidence.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.settlement-generator", "runtime.navigation-query", "evaluation.structural"] }
+      ],
+      "verifier": "Hand-built coherent and deliberately broken settlement fixtures yield expected relative results.",
+      "challengeSet": "Disconnected doors, dead roads, duplicated layouts, missing roles, empty public space, and overcrowding.",
+      "failureArtifact": "Settlement graph, failed routes/roles, descriptor vector, capture, and involved node IDs.",
+      "promotionGate": "The evaluator rejects structural failures and distinguishes meaningful layout niches without one opaque score.",
+      "workDeleted": "Opening every village to decide whether its layout makes sense."
+    },
+    {
+      "id": "evaluation.raid-space",
+      "name": "Raid Space Evaluator",
+      "domain": "evaluation",
+      "outcome": "Approaches, choke concentration, sightlines, cover, breach options, spawn safety, loot exposure, and extraction paths are measured.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.base-generator", "runtime.navigation-query"] }
+      ],
+      "verifier": "Known open, sealed, exposed, and layered fixtures produce expected relative metric vectors.",
+      "challengeSet": "Single kill corridor, doorstep defenses, unreachable loot, unsafe arrival, excessive cover, and no extraction.",
+      "failureArtifact": "Topology descriptors, spatial queries, failed route, implicated recipe IDs, and annotated capture.",
+      "promotionGate": "Hard raid constraints pass and valid bases occupy multiple tactical descriptor cells.",
+      "workDeleted": "Eyeballing whether a base is interesting or merely random."
+    },
+    {
+      "id": "evaluation.encounter",
+      "name": "Encounter Evaluator",
+      "domain": "evaluation",
+      "outcome": "Multiple attacker and defender policies produce deterministic raid outcome evidence rather than a single bot's opinion.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.base-generator", "runtime.combat-simulation", "runtime.navigation-query", "research.run-archive"] }
+      ],
+      "verifier": "Fixed-policy reruns reproduce and known easy/hard fixtures separate across policy profiles.",
+      "challengeSet": "Runner, breacher, ranged, cautious, aggressive, clustered defenders, patrols, and invalid stalemates.",
+      "failureArtifact": "Replay, policy versions, success, time, damage, path, objective events, and termination reason.",
+      "promotionGate": "Candidates are tested against held-out policies and no single exploitable agent defines quality.",
+      "workDeleted": "Manually pitting attackers and defenders against every generated base."
+    },
+    {
+      "id": "runtime.persistence",
+      "name": "World Persistence Compiler",
+      "domain": "runtime",
+      "outcome": "Generated settlements, bases, species, and content reconstruct from recipe plus explicit diffs with stable provenance.",
+      "source": "Adapt",
+      "status": "planned",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.seed-diff", "world.recipe", "runtime.world-compiler"] }
+      ],
+      "verifier": "Mutation/replay suites compare reconstructed semantic state and artifact versions.",
+      "challengeSet": "Destroyed structures, harvested resources, moved agents, replaced assets, claimed plots, and version mismatch.",
+      "failureArtifact": "Recipe/checksum, diff events, unresolved IDs, artifact versions, and reconstructed-state mismatch.",
+      "promotionGate": "Every supported generated entity survives reconstruction without serializing the full level.",
+      "workDeleted": "Saving complete worlds and hand-writing persistence for every generated content type."
+    },
+    {
+      "id": "content.character-body-factory",
+      "name": "Character Body Factory",
+      "domain": "content",
+      "outcome": "Machines produce stylized contracted humanoid and creature meshes, materials, topology, proportions, and deformation-ready source files.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
+      ],
+      "verifier": "Turntables, silhouette tests, topology/weight readiness, material checks, LOD/performance, and deformation fixtures evaluate bodies.",
+      "challengeSet": "Humanoids, quadrupeds, proportion variants, equipment clearance, extreme poses, LODs, and damage/readability distances.",
+      "failureArtifact": "Blender source, turntable, contract report, mesh statistics, style dimensions, and deformation capture.",
+      "promotionGate": "Bodies are visually coherent, riggable, performant, and replaceable without gameplay-schema changes.",
+      "workDeleted": "Manual character and creature modeling."
+    },
+    {
+      "id": "content.rig-factory",
+      "name": "Rig Factory",
+      "domain": "content",
+      "outcome": "Machines create, skin, validate, and retarget standard rig families for generated bodies without manual rigging.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.character-body-factory", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter"] }
+      ],
+      "verifier": "Bone hierarchy, orientations, weights, deformation poses, IK targets, sockets, retargeting, and cost checks validate each rig.",
+      "challengeSet": "Shared humanoid rigs, proportion extremes, quadrupeds, equipment sockets, ground contact, and malformed weights.",
+      "failureArtifact": "Source rig, skeleton mapping, failed bone/weight rule, deformation renders, and Unreal import result.",
+      "promotionGate": "A rig passes deformation and retarget fixtures and reuses a standard family whenever anatomy permits.",
+      "workDeleted": "Manual bone placement, weight painting, socket setup, and retarget configuration.",
+      "nativeFit": "Adapt: Blender Python may generate and skin standard source rigs; Unreal IK Rig/IK Retargeter should own cross-proportion animation reuse and contact-aware retargeting. Start with one shared humanoid family, not one rig per generated character."
+    },
+    {
+      "id": "evaluation.motion-mechanical",
+      "name": "Mechanical Motion Evaluator",
+      "domain": "evaluation",
+      "outcome": "Animation candidates are checked for skeleton validity, timing, root motion, contacts, foot sliding, reach, penetration, and gameplay events.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.rig-factory", "runtime.combat-simulation", "tool.unreal-content-importer"] }
+      ],
+      "verifier": "The current positive observer proves native hierarchy, scale, duration, sampled keys, and root path from one imported style-neutral clip, and records missing Unreal notify transport explicitly. Known-good and deliberately broken evaluator fixtures remain required before promotion.",
+      "challengeSet": "Idle, locomotion, turns, dodge, hit, death, light/heavy attacks, slopes, target heights, and proportion variants.",
+      "failureArtifact": "Clip/rig versions, event timeline, bone traces, contact errors, root path, and test-arena replay.",
+      "promotionGate": "No clip reaches visual evaluation or the catalog with a mechanical hard failure.",
+      "workDeleted": "Manually inspecting every generated animation for technical correctness.",
+      "nativeFit": "Build only the policy and evidence adapter: read imported Unreal animation sequence, skeleton, root, contact, notify, and timing data; do not build a custom playback or retargeting runtime. Current gap: Blender timeline contact markers remain source evidence but FBX produces zero Unreal notifies, so a versioned event adapter or rejection rule is still required."
+    },
+    {
+      "id": "evaluation.motion-visual",
+      "name": "Visual Motion Evaluator",
+      "domain": "evaluation",
+      "outcome": "Readable anticipation, impact, balance, silhouette, weight, recovery, and distinctness are recorded from standardized motion videos.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["evaluation.motion-mechanical", "runtime.visual-materializer", "research.run-archive"] }
+      ],
+      "verifier": "Blind human pairwise labels calibrate and audit any vision-model comparisons.",
+      "challengeSet": "Powerful/weak attacks, readable/ambiguous silhouettes, similar clips, camera angles, body types, and animation speed changes.",
+      "failureArtifact": "Standardized videos, pairwise result, evaluator version, disagreement, and motion recipe.",
+      "promotionGate": "A candidate passes mechanics and beats or diversifies the champion under held-out human-audited comparisons.",
+      "workDeleted": "Opening and comparing every animation candidate manually."
+    },
+    {
+      "id": "content.motion-factory",
+      "name": "Motion Factory",
+      "domain": "content",
+      "outcome": "Gameplay motion briefs become Unreal-ready, timed, rig-compatible animation sets through generate-evaluate-repair loops without manual keyframing.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.rig-factory", "tool.blender-operator", "tool.unreal-content-importer", "evaluation.motion-mechanical", "evaluation.motion-visual"] }
+      ],
+      "verifier": "Mechanical and visual evaluators independently inspect every candidate in standardized Unreal arenas.",
+      "challengeSet": "Standard motion vocabulary, different rigs/proportions, terrain, target distances, interruptions, and deliberate evaluator exploits.",
+      "failureArtifact": "Motion brief/recipe, Blender source, exported clip, Unreal replay/video, metrics, and repair proposal.",
+      "promotionGate": "A complete required motion set passes hard checks and retains diverse visually accepted champions.",
+      "workDeleted": "Manual animation, export, import, retarget, event wiring, comparison, and repair.",
+      "nativeFit": "SEQUENCE: motion brief -> candidate curves from Blender Python or Unreal Control Rig -> FBX/native animation import -> IK Rig retarget -> mechanical evaluation -> standardized video comparison -> champion archive. Unreal PCG remains a world/point-content tool, not the bone-motion generator; Motion Warping is reserved for adapting accepted root-motion clips to gameplay targets. The first round trip now proves stable required hierarchy, native scale, duration, root path, and preserved source contact evidence; next falsifiers are broken timing/root/contact fixtures and explicit Unreal gameplay-event wiring."
+    },
+    {
+      "id": "species.definition-generator",
+      "name": "Species Definition Generator",
+      "domain": "species",
+      "outcome": "A world need becomes a versioned species definition covering body plan, scale, movement, combat role, senses, resources, behavior, habitat, and population constraints.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["world.biome-resource-generator", "runtime.activity-system", "runtime.combat-simulation", "content.style-contract"] }
+      ],
+      "verifier": "Schema, ecological slot, gameplay role, required motion/body capabilities, and contradiction checks evaluate definitions before content generation.",
+      "challengeSet": "Passive prey, predator, worker, defender, humanoid, tameable role, incompatible habitat, and duplicate gameplay niche.",
+      "failureArtifact": "Species definition, unsatisfied world need, conflicting constraint, and missing downstream capability.",
+      "promotionGate": "Every generated species fills an explicit world/gameplay role and its requirements are satisfiable by downstream factories.",
+      "workDeleted": "Inventing disconnected creatures first and discovering later that they have no viable gameplay or ecosystem role."
+    },
+    {
+      "id": "species.behavior-generator",
+      "name": "Species Behavior Generator",
+      "domain": "species",
+      "outcome": "Species definitions compile into bounded movement, sensing, activity, social, combat, flee, and recovery policies.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["species.definition-generator", "runtime.activity-system", "runtime.combat-simulation", "runtime.navigation-query"] }
+      ],
+      "verifier": "Deterministic behavior fixtures exercise every declared role, transition, interruption, and unavailable action.",
+      "challengeSet": "Idle needs, resource seeking, groups, threats, combat, blocked paths, destroyed activities, and conflicting priorities.",
+      "failureArtifact": "Policy version, state/event trace, query results, chosen action, and unmet need.",
+      "promotionGate": "Held-out simulations complete declared roles without deadlock or undefined transitions.",
+      "workDeleted": "Writing bespoke AI logic for every generated species."
+    },
+    {
+      "id": "species.ecology-profile-generator",
+      "name": "Species Ecology Profile Generator",
+      "domain": "species",
+      "outcome": "Species definitions gain explicit habitat, diet/resource, density, territory, reproduction, threat, and population relationships.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["species.definition-generator", "world.biome-resource-generator"] }
+      ],
+      "verifier": "Resource-flow and habitat fixtures detect impossible, explosive, extinct, and duplicate ecological profiles.",
+      "challengeSet": "Sparse resources, isolated biomes, predator/prey imbalance, settlements, migration barriers, and zero viable habitat.",
+      "failureArtifact": "Species/world versions, resource-flow graph, viable habitat map, population projection, and failed constraint.",
+      "promotionGate": "Every profile has viable habitat and resource relationships across held-out environment seeds.",
+      "workDeleted": "Hand-tuning every species placement independently of world resources and other populations."
+    },
+    {
+      "id": "species.factory",
+      "name": "Complete Species Factory",
+      "domain": "species",
+      "outcome": "A species definition becomes a cataloged body, rig, motion set, behavior policy, ecology profile, and gameplay data package without manual content authoring.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["species.definition-generator", "content.character-body-factory", "content.rig-factory", "content.motion-factory", "species.behavior-generator", "species.ecology-profile-generator", "content.catalog"] }
+      ],
+      "verifier": "The complete species runs in movement, activity, combat, habitat, population, visual, and performance fixture arenas.",
+      "challengeSet": "Humanoid, quadruped, peaceful, aggressive, group, solitary, multiple environments, and catalog replacement.",
+      "failureArtifact": "Species package versions plus layer-specific body, rig, motion, behavior, ecology, import, and simulation evidence.",
+      "promotionGate": "All required artifacts and policies agree on one species contract and pass held-out world fixtures.",
+      "workDeleted": "Manually coordinating modeling, rigging, animation, AI, stats, spawning, and ecology for every species."
+    },
+    {
+      "id": "evaluation.species-mechanical",
+      "name": "Species Mechanical Evaluator",
+      "domain": "evaluation",
+      "outcome": "Generated species are checked for navigation, motion coverage, interactions, combat role, behavior completion, collision, and runtime cost.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["species.factory", "evaluation.motion-mechanical", "runtime.combat-simulation", "evaluation.performance"] }
+      ],
+      "verifier": "Known viable and deliberately incomplete species packages separate in standardized fixture arenas.",
+      "challengeSet": "Missing motion, oversized collision, unreachable activity, invalid attack reach, navigation failure, and excessive cost.",
+      "failureArtifact": "Species/artifact versions, arena replay, unmet role, missing capability, and budget trace.",
+      "promotionGate": "No species enters population generation with a missing required capability or hard budget failure.",
+      "workDeleted": "Testing each generated creature manually across every gameplay system."
+    },
+    {
+      "id": "content.presentation-factory",
+      "name": "Presentation Factory",
+      "domain": "content",
+      "outcome": "Machines produce coherent materials, VFX, audio cues, UI-readable icons, and environmental presentation contracts for generated content.",
+      "source": "Build",
+      "status": "deferred",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "content.catalog", "research.run-archive"] }
+      ],
+      "verifier": "Import/technical checks, standardized captures, mix/readability measurements, and human-audited perceptual comparisons.",
+      "challengeSet": "Environment, settlement, species, combat, interaction, distance, crowded scenes, and accessibility/readability cases.",
+      "failureArtifact": "Presentation brief, source artifacts, capture/audio sample, metrics, comparison, and provenance.",
+      "promotionGate": "Presentation improves held-out perceptual comparisons without hiding gameplay signals or exceeding budgets.",
+      "workDeleted": "Manual production and integration of every supporting visual and audio asset."
+    },
+    {
+      "id": "runtime.species-agent-system",
+      "name": "Species Agent Runtime",
+      "domain": "runtime",
+      "outcome": "Generated species packages spawn and execute their movement, activities, social behavior, combat, death, and persistence in materialized worlds.",
+      "source": "Adapt",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["species.factory", "runtime.navigation-query", "runtime.activity-system", "runtime.combat-simulation", "runtime.persistence"] }
+      ],
+      "verifier": "Deterministic multi-agent fixture worlds exercise lifecycle, interactions, destruction, reload, and performance.",
+      "challengeSet": "Multiple species, groups, combat, blocked activities, streaming/reload, high counts, and destroyed habitat.",
+      "failureArtifact": "Agent/species IDs, state/event trace, world recipe/diff, replay, and budget measurements.",
+      "promotionGate": "Required species roles run and reconstruct across held-out worlds within agent budgets.",
+      "workDeleted": "Writing and integrating a separate runtime actor stack for every species."
+    },
+    {
+      "id": "world.population-generator",
+      "name": "Population Generator",
+      "domain": "world",
+      "outcome": "Environment, resources, settlements, bases, and ecology profiles produce viable species populations, territories, groups, and spawn schedules.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["world.environment-generator", "world.settlement-generator", "world.base-generator", "species.factory", "world.biome-resource-generator"] }
+      ],
+      "verifier": "Habitat/resource checks and bounded simulations test population viability, spatial distribution, role coverage, and budgets.",
+      "challengeSet": "Sparse worlds, isolated biomes, settlement pressure, predators, resource depletion, crowding, and no-valid-habitat seeds.",
+      "failureArtifact": "Population recipe, habitat map, species profiles, resource graph, rejected placements, and projection.",
+      "promotionGate": "Held-out worlds support required roles without immediate extinction, explosion, unreachable spawns, or crowding failure.",
+      "workDeleted": "Hand-placing and independently tuning creatures and inhabitants in every world."
+    },
+    {
+      "id": "runtime.ecology-simulation",
+      "name": "Bounded Ecology Simulation",
+      "domain": "runtime",
+      "outcome": "Generated populations interact with resources, habitats, settlements, threats, deaths, and recovery under controlled time horizons.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["world.population-generator", "runtime.species-agent-system", "world.biome-resource-generator"] }
+      ],
+      "verifier": "Fixed-seed time-step simulations reproduce population/resource trajectories and termination reasons.",
+      "challengeSet": "Resource shortage, predator imbalance, player-like harvesting, habitat loss, settlement conflict, and recovery.",
+      "failureArtifact": "Time-series state, causal events, population/resource graphs, policy versions, and failed bound.",
+      "promotionGate": "Held-out simulations avoid immediate degeneracy and retain intended ecological/gameplay roles within budget.",
+      "workDeleted": "Manually testing long-running population interactions in live worlds."
+    },
+    {
+      "id": "runtime.playable-world-assembler",
+      "name": "Playable Living World Assembler",
+      "domain": "runtime",
+      "outcome": "Environment, settlements, bases, populations, species, activities, combat, persistence, and content compile into one reproducible playable world.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["world.environment-generator", "world.settlement-generator", "world.base-generator", "world.population-generator", "runtime.world-compiler", "runtime.persistence", "runtime.species-agent-system", "runtime.ecology-simulation"] }
+      ],
+      "verifier": "End-to-end fixtures run arrival, resource route, settlement visit, base raid, species encounter, persistence, and reconstruction.",
+      "challengeSet": "All terrain families, multiple world densities, catalog swaps, interrupted generation, reload, and long simulation.",
+      "failureArtifact": "World brief, recipe, artifacts, diffs, replays, captures, layer diagnostics, and performance trace.",
+      "promotionGate": "Held-out briefs produce reproducible playable loops with no hard evaluator or budget failure.",
+      "workDeleted": "Hand-integrating every generated subsystem into a bespoke test level."
+    },
+    {
+      "id": "evaluation.ecology",
+      "name": "Ecology Evaluator",
+      "domain": "evaluation",
+      "outcome": "Population viability, resource pressure, habitat use, encounters, stagnation, dominance, and recovery become versioned evidence.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.ecology-simulation", "world.population-generator", "research.run-archive"] }
+      ],
+      "verifier": "Known balanced, extinct, explosive, starved, and stagnant fixtures produce expected relative metric vectors.",
+      "challengeSet": "Multiple resource levels, predator/prey relationships, settlements, player pressure profiles, and habitat loss.",
+      "failureArtifact": "Time series, resource/population graph, failed constraint, causal events, and replay seed.",
+      "promotionGate": "Valid candidates occupy multiple ecological niches without hard viability or runtime failures.",
+      "workDeleted": "Watching long simulations to guess why a generated ecosystem collapsed."
+    },
+    {
+      "id": "evaluation.world-visual",
+      "name": "World Perceptual Evaluator",
+      "domain": "evaluation",
+      "outcome": "Naturalness, composition, repetition, readability, coherence, clipping, species presentation, and preference are recorded from standardized galleries and videos.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.playable-world-assembler", "evaluation.settlement", "evaluation.motion-visual", "evaluation.performance", "content.style-contract"] }
+      ],
+      "verifier": "Blind human pairwise comparisons calibrate and audit vision-assisted labels; disagreement remains evidence.",
+      "challengeSet": "Terrain, villages, bases, species, motion, repeated layouts, catalog swaps, camera distances, and deliberately broken compositions.",
+      "failureArtifact": "Fixed-camera captures/videos, pairwise labels, evaluator/version, disagreement, and implicated recipe/artifact IDs.",
+      "promotionGate": "Perceptual improvement holds on hidden galleries without structural, gameplay, diversity, or performance regression.",
+      "workDeleted": "Opening every world live to decide whether it looks natural, interesting, readable, or repetitive."
+    },
+    {
+      "id": "evaluation.layered-record",
+      "name": "Layered World Evaluation Record",
+      "domain": "evaluation",
+      "outcome": "Every world run stores hard failures, metric vectors, diversity descriptors, artifacts, uncertainty, and causal diagnostics without one magic score.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 5,
+      "requires": [
+        { "type": "AND", "machines": ["evaluation.structural", "evaluation.terrain-metrics", "evaluation.traversability", "evaluation.physical-fit", "evaluation.settlement", "evaluation.raid-space", "evaluation.encounter", "evaluation.motion-mechanical", "evaluation.motion-visual", "evaluation.species-mechanical", "evaluation.ecology", "evaluation.world-visual", "evaluation.performance", "research.run-archive"] }
+      ],
+      "verifier": "Curated failures at every layer project into a stable record naming the failed contract and evidence artifact.",
+      "challengeSet": "Hard failure, partial evaluation, unknown historical field, evaluator disagreement, timeout, and valid diverse candidates.",
+      "failureArtifact": "The immutable evaluation record itself plus referenced raw evidence.",
+      "promotionGate": "A failed candidate identifies its layer and next experiment; no missing metric is silently treated as zero.",
+      "workDeleted": "Opaque pass/fail decisions and rewatching runs to diagnose failures."
+    },
+    {
+      "id": "research.quality-diversity-archive",
+      "name": "Quality Diversity Archive",
+      "domain": "research",
+      "outcome": "The system retains valid elites across terrain, settlement, base, species, ecology, and visual descriptor niches instead of converging on one winner.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 6,
+      "requires": [
+        { "type": "AND", "machines": ["evaluation.layered-record", "research.run-archive"] }
+      ],
+      "verifier": "Synthetic and real candidates test cell assignment, replacement, rebinning, coverage, and descriptor-version changes.",
+      "challengeSet": "One high scalar score, duplicate candidates, sparse cells, changed descriptors, evaluator upgrades, and invalid candidates.",
+      "failureArtifact": "Candidate/run ID, descriptor version/vector, cell, incumbent comparison, and archive decision.",
+      "promotionGate": "Archive coverage and within-cell evidence improve without collapsing distinct valid niches.",
+      "workDeleted": "Manually curating variety and accepting ten cosmetically different versions of one structure."
+    },
+    {
+      "id": "research.llm-optimizer",
+      "name": "Optimizer and LLM Researcher",
+      "domain": "research",
+      "outcome": "An optimizer selects parameter candidates while an LLM diagnoses evidence and proposes reproducible next experiments across machines.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 6,
+      "requires": [
+        { "type": "AND", "machines": ["research.registry", "research.experiment-orchestrator", "research.quality-diversity-archive", "research.promotion-gate"] }
+      ],
+      "verifier": "Recorded research sessions replay candidate selection, evidence use, proposals, and promotion decisions on held-out problems.",
+      "challengeSet": "Sparse evidence, conflicting metrics, evaluator exploits, version changes, repeated failures, local optima, and missing artifacts.",
+      "failureArtifact": "Researcher/version, input evidence IDs, diagnosis, proposed experiment, result, and rejected alternatives.",
+      "promotionGate": "The researcher improves held-out archive coverage/quality without bypassing hard constraints or promotion gates.",
+      "workDeleted": "Manually choosing every seed, parameter adjustment, failure diagnosis, and next experiment."
+    },
+    {
+      "id": "research.autonomous-content-researcher",
+      "name": "Autonomous Content Researcher",
+      "domain": "research",
+      "outcome": "Content briefs become independently generated, validated, compared, repaired, cataloged, and promoted environment, building, character, rig, motion, species, and presentation artifacts.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 6,
+      "requires": [
+        { "type": "AND", "machines": ["content.environment-asset-factory", "content.building-asset-factory", "species.factory", "content.presentation-factory", "research.llm-optimizer", "research.promotion-gate"] }
+      ],
+      "verifier": "Held-out briefs run end to end and independent contract, mechanical, visual, simulation, and budget evaluators inspect outputs.",
+      "challengeSet": "New asset family, repair, style variation, different species role, animation vocabulary, catalog replacement, and interrupted generation.",
+      "failureArtifact": "Brief, all source/compiled artifacts, evaluator records, repair history, catalog decision, and champion comparison.",
+      "promotionGate": "A new content family enters the catalog without manual modeling, rigging, animation, integration, or silent evaluator regression.",
+      "workDeleted": "The entire repetitive manual content production and integration pipeline."
+    },
+    {
+      "id": "research.override-roundtrip",
+      "name": "Explicit Override Roundtrip",
+      "domain": "research",
+      "outcome": "Accepted human or agent moves, replacements, and deletions persist as visible recipe patches across regeneration.",
+      "source": "Build",
+      "status": "deferred",
+      "targetWave": 6,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "runtime.world-compiler", "runtime.persistence"] }
+      ],
+      "verifier": "Move, replace, delete, regenerate, and conflict fixtures check explicit patch replay.",
+      "challengeSet": "Generator removes a target, asset contract changes, overlapping patches, recipe version change, and catalog withdrawal.",
+      "failureArtifact": "Base recipe, ordered patches, conflict report, and regenerated recipe checksum.",
+      "promotionGate": "Every accepted edit reapplies or reports an explicit conflict; no edit silently disappears.",
+      "workDeleted": "Choosing between procedural regeneration and preserving selected art direction."
+    },
+    {
+      "id": "research.autonomous-living-world-researcher",
+      "name": "Autonomous Living World Researcher",
+      "domain": "research",
+      "outcome": "A bounded brief repeatedly yields reproducible, diverse, playable stylized worlds with coherent environments, settlements, bases, species, inhabitants, assets, motion, simulations, diagnostics, and promoted champions.",
+      "source": "Build",
+      "status": "planned",
+      "targetWave": 6,
+      "requires": [
+        { "type": "AND", "machines": ["runtime.playable-world-assembler", "evaluation.layered-record", "research.llm-optimizer", "research.autonomous-content-researcher", "research.promotion-gate"] }
+      ],
+      "verifier": "Held-out world briefs and seeds run end to end; independent evaluators and blind human audits compare champion generations across versions.",
+      "challengeSet": "All terrain families, different settlement/base/species compositions, sparse resources, catalog swaps, tool failures, evaluator upgrades, long simulations, and unseen briefs.",
+      "failureArtifact": "Complete experiment lineage: brief, registry/machine versions, parameters, recipes, artifacts, simulations, captures, evaluation records, archive decisions, and repair proposals.",
+      "promotionGate": "Held-out archive coverage and within-niche quality improve while hard gameplay, persistence, visual, and performance guarantees remain satisfied.",
+      "workDeleted": "Manually generating, authoring, integrating, inspecting, diagnosing, and retuning every world and content family."
+    }
+  ]
+}

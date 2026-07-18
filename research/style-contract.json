@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "gaters.clean-midpoly-painted",
+  "version": 1,
+  "geometry": {
+    "silhouette": "smooth-readable",
+    "detail": "selective-mid-poly",
+    "terrainFaceting": "not-visible-at-gameplay-distance"
+  },
+  "surface": {
+    "model": "stylized-pbr",
+    "variation": "painted-color-gradients",
+    "photogrammetry": false,
+    "microdetail": "restrained"
+  },
+  "composition": {
+    "foliageDensity": "moderate-scalable",
+    "objectGrouping": "clear",
+    "combatReadability": "required"
+  },
+  "runtime": {
+    "baseline": "ordinary-unreal-lighting",
+    "expensiveFeatures": "optional-quality-settings",
+    "target": "weaker-pc-scalable"
+  },
+  "references": [
+    "research/references/style-clean-midpoly-natural.png",
+    "research/references/style-painted-warmth.png"
+  ]
+}

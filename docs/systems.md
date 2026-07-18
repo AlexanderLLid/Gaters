@@ -725,6 +725,12 @@ Two risks, de-risked differently. Don't conflate them.
 
 What is hard to _build_ about a game like this, and which gate lore/mechanic pays each bill.
 
+- **Engine [current call]: Unreal 5.8 is the prototype and current production path.** Its
+  native geometry, animation, navigation, streaming, replication, profiling, and editor
+  automation are Borrow candidates behind Gaters-owned recipes and contracts. Rejected:
+  restarting the now-verified content and world pipeline in Unity or Godot without a
+  falsified requirement that Unreal cannot meet. (src: raw/engine-comparison.md)
+
 > **The core insight.** The Gate is an **engineering device dressed as lore.** Most hard
 > problems of survival-PvP-MMOs the Gate fiction _removes_ rather than solves. So the lens
 > isn't "what's hard" — it's "what's hard _after_ the Gate already paid for most of it."

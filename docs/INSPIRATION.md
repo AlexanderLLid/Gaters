@@ -26,21 +26,21 @@ enters the lore or systems wikis.
 - **Satisfactory** → clean industrial building clarity; readable factory/structure
   systems where complex bases stay visually parseable.
 
-## Visual direction (deferred)
+## Visual direction
 
-Art is **deferred until after greybox validation** [current call]; final identity is open
-(questions.md #7). Captured here so it isn't re-litigated.
-
-- **Touchstones:** Minecraft, Valheim, No Man's Sky. **NMS is the aspirational visual
-  target**; the Gate structure deliberately sidesteps NMS's hardest engineering problem
-  (seamless space-to-surface flight, replaced by Gate loads). **Valheim** is the
-  achievable Unity aesthetic.
-- **Principle [current call]:** separate **visual style** (cheap, achievable solo) from the
-  **engine tech** of reference games (NMS's custom engine + seamless flight, not
-  achievable solo).
-- **Leaning path to the NMS look solo:** low-poly, flat-shaded 3D with strong
-  post-processing.
-- **Open:** final identity (NMS-lush vs. low-poly-stylized), palette, UI style.
+- **[current call] Clean mid-poly structure with hand-painted warmth:** smooth readable
+  silhouettes, simplified reusable geometry and materials, painted color variation, and
+  moderate foliage density. Detail comes from shape, palette, composition, and lighting
+  rather than photoreal scans or visible terrain facets.
+- **Performance shape:** ordinary Unreal lighting and scalable density/shadows are the
+  baseline; expensive rendering features remain optional quality settings.
+- **References:** `research/references/style-clean-midpoly-natural.png` owns structure and
+  material detail; `research/references/style-painted-warmth.png` owns palette and shape
+  warmth.
+- **Why / rejected:** chosen as the strongest balance of richness, AI-authoring
+  consistency, and weaker-PC scalability. Rejected flat-shaded low-poly as too crude,
+  photoreal/NMS-lush density as too costly, and cel shading as unnecessary shader risk.
+- **Open:** exact palette and UI style.
 
 ## Feel
 
