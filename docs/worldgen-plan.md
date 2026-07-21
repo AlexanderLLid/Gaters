@@ -14,8 +14,8 @@ identity for later diffs. Unreal materializes only the bounded cells currently n
 
 - Generation produces pure versioned data before Actors or assets exist.
 - Terrain identity is independent of the current streaming window.
-- Arrival is a semantic site, not a required Gate-centered landform or permanent
-  arrival-to-base corridor ([[questions]] #27).
+- Arrival is a semantic site, not a required Anchor-centered landform or permanent
+  arrival-to-base corridor ([[questions]] #28).
 - Terrain exposes shared height, slope, water, walkability, buildability, and route
   queries; downstream generators do not rederive them.
 - Content recipes use semantic keys; the catalog chooses placeholders or finished assets.

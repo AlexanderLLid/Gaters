@@ -1,0 +1,9 @@
+{
+  "compiler": "motion-curve-compiler/0",
+  "motion_recipe_sha256": "33fab9b3259dc9466737257834ea4834a7e156e0087f54e534228eb1f194c38d",
+  "motion_sha256": "6018ec64b1bb42897b8c37558ed8b5e4a2ca5fea6dc5d98851a34330ff978db7",
+  "schema": "motion-receipt/0",
+  "source_joint_limits_sha256": "b55f43629bd81277ce4fc7606c4619b48bc53e5f5893e33613d21f8974dc2bd2",
+  "source_skeleton_sha256": "40e4732704dfd80f331c83b349972afa782a3f3c253941428f501aa8397eb939",
+  "verifier": "motion-curve-verifier/0"
+}

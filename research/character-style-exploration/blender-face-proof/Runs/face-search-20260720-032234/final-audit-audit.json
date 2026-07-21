@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "audit",
+  "modelIdentity": "gpt-5.6-terra",
+  "package": {"path": "Runs/face-search-20260720-032234/final-audit/audit-package.json", "sha256": "69d1b691e0f04a66e702ffcc921adc29d80f94f3fd2a55a1aba309568e9ab4dc"},
+  "instructions": "Inspect only the chronology-blind audit held-out package. Identify visibly unsuitable slots and compare the remaining valid left/right geometry against the target, ignoring all presentation. Do not inspect maps, history, recipes, parameters, IDs, or chronology.",
+  "response": "{\"schemaVersion\":1,\"evaluatorId\":\"audit\",\"rejectSlots\":[\"center\"],\"validPreference\":\"tie\",\"confidence\":0.96,\"hardFailures\":[],\"diagnosis\":[\"The center slot has a visibly compressed, overly narrow craniofacial mass and weakened side-plane continuity, making the face less grounded and less like the target.\",\"The left and right slots are visually equivalent in likeness and anatomy; both retain the same unresolved tall, narrow silhouette and over-tapered lower face.\"]}",
+  "counterexampleSlot": "center",
+  "rejectCounterexample": true,
+  "initialVsFinal": "tie",
+  "confidence": 0.96,
+  "hardFailures": [],
+  "diagnosis": [
+    "The center slot has a visibly compressed, overly narrow craniofacial mass and weakened side-plane continuity, making the face less grounded and less like the target.",
+    "The left and right slots are visually equivalent in likeness and anatomy; both retain the same unresolved tall, narrow silhouette and over-tapered lower face."
+  ],
+  "humanAcceptance": false
+}

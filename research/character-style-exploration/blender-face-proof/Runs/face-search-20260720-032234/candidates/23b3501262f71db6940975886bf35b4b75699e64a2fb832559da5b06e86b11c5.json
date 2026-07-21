@@ -1,0 +1,20 @@
+{
+  "axis": "cheek_definition",
+  "candidateId": "23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5",
+  "direction": "upper",
+  "parameters": {
+    "cheek_definition": 0.44,
+    "chin_projection": -0.12,
+    "eye_bag": 0.44,
+    "eye_spacing": 0.0,
+    "head_height": 0.0,
+    "head_width": -0.08,
+    "jaw_taper": 0.085,
+    "lip_volume": 0.08,
+    "nose_length": 0.3,
+    "nose_projection": 0.14,
+    "nose_width": 0.26
+  },
+  "parentId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+  "round": 3
+}

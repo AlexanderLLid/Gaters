@@ -45,6 +45,12 @@ struct PROTOTYPE_API FGatersVisualBatchPlan
 	TArray<FGatersVisualInstance> Rocks;
 	TArray<FGatersVisualInstance> OpenClaims;
 	TArray<FGatersVisualInstance> ClaimedClaims;
+	TArray<FGatersVisualInstance> VillageFoundations;
+	TArray<FGatersVisualInstance> VillageWalls;
+	TArray<FGatersVisualInstance> VillageDoors;
+	TArray<FGatersVisualInstance> VillageRoofs;
+	TArray<FGatersVisualInstance> VillagePaths;
+	TArray<FGatersVisualInstance> VillageSpaces;
 	TSoftObjectPtr<UStaticMesh> TreeMesh;
 	TSoftObjectPtr<UStaticMesh> RockMesh;
 };

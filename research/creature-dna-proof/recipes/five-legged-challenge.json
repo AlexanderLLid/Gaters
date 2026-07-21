@@ -1,0 +1,45 @@
+{
+  "schema": "creature-dna/0",
+  "id": "five-legged-challenge",
+  "seed": 1702,
+  "units": "m",
+  "modules": [
+    {
+      "id": "body",
+      "type": "torso",
+      "length": 2.8,
+      "radius": 0.68
+    },
+    {
+      "id": "head",
+      "type": "tapered_head",
+      "parent": "body.front",
+      "length": 0.9,
+      "base_radius": 0.42,
+      "tip_radius": 0.06
+    },
+    {
+      "id": "tail",
+      "type": "tail",
+      "parent": "body.back",
+      "length": 1.8,
+      "segments": 4,
+      "tip_radius": 0.04
+    },
+    {
+      "id": "legs",
+      "type": "leg",
+      "parent": "body.root",
+      "count": 5,
+      "layout": "explicit",
+      "length": 1.1,
+      "attachments": [
+        {"id": "rear_left", "position": [-0.85, 0.55, 0.0], "side": "left"},
+        {"id": "front_left", "position": [0.65, 0.55, 0.0], "side": "left"},
+        {"id": "rear_right", "position": [-0.85, -0.55, 0.0], "side": "right"},
+        {"id": "front_right", "position": [0.65, -0.55, 0.0], "side": "right"},
+        {"id": "center", "position": [0.0, 0.0, -0.1], "side": "center"}
+      ]
+    }
+  ]
+}

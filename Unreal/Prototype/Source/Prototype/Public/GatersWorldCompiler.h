@@ -21,7 +21,7 @@ struct PROTOTYPE_API FGatersCompiledNode
 	bool TryGetStableIndex(const FString& ExpectedPrefix, int32& OutIndex) const;
 
 	FString NodeId;
-	EGatersRecipeNodeKind Kind = EGatersRecipeNodeKind::Gate;
+	EGatersRecipeNodeKind Kind = EGatersRecipeNodeKind::Arrival;
 	FTransform Transform = FTransform::Identity;
 	FString ContentKey;
 	FString AssetId;

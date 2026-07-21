@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "frontIoU": 0.7716551443676292
+  },
+  "decision": "promote-fixed-topology-silhouette-fit",
+  "depthPreserved": true,
+  "evidence": {
+    "blendSha256": "59a21c75fc9d53454101794cdbea67aa103bdd694adc984dedaee8ff65df6ef6",
+    "manifestSha256": "281b921e1ff6b85c39bb4c408b53588d7adedc84d643847fc4e3b5549a2aa111",
+    "verifierSha256": "f3b20f57ead4b502bbde32a6bce1aced9c711d23b4f2c310104aab17c7ba8ce2"
+  },
+  "fitted": {
+    "frontIoU": 0.99183785452176
+  },
+  "gates": {
+    "depthPreserved": true,
+    "finiteCoordinates": true,
+    "frontFit": true,
+    "nonDegenerateFaces": true,
+    "topology": true
+  },
+  "minimumFaceArea": 0.0020843534730374813,
+  "promoted": true,
+  "schemaVersion": 1,
+  "topologyUnchanged": true
+}

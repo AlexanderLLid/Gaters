@@ -1,0 +1,8 @@
+{
+  "compiler": "guide-skeleton-compiler/0",
+  "schema": "guide-skeleton-receipt/0",
+  "skeleton_recipe_sha256": "7456d252b80e95bc9c3dcced5f7acac9447483c21ab4e994c8564749ccb44455",
+  "skeleton_sha256": "40e4732704dfd80f331c83b349972afa782a3f3c253941428f501aa8397eb939",
+  "source_guide_sha256": "35715748dc3518b0a16f51a3f2aadf3fc8f2d00071e02654ae61031728f49dba",
+  "verifier": "guide-skeleton-verifier/0"
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "slots": {
+    "center": {
+      "candidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+      "images": [
+        "Derived/sculpt-v13/front.png",
+        "Derived/sculpt-v13/three-quarter.png",
+        "Derived/sculpt-v13/profile.png"
+      ]
+    },
+    "left": {
+      "candidateId": "23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5",
+      "images": [
+        "Derived/search-runs/face-search-20260720-032234/round-3/23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5/front.png",
+        "Derived/search-runs/face-search-20260720-032234/round-3/23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5/three-quarter.png",
+        "Derived/search-runs/face-search-20260720-032234/round-3/23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5/profile.png"
+      ]
+    },
+    "right": {
+      "candidateId": "cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c",
+      "images": [
+        "Derived/search-runs/face-search-20260720-032234/round-3/cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c/front.png",
+        "Derived/search-runs/face-search-20260720-032234/round-3/cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c/three-quarter.png",
+        "Derived/search-runs/face-search-20260720-032234/round-3/cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c/profile.png"
+      ]
+    }
+  },
+  "targetImage": "Reference/painted-a-front-flat-v2.png"
+}

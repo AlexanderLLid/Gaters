@@ -1,0 +1,21 @@
+{
+  "schema": "humanoid-face-surface-proof/0",
+  "id": "grounded-long-face",
+  "skin_color": [0.42, 0.25, 0.16],
+  "skin_variation": 0.06,
+  "eye_spacing_m": 0.132,
+  "eye_width_m": 0.047,
+  "eye_height_m": 0.023,
+  "brow_weight": 0.55,
+  "nose_width_m": 0.036,
+  "nose_length_m": 0.088,
+  "nose_projection_m": 0.082,
+  "mouth_width_m": 0.106,
+  "lip_fullness_m": 0.012,
+  "ear_scale": 1.04,
+  "jaw_width_scale": 0.94,
+  "head_voxel_size_m": 0.010,
+  "head_smooth_iterations": 1,
+  "target_skin_faces": 14000,
+  "eye_color": [0.24, 0.18, 0.10]
+}

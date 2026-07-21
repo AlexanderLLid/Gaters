@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "head-backend-comparison/0",
+    "source_run":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\broad-jaw-20260721-150140-635004\\run-1",
+    "blender":  {
+                    "elapsed_ms":  4768,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\AdapterRuns\\20260721-171139-932\\blender\\head.blend"
+                },
+    "houdini":  {
+                    "elapsed_ms":  3522,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\AdapterRuns\\20260721-171139-932\\houdini\\head.hipnc"
+                }
+}

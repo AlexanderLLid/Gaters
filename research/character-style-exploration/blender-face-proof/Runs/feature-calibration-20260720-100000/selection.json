@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "runId": "feature-calibration-20260720-100000",
+  "status": "calibration-best-for-human-review",
+  "humanAcceptance": false,
+  "machinePromotion": false,
+  "sourceRun": "feature-grid-20260720-094000",
+  "dependencyVersions": {
+    "calibrationContract": "4ad781deae91831d26526c3254b76a694c36974cddae0f0c814719eac80f76d2",
+    "calibrationScript": "e09057b968d06002ba999420dc817d35618344f2d2b56f8ab516b471646c8312",
+    "featureScript": "7d624d914a245c7c02dbf794b66816dfb74c3014dce3dcad1d2b608b9a0bb003",
+    "featureMetric": "f28e8f3c5a4b92519aaac35f56691d05e7292f4f05c0567bf8ec7ef689234712",
+    "macroMetric": "ec7d13c212bab9b7e10ed7cb0667c802760037ea1006c6d12429ab74346eab3d"
+  },
+  "receiptCounts": {
+    "recipes": 4,
+    "buildPassed": 4,
+    "freshVerifyPassed": 4,
+    "featureMetricPassed": 4,
+    "macroMetricPassed": 4
+  },
+  "responseDerivation": {
+    "eyeAperturePredictedCrossing": 0.4715986101155069,
+    "noseLengthPredictedCrossing": 0.10141340568098181,
+    "sourceMetricHashesBoundInEveryRecipe": true
+  },
+  "sceneGate": {
+    "uniqueSceneLockCount": 1,
+    "uniqueCameraCount": 1,
+    "uniqueTopologyCount": 1,
+    "matchesTask8SceneLock": true,
+    "passed": true
+  },
+  "macroRegressionGate": {
+    "algorithm": "feature_grid.macro_regression_gate",
+    "tolerance": 1e-09,
+    "maximumObservedDelta": 0.0,
+    "passed": true
+  },
+  "ranking": [
+    {"candidateId": "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8", "eyeAperture": 0.52, "noseLength": 0.08, "noseWidth": 0.27, "score": 0.006962060004328113},
+    {"candidateId": "d5319e9221c88fc7aa91bb78c5ef51629bff5f44d7f8db2644c761526b6628f7", "eyeAperture": 0.42, "noseLength": 0.08, "noseWidth": 0.27, "score": 0.007238286953455436},
+    {"candidateId": "6b39afc34d0b312526bb17c08aa8ff5aa7b1cb4b24b22088b362f22464c1aea5", "eyeAperture": 0.52, "noseLength": 0.14, "noseWidth": 0.27, "score": 0.009073062433728879},
+    {"candidateId": "75dfd5ce7db481cd938a063638a3f915337d6b0cd6fc8d8209b4622150d262f7", "eyeAperture": 0.42, "noseLength": 0.14, "noseWidth": 0.27, "score": 0.009349289382856202}
+  ],
+  "decision": {
+    "candidateId": "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8",
+    "baselineTask8Score": 0.06734195220607438,
+    "calibrationBestScore": 0.006962060004328113,
+    "scoreReduction": 0.06037989220174627,
+    "relativeScoreReduction": 0.8966118966662352,
+    "annotationUncertaintyMargin": 0.13656387665198239,
+    "reason": "The candidate is the lowest-error bounded calibration result and passes all hard gates, but annotation uncertainty exceeds the full measured improvement; it is triage evidence for human review, not a promotion."
+  },
+  "stopReason": "The bounded calibration answered the measured response question. No further extrapolation is supported before human review or new independently annotated facial-shape metrics."
+}

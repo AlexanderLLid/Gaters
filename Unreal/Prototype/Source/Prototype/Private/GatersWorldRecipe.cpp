@@ -12,12 +12,23 @@ FGatersWorldRecipe FGatersWorldRecipe::Generate(
 	float BaseFootprintRadius,
 	float MaxFoundationDrop)
 {
-	const FGatersEnvironment Environment = FGatersEnvironment::FromSeed(InSeed, InChunkSize);
+	return Generate(
+		FGatersEnvironment::FromSeed(InSeed, InChunkSize),
+		MinBaseDistance, MaxBaseDistance, BaseFootprintRadius, MaxFoundationDrop);
+}
+
+FGatersWorldRecipe FGatersWorldRecipe::Generate(
+	const FGatersEnvironment& Environment,
+	const float MinBaseDistance,
+	const float MaxBaseDistance,
+	const float BaseFootprintRadius,
+	const float MaxFoundationDrop)
+{
 
 	FGatersWorldRecipe Recipe;
 	Recipe.GeneratorVersion = GatersGenVersion;
-	Recipe.Seed = InSeed;
-	Recipe.ChunkSize = InChunkSize;
+	Recipe.Seed = Environment.Seed;
+	Recipe.ChunkSize = Environment.ChunkSize;
 	Recipe.EnvironmentType = Environment.Type;
 	Recipe.Hydrology = Environment.Hydrology;
 	Recipe.EnvironmentName = Environment.Name();
@@ -28,13 +39,14 @@ FGatersWorldRecipe FGatersWorldRecipe::Generate(
 		BaseFootprintRadius,
 		MaxFoundationDrop,
 		Recipe.BaseSite);
-	Recipe.Nodes.Add({TEXT("gate:0"), EGatersRecipeNodeKind::Gate, FVector::ZeroVector});
+	Recipe.Nodes.Add({TEXT("arrival:0"), EGatersRecipeNodeKind::Arrival, FVector::ZeroVector});
 	if (Recipe.bHasBaseSite)
 	{
+		Recipe.BaseSiteHeight = Environment.HeightAt(Recipe.BaseSite);
 		Recipe.Nodes.Add({
 			TEXT("base:0"),
 			EGatersRecipeNodeKind::BaseSite,
-			FVector(Recipe.BaseSite, Environment.HeightAt(Recipe.BaseSite))});
+			FVector(Recipe.BaseSite, Recipe.BaseSiteHeight)});
 	}
 	return Recipe;
 }
@@ -42,7 +54,7 @@ FGatersWorldRecipe FGatersWorldRecipe::Generate(
 FString FGatersWorldRecipe::CanonicalText() const
 {
 	FString Result = FString::Printf(
-		TEXT("schema=%d;generator=%d;seed=%d;chunk=%.3f;environment=%s;hydrology=%d;water=%.3f;base=%d,%.3f,%.3f"),
+		TEXT("schema=%d;generator=%d;seed=%d;chunk=%.3f;environment=%s;hydrology=%d;water=%.3f;base=%d,%.3f,%.3f,%.3f"),
 		SchemaVersion,
 		GeneratorVersion,
 		Seed,
@@ -52,7 +64,8 @@ FString FGatersWorldRecipe::CanonicalText() const
 		WaterHeight,
 		bHasBaseSite ? 1 : 0,
 		BaseSite.X,
-		BaseSite.Y);
+		BaseSite.Y,
+		BaseSiteHeight);
 	for (const FGatersRecipeNode& Node : Nodes)
 	{
 		Result += FString::Printf(

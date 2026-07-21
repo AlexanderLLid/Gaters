@@ -1,0 +1,10 @@
+{
+  "mesh_sha256": "fed5318ce5763ca4cf7e45c731ea63a7121ed62a7aaf5161ce6662da20b3d1ca",
+  "passed": true,
+  "recipe_id": "broad-jaw",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\broad-jaw-20260721-150140-635004\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\broad-jaw-20260721-150140-635004\\run-2"
+  ],
+  "schema": "head-run-summary/0"
+}

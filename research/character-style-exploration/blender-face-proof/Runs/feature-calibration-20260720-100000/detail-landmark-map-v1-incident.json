@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-10-detail-target-normalizer-mismatch",
+  "invalidatedArtifacts": ["detail-landmark-map-v1-invalid-target-math.json"],
+  "cause": "The first target-detail ratios used an implicit 230-pixel eye distance instead of the frozen target-feature horizontal IPD of 227 pixels. Its mapping indices remain diagnostic, but its target-detail hash cannot bind the corrected metric contract.",
+  "correction": "Derive every detail ratio and uncertainty from target-feature-geometry.json, preserve annotations as numeric UTF-8 data, include mapping distance in uncertainty, and rerun the one-time map against the corrected target-detail hash.",
+  "humanAcceptance": false
+}

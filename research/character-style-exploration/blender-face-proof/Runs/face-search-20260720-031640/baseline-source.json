@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-031640",
+  "purpose": "immutable initial champion and current-tool identity before evaluator dispatch",
+  "champion": {
+    "candidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+    "identity": "sculpt-v13",
+    "artifacts": {
+      "blend": {"path": "Derived/sculpt-v13/face-sculpt.blend", "sha256": "12fb7f0dd5536401573790403863b5098c6be22b6dec382deb2aaf851d7e1c64"},
+      "front": {"path": "Derived/sculpt-v13/front.png", "sha256": "35c5f9b34a2d8ac0d0ff2a432f8ee908a20f90983443fbb28a0d201e581653e3"},
+      "threeQuarter": {"path": "Derived/sculpt-v13/three-quarter.png", "sha256": "a8a79ba89e4e640a43ac657209200cb70a4c3ec8f73565b4ce306b6c072bdeea"},
+      "profile": {"path": "Derived/sculpt-v13/profile.png", "sha256": "cc418e0cd9efd178a7067807c59b07be36bf4ab0fa4c4a9df66aa38252d2efc7"},
+      "manifest": {"path": "Derived/sculpt-v13/manifest.json", "sha256": "8cdfa885dd432522c1aa3ddea402159d1df96e1b03522060e0e359fd05167229"}
+    }
+  },
+  "reference": {
+    "path": "Reference/painted-a-front-flat-v2.png",
+    "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf"
+  },
+  "contractsAndTools": {
+    "faceSearchSpace": {"path": "face-search-space.json", "sha256": "50eeae913d7a891d20229b0ba41fe14b56ffd08271df71c69804e4d9be5da527"},
+    "faceBrief": {"path": "face-brief.json", "sha256": "196c38d51256bfe4dc088c14ff3dd1a3bc7a8aa5c94714f0566e6ef9580459c4"},
+    "faceSearch": {"path": "face_search.py", "sha256": "47c7ff0757e161a4f66856e34ed8ecabdcd556ac011372e0283353612f19515b"},
+    "sculptGenerator": {"path": "sculpt_clay.py", "sha256": "9db8bfbbd38e801dc47391976cb053f57365c6e4ed818bed67f93367b571e48f"},
+    "sculptIntegrity": {"path": "sculpt_integrity.py", "sha256": "6e747efc0d68637fec1f6ec64d122804a91271889831ae53577da95e760bfb24"},
+    "sculptVerifier": {"path": "verify_sculpt.py", "sha256": "47055d269c644a21c4929cc605bc9f13997c2a2eed28a6ac15eb3fde31eeefd3"},
+    "evaluatorContract": {"path": "evaluator-contract.json", "sha256": "d827225b3fd4d9c2afdde9f3355dd6baeff005f88d71842795cb12b52c5ee77a"},
+    "blender": "5.2.0 LTS (build 2026-07-14)"
+  }
+}

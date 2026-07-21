@@ -5,7 +5,6 @@
 #include "Components/StaticMeshComponent.h"
 #include "DrawDebugHelpers.h"
 #include "Engine/StaticMesh.h"
-#include "Engine/TargetPoint.h"
 #include "DynamicMesh/DynamicMesh3.h"
 #include "Engine/Engine.h"
 #include "Engine/World.h"
@@ -13,8 +12,16 @@
 #include "GameFramework/Pawn.h"
 #include "GatersContentCatalog.h"
 #include "GatersEnvironmentContent.h"
+#include "GatersEnvironmentBrief.h"
+#include "GatersEnvironmentCandidateSelector.h"
+#include "GatersDebugMessages.h"
+#include "GatersLandformProcessField.h"
+#include "GatersLegacyBaseLayer.h"
 #include "GatersPhysicalFitEvaluator.h"
 #include "GatersRaider.h"
+#include "GatersRegionalWaterRecipe.h"
+#include "GatersBuiltSiteLayer.h"
+#include "GatersWorldRecipeLayer.h"
 #include "GatersTerrainCell.h"
 #include "GatersTerrainEvaluator.h"
 #include "GatersTerrainPalette.h"
@@ -159,13 +166,18 @@ void AGatersChunk::BeginPlay()
 	InitStream();
 	RollSite();
 	BuildGround();
+	Report(FString::Printf(TEXT("REGIONAL_WATER v=1 surfaces=%d"),
+		RegionalWaterSurfaceCount));
 	AnalyzeSite();
 	MarkResourceZones();
 	LoadDiff();
 
 	int32 ScatterInstances = 0, Claimed = 0;
 	GenerateClaimMarkerRecipe(Claimed);
-	GenerateBaseRecipe(RuntimeCatalog);
+	if (bEnableBuiltSites)
+	{
+		GenerateBaseRecipe(RuntimeCatalog);
+	}
 	bRuntimeCatalogReady = true;
 	SyncStreamedContent();
 	const bool bCompiled = CompileWorld(RuntimeCatalog);
@@ -193,7 +205,27 @@ void AGatersChunk::BeginPlay()
 	{
 		Report(FString::Printf(TEXT("RECIPE error=%s"), *Error));
 	}
-	const FGatersTerrainEvaluation Terrain = FGatersTerrainEvaluator::Evaluate(Environment, ChunkSize);
+	TArray<FString> EnvironmentErrors;
+	const bool bEnvironmentValid = EnvironmentRecipe.Validate(EnvironmentErrors);
+	const FGatersClimateSample ArrivalClimate =
+		EnvironmentRecipe.QueryClimate(FVector2D::ZeroVector);
+	Report(FString::Printf(
+		TEXT("CLIMATE root=%d field=%d valid=%s temperature=%.4f precipitation=%.4f wind=%.4f seasonality=%.4f freeze_thaw=%.4f height=%.1f"),
+		EnvironmentRecipe.Version,
+		EnvironmentRecipe.Climate.Version,
+		bEnvironmentValid ? TEXT("yes") : TEXT("no"),
+		ArrivalClimate.Temperature,
+		ArrivalClimate.Precipitation,
+		ArrivalClimate.WindExposure,
+		ArrivalClimate.Seasonality,
+		ArrivalClimate.FreezeThaw,
+		ArrivalClimate.Height));
+	for (const FString& Error : EnvironmentErrors)
+	{
+		Report(FString::Printf(TEXT("CLIMATE error=%s"), *Error));
+	}
+	const FGatersTerrainEvaluation Terrain = FGatersTerrainEvaluator::Evaluate(
+		EnvironmentRecipe.Terrain, ChunkSize);
 	Report(FString::Printf(
 		TEXT("EVAL v=%d relief=%.0f water=%.4f rough=%.0f cliff=%.0f buildable=%.4f mean=%.0f below=%.4f window=%.0f"),
 		Terrain.EvaluatorVersion,
@@ -206,9 +238,11 @@ void AGatersChunk::BeginPlay()
 		Terrain.BelowDatumFraction,
 		ChunkSize));
 	Report(FString::Printf(TEXT("SITE seed=%d environment=%s water=%s base_valid=%s base=(%.0f,%.0f) drop=%.0f hydrology=%s"),
-		Seed, *Environment.Name(), Environment.HasWater() ? TEXT("yes") : TEXT("no"),
+		Seed, *EnvironmentRecipe.Terrain.Name(),
+		EnvironmentRecipe.Terrain.HasWater() ? TEXT("yes") : TEXT("no"),
 		bHaveBaseSite ? TEXT("yes") : TEXT("no"), BaseSite.X, BaseSite.Y,
-		Environment.FootprintDrop(BaseSite, BaseFootprintRadius), *Environment.HydrologyName()));
+		EnvironmentRecipe.Terrain.FootprintDrop(BaseSite, BaseFootprintRadius),
+		*EnvironmentRecipe.Terrain.HydrologyName()));
 	Report(FString::Printf(
 		TEXT("TRAVERSE v=%d reachable=%d walkable=%d coverage=%.4f components=%d escape=%s base=%s path=%d"),
 		Traversability.EvaluatorVersion,
@@ -253,14 +287,152 @@ void AGatersChunk::InitStream()
 
 void AGatersChunk::RollSite()
 {
+	FGatersEnvironment Terrain = FGatersEnvironment::FromSeed(Seed, WorldSize);
+	const FGatersEnvironmentBrief RequestedBrief = FGatersEnvironmentBrief()
+		.WithGlobalLandformTargets(
+			LandformReliefOverride,
+			LandformVolcanismOverride,
+			LandformIceOverride);
+	const FGatersEnvironmentBriefCompileResult Brief =
+		FGatersEnvironmentBriefCompiler::Compile(RequestedBrief, Seed, WorldSize);
+	FGatersLandformProcessRecipe AcceptedLandform;
+	bool bHasClimateProvenance = false;
+	if (Brief.IsValid())
+	{
+		const FGatersLandformProcessCompileResult BaseLandform =
+			FGatersLandformProcessField::Compile(Terrain, Brief.Intent);
+		if (BaseLandform.IsValid())
+		{
+			AcceptedLandform = BaseLandform.Recipe;
+			bHasClimateProvenance = true;
+		}
+	}
+	FGatersEnvironmentCandidateSelectionSettings LandAccessSettings;
+	LandAccessSettings.CandidateCount = LandformCandidateCount;
+	LandAccessSettings.WorldCellsPerAxis = GridN;
+	LandAccessSettings.ArrivalCellsPerAxis = GridN;
+	LandAccessSettings.ArrivalCellSize = CellSize;
+	LandAccessSettings.PadRadius = PadRadius;
+	LandAccessSettings.FlatNormalZ = FlatNormalZ;
+	LandAccessSettings.SlopeNormalZ = SlopeNormalZ;
+	LandAccessSettings.EscapeDistanceCells = FMath::CeilToInt(
+		(PadRadius + CellSize) / FMath::Max(CellSize, 1.f));
+	LandAccessSettings.WalkableTolerance = LandAccessWalkableTolerance;
+	LandAccessSettings.ConnectedTolerance = LandAccessConnectedTolerance;
+	FGatersEnvironmentCandidateSelectionResult LandAccess;
+	bool bLandAccessEvaluated = false;
+	int32 SatisfyingCandidates = 0;
+	int32 ProtectedRegionCount = 0;
+	if (bEnableLandformProcesses && Brief.IsValid())
+	{
+		TArray<FGatersLandformProtectedRegion> ProtectedRegions = {
+			{TEXT("arrival"), FVector2D::ZeroVector, PadRadius, PadRadius * 2.f}};
+		ProtectedRegionCount = ProtectedRegions.Num();
+		LandAccess = FGatersEnvironmentCandidateSelector::Select(
+			Terrain, Brief.Intent, ProtectedRegions, LandAccessSettings);
+		bLandAccessEvaluated = LandAccess.Issues.IsEmpty();
+		for (const FGatersEnvironmentCandidateEvidence& Candidate : LandAccess.Candidates)
+		{
+			SatisfyingCandidates += Candidate.bHasWorldAccess
+				&& Candidate.bEscapesArrival
+				&& Candidate.WalkableError <= LandAccessSettings.WalkableTolerance
+				&& Candidate.ConnectedError <= LandAccessSettings.ConnectedTolerance
+				&& Candidate.WalkableLand >= Brief.Intent.LandAccess.WalkableLand
+					* (1.f - LandAccessSettings.WalkableTolerance)
+				&& Candidate.ConnectedLand >= Brief.Intent.LandAccess.ConnectedLand
+					* (1.f - LandAccessSettings.ConnectedTolerance)
+				? 1 : 0;
+		}
+		if (LandAccess.bSelected)
+		{
+			AcceptedLandform = LandAccess.SelectedRecipe;
+			bHasClimateProvenance = true;
+			Terrain = Terrain.WithLandformProcesses(LandAccess.SelectedRecipe);
+		}
+	}
+	Report(FString::Printf(
+		TEXT("LANDFORM v=%d enabled=%s relief=%.3f volcanism=%.3f ice=%.3f protected=%d"),
+		FGatersLandformProcessRecipe::CurrentVersion,
+		bEnableLandformProcesses ? TEXT("yes") : TEXT("no"),
+		Brief.Intent.Global.Relief,
+		Brief.Intent.Global.Volcanism,
+		Brief.Intent.Global.Ice,
+		ProtectedRegionCount));
+	const int32 AttemptedCandidates = LandAccess.Candidates.Num();
+	const int32 SelectedIndex = LandAccess.bSelected
+		? LandAccess.Selected.CandidateIndex : -1;
+	const int32 BestIndex = AttemptedCandidates > 0
+		? LandAccess.Best.CandidateIndex : -1;
+	const float SelectedScale = LandAccess.bSelected
+		? LandAccess.SelectedRecipe.FeatureScale : 0.f;
+	const float BestScale = AttemptedCandidates > 0
+		? LandAccess.BestRecipe.FeatureScale : 0.f;
+	const float SelectedDissection = LandAccess.bSelected
+		? LandAccess.SelectedRecipe.DissectionScale : 0.f;
+	const float BestDissection = AttemptedCandidates > 0
+		? LandAccess.BestRecipe.DissectionScale : 0.f;
+	const float SelectedRuggedness = LandAccess.bSelected
+		? LandAccess.SelectedRecipe.RuggednessScale : 0.f;
+	const float BestRuggedness = AttemptedCandidates > 0
+		? LandAccess.BestRecipe.RuggednessScale : 0.f;
+	Report(FString::Printf(
+		TEXT("LAND_ACCESS v=%d enabled=%s evaluated=%s brief=%d compiler=%d target_walkable=%.4f target_connected=%.4f candidates=%d world_cells=%d arrival_cells=%d arrival_cell=%.0f pad=%.0f semantic=%d transition=%.0f flat=%.3f slope=%.3f escape_cells=%d walkable_tol=%.4f connected_tol=%.4f satisfying=%d rejected=%d selected=%d selected_scale=%.4f selected_dissection=%.4f selected_ruggedness=%.4f selected_walkable=%.4f selected_connected=%.4f selected_world_access=%s selected_escape=%s best=%d best_scale=%.4f best_dissection=%.4f best_ruggedness=%.4f best_walkable=%.4f best_connected=%.4f best_world_access=%s best_escape=%s"),
+		LandAccess.Version,
+		bEnableLandformProcesses ? TEXT("yes") : TEXT("no"),
+		bLandAccessEvaluated ? TEXT("yes") : TEXT("no"),
+		Brief.Intent.BriefVersion,
+		Brief.Intent.CompilerVersion,
+		Brief.Intent.LandAccess.WalkableLand,
+		Brief.Intent.LandAccess.ConnectedLand,
+		AttemptedCandidates,
+		LandAccessSettings.WorldCellsPerAxis,
+		LandAccessSettings.ArrivalCellsPerAxis,
+		LandAccessSettings.ArrivalCellSize,
+		LandAccessSettings.PadRadius,
+		FGatersTerrainSemanticField::CurrentVersion,
+		FGatersTerrainSemanticField::PadTransitionWidth(LandAccessSettings.PadRadius),
+		LandAccessSettings.FlatNormalZ,
+		LandAccessSettings.SlopeNormalZ,
+		LandAccessSettings.EscapeDistanceCells,
+		LandAccessSettings.WalkableTolerance,
+		LandAccessSettings.ConnectedTolerance,
+		SatisfyingCandidates,
+		AttemptedCandidates - SatisfyingCandidates,
+		SelectedIndex,
+		SelectedScale,
+		SelectedDissection,
+		SelectedRuggedness,
+		LandAccess.bSelected ? LandAccess.Selected.WalkableLand : 0.f,
+		LandAccess.bSelected ? LandAccess.Selected.ConnectedLand : 0.f,
+		LandAccess.bSelected && LandAccess.Selected.bHasWorldAccess
+			? TEXT("yes") : TEXT("no"),
+		LandAccess.bSelected && LandAccess.Selected.bEscapesArrival
+			? TEXT("yes") : TEXT("no"),
+		BestIndex,
+		BestScale,
+		BestDissection,
+		BestRuggedness,
+		AttemptedCandidates > 0 ? LandAccess.Best.WalkableLand : 0.f,
+		AttemptedCandidates > 0 ? LandAccess.Best.ConnectedLand : 0.f,
+		AttemptedCandidates > 0 && LandAccess.Best.bHasWorldAccess
+			? TEXT("yes") : TEXT("no"),
+		AttemptedCandidates > 0 && LandAccess.Best.bEscapesArrival
+			? TEXT("yes") : TEXT("no")));
+	for (const FGatersEnvironmentCandidateSelectionIssue& Issue : LandAccess.Issues)
+	{
+		Report(FString::Printf(
+			TEXT("LAND_ACCESS error=%s message=%s"), *Issue.RuleId, *Issue.Message));
+	}
+	EnvironmentRecipe = bHasClimateProvenance
+		? FGatersEnvironmentRecipeCompiler::Compile(
+			Terrain, Brief.Intent, AcceptedLandform)
+		: FGatersEnvironmentRecipeCompiler::Compile(Terrain);
 	Recipe = FGatersWorldRecipe::Generate(
-		Seed,
-		WorldSize,
+		EnvironmentRecipe.Terrain,
 		MinBaseDistance,
 		MaxBaseDistance,
 		BaseFootprintRadius,
 		MaxFoundationDrop);
-	Environment = Recipe.CreateEnvironment();
 	bHaveBaseSite = Recipe.bHasBaseSite;
 	const FVector2D BaseSite = Recipe.BaseSite;
 	if (!bHaveBaseSite)
@@ -275,8 +447,8 @@ void AGatersChunk::RollSite()
 
 float AGatersChunk::GroundHeight(float LocalX, float LocalY) const
 {
-	return FGatersTerrainSemanticField::MaterializedHeightAt(
-		Environment, FVector2D(LocalX, LocalY), PadRadius,
+	return EnvironmentRecipe.MaterializedHeightAt(
+		FVector2D(LocalX, LocalY), PadRadius,
 		FVector2D(BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
 			BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle))));
 }
@@ -301,7 +473,7 @@ void AGatersChunk::BuildGround()
 	TargetMesh->Reset();
 
 	FGeometryScriptPrimitiveOptions PrimOptions;
-	// gate pad plinth (the dial platform); the base gets no pedestal — EBS
+	// arrival marker plinth; the base gets no pedestal — EBS
 	// foundations are the foundation skirt and sit on raw terrain
 	UGeometryScriptLibrary_MeshPrimitiveFunctions::AppendCylinder(
 		TargetMesh, PrimOptions, FTransform::Identity, PadRadius, 500.f, 32);
@@ -323,10 +495,12 @@ void AGatersChunk::BuildGround()
 	Comp->EnableComplexAsSimpleCollision();
 	Comp->UpdateCollision(false);
 
-	const TArray<FGatersWaterSurface> WaterSurfaces = Environment.WaterSurfaces();
+	const TArray<FGatersWaterSurface> WaterSurfaces =
+		EnvironmentRecipe.Terrain.WaterSurfaces();
 	if (!WaterSurfaces.IsEmpty())
 	{
-		const bool bLocalLakes = Environment.Hydrology == EGatersHydrology::Lakes;
+		const bool bLocalLakes =
+			EnvironmentRecipe.Terrain.Hydrology == EGatersHydrology::Lakes;
 		UStaticMesh* WaterMesh = LoadObject<UStaticMesh>(nullptr, bLocalLakes
 			? TEXT("/Engine/BasicShapes/Cylinder.Cylinder")
 			: TEXT("/Engine/BasicShapes/Plane.Plane"));
@@ -342,11 +516,14 @@ void AGatersChunk::BuildGround()
 			UMaterialInstanceDynamic* WaterInstance =
 				UMaterialInstanceDynamic::Create(WaterMaterial, this);
 			WaterInstance->SetVectorParameterValue(
-				TEXT("Absorption"), FGatersTerrainPalette::WaterAbsorption(Environment.Hydrology));
+				TEXT("Absorption"), FGatersTerrainPalette::WaterAbsorption(
+					EnvironmentRecipe.Terrain.Hydrology));
 			WaterInstance->SetVectorParameterValue(
-				TEXT("Scattering"), FGatersTerrainPalette::WaterScattering(Environment.Hydrology));
+				TEXT("Scattering"), FGatersTerrainPalette::WaterScattering(
+					EnvironmentRecipe.Terrain.Hydrology));
 			WaterInstance->SetScalarParameterValue(
-				TEXT("PhaseG"), FGatersTerrainPalette::WaterPhaseG(Environment.Hydrology));
+				TEXT("PhaseG"), FGatersTerrainPalette::WaterPhaseG(
+					EnvironmentRecipe.Terrain.Hydrology));
 			const FVector MeshSize = WaterMesh->GetBoundingBox().GetSize();
 			for (int32 Index = 0; Index < WaterSurfaces.Num(); ++Index)
 			{
@@ -357,7 +534,8 @@ void AGatersChunk::BuildGround()
 				WaterPlane->SetMaterial(0, WaterInstance);
 				WaterPlane->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 				WaterPlane->SetCastShadow(false);
-				WaterPlane->SetRelativeLocation(FVector(Surface.Center, Environment.WaterHeight + 3.f));
+				WaterPlane->SetRelativeLocation(FVector(
+					Surface.Center, EnvironmentRecipe.Terrain.WaterHeight + 3.f));
 				const float Diameter = Surface.HalfExtent * 2.f;
 				WaterPlane->SetRelativeScale3D(FVector(
 					Diameter / MeshSize.X, Diameter / MeshSize.Y, bLocalLakes ? 0.02f : 1.f));
@@ -368,7 +546,61 @@ void AGatersChunk::BuildGround()
 		}
 	}
 
+	BuildRegionalWater();
 	RefreshTerrainCells(FVector2D::ZeroVector, FVector2D::ZeroVector, true);
+}
+
+void AGatersChunk::BuildRegionalWater()
+{
+	const FGatersRegionalWaterRecipe& RegionalWater = EnvironmentRecipe.RegionalWater;
+	RegionalWaterSurfaceCount = RegionalWater.Surfaces.Num();
+	if (RegionalWater.Surfaces.IsEmpty())
+	{
+		return;
+	}
+
+	UStaticMesh* WaterMesh = LoadObject<UStaticMesh>(
+		nullptr, TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+	UMaterialInterface* WaterMaterial = LoadObject<UMaterialInterface>(
+		nullptr, TEXT("/Engine/EngineMaterials/WaterMaterial.WaterMaterial"));
+	if (!WaterMaterial)
+	{
+		WaterMaterial = LoadObject<UMaterialInterface>(
+			nullptr, TEXT("/Game/Gaters/Materials/MI_Claimed.MI_Claimed"));
+	}
+	if (!WaterMesh || !WaterMaterial)
+	{
+		return;
+	}
+
+	const FVector MeshSize = WaterMesh->GetBoundingBox().GetSize();
+	for (int32 Index = 0; Index < RegionalWater.Surfaces.Num(); ++Index)
+	{
+		const FGatersRegionalWaterSurface& Surface = RegionalWater.Surfaces[Index];
+		UMaterialInstanceDynamic* WaterInstance =
+			UMaterialInstanceDynamic::Create(WaterMaterial, this);
+		WaterInstance->SetVectorParameterValue(
+			TEXT("Absorption"), FGatersTerrainPalette::WaterAbsorption(Surface.Hydrology));
+		WaterInstance->SetVectorParameterValue(
+			TEXT("Scattering"), FGatersTerrainPalette::WaterScattering(Surface.Hydrology));
+		WaterInstance->SetScalarParameterValue(
+			TEXT("PhaseG"), FGatersTerrainPalette::WaterPhaseG(Surface.Hydrology));
+
+		UStaticMeshComponent* WaterPlane = NewObject<UStaticMeshComponent>(
+			this, *FString::Printf(TEXT("GeneratedRegionalWater%d"), Index));
+		WaterPlane->SetStaticMesh(WaterMesh);
+		WaterPlane->SetMaterial(0, WaterInstance);
+		WaterPlane->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		WaterPlane->SetCastShadow(false);
+		WaterPlane->SetRelativeLocation(FVector(Surface.Center, Surface.Height + 3.f));
+		const float Diameter = Surface.HalfExtent * 2.f;
+		WaterPlane->SetRelativeScale3D(FVector(
+			Diameter / MeshSize.X, Diameter / MeshSize.Y, 0.02f));
+		WaterPlane->AttachToComponent(
+			GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+		WaterPlane->RegisterComponent();
+		WaterPlanes.Add(WaterPlane);
+	}
 }
 
 void AGatersChunk::RefreshTerrainCells(
@@ -451,7 +683,7 @@ void AGatersChunk::RefreshTerrainCells(
 		if (TerrainCell)
 		{
 			TerrainCell->Configure(
-				Seed, WorldSize, Cell, TerrainCellSize, TerrainCellResolution, PadRadius, RouteTarget);
+				EnvironmentRecipe, Cell, TerrainCellSize, TerrainCellResolution, PadRadius, RouteTarget);
 			TerrainCell->Build();
 			LoadedTerrainCells.Add(Cell, TerrainCell);
 			++Loaded;
@@ -502,7 +734,8 @@ void AGatersChunk::AnalyzeSite()
 	const FVector BaseLocal(BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
 		BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)), 0.f);
 	TerrainField = FGatersTerrainSemanticField::Build(
-		Environment, GridN, CellSize, PadRadius, FlatNormalZ, SlopeNormalZ,
+		EnvironmentRecipe.Terrain, EnvironmentRecipe.Intent,
+		GridN, CellSize, PadRadius, FlatNormalZ, SlopeNormalZ,
 		FVector2D(BaseLocal));
 
 	const float PadReserveSq = FMath::Square(PadRadius + 200.f);
@@ -602,6 +835,33 @@ void AGatersChunk::AnalyzeSite()
 		}
 		Recipe.Nodes.Add({ Site.Id, Kind, Site.Location });
 	}
+	if (bEnableBuiltSites)
+	{
+		FGatersBuiltSiteLayerResult BuiltSites = FGatersBuiltSiteLayer::Generate(
+			TerrainField, Seed, SiteRoutePlan, VillageGrowthStage);
+		FGatersWorldRecipeLayer Layer;
+		Layer.LayerId = TEXT("built-sites");
+		Layer.SchemaVersion = BuiltSites.ContractVersion;
+		Layer.GeneratorVersion = BuiltSites.SettlementGeneratorVersion;
+		Layer.bGenerated = BuiltSites.IsValid();
+		Layer.Nodes = MoveTemp(BuiltSites.Nodes);
+		Layer.Diagnostics = BuiltSites.Diagnostics;
+		const FGatersWorldRecipeLayerComposition Composition =
+			FGatersWorldRecipeLayerComposer::Append(Recipe, Layer);
+		for (const FString& Diagnostic : Composition.Diagnostics)
+		{
+			Report(FString::Printf(TEXT("BUILT_SITES_FAIL %s"), *Diagnostic));
+		}
+		Report(FString::Printf(
+			TEXT("BUILT_SITES enabled=yes composed=%s sites=%d buildings=%d parcels=%d paths=%d modules=%d"),
+			Composition.bComposed ? TEXT("yes") : TEXT("no"),
+			BuiltSites.SiteCount, BuiltSites.BuildingCount, BuiltSites.ParcelCount,
+			BuiltSites.PathCount, BuiltSites.ModuleCount));
+	}
+	else
+	{
+		Report(TEXT("BUILT_SITES enabled=no composed=yes sites=0 buildings=0 parcels=0 paths=0 modules=0"));
+	}
 	for (const FGatersPlannedRoute& Route : SiteRoutePlan.Routes)
 	{
 		for (int32 Index = 0; Index < Route.Path.Cells.Num(); ++Index)
@@ -678,7 +938,7 @@ void AGatersChunk::DrawTraversalDebug(float Duration) const
 		FColor Color = FColor::Cyan;
 		switch (Node.Kind)
 		{
-		case EGatersRecipeNodeKind::Gate: break;
+		case EGatersRecipeNodeKind::Arrival: break;
 		case EGatersRecipeNodeKind::BaseSite: Color = FColor::Red; break;
 		case EGatersRecipeNodeKind::VillageSite: Color = FColor::Magenta; break;
 		case EGatersRecipeNodeKind::LandmarkSite: Color = FColor::Yellow; break;
@@ -691,13 +951,49 @@ void AGatersChunk::DrawTraversalDebug(float Duration) const
 		DrawDebugString(GetWorld(), WorldLocation + FVector(0, 0, 500.f), Node.NodeId,
 			nullptr, Color, Duration, false, 1.2f);
 	}
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, Duration, FColor::White,
-			TEXT("PLAN: cyan routes/arrival | magenta village | red raid base | yellow landmark"));
-	}
+	FGatersDebugMessages::Show(
+		FGatersDebugMessages::TraversalKey,
+		Duration,
+		FColor::White,
+		TEXT("PLAN: cyan routes/arrival | magenta village | red raid base | yellow landmark"));
 	UE_LOG(LogTemp, Display, TEXT("[GatersChunk] TRAVERSAL_DRAW cells=%d path=%d duration=%.1f"),
 		TerrainField.Cells.Num(), Traversability.GoalPath.Cells.Num(), Duration);
+}
+
+void AGatersChunk::DrawContentOpportunitiesDebug(float Duration) const
+{
+	const FVector2D RouteTarget(
+		BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
+		BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)));
+	for (const TPair<FIntPoint, FGatersContentCellRecipe>& Entry : LoadedContentCells)
+	{
+		const FGatersContentCellRecipe& Content = Entry.Value;
+		const FVector2D Center(
+			Entry.Key.X * TerrainCellSize,
+			Entry.Key.Y * TerrainCellSize);
+		const float Total = FMath::Clamp(
+			Content.VegetationOpportunity + Content.StoneOpportunity, 0.f, 1.f);
+		const float TreeFraction = Content.VegetationOpportunity
+			/ FMath::Max(Content.VegetationOpportunity + Content.StoneOpportunity, 0.001f);
+		const FLinearColor Color = FMath::Lerp(
+			FLinearColor(0.55f, 0.55f, 0.55f),
+			FLinearColor(0.05f, 1.f, 0.12f), TreeFraction);
+		const float Height = EnvironmentRecipe.MaterializedHeightAt(
+			Center, PadRadius, RouteTarget);
+		DrawDebugSphere(
+			GetWorld(), GetActorLocation() + FVector(Center.X, Center.Y, Height + 500.f),
+			100.f + 450.f * Total, 12, Color.ToFColor(true), false, Duration, 0, 8.f);
+
+		for (const FGatersContentCellPlacement& Placement : Content.Placements)
+		{
+			const FColor PlacementColor = Placement.Kind == EGatersRecipeNodeKind::ScatterTree
+				? FColor::Green
+				: FColor::Silver;
+			DrawDebugPoint(GetWorld(),
+				GetActorLocation() + Placement.Transform.GetLocation() + FVector(0.f, 0.f, 150.f),
+				18.f, PlacementColor, false, Duration, 0);
+		}
+	}
 }
 
 void AGatersChunk::MarkResourceZones()
@@ -732,7 +1028,7 @@ void AGatersChunk::MarkResourceZones()
 FString AGatersChunk::SlotName() const
 {
 	// ponytail: "Cpp" prefix isolates these slots from the BP chunk while both exist;
-	// unify when the C++ chunk replaces BP_TerrainChunk in the gate loop
+	// unify when the C++ chunk replaces BP_TerrainChunk in the arrival loop
 	return FString::Printf(TEXT("CppWorldDiff_%d"), Seed);
 }
 
@@ -793,6 +1089,7 @@ void AGatersChunk::SyncStreamedContent()
 	int32 ReservedRejected = 0;
 	int32 WaterRejected = 0;
 	int32 SteepRejected = 0;
+	int32 OpportunityRejected = 0;
 	int32 Placements = 0;
 	for (const FIntPoint& Cell : Cells)
 	{
@@ -800,11 +1097,13 @@ void AGatersChunk::SyncStreamedContent()
 		if (!Content)
 		{
 			Content = &LoadedContentCells.Add(Cell,
-				FGatersContentCellRecipe::Generate(Cell, TerrainCellSize, Environment, Semantics));
+				FGatersContentCellRecipe::Generate(
+					Cell, TerrainCellSize, EnvironmentRecipe, Semantics));
 		}
 		ReservedRejected += Content->Coverage.ReservedRejectedCount;
 		WaterRejected += Content->Coverage.WaterRejectedCount;
 		SteepRejected += Content->Coverage.SteepRejectedCount;
+		OpportunityRejected += Content->Coverage.OpportunityRejectedCount;
 		Placements += Content->Placements.Num();
 		for (const FGatersContentCellPlacement& Placement : Content->Placements)
 		{
@@ -819,8 +1118,9 @@ void AGatersChunk::SyncStreamedContent()
 		}
 	}
 	Report(FString::Printf(
-		TEXT("CONTENT_STREAM cells=%d placements=%d reserved_rejected=%d water_rejected=%d steep_rejected=%d"),
-		LoadedContentCells.Num(), Placements, ReservedRejected, WaterRejected, SteepRejected));
+		TEXT("CONTENT_STREAM cells=%d placements=%d reserved_rejected=%d water_rejected=%d steep_rejected=%d opportunity_rejected=%d"),
+		LoadedContentCells.Num(), Placements, ReservedRejected, WaterRejected,
+		SteepRejected, OpportunityRejected));
 }
 
 void AGatersChunk::GenerateClaimMarkerRecipe(int32& OutClaimed)
@@ -870,39 +1170,6 @@ void AGatersChunk::MaterializeVisualBatches(
 void AGatersChunk::GenerateBaseRecipe(FGatersContentCatalog& Catalog)
 {
 	BaseStampRows.Reset();
-	TSet<FString> RegisteredContent;
-	auto RegisterPlaceholder = [&](const FString& AssetId, const FString& ContentKey,
-		const FVector& BoundsCenter, const FVector& BoundsExtent,
-		const EGatersAssetRenderClass RenderClass, const bool bPersistent,
-		const EGatersAssetContactSupport ContactSupport)
-	{
-		if (RegisteredContent.Contains(ContentKey))
-		{
-			return;
-		}
-		RegisteredContent.Add(ContentKey);
-		FGatersAssetContract Contract;
-		Contract.AssetId = AssetId;
-		Contract.ContentKey = ContentKey;
-		Contract.StyleId = TEXT("gaters.clean-midpoly-painted");
-		Contract.BoundsCenter = BoundsCenter;
-		Contract.BoundsExtent = BoundsExtent;
-		Contract.ClearanceExtent = BoundsExtent;
-		Contract.Collision = EGatersAssetCollision::Simple;
-		Contract.RenderClass = RenderClass;
-		Contract.bInstanceStatePersistent = bPersistent;
-		Contract.Contacts.Add({TEXT("support"),
-			BoundsCenter - FVector(0.f, 0.f, BoundsExtent.Z), FVector::UpVector,
-			ContactSupport});
-		TArray<FString> ContractErrors;
-		if (!Catalog.AddPlaceholder(Contract, ContractErrors))
-		{
-			for (const FString& Error : ContractErrors)
-			{
-				Report(FString::Printf(TEXT("CATALOG key=%s error=%s"), *ContentKey, *Error));
-			}
-		}
-	};
 	TArray<FString> EnvironmentErrors;
 	const bool bGeneratedRock = FGatersEnvironmentContent::Register(Catalog, EnvironmentErrors);
 	Report(FString::Printf(TEXT("CATALOG key=environment.rock source=%s"),
@@ -956,227 +1223,121 @@ void AGatersChunk::GenerateBaseRecipe(FGatersContentCatalog& Catalog)
 		return;
 	}
 
-	// the stamp is data: (class, mesh, local position, yaw, scale) rows rolled from the
-	// seed stream. Every roll depends only on the seed - never on the diff - so stamp
-	// ids stay stable and destroyed pieces replay correctly.
-	static const TCHAR* TierNames[] = { TEXT("wood"), TEXT("stone"), TEXT("metal") };
-	FVector LootLocal = FVector::ZeroVector;
-	bool bHaveLoot = false;
-	const float Cell = 300.f;
-	const FVector2D BaseCenter(BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
+	struct FRuntimeModule
+	{
+		UClass* Class = nullptr;
+		UStaticMesh* Mesh = nullptr;
+		EGatersAssetContactSupport ContactSupport = EGatersAssetContactSupport::Attachment;
+	};
+	TMap<FString, FRuntimeModule> RuntimeModules;
+	auto DescribeModule = [&](UClass* Class, UStaticMesh* Mesh, const FString& ContentKey,
+		const EGatersAssetContactSupport ContactSupport)
+	{
+		FGatersLegacyBaseModuleDefinition Module;
+		Module.bAvailable = Class && (Mesh || ContentKey == TEXT("door"));
+		if (!Module.bAvailable)
+		{
+			return Module;
+		}
+		const FBox Bounds = Mesh ? Mesh->GetBoundingBox() : FBox(FVector(-100.f), FVector(100.f));
+		Module.Contract.AssetId = Class->GetPathName() + TEXT("|") +
+			(Mesh ? Mesh->GetPathName() : TEXT("actor"));
+		Module.Contract.ContentKey = ContentKey;
+		Module.Contract.StyleId = TEXT("gaters.clean-midpoly-painted");
+		Module.Contract.BoundsCenter = Bounds.GetCenter();
+		Module.Contract.BoundsExtent = Bounds.GetExtent();
+		Module.Contract.ClearanceExtent = Bounds.GetExtent();
+		Module.Contract.Collision = EGatersAssetCollision::Simple;
+		Module.Contract.RenderClass = EGatersAssetRenderClass::UniqueStatic;
+		Module.Contract.bInstanceStatePersistent = true;
+		Module.Contract.Contacts.Add({TEXT("support"), Bounds.GetCenter() -
+			FVector(0.f, 0.f, Bounds.GetExtent().Z), FVector::UpVector, ContactSupport});
+		RuntimeModules.Add(ContentKey, {Class, Mesh, ContactSupport});
+		return Module;
+	};
+
+	static const TCHAR* TierNames[] = {TEXT("wood"), TEXT("stone"), TEXT("metal")};
+	FGatersLegacyBaseLayerInput Input;
+	Input.BaseCenter = FVector2D(
+		BaseDist * FMath::Cos(FMath::DegreesToRadians(BaseAngle)),
 		BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)));
-	auto TierKey = [](int32 Tier, const TCHAR* Piece)
+	Input.RandomState = Stream.GetCurrentSeed();
+	Input.CellSize = 300.f;
+	Input.MaxFoundationDrop = MaxFoundationDrop;
+	Input.SourceIds = {
+		FString::Printf(TEXT("world:%d"), Recipe.Seed),
+		TEXT("base:legacy:0")};
+	for (int32 TierIndex = 0; TierIndex < UE_ARRAY_COUNT(TierNames); ++TierIndex)
 	{
-		return FString::Printf(TEXT("%s.%s"), TierNames[Tier], Piece);
-	};
-
-	// one rectangular building: W x D foundations, N stories, one door, rolled windows,
-	// one material tier. Returns false when the ground under the footprint drops more
-	// than the max-drop rule allows - the base must fit the environment, not fight it.
-	auto AddBuilding = [&](FVector2D C, int32 W, int32 D, int32 Stories, int32 Tier) -> bool
-	{
-		const FTierMeshes& TM = TierMeshes[Tier];
-		const FBox FndBox = TM.Foundation->GetBoundingBox();
-		const FBox WallBox = TM.Wall->GetBoundingBox();
-		const FBox CeilBox = TM.Ceiling->GetBoundingBox();
-		const float FndHeight = FndBox.Max.Z - FndBox.Min.Z;
-		const float WallHeight = WallBox.Max.Z - WallBox.Min.Z;
-
-		const float HalfX = W * Cell * 0.5f, HalfY = D * Cell * 0.5f;
-		float HMin = TNumericLimits<float>::Max(), HMax = -TNumericLimits<float>::Max();
-		const FVector2D Corners[5] = { C, C + FVector2D(HalfX, HalfY), C + FVector2D(-HalfX, HalfY),
-			C + FVector2D(HalfX, -HalfY), C + FVector2D(-HalfX, -HalfY) };
-		for (const FVector2D& P : Corners)
-		{
-			const float H = GroundHeight(P.X, P.Y);
-			HMin = FMath::Min(HMin, H);
-			HMax = FMath::Max(HMax, H);
-		}
-		if (HMax - HMin > MaxFoundationDrop)
-		{
-			return false; // too much stilt - reject the site
-		}
-		const float FoundationTop = HMax + FndHeight; // level floor rides the highest corner
-
-		// foundation skirts: each cell's foundation is stretched down from the level
-		// floor to below its own patch of dirt, so nothing floats and nothing gapes
-		for (int32 I = 0; I < W; ++I)
-		{
-			for (int32 J = 0; J < D; ++J)
-			{
-				const float X = C.X + (I - (W - 1) * 0.5f) * Cell;
-				const float Y = C.Y + (J - (D - 1) * 0.5f) * Cell;
-				const float GroundHere = FMath::Min(FMath::Min(
-					GroundHeight(X - Cell * 0.5f, Y - Cell * 0.5f), GroundHeight(X + Cell * 0.5f, Y - Cell * 0.5f)), FMath::Min(
-					GroundHeight(X - Cell * 0.5f, Y + Cell * 0.5f), GroundHeight(X + Cell * 0.5f, Y + Cell * 0.5f)));
-				const float BottomZ = GroundHere - 60.f; // sink into the dirt
-				const float ScaleZ = (FoundationTop - BottomZ) / FndHeight;
-				const float PivotZ = FoundationTop - FndBox.Max.Z * ScaleZ;
-				BaseStampRows.Add({FoundationClass, TM.Foundation, FVector(X, Y, PivotZ), 0.f,
-					FVector(1.f, 1.f, ScaleZ), TierKey(Tier, TEXT("foundation")),
-					EGatersAssetContactSupport::Terrain});
-			}
-		}
-
-		const int32 DoorSide = Stream.RandRange(0, 3); // 0 S, 1 N, 2 W, 3 E
-		const int32 DoorSlot = Stream.RandRange(0, (DoorSide < 2 ? W : D) - 1);
-		for (int32 S = 0; S < Stories; ++S)
-		{
-			// band bottom sits flush on the foundation (or the band below);
-			// pivot z compensates for wherever this mesh family keeps its origin
-			const float BandBottom = FoundationTop + S * WallHeight;
-			const float WallPivotZ = BandBottom - WallBox.Min.Z;
-			auto AddWallSlot = [&](FVector2D P, float Yaw, bool bDoorHere)
-			{
-				const float WindowRoll = Stream.FRandRange(0.f, 1.f);
-				UClass* Class = WallClass;
-				UStaticMesh* Mesh = TM.Wall;
-				FString ContentKey = TierKey(Tier, TEXT("wall"));
-				if (bDoorHere)
-				{
-					Class = DoorFrameClass;
-					Mesh = TM.DoorFrame;
-					ContentKey = TierKey(Tier, TEXT("doorframe"));
-				}
-				else if (WindowRoll < 0.22f && WindowFrameClass && TM.WindowFrame)
-				{
-					Class = WindowFrameClass;
-					Mesh = TM.WindowFrame;
-					ContentKey = TierKey(Tier, TEXT("window"));
-				}
-				BaseStampRows.Add({Class, Mesh, FVector(P.X, P.Y, WallPivotZ), Yaw,
-					FVector::OneVector, ContentKey});
-				if (bDoorHere)
-				{
-					BaseStampRows.Add({DoorClass, nullptr, FVector(P.X, P.Y, WallPivotZ), Yaw,
-						FVector::OneVector, TEXT("door")}); // door keeps its own mesh
-				}
-			};
-			for (int32 I = 0; I < W; ++I)
-			{
-				const float X = C.X + (I - (W - 1) * 0.5f) * Cell;
-				AddWallSlot(FVector2D(X, C.Y - HalfY), 0.f, S == 0 && DoorSide == 0 && DoorSlot == I);
-				AddWallSlot(FVector2D(X, C.Y + HalfY), 0.f, S == 0 && DoorSide == 1 && DoorSlot == I);
-			}
-			for (int32 J = 0; J < D; ++J)
-			{
-				const float Y = C.Y + (J - (D - 1) * 0.5f) * Cell;
-				AddWallSlot(FVector2D(C.X - HalfX, Y), 90.f, S == 0 && DoorSide == 2 && DoorSlot == J);
-				AddWallSlot(FVector2D(C.X + HalfX, Y), 90.f, S == 0 && DoorSide == 3 && DoorSlot == J);
-			}
-		}
-
-		const float RoofPivotZ = FoundationTop + Stories * WallHeight - CeilBox.Min.Z;
-		for (int32 I = 0; I < W; ++I)
-		{
-			for (int32 J = 0; J < D; ++J)
-			{
-				BaseStampRows.Add({CeilingClass, TM.Ceiling, FVector(C.X + (I - (W - 1) * 0.5f) * Cell,
-					C.Y + (J - (D - 1) * 0.5f) * Cell, RoofPivotZ), 0.f,
-					FVector::OneVector, TierKey(Tier, TEXT("ceiling"))});
-			}
-		}
-		// the first placed building holds the raid goal: an actor tagged RaidLoot on its
-		// floor — the whole contract the raid sim (GatersRaider) evaluates against
-		if (!bHaveLoot)
-		{
-			bHaveLoot = true;
-			LootLocal = FVector(C.X, C.Y, FoundationTop + 100.f);
-		}
-		return true;
-	};
-
-	// archetype: 0 hut, 1 compound (multiple buildings + fence), 2 tower
-	const int32 Archetype = Stream.RandRange(0, 2);
-	static const TCHAR* ArchetypeNames[] = { TEXT("hut"), TEXT("compound"), TEXT("tower") };
-	int32 Buildings = 0;
-	const int32 MainTier = Stream.RandRange(0, 2);
-
-	int32 MainW = Stream.RandRange(2, 4);
-	int32 MainD = Stream.RandRange(2, 4);
-	int32 MainStories = (Stream.FRandRange(0.f, 1.f) < 0.4f) ? 2 : 1;
-	if (Archetype == 2)
-	{
-		MainW = Stream.RandRange(1, 2);
-		MainD = MainW;
-		MainStories = Stream.RandRange(3, 4);
+		const FString TierId(TierNames[TierIndex]);
+		const FTierMeshes& Meshes = TierMeshes[TierIndex];
+		FGatersLegacyBaseTierDefinition Tier;
+		Tier.Id = TierId;
+		Tier.Foundation = DescribeModule(FoundationClass, Meshes.Foundation,
+			TierId + TEXT(".foundation"), EGatersAssetContactSupport::Terrain);
+		Tier.Wall = DescribeModule(WallClass, Meshes.Wall,
+			TierId + TEXT(".wall"), EGatersAssetContactSupport::Attachment);
+		Tier.DoorFrame = DescribeModule(DoorFrameClass, Meshes.DoorFrame,
+			TierId + TEXT(".doorframe"), EGatersAssetContactSupport::Attachment);
+		Tier.Window = DescribeModule(WindowFrameClass, Meshes.WindowFrame,
+			TierId + TEXT(".window"), EGatersAssetContactSupport::Attachment);
+		Tier.Ceiling = DescribeModule(CeilingClass, Meshes.Ceiling,
+			TierId + TEXT(".ceiling"), EGatersAssetContactSupport::Attachment);
+		Tier.Fence = DescribeModule(FenceClass, Meshes.Fence,
+			TierId + TEXT(".fence"), EGatersAssetContactSupport::Terrain);
+		Input.Tiers.Add(MoveTemp(Tier));
 	}
-	Buildings += AddBuilding(BaseCenter, MainW, MainD, MainStories, MainTier) ? 1 : 0;
+	Input.Door = DescribeModule(DoorClass, nullptr, TEXT("door"),
+		EGatersAssetContactSupport::Attachment);
 
-	if (Archetype == 1)
+	const FGatersLegacyBaseLayerResult Result = FGatersLegacyBaseLayer::Generate(
+		Input, [this](const FVector2D& Point) { return GroundHeight(Point.X, Point.Y); });
+	if (!Result.IsValid())
 	{
-		const int32 Extra = Stream.RandRange(1, 2);
-		for (int32 E = 0; E < Extra; ++E)
+		for (const FString& Diagnostic : Result.Diagnostics)
 		{
-			const float Ang = Stream.FRandRange(0.f, 360.f);
-			const float Dist = Stream.FRandRange(1100.f, 1600.f);
-			const FVector2D C = BaseCenter + FVector2D(
-				Dist * FMath::Cos(FMath::DegreesToRadians(Ang)), Dist * FMath::Sin(FMath::DegreesToRadians(Ang)));
-			const int32 ShedTier = Stream.RandRange(0, MainTier); // sheds never outclass the main building
-			Buildings += AddBuilding(C, Stream.RandRange(1, 2), Stream.RandRange(1, 3), 1, ShedTier) ? 1 : 0;
+			Report(FString::Printf(TEXT("BASE error=%s"), *Diagnostic));
 		}
-		// fence ring with a gate gap, each post following its own patch of ground
-		if (FenceClass && TierMeshes[MainTier].Fence)
+		Report(TEXT("STAMP pieces=0 replayed=0 (legacy base rejected)"));
+		return;
+	}
+
+	for (const FGatersAssetContract& Requirement : Result.ContentRequirements)
+	{
+		TArray<FString> Errors;
+		if (!Catalog.AddPlaceholder(Requirement, Errors))
 		{
-			UStaticMesh* FenceMesh = TierMeshes[MainTier].Fence;
-			const float FenceZMin = FenceMesh->GetBoundingBox().Min.Z;
-			const float FenceR = 2100.f;
-			const int32 Sections = FMath::FloorToInt(2.f * FenceR / Cell);
-			const int32 GapAt = Stream.RandRange(0, 3); // one open side
-			for (int32 Side = 0; Side < 4; ++Side)
+			for (const FString& Error : Errors)
 			{
-				for (int32 K = 0; K < Sections; ++K)
-				{
-					if (Side == GapAt && K >= Sections / 2 - 1 && K <= Sections / 2 + 1)
-					{
-						continue; // gate gap
-					}
-					const float Along = (K - (Sections - 1) * 0.5f) * Cell;
-					FVector2D P;
-					float Yaw = 0.f;
-					switch (Side)
-					{
-					case 0: P = BaseCenter + FVector2D(Along, -FenceR); Yaw = 0.f; break;
-					case 1: P = BaseCenter + FVector2D(Along, FenceR); Yaw = 0.f; break;
-					case 2: P = BaseCenter + FVector2D(-FenceR, Along); Yaw = 90.f; break;
-					default: P = BaseCenter + FVector2D(FenceR, Along); Yaw = 90.f; break;
-					}
-					BaseStampRows.Add({FenceClass, FenceMesh,
-						FVector(P.X, P.Y, GroundHeight(P.X, P.Y) - 20.f - FenceZMin), Yaw,
-						FVector::OneVector, TierKey(MainTier, TEXT("fence")),
-						EGatersAssetContactSupport::Terrain});
-				}
+				Report(FString::Printf(TEXT("CATALOG key=%s error=%s"),
+					*Requirement.ContentKey, *Error));
 			}
 		}
 	}
-
+	for (const FGatersLegacyBasePieceRecipe& Piece : Result.Pieces)
+	{
+		const FRuntimeModule* Runtime = RuntimeModules.Find(Piece.ContentKey);
+		if (!Runtime)
+		{
+			Report(FString::Printf(TEXT("BASE error=missing_runtime_module key=%s"),
+				*Piece.ContentKey));
+			BaseStampRows.Reset();
+			return;
+		}
+		BaseStampRows.Add({Runtime->Class, Runtime->Mesh, Piece.Transform.GetLocation(),
+			static_cast<float>(Piece.Transform.Rotator().Yaw), Piece.Transform.GetScale3D(), Piece.ContentKey,
+			Runtime->ContactSupport});
+		FGatersRecipeNode Node{Piece.Id, EGatersRecipeNodeKind::BasePiece,
+			Piece.Transform.GetLocation()};
+		Node.Rotation = Piece.Transform.Rotator();
+		Node.Scale = Piece.Transform.GetScale3D();
+		Node.ContentKey = Piece.ContentKey;
+		Recipe.Nodes.Add(MoveTemp(Node));
+	}
+	static const TCHAR* ArchetypeNames[] = {TEXT("hut"), TEXT("compound"), TEXT("tower")};
 	Report(FString::Printf(TEXT("BASE archetype=%s tier=%s main=%dx%dx%d buildings=%d"),
-		ArchetypeNames[Archetype], TierNames[MainTier], MainW, MainD, MainStories, Buildings));
-
-	for (int32 R = 0; R < BaseStampRows.Num(); ++R)
-	{
-		FGatersRecipeNode Node{
-			FString::Printf(TEXT("piece:%d"), R),
-			EGatersRecipeNodeKind::BasePiece,
-			BaseStampRows[R].Pos};
-		Node.Rotation = FRotator(0.f, BaseStampRows[R].Yaw, 0.f);
-		Node.Scale = BaseStampRows[R].Scale;
-		Node.ContentKey = BaseStampRows[R].ContentKey;
-		Recipe.Nodes.Add(Node);
-	}
-	if (bHaveLoot)
-	{
-		Recipe.Nodes.Add({TEXT("loot:0"), EGatersRecipeNodeKind::RaidLoot, LootLocal});
-	}
-
-	for (const FBaseStampRow& Row : BaseStampRows)
-	{
-		const FBox Bounds = Row.Mesh ? Row.Mesh->GetBoundingBox() : FBox(FVector(-100.f), FVector(100.f));
-		RegisterPlaceholder(
-			Row.Class->GetPathName() + TEXT("|") + (Row.Mesh ? Row.Mesh->GetPathName() : TEXT("actor")),
-			Row.ContentKey, Bounds.GetCenter(), Bounds.GetExtent(),
-			EGatersAssetRenderClass::UniqueStatic, true, Row.ContactSupport);
-	}
+		ArchetypeNames[static_cast<int32>(Result.Archetype)], *Result.MainTierId,
+		Result.MainWidth, Result.MainDepth, Result.MainStories, Result.BuildingCount));
 }
 
 bool AGatersChunk::CompileWorld(const FGatersContentCatalog& Catalog)
@@ -1201,7 +1362,7 @@ bool AGatersChunk::CompileWorld(const FGatersContentCatalog& Catalog)
 			BaseDist * FMath::Sin(FMath::DegreesToRadians(BaseAngle)));
 		const TArray<FGatersPhysicalFitEvaluation> FitEvaluations =
 			FGatersPhysicalFitEvaluator::EvaluateWorld(
-				CompiledWorld, Environment, PadRadius, RouteTarget);
+				CompiledWorld, EnvironmentRecipe.Terrain, PadRadius, RouteTarget);
 		int32 ValidCount = 0;
 		int32 IssueCount = 0;
 		int32 TerrainContactCount = 0;
@@ -1275,15 +1436,6 @@ void AGatersChunk::MaterializeBase(int32& OutStamped, int32& OutReplayed)
 		}
 	}
 
-	if (const FGatersCompiledNode* LootNode = CompiledWorld.FindNode(TEXT("loot:0")))
-	{
-		ATargetPoint* LootPoint = GetWorld()->SpawnActor<ATargetPoint>(
-			GetActorLocation() + LootNode->Transform.GetLocation(), FRotator::ZeroRotator);
-		if (LootPoint)
-		{
-			LootPoint->Tags.Add(TEXT("RaidLoot"));
-		}
-	}
 }
 
 void AGatersChunk::OnStampedPieceDestroyed(AActor* DestroyedActor)
@@ -1371,10 +1523,8 @@ void AGatersChunk::OnVisualBatchOverlap(
 void AGatersChunk::Report(const FString& Line) const
 {
 	UE_LOG(LogTemp, Display, TEXT("[GatersChunk] %s"), *Line);
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 30.f, FColor::Cyan, Line);
-	}
+	FGatersDebugMessages::Show(
+		FGatersDebugMessages::ReportKey, 30.f, FColor::Cyan, Line);
 }
 
 static FAutoConsoleCommandWithWorldAndArgs GatersTraversalCmd(
@@ -1387,5 +1537,20 @@ static FAutoConsoleCommandWithWorldAndArgs GatersTraversalCmd(
 			for (TActorIterator<AGatersChunk> It(World); It; ++It)
 			{
 				It->DrawTraversalDebug(Duration);
+			}
+		}));
+
+static FAutoConsoleCommandWithWorldAndArgs GatersContentOpportunitiesCmd(
+	TEXT("Gaters.ContentOpportunities"),
+	TEXT("Draw loaded content opportunities for 45 seconds. Green favors vegetation, gray favors stone, sphere size is combined opportunity, and dots are placements."),
+	FConsoleCommandWithWorldAndArgsDelegate::CreateLambda(
+		[](const TArray<FString>& Args, UWorld* World)
+		{
+			const float Duration = Args.Num() > 0
+				? FMath::Max(1.f, FCString::Atof(*Args[0]))
+				: 45.f;
+			for (TActorIterator<AGatersChunk> It(World); It; ++It)
+			{
+				It->DrawContentOpportunitiesDebug(Duration);
 			}
 		}));

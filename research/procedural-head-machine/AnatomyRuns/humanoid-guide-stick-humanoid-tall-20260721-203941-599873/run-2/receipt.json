@@ -1,0 +1,8 @@
+{
+  "body_composition_sha256": "95c146847222c480ad6459b0e46fc8ee5bd03abeaecacf24a5e10da7e6cbee9a",
+  "compiler": "anatomical-guide-compiler/0",
+  "guide_recipe_sha256": "343c6b74681b20e8843d36f4bd3b563e775f9b1f1203fccb5557c68380a144a8",
+  "guide_sha256": "9f9f3b878318b36648b172af3beaa6b2b338115cb105e518fa5e8e5e26e25ead",
+  "schema": "anatomical-guide-receipt/0",
+  "verifier": "anatomical-guide-verifier/0"
+}

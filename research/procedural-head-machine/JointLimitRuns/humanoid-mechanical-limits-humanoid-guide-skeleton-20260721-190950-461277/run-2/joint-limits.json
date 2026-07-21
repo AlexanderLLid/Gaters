@@ -1,0 +1,150 @@
+{
+  "controls": {
+    "left_elbow_flex": {
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "descendants": [
+        "left_wrist"
+      ],
+      "joint": "left_elbow",
+      "maximum_degrees": 145.0,
+      "minimum_degrees": 0.0
+    },
+    "left_hip_flex": {
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "descendants": [
+        "left_knee",
+        "left_ankle"
+      ],
+      "joint": "left_hip",
+      "maximum_degrees": 120.0,
+      "minimum_degrees": -40.0
+    },
+    "left_knee_flex": {
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "descendants": [
+        "left_ankle"
+      ],
+      "joint": "left_knee",
+      "maximum_degrees": 140.0,
+      "minimum_degrees": 0.0
+    },
+    "left_shoulder_raise": {
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "descendants": [
+        "left_elbow",
+        "left_wrist"
+      ],
+      "joint": "left_shoulder",
+      "maximum_degrees": 100.0,
+      "minimum_degrees": -80.0
+    },
+    "right_elbow_flex": {
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "descendants": [
+        "right_wrist"
+      ],
+      "joint": "right_elbow",
+      "maximum_degrees": 145.0,
+      "minimum_degrees": 0.0
+    },
+    "right_hip_flex": {
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "descendants": [
+        "right_knee",
+        "right_ankle"
+      ],
+      "joint": "right_hip",
+      "maximum_degrees": 120.0,
+      "minimum_degrees": -40.0
+    },
+    "right_knee_flex": {
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "descendants": [
+        "right_ankle"
+      ],
+      "joint": "right_knee",
+      "maximum_degrees": 140.0,
+      "minimum_degrees": 0.0
+    },
+    "right_shoulder_raise": {
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "descendants": [
+        "right_elbow",
+        "right_wrist"
+      ],
+      "joint": "right_shoulder",
+      "maximum_degrees": 100.0,
+      "minimum_degrees": -80.0
+    },
+    "torso_twist": {
+      "axis": "joint_aim",
+      "descendants": [
+        "chest",
+        "head_center",
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist",
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "joint": "waist",
+      "maximum_degrees": 45.0,
+      "minimum_degrees": -45.0
+    }
+  },
+  "id": "humanoid-mechanical-limits",
+  "mirror_pairs": [
+    [
+      "left_elbow_flex",
+      "right_elbow_flex"
+    ],
+    [
+      "left_knee_flex",
+      "right_knee_flex"
+    ],
+    [
+      "left_shoulder_raise",
+      "right_shoulder_raise"
+    ],
+    [
+      "left_hip_flex",
+      "right_hip_flex"
+    ]
+  ],
+  "schema": "joint-limits/0",
+  "skeleton_id": "humanoid-guide-skeleton",
+  "source_skeleton_sha256": "8b3e6f0d41aa457c0e818aa5c63e06fc712b53479c6c6c2c68548f3b0558284c"
+}

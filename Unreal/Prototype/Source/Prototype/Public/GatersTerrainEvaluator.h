@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GatersEnvironment.h"
+#include "Templates/Function.h"
 
 struct PROTOTYPE_API FGatersTerrainEvaluation
 {
@@ -22,5 +23,10 @@ struct PROTOTYPE_API FGatersTerrainEvaluator
 {
 	static FGatersTerrainEvaluation Evaluate(
 		const FGatersEnvironment& Environment,
+		float EvaluationSize = 0.f);
+
+	static FGatersTerrainEvaluation EvaluateHeightField(
+		const FGatersEnvironment& Environment,
+		TFunctionRef<float(const FVector2D&)> HeightAt,
 		float EvaluationSize = 0.f);
 };

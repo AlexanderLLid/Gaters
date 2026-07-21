@@ -32,9 +32,17 @@ bool FGatersEnvironmentContent::Register(
 	FGatersContentCatalog& Catalog,
 	TArray<FString>& OutErrors)
 {
+	UStaticMesh* TreeFallback = LoadObject<UStaticMesh>(
+		nullptr, TEXT("/Engine/BasicShapes/Cone.Cone"));
+	if (!TreeFallback)
+	{
+		OutErrors.Add(TEXT("tree visual fallback is missing"));
+		return false;
+	}
+	const FBox TreeBounds = TreeFallback->GetBoundingBox();
 	Catalog.AddPlaceholder(EnvironmentContract(
 		TEXT("runtime.scatter.tree"), 1, TEXT("environment.tree"),
-		FVector::ZeroVector, FVector(100.f)), OutErrors);
+		TreeBounds.GetCenter(), TreeBounds.GetExtent()), OutErrors);
 	Catalog.AddPlaceholder(EnvironmentContract(
 		TEXT("runtime.scatter.rock"), 1, TEXT("environment.rock"),
 		FVector::ZeroVector, FVector(100.f)), OutErrors);

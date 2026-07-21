@@ -1,0 +1,19 @@
+{
+  "failures": [
+    {
+      "rule": "HEAD-BOUNDS-1",
+      "subject": "dimensions"
+    }
+  ],
+  "metrics": {
+    "faces": 192,
+    "realized_dimensions_m": [
+      0.161659243318,
+      0.19,
+      0.22
+    ],
+    "vertices": 178
+  },
+  "passed": false,
+  "schema": "head-verification/0"
+}

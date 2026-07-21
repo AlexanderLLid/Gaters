@@ -109,7 +109,7 @@ bool FGatersStructuralEvaluatorIdentityTest::RunTest(const FString& Parameters)
 	TestNotNull(TEXT("duplicate ID reports its stable rule"), Issue);
 	if (Issue)
 	{
-		TestTrue(TEXT("duplicate issue names the involved node"), Issue->NodeIds.Contains(TEXT("gate:0")));
+		TestTrue(TEXT("duplicate issue names the involved node"), Issue->NodeIds.Contains(TEXT("arrival:0")));
 	}
 	return true;
 }
@@ -148,10 +148,16 @@ bool FGatersStructuralEvaluatorRelationshipsTest::RunTest(const FString& Paramet
 	Recipe.Nodes.RemoveAt(0);
 	Recipe.Nodes[0].Location.X += 1.f;
 	const FGatersStructuralEvaluation Evaluation = FGatersStructuralEvaluator::Evaluate(Recipe);
-	TestNotNull(TEXT("missing Gate reports cardinality rule"),
-		FindIssue(Evaluation, TEXT("recipe.gate.cardinality")));
+	TestNotNull(TEXT("missing Arrival reports cardinality rule"),
+		FindIssue(Evaluation, TEXT("recipe.arrival.cardinality")));
 	TestNotNull(TEXT("moved BaseSite reports location rule"),
 		FindIssue(Evaluation, TEXT("recipe.base.location")));
+
+	FGatersWorldRecipe WrongRecordedHeight = ValidRecipe();
+	WrongRecordedHeight.BaseSiteHeight += 100.f;
+	TestNotNull(TEXT("base node must match recorded generation evidence"),
+		FindIssue(FGatersStructuralEvaluator::Evaluate(WrongRecordedHeight),
+			TEXT("recipe.base.location")));
 	return true;
 }
 

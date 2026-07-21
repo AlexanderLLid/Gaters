@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "head-backend-comparison/0",
+    "source_run":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\baseline-20260721-150140-151922\\run-1",
+    "blender":  {
+                    "elapsed_ms":  16649,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\AdapterRuns\\20260721-171111-815\\blender\\head.blend"
+                },
+    "houdini":  {
+                    "elapsed_ms":  4127,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\AdapterRuns\\20260721-171111-815\\houdini\\head.hipnc"
+                }
+}

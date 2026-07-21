@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "decision": "retain-as-anatomy-seed",
+  "majorFormDecision": "pass",
+  "targetLikenessDecision": "reject",
+  "observations": {
+    "anatomy": "The head, facial planes, jaw, cranium, ears, neck and profile read as grounded adult anatomy from every rendered view.",
+    "likeness": "The seed remains younger, smoother and structurally unlike the target around skull proportions, eyelids, nose, mouth, jaw and age character.",
+    "boundary": "This proves the anatomical seed layer only; it does not prove image fitting, production topology, texture, rigging or animation."
+  },
+  "next": "Fit GNM identity parameters to target front landmarks and silhouette while retaining profile plausibility."
+}

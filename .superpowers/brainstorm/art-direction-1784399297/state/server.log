@@ -1,0 +1,37 @@
+{"type":"server-started","port":64039,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:64039/?key=671bfdafceb31d0790049b4d8aa745f44c901d36451d8e08ee420d39de8fb8fa","screen_dir":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content","state_dir":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\state","idle_timeout_ms":14400000}
+{"source":"user-event","type":"click","text":"A\n    \n      Grounded painterly\n      Most natural surfaces and anatomy; easiest to read, but texture generation carries more of the look.","choice":"a","id":null,"timestamp":1784401304323}
+{"source":"user-event","type":"click","text":"A\n    \n      Grounded painterly\n      Most natural surfaces and anatomy; easiest to read, but texture generation carries more of the look.","choice":"a","id":null,"timestamp":1784401305564}
+{"type":"screen-added","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-added","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"source":"user-event","type":"click","text":"B\n    \n      Target — recommended\n      Selective medium detail. Enough richness for close play without making every asset bespoke.","choice":"grounded-target","id":null,"timestamp":1784401630067}
+{"type":"screen-added","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-generating.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\grounded-quality-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\style-comparison-v1.html"}
+{"type":"screen-updated","file":"C:\\repos\\Gaters\\.superpowers\\brainstorm\\art-direction-1784399297\\content\\waiting-estimate.html"}

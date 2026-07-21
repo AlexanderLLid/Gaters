@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-031640",
+  "stopCondition": "invalid-root-dispatch",
+  "cause": "The root supplied the visual champion blend where the generator contract requires the fixed pristine face proof.",
+  "lastCompletedStage": "baseline-diagnosis",
+  "roundAttempted": 1,
+  "promotions": 0,
+  "upperCandidateAttempted": false,
+  "recovery": "Preserve this run and restart under a new run identity using Derived/face-v2/face-proof.blend plus --python-exit-code 1 and marker checks.",
+  "humanAcceptance": false
+}

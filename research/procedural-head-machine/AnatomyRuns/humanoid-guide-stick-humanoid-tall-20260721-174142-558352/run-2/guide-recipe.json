@@ -1,0 +1,45 @@
+{
+  "arm_elbow_fraction": 0.52,
+  "arm_radius_profile": [
+    0.92,
+    0.72,
+    0.52
+  ],
+  "arm_wrist_fraction": 0.94,
+  "head_scale": [
+    0.86,
+    1.12,
+    1.12
+  ],
+  "id": "humanoid-guide",
+  "leg_ankle_fraction": 0.95,
+  "leg_knee_fraction": 0.52,
+  "leg_radius_profile": [
+    1.08,
+    0.78,
+    0.55
+  ],
+  "neck_radius_fraction": 0.38,
+  "schema": "anatomical-guide-recipe/0",
+  "segment_samples": 5,
+  "torso_sections": {
+    "abdomen": {
+      "depth_fraction": 1.02,
+      "height_fraction": 0.32,
+      "width_fraction": 0.66,
+      "z_fraction": 0.42
+    },
+    "chest": {
+      "depth_fraction": 1.18,
+      "height_fraction": 0.45,
+      "width_fraction": 0.88,
+      "z_fraction": 0.7
+    },
+    "pelvis": {
+      "depth_fraction": 1.12,
+      "height_fraction": 0.28,
+      "width_fraction": 0.76,
+      "z_fraction": 0.14
+    }
+  }
+}

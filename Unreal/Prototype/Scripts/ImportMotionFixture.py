@@ -6,7 +6,7 @@ from pathlib import Path
 import unreal
 
 
-IMPORTER_VERSION = 1
+IMPORTER_VERSION = 2
 
 
 def required(name):
@@ -23,7 +23,7 @@ def validate_manifest(path):
     source = manifest.get("sourceIdentity", {})
     if source.get("styleNeutral") is not True or source.get("selectedStyle", "missing") is not None:
         raise RuntimeError("Motion fixture must remain style-neutral")
-    if manifest.get("stableIdentity") != "motion.neutral-step@1":
+    if manifest.get("stableIdentity") != "motion.neutral-step@2":
         raise RuntimeError("Unexpected motion fixture identity")
     fbx_name = manifest.get("fbxTransport", {}).get("file", "")
     if not fbx_name or Path(fbx_name).name != fbx_name:
@@ -168,6 +168,18 @@ def import_motion():
             "frameIndex": frame_index,
             "translationCentimeters": vector_record(transform.translation),
         })
+    foot_world_samples = {"foot_l": [], "foot_r": []}
+    pose_options = unreal.AnimPoseEvaluationOptions()
+    for frame_index in range(sampled_keys):
+        pose = unreal.AnimPoseExtensions.get_anim_pose_at_frame(
+            animation, frame_index, pose_options)
+        for foot_name in foot_world_samples:
+            foot_pose = unreal.AnimPoseExtensions.get_bone_pose(
+                pose, foot_name, unreal.AnimPoseSpaces.WORLD)
+            foot_world_samples[foot_name].append({
+                "frameIndex": frame_index,
+                "translationCentimeters": vector_record(foot_pose.translation),
+            })
     notifies = list(unreal.AnimationLibrary.get_animation_notify_events(animation))
     bounds_size = skeletal_mesh.get_bounds().box_extent * 2.0
 
@@ -193,6 +205,7 @@ def import_motion():
         "durationSeconds": round(duration, 6),
         "sampledKeys": sampled_keys,
         "rootSamples": root_samples,
+        "footWorldSamples": foot_world_samples,
         "sourceContactEvents": manifest["clip"]["events"],
         "contactEventsTransported": len(notifies) > 0,
         "unrealNotifyCount": len(notifies),

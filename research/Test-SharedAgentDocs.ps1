@@ -31,14 +31,27 @@ foreach ($Name in $Names) {
     }
 }
 
-$ExpectedWorkstreams = 'art.md', 'bases.md', 'builder.md', 'combat.md', 'lore.md', 'scale.md'
+$ExpectedWorkstreams = @(
+    'Art Direction.md',
+    'Settlements, Bases & Dungeons.md',
+    'Character Generation & Animation.md',
+    'Combat & Classes.md',
+    'Lore.md',
+    "Primary Builder $([char]0x2014) World & Terrain.md",
+    'Raids & Dungeons.md',
+    'Scale & Persistence.md'
+)
 foreach ($Name in $ExpectedWorkstreams) {
     $Path = Join-Path $Root ".agents/workstreams/$Name"
     if (-not (Test-Path $Path)) {
         $Errors.Add("Workstream missing: $Name")
         continue
     }
-    $Text = Get-Content -Raw $Path
+    $Text = Get-Content -Raw -Encoding UTF8 $Path
+    $ExpectedTitle = '# ' + [IO.Path]::GetFileNameWithoutExtension($Name)
+    if (($Text -split "`r?`n", 2)[0] -cne $ExpectedTitle) {
+        $Errors.Add("$Name title must be exactly $ExpectedTitle")
+    }
     foreach ($Heading in '## Current objective', '## Owned outputs', '## Exchanges') {
         if ($Text -notmatch [regex]::Escape($Heading)) {
             $Errors.Add("$Name missing $Heading")

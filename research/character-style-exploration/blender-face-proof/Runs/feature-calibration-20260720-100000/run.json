@@ -1,0 +1,255 @@
+{
+  "calibration": {
+    "responses": {
+      "eye_aperture": {
+        "bracket": [
+          0.42,
+          0.52
+        ],
+        "highCandidateId": "f3d18cb55b4f03a2575d5e81c51e3e40943c0914eeee45d3a9dc571957fec598",
+        "lowCandidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a",
+        "metric": "eyeAperture",
+        "predictedCrossing": 0.4715986101155069,
+        "slope": 0.08668156872046878
+      },
+      "nose_length": {
+        "bracket": [
+          0.08,
+          0.14
+        ],
+        "highCandidateId": "7dffbc94a2f7741363b767459ce2c9b4e9261ebd0ae88623ce86baf4bb4fa2d3",
+        "lowCandidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a",
+        "metric": "noseLength",
+        "predictedCrossing": 0.10141340568098181,
+        "slope": 0.1230865077850894
+      }
+    },
+    "schemaVersion": 1,
+    "sourceMetricHashes": {
+      "7dffbc94a2f7741363b767459ce2c9b4e9261ebd0ae88623ce86baf4bb4fa2d3": "0d71cde853f9f766fb991550533f2a8d7277a54fa9f6aead4a57542dda1f3be3",
+      "7ed003f199f912325136ef9a55a5ec4e5cb8f7d3aa8abeac9710f560578c653d": "4049d1e7aabb1796c132732a62b9a80f2c473b8bee0d020e8a6ebc5ca65e735e",
+      "95d0a968d5665545ec4a087cec651494ca380a8b3a4801f07a77f4e25451387d": "d6a8282a753ab4f53ffa988067470f6de664b1e33015969bc3200206910292f8",
+      "99f640f49d80237ab187ffa1195f8f3fee1214b894b498386c3b61465f51bb01": "54831d20e8d71e779efd5ec0e3831690e6326dd3df578cf5e475f7ff20da45c1",
+      "e2fd4f12963b0498490680f359f37fb63c424ebd1693c624b25b30bf7d392d81": "c5184f5229010ef0801faf2e00389249ebbcad3b7bf7eec182cd636c529498a1",
+      "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a": "e663b4dd81709bef2449aa33a3556cf61ed223254fe32b627a3ff3cd09614537",
+      "f0927e6a81b29a56ee9ccb150ae95929032fd7d92dfbcb8f5fd46d11bb2cf534": "308423dcce710994e3a8e730a321a2e6659ade739aa243e7dc6f5cd8cd14e543",
+      "f3d18cb55b4f03a2575d5e81c51e3e40943c0914eeee45d3a9dc571957fec598": "4dfa6d748dde254e8c8aa28ba8ca4ca31e9c196bf73124d2777f674dc534bbc2"
+    }
+  },
+  "candidateCount": 4,
+  "grid": {
+    "eye_aperture": [
+      0.42,
+      0.52
+    ],
+    "nose_length": [
+      0.08,
+      0.14
+    ],
+    "nose_width": [
+      0.27
+    ]
+  },
+  "humanAcceptance": false,
+  "parentCandidate": {
+    "axis": "macro_grid",
+    "candidateId": "eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b",
+    "direction": "grid",
+    "parameters": {
+      "cheek_definition": 0.36,
+      "chin_projection": -0.12,
+      "eye_bag": 0.44,
+      "eye_spacing": 0.0,
+      "head_height": 0.0,
+      "head_width": -0.08,
+      "jaw_taper": 0.0,
+      "lip_volume": 0.08,
+      "nose_length": 0.3,
+      "nose_projection": 0.14,
+      "nose_width": 0.26
+    },
+    "parentId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+    "round": 7
+  },
+  "purpose": "Task 9 bounded measured feature calibration",
+  "recipeHashes": {
+    "6b39afc34d0b312526bb17c08aa8ff5aa7b1cb4b24b22088b362f22464c1aea5": "ae4fa191d7b26efeb6c3d05ff2527cfdb8251447b6c9bae4f07e58e6a2888dce",
+    "75dfd5ce7db481cd938a063638a3f915337d6b0cd6fc8d8209b4622150d262f7": "07a9a0246f922a7cba28ed297acb0fddce6c9aa94df410bc4f3ba7dc557392b1",
+    "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8": "a45875185222381699c877afae55b426422fff88ac6c7f303133bc74ec9bb6f5",
+    "d5319e9221c88fc7aa91bb78c5ef51629bff5f44d7f8db2644c761526b6628f7": "f2851bc4321bbc569edca64fd7aa9e46276afd041940b7bffea5f86a53e32a0e"
+  },
+  "runId": "feature-calibration-20260720-100000",
+  "schemaVersion": 1,
+  "selectionRule": "Rank only by the existing feature metric after all hard gates; label the best calibration-best-for-human-review and do not machine-promote.",
+  "status": "completed-calibration-review",
+  "targetAnnotation": {
+    "annotationMethod": "Two independent blind manual original-resolution annotations were reconciled to the fixed consensus points below. They mark exposed upper and lower lid margins, nasion, subnasale, and alare; lashes, brows, bags, shadows, texture, and nostril darkness are excluded.",
+    "blindAnnotations": [
+      {
+        "id": "blind-a",
+        "points": {
+          "leftAlare": [
+            545,
+            593
+          ],
+          "leftEyeCenter": [
+            510,
+            430
+          ],
+          "leftLowerLid": [
+            510,
+            448
+          ],
+          "leftUpperLid": [
+            510,
+            415
+          ],
+          "nasion": [
+            626,
+            454
+          ],
+          "rightAlare": [
+            705,
+            593
+          ],
+          "rightEyeCenter": [
+            735,
+            430
+          ],
+          "rightLowerLid": [
+            735,
+            448
+          ],
+          "rightUpperLid": [
+            735,
+            414
+          ],
+          "subnasale": [
+            626,
+            622
+          ]
+        }
+      },
+      {
+        "id": "blind-b",
+        "points": {
+          "leftAlare": [
+            546,
+            588
+          ],
+          "leftEyeCenter": [
+            510,
+            432
+          ],
+          "leftLowerLid": [
+            510,
+            447
+          ],
+          "leftUpperLid": [
+            510,
+            416
+          ],
+          "nasion": [
+            625,
+            448
+          ],
+          "rightAlare": [
+            704,
+            590
+          ],
+          "rightEyeCenter": [
+            739,
+            430
+          ],
+          "rightLowerLid": [
+            739,
+            445
+          ],
+          "rightUpperLid": [
+            739,
+            414
+          ],
+          "subnasale": [
+            625,
+            616
+          ]
+        }
+      }
+    ],
+    "image": {
+      "path": "Reference/painted-a-front-flat-v2.png",
+      "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "points": {
+      "leftAlare": [
+        546,
+        591
+      ],
+      "leftEyeCenter": [
+        510,
+        431
+      ],
+      "leftLowerLid": [
+        510,
+        448
+      ],
+      "leftUpperLid": [
+        510,
+        416
+      ],
+      "nasion": [
+        626,
+        451
+      ],
+      "rightAlare": [
+        705,
+        592
+      ],
+      "rightEyeCenter": [
+        737,
+        430
+      ],
+      "rightLowerLid": [
+        737,
+        447
+      ],
+      "rightUpperLid": [
+        737,
+        414
+      ],
+      "subnasale": [
+        626,
+        619
+      ]
+    },
+    "ratios": {
+      "alarWidth": 0.7004405286343612,
+      "eyeAperture": 0.14317180616740088,
+      "noseLength": 0.7400881057268722
+    },
+    "schemaVersion": 1,
+    "totalUncertaintyRatio": 0.13656387665198239,
+    "uncertainty": "The consensus keeps the larger observed disagreement per role. The score compares only the three declared front-supported distances. A nomination must exceed both the fixed material margin and the summed ratio uncertainty; otherwise it is triage only, never a likeness or profile claim.",
+    "uncertaintyPixels": {
+      "leftAlare": 5,
+      "leftEyeCenter": 3,
+      "leftLowerLid": 4,
+      "leftUpperLid": 4,
+      "nasion": 7,
+      "rightAlare": 5,
+      "rightEyeCenter": 3,
+      "rightLowerLid": 4,
+      "rightUpperLid": 4,
+      "subnasale": 6
+    },
+    "uncertaintyRatios": {
+      "alarWidth": 0.04405286343612335,
+      "eyeAperture": 0.03524229074889868,
+      "noseLength": 0.05726872246696035
+    }
+  }
+}

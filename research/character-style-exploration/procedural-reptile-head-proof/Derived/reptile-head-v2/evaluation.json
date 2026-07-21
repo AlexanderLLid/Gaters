@@ -1,0 +1,17 @@
+{
+  "candidate": "reptile-head",
+  "humanAcceptance": false,
+  "labels": [
+    "A - STANDARD THIRD-PERSON DISTANCE",
+    "B - GAMEPLAY CLOSE DISTANCE",
+    "C - INSPECTION CLOSE-UP"
+  ],
+  "renderer": "Houdini Mantra Apprentice",
+  "renders": [
+    "A-gameplay.png",
+    "B-gameplay-close.png",
+    "C-inspection.png"
+  ],
+  "schema": "art-evaluation/0",
+  "visibleFailure": "Rejected by Art review: fused anatomy is present, but the oversized protruding eye, visible far-side brow, repeated crown-plate shadows, and flat skin colour read as a crude toy rather than grounded painted mid-detail."
+}

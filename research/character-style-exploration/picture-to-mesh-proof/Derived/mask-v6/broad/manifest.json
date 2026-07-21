@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "picture-to-mesh-mask.blend": {
+      "sha256": "537112034a4741605ac61eb4ec22fadb5c49fcbeca3253b9ea90594b99bb16f8"
+    },
+    "renders/front-mask.png": {
+      "sha256": "7f5a1b7d092318b121f646b2491691fd6bda0d5424617a2aecb29fdadb7cc158"
+    },
+    "renders/front.png": {
+      "sha256": "1797c30ad9f66f0b8661ab400102c1a792005acbee76c937daeff87d9087998a"
+    },
+    "renders/side.png": {
+      "sha256": "e854149a8533d18297b57f738bd49edb73d2b14819c79793458eafa6a7542627"
+    },
+    "renders/three-quarter.png": {
+      "sha256": "74187223342bd48a18aee223854c7ffcc82684d986e0cbd9c88a26c39c825404"
+    },
+    "target-mask.png": {
+      "sha256": "dd52393f8a4409108a066dbb70d0c0559c0ae648763b7324a1a87b3ea281005e"
+    }
+  },
+  "inputType": "single-front-grayscale-silhouette-and-relative-depth",
+  "inputs": {
+    "front": {
+      "path": "target-mask.pgm",
+      "sha256": "a24e24171a1fd25cb373aaa6a990f9aa32ec1967ec7ba8b44254ef91ff938d04"
+    }
+  },
+  "recipe": {
+    "depthScale": 0.36,
+    "levels": 48,
+    "neutralDepth": 0.42,
+    "segments": 64,
+    "smoothFactor": 0.35,
+    "smoothIterations": 16,
+    "sourceWeight": 0.06
+  },
+  "schemaVersion": 1,
+  "status": "built-unverified",
+  "tools": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "ce707bd86fbb60835b7f6262ff7aab23825d5f129b6adb0b7a953a080814ef88",
+    "fitterSha256": "45bd7070cf02ba037d59b75c7b2c8236c69375c1a1baba06b404bca5d5f47453",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "connectivitySha256": "e50dee166f863f8600b030e5f80769d3d52823c027b2b068a4ab2c93afdd62bf",
+    "faceCount": 3010,
+    "vertexCount": 3072
+  },
+  "variant": "broad",
+  "variantSettings": {
+    "jaw": 0.96,
+    "lean": 0.0,
+    "noseX": -0.025,
+    "width": 1.13
+  }
+}

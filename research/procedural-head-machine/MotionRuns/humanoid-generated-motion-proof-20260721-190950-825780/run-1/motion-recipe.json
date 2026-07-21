@@ -1,0 +1,94 @@
+{
+  "duration_seconds": 1.5,
+  "fps": 8,
+  "id": "humanoid-generated-motion-proof",
+  "maximum_frame_delta_degrees": 12.0,
+  "schema": "motion-curve-recipe/0",
+  "tracks": [
+    {
+      "control": "left_shoulder_raise",
+      "keys": [
+        {
+          "degrees": 0.0,
+          "time_seconds": 0.0
+        },
+        {
+          "degrees": 25.0,
+          "time_seconds": 0.75
+        },
+        {
+          "degrees": 0.0,
+          "time_seconds": 1.5
+        }
+      ]
+    },
+    {
+      "control": "left_elbow_flex",
+      "keys": [
+        {
+          "degrees": 0.0,
+          "time_seconds": 0.0
+        },
+        {
+          "degrees": 65.0,
+          "time_seconds": 0.75
+        },
+        {
+          "degrees": 0.0,
+          "time_seconds": 1.5
+        }
+      ]
+    },
+    {
+      "control": "left_hip_flex",
+      "keys": [
+        {
+          "degrees": 0.0,
+          "time_seconds": 0.0
+        },
+        {
+          "degrees": 20.0,
+          "time_seconds": 0.75
+        },
+        {
+          "degrees": 0.0,
+          "time_seconds": 1.5
+        }
+      ]
+    },
+    {
+      "control": "left_knee_flex",
+      "keys": [
+        {
+          "degrees": 0.0,
+          "time_seconds": 0.0
+        },
+        {
+          "degrees": 45.0,
+          "time_seconds": 0.75
+        },
+        {
+          "degrees": 0.0,
+          "time_seconds": 1.5
+        }
+      ]
+    },
+    {
+      "control": "torso_twist",
+      "keys": [
+        {
+          "degrees": 0.0,
+          "time_seconds": 0.0
+        },
+        {
+          "degrees": 15.0,
+          "time_seconds": 0.75
+        },
+        {
+          "degrees": 0.0,
+          "time_seconds": 1.5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "face-sculpt.blend": "4dd761827a05919179e4ad1829a0d27e7ee4b617546e237ada8a80588410155c",
+    "feature-geometry.json": "ff180a15ff4948db915d963425a0f588cedd7acc44d9f37a894bf22b1b7e0486",
+    "front.png": "509f86fd40bff08ed23a614d7b24dafe7fddf75d99937a355122dd600bf025c1",
+    "manifest.json": "30cce00922ca0dd0d4bb1a208cbc75379c01c49626cd1d91a7d64b3ead2f700e",
+    "profile.png": "0d76a63fc4763d4d513ebe012eb2756b66ac33aa291bb94d6dc5fa53e3bedb39",
+    "three-quarter.png": "571d55b3b2295eac266f9c8662799bdbde0e52bfefd9d0f5b15d3ae4f6d1afa4"
+  },
+  "candidateId": "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8",
+  "decision": "review",
+  "machineId": "research.anatomical-front-fit",
+  "maximumRatioError": 0.02,
+  "mechanicalDecision": "pass",
+  "output": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8",
+  "ratioErrors": {
+    "alarWidth": 0.00012986810059356646,
+    "eyeAperture": 0.004195615828855553,
+    "noseLength": 0.0026365760748789935
+  },
+  "runId": "anatomical-front-fit-v0-20260720-1",
+  "schemaVersion": 1,
+  "totalRatioError": 0.006962060004328113,
+  "visualDecision": "pending-human"
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "cause": "The first held-out packages exposed source identities in image paths (`sculpt-v13`, `round-0`, `round-6`), so evaluator chronology was not blind.",
+  "invalidated": {
+    "primaryPackage": {"path": "Runs/face-search-20260720-032234/final-audit/invalid-leaky-primary-package.json", "sha256": "f891f1ef614979a9596a246ec4f44cf67489f78d795d28a31734cb2e78fc6bde"},
+    "auditPackage": {"path": "Runs/face-search-20260720-032234/final-audit/invalid-leaky-audit-package.json", "sha256": "211fc06b45f61f0ce30741607935cf8c6e3be8f5eafd6cb628a13bdb0032b566"},
+    "primaryRecord": {"path": "Runs/face-search-20260720-032234/final-audit/invalid-leaky-primary-record.json", "sha256": "ba3ae4097d973596cccad8505353d7ef702489a15784a6e83a2cbd5f9900feee"},
+    "auditRecord": {"path": "Runs/face-search-20260720-032234/final-audit/invalid-leaky-audit-record.json", "sha256": "d1c22b54a6d68a23664b31efbefc9b9764a253d463db1df0e3f72171ea2e57d0"}
+  },
+  "correction": "Copy image bytes to neutral evaluator-and-slot-local paths, keep identity only in the hidden slot map, add a no-origin-metadata test, and rerun both evaluators.",
+  "humanAcceptance": false
+}

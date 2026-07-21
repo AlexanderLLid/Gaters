@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "head-native-deformation-comparison/0",
+    "source_run":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\broad-jaw-20260721-150140-635004\\run-1",
+    "command":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\recipes\\widen-jaw-strong.json",
+    "blender":  {
+                    "elapsed_ms":  8417,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\DeformationRuns\\20260721-173509-099\\blender\\deformed-head.blend"
+                },
+    "houdini":  {
+                    "elapsed_ms":  4984,
+                    "scene":  "C:\\repos\\Gaters\\research\\procedural-head-machine\\DeformationRuns\\20260721-173509-099\\houdini\\deformed-head.hipnc"
+                }
+}

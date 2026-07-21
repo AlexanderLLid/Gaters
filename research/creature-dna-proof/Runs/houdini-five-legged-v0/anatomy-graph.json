@@ -1,0 +1,613 @@
+{
+  "bones": [
+    {
+      "child_joint": "body.front",
+      "id": "body.root-front",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "body.back",
+      "id": "body.root-back",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "head.base",
+      "id": "head.base",
+      "parent_joint": "body.front"
+    },
+    {
+      "child_joint": "head.mid",
+      "id": "head.mid",
+      "parent_joint": "head.base"
+    },
+    {
+      "child_joint": "head.tip",
+      "id": "head.tip",
+      "parent_joint": "head.mid"
+    },
+    {
+      "child_joint": "tail.0",
+      "id": "tail.0",
+      "parent_joint": "body.back"
+    },
+    {
+      "child_joint": "tail.1",
+      "id": "tail.1",
+      "parent_joint": "tail.0"
+    },
+    {
+      "child_joint": "tail.2",
+      "id": "tail.2",
+      "parent_joint": "tail.1"
+    },
+    {
+      "child_joint": "tail.3",
+      "id": "tail.3",
+      "parent_joint": "tail.2"
+    },
+    {
+      "child_joint": "legs.0.hip",
+      "id": "legs.0.hip",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "legs.0.knee",
+      "id": "legs.0.knee",
+      "parent_joint": "legs.0.hip"
+    },
+    {
+      "child_joint": "legs.0.ankle",
+      "id": "legs.0.ankle",
+      "parent_joint": "legs.0.knee"
+    },
+    {
+      "child_joint": "legs.0.toe",
+      "id": "legs.0.toe",
+      "parent_joint": "legs.0.ankle"
+    },
+    {
+      "child_joint": "legs.1.hip",
+      "id": "legs.1.hip",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "legs.1.knee",
+      "id": "legs.1.knee",
+      "parent_joint": "legs.1.hip"
+    },
+    {
+      "child_joint": "legs.1.ankle",
+      "id": "legs.1.ankle",
+      "parent_joint": "legs.1.knee"
+    },
+    {
+      "child_joint": "legs.1.toe",
+      "id": "legs.1.toe",
+      "parent_joint": "legs.1.ankle"
+    },
+    {
+      "child_joint": "legs.2.hip",
+      "id": "legs.2.hip",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "legs.2.knee",
+      "id": "legs.2.knee",
+      "parent_joint": "legs.2.hip"
+    },
+    {
+      "child_joint": "legs.2.ankle",
+      "id": "legs.2.ankle",
+      "parent_joint": "legs.2.knee"
+    },
+    {
+      "child_joint": "legs.2.toe",
+      "id": "legs.2.toe",
+      "parent_joint": "legs.2.ankle"
+    },
+    {
+      "child_joint": "legs.3.hip",
+      "id": "legs.3.hip",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "legs.3.knee",
+      "id": "legs.3.knee",
+      "parent_joint": "legs.3.hip"
+    },
+    {
+      "child_joint": "legs.3.ankle",
+      "id": "legs.3.ankle",
+      "parent_joint": "legs.3.knee"
+    },
+    {
+      "child_joint": "legs.3.toe",
+      "id": "legs.3.toe",
+      "parent_joint": "legs.3.ankle"
+    },
+    {
+      "child_joint": "legs.4.hip",
+      "id": "legs.4.hip",
+      "parent_joint": "body.root"
+    },
+    {
+      "child_joint": "legs.4.knee",
+      "id": "legs.4.knee",
+      "parent_joint": "legs.4.hip"
+    },
+    {
+      "child_joint": "legs.4.ankle",
+      "id": "legs.4.ankle",
+      "parent_joint": "legs.4.knee"
+    },
+    {
+      "child_joint": "legs.4.toe",
+      "id": "legs.4.toe",
+      "parent_joint": "legs.4.ankle"
+    }
+  ],
+  "intent": {
+    "bilateral_pairs": [],
+    "contacts": [
+      "legs.0.toe",
+      "legs.1.toe",
+      "legs.2.toe",
+      "legs.3.toe",
+      "legs.4.toe"
+    ]
+  },
+  "joints": [
+    {
+      "id": "body.root",
+      "module": "body",
+      "position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.68,
+      "role": "root",
+      "side": "center"
+    },
+    {
+      "id": "body.front",
+      "module": "body",
+      "position_m": [
+        1.4,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.544,
+      "role": "front",
+      "side": "center"
+    },
+    {
+      "id": "body.back",
+      "module": "body",
+      "position_m": [
+        -1.4,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.51,
+      "role": "back",
+      "side": "center"
+    },
+    {
+      "id": "head.base",
+      "module": "head",
+      "position_m": [
+        1.535,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.42,
+      "role": "base",
+      "side": "center"
+    },
+    {
+      "id": "head.mid",
+      "module": "head",
+      "position_m": [
+        1.94,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.204,
+      "role": "mid",
+      "side": "center"
+    },
+    {
+      "id": "head.tip",
+      "module": "head",
+      "position_m": [
+        2.3,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.06,
+      "role": "tip",
+      "side": "center"
+    },
+    {
+      "id": "tail.0",
+      "module": "tail",
+      "position_m": [
+        -1.85,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.3925,
+      "role": "tail",
+      "side": "center"
+    },
+    {
+      "id": "tail.1",
+      "module": "tail",
+      "position_m": [
+        -2.3,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.275,
+      "role": "tail",
+      "side": "center"
+    },
+    {
+      "id": "tail.2",
+      "module": "tail",
+      "position_m": [
+        -2.75,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.1575,
+      "role": "tail",
+      "side": "center"
+    },
+    {
+      "id": "tail.3",
+      "module": "tail",
+      "position_m": [
+        -3.2,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "role": "tail",
+      "side": "center"
+    },
+    {
+      "id": "legs.0.hip",
+      "module": "legs.0",
+      "position_m": [
+        -0.85,
+        0.55,
+        0.0
+      ],
+      "radius_m": 0.176,
+      "role": "hip",
+      "side": "left"
+    },
+    {
+      "id": "legs.0.knee",
+      "module": "legs.0",
+      "position_m": [
+        -0.762,
+        0.638,
+        -0.495
+      ],
+      "radius_m": 0.132,
+      "role": "knee",
+      "side": "left"
+    },
+    {
+      "id": "legs.0.ankle",
+      "module": "legs.0",
+      "position_m": [
+        -0.85,
+        0.594,
+        -0.968
+      ],
+      "radius_m": 0.088,
+      "role": "ankle",
+      "side": "left"
+    },
+    {
+      "id": "legs.0.toe",
+      "module": "legs.0",
+      "position_m": [
+        -0.652,
+        0.594,
+        -1.1
+      ],
+      "radius_m": 0.066,
+      "role": "toe",
+      "side": "left"
+    },
+    {
+      "id": "legs.1.hip",
+      "module": "legs.1",
+      "position_m": [
+        0.65,
+        0.55,
+        0.0
+      ],
+      "radius_m": 0.176,
+      "role": "hip",
+      "side": "left"
+    },
+    {
+      "id": "legs.1.knee",
+      "module": "legs.1",
+      "position_m": [
+        0.738,
+        0.638,
+        -0.495
+      ],
+      "radius_m": 0.132,
+      "role": "knee",
+      "side": "left"
+    },
+    {
+      "id": "legs.1.ankle",
+      "module": "legs.1",
+      "position_m": [
+        0.65,
+        0.594,
+        -0.968
+      ],
+      "radius_m": 0.088,
+      "role": "ankle",
+      "side": "left"
+    },
+    {
+      "id": "legs.1.toe",
+      "module": "legs.1",
+      "position_m": [
+        0.848,
+        0.594,
+        -1.1
+      ],
+      "radius_m": 0.066,
+      "role": "toe",
+      "side": "left"
+    },
+    {
+      "id": "legs.2.hip",
+      "module": "legs.2",
+      "position_m": [
+        -0.85,
+        -0.55,
+        0.0
+      ],
+      "radius_m": 0.176,
+      "role": "hip",
+      "side": "right"
+    },
+    {
+      "id": "legs.2.knee",
+      "module": "legs.2",
+      "position_m": [
+        -0.762,
+        -0.638,
+        -0.495
+      ],
+      "radius_m": 0.132,
+      "role": "knee",
+      "side": "right"
+    },
+    {
+      "id": "legs.2.ankle",
+      "module": "legs.2",
+      "position_m": [
+        -0.85,
+        -0.594,
+        -0.968
+      ],
+      "radius_m": 0.088,
+      "role": "ankle",
+      "side": "right"
+    },
+    {
+      "id": "legs.2.toe",
+      "module": "legs.2",
+      "position_m": [
+        -0.652,
+        -0.594,
+        -1.1
+      ],
+      "radius_m": 0.066,
+      "role": "toe",
+      "side": "right"
+    },
+    {
+      "id": "legs.3.hip",
+      "module": "legs.3",
+      "position_m": [
+        0.65,
+        -0.55,
+        0.0
+      ],
+      "radius_m": 0.176,
+      "role": "hip",
+      "side": "right"
+    },
+    {
+      "id": "legs.3.knee",
+      "module": "legs.3",
+      "position_m": [
+        0.738,
+        -0.638,
+        -0.495
+      ],
+      "radius_m": 0.132,
+      "role": "knee",
+      "side": "right"
+    },
+    {
+      "id": "legs.3.ankle",
+      "module": "legs.3",
+      "position_m": [
+        0.65,
+        -0.594,
+        -0.968
+      ],
+      "radius_m": 0.088,
+      "role": "ankle",
+      "side": "right"
+    },
+    {
+      "id": "legs.3.toe",
+      "module": "legs.3",
+      "position_m": [
+        0.848,
+        -0.594,
+        -1.1
+      ],
+      "radius_m": 0.066,
+      "role": "toe",
+      "side": "right"
+    },
+    {
+      "id": "legs.4.hip",
+      "module": "legs.4",
+      "position_m": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "radius_m": 0.176,
+      "role": "hip",
+      "side": "center"
+    },
+    {
+      "id": "legs.4.knee",
+      "module": "legs.4",
+      "position_m": [
+        0.088,
+        0.0,
+        -0.595
+      ],
+      "radius_m": 0.132,
+      "role": "knee",
+      "side": "center"
+    },
+    {
+      "id": "legs.4.ankle",
+      "module": "legs.4",
+      "position_m": [
+        0.0,
+        0.0,
+        -1.068
+      ],
+      "radius_m": 0.088,
+      "role": "ankle",
+      "side": "center"
+    },
+    {
+      "id": "legs.4.toe",
+      "module": "legs.4",
+      "position_m": [
+        0.198,
+        0.0,
+        -1.2
+      ],
+      "radius_m": 0.066,
+      "role": "toe",
+      "side": "center"
+    }
+  ],
+  "modules": [
+    {
+      "id": "body",
+      "instance": 0,
+      "type": "torso"
+    },
+    {
+      "id": "head",
+      "instance": 0,
+      "type": "tapered_head"
+    },
+    {
+      "id": "tail",
+      "instance": 0,
+      "type": "tail"
+    },
+    {
+      "attachment_id": "rear_left",
+      "group": "legs",
+      "id": "legs.0",
+      "instance": 0,
+      "side": "left",
+      "type": "leg"
+    },
+    {
+      "attachment_id": "front_left",
+      "group": "legs",
+      "id": "legs.1",
+      "instance": 1,
+      "side": "left",
+      "type": "leg"
+    },
+    {
+      "attachment_id": "rear_right",
+      "group": "legs",
+      "id": "legs.2",
+      "instance": 2,
+      "side": "right",
+      "type": "leg"
+    },
+    {
+      "attachment_id": "front_right",
+      "group": "legs",
+      "id": "legs.3",
+      "instance": 3,
+      "side": "right",
+      "type": "leg"
+    },
+    {
+      "attachment_id": "center",
+      "group": "legs",
+      "id": "legs.4",
+      "instance": 4,
+      "side": "center",
+      "type": "leg"
+    }
+  ],
+  "recipe": {
+    "id": "five-legged-challenge",
+    "seed": 1702,
+    "sha256": "4e43e00e922eab6ebc42a875a193e6266485b82d8e7894879ac297751c10b8a3"
+  },
+  "schema": "anatomy-graph/0",
+  "sockets": [
+    {
+      "accepts": [
+        "tapered_head"
+      ],
+      "id": "body.front",
+      "joint": "body.front"
+    },
+    {
+      "accepts": [
+        "tail"
+      ],
+      "id": "body.back",
+      "joint": "body.back"
+    },
+    {
+      "accepts": [
+        "leg",
+        "wing"
+      ],
+      "id": "body.root",
+      "joint": "body.root"
+    }
+  ],
+  "toolchain": {
+    "compiler": "creature-dna-proof/0",
+    "edition": "licenseCategoryType.Apprentice",
+    "houdini": "22.0.368"
+  }
+}

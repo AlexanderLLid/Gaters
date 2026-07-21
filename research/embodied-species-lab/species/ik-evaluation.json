@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "goalOffsetCentimeters": 10.0,
+  "maximumRootTranslationCentimeters": 0.1,
+  "minimumDrivenDisplacementCentimeters": 5.0,
+  "maximumGoalErrorCentimeters": 2.0,
+  "maximumOppositeFootDisplacementCentimeters": 2.0
+}

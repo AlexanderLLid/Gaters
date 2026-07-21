@@ -1,16 +1,17 @@
 # Prototype Plan
 
 Living greybox brief for what the Unreal prototype must prove. It is not canon and does
-not track implementation status; `research/machines.json` owns that.
+not track implementation status; `research/machines.json` owns that, and the
+[[../.agents/workstreams/README|workstream router]] owns coordination.
 
 ## Current proof
 
 Can the project repeatedly generate a reproducible, streamable, playable world with a
 varied raidable base, then produce evidence that tells us what to improve?
 
-The arrival device is deliberately unspecified while [[questions]] #27 remains open.
-Generation must work for a Gate, Rift, spawn point, ship landing, or test marker without
-changing terrain topology.
+Arrival remains a semantic site while [[questions]] #28 keeps exact Rift arrival open.
+Generation must work for an Anchor region, Rift arrival, spawn point, ship landing, or
+test marker without changing terrain topology.
 
 ## Proof slices
 
@@ -24,17 +25,6 @@ changing terrain topology.
    rigs, and motion without changing world or gameplay identity.
 5. **Research loop** — held-out seeds, immutable run evidence, independent evaluators,
    and champion/challenger promotion make each machine improvable in isolation.
-
-## Priority
-
-- Primary Builder: world/runtime contracts and integration.
-- Base & Raid Lab: physical validity, tactical evaluation, and base variety.
-- Combat & Classes: the capability envelope bases must support.
-- Asset pipeline: enough contracted content to falsify integration assumptions.
-- Scale & Persistence: budgets and high-risk experiments, not production networking.
-
-Art and lore may explore in parallel but do not block these proofs until the human
-selects a decision that changes a contract.
 
 ## Human checks machines cannot promote alone
 

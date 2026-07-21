@@ -1,0 +1,23 @@
+{
+  "decision": "promote-single-picture-depth-relief",
+  "depthRmse": 5.012862156153634e-09,
+  "evidence": {
+    "blendSha256": "8ce6486c1892883b678e5d5920fe12e259e57c36aef9e58062c4efe2abec6e01",
+    "manifestSha256": "0be25cb41ecd7af35d29223da941ee1f095208d0dabc74b090c3fc5c9b44fd8d",
+    "verifierSha256": "b16ad4d54829e134467c484bc754d6746fb7efcba81c842f6df5c0447cd86b7b"
+  },
+  "gates": {
+    "boundedEdgeStretch": true,
+    "depthRmse": true,
+    "finiteCoordinates": true,
+    "imagePlaneCoordinates": true,
+    "nonDegenerateFaces": true,
+    "topology": true
+  },
+  "imagePlaneCoordinatesUnchanged": true,
+  "maximumEdgeStretch": 1.3027551076167212,
+  "minimumFaceArea": 0.002025000751018524,
+  "promoted": true,
+  "schemaVersion": 1,
+  "topologyUnchanged": true
+}

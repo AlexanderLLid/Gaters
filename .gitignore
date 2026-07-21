@@ -27,3 +27,6 @@ Saved/
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Art Direction derived look-development evidence
+/research/character-style-exploration/blender-face-proof/Derived/

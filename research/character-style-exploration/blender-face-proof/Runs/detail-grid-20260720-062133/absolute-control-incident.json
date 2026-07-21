@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-10-detail-absolute-controls-were-additive",
+  "status": "invalid-for-promotion",
+  "runId": "detail-grid-20260720-062133",
+  "reason": "The source blend already contained mouth.width and nose.pointDown shape keys. Loading the same targets again created active .001 copies, so the declared absolute values were applied additively.",
+  "evidence": ["mouth.width.001", "nose.pointDown.001"],
+  "replacement": "Directly assign the existing source shape keys and reject any active numbered duplicate in fresh-open integrity checks."
+}

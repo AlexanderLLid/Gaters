@@ -1,0 +1,10 @@
+{
+  "curve_count": 29,
+  "edition": "licenseCategoryType.Apprentice",
+  "expected_bone_count": 29,
+  "expected_joint_count": 30,
+  "failures": [],
+  "houdini": "22.0.368",
+  "passed": true,
+  "point_count": 30
+}

@@ -1,0 +1,11 @@
+{
+  "failures": [],
+  "metrics": {
+    "max_active_delta_m": 0.009696089764745508,
+    "max_position_error_m": 3.861904310694434e-09,
+    "max_protected_delta_m": 3.801888007812437e-09,
+    "max_region_delta": 2.2706531210836545e-08
+  },
+  "passed": true,
+  "schema": "head-deformation-verification/0"
+}

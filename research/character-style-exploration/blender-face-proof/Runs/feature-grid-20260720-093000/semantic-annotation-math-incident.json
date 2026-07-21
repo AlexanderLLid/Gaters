@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-8-target-feature-annotation-uncertainty-math-mismatch",
+  "invalidatedRunIds": ["feature-grid-20260720-093000"],
+  "reason": "The uncertainty ratios used Euclidean eye-center distance although the declared evaluator uses horizontal eye-center distance. Three build receipts remain append-only; no metric or selection may use this run."
+}

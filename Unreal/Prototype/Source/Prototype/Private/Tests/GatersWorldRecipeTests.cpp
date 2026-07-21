@@ -21,7 +21,7 @@ bool FGatersWorldRecipeCanonicalTest::RunTest(const FString& Parameters)
 	const FGatersWorldRecipe Other = FGatersWorldRecipe::Generate(
 		74, ChunkSize, 6000.f, 10800.f, 900.f, 350.f);
 
-	TestEqual(TEXT("stream-safe content identity advances generator identity"), A.GeneratorVersion, 10);
+	TestEqual(TEXT("arrival recipe semantics advance generator identity"), A.GeneratorVersion, 12);
 	TestEqual(TEXT("identical inputs produce identical canonical text"),
 		A.CanonicalText(), B.CanonicalText());
 	TestEqual(TEXT("identical inputs produce identical checksums"), A.Checksum(), B.Checksum());
@@ -75,20 +75,20 @@ bool FGatersWorldRecipeNodesTest::RunTest(const FString& Parameters)
 	const FGatersWorldRecipe Same = FGatersWorldRecipe::Generate(
 		73, 30000.f, 6000.f, 10800.f, 900.f, 350.f);
 
-	TestEqual(TEXT("valid recipe contains Gate and BaseSite nodes"), Recipe.Nodes.Num(), 2);
+	TestEqual(TEXT("valid recipe contains Arrival and BaseSite nodes"), Recipe.Nodes.Num(), 2);
 	TestEqual(TEXT("same seed preserves first node ID"), Recipe.Nodes[0].Id, Same.Nodes[0].Id);
 	TestEqual(TEXT("same seed preserves second node ID"), Recipe.Nodes[1].Id, Same.Nodes[1].Id);
 
-	const FGatersRecipeNode* Gate = Recipe.FindNode(TEXT("gate:0"));
+	const FGatersRecipeNode* Arrival = Recipe.FindNode(TEXT("arrival:0"));
 	const FGatersRecipeNode* Base = Recipe.FindNode(TEXT("base:0"));
-	TestNotNull(TEXT("recipe has a stable Gate node"), Gate);
+	TestNotNull(TEXT("recipe has a stable Arrival node"), Arrival);
 	TestNotNull(TEXT("recipe has a stable BaseSite node"), Base);
-	if (!Gate || !Base)
+	if (!Arrival || !Base)
 	{
 		return false;
 	}
-	TestEqual(TEXT("Gate node has Gate kind"), Gate->Kind, EGatersRecipeNodeKind::Gate);
-	TestEqual(TEXT("Gate node is at local origin"), Gate->Location, FVector::ZeroVector);
+	TestEqual(TEXT("Arrival node has Arrival kind"), Arrival->Kind, EGatersRecipeNodeKind::Arrival);
+	TestEqual(TEXT("Arrival node is at local origin"), Arrival->Location, FVector::ZeroVector);
 	TestEqual(TEXT("BaseSite node has BaseSite kind"), Base->Kind, EGatersRecipeNodeKind::BaseSite);
 	TestEqual(TEXT("BaseSite node records recipe X"), Base->Location.X, Recipe.BaseSite.X);
 	TestEqual(TEXT("BaseSite node records recipe Y"), Base->Location.Y, Recipe.BaseSite.Y);
@@ -128,12 +128,12 @@ bool FGatersWorldRecipeValidationTest::RunTest(const FString& Parameters)
 	const FGatersRecipeNode DuplicateNode = Duplicate.Nodes[0];
 	Duplicate.Nodes.Add(DuplicateNode);
 	TestFalse(TEXT("duplicate stable IDs are rejected"), Duplicate.Validate(Errors));
-	TestTrue(TEXT("duplicate diagnostic names the ID"), HasError(Errors, TEXT("duplicate node id gate:0")));
+	TestTrue(TEXT("duplicate diagnostic names the ID"), HasError(Errors, TEXT("duplicate node id arrival:0")));
 
-	FGatersWorldRecipe MissingGate = Valid;
-	MissingGate.Nodes.RemoveAt(0);
-	TestFalse(TEXT("missing Gate is rejected"), MissingGate.Validate(Errors));
-	TestTrue(TEXT("missing Gate diagnostic states cardinality"), HasError(Errors, TEXT("exactly one Gate node")));
+	FGatersWorldRecipe MissingArrival = Valid;
+	MissingArrival.Nodes.RemoveAt(0);
+	TestFalse(TEXT("missing Arrival is rejected"), MissingArrival.Validate(Errors));
+	TestTrue(TEXT("missing Arrival diagnostic states cardinality"), HasError(Errors, TEXT("exactly one Arrival node")));
 
 	FGatersWorldRecipe MismatchedBase = Valid;
 	MismatchedBase.Nodes[1].Location.X += 1.f;
@@ -145,7 +145,7 @@ bool FGatersWorldRecipeValidationTest::RunTest(const FString& Parameters)
 	NonFinite.Nodes[0].Location.X = std::numeric_limits<double>::quiet_NaN();
 	TestFalse(TEXT("non-finite node location is rejected"), NonFinite.Validate(Errors));
 	TestTrue(TEXT("non-finite diagnostic names the node"),
-		HasError(Errors, TEXT("node gate:0 has non-finite location")));
+		HasError(Errors, TEXT("node arrival:0 has non-finite location")));
 	return true;
 }
 
@@ -164,6 +164,12 @@ bool FGatersWorldRecipeContentKindsTest::RunTest(const FString& Parameters)
 	Recipe.Nodes.Add({TEXT("plot:3"), EGatersRecipeNodeKind::BuildPlot, FVector(70, 80, 90)});
 	Recipe.Nodes.Add({TEXT("site:village:0"), EGatersRecipeNodeKind::VillageSite, FVector(100, 110, 120)});
 	Recipe.Nodes.Add({TEXT("site:landmark:0"), EGatersRecipeNodeKind::LandmarkSite, FVector(130, 140, 150)});
+	FGatersRecipeNode Module{
+		TEXT("settlement:building:home:0:module:wall:0"),
+		EGatersRecipeNodeKind::SettlementModule,
+		FVector(140, 150, 160)};
+	Module.ContentKey = TEXT("building.wall");
+	Recipe.Nodes.Add(Module);
 	FGatersRecipeNode RoutePoint{
 		TEXT("route:arrival-village:0"), EGatersRecipeNodeKind::RouteWaypoint, FVector(160, 170, 180)};
 	RoutePoint.ContentKey = TEXT("route:arrival-village");
@@ -174,6 +180,8 @@ bool FGatersWorldRecipeContentKindsTest::RunTest(const FString& Parameters)
 	TestNotNull(TEXT("plot node is addressable"), Recipe.FindNode(TEXT("plot:3")));
 	TestNotNull(TEXT("village site is addressable"), Recipe.FindNode(TEXT("site:village:0")));
 	TestNotNull(TEXT("landmark site is addressable"), Recipe.FindNode(TEXT("site:landmark:0")));
+	TestNotNull(TEXT("building module is addressable"),
+		Recipe.FindNode(TEXT("settlement:building:home:0:module:wall:0")));
 	TestNotNull(TEXT("route waypoint is addressable"),
 		Recipe.FindNode(TEXT("route:arrival-village:0")));
 	TestNotEqual(TEXT("content nodes contribute to canonical identity"),

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "identity": "face_sculptor",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "Mechanically build both immutable round-3 cheek_definition candidates from the fixed source; use --python-exit-code 1; preserve UTF-8 logs; fresh-reopen verify; require exit and marker checks; do not change parameters or judge quality.",
+  "response": {
+    "failureDiagnosis": null,
+    "candidates": [
+      {"candidateId": "cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c", "buildExit": 0, "verifierExit": 0, "buildMarker": true, "verifierMarker": true, "buildLog": {"path": "Runs/face-search-20260720-032234/round-3/logs/cdc3fb62-build.log", "sha256": "8a68598169b43b32d89589d23b48083c43535aa024c5520c14bbd5378914db11"}, "verifierLog": {"path": "Runs/face-search-20260720-032234/round-3/logs/cdc3fb62-verify.log", "sha256": "52da59d3eb0c94637b2aff50dd3475b9b1b1118c5c722f1e8bedfb4e16c39ba6"}, "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-3/cdc3fb622920acad5f7ca7e2af1340ad721954b28e5e93b8ba83ffb5b3d6789c/manifest.json", "sha256": "ed30d7fd2feb3fc7618387c2b1796195d841c558b51af3bebb965bff865cbb33"}},
+      {"candidateId": "23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5", "buildExit": 0, "verifierExit": 0, "buildMarker": true, "verifierMarker": true, "buildLog": {"path": "Runs/face-search-20260720-032234/round-3/logs/23b35012-build.log", "sha256": "443890702cd25a8c6dc5d3f97875575ec38f59b1e83af5299ab70f971fe86f76"}, "verifierLog": {"path": "Runs/face-search-20260720-032234/round-3/logs/23b35012-verify.log", "sha256": "d1a6e3648b3ed8c0e4c797d42b465ba37db6625c496b042b5a7d673a5aaaf1d6"}, "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-3/23b3501262f71db6940975886bf35b4b75699e64a2fb832559da5b06e86b11c5/manifest.json", "sha256": "d1c3f8d979e1f06614e2edb1ac3e3ff7f76f9aa376685b7e7dc0320483c405fd"}}
+    ]
+  },
+  "humanAcceptance": false
+}

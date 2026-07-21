@@ -1,0 +1,28 @@
+{
+  "base_mean_radius": 0.36924524327177993,
+  "boundary_edge_count": 0,
+  "bounds": [
+    [
+      -2.4310887633061946,
+      -0.33703516633699077,
+      -0.8421779658868529
+    ],
+    [
+      0.4044549030049406,
+      0.46896345254778304,
+      1.4063503599880818
+    ]
+  ],
+  "edition": "licenseCategoryType.Apprentice",
+  "houdini": "22.0.368",
+  "minimum_polygon_area": 3.5600223160167664e-05,
+  "nonfinite_point_count": 0,
+  "nonmanifold_edge_count": 0,
+  "passed": true,
+  "point_count": 11200,
+  "polygon_count": 11162,
+  "recipe_id": "ram-horn-v0",
+  "recipe_sha256": "f12a02551af9592f13bad487739384930e58d837262da62786876f9d002e3ca1",
+  "ridge_count": 28,
+  "tip_mean_radius": 0.02429245021524868
+}

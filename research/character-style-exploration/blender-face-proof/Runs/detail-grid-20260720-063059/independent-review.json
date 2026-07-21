@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "reviewerId": "task8_features",
+  "decision": "APPROVED",
+  "blockers": [],
+  "verified": [
+    "Eight unique immutable recipes preserve the Task 9 parent and declared controls.",
+    "All recipe, Task 9 source, selection receipt, and visual-audit hashes match.",
+    "Eight manifests and all build, fresh-open, detail, feature, macro, and three-view artifacts validate.",
+    "All candidates share one scene, camera, and topology lock.",
+    "No active numbered mouth.width or nose.pointDown duplicate exists.",
+    "The invalid macro mouth-width field is absent from scoring and regression gates.",
+    "Both audits support no clear improvement, humanAcceptance is false, machinePromotion is false, and Task 9 remains retained."
+  ],
+  "tests": {"passed": 87, "failed": 0},
+  "summary": "No code or evidence defect observed."
+}

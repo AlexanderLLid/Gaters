@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "controlSet": "gaters.head-silhouette-fit.v1",
+  "sourceBlend": "Derived/style-presentation-v5/face-style-macro.blend",
+  "targetProfile": "target-head-silhouette-v2.json",
+  "parameters": {
+    "chinVertexIndex": 5225,
+    "sidePower": 0.0,
+    "neckFade": 0.6,
+    "profileBinSize": 0.04,
+    "smoothingRadius": 0.14,
+    "minimumValidOuterHeight": 0.15,
+    "validOuterBlend": 0.5,
+    "minimumVerticalHeight": 0.15,
+    "verticalBlend": 0.5,
+    "chinHeightIncrease": 0.7,
+    "chinWidthDecrease": 0.4
+  }
+}

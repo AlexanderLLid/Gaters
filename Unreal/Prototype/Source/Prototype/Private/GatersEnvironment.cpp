@@ -53,6 +53,36 @@ FGatersEnvironment FGatersEnvironment::FromSeed(int32 InSeed, float InChunkSize)
 	return Result;
 }
 
+FGatersEnvironment FGatersEnvironment::WithProfile(
+	const EGatersEnvironment Terrain,
+	const EGatersHydrology InHydrology,
+	const FVector2D& ProcessCoordinateOffset,
+	const float InLocalHydrologyRadius) const
+{
+	FGatersEnvironment Result = *this;
+	Result.Type = Terrain;
+	Result.Hydrology = InHydrology;
+	Result.WaterHeight = InHydrology == EGatersHydrology::Dry
+		? -100000.f
+		: InHydrology == EGatersHydrology::River
+			? -1350.f
+			: -200.f;
+	Result.LandformCoordinateOffset = ProcessCoordinateOffset;
+	Result.LocalHydrologyRadius = InLocalHydrologyRadius;
+	return Result;
+}
+
+FGatersEnvironment FGatersEnvironment::WithLandformProcesses(
+	const FGatersLandformProcessRecipe& Recipe) const
+{
+	check(Recipe.Seed == Seed);
+	check(FMath::IsNearlyEqual(Recipe.WorldSize, ChunkSize, 0.01f));
+	FGatersEnvironment Result = *this;
+	Result.LandformProcesses = Recipe;
+	Result.LandformCoordinateOffset = FVector2D::ZeroVector;
+	return Result;
+}
+
 FVector2D FGatersEnvironment::Rotate(const FVector2D& Point) const
 {
 	const float C = FMath::Cos(RotationRadians);
@@ -63,7 +93,10 @@ FVector2D FGatersEnvironment::Rotate(const FVector2D& Point) const
 FVector2D FGatersEnvironment::LakeCenter(int32 Index) const
 {
 	const float Angle = Phase + (Index == 0 ? 0.f : 2.2f);
-	const float Distance = Index == 0 ? 6500.f : 10500.f;
+	const float BaseDistance = Index == 0 ? 6500.f : 10500.f;
+	const float Distance = LocalHydrologyRadius > 0.f
+		? FMath::Min(BaseDistance, LocalHydrologyRadius * 0.55f)
+		: BaseDistance;
 	return FVector2D(FMath::Cos(Angle) * Distance, FMath::Sin(Angle) * Distance);
 }
 
@@ -126,14 +159,29 @@ float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 
 	case EGatersEnvironment::Archipelago:
 	{
-		const FVector2D P = Rotate(Point);
-		const float ArrivalMass = 1.f - FMath::SmoothStep(
-			3500.f, 9200.f, static_cast<float>(P.Size()));
-		const FVector2D BaseShelfCenter(
-			FMath::Cos(Phase) * 6500.f, FMath::Sin(Phase) * 6500.f);
-		const float BaseShelfMass = 1.f - FMath::SmoothStep(
-			1600.f, 2800.f, static_cast<float>((P - BaseShelfCenter).Size()));
-		float LandMass = FMath::Max(ArrivalMass, BaseShelfMass);
+		const auto WarpAt = [this](const FVector2D& Sample)
+		{
+			return FVector2D(
+				Fractal(Sample + FVector2D(21000.f, -13000.f), 0.000075f, 2),
+				Fractal(Sample + FVector2D(-17000.f, 26000.f), 0.000075f, 2));
+		};
+		const FVector2D WarpedPoint = Point + (WarpAt(Point) - WarpAt(FVector2D::ZeroVector))
+			* 2200.f;
+		const FVector2D P = Rotate(WarpedPoint);
+		const auto IrregularMass = [this, &Point, &P](
+			const FVector2D& Center, float InnerRadius, float OuterRadius, uint32 Salt)
+		{
+			const FVector2D NoiseShift(
+				FMath::Lerp(-31000.f, 31000.f, SeedUnit(Seed, Salt)),
+				FMath::Lerp(-31000.f, 31000.f, SeedUnit(Seed, Salt + 1u)));
+			const float EdgeNoise = Fractal(
+				Point + NoiseShift, 2.f / FMath::Max(OuterRadius, 1.f), 3);
+			const float Distance = static_cast<float>((P - Center).Size())
+				+ EdgeNoise * OuterRadius * 0.65f;
+			return 1.f - FMath::SmoothStep(InnerRadius, OuterRadius, Distance);
+		};
+		float LandMass = IrregularMass(
+			FVector2D::ZeroVector, 6200.f, 10200.f, 101u);
 		const int32 SatelliteCount = 1 + static_cast<int32>(
 			FMath::Fmod(FMath::Abs(static_cast<double>(ScrambleSeed(Seed))), 3.0));
 		for (int32 IslandIndex = 0; IslandIndex < SatelliteCount; ++IslandIndex)
@@ -142,14 +190,14 @@ float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 			const float EvenSpacing = 2.f * PI * IslandIndex / SatelliteCount;
 			const float Angle = Phase + EvenSpacing
 				+ FMath::Lerp(-0.18f, 0.18f, SeedUnit(Seed, Salt));
-			const float Distance = FMath::Lerp(12000.f, 13000.f, SeedUnit(Seed, Salt + 1u));
+			const float Distance = FMath::Lerp(14000.f, 15000.f, SeedUnit(Seed, Salt + 1u));
 			const float InnerRadius = FMath::Lerp(1800.f, 2500.f, SeedUnit(Seed, Salt + 2u));
 			const float OuterRadius = InnerRadius
 				+ FMath::Lerp(1400.f, 2000.f, SeedUnit(Seed, Salt + 3u));
 			const FVector2D Center(
 				FMath::Cos(Angle) * Distance, FMath::Sin(Angle) * Distance);
-			const float IslandMass = 1.f - FMath::SmoothStep(
-				InnerRadius, OuterRadius, static_cast<float>((P - Center).Size()));
+			const float IslandMass = IrregularMass(
+				Center, InnerRadius, OuterRadius, Salt + 20u);
 			LandMass = FMath::Max(LandMass, IslandMass);
 		}
 		const float CoastVariation = Fractal(
@@ -160,20 +208,46 @@ float FGatersEnvironment::HeightAt(const FVector2D& Point) const
 	}
 	}
 
+	if (LandformProcesses.IsSet())
+	{
+		BaseHeight = FGatersLandformProcessField::Query(
+			LandformProcesses.GetValue(),
+			Point + LandformCoordinateOffset,
+			BaseHeight).Height;
+	}
+
 	if (Hydrology == EGatersHydrology::Lakes)
 	{
-		// Lakes are terrain depressions, not a world-wide flood. Two broad,
-		// deterministic basins keep water local while remaining asset-free.
-		const FVector2D LakeA = LakeCenter(0);
-		const FVector2D LakeB = LakeCenter(1);
-		const float BasinA = 1.f - FMath::SmoothStep(1700.f, 3600.f,
-			static_cast<float>((Point - LakeA).Size()));
-		const float BasinB = 1.f - FMath::SmoothStep(1400.f, 3100.f,
-			static_cast<float>((Point - LakeB).Size()));
+		// Terrain and surfaces consume the same lake footprints. Regional profiles
+		// scale those footprints to their declared region; global lakes stay unchanged.
+		const TArray<FGatersWaterSurface> Lakes = WaterSurfaces();
+		const float InnerA = LocalHydrologyRadius > 0.f
+			? Lakes[0].HalfExtent * 0.55f : 1700.f;
+		const float InnerB = LocalHydrologyRadius > 0.f
+			? Lakes[1].HalfExtent * 0.55f : 1400.f;
+		const float BasinA = 1.f - FMath::SmoothStep(
+			InnerA, Lakes[0].HalfExtent,
+			static_cast<float>((Point - Lakes[0].Center).Size()));
+		const float BasinB = 1.f - FMath::SmoothStep(
+			InnerB, Lakes[1].HalfExtent,
+			static_cast<float>((Point - Lakes[1].Center).Size()));
 		const float Basin = FMath::Max(BasinA, BasinB);
 		const float LakeFloor = WaterHeight - 120.f
 			+ Fractal(Point + FVector2D(4100.f, 2300.f), 0.0004f, 2) * 45.f;
 		BaseHeight = FMath::Lerp(BaseHeight, FMath::Min(BaseHeight, LakeFloor), Basin);
+	}
+	else if (Hydrology == EGatersHydrology::River)
+	{
+		// River hydrology is orthogonal to terrain family. Canyon terrain already
+		// supplies a deep channel; other families still need terrain below the datum.
+		const FVector2D P = Rotate(Point);
+		const float CenterY = FMath::Sin(P.X * 0.00042f + Phase) * 1800.f;
+		const float Distance = FMath::Abs(P.Y - CenterY);
+		const float Channel = 1.f - FMath::SmoothStep(2200.f, 4200.f, Distance);
+		const float RiverFloor = WaterHeight - 120.f
+			+ Fractal(Point + FVector2D(-2700.f, 5900.f), 0.0005f, 2) * 35.f;
+		BaseHeight = FMath::Lerp(
+			BaseHeight, FMath::Min(BaseHeight, RiverFloor), Channel);
 	}
 	return BaseHeight;
 }
@@ -259,7 +333,11 @@ TArray<FGatersWaterSurface> FGatersEnvironment::WaterSurfaces() const
 {
 	if (Hydrology == EGatersHydrology::Lakes)
 	{
-		return { { LakeCenter(0), 3600.f }, { LakeCenter(1), 3100.f } };
+		const float LakeAExtent = LocalHydrologyRadius > 0.f
+			? FMath::Min(3600.f, LocalHydrologyRadius * 0.35f) : 3600.f;
+		const float LakeBExtent = LocalHydrologyRadius > 0.f
+			? FMath::Min(3100.f, LocalHydrologyRadius * 0.35f) : 3100.f;
+		return { { LakeCenter(0), LakeAExtent }, { LakeCenter(1), LakeBExtent } };
 	}
 	if (HasWater())
 	{

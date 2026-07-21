@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "task10_visual_audit_a",
+  "visibleSlots": ["X", "A", "B", "C"],
+  "rank": ["C", "B", "X", "A"],
+  "clearImprovementOverX": false,
+  "hardRegressions": [],
+  "summary": "C is marginally preferable, but B, X, and A are near-tied and no challenger is a clear likeness improvement.",
+  "largestRemainingMismatches": [
+    "Eye openings remain too vertically narrow and slit-like.",
+    "Nose remains too narrow, pinched, and downward-pointed.",
+    "Visible mouth remains short with a straight seam, weak Cupid bow, and uniform projecting lower lip."
+  ]
+}

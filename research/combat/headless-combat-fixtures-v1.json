@@ -1,0 +1,228 @@
+{
+  "contractVersion": 1,
+  "fixtureVersion": 1,
+  "provisional": true,
+  "runTunables": {
+    "tickSeconds": 1,
+    "stallTicks": 4,
+    "timeLimitTicks": 40
+  },
+  "traversalEnvelopes": [
+    {
+      "id": "ground-baseline",
+      "version": 1,
+      "capsuleRadiusCm": 45,
+      "capsuleHeightCm": 180,
+      "perTickMoveDistanceCm": 150,
+      "maxStepCm": 100,
+      "maxJumpGapCm": 120,
+      "maxJumpRiseCm": 100
+    }
+  ],
+  "capabilityProfiles": [
+    {
+      "id": "attacker-baseline",
+      "version": 1,
+      "side": "attacker",
+      "traversalEnvelopeId": "ground-baseline",
+      "traversalEnvelopeVersion": 1,
+      "mask": {
+        "maximum": 36,
+        "raidDrainPerTick": 1,
+        "homeRechargePerTick": 0,
+        "defence": 1
+      },
+      "attackModes": [
+        {
+          "id": "attacker-shot",
+          "version": 1,
+          "rangeCm": 250,
+          "cooldownTicks": 1,
+          "requiresSight": true,
+          "damage": {
+            "agent": 8,
+            "structure": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "defender-baseline",
+      "version": 1,
+      "side": "defender",
+      "traversalEnvelopeId": "ground-baseline",
+      "traversalEnvelopeVersion": 1,
+      "mask": {
+        "maximum": 16,
+        "raidDrainPerTick": 0,
+        "homeRechargePerTick": 1,
+        "defence": 1
+      },
+      "attackModes": [
+        {
+          "id": "defender-shot",
+          "version": 1,
+          "rangeCm": 250,
+          "cooldownTicks": 1,
+          "requiresSight": true,
+          "damage": {
+            "agent": 6,
+            "structure": 0
+          }
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "runner",
+      "version": 1,
+      "side": "attacker",
+      "priorities": [
+        "extract-carried-loot",
+        "pick-up-loot",
+        "move-next-open-link-on-shortest-objective-route",
+        "breach-next-positive-damage-blocker-on-shortest-objective-route",
+        "attack-defender-when-objective-progress-unavailable"
+      ],
+      "tieBreak": "stable-id"
+    },
+    {
+      "id": "clear",
+      "version": 1,
+      "side": "attacker",
+      "priorities": [
+        "extract-carried-loot",
+        "pick-up-loot",
+        "attack-nearest-reachable-currently-positive-damage-defender",
+        "move-next-open-link-on-shortest-objective-route",
+        "breach-next-positive-damage-blocker-on-shortest-objective-route"
+      ],
+      "tieBreak": "stable-id"
+    },
+    {
+      "id": "hold",
+      "version": 1,
+      "side": "defender",
+      "priorities": [
+        "attack-loot-carrier",
+        "attack-nearest-legal-attacker",
+        "hold-guard-node"
+      ],
+      "tieBreak": "stable-id"
+    },
+    {
+      "id": "intercept",
+      "version": 1,
+      "side": "defender",
+      "priorities": [
+        "attack-loot-carrier",
+        "attack-nearest-legal-attacker",
+        "move-toward-nearest-reachable-attacker"
+      ],
+      "tieBreak": "stable-id"
+    }
+  ],
+  "arenas": [
+    {
+      "id": "open",
+      "version": 1,
+      "nodes": [
+        { "id": "entry", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["entry", "extraction"] },
+        { "id": "approach", "positionCm": { "x": 100, "y": 0, "z": 0 }, "tags": ["approach"] },
+        { "id": "loot", "positionCm": { "x": 200, "y": 0, "z": 0 }, "tags": ["loot"] },
+        { "id": "guard", "positionCm": { "x": 200, "y": 100, "z": 0 }, "tags": ["guard"] }
+      ],
+      "movementLinks": [
+        { "id": "move-entry-approach", "fromNodeId": "entry", "toNodeId": "approach", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-approach-entry", "fromNodeId": "approach", "toNodeId": "entry", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-approach-loot", "fromNodeId": "approach", "toNodeId": "loot", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-loot-approach", "fromNodeId": "loot", "toNodeId": "approach", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-guard-loot", "fromNodeId": "guard", "toNodeId": "loot", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-loot-guard", "fromNodeId": "loot", "toNodeId": "guard", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] }
+      ],
+      "sightLinks": [
+        { "id": "sight-approach-guard", "fromNodeId": "approach", "toNodeId": "guard", "distanceCm": 141, "blockerIds": [] },
+        { "id": "sight-guard-approach", "fromNodeId": "guard", "toNodeId": "approach", "distanceCm": 141, "blockerIds": [] },
+        { "id": "sight-loot-guard", "fromNodeId": "loot", "toNodeId": "guard", "distanceCm": 100, "blockerIds": [] },
+        { "id": "sight-guard-loot", "fromNodeId": "guard", "toNodeId": "loot", "distanceCm": 100, "blockerIds": [] }
+      ],
+      "structures": [],
+      "agents": [
+        { "id": "attacker-a", "side": "attacker", "startNodeId": "entry", "profileId": "attacker-baseline", "profileVersion": 1 },
+        { "id": "defender-a", "side": "defender", "startNodeId": "guard", "guardNodeId": "guard", "profileId": "defender-baseline", "profileVersion": 1 }
+      ],
+      "objective": { "lootId": "loot-a", "lootNodeId": "loot", "extractionNodeId": "entry" }
+    },
+    {
+      "id": "fortified",
+      "version": 1,
+      "nodes": [
+        { "id": "entry", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["entry", "extraction"] },
+        { "id": "approach", "positionCm": { "x": 100, "y": 0, "z": 0 }, "tags": ["approach"] },
+        { "id": "gate", "positionCm": { "x": 200, "y": 0, "z": 0 }, "tags": ["choke"] },
+        { "id": "loot", "positionCm": { "x": 300, "y": 0, "z": 0 }, "tags": ["loot"] },
+        { "id": "guard", "positionCm": { "x": 200, "y": 100, "z": 0 }, "tags": ["guard"] }
+      ],
+      "movementLinks": [
+        { "id": "move-entry-approach", "fromNodeId": "entry", "toNodeId": "approach", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-approach-entry", "fromNodeId": "approach", "toNodeId": "entry", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-approach-gate", "fromNodeId": "approach", "toNodeId": "gate", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": ["wall-a"] },
+        { "id": "move-gate-approach", "fromNodeId": "gate", "toNodeId": "approach", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": ["wall-a"] },
+        { "id": "move-gate-loot", "fromNodeId": "gate", "toNodeId": "loot", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-loot-gate", "fromNodeId": "loot", "toNodeId": "gate", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-guard-gate", "fromNodeId": "guard", "toNodeId": "gate", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] },
+        { "id": "move-gate-guard", "fromNodeId": "gate", "toNodeId": "guard", "lengthCm": 100, "widthCm": 200, "heightCm": 200, "stepCm": 0, "jumpGapCm": 0, "jumpRiseCm": 0, "blockerIds": [] }
+      ],
+      "sightLinks": [
+        { "id": "sight-guard-approach", "fromNodeId": "guard", "toNodeId": "approach", "distanceCm": 141, "blockerIds": [] },
+        { "id": "sight-approach-gate", "fromNodeId": "approach", "toNodeId": "gate", "distanceCm": 100, "blockerIds": [] },
+        { "id": "sight-gate-approach", "fromNodeId": "gate", "toNodeId": "approach", "distanceCm": 100, "blockerIds": [] },
+        { "id": "sight-gate-guard", "fromNodeId": "gate", "toNodeId": "guard", "distanceCm": 100, "blockerIds": [] },
+        { "id": "sight-guard-gate", "fromNodeId": "guard", "toNodeId": "gate", "distanceCm": 100, "blockerIds": [] }
+      ],
+      "structures": [
+        { "id": "wall-a", "nodeId": "gate", "integrity": 18, "defence": 1, "targetable": true }
+      ],
+      "agents": [
+        { "id": "attacker-a", "side": "attacker", "startNodeId": "entry", "profileId": "attacker-baseline", "profileVersion": 1 },
+        { "id": "defender-a", "side": "defender", "startNodeId": "guard", "guardNodeId": "guard", "profileId": "defender-baseline", "profileVersion": 1 }
+      ],
+      "objective": { "lootId": "loot-a", "lootNodeId": "loot", "extractionNodeId": "entry" }
+    },
+    {
+      "id": "sealed",
+      "version": 1,
+      "nodes": [
+        { "id": "entry", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["entry", "extraction"] },
+        { "id": "vault", "positionCm": { "x": 400, "y": 0, "z": 0 }, "tags": ["loot", "guard"] }
+      ],
+      "movementLinks": [
+        { "id": "sealed-route", "fromNodeId": "entry", "toNodeId": "vault", "lengthCm": 400, "widthCm": 20, "heightCm": 20, "stepCm": 300, "jumpGapCm": 300, "jumpRiseCm": 300, "blockerIds": ["sealed-wall"] }
+      ],
+      "sightLinks": [],
+      "structures": [
+        { "id": "sealed-wall", "nodeId": "vault", "integrity": 100, "defence": 100, "targetable": false }
+      ],
+      "agents": [
+        { "id": "attacker-a", "side": "attacker", "startNodeId": "entry", "profileId": "attacker-baseline", "profileVersion": 1 },
+        { "id": "defender-a", "side": "defender", "startNodeId": "vault", "guardNodeId": "vault", "profileId": "defender-baseline", "profileVersion": 1 }
+      ],
+      "objective": { "lootId": "loot-a", "lootNodeId": "vault", "extractionNodeId": "entry" }
+    }
+  ],
+  "acceptanceCases": [
+    { "id": "open-runner-hold", "arenaId": "open", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "success", "terminationReason": "extracted", "decisiveEventType": "loot-extracted" } },
+    { "id": "open-runner-intercept", "arenaId": "open", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "success", "terminationReason": "extracted", "decisiveEventType": "loot-extracted" } },
+    { "id": "open-clear-hold", "arenaId": "open", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "success", "terminationReason": "extracted", "decisiveEventType": "loot-extracted" } },
+    { "id": "open-clear-intercept", "arenaId": "open", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "success", "terminationReason": "extracted", "decisiveEventType": "loot-extracted" } },
+    { "id": "fortified-runner-hold", "arenaId": "fortified", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "attackers-dead", "decisiveEventType": "agent-died" } },
+    { "id": "fortified-runner-intercept", "arenaId": "fortified", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "attackers-dead", "decisiveEventType": "agent-died" } },
+    { "id": "fortified-clear-hold", "arenaId": "fortified", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "attackers-dead", "decisiveEventType": "agent-died" } },
+    { "id": "fortified-clear-intercept", "arenaId": "fortified", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "success", "terminationReason": "extracted", "decisiveEventType": "loot-extracted" } },
+    { "id": "sealed-runner-hold", "arenaId": "sealed", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "no-effective-action", "decisiveEventType": "no-effective-action", "implicatedBlockerIds": ["sealed-wall"], "implicatedLinkIds": ["sealed-route"] } },
+    { "id": "sealed-runner-intercept", "arenaId": "sealed", "arenaVersion": 1, "attackerPolicyId": "runner", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "no-effective-action", "decisiveEventType": "no-effective-action", "implicatedBlockerIds": ["sealed-wall"], "implicatedLinkIds": ["sealed-route"] } },
+    { "id": "sealed-clear-hold", "arenaId": "sealed", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "hold", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "no-effective-action", "decisiveEventType": "no-effective-action", "implicatedBlockerIds": ["sealed-wall"], "implicatedLinkIds": ["sealed-route"] } },
+    { "id": "sealed-clear-intercept", "arenaId": "sealed", "arenaVersion": 1, "attackerPolicyId": "clear", "attackerPolicyVersion": 1, "defenderPolicyId": "intercept", "defenderPolicyVersion": 1, "expected": { "outcome": "failure", "terminationReason": "no-effective-action", "decisiveEventType": "no-effective-action", "implicatedBlockerIds": ["sealed-wall"], "implicatedLinkIds": ["sealed-route"] } }
+  ]
+}

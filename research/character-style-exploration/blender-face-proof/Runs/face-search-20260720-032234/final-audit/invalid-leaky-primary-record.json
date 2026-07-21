@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "primary",
+  "modelIdentity": "gpt-5.6-terra",
+  "package": {"path": "Runs/face-search-20260720-032234/final-audit/primary-package.json", "sha256": "f891f1ef614979a9596a246ec4f44cf67489f78d795d28a31734cb2e78fc6bde"},
+  "instructions": "Inspect only the chronology-blind primary held-out package. Identify visibly unsuitable slots and compare the remaining valid left/right geometry against the target, ignoring all presentation. Do not inspect maps, history, recipes, parameters, IDs, or chronology.",
+  "response": "{\"schemaVersion\":1,\"evaluatorId\":\"primary\",\"rejectSlots\":[\"center\"],\"validPreference\":\"tie\",\"confidence\":0.95,\"hardFailures\":[],\"diagnosis\":[\"Center has an implausibly narrow, vertically stretched skull and lower-face silhouette that departs sharply from the target's grounded mature proportions.\",\"The valid slots are visually equivalent and both retain an overly tapered jaw, narrow chin base, and long narrow nose relative to the target.\"]}",
+  "counterexampleSlot": "center",
+  "rejectCounterexample": true,
+  "initialVsFinal": "tie",
+  "confidence": 0.95,
+  "hardFailures": [],
+  "diagnosis": [
+    "Center has an implausibly narrow, vertically stretched skull and lower-face silhouette that departs sharply from the target's grounded mature proportions.",
+    "The valid slots are visually equivalent and both retain an overly tapered jaw, narrow chin base, and long narrow nose relative to the target."
+  ],
+  "humanAcceptance": false
+}

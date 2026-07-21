@@ -11,6 +11,8 @@
 #include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerController.h"
 #include "GatersChunk.h"
+#include "GatersDebugMessages.h"
+#include "GatersSettlementGenerator.h"
 #include "HAL/IConsoleManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "Misc/CommandLine.h"
@@ -81,10 +83,115 @@ void SwitchSeed(const TArray<FString>& Args, UWorld* World)
 	UGameplayStatics::OpenLevel(World, LevelName);
 }
 
+void SwitchVillageStage(const TArray<FString>& Args, UWorld* World)
+{
+	if (!World || !World->IsGameWorld() || Args.Num() != 1 || !Args[0].IsNumeric())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Usage: Gaters.VillageStage <0|1|2>"));
+		return;
+	}
+	const int32 Stage = FCString::Atoi(*Args[0]);
+	if (!FGatersSettlementGenerator::IsSupportedGrowthStage(Stage))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Usage: Gaters.VillageStage <0|1|2>"));
+		return;
+	}
+	const FString StagePath = FPaths::ProjectSavedDir() / TEXT("TestVillageStage.txt");
+	if (!FFileHelper::SaveStringToFile(FString::FromInt(Stage), *StagePath))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Gaters.VillageStage could not write %s"), *StagePath);
+		return;
+	}
+	const FName LevelName(*UGameplayStatics::GetCurrentLevelName(World, true));
+	UE_LOG(LogTemp, Display, TEXT("Gaters.VillageStage loading stage=%d level=%s"),
+		Stage, *LevelName.ToString());
+	UGameplayStatics::OpenLevel(World, LevelName);
+}
+
+void SwitchBuiltSites(const TArray<FString>& Args, UWorld* World)
+{
+	if (!World || !World->IsGameWorld() || Args.Num() != 1 ||
+		(Args[0] != TEXT("0") && Args[0] != TEXT("1")))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Usage: Gaters.BuiltSites <0|1>"));
+		return;
+	}
+	const FString ModePath = FPaths::ProjectSavedDir() / TEXT("TestBuiltSites.txt");
+	if (!FFileHelper::SaveStringToFile(Args[0], *ModePath))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Gaters.BuiltSites could not write %s"), *ModePath);
+		return;
+	}
+	const FName LevelName(*UGameplayStatics::GetCurrentLevelName(World, true));
+	UE_LOG(LogTemp, Display, TEXT("Gaters.BuiltSites loading enabled=%s level=%s"),
+		*Args[0], *LevelName.ToString());
+	UGameplayStatics::OpenLevel(World, LevelName);
+}
+
+void SwitchLandforms(const TArray<FString>& Args, UWorld* World)
+{
+	if (!World || !World->IsGameWorld() || Args.Num() != 1
+		|| (Args[0] != TEXT("0") && Args[0] != TEXT("1")))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Usage: Gaters.Landforms <0|1>"));
+		return;
+	}
+	const FString ModePath = FPaths::ProjectSavedDir() / TEXT("TestLandforms.txt");
+	if (!FFileHelper::SaveStringToFile(Args[0], *ModePath))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Gaters.Landforms could not write %s"), *ModePath);
+		return;
+	}
+	const FName LevelName(*UGameplayStatics::GetCurrentLevelName(World, true));
+	UE_LOG(LogTemp, Display, TEXT("Gaters.Landforms loading enabled=%s level=%s"),
+		*Args[0], *LevelName.ToString());
+	UGameplayStatics::OpenLevel(World, LevelName);
+}
+
+void SwitchDebugMessages(const TArray<FString>& Args, UWorld* World)
+{
+	if (!World || !World->IsGameWorld() || Args.Num() != 1
+		|| (Args[0] != TEXT("0") && Args[0] != TEXT("1")))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Usage: Gaters.DebugMessages <0|1>"));
+		return;
+	}
+	const bool bEnabled = Args[0] == TEXT("1");
+	const FString ModePath = FPaths::ProjectSavedDir() / TEXT("TestDebugMessages.txt");
+	if (!FFileHelper::SaveStringToFile(Args[0], *ModePath))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Gaters.DebugMessages could not write %s"), *ModePath);
+		return;
+	}
+	FGatersDebugMessages::SetEnabled(bEnabled);
+	UE_LOG(LogTemp, Display, TEXT("Gaters.DebugMessages enabled=%s"),
+		bEnabled ? TEXT("yes") : TEXT("no"));
+}
+
 FAutoConsoleCommandWithWorldAndArgs GatersSeedCommand(
 	TEXT("Gaters.Seed"),
 	TEXT("Reload the current generated world with an integer seed. Example: Gaters.Seed 53"),
 	FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&SwitchSeed));
+
+FAutoConsoleCommandWithWorldAndArgs GatersVillageStageCommand(
+	TEXT("Gaters.VillageStage"),
+	TEXT("Reload the generated world at settlement growth stage 0, 1, or 2."),
+	FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&SwitchVillageStage));
+
+FAutoConsoleCommandWithWorldAndArgs GatersBuiltSitesCommand(
+	TEXT("Gaters.BuiltSites"),
+	TEXT("Reload the generated world with the Built Site layer disabled (0) or enabled (1)."),
+	FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&SwitchBuiltSites));
+
+FAutoConsoleCommandWithWorldAndArgs GatersLandformsCommand(
+	TEXT("Gaters.Landforms"),
+	TEXT("Reload the generated world with landform-process preview disabled (0) or enabled (1)."),
+	FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&SwitchLandforms));
+
+FAutoConsoleCommandWithWorldAndArgs GatersDebugMessagesCommand(
+	TEXT("Gaters.DebugMessages"),
+	TEXT("Show (1) or hide (0) persistent Gaters-only on-screen diagnostics."),
+	FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&SwitchDebugMessages));
 }
 
 void UGatersTestSpawner::OnWorldBeginPlay(UWorld& InWorld)
@@ -124,6 +231,54 @@ void UGatersTestSpawner::OnWorldBeginPlay(UWorld& InWorld)
 	}
 	FParse::Value(FCommandLine::Get(), TEXT("GatersSeed="), Seed);
 	CurrentSeed = Seed;
+	int32 VillageStage = 0;
+	FString VillageStageText;
+	if (FFileHelper::LoadFileToString(
+		VillageStageText, *(FPaths::ProjectSavedDir() / TEXT("TestVillageStage.txt"))))
+	{
+		VillageStage = FCString::Atoi(*VillageStageText);
+	}
+	FParse::Value(FCommandLine::Get(), TEXT("GatersVillageStage="), VillageStage);
+	VillageStage = FGatersSettlementGenerator::IsSupportedGrowthStage(VillageStage)
+		? VillageStage : 0;
+	CurrentVillageStage = VillageStage;
+	int32 BuiltSites = 1;
+	FString BuiltSitesText;
+	if (FFileHelper::LoadFileToString(
+		BuiltSitesText, *(FPaths::ProjectSavedDir() / TEXT("TestBuiltSites.txt"))))
+	{
+		BuiltSites = FCString::Atoi(*BuiltSitesText);
+	}
+	FParse::Value(FCommandLine::Get(), TEXT("GatersBuiltSites="), BuiltSites);
+	bCurrentBuiltSites = BuiltSites != 0;
+	int32 Landforms = 0;
+	FString LandformsText;
+	if (FFileHelper::LoadFileToString(
+		LandformsText, *(FPaths::ProjectSavedDir() / TEXT("TestLandforms.txt"))))
+	{
+		Landforms = FCString::Atoi(*LandformsText);
+	}
+	FParse::Value(FCommandLine::Get(), TEXT("GatersLandforms="), Landforms);
+	bCurrentLandforms = Landforms != 0;
+	FParse::Value(FCommandLine::Get(), TEXT("GatersArtifactLabel="), CurrentArtifactLabel);
+	float LandformRelief = -1.f;
+	float LandformVolcanism = -1.f;
+	float LandformIce = -1.f;
+	FParse::Value(FCommandLine::Get(), TEXT("GatersLandformRelief="), LandformRelief);
+	FParse::Value(FCommandLine::Get(), TEXT("GatersLandformVolcanism="), LandformVolcanism);
+	FParse::Value(FCommandLine::Get(), TEXT("GatersLandformIce="), LandformIce);
+	LandformRelief = LandformRelief < 0.f ? -1.f : FMath::Clamp(LandformRelief, 0.f, 1.f);
+	LandformVolcanism = LandformVolcanism < 0.f ? -1.f : FMath::Clamp(LandformVolcanism, 0.f, 1.f);
+	LandformIce = LandformIce < 0.f ? -1.f : FMath::Clamp(LandformIce, 0.f, 1.f);
+	int32 DebugMessages = 0;
+	FString DebugMessagesText;
+	if (FFileHelper::LoadFileToString(
+		DebugMessagesText, *(FPaths::ProjectSavedDir() / TEXT("TestDebugMessages.txt"))))
+	{
+		DebugMessages = FCString::Atoi(*DebugMessagesText);
+	}
+	FParse::Value(FCommandLine::Get(), TEXT("GatersDebugMessages="), DebugMessages);
+	FGatersDebugMessages::SetEnabled(DebugMessages != 0);
 
 	bool bHaveChunk = false;
 	for (TActorIterator<AGatersChunk> It(&InWorld); It; ++It)
@@ -141,10 +296,19 @@ void UGatersTestSpawner::OnWorldBeginPlay(UWorld& InWorld)
 		if (Chunk)
 		{
 			Chunk->Seed = Seed;
+			Chunk->VillageGrowthStage = VillageStage;
+			Chunk->bEnableBuiltSites = bCurrentBuiltSites;
+			Chunk->bEnableLandformProcesses = bCurrentLandforms;
+			Chunk->LandformReliefOverride = LandformRelief;
+			Chunk->LandformVolcanismOverride = LandformVolcanism;
+			Chunk->LandformIceOverride = LandformIce;
 			Chunk->FinishSpawning(FTransform(IslandOrigin));
 		}
 	}
-	UE_LOG(LogTemp, Display, TEXT("[GatersTestSpawner] island ready seed=%d legacy_removed=%d"), Seed, Removed);
+	UE_LOG(LogTemp, Display,
+		TEXT("[GatersTestSpawner] island ready seed=%d village_stage=%d built_sites=%s landforms=%s legacy_removed=%d"),
+		Seed, VillageStage, bCurrentBuiltSites ? TEXT("yes") : TEXT("no"),
+		bCurrentLandforms ? TEXT("yes") : TEXT("no"), Removed);
 
 	// player pawn spawns after world begin play; give it a beat, then move it over
 	FTimerHandle Handle;
@@ -190,7 +354,12 @@ void UGatersTestSpawner::PlacePlayerOnIsland()
 				CameraOffsetXY, CameraHeight, CameraRotation.Pitch);
 			const FString GalleryDir = FPaths::ProjectSavedDir() / TEXT("EnvironmentGallery");
 			IFileManager::Get().MakeDirectory(*GalleryDir, true);
-			const FString Screenshot = GalleryDir / FString::Printf(TEXT("seed-%d-beauty.png"), CurrentSeed);
+			FString ModeSuffix = bCurrentBuiltSites ? TEXT("") : TEXT("-world-only");
+			ModeSuffix += bCurrentLandforms ? TEXT("-landforms") : TEXT("");
+			ModeSuffix += CurrentArtifactLabel.IsEmpty()
+				? TEXT("") : TEXT("-") + CurrentArtifactLabel;
+			const FString Screenshot = GalleryDir / FString::Printf(
+				TEXT("seed-%d%s-beauty.png"), CurrentSeed, *ModeSuffix);
 			FScreenshotRequest::RequestScreenshot(Screenshot, false, false);
 			UE_LOG(LogTemp, Display, TEXT("[GatersTestSpawner] gallery_beauty=%s"), *Screenshot);
 			FTimerHandle TraversalCaptureHandle;
@@ -199,7 +368,7 @@ void UGatersTestSpawner::PlacePlayerOnIsland()
 			return;
 		}
 
-		// gate pad plinth top is at +500 local; drop the player just above it
+		// arrival marker plinth top is at +500 local; drop the player just above it
 		Pawn->TeleportTo(IslandOrigin + FVector(0.f, 0.f, 640.f), FRotator(0.f, 0.f, 0.f));
 	}
 }
@@ -212,7 +381,12 @@ void UGatersTestSpawner::CaptureTraversalGallery()
 		break;
 	}
 	const FString GalleryDir = FPaths::ProjectSavedDir() / TEXT("EnvironmentGallery");
-	const FString Screenshot = GalleryDir / FString::Printf(TEXT("seed-%d-traversal.png"), CurrentSeed);
+	FString ModeSuffix = bCurrentBuiltSites ? TEXT("") : TEXT("-world-only");
+	ModeSuffix += bCurrentLandforms ? TEXT("-landforms") : TEXT("");
+	ModeSuffix += CurrentArtifactLabel.IsEmpty()
+		? TEXT("") : TEXT("-") + CurrentArtifactLabel;
+	const FString Screenshot = GalleryDir / FString::Printf(
+		TEXT("seed-%d%s-traversal.png"), CurrentSeed, *ModeSuffix);
 	FScreenshotRequest::RequestScreenshot(Screenshot, false, false);
 	UE_LOG(LogTemp, Display, TEXT("[GatersTestSpawner] gallery_traversal=%s"), *Screenshot);
 }

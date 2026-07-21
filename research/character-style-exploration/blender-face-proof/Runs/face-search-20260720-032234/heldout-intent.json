@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "purpose": "post-search evaluator falsification only",
+  "candidateId": "cd4ab9d75b01d503505bb6a205f9a76d186afb32a1c7149d1e679315fcf390b4",
+  "changedAxes": ["head_height", "eye_spacing"],
+  "values": {"head_height": 0.2, "eye_spacing": 0.2},
+  "selection": "configured maximum for both axes",
+  "excludedFromSearchHistory": true,
+  "excludedFromPriorBallots": true,
+  "createdAfterStop": true,
+  "expectedUse": "Both held-out evaluators must reject it as visibly implausible; it cannot be promoted or mined as a search winner.",
+  "humanAcceptance": false
+}

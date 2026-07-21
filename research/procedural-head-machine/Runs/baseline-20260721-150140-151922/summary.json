@@ -1,0 +1,10 @@
+{
+  "mesh_sha256": "31f9217953a072425b44a514935fc8f0b50c30b8f982ed28d96d67f4b1ff73af",
+  "passed": true,
+  "recipe_id": "baseline",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\baseline-20260721-150140-151922\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\Runs\\baseline-20260721-150140-151922\\run-2"
+  ],
+  "schema": "head-run-summary/0"
+}

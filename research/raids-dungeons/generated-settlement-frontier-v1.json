@@ -1,0 +1,157 @@
+{
+  "evidenceVersion": 5,
+  "analysisOnly": true,
+  "input": {
+    "artifactPath": "research/settlements-bases-dungeons/generated-settlement-built-site-v1.json",
+    "artifactSha256": "d9b6e6bc565884c33d8d1fc7206c00c09c176566a43364dbf868853019c01d6e",
+    "siteId": "site:village:0",
+    "siteChecksum": 765957514,
+    "combatContractVersion": 1,
+    "combatFixtureVersion": 1,
+    "traversalEnvelopeId": "ground-baseline"
+  },
+  "physicalPreflight": {
+    "evaluationState": "ready-for-scenario",
+    "spaceCount": 171,
+    "connectionCount": 320,
+    "visibilityCount": 320,
+    "blockerCount": 150,
+    "placementSlotCount": 129,
+    "findings": []
+  },
+  "roleFreeGraph": {
+    "movementComponentCount": 13,
+    "largestComponentSpaceCount": 159,
+    "largestComponentIndoorSlotCount": 10,
+    "indoorSlotCount": 10,
+    "outdoorSlotCount": 119,
+    "reachableOutdoorToIndoorPairCount": 1190,
+    "totalOutdoorToIndoorPairCount": 1190,
+    "zeroConnectionIndoorSpaceIds": [],
+    "siteNetworkReachableIndoorSlotCount": 10,
+    "siteNetworkDisconnectedIndoorSlotCount": 0,
+    "siteNetworkDisconnectedIndoorSpaceIds": [],
+    "settlementEdgeSlotCount": 0
+  },
+  "scenarioCompatibility": {
+    "scenarioCatalogVersion": 1,
+    "siteKind": "settlement",
+    "compatibleAccessStateIds": [
+      "natural-wild-rift-v1"
+    ],
+    "compatibleScenarioIds": [
+      "abandoned-settlement-loot-v1"
+    ],
+    "evaluatedAccessStateId": "natural-wild-rift-v1",
+    "evaluatedScenarioId": "abandoned-settlement-loot-v1"
+  },
+  "representativeEnsemble": {
+    "policyVersion": 1,
+    "physicalTupleCount": 141610,
+    "mediumTargetLinkCount": 24,
+    "representativeCount": 5,
+    "simulatedRepresentativeCount": 5,
+    "findings": [
+      "world-approach-evidence-unknown"
+    ],
+    "representatives": [
+      {
+        "bucketId": "shallow",
+        "arrivalSlotId": "slot:corridor:settlement:building:community:0:threshold:interior:to:settlement:building:community:0:space:step:1",
+        "objectiveSlotId": "slot:settlement:building:community:0:space",
+        "extractionSlotId": "slot:corridor:settlement:building:community:0:threshold:interior:to:settlement:building:community:0:space:step:1",
+        "entryLinkCount": 1,
+        "exitLinkCount": 1,
+        "alternateApproachCount": 2,
+        "successfulPolicyPairs": 4,
+        "totalPolicyPairs": 4,
+        "terminationCounts": {
+          "extracted": 4
+        },
+        "findingCodes": [
+          "trivial-extraction",
+          "unavoidable-first-shot"
+        ]
+      },
+      {
+        "bucketId": "medium",
+        "arrivalSlotId": "slot:corridor:settlement:path:43:43:to:settlement:path:44:43:step:2",
+        "objectiveSlotId": "slot:settlement:building:community:0:space",
+        "extractionSlotId": "slot:corridor:settlement:path:43:43:to:settlement:path:44:43:step:2",
+        "entryLinkCount": 12,
+        "exitLinkCount": 12,
+        "alternateApproachCount": 2,
+        "successfulPolicyPairs": 2,
+        "totalPolicyPairs": 4,
+        "terminationCounts": {
+          "extracted": 2,
+          "mask-expired": 2
+        },
+        "findingCodes": [
+          "policy-sensitive"
+        ]
+      },
+      {
+        "bucketId": "deep",
+        "arrivalSlotId": "slot:corridor:settlement:building:home:3:threshold:interior:to:settlement:building:home:3:space:step:1",
+        "objectiveSlotId": "slot:settlement:building:home:4:space",
+        "extractionSlotId": "slot:corridor:settlement:building:home:3:threshold:interior:to:settlement:building:home:3:space:step:1",
+        "entryLinkCount": 63,
+        "exitLinkCount": 63,
+        "alternateApproachCount": 2,
+        "successfulPolicyPairs": 0,
+        "totalPolicyPairs": 4,
+        "terminationCounts": {
+          "attackers-dead": 2,
+          "mask-expired": 2
+        },
+        "findingCodes": [
+          "raid-clock-impossible"
+        ]
+      },
+      {
+        "bucketId": "route-choice",
+        "arrivalSlotId": "slot:settlement:path:45:42",
+        "objectiveSlotId": "slot:settlement:building:home:0:space",
+        "extractionSlotId": "slot:settlement:path:43:43",
+        "entryLinkCount": 10,
+        "exitLinkCount": 14,
+        "alternateApproachCount": 4,
+        "successfulPolicyPairs": 2,
+        "totalPolicyPairs": 4,
+        "terminationCounts": {
+          "extracted": 2,
+          "mask-expired": 2
+        },
+        "findingCodes": [
+          "policy-sensitive"
+        ]
+      },
+      {
+        "bucketId": "visibility-exposed",
+        "arrivalSlotId": "slot:corridor:settlement:building:community:0:threshold:interior:to:settlement:building:community:0:space:step:1",
+        "objectiveSlotId": "slot:settlement:building:community:0:space",
+        "extractionSlotId": "slot:corridor:settlement:building:home:0:threshold:interior:to:settlement:building:home:0:space:step:1",
+        "entryLinkCount": 1,
+        "exitLinkCount": 23,
+        "alternateApproachCount": 2,
+        "successfulPolicyPairs": 2,
+        "totalPolicyPairs": 4,
+        "terminationCounts": {
+          "extracted": 2,
+          "mask-expired": 2
+        },
+        "findingCodes": [
+          "policy-sensitive",
+          "unavoidable-first-shot"
+        ]
+      }
+    ]
+  },
+  "interpretation": {
+    "proved": "The repaired deterministic artifact makes all ten indoor objective candidates reachable from the site path network while preserving shallow exploits, policy sensitivity, route choice, visibility exposure, and raid-clock impossibility.",
+    "notProved": "Scenario-backed representatives are not approved runtime encounter placements or a production settlement raid until a composed world approach proves an external arrival.",
+    "physicalFeedbackId": "RAID-5",
+    "approachDependencyId": "WORLD-4"
+  }
+}

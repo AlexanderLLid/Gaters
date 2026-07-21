@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "runId": "macro-grid-20260720-071000",
+  "incident": "task-7-visible-mouth-anchor-semantic-mismatch",
+  "status": "partial-metric-invalid",
+  "cause": "The corrected macro evaluator still used maximum horizontal displacement vertices from mouth-scale-horiz-incr as mouth corners. In the saved Task 9 front camera those vertices project near x=303.5 and x=464.5, while two blind annotations place the visible commissures near x=327-328 and x=440-441. The metric therefore measures vertices outside the visible lip corners.",
+  "affectedEvidence": "The Task 7 mouthWidth component, aggregate scores, claimed 0.077180459775 nomination margin, and nomination decision cannot support promotion. Cheek, jaw, eye-to-chin, taper, topology, camera, build, and fresh-reopen receipts remain evidence for their own declared meanings.",
+  "downstreamUse": "Candidate eaec583d remains an experiment parent only. Task 8 and Task 9 feature ratios do not consume the invalid mouthWidth value; their review-only results remain bounded to their declared eye/nose metrics.",
+  "recovery": "Freeze visible commissure vertices from independent manual candidate annotations, compare them with equivalent target commissures and explicit uncertainty, and exclude the old mouthWidth field from all detail-pass selection and macro regression gates.",
+  "humanAcceptance": false
+}

@@ -5,12 +5,14 @@
 #include "GatersContentCatalog.h"
 #include "GatersContentCellRecipe.h"
 #include "GatersEnvironment.h"
+#include "GatersEnvironmentRecipe.h"
 #include "GatersPerformanceEvaluator.h"
 #include "GatersSiteRoutePlanner.h"
 #include "GatersTerrainSemanticField.h"
 #include "GatersTraversabilityEvaluator.h"
 #include "GatersVisualMaterializer.h"
 #include "GatersWorldCompiler.h"
+#include "GatersWorldIntent.h"
 #include "GatersWorldRecipe.h"
 #include "GatersChunk.generated.h"
 
@@ -35,6 +37,33 @@ public:
 	// --- tunables (values land in data, not prose) ---
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	int32 Seed = 7;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Settlement", meta = (ClampMin = "0", ClampMax = "2"))
+	int32 VillageGrowthStage = 0;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Settlement")
+	bool bEnableBuiltSites = true;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain")
+	bool bEnableLandformProcesses = false;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "-1", ClampMax = "1"))
+	float LandformReliefOverride = -1.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "-1", ClampMax = "1"))
+	float LandformVolcanismOverride = -1.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "-1", ClampMax = "1"))
+	float LandformIceOverride = -1.f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "1", ClampMax = "64"))
+	int32 LandformCandidateCount = 8;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "0", ClampMax = "1"))
+	float LandAccessWalkableTolerance = 0.15f;
+
+	UPROPERTY(EditAnywhere, Category = "Gaters|Terrain", meta = (ClampMin = "0", ClampMax = "1"))
+	float LandAccessConnectedTolerance = 0.15f;
 
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	float ChunkSize = 30000.f;
@@ -126,12 +155,13 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	bool bDebugSmashPiece = false;
 
-	// debug/test hook: set true to launch a probe raider from the gate pad against this
+	// debug/test hook: set true to launch a probe raider from the arrival marker against this
 	// chunk's base (same as the Gaters.Raid console command, but MCP-settable during PIE)
 	UPROPERTY(EditAnywhere, Category = "Gaters")
 	bool bDebugStartRaid = false;
 
 	void DrawTraversalDebug(float Duration = 45.f) const;
+	void DrawContentOpportunitiesDebug(float Duration = 45.f) const;
 	int32 PrepareGalleryCapture(int32 OverrideRadius = 0);
 
 protected:
@@ -169,7 +199,7 @@ private:
 	// pure seed-derived state
 	FRandomStream Stream;
 	FGatersWorldRecipe Recipe;
-	FGatersEnvironment Environment;
+	FGatersEnvironmentRecipe EnvironmentRecipe;
 	FGatersTerrainSemanticField TerrainField;
 	FGatersTraversabilityEvaluation Traversability;
 	FGatersSiteRoutePlan SiteRoutePlan;
@@ -189,6 +219,7 @@ private:
 	void InitStream();
 	void RollSite();
 	void BuildGround();
+	void BuildRegionalWater();
 	void AnalyzeSite();
 	void MarkResourceZones();
 	void LoadDiff();
@@ -225,6 +256,7 @@ private:
 	double PerformanceFrameSeconds = 0.0;
 	int32 PerformanceFrameCount = 0;
 	bool bPerformanceReported = false;
+	int32 RegionalWaterSurfaceCount = 0;
 
 	// ground is this function — vertices are displaced with it, so it needs no traces
 	float GroundHeight(float LocalX, float LocalY) const;

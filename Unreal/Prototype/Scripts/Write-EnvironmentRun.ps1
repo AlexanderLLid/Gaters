@@ -30,6 +30,8 @@ function To-Double([string] $Value) {
 }
 
 $Number = '[-+]?[0-9]+(?:\.[0-9]+)?'
+$Landform = Get-RequiredMatch 'LANDFORM' "LANDFORM v=([0-9]+) enabled=(yes|no) relief=($Number) volcanism=($Number) ice=($Number) protected=([0-9]+)"
+$LandAccess = Get-RequiredMatch 'LAND_ACCESS' "LAND_ACCESS v=([0-9]+) enabled=(yes|no) evaluated=(yes|no) brief=([0-9]+) compiler=([0-9]+) target_walkable=($Number) target_connected=($Number) candidates=([0-9]+) world_cells=([0-9]+) arrival_cells=([0-9]+) arrival_cell=($Number) pad=($Number) semantic=([0-9]+) transition=($Number) flat=($Number) slope=($Number) escape_cells=([0-9]+) walkable_tol=($Number) connected_tol=($Number) satisfying=([0-9]+) rejected=([0-9]+) selected=(-?[0-9]+) selected_scale=($Number) selected_dissection=($Number) selected_ruggedness=($Number) selected_walkable=($Number) selected_connected=($Number) selected_world_access=(yes|no) selected_escape=(yes|no) best=(-?[0-9]+) best_scale=($Number) best_dissection=($Number) best_ruggedness=($Number) best_walkable=($Number) best_connected=($Number) best_world_access=(yes|no) best_escape=(yes|no)"
 $Recipe = Get-RequiredMatch 'RECIPE' "RECIPE schema=([0-9]+) generator=([0-9]+) seed=(-?[0-9]+) chunk=($Number) checksum=([0-9A-Fa-f]+) nodes=([0-9]+) valid=(yes|no)"
 $Evaluation = Get-RequiredMatch 'EVAL' "EVAL v=([0-9]+) relief=($Number) water=($Number) rough=($Number) cliff=($Number) buildable=($Number) mean=($Number) below=($Number) window=($Number)"
 $Site = Get-RequiredMatch 'SITE' "SITE seed=(-?[0-9]+) environment=([A-Za-z0-9_-]+) water=(yes|no) base_valid=(yes|no) base=\(($Number),($Number)\) drop=($Number) hydrology=([A-Za-z0-9_-]+)"
@@ -76,6 +78,14 @@ $CandidateText = @(
     $Recipe.Groups[4].Value,
     $Recipe.Groups[5].Value.ToUpperInvariant(),
     $Plan.Groups[1].Value,
+	$Landform.Groups[1].Value,
+	$Landform.Groups[2].Value,
+	$Landform.Groups[3].Value,
+	$Landform.Groups[4].Value,
+	$Landform.Groups[5].Value,
+	$Landform.Groups[6].Value,
+    'world.environment-candidate-selector',
+    $LandAccess.Value,
     'runtime.visual-materializer',
     $Materialization.Groups[1].Value,
     $Materialization.Groups[2].Value
@@ -95,7 +105,7 @@ if ([string]::IsNullOrWhiteSpace($GitCommit)) { $GitCommit = 'unknown' }
 $GitDirty = @(& git -C $RepoRoot status --porcelain 2>$null).Count -gt 0
 
 $Record = [ordered]@{
-    schemaVersion = 7
+    schemaVersion = 15
     runId = [guid]::NewGuid().ToString('D')
     candidateId = $CandidateId
     recordedAtUtc = [DateTime]::UtcNow.ToString('o', $Culture)
@@ -106,6 +116,58 @@ $Record = [ordered]@{
     input = [ordered]@{
         seed = $Seed
         chunkSizeCm = To-Double $Recipe.Groups[4].Value
+		landform = [ordered]@{
+			version = To-Int $Landform.Groups[1].Value
+			enabled = $Landform.Groups[2].Value -eq 'yes'
+			relief = To-Double $Landform.Groups[3].Value
+			volcanism = To-Double $Landform.Groups[4].Value
+			ice = To-Double $Landform.Groups[5].Value
+			protectedRegionCount = To-Int $Landform.Groups[6].Value
+		}
+		landAccess = [ordered]@{
+			machineId = 'world.environment-candidate-selector'
+			version = To-Int $LandAccess.Groups[1].Value
+			enabled = $LandAccess.Groups[2].Value -eq 'yes'
+			evaluated = $LandAccess.Groups[3].Value -eq 'yes'
+			briefVersion = To-Int $LandAccess.Groups[4].Value
+			compilerVersion = To-Int $LandAccess.Groups[5].Value
+			targetWalkable = To-Double $LandAccess.Groups[6].Value
+			targetConnected = To-Double $LandAccess.Groups[7].Value
+			candidateCount = To-Int $LandAccess.Groups[8].Value
+			worldCellsPerAxis = To-Int $LandAccess.Groups[9].Value
+			arrivalCellsPerAxis = To-Int $LandAccess.Groups[10].Value
+			arrivalCellSizeCm = To-Double $LandAccess.Groups[11].Value
+			padRadiusCm = To-Double $LandAccess.Groups[12].Value
+			terrainSemanticVersion = To-Int $LandAccess.Groups[13].Value
+			arrivalTransitionWidthCm = To-Double $LandAccess.Groups[14].Value
+			flatNormalZ = To-Double $LandAccess.Groups[15].Value
+			slopeNormalZ = To-Double $LandAccess.Groups[16].Value
+			escapeDistanceCells = To-Int $LandAccess.Groups[17].Value
+			walkableTolerance = To-Double $LandAccess.Groups[18].Value
+			connectedTolerance = To-Double $LandAccess.Groups[19].Value
+			satisfyingCount = To-Int $LandAccess.Groups[20].Value
+			rejectedCount = To-Int $LandAccess.Groups[21].Value
+			selected = [ordered]@{
+				index = To-Int $LandAccess.Groups[22].Value
+				featureScale = To-Double $LandAccess.Groups[23].Value
+				dissectionScale = To-Double $LandAccess.Groups[24].Value
+				ruggednessScale = To-Double $LandAccess.Groups[25].Value
+				walkable = To-Double $LandAccess.Groups[26].Value
+				connected = To-Double $LandAccess.Groups[27].Value
+				hasWorldAccess = $LandAccess.Groups[28].Value -eq 'yes'
+				escapesArrival = $LandAccess.Groups[29].Value -eq 'yes'
+			}
+			best = [ordered]@{
+				index = To-Int $LandAccess.Groups[30].Value
+				featureScale = To-Double $LandAccess.Groups[31].Value
+				dissectionScale = To-Double $LandAccess.Groups[32].Value
+				ruggednessScale = To-Double $LandAccess.Groups[33].Value
+				walkable = To-Double $LandAccess.Groups[34].Value
+				connected = To-Double $LandAccess.Groups[35].Value
+				hasWorldAccess = $LandAccess.Groups[36].Value -eq 'yes'
+				escapesArrival = $LandAccess.Groups[37].Value -eq 'yes'
+			}
+		}
     }
     recipe = [ordered]@{
         schemaVersion = To-Int $Recipe.Groups[1].Value

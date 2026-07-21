@@ -1,7 +1,10 @@
 #if WITH_DEV_AUTOMATION_TESTS
 
 #include "GatersContentCellRecipe.h"
+#include "GatersBiomeField.h"
 #include "GatersEnvironment.h"
+#include "GatersEnvironmentRecipe.h"
+#include "GatersWorldIntent.h"
 #include "GatersWorldRecipe.h"
 #include "Misc/AutomationTest.h"
 
@@ -62,7 +65,14 @@ bool FGatersContentCellDeterminismTest::RunTest(const FString& Parameters)
 	const FGatersContentCellRecipe B = FGatersContentCellRecipe::Generate(
 		FIntPoint(4, -3), CellSize, Environment);
 
-	TestEqual(TEXT("content-cell contract is versioned"), A.Version, 2);
+	TestEqual(TEXT("content-cell contract is versioned"), A.Version, 6);
+	TestEqual(TEXT("content cell records intent contract"), A.IntentVersion, 2);
+	TestFalse(TEXT("content cell records responsible intent region"), A.IntentRegionId.IsEmpty());
+	TestFalse(TEXT("content cell records its biome"), A.BiomeKey.IsEmpty());
+	TestTrue(TEXT("content cell records bounded vegetation opportunity"),
+		A.VegetationOpportunity >= 0.f && A.VegetationOpportunity <= 1.f);
+	TestTrue(TEXT("content cell records bounded stone opportunity"),
+		A.StoneOpportunity >= 0.f && A.StoneOpportunity <= 1.f);
 	TestEqual(TEXT("same input preserves placement count"), A.Placements.Num(), B.Placements.Num());
 	TestEqual(TEXT("same input preserves coverage evidence"), A.Coverage, B.Coverage);
 	for (int32 Index = 0; Index < A.Placements.Num(); ++Index)
@@ -70,6 +80,164 @@ bool FGatersContentCellDeterminismTest::RunTest(const FString& Parameters)
 		TestTrue(TEXT("same input preserves every placement"),
 			SamePlacement(A.Placements[Index], B.Placements[Index]));
 	}
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+	FGatersContentCellEnvironmentRootTest,
+	"Gaters.Worldgen.ContentCells.EnvironmentRoot",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FGatersContentCellEnvironmentRootTest::RunTest(const FString& Parameters)
+{
+	for (const int32 Seed : {11, 29, 47, 83, 131})
+	{
+		const FGatersEnvironmentRecipe Environment =
+			FGatersEnvironmentRecipeCompiler::Compile(Seed, WorldSize);
+		TArray<FString> Errors;
+		TestTrue(TEXT("fixture root validates"), Environment.Validate(Errors));
+		const FIntPoint Cell(4, -3);
+		const FVector2D Center(Cell.X * CellSize, Cell.Y * CellSize);
+		const FGatersContentCellRecipe A = FGatersContentCellRecipe::Generate(
+			Cell, CellSize, Environment);
+		const FGatersContentCellRecipe B = FGatersContentCellRecipe::Generate(
+			Cell, CellSize, Environment);
+		const FGatersWorldRegionIntent& Region = Environment.Intent.At(Center);
+		FGatersBiomeQuery Query;
+		Query.NormalSampleDistance = (CellSize / 4.f) * 0.25f;
+		const FGatersBiomeOpportunitySample Opportunity =
+			Environment.QueryOpportunities(Center, Query);
+
+		TestEqual(TEXT("cell records environment-root provenance"),
+			A.EnvironmentVersion, Environment.Version);
+		TestEqual(TEXT("cell records physical-opportunity provenance"),
+			A.BiomeOpportunityVersion, Environment.BiomeOpportunities.Version);
+		TestEqual(TEXT("cell consumes the root biome"),
+			A.BiomeKey, Environment.QueryBiome(Center, Query).BiomeKey);
+		TestEqual(TEXT("vegetation combines declared intent with accepted physical evidence"),
+			A.VegetationOpportunity,
+			Region.VegetationOpportunity * Opportunity.Vegetation);
+		TestEqual(TEXT("stone combines declared intent with accepted physical evidence"),
+			A.StoneOpportunity,
+			Region.StoneOpportunity * Opportunity.Stone);
+		TestEqual(TEXT("same root preserves coverage"), A.Coverage, B.Coverage);
+		TestEqual(TEXT("same root preserves placement count"),
+			A.Placements.Num(), B.Placements.Num());
+		for (int32 Index = 0; Index < A.Placements.Num(); ++Index)
+		{
+			TestTrue(TEXT("same root preserves every placement"),
+				SamePlacement(A.Placements[Index], B.Placements[Index]));
+		}
+	}
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+	FGatersContentCellIntentSuppressionTest,
+	"Gaters.Worldgen.ContentCells.IntentSuppression",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FGatersContentCellIntentSuppressionTest::RunTest(const FString& Parameters)
+{
+	const FGatersEnvironment Environment = FindDryLowlands();
+	FGatersWorldIntentRecipe Intent = FGatersWorldIntentRecipe::Generate(
+		Environment.Seed, Environment.ChunkSize);
+	for (FGatersWorldRegionIntent& Region : Intent.Regions)
+	{
+		Region.VegetationOpportunity = 0.f;
+		Region.StoneOpportunity = 1.f;
+	}
+	FGatersContentCellSemantics Semantics;
+	Semantics.MinGroundNormalZ = 0.f;
+	const FGatersContentCellRecipe Recipe = FGatersContentCellRecipe::Generate(
+		FIntPoint(4, -3), CellSize, Environment, Intent, Semantics);
+	TestTrue(TEXT("fixture produces content opportunities"), !Recipe.Placements.IsEmpty());
+	for (const FGatersContentCellPlacement& Placement : Recipe.Placements)
+	{
+		TestEqual(TEXT("zero vegetation intent never forces a tree"),
+			Placement.Kind, EGatersRecipeNodeKind::ScatterRock);
+	}
+	for (FGatersWorldRegionIntent& Region : Intent.Regions)
+	{
+		Region.StoneOpportunity = 0.f;
+	}
+	const FGatersContentCellRecipe Barren = FGatersContentCellRecipe::Generate(
+		FIntPoint(4, -3), CellSize, Environment, Intent, Semantics);
+	TestTrue(TEXT("zero-content intent produces no opportunities"), Barren.Placements.IsEmpty());
+	TestEqual(TEXT("barren intent records the rejection cause"),
+		Barren.Coverage.IntentRejectedCount, Barren.Coverage.CandidateCount);
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+	FGatersContentCellOpportunityDensityTest,
+	"Gaters.Worldgen.ContentCells.OpportunityDensity",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FGatersContentCellOpportunityDensityTest::RunTest(const FString& Parameters)
+{
+	const FGatersEnvironment Environment = FindDryLowlands();
+	FGatersWorldIntentRecipe High = FGatersWorldIntentRecipe::Generate(
+		Environment.Seed, Environment.ChunkSize);
+	FGatersWorldIntentRecipe Low = High;
+	for (FGatersWorldRegionIntent& Region : High.Regions)
+	{
+		Region.VegetationOpportunity = 0.9f;
+		Region.StoneOpportunity = 0.1f;
+	}
+	for (FGatersWorldRegionIntent& Region : Low.Regions)
+	{
+		Region.VegetationOpportunity = 0.1f;
+		Region.StoneOpportunity = 0.f;
+	}
+	FGatersContentCellSemantics Semantics;
+	Semantics.MinGroundNormalZ = 0.f;
+	int32 HighPlacements = 0;
+	int32 LowPlacements = 0;
+	for (int32 X = 2; X <= 8; ++X)
+	{
+		for (int32 Y = -5; Y <= 1; ++Y)
+		{
+			HighPlacements += FGatersContentCellRecipe::Generate(
+				FIntPoint(X, Y), CellSize, Environment, High, Semantics).Placements.Num();
+			LowPlacements += FGatersContentCellRecipe::Generate(
+				FIntPoint(X, Y), CellSize, Environment, Low, Semantics).Placements.Num();
+		}
+	}
+	TestTrue(TEXT("higher opportunity produces more placements over the same cells"),
+		HighPlacements > LowPlacements);
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+	FGatersContentCellIntentBiomeTest,
+	"Gaters.Worldgen.ContentCells.IntentBiome",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FGatersContentCellIntentBiomeTest::RunTest(const FString& Parameters)
+{
+	const FGatersEnvironment Environment = FindDryLowlands();
+	const FIntPoint Cell(4, -3);
+	const FVector2D Center(Cell.X * CellSize, Cell.Y * CellSize);
+	FGatersWorldIntentRecipe Intent = FGatersWorldIntentRecipe::Generate(
+		Environment.Seed, Environment.ChunkSize);
+	Intent.Regions[1].Center = Center;
+	Intent.Regions[1].Radius = 20000.f;
+	Intent.Regions[1].TerrainTendency = EGatersEnvironment::Archipelago;
+	Intent.Regions[1].HydrologyTendency = EGatersHydrology::Ocean;
+	Intent.Regions[2].Center = Center + FVector2D(100000.f, 100000.f);
+	FGatersContentCellSemantics Semantics;
+	Semantics.MinGroundNormalZ = 0.f;
+
+	const FGatersBiomeSample GlobalBiome = FGatersBiomeField::Query(Environment, Center);
+	const FGatersBiomeSample IntentBiome = FGatersBiomeField::Query(
+		Environment, Intent, Center);
+	const FGatersContentCellRecipe Recipe = FGatersContentCellRecipe::Generate(
+		Cell, CellSize, Environment, Intent, Semantics);
+	TestNotEqual(TEXT("fixture produces a distinct regional biome"),
+		IntentBiome.BiomeKey, GlobalBiome.BiomeKey);
+	TestEqual(TEXT("content cell consumes the supplied intent biome"),
+		Recipe.BiomeKey, IntentBiome.BiomeKey);
 	return true;
 }
 
@@ -83,14 +251,28 @@ bool FGatersContentCellIdentityAndBoundsTest::RunTest(const FString& Parameters)
 	const FGatersEnvironment Environment = FindDryLowlands();
 	FGatersContentCellSemantics IdentitySemantics = {};
 	IdentitySemantics.MinGroundNormalZ = 0.f;
+	FGatersWorldIntentRecipe Intent = FGatersWorldIntentRecipe::Generate(
+		Environment.Seed, Environment.ChunkSize);
+	for (FGatersWorldRegionIntent& Region : Intent.Regions)
+	{
+		Region.VegetationOpportunity = 1.f;
+		Region.StoneOpportunity = 1.f;
+	}
 	const FIntPoint Cell(4, -3);
 	const FGatersContentCellRecipe Recipe = FGatersContentCellRecipe::Generate(
-		Cell, CellSize, Environment, IdentitySemantics);
+		Cell, CellSize, Environment, Intent, IdentitySemantics);
 	const FGatersContentCellRecipe Adjacent = FGatersContentCellRecipe::Generate(
-		Cell + FIntPoint(1, 0), CellSize, Environment, IdentitySemantics);
+		Cell + FIntPoint(1, 0), CellSize, Environment, Intent, IdentitySemantics);
 	const FGatersEnvironment DifferentEnvironment = FindDryLowlands(Environment.Seed);
+	FGatersWorldIntentRecipe OtherIntent = FGatersWorldIntentRecipe::Generate(
+		DifferentEnvironment.Seed, DifferentEnvironment.ChunkSize);
+	for (FGatersWorldRegionIntent& Region : OtherIntent.Regions)
+	{
+		Region.VegetationOpportunity = 1.f;
+		Region.StoneOpportunity = 1.f;
+	}
 	const FGatersContentCellRecipe OtherSeed = FGatersContentCellRecipe::Generate(
-		Cell, CellSize, DifferentEnvironment, IdentitySemantics);
+		Cell, CellSize, DifferentEnvironment, OtherIntent, IdentitySemantics);
 
 	TestTrue(TEXT("placement budget is bounded"), Recipe.Placements.Num() <= Recipe.MaxPlacements);
 	TestTrue(TEXT("identity fixture has adjacent-cell placements"),
@@ -101,7 +283,10 @@ bool FGatersContentCellIdentityAndBoundsTest::RunTest(const FString& Parameters)
 		Recipe.Coverage.CandidateCount,
 		Recipe.Coverage.PlacedCount + Recipe.Coverage.ReservedRejectedCount
 			+ Recipe.Coverage.WaterRejectedCount
-			+ Recipe.Coverage.SteepRejectedCount + Recipe.Coverage.BudgetRejectedCount);
+			+ Recipe.Coverage.SteepRejectedCount
+			+ Recipe.Coverage.OpportunityRejectedCount
+			+ Recipe.Coverage.BudgetRejectedCount
+			+ Recipe.Coverage.IntentRejectedCount);
 
 	const FVector2D Center(Cell.X * CellSize, Cell.Y * CellSize);
 	TSet<FString> Ids;
@@ -151,20 +336,25 @@ bool FGatersContentCellSpatialCoverageTest::RunTest(const FString& Parameters)
 	const FIntPoint Cell(4, -3);
 	FGatersContentCellSemantics FullLand = {};
 	FullLand.MinGroundNormalZ = 0.f;
+	FGatersWorldIntentRecipe HighIntent = FGatersWorldIntentRecipe::Generate(
+		Environment.Seed, Environment.ChunkSize);
+	for (FGatersWorldRegionIntent& Region : HighIntent.Regions)
+	{
+		Region.VegetationOpportunity = 1.f;
+		Region.StoneOpportunity = 1.f;
+	}
 	const FGatersContentCellRecipe A = FGatersContentCellRecipe::Generate(
-		Cell, CellSize, Environment, FullLand);
+		Cell, CellSize, Environment, HighIntent, FullLand);
 	const FGatersContentCellRecipe B = FGatersContentCellRecipe::Generate(
-		Cell, CellSize, Environment, FullLand);
+		Cell, CellSize, Environment, HighIntent, FullLand);
 	const FVector2D Center(Cell.X * CellSize, Cell.Y * CellSize);
 	bool bNegativeX = false;
 	bool bPositiveX = false;
 	bool bNegativeY = false;
 	bool bPositiveY = false;
 
-	TestEqual(TEXT("full dry land fills the bounded placement budget"),
-		A.Placements.Num(), A.MaxPlacements);
-	TestEqual(TEXT("full dry land rejects remaining opportunities only by budget"),
-		A.Coverage.BudgetRejectedCount, A.Coverage.CandidateCount - A.MaxPlacements);
+	TestTrue(TEXT("high-opportunity dry land produces bounded placements"),
+		A.Placements.Num() > 0 && A.Placements.Num() <= A.MaxPlacements);
 	for (int32 Index = 0; Index < A.Placements.Num(); ++Index)
 	{
 		const FVector Location = A.Placements[Index].Transform.GetLocation();

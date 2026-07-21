@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "audit",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "You are the AUDIT independent baseline face-sculpt evaluator for run face-search-20260720-031640. Read-only: do not edit any file. Use view_image at original detail to inspect the approved target front Reference/painted-a-front-flat-v2.png and the current champion views Derived/sculpt-v13/front.png, three-quarter.png, and profile.png. Compare target directly with champion front; use 3/4 and profile only to reject anatomy regressions. Ignore lighting, skin color, hair, eyebrows, texture, and presentation quality completely. Judge only skull/facial silhouette, feature placement and projection, age structure, asymmetry, anatomical continuity, grounded mature geometry, and individual character. The only selectable axes are: head_width, head_height, jaw_taper, chin_projection, nose_width, nose_length, nose_projection, eye_spacing, cheek_definition, lip_volume, eye_bag. Do not infer or request parameter values. Return only the requested JSON baseline diagnosis. Rank only effects those axes can actually change. Do not promote anything.",
+  "response": {
+    "evaluatorId": "audit",
+    "modelIdentity": "gpt-5.6-terra",
+    "rankedMismatches": [
+      {"axis": "head_height", "severity": "high", "reason": "Champion cranial and facial silhouette is too vertically elongated, producing a tall generic head rather than the target's more compact mature proportion."},
+      {"axis": "head_width", "severity": "high", "reason": "Champion reads too narrow through temples, cheeks, and lower face relative to facial height; target has a broader, more grounded facial mass."},
+      {"axis": "jaw_taper", "severity": "high", "reason": "Champion narrows too strongly into an oval chin; target retains more lower-face width and a sturdier mature jaw transition."},
+      {"axis": "cheek_definition", "severity": "medium", "reason": "Champion has a sharp hollow cheek-to-jaw channel that reads stylized and gaunt; target has softer, weight-bearing mature cheek structure."},
+      {"axis": "eye_spacing", "severity": "medium", "reason": "Champion eyes sit too centrally compressed relative to head width; target's eyes are visibly farther apart."},
+      {"axis": "eye_bag", "severity": "medium", "reason": "Champion under-eye form is too smooth and shallow for the target's mature lower-lid and under-eye mass."}
+    ],
+    "unavailableGeometryGaps": [
+      "No target three-quarter or profile reference is available, so nose projection and chin projection cannot be directly compared.",
+      "The front target alone cannot establish side-plane continuity for the nose, lips, jaw, or cranial vault.",
+      "Target asymmetry is visible frontally but cannot be addressed by any configured axis."
+    ],
+    "mostImportantError": "The champion's tall, narrow, strongly tapered skull-and-jaw silhouette loses the target's broad, compact, mature facial mass and individual character.",
+    "recommendedAxis": "head_width"
+  }
+}

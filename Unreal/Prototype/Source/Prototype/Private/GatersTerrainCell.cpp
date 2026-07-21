@@ -21,22 +21,20 @@ FVector2D AGatersTerrainCell::GlobalSamplePosition(
 }
 
 void AGatersTerrainCell::Configure(
-	int32 InSeed,
-	float InWorldSize,
+	const FGatersEnvironmentRecipe& InEnvironmentRecipe,
 	const FIntPoint& InCell,
 	float InCellSize,
 	int32 InResolution,
 	float InPadRadius,
 	const FVector2D& InRouteTarget)
 {
-	Seed = InSeed;
-	WorldSize = InWorldSize;
 	Cell = InCell;
 	CellSize = InCellSize;
 	Resolution = InResolution;
 	PadRadius = InPadRadius;
 	RouteTarget = InRouteTarget;
-	Environment = FGatersEnvironment::FromSeed(Seed, WorldSize);
+	Environment = InEnvironmentRecipe.Terrain;
+	Intent = InEnvironmentRecipe.Intent;
 }
 
 void AGatersTerrainCell::Build()
@@ -56,7 +54,7 @@ void AGatersTerrainCell::Build()
 			const FVector2D Sample = GlobalSamplePosition(
 				Cell, FVector2D(Position.X, Position.Y), CellSize);
 			Position.Z = FGatersTerrainSemanticField::MaterializedHeightAt(
-				Environment, Sample, PadRadius, RouteTarget);
+				Environment, Intent, Sample, PadRadius, RouteTarget);
 			EditMesh.SetVertex(VertexId, Position);
 		}
 
@@ -87,7 +85,7 @@ void AGatersTerrainCell::Build()
 			const FVector2D Sample = GlobalSamplePosition(
 				Cell, FVector2D(Position.X, Position.Y), CellSize);
 			const FVector Normal = FGatersTerrainSemanticField::MaterializedNormalAt(
-				Environment, Sample, SampleDistance, PadRadius, RouteTarget);
+				Environment, Intent, Sample, SampleDistance, PadRadius, RouteTarget);
 			const FLinearColor Color = FGatersTerrainPalette::BlendColor(
 				Environment.Type, Environment.WaterHeight,
 				static_cast<float>(Position.Z), Normal.Z);

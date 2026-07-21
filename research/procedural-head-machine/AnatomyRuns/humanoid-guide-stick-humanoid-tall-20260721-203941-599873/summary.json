@@ -1,0 +1,12 @@
+{
+  "body_plan_id": "stick-humanoid-tall",
+  "guide_id": "humanoid-guide",
+  "guide_sha256": "9f9f3b878318b36648b172af3beaa6b2b338115cb105e518fa5e8e5e26e25ead",
+  "passed": true,
+  "preview": "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-tall-20260721-203941-599873\\preview.png",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-tall-20260721-203941-599873\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-tall-20260721-203941-599873\\run-2"
+  ],
+  "schema": "anatomical-guide-run-summary/0"
+}

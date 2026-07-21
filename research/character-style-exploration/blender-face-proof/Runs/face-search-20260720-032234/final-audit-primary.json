@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "primary",
+  "modelIdentity": "gpt-5.6-terra",
+  "package": {"path": "Runs/face-search-20260720-032234/final-audit/primary-package.json", "sha256": "21a501c55a4a88af037c1fef7858ec5e9b150217b9dc1829529289ed8519955a"},
+  "instructions": "Inspect only the chronology-blind primary held-out package. Identify visibly unsuitable slots and compare the remaining valid left/right geometry against the target, ignoring all presentation. Do not inspect maps, history, recipes, parameters, IDs, or chronology.",
+  "response": "{\"schemaVersion\":1,\"evaluatorId\":\"primary\",\"rejectSlots\":[\"center\"],\"validPreference\":\"tie\",\"confidence\":0.95,\"hardFailures\":[],\"diagnosis\":[\"Center has an excessively narrow, vertically stretched skull and lower-face silhouette with weak mature anatomical grounding.\",\"Left and right are geometrically indistinguishable and both retain a jaw and chin that taper too sharply relative to the target.\"]}",
+  "counterexampleSlot": "center",
+  "rejectCounterexample": true,
+  "initialVsFinal": "tie",
+  "confidence": 0.95,
+  "hardFailures": [],
+  "diagnosis": [
+    "Center has an excessively narrow, vertically stretched skull and lower-face silhouette with weak mature anatomical grounding.",
+    "Left and right are geometrically indistinguishable and both retain a jaw and chin that taper too sharply relative to the target."
+  ],
+  "humanAcceptance": false
+}

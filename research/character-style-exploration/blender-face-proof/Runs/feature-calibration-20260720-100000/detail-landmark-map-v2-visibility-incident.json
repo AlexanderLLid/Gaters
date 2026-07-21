@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-10-detail-landmark-map-visibility-mismatch",
+  "invalidatedArtifacts": ["Runs/feature-calibration-20260720-100000/detail-landmark-map.json"],
+  "reason": "The v2 mapper selected the nearest projected body vertex without requiring camera-frontmost selection. It may select hidden/deeper geometry; lowerLipBottomCenter depth 1.159 demonstrates the risk.",
+  "replacement": "Runs/feature-calibration-20260720-100000/detail-landmark-map-v3.json",
+  "scope": "artifact-only; the Task 9 calibration run and its candidate receipts remain valid"
+}

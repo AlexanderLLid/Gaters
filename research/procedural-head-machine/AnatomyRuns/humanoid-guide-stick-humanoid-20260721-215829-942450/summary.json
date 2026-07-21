@@ -1,0 +1,12 @@
+{
+  "body_plan_id": "stick-humanoid",
+  "guide_id": "humanoid-guide",
+  "guide_sha256": "80c40663f99a379f166bc5b9cacbc8139dceea2e332d7da03dd1737c69754cd3",
+  "passed": true,
+  "preview": "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-20260721-215829-942450\\preview.png",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-20260721-215829-942450\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomyRuns\\humanoid-guide-stick-humanoid-20260721-215829-942450\\run-2"
+  ],
+  "schema": "anatomical-guide-run-summary/0"
+}

@@ -1,0 +1,9 @@
+{
+  "failures": [],
+  "frame_count": 13,
+  "maximum_frame_surface_delta_m": 0.15083778871562836,
+  "maximum_skeleton_delta_m": 5.777322759617102e-08,
+  "maximum_surface_motion_m": 0.8025376492867101,
+  "passed": true,
+  "schema": "motion-sequence-verification/0"
+}

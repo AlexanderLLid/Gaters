@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "round": 3,
+  "selectedAxis": "cheek_definition",
+  "sourceBallots": {"path": "Runs/face-search-20260720-032234/round-2/ballots.json", "sha256": "4e401b768b75a9ebebe1cf6b5481ba6e15d9e3cec4fe8fb6e63709acea912c95"},
+  "reason": [
+    "Two reversed rounds selected screen-left instead of a consistent physical direction.",
+    "cheek_definition was the next shared baseline diagnosis after jaw_taper.",
+    "Its larger configured step tests whether disagreement came from changes too subtle to judge rather than position bias."
+  ],
+  "stopIfDisagreement": "stopAfterDisagreement=3",
+  "humanAcceptance": false
+}

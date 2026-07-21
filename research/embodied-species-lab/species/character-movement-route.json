@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "routeVersion": 1,
+  "fixedDeltaSeconds": 0.016666667,
+  "spawnLocationCentimeters": [-300.0, 300.0, 100.0],
+  "capsuleRadiusCentimeters": 34.0,
+  "capsuleHalfHeightCentimeters": 88.0,
+  "groundedPhaseSeconds": {
+    "idle": 0.5,
+    "walk": 1.0,
+    "run": 1.0,
+    "turn": 0.75,
+    "stop": 1.0,
+    "land": 0.3
+  },
+  "walkSpeedCentimetersPerSecond": 150.0,
+  "runSpeedCentimetersPerSecond": 450.0,
+  "jumpSpeedCentimetersPerSecond": 420.0,
+  "maximumAirborneSeconds": 3.0,
+  "minimumForwardDisplacementCentimeters": 150.0,
+  "minimumTurnDisplacementCentimeters": 25.0,
+  "minimumFallingSamples": 1,
+  "minimumGroundedSpeedFraction": 0.9,
+  "maximumFinalSpeedCentimetersPerSecond": 5.0,
+  "requiredPhases": [
+    "idle",
+    "walk",
+    "run",
+    "turn",
+    "stop",
+    "jump",
+    "fall",
+    "land"
+  ],
+  "requiredClips": [
+    "A_Idle",
+    "A_Walk",
+    "A_Run",
+    "A_TurnLeft",
+    "A_Stop",
+    "A_Jump",
+    "A_Fall",
+    "A_Land"
+  ]
+}

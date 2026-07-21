@@ -1,0 +1,10 @@
+{
+  "composition_sha256": "7e30ec2a54e7b70a836e4bf96e7925b22f0a6874ca94e6b796a078046d75fe1a",
+  "passed": true,
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SocketRuns\\head-neck-20260721-154815-016460\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SocketRuns\\head-neck-20260721-154815-016460\\run-2"
+  ],
+  "schema": "module-socket-run-summary/0",
+  "socket_id": "head-neck"
+}

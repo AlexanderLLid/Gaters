@@ -1,0 +1,14 @@
+{
+  "schema": "motion-curve-recipe/0",
+  "id": "humanoid-generated-motion-proof",
+  "fps": 8,
+  "duration_seconds": 1.5,
+  "maximum_frame_delta_degrees": 12.0,
+  "tracks": [
+    {"control": "left_shoulder_raise", "keys": [{"time_seconds": 0.0, "degrees": 0.0}, {"time_seconds": 0.75, "degrees": 25.0}, {"time_seconds": 1.5, "degrees": 0.0}]},
+    {"control": "left_elbow_flex", "keys": [{"time_seconds": 0.0, "degrees": 0.0}, {"time_seconds": 0.75, "degrees": 65.0}, {"time_seconds": 1.5, "degrees": 0.0}]},
+    {"control": "left_hip_flex", "keys": [{"time_seconds": 0.0, "degrees": 0.0}, {"time_seconds": 0.75, "degrees": 20.0}, {"time_seconds": 1.5, "degrees": 0.0}]},
+    {"control": "left_knee_flex", "keys": [{"time_seconds": 0.0, "degrees": 0.0}, {"time_seconds": 0.75, "degrees": 45.0}, {"time_seconds": 1.5, "degrees": 0.0}]},
+    {"control": "torso_twist", "keys": [{"time_seconds": 0.0, "degrees": 0.0}, {"time_seconds": 0.75, "degrees": 15.0}, {"time_seconds": 1.5, "degrees": 0.0}]}
+  ]
+}

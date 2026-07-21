@@ -1,0 +1,7 @@
+{
+  "graph_sha256": "4286c0f224c04db8ebb4f343d86546a731442c3ebf7c0756d5651b9f9ce0457c",
+  "houdini": null,
+  "passed": true,
+  "python": "3.13.10",
+  "recipe_id": "winged-reptile"
+}

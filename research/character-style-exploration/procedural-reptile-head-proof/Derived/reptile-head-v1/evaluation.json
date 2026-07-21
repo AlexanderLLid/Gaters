@@ -1,0 +1,17 @@
+{
+  "candidate": "reptile-head",
+  "humanAcceptance": false,
+  "labels": [
+    "A - STANDARD THIRD-PERSON DISTANCE",
+    "B - GAMEPLAY CLOSE DISTANCE",
+    "C - INSPECTION CLOSE-UP"
+  ],
+  "renderer": "Houdini Mantra Apprentice",
+  "renders": [
+    "A-gameplay.png",
+    "B-gameplay-close.png",
+    "C-inspection.png"
+  ],
+  "schema": "art-evaluation/0",
+  "visibleFailure": "Rejected by Art review: exposure and labeling are readable, but the cross-section surface reads as a blunt tube with attached primitives rather than fused biological anatomy."
+}

@@ -1,0 +1,14 @@
+{
+  "failures": [],
+  "metrics": {
+    "faces": 192,
+    "realized_dimensions_m": [
+      0.16,
+      0.19,
+      0.22
+    ],
+    "vertices": 178
+  },
+  "passed": true,
+  "schema": "head-verification/0"
+}

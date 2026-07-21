@@ -1,0 +1,20 @@
+{
+  "challenger_run": "C:\\repos\\Gaters\\research\\procedural-head-machine\\SkinCaptureRuns\\20260721-201628-830",
+  "champion_run": "C:\\repos\\Gaters\\research\\procedural-head-machine\\SkinCaptureRuns\\20260721-201621-564",
+  "failures": [],
+  "metrics": {
+    "challenger_max_influences": 4,
+    "challenger_thickness_ratio_p10": 0.9264310303648664,
+    "champion_thickness_ratio_p10": 0.700810210822117,
+    "improvement": 0.22562081954274937
+  },
+  "promote_challenger": true,
+  "recipe": {
+    "id": "elbow-bend-capture-comparison",
+    "maximum_influences": 4,
+    "minimum_improvement": 0.05,
+    "minimum_thickness_ratio_p10": 0.88,
+    "schema": "skin-capture-comparison-recipe/0"
+  },
+  "schema": "skin-capture-comparison/0"
+}

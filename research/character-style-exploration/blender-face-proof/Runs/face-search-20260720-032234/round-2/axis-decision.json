@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "round": 2,
+  "selectedAxis": "head_width",
+  "sourceBallots": {"path": "Runs/face-search-20260720-032234/round-1/ballots.json", "sha256": "a36d506aaa7e2c3c75dac088a7f272af9788029f288047e37b2920c3d39ce684"},
+  "reason": [
+    "Round 1 jaw_taper bracket produced opposite physical winners at confidence 0.58, so the champion remains between those extremes.",
+    "Both evaluators still describe the facial mass as too narrow or over-tapered.",
+    "head_width is the highest remaining configured axis named by the audit and baseline evidence."
+  ],
+  "humanAcceptance": false
+}

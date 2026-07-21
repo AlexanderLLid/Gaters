@@ -1,0 +1,641 @@
+{
+  "cameraLimitation": "The unchanged sculpt generator derives orthographic scale from each candidate head height. Receipts hash each saved camera; IPD-normalized camera-space ratios remove scale from the score.",
+  "candidates": [
+    {
+      "candidateId": "24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43-build.log",
+          "sha256": "65fd64ea20061b998f895258a6e2e33bbdb091bfa543af5fceabbbdc8eb84728"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43-measure.log",
+          "sha256": "4a359ad11f3da3a5d565a315801085e5dd461f03ade02366a4ef56bb447f9cc6"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43-verify.log",
+          "sha256": "9ae81e7504d70cad4253cbcc078e8b57c992e5aa4f07e1cbf273a9a8bb850adc"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43/manifest.json",
+        "sha256": "18f60f397d06fce4afd7b36e16e80e30458ed1b4f16aca706d5675fe9c415f3b"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43/macro-geometry.json",
+        "sha256": "7bcd1e47cc8eac3445802a60edd9cadc9da2048261bf79b315d9bcfe3ea5e070"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": 0.0,
+        "head_width": 0.1,
+        "jaw_taper": 0.0,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43.json",
+        "sha256": "046cc30e881227758413ea2b75b92443bf79750d66514c7e54f04a7640e0d417"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43/front.png",
+          "sha256": "c8afdd614505e2af6dd6b80f0215b091c241775110df0bfc0e498c50fe923598"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43/profile.png",
+          "sha256": "b39f1e33c78ff4fe35b6a20c473a00bb3b943c52737c3594792a0c235d19e4b8"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/24ce9baec61349b1a4ff40a395d00565fc08b934b072fa0cd9e4231cbe5efa43/three-quarter.png",
+          "sha256": "da57165e75dcb146204c10b4baf10f4dbbc10d0d8b345fffd7e986d230c773ce"
+        }
+      },
+      "score": 1.579086733809097
+    },
+    {
+      "candidateId": "3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2-build.log",
+          "sha256": "99dd0059922aa0e0fa31845c965382bdf6096c03ec1313c131d6e66f1855ca92"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2-measure.log",
+          "sha256": "ab892c6be3182cfb7d7457c4104fa024b286a2ed3007466f36ddca33a891d190"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2-verify.log",
+          "sha256": "1b2e56d25b61bad112e94e37b59190058cbf9856f91e7dc84cebe816350e60fa"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2/manifest.json",
+        "sha256": "a38e4c43a8fad5161a94e32751592f61c37f028d8571df1c99e7b228d0c188d0"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2/macro-geometry.json",
+        "sha256": "0f1a16db93a2e5a3cf55c3df5a06a3aaf88041d7f40fb56e51b40e1faec8003f"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": 0.0,
+        "head_width": 0.1,
+        "jaw_taper": 0.085,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2.json",
+        "sha256": "08e6672b74941c9ecfb5787d236a8dcb8b27bbfe40f19cc1a2139770dba2bd63"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2/front.png",
+          "sha256": "a2500dbed96018346a3e9b7e6011bdfde57ec1173b6e4c17534d08f75da6f971"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2/profile.png",
+          "sha256": "92f58f47e5d920d9f79ff93f5b07616670cfee274785c470fab49d68a8e12750"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/3accb90ce99825bd8f344d7216d1282be34bd2fb25734daa208e8f7bd2cfdcc2/three-quarter.png",
+          "sha256": "4f9fb537f65b446231c847427712345d84e589f24cb5e5f9571bf244cd280216"
+        }
+      },
+      "score": 1.5442089434285615
+    },
+    {
+      "candidateId": "60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f-build.log",
+          "sha256": "e06f62c7ec7b50c60afa9120ffa1c91090fe30815456a6dadb1c1949e46e34db"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f-measure.log",
+          "sha256": "f85bafc7a408974d9831e4fd4c110166b8701508a6640ed7c5e3dd100bd0a868"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f-verify.log",
+          "sha256": "f85e70decc30babb79417953ba59b79631aa3e44c06b6f67201436cfd85d6ee4"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f/manifest.json",
+        "sha256": "8a75b16d68520659d70d2102ca0fb65ee95994e41724f1451020d6370fc4bea7"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f/macro-geometry.json",
+        "sha256": "5aa4780c1713f7f233073b1ca2f39bc0b7be712e1df412e656b858788e9bf3d2"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": -0.2,
+        "head_width": -0.08,
+        "jaw_taper": 0.0,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f.json",
+        "sha256": "1b3742af9b51072b6446e1c60111478e09616fb5662fc33df1f52dda6ce93e9f"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f/front.png",
+          "sha256": "e200a74812fdfe58258ec1e89d040ba2632cbe35ed004c9ccc7270396f6df8ca"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f/profile.png",
+          "sha256": "69b04afc023e8f794c2e0cd994e00fa2f26efb84609373cc90b3bbeafffa6e40"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/60df212853ef3976dfd89fd32433370d7778191b8c885d7463a5796f8719c17f/three-quarter.png",
+          "sha256": "a678b708c87410d3701f14278370e5503d53aff039726a7984bf591635ebc5c5"
+        }
+      },
+      "score": 1.5643693427870857
+    },
+    {
+      "candidateId": "6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0-build.log",
+          "sha256": "b64a74a8bc42928301265b6b1eeee55e95280c06a0cf60ed64fd8e4b172b57f3"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0-measure.log",
+          "sha256": "3d1a3ea970ad502d188c7df3cb58fbbef68b739f38941f4f3ef6d6256900850c"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0-verify.log",
+          "sha256": "a54ce9d462b64556912d3ab44d381924506babd87df1eceec258489cfc31c483"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0/manifest.json",
+        "sha256": "cc5cf66804a6d124d7db808624ad458341ed353b9479b26e1bf24ef9dfc96146"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0/macro-geometry.json",
+        "sha256": "b1ff54ad87c8f12d2ee1203adb55545306712724c3d973dd865767d5edd2b1fc"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": -0.2,
+        "head_width": 0.1,
+        "jaw_taper": 0.0,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0.json",
+        "sha256": "9bd22a7ed270e9dd33430439bcfae5ca7ac5ef9a017d9ca0e629ec66192b1c01"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0/front.png",
+          "sha256": "925ff96edbe230adb55211afbf984c29891b40ee105577eaa2f9e0ac4487b6e3"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0/profile.png",
+          "sha256": "6f709bafffc5d5cc7f328663e6f28a86e4a80cbece3a3dc09e1341e617a8029a"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/6748fdfa8578865c02f85dfd60ffb837aab120344b38dfacf38ae46489ce5af0/three-quarter.png",
+          "sha256": "c3804fe5f3082e6833e34ef1390902cd2b4470686791b0dc049e76aa538bb592"
+        }
+      },
+      "score": 1.5118203651193458
+    },
+    {
+      "candidateId": "74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33-build.log",
+          "sha256": "86fb9c2ba1581eb63f4619070bdf9369eba01fae48a5e02da6e9d2e46e016b7d"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33-measure.log",
+          "sha256": "0e3e0f32591e485ced310c9e8d593ca8a617db31cbb94c509ff3108ea19ddaaa"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33-verify.log",
+          "sha256": "202f1536c5cf86fff1b45f999ffe4015c856dee51cd8a76a9d479f011969903c"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33/manifest.json",
+        "sha256": "404178b56f30b2bec48f346f66ba4a70c38e2c4bd4d6cf87451b99877b89d1ae"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33/macro-geometry.json",
+        "sha256": "c42a40bcbd95621a19cc642447b1915b36ed29cca82cfc495247b35528081250"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": -0.2,
+        "head_width": 0.1,
+        "jaw_taper": 0.085,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33.json",
+        "sha256": "b7f65c1c06b2b7b1c2a1e94867bfdda83d0da1101f4da1f734a2dd358611a466"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33/front.png",
+          "sha256": "701c63d3ffc878ef5650429f98fe26e7d7a57a5113eeab74669eb623f3b4cf4b"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33/profile.png",
+          "sha256": "98ec844291a11826913db1e03abb5e8965f55e811eca44c844b725c1f8e0cf8d"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33/three-quarter.png",
+          "sha256": "8b0b6102eae0d5e60af7ebae16e8445b8cc9cc7b497c5ed478948bb29580eee5"
+        }
+      },
+      "score": 1.4754787106216023
+    },
+    {
+      "candidateId": "e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88-build.log",
+          "sha256": "ab170c84cb7506120aaab924f62b4ae97bd3a55eb7be4fe529fa3574be58add3"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88-measure.log",
+          "sha256": "d66d4a115a55ffcf5fa21d3f4dcf205527d0f85915cf9a12384818ee8945abef"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88-verify.log",
+          "sha256": "c556915c929572fefcfe5e9b38c1731dedd6dcf75055208d4ccf14f8962b060f"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88/manifest.json",
+        "sha256": "6be02c809f1848f9d414a000bdf10bd609de8bae58d2c0251c58f3ba2b84ed04"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88/macro-geometry.json",
+        "sha256": "10ffecd9b705c3c68feed6f69fb5bad9ba071990ffb1ae3605dde8893a416931"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": -0.2,
+        "head_width": -0.08,
+        "jaw_taper": 0.085,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88.json",
+        "sha256": "a9bddc8ff8bdc41111802f06ba01719e0844601f55ee9c9e166125a36022cece"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88/front.png",
+          "sha256": "1a0287e6a815e722f397b2892d71a15d50e6c980b8bbef5e8c89422fd1acff8e"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88/profile.png",
+          "sha256": "e0d4ca6134528437be564d05cd3461092faa8d7a6b4e721abfbce3028a6fe62d"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/e17e86d26a6fbb9d6e9afcf5192f3cca6322a9d851f7177a409fd07c69f8cb88/three-quarter.png",
+          "sha256": "753ecfb29834876ca194a9612f024683ce510eb6a6e540ef22c32675cc4b617c"
+        }
+      },
+      "score": 1.5284196783797517
+    },
+    {
+      "candidateId": "eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b-build.log",
+          "sha256": "6101fedaddf8aa607bafc26e57f0941fe728fb7d15b1c372f93b11829d6e4165"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b-measure.log",
+          "sha256": "0f5816da112990662367718ae7493c1994baf24b31c1e4404b32e3d8d0b0c583"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b-verify.log",
+          "sha256": "88706a96957f1cedc7c9173402812a53c4a81648137a746802c1b2b101598f79"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b/manifest.json",
+        "sha256": "cb5a601a0afb987ea3a3e54f08da7512b7e1b5d1670be9c13b932ec9ea99de5d"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b/macro-geometry.json",
+        "sha256": "5f696b4ce822bbe09ede380a8d3b1b7a9e339f3b9785aa2ad53f884095114261"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": 0.0,
+        "head_width": -0.08,
+        "jaw_taper": 0.0,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b.json",
+        "sha256": "04ac406ab3b82e6cb5d31db548a2dbe8391e4b1c1b75877a1fed1c5d8acdaf68"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b/front.png",
+          "sha256": "0ec06c1143750103bc43ea3a2fd62da942a57ce823e8136f7888b682e59b4380"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b/profile.png",
+          "sha256": "4342a5910a7bcceddf8258c23f914d0591ae85d105ff32ce1efa0fc7688fbecb"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b/three-quarter.png",
+          "sha256": "e1c26eb541a2e6b720e878186333d31b298397939311cc6db883d5ea1bff3862"
+        }
+      },
+      "score": 1.6316362371776234
+    },
+    {
+      "candidateId": "f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375",
+      "logs": {
+        "build": {
+          "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-build.log",
+          "sha256": "b047e1db1db451038cee33c30f812f199a23f55938f322b2433a6686bd91a09a"
+        },
+        "measure": {
+          "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-measure.log",
+          "sha256": "3fafd25fe4e0f808af3f65d24a2c1babd663c7b225d7949f5eaead67f08ac4b8"
+        },
+        "verify": {
+          "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-verify.log",
+          "sha256": "0337990ff6605a5ffb17556d22a4570905258ea812c1429eacf03d2de45fd42f"
+        }
+      },
+      "manifest": {
+        "hardChecks": {
+          "completed": true,
+          "editableShapeKey": true,
+          "hasAnimation": false,
+          "hasArmature": false,
+          "referenceProjection": true,
+          "renderSize": [
+            768,
+            768
+          ],
+          "visibleMaterialsUseNoImages": true
+        },
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/manifest.json",
+        "sha256": "81cbca34cab4ccd79d3e8d066402012f494c1fb0f09a8c8cc097502cc2caa4c3"
+      },
+      "metric": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/macro-geometry.json",
+        "sha256": "d65a88958b7e9b19aff57f969a8b08b069d1da0d603f76ef32892725ce4fa79c"
+      },
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": 0.0,
+        "head_width": -0.08,
+        "jaw_taper": 0.085,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "recipe": {
+        "path": "Runs/macro-grid-20260720-064000/candidates/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375.json",
+        "sha256": "3b08ed07cbd935da854f81125af1b3d4b832d090c9b97d83fe782990a1498e29"
+      },
+      "renders": {
+        "front.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/front.png",
+          "sha256": "a38c7675cae15b533551c9d607e7e3191f6dd7b693bcbbce0183cb0fbe65d3de"
+        },
+        "profile.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/profile.png",
+          "sha256": "4a2a8b3e485403947a595bbc73bef3d95d1552b0f118900e2131347a21b1e8f0"
+        },
+        "three-quarter.png": {
+          "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/three-quarter.png",
+          "sha256": "2f4f1580f11597f465253679ce82af14c971a40d0828720751ba695b9ec4b107"
+        }
+      },
+      "score": 1.5970207550139148
+    }
+  ],
+  "hardPlausibility": "All eight manifests passed fresh verification; 3/4/profile contribute only these hard checks, never the score.",
+  "humanAcceptance": false,
+  "retained": {
+    "candidateId": "f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375",
+    "logs": {
+      "build": {
+        "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-build.log",
+        "sha256": "b047e1db1db451038cee33c30f812f199a23f55938f322b2433a6686bd91a09a"
+      },
+      "measure": {
+        "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-measure.log",
+        "sha256": "3fafd25fe4e0f808af3f65d24a2c1babd663c7b225d7949f5eaead67f08ac4b8"
+      },
+      "verify": {
+        "path": "Runs/macro-grid-20260720-064000/logs/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375-verify.log",
+        "sha256": "0337990ff6605a5ffb17556d22a4570905258ea812c1429eacf03d2de45fd42f"
+      }
+    },
+    "manifest": {
+      "hardChecks": {
+        "completed": true,
+        "editableShapeKey": true,
+        "hasAnimation": false,
+        "hasArmature": false,
+        "referenceProjection": true,
+        "renderSize": [
+          768,
+          768
+        ],
+        "visibleMaterialsUseNoImages": true
+      },
+      "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/manifest.json",
+      "sha256": "81cbca34cab4ccd79d3e8d066402012f494c1fb0f09a8c8cc097502cc2caa4c3"
+    },
+    "metric": {
+      "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/macro-geometry.json",
+      "sha256": "d65a88958b7e9b19aff57f969a8b08b069d1da0d603f76ef32892725ce4fa79c"
+    },
+    "parameters": {
+      "cheek_definition": 0.36,
+      "chin_projection": -0.12,
+      "eye_bag": 0.44,
+      "eye_spacing": 0.0,
+      "head_height": 0.0,
+      "head_width": -0.08,
+      "jaw_taper": 0.085,
+      "lip_volume": 0.08,
+      "nose_length": 0.3,
+      "nose_projection": 0.14,
+      "nose_width": 0.26
+    },
+    "recipe": {
+      "path": "Runs/macro-grid-20260720-064000/candidates/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375.json",
+      "sha256": "3b08ed07cbd935da854f81125af1b3d4b832d090c9b97d83fe782990a1498e29"
+    },
+    "renders": {
+      "front.png": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/front.png",
+        "sha256": "a38c7675cae15b533551c9d607e7e3191f6dd7b693bcbbce0183cb0fbe65d3de"
+      },
+      "profile.png": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/profile.png",
+        "sha256": "4a2a8b3e485403947a595bbc73bef3d95d1552b0f118900e2131347a21b1e8f0"
+      },
+      "three-quarter.png": {
+        "path": "Derived/search-runs/macro-grid-20260720-064000/round-7/f88ddce51ebabc11cbf97abaab7d7a773755028e043f58d8156d7ba13d6db375/three-quarter.png",
+        "sha256": "2f4f1580f11597f465253679ce82af14c971a40d0828720751ba695b9ec4b107"
+      }
+    },
+    "score": 1.5970207550139148
+  },
+  "runId": "macro-grid-20260720-064000",
+  "schemaVersion": 1,
+  "selection": {
+    "candidateId": "74c2ff067cfe62beca49bba4f5eabb3b46dd36b8af3b418e09210b084c30fc33",
+    "improvement": 0.12154204439231253,
+    "minimumMargin": 0.02,
+    "status": "nominated"
+  },
+  "status": "nominated-not-human-accepted",
+  "targetAnnotation": {
+    "path": "target-front-geometry.json",
+    "sha256": "6868bee0d70555866f3b3107127c0eb4594afbcfdaee399af6edc927d41998c6"
+  }
+}

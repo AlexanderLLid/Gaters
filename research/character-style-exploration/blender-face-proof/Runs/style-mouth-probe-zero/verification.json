@@ -1,0 +1,47 @@
+{
+  "baselineRatios": {
+    "cheekWidth": 1.8862564648615758,
+    "eyeToChinHeight": 1.8509884051450758,
+    "jawWidth": 1.7196915300645068,
+    "lowerFaceTaper": 0.9116954995781592,
+    "mouthWidth": 1.1330878447711323
+  },
+  "baselineScore": 0.28854589194075353,
+  "candidateRatios": {
+    "cheekWidth": 1.8524495250937179,
+    "eyeToChinHeight": 1.7769491428740853,
+    "jawWidth": 1.7814736597175314,
+    "lowerFaceTaper": 0.9616853984873915,
+    "mouthWidth": 1.1029912714700438
+  },
+  "candidateScore": 0.03951795512881706,
+  "decision": "promote-macro-control",
+  "evidence": {
+    "blendSha256": "4bd7e955344a387e0cb1d83611378fb7ea59f04207330f53314bc998ad7a276c",
+    "manifestSha256": "b6a0c4e4400448be07e3c3d6b7ac25cc167513aef70c710d66cc0198d72d386d",
+    "verifierSha256": "46ece4f3e5396745bd0b9678e551e5ba5e7588fa77d35b01ef7de7ef8ab6779b"
+  },
+  "gates": {
+    "boundedDisplacement": true,
+    "finiteCoordinates": true,
+    "isolatedArtProof": true,
+    "macroImprovement": true,
+    "profileDepth": true,
+    "renders": true,
+    "topology": true
+  },
+  "improvement": 0.24902793681193647,
+  "maximumDisplacement": 0.004488019628026231,
+  "maximumProfileDepthChange": 0.0,
+  "profileDepthPreserved": true,
+  "schemaVersion": 1,
+  "targetRatios": {
+    "cheekWidth": 1.851528384279476,
+    "eyeToChinHeight": 1.777292576419214,
+    "jawWidth": 1.7816593886462884,
+    "lowerFaceTaper": 0.9622639622641509,
+    "mouthWidth": 1.0655021834061136
+  },
+  "topologyUnchanged": true,
+  "visualDecision": "pending-human"
+}

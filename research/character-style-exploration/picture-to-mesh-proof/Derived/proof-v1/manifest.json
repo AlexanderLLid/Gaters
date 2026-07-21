@@ -1,0 +1,50 @@
+{
+  "artifacts": {
+    "baseline/front.png": {
+      "sha256": "81c08e98d707fb5dcb111d381394ae0db37e21434454c0420a82ee6354fc094c"
+    },
+    "baseline/side.png": {
+      "sha256": "c4351855cbbf0a9bbefecb40d11e0eb2cc341ea519c309f2a5f90a91de8ccaef"
+    },
+    "fitted/front.png": {
+      "sha256": "32e567043c4b05167db1cdbd0f2f9b749a3c626d588b39c8b80f7bfee7513b24"
+    },
+    "fitted/side.png": {
+      "sha256": "759e4c9dfd04927922095eec96809995d8b4b9c50b2083f9f91569eecb15bdf7"
+    },
+    "fitted/three-quarter.png": {
+      "sha256": "9424f6da0e2fead0b798335b51fde4a25e5855fa4ac23ee4d5255d640728e234"
+    },
+    "picture-to-mesh.blend": {
+      "sha256": "59a21c75fc9d53454101794cdbea67aa103bdd694adc984dedaee8ff65df6ef6"
+    },
+    "target-front.png": {
+      "sha256": "89301a84e95d859ed458d515a40863dd508efb5bfd173ec6ef4c269e6890ba68"
+    }
+  },
+  "inputType": "single-front-orthographic-raster-silhouette",
+  "inputs": {
+    "front": {
+      "path": "target-front.pgm",
+      "sha256": "f895460da88dacc1bef31c5b74adf21aaa4fc30a55d1a40ad1d5508c9d8a2bdd"
+    }
+  },
+  "recipe": {
+    "levels": 32,
+    "segments": 48,
+    "shapeKey": "Fitted"
+  },
+  "schemaVersion": 1,
+  "status": "built-unverified",
+  "tools": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "fe7752062847f4954bfbbe9251a810f2c9ddaa66bb8c1922a3ef58608bfd19fe",
+    "fitterSha256": "7d9fedd322d1b35d1bc5346e2059c48a2eb2835ace8e9453f8f20f55bcd7f9b9",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "connectivitySha256": "de73adaf81f36d440dc40f25319cca992c1ad7cfa104a1fe8b8f0f86096886b4",
+    "faceCount": 1490,
+    "vertexCount": 1536
+  }
+}

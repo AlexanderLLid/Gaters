@@ -5,7 +5,7 @@
 
 enum class EGatersRecipeNodeKind : uint8
 {
-	Gate,
+	Arrival,
 	BaseSite,
 	ScatterTree,
 	ScatterRock,
@@ -14,13 +14,17 @@ enum class EGatersRecipeNodeKind : uint8
 	RaidLoot,
 	VillageSite,
 	LandmarkSite,
-	RouteWaypoint
+	RouteWaypoint,
+	SettlementModule,
+	SettlementPath,
+	SettlementParcel,
+	SettlementGrowthFront
 };
 
 struct PROTOTYPE_API FGatersRecipeNode
 {
 	FString Id;
-	EGatersRecipeNodeKind Kind = EGatersRecipeNodeKind::Gate;
+	EGatersRecipeNodeKind Kind = EGatersRecipeNodeKind::Arrival;
 	FVector Location = FVector::ZeroVector;
 	FRotator Rotation = FRotator::ZeroRotator;
 	FVector Scale = FVector::OneVector;
@@ -47,6 +51,12 @@ struct PROTOTYPE_API FGatersWorldRecipe
 		float MaxBaseDistance,
 		float BaseFootprintRadius,
 		float MaxFoundationDrop);
+	static FGatersWorldRecipe Generate(
+		const FGatersEnvironment& Environment,
+		float MinBaseDistance,
+		float MaxBaseDistance,
+		float BaseFootprintRadius,
+		float MaxFoundationDrop);
 
 	FString CanonicalText() const;
 	uint32 Checksum() const;
@@ -54,7 +64,7 @@ struct PROTOTYPE_API FGatersWorldRecipe
 	const FGatersRecipeNode* FindNode(const FString& Id) const;
 	bool Validate(TArray<FString>& OutErrors) const;
 
-	int32 SchemaVersion = 6;
+	int32 SchemaVersion = 9;
 	int32 GeneratorVersion = 0;
 	int32 Seed = 0;
 	float ChunkSize = 0.f;
@@ -64,6 +74,7 @@ struct PROTOTYPE_API FGatersWorldRecipe
 	float WaterHeight = -100000.f;
 	bool bHasBaseSite = false;
 	FVector2D BaseSite = FVector2D::ZeroVector;
+	float BaseSiteHeight = 0.f;
 	TArray<FGatersRecipeNode> Nodes;
 	TArray<FGatersRecipeLink> Links;
 };

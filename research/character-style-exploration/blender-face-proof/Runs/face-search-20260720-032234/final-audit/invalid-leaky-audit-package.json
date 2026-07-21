@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "targetImage": "Reference/painted-a-front-flat-v2.png",
+  "slots": {
+    "left": ["Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/front.png", "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/three-quarter.png", "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/profile.png"],
+    "center": ["Derived/search-runs/face-search-20260720-032234/round-6/c842c4a217388531088a5abfec7d603269d38ddb9cb722c81527cbed4037583e/front.png", "Derived/search-runs/face-search-20260720-032234/round-6/c842c4a217388531088a5abfec7d603269d38ddb9cb722c81527cbed4037583e/three-quarter.png", "Derived/search-runs/face-search-20260720-032234/round-6/c842c4a217388531088a5abfec7d603269d38ddb9cb722c81527cbed4037583e/profile.png"],
+    "right": ["Derived/sculpt-v13/front.png", "Derived/sculpt-v13/three-quarter.png", "Derived/sculpt-v13/profile.png"]
+  }
+}

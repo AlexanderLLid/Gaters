@@ -1,7 +1,8 @@
 # Base and Raid Research Brief
 
-Owned by the Base & Raid Lab workstream. This is the stable research shape, not a status
-page; `research/machines.json` owns the live capability graph.
+This is the stable capability shape, not an ownership or status page. The
+[[../.agents/workstreams/README|workstream router]] owns current coordination;
+`research/machines.json` owns the live capability graph.
 
 ## Outcome
 
@@ -35,12 +36,3 @@ Registry nodes: `evaluation.physical-fit`, `evaluation.raid-space`,
 - Challengers face held-out terrain seeds and attacker/defender policies.
 - Failure artifacts identify the responsible layout decision or missing contract.
 - Human raids audit whether measured variety transfers to interesting play.
-
-## Cross-workstream contracts
-
-- Primary Builder provides terrain, buildability, route, content, and persistence seams.
-- Combat & Classes provides baseline traversal, attack, defense, destruction, and
-  objective capabilities.
-- Scale & Persistence provides simulation and replicated-entity budgets before live
-  multiplayer implementation.
-- Art may replace semantic assets without changing base recipes or tactical evidence.

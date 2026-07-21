@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "identity": "face_sculptor",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "Mechanically build both immutable round-2 head_width candidates from the fixed source, using --python-exit-code 1, preserved logs, fresh-reopen verification, exit and marker checks, with no parameter changes or quality judgment.",
+  "response": {
+    "failureDiagnosis": null,
+    "candidates": [
+      {"candidateId": "ac16ff851ba5a0c1343348247555078db34d027ce7d677d6bd6d050db2212ded", "buildExit": 0, "verifierExit": 0, "buildMarker": true, "verifierMarker": true, "buildLog": {"path": "Runs/face-search-20260720-032234/round-2/logs/ac16ff85-build.log", "sha256": "93ef536be952c54ce2afee1e9d767c95e858e19abe2c4edd8147d1dc1eb823ce"}, "verifierLog": {"path": "Runs/face-search-20260720-032234/round-2/logs/ac16ff85-verify.log", "sha256": "8a19c5ac751695f7e0933cdbd11aebfc340c02fc8a5e23640d041630db022deb"}, "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-2/ac16ff851ba5a0c1343348247555078db34d027ce7d677d6bd6d050db2212ded/manifest.json", "sha256": "eb98c0b2d578d2c3d03e42f484e58ab6a7874f57c4c5eaf731d3e8b8368e86c4"}},
+      {"candidateId": "ed1026d420c43ceaded9d6d698c92238d7305f686cc31fc9910c7252bcb3db4c", "buildExit": 0, "verifierExit": 0, "buildMarker": true, "verifierMarker": true, "buildLog": {"path": "Runs/face-search-20260720-032234/round-2/logs/ed1026d4-build.log", "sha256": "650dccc641d35f0c1c43ba9e91f3b9a31841fdf76388c08ed77e232e675189e0"}, "verifierLog": {"path": "Runs/face-search-20260720-032234/round-2/logs/ed1026d4-verify.log", "sha256": "c5bf15179a7d63d6cb0cfd3329101abd280faaf672c27c681c442834c5f220ae"}, "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-2/ed1026d420c43ceaded9d6d698c92238d7305f686cc31fc9910c7252bcb3db4c/manifest.json", "sha256": "f1a35ca10a21209aca345f42790e9984bc106134a5398a8d9ea9d00b321eff3d"}}
+    ]
+  },
+  "humanAcceptance": false
+}

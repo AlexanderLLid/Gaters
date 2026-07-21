@@ -1,0 +1,15 @@
+{
+  "failures": [],
+  "metrics": {
+    "active_limb_displacement_m": 0.3471860829534928,
+    "capture_region_count": 16,
+    "max_cross_side_weight": 0.0,
+    "max_influences": 2,
+    "max_position_delta_m": 0.0,
+    "max_weight_sum_error": 2.9802322387695312e-08,
+    "protected_module_displacement_m": 1.1920928955078125e-07,
+    "vertex_count": 13149
+  },
+  "passed": true,
+  "schema": "skin-capture-verification/0"
+}

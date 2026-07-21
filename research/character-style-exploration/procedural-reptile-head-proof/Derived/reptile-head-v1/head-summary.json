@@ -1,0 +1,38 @@
+{
+  "bounds": [
+    [
+      -1.2999999523162842,
+      -0.9411976933479309,
+      -0.7623999714851379
+    ],
+    [
+      1.7200000286102295,
+      0.9411976933479309,
+      0.8903999924659729
+    ]
+  ],
+  "cameras": [
+    "CAM_GAMEPLAY",
+    "CAM_CLOSE",
+    "CAM_INSPECT"
+  ],
+  "features": [
+    "eye",
+    "mouth",
+    "nostril",
+    "plate",
+    "pupil",
+    "skin"
+  ],
+  "generator_sha256": "1295b89e3c4305f7b88eefb92c0df34fb3cd9c8c4541600de92d05003ccda470",
+  "houdini": "22.0.368",
+  "license_category": "licenseCategoryType.Apprentice",
+  "minimum_polygon_area": 3.60265803465154e-05,
+  "nonfinite_point_count": 0,
+  "passed": true,
+  "point_count": 5306,
+  "polygon_count": 5616,
+  "recipe_id": "reptile-head-v1",
+  "recipe_sha256": "733711fa8f429f4b258c0941176fe5854aa46881a66816a725ae4be176ac805d",
+  "snout_width_ratio": 0.52
+}

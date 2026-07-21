@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "targetImage": "Reference/painted-a-front-flat-v2.png",
+  "slots": {
+    "left": ["Runs/face-search-20260720-032234/final-audit/audit/left/front.png", "Runs/face-search-20260720-032234/final-audit/audit/left/three-quarter.png", "Runs/face-search-20260720-032234/final-audit/audit/left/profile.png"],
+    "center": ["Runs/face-search-20260720-032234/final-audit/audit/center/front.png", "Runs/face-search-20260720-032234/final-audit/audit/center/three-quarter.png", "Runs/face-search-20260720-032234/final-audit/audit/center/profile.png"],
+    "right": ["Runs/face-search-20260720-032234/final-audit/audit/right/front.png", "Runs/face-search-20260720-032234/final-audit/audit/right/three-quarter.png", "Runs/face-search-20260720-032234/final-audit/audit/right/profile.png"]
+  }
+}

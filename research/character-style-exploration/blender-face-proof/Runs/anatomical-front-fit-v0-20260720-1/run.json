@@ -1,0 +1,27 @@
+{
+  "candidateRecipe": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Runs\\anatomical-front-fit-v0-20260720-1\\candidates\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8.json",
+  "createdUtc": "2026-07-20T07:31:36.801423+00:00",
+  "inputs": {
+    "candidateRecipe": {
+      "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Runs\\feature-calibration-20260720-100000\\candidates\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8.json",
+      "sha256": "a45875185222381699c877afae55b426422fff88ac6c7f303133bc74ec9bb6f5"
+    },
+    "sourceBlend": {
+      "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\face-v2\\face-proof.blend",
+      "sha256": "1def0a265d6364a6a9379650bede374aee7de54f42a7ec7557b4fcd28ccb1792"
+    },
+    "targetGeometry": {
+      "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\target-feature-geometry.json",
+      "sha256": "62aec9184dbe819f79a982898fe5bd487d03d4be5ce169d677f1d58aa4f16963"
+    },
+    "targetImage": {
+      "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Reference\\painted-a-front-flat-v2.png",
+      "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf"
+    }
+  },
+  "machineId": "research.anatomical-front-fit",
+  "maximumRatioError": 0.02,
+  "runId": "anatomical-front-fit-v0-20260720-1",
+  "schemaVersion": 1,
+  "status": "initialized"
+}

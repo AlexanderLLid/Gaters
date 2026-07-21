@@ -1,0 +1,41 @@
+{
+  "experiment": "generation-sweetspots-v1",
+  "source": "../blender-face-proof/Reference/painted-a-full-body-front-v1.png",
+  "tool": "OpenAI built-in image generation",
+  "constants": [
+    "same mature woman identity",
+    "woman + quadruped winged dragon + fantasy house",
+    "neutral studio presentation",
+    "grounded plausible anatomy and construction",
+    "no childlike proportions, cel shading, toy forms, or faceted low-poly presentation"
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "file": "a-painted-mid-detail.png",
+      "delta": "Broad painted values with selective surface detail",
+      "evaluation": "Pass; strongest richness, but the most expensive texture and detail target",
+      "decision": "retain"
+    },
+    {
+      "id": "B",
+      "file": "b-sculptural-matte.png",
+      "delta": "Large sculptural masses, matte mineral pigments, grouped scales and construction",
+      "evaluation": "Pass; clearest geometry and lowest dependence on generated microdetail",
+      "decision": "recommended sweet spot"
+    },
+    {
+      "id": "C",
+      "file": "c-graphic-painted-realism.png",
+      "delta": "Smooth geometry with compressed painted values and sparse dry-brush detail",
+      "evaluation": "Pass with warning; distinctive, but generated output retained more dragon and building detail than requested",
+      "decision": "retain for comparison"
+    }
+  ],
+  "rejected": {
+    "file": "not preserved",
+    "diagnosis": "Initial C expressed graphic simplification as visibly faceted dragon geometry, violating ART-1",
+    "correction": "Moved graphic simplification from geometry into materials and value grouping"
+  },
+  "requirements": ["ART-1", "ART-2", "ART-3", "ART-4"]
+}

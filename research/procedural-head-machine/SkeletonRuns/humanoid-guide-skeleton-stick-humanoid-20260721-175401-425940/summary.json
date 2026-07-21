@@ -1,0 +1,12 @@
+{
+  "guide_id": "humanoid-guide",
+  "passed": true,
+  "preview": "C:\\repos\\Gaters\\research\\procedural-head-machine\\SkeletonRuns\\humanoid-guide-skeleton-stick-humanoid-20260721-175401-425940\\preview.png",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SkeletonRuns\\humanoid-guide-skeleton-stick-humanoid-20260721-175401-425940\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SkeletonRuns\\humanoid-guide-skeleton-stick-humanoid-20260721-175401-425940\\run-2"
+  ],
+  "schema": "guide-skeleton-run-summary/0",
+  "skeleton_id": "humanoid-guide-skeleton",
+  "skeleton_sha256": "40e4732704dfd80f331c83b349972afa782a3f3c253941428f501aa8397eb939"
+}

@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "front.png": "b961b2c8303812fa837571c64cd2782fbecbb01c3a55093c6833c63615445df3",
+    "profile.png": "642f77e0ec78c0361a9e6a093366273b8ed329806914c1371cbfbc9e52806bf5",
+    "raw-head.blend": "36d0e5fed188a0ecf221337633456b7d19f14468c87b038db60f81fd20a97fea",
+    "three-quarter.png": "076f8d6899faa08345a8718b4db09bf0ddb0ba096c46b4de1ace45eb297f1c0b"
+  },
+  "claims": [
+    "anatomically trained design volume",
+    "editable Blender geometry"
+  ],
+  "excludes": [
+    "target likeness",
+    "production topology approval",
+    "texture",
+    "rigging",
+    "animation"
+  ],
+  "input": {
+    "anatomySource": {
+      "commit": "545a62ed617137b478586ced9d138c5c106ca65a",
+      "license": "Apache-2.0",
+      "model": "GNM Head v3",
+      "repository": "https://github.com/google/GNM.git"
+    },
+    "decoderSha256": "1f069bf4975620e25a053772719a35678c9cfe6121e58bc4276a3515b53ac142",
+    "identity": {
+      "ethnicityClass": "black",
+      "genderClass": "female",
+      "seed": 1847
+    },
+    "targetImage": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Reference\\painted-a-front-flat-v2.png",
+    "targetSha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf"
+  },
+  "machineId": "research.raw-head-design-sculpt",
+  "output": {
+    "blend": "C:\\repos\\Gaters\\research\\character-style-exploration\\raw-sculpt-proof\\Derived\\minimal-v3-gnm\\raw-head.blend",
+    "faces": 35324,
+    "vertices": 17821
+  },
+  "schemaVersion": 1,
+  "status": "human-review",
+  "usesImageProjection": false,
+  "usesMpfb": false
+}

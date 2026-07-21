@@ -1,0 +1,9 @@
+{
+  "compiler": "joint-limit-compiler/0",
+  "joint_limit_recipe_sha256": "b9a37b02e226fff26996d7de970e396c773f239da11f8e3329c42e7da8b01fff",
+  "joint_limits_sha256": "b55f43629bd81277ce4fc7606c4619b48bc53e5f5893e33613d21f8974dc2bd2",
+  "pose_suite_recipe_sha256": "92f96200ae673ec3dd4cf3459fee22e10fe0abbec6798783125bfd82696509a3",
+  "schema": "joint-limit-receipt/0",
+  "source_skeleton_sha256": "40e4732704dfd80f331c83b349972afa782a3f3c253941428f501aa8397eb939",
+  "verifier": "joint-limit-verifier/0"
+}

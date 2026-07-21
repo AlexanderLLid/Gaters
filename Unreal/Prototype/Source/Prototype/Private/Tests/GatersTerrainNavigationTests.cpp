@@ -92,6 +92,8 @@ bool FGatersTraversabilityEvaluatorTest::RunTest(const FString& Parameters)
 	const FGatersTraversabilityEvaluation OpenResult = FGatersTraversabilityEvaluator::Evaluate(
 		Open, FIntPoint(2, 2), FIntPoint(4, 4), 2);
 	TestEqual(TEXT("evaluation contract is versioned"), OpenResult.EvaluatorVersion, 1);
+	TestEqual(TEXT("open terrain exposes all cells as walkable"),
+		OpenResult.WalkableFraction, 1.f);
 	TestEqual(TEXT("open terrain has full reachable coverage"), OpenResult.ReachableFraction, 1.f);
 	TestTrue(TEXT("open terrain escapes the start region"), OpenResult.bEscapesStart);
 	TestTrue(TEXT("open terrain reaches its critical goal"), OpenResult.bGoalReachable);
@@ -109,6 +111,8 @@ bool FGatersTraversabilityEvaluatorTest::RunTest(const FString& Parameters)
 		Barrier, FIntPoint(0, 2), FIntPoint(4, 2), 2);
 	TestFalse(TEXT("critical goal across water is rejected"), BarrierResult.bGoalReachable);
 	TestEqual(TEXT("barrier reports two components"), BarrierResult.Region.ComponentCount, 2);
+	TestEqual(TEXT("barrier leaves four fifths of the field walkable"),
+		BarrierResult.WalkableFraction, 0.8f);
 	TestEqual(TEXT("barrier exposes half its walkable terrain"), BarrierResult.ReachableFraction, 0.5f);
 
 	for (const int32 Seed : { 0, 2, 4, 7 })
@@ -124,11 +128,11 @@ bool FGatersTraversabilityEvaluatorTest::RunTest(const FString& Parameters)
 			FMath::RoundToInt(Recipe.BaseSite.Y / Generated.CellSize) + Half);
 		const FGatersTraversabilityEvaluation GeneratedResult = FGatersTraversabilityEvaluator::Evaluate(
 			Generated, FIntPoint(Half, Half), BaseCell, 3);
-		TestTrue(*FString::Printf(TEXT("seed %d escapes the Gate"), Seed), GeneratedResult.bEscapesStart);
+		TestTrue(*FString::Printf(TEXT("seed %d escapes the arrival region"), Seed), GeneratedResult.bEscapesStart);
 		TestTrue(*FString::Printf(TEXT("seed %d reaches its generated base"), Seed), GeneratedResult.bGoalReachable);
 	}
 
-	// Held-out visual failure: seed 53 once produced a mountain field whose Gate pad
+	// Held-out visual failure: seed 53 once produced a mountain field whose arrival region
 	// and base were each locally valid but disconnected by nearly continuous cliffs.
 	const int32 ChallengeSeed = 53;
 	const float RuntimeWorldSize = 400000.f;
@@ -143,7 +147,7 @@ bool FGatersTraversabilityEvaluatorTest::RunTest(const FString& Parameters)
 		FMath::RoundToInt(ChallengeRecipe.BaseSite.Y / ChallengeField.CellSize) + ChallengeHalf);
 	const FGatersTraversabilityEvaluation ChallengeResult = FGatersTraversabilityEvaluator::Evaluate(
 		ChallengeField, FIntPoint(ChallengeHalf, ChallengeHalf), ChallengeBaseCell, 3);
-	TestTrue(TEXT("seed 53 escapes the Gate at runtime dimensions"), ChallengeResult.bEscapesStart);
+	TestTrue(TEXT("seed 53 escapes the arrival region at runtime dimensions"), ChallengeResult.bEscapesStart);
 	TestTrue(TEXT("seed 53 reaches its generated base at runtime dimensions"), ChallengeResult.bGoalReachable);
 
 	const int32 DryMountainSeed = 0;
@@ -163,7 +167,7 @@ bool FGatersTraversabilityEvaluatorTest::RunTest(const FString& Parameters)
 		DryMountainResult.ReachableFraction >= 0.75f);
 	TestTrue(TEXT("seed 0 avoids fragmented micro-ridge regions"),
 		DryMountainResult.Region.ComponentCount <= 48);
-	TestTrue(TEXT("seed 0 escapes the Gate"), DryMountainResult.bEscapesStart);
+	TestTrue(TEXT("seed 0 escapes the arrival region"), DryMountainResult.bEscapesStart);
 	TestTrue(TEXT("seed 0 reaches its generated base"), DryMountainResult.bGoalReachable);
 	return true;
 }

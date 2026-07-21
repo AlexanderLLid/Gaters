@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "task10_visual_audit_b",
+  "visibleSlots": ["X", "A", "B", "C"],
+  "rank": ["A", "C", "B", "X"],
+  "clearImprovementOverX": false,
+  "hardRegressions": [],
+  "summary": "A is marginally closer, but all four are near-ties and the run is not a meaningful step beyond X.",
+  "largestRemainingMismatches": [
+    "Eye apertures remain too small, narrow, and slit-like.",
+    "Alar base and nose tip remain too narrow and pinched.",
+    "Upper lip remains thin and flat while the lower lip is uniformly inflated with little Cupid bow or philtrum."
+  ]
+}

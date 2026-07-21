@@ -1,0 +1,11 @@
+{
+  "failures": [],
+  "metrics": {
+    "bone_count": 15,
+    "joint_count": 16,
+    "max_frame_error": 8.264500195309665e-13,
+    "max_position_delta_m": 0.0
+  },
+  "passed": true,
+  "schema": "guide-skeleton-verification/0"
+}

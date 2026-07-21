@@ -1,0 +1,44 @@
+{
+  "decision": "promote-recognizable-mask-fit",
+  "depthRelations": {
+    "chinAboveMouthGroove": true,
+    "leftBrowAboveEye": true,
+    "leftCheekAboveEye": true,
+    "noseAboveCheeks": true,
+    "rightBrowAboveEye": true,
+    "rightCheekAboveEye": true
+  },
+  "evidence": {
+    "blendSha256": "b7493a28eadba5ae9df620f334f10289540f8c438ac4f131a9bdbe5279885526",
+    "manifestSha256": "f13a16c656a8862403d9f8257634b44afde316366f260ca49d6b2f687e5cbd41",
+    "verifierSha256": "3740827b9a84d368f1ae43ff234662ba68284ec74191c69d92b2d4d5e9501f88"
+  },
+  "featureDepthDeltas": {
+    "chin": 0.07496604323387146,
+    "leftBrow": 0.035909056663513184,
+    "leftCheek": 0.04649871587753296,
+    "leftEye": 0.004742652177810669,
+    "mouth": 0.01949906349182129,
+    "nose": 0.17607909440994263,
+    "rightBrow": 0.030539244413375854,
+    "rightCheek": 0.04050001502037048,
+    "rightEye": -0.0017856359481811523
+  },
+  "frontSilhouetteIoU": 0.9942627855408117,
+  "gates": {
+    "boundedEdgeStretch": true,
+    "depthRelations": true,
+    "finiteCoordinates": true,
+    "frontSilhouette": true,
+    "nonDegenerateFaces": true,
+    "rearRelief": true,
+    "topology": true
+  },
+  "maximumEdgeStretch": 1.7475530244442297,
+  "minimumFaceArea": 0.0005646616918966174,
+  "promoted": true,
+  "rearReliefPreserved": true,
+  "schemaVersion": 1,
+  "topologyUnchanged": true,
+  "variant": "broad"
+}

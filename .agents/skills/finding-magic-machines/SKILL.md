@@ -43,11 +43,19 @@ the dream, reuse existing machinery, then build forward from falsifiable gaps.
    ends at a verified Borrow node or an isolated prototype that can falsify its guarantee.
 8. **Reverse the graph.** Present topological build waves: Borrow, then Adapt, then Build.
    Done when evidence gates every node before it unlocks consumers.
-9. **Close the verification loop.** For every Adapt or Build node, name an
+9. **Select the next frontier.** Compare unresolved nodes by the nearest player-visible
+   milestone they block, downstream machines unlocked, feasibility uncertainty retired,
+   and earlier-wave blockers skipped. A later-wave known-known proceeds only when the
+   human prioritizes it or evidence shows the spike could invalidate the architecture.
+   Done when the selected node records **why now**, what it unlocks, and why every nearer
+   blocker can wait.
+10. **Close the verification loop.** For every Adapt or Build node, name an
    independent verifier, held-out challenge set, diagnostic failure artifact, and
    champion-challenger promotion gate. Preserve every run immutably. Done when a
    failed guarantee identifies the next experiment without replacing the champion.
-10. **Loop from evidence.** Restart at the first failed guarantee after each prototype.
+   Spatial comparison evidence preserves each source independently at full opacity;
+   use a wipe or blink as primary evidence and keep alpha-averaged composites diagnostic.
+11. **Loop from evidence.** Restart at the first failed guarantee after each prototype.
    Done when the next seed machine addresses the observed failure.
 
 ## Output contract
@@ -55,8 +63,9 @@ the dream, reuse existing machinery, then build forward from falsifiable gaps.
 | Node | Unlocks | AND/OR/SEQUENCE | Borrow/Adapt/Build | Contract | Work deleted | Verifier | Challenge set | Promotion gate |
 |---|---|---|---|---|---|---|
 
-End with seed nodes, falsifying experiments, first build wave, and unlocked dream
-machine. Enter implementation through the authorized planning workflow.
+End with seed nodes, falsifying experiments, first build wave, selected frontier with
+its **why now**, and unlocked dream machine. Enter implementation through the authorized
+planning workflow.
 
 ## Example
 

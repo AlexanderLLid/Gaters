@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-8-target-feature-annotation-mismatch",
+  "invalidatedRunIds": ["feature-grid-20260720-090000"],
+  "reason": "Two independent blind annotations disagreed materially with the initial frozen lower-lid and nasion points before any valid candidate build. The initial run remains append-only; a consensus annotation with explicit uncertainty starts a new run identity.",
+  "preservedFailure": "logs/7dffbc94a2f7741363b767459ce2c9b4e9261ebd0ae88623ce86baf4bb4fa2d3-build.log"
+}

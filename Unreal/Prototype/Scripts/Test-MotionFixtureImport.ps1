@@ -8,7 +8,7 @@ $RepoRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..'))
 $Project = Join-Path $ProjectRoot 'Prototype.uproject'
 $EditorCmd = Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
 $BlenderTest = Join-Path $RepoRoot 'SourceAssets\Blender\Test-MotionFixture.ps1'
-$Manifest = Join-Path $RepoRoot 'SourceAssets\Blender\Derived\neutral-motion-v1\manifest.json'
+$Manifest = Join-Path $RepoRoot 'SourceAssets\Blender\Derived\neutral-motion-v2\manifest.json'
 $Importer = Join-Path $PSScriptRoot 'ImportMotionFixture.py'
 $Report = Join-Path $ProjectRoot 'Saved\AssetImport\neutral-motion.json'
 $GeneratedDirectory = Join-Path $ProjectRoot 'Content\Gaters\Generated\Motion'
@@ -64,14 +64,14 @@ foreach ($Field in @('schemaVersion', 'importerVersion', 'engineVersion', 'manif
 if (($First.boneNames -join ',') -cne ($Second.boneNames -join ',')) {
     throw 'Repeated motion import changed reference bones.'
 }
-foreach ($Field in @('requiredReferenceHierarchy', 'rootSamples', 'meshBoundsSizeCentimeters',
+foreach ($Field in @('requiredReferenceHierarchy', 'rootSamples', 'footWorldSamples', 'meshBoundsSizeCentimeters',
         'sourceContactEvents', 'importSettings')) {
     if (($First.$Field | ConvertTo-Json -Depth 8 -Compress) -cne
         ($Second.$Field | ConvertTo-Json -Depth 8 -Compress)) {
         throw "Repeated motion import changed $Field."
     }
 }
-if ($First.schemaVersion -ne 1 -or $First.importerVersion -ne 1) {
+if ($First.schemaVersion -ne 1 -or $First.importerVersion -ne 2) {
     throw 'Motion importer versions were not recorded.'
 }
 foreach ($ClassName in @('SkeletalMesh', 'Skeleton', 'AnimSequence')) {
@@ -79,6 +79,18 @@ foreach ($ClassName in @('SkeletalMesh', 'Skeleton', 'AnimSequence')) {
 }
 foreach ($Bone in @('root', 'pelvis', 'spine', 'foot_l', 'foot_r')) {
     if ($First.boneNames -notcontains $Bone) { throw "Imported skeleton is missing $Bone." }
+}
+foreach ($Foot in @('foot_l', 'foot_r')) {
+    $Samples = $First.footWorldSamples.$Foot
+    if ($Samples.Count -ne $First.sampledKeys) {
+        throw "Imported $Foot has $($Samples.Count) component-space samples, expected $($First.sampledKeys)."
+    }
+    for ($Frame = 0; $Frame -lt $Samples.Count; $Frame++) {
+        if ($Samples[$Frame].frameIndex -ne $Frame -or
+            $Samples[$Frame].translationCentimeters.Count -ne 3) {
+            throw "Imported $Foot component-space sample $Frame is invalid."
+        }
+    }
 }
 if ([Math]::Abs($First.durationSeconds - 1.0) -gt 0.001 -or $First.sampledKeys -lt 30) {
     throw "Unexpected imported clip timing: duration=$($First.durationSeconds) keys=$($First.sampledKeys)"

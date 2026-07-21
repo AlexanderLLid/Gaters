@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "face-style-macro.blend": "4bd7e955344a387e0cb1d83611378fb7ea59f04207330f53314bc998ad7a276c",
+    "front.png": "69232246262216d17e397dbd572714009096675ca53c252cd93f7b7e0bd0c8ae",
+    "profile.png": "dbd7a4f98c2a332a9fb276cf4e60231ee5bcde0f2cc16b3c93c53720bf4751ae",
+    "three-quarter.png": "8e9707df3ce33fd06a6678c6787cacde52f65c5b13d3c992045e5a7e16901ce9"
+  },
+  "baselineMacro": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\macro-geometry.json",
+    "sha256": "8097090850d64c06b7621cebeca881216ca3acd2ef3a69e632525359eb9bb402"
+  },
+  "maximumDisplacement": 0.004488019628026231,
+  "maximumYDisplacement": 0.0,
+  "recipe": {
+    "parameters": {
+      "cheekScale": 0.979,
+      "jawScale": 1.052,
+      "lateralPower": 4.0,
+      "lowerHeightScale": 0.96,
+      "mouthWidthValue": 0.0,
+      "upperHeightScale": 0.97
+    },
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\style-mouth-probe-zero.json",
+    "sha256": "632d4233ff0f8b6b992058dc92c39182d48b73a1cb893c39bf49dc2977cbb5fb"
+  },
+  "schemaVersion": 1,
+  "shapeKey": "StyleMacroDirect",
+  "sourceBlend": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\face-sculpt.blend",
+    "sha256": "4dd761827a05919179e4ad1829a0d27e7ee4b617546e237ada8a80588410155c"
+  },
+  "status": "built-unverified",
+  "targetGeometry": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\target-front-geometry.json",
+    "sha256": "f4849f11bfb6a3d105025741e44f452830b485c2bbebfa76394404e581cc57d6"
+  },
+  "toolVersions": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "54ab53a230ef75993b70c671206ff68e9dedbbd454bccb281be02bf80fdd27ac",
+    "deformerSha256": "3398fa0eb1d5e904e635a101517ca1c69dad522d3497ce34c3555089fb0e8f41",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "faceCount": 18486,
+    "sha256": "1f78e347f544c2377abee83216f297dc9499b73b7a149bd8b8d849b5553d95db",
+    "vertexCount": 19158
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "machineId": "research.raw-head-design-sculpt",
+  "parent": "raw-sculpt-v1.json",
+  "targetImage": "../blender-face-proof/Reference/painted-a-front-flat-v2.png",
+  "outputDirectory": "Derived/minimal-v2",
+  "construction": "continuous-deformed-sphere",
+  "rejectedParentReason": "Separate facial masses read as cartoon primitives and violated ART-1.",
+  "design": {
+    "headWidth": 1.44,
+    "headHeight": 2.10,
+    "headDepth": 1.28,
+    "jawWidth": 1.02,
+    "chinWidth": 0.56,
+    "cheekWidth": 1.30,
+    "eyeSpacing": 0.58,
+    "noseWidth": 0.38,
+    "mouthWidth": 0.58
+  }
+}

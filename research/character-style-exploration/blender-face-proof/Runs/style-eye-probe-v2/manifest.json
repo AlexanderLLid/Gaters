@@ -1,0 +1,51 @@
+{
+  "artifacts": {
+    "face-style-macro.blend": "6fe98827890e178bd07b6a503fe7772c96460e01ff0de73505c60f11f674abea",
+    "front.png": "55deb50aed6322b2ececc0396cc6f46ecc4fab7aeb772fc19e8d11e63b3bf156",
+    "profile.png": "e9d8a2bf98448b4601763ba60e9eb635e1edc4476d44946d797ae13d21ce9ad2",
+    "three-quarter.png": "1bc01e4cf3e58e302c7d4ee73cb5a9f469b1db223638055e6df5daa688688f5a"
+  },
+  "baselineMacro": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\macro-geometry.json",
+    "sha256": "8097090850d64c06b7621cebeca881216ca3acd2ef3a69e632525359eb9bb402"
+  },
+  "maximumDisplacement": 0.004488019628026231,
+  "maximumYDisplacement": 0.0,
+  "recipe": {
+    "parameters": {
+      "cheekScale": 0.979,
+      "eyeHeightValue": 0.56,
+      "eyeScaleDecrease": 0.31,
+      "jawScale": 1.052,
+      "lateralPower": 4.0,
+      "lowerHeightScale": 0.96,
+      "mouthNarrowValue": 0.17,
+      "mouthWidthValue": 0.0,
+      "upperHeightScale": 0.97
+    },
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\style-eye-probe-v2.json",
+    "sha256": "e47fcee83dc355c2175100397394907eb850cd380e4cd8f624f1be7959292d54"
+  },
+  "schemaVersion": 1,
+  "shapeKey": "StyleMacroDirect",
+  "sourceBlend": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\face-sculpt.blend",
+    "sha256": "4dd761827a05919179e4ad1829a0d27e7ee4b617546e237ada8a80588410155c"
+  },
+  "status": "built-unverified",
+  "targetGeometry": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\target-front-geometry.json",
+    "sha256": "f4849f11bfb6a3d105025741e44f452830b485c2bbebfa76394404e581cc57d6"
+  },
+  "toolVersions": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "5a4830aba047a521988b567e601814fb31f099d4daed125cde6b6c71e49fcc83",
+    "deformerSha256": "c1cf7a9d9e93768d66074587a73b96e302e52046855480fe59c52daa109b0b68",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "faceCount": 18486,
+    "sha256": "1f78e347f544c2377abee83216f297dc9499b73b7a149bd8b8d849b5553d95db",
+    "vertexCount": 19158
+  }
+}

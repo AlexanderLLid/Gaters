@@ -1,0 +1,10 @@
+{
+  "body_plan_id": "stick-humanoid-tall",
+  "composition_sha256": "e990ce4d581bf0af3ffff51a1d2174e5b4e9365a26f705bb76dea2c47dc80132",
+  "passed": true,
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BodyPlanRuns\\stick-humanoid-tall-20260721-162041-209553\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BodyPlanRuns\\stick-humanoid-tall-20260721-162041-209553\\run-2"
+  ],
+  "schema": "body-plan-run-summary/0"
+}

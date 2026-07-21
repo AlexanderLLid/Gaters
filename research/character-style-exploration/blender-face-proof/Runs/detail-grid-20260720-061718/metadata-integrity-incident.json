@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-10-detail-manifest-tool-contract-mismatch",
+  "status": "invalid-for-promotion",
+  "runId": "detail-grid-20260720-061718",
+  "reason": "Fresh-open verification rejected every manifest because the integrity checker incorrectly required the unused sculpt_calibrated.py script for detail builds.",
+  "geometryScope": "The eight derived sculpts and renders are preserved as failed-run evidence only.",
+  "replacement": "A new run rebuilt after required_tool_scripts was made build-path-specific and regression tested."
+}

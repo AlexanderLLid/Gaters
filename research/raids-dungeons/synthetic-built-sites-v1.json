@@ -1,0 +1,226 @@
+{
+  "catalogVersion": 1,
+  "builtSiteContractVersion": 1,
+  "cases": [
+    {
+      "id": "open-settlement-raid-v1",
+      "siteId": "open-settlement-v1",
+      "scenarioId": "claimed-base-steal-v1"
+    },
+    {
+      "id": "multi-route-fortress-raid-v1",
+      "siteId": "multi-route-fortress-v1",
+      "scenarioId": "claimed-base-steal-v1"
+    },
+    {
+      "id": "single-door-bunker-raid-v1",
+      "siteId": "single-door-bunker-v1",
+      "scenarioId": "single-door-bunker-v1"
+    },
+    {
+      "id": "sealed-dungeon-raid-v1",
+      "siteId": "sealed-dungeon-v1",
+      "scenarioId": "ice-forest-ambush-v1"
+    }
+  ],
+  "sites": [
+    {
+      "contractVersion": 1,
+      "siteVersion": 1,
+      "generatorVersion": 1,
+      "seed": 101,
+      "siteId": "open-settlement-v1",
+      "siteKind": "claimed-base",
+      "spaces": [
+        {
+          "id": "open:arrival",
+          "positionCm": { "x": 0, "y": 0, "z": 0 },
+          "tags": ["outdoors", "settlement-edge"],
+          "sourceIds": ["open:arrival"]
+        },
+        {
+          "id": "open:approach",
+          "positionCm": { "x": 100, "y": 0, "z": 0 },
+          "tags": ["outdoors", "yard"],
+          "sourceIds": ["open:approach"]
+        },
+        {
+          "id": "open:loot-room",
+          "positionCm": { "x": 200, "y": 0, "z": 0 },
+          "tags": ["indoors", "room"],
+          "sourceIds": ["open:loot-room"]
+        }
+      ],
+      "connections": [
+        {
+          "id": "open:arrival-to-approach",
+          "fromSpaceId": "open:arrival",
+          "toSpaceId": "open:approach",
+          "widthCm": 250,
+          "headroomCm": 250,
+          "maxStepCm": 0,
+          "maxJumpGapCm": 0,
+          "blockerIds": [],
+          "tags": ["ground"],
+          "sourceIds": ["open:path:outer"]
+        },
+        {
+          "id": "open:approach-to-arrival",
+          "fromSpaceId": "open:approach",
+          "toSpaceId": "open:arrival",
+          "widthCm": 250,
+          "headroomCm": 250,
+          "maxStepCm": 0,
+          "maxJumpGapCm": 0,
+          "blockerIds": [],
+          "tags": ["ground"],
+          "sourceIds": ["open:path:outer"]
+        },
+        {
+          "id": "open:approach-to-loot",
+          "fromSpaceId": "open:approach",
+          "toSpaceId": "open:loot-room",
+          "widthCm": 200,
+          "headroomCm": 220,
+          "maxStepCm": 0,
+          "maxJumpGapCm": 0,
+          "blockerIds": [],
+          "tags": ["ground", "doorway"],
+          "sourceIds": ["open:door:loot"]
+        },
+        {
+          "id": "open:loot-to-approach",
+          "fromSpaceId": "open:loot-room",
+          "toSpaceId": "open:approach",
+          "widthCm": 200,
+          "headroomCm": 220,
+          "maxStepCm": 0,
+          "maxJumpGapCm": 0,
+          "blockerIds": [],
+          "tags": ["ground", "doorway"],
+          "sourceIds": ["open:door:loot"]
+        }
+      ],
+      "visibility": [
+        {
+          "id": "open:loot-sees-approach",
+          "fromSpaceId": "open:loot-room",
+          "toSpaceId": "open:approach",
+          "distanceCm": 100,
+          "blockerIds": [],
+          "sourceIds": ["open:door:loot"]
+        }
+      ],
+      "blockers": [],
+      "placementSlots": [
+        { "id": "open:slot:arrival", "spaceId": "open:arrival", "tags": ["arrival"], "sourceIds": ["open:arrival"] },
+        { "id": "open:slot:extraction", "spaceId": "open:arrival", "tags": ["extraction"], "sourceIds": ["open:arrival"] },
+        { "id": "open:slot:loot", "spaceId": "open:loot-room", "tags": ["objective", "loot"], "sourceIds": ["open:loot-room"] },
+        { "id": "open:slot:guard", "spaceId": "open:loot-room", "tags": ["guard"], "sourceIds": ["open:loot-room"] }
+      ]
+    },
+    {
+      "contractVersion": 1,
+      "siteVersion": 1,
+      "generatorVersion": 1,
+      "seed": 202,
+      "siteId": "multi-route-fortress-v1",
+      "siteKind": "claimed-base",
+      "spaces": [
+        { "id": "fort:arrival", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["outdoors", "settlement-edge"], "sourceIds": ["fort:arrival"] },
+        { "id": "fort:left", "positionCm": { "x": 100, "y": -75, "z": 0 }, "tags": ["outdoors", "flank"], "sourceIds": ["fort:left"] },
+        { "id": "fort:right", "positionCm": { "x": 100, "y": 75, "z": 0 }, "tags": ["outdoors", "flank"], "sourceIds": ["fort:right"] },
+        { "id": "fort:vault", "positionCm": { "x": 200, "y": 0, "z": 0 }, "tags": ["indoors", "room", "vault"], "sourceIds": ["fort:vault"] }
+      ],
+      "connections": [
+        { "id": "fort:arrival-to-left", "fromSpaceId": "fort:arrival", "toSpaceId": "fort:left", "widthCm": 180, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "flank"], "sourceIds": ["fort:path:left"] },
+        { "id": "fort:left-to-arrival", "fromSpaceId": "fort:left", "toSpaceId": "fort:arrival", "widthCm": 180, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "flank"], "sourceIds": ["fort:path:left"] },
+        { "id": "fort:arrival-to-right", "fromSpaceId": "fort:arrival", "toSpaceId": "fort:right", "widthCm": 180, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "flank"], "sourceIds": ["fort:path:right"] },
+        { "id": "fort:right-to-arrival", "fromSpaceId": "fort:right", "toSpaceId": "fort:arrival", "widthCm": 180, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "flank"], "sourceIds": ["fort:path:right"] },
+        { "id": "fort:left-to-vault", "fromSpaceId": "fort:left", "toSpaceId": "fort:vault", "widthCm": 160, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "doorway"], "sourceIds": ["fort:door:left"] },
+        { "id": "fort:vault-to-left", "fromSpaceId": "fort:vault", "toSpaceId": "fort:left", "widthCm": 160, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "doorway"], "sourceIds": ["fort:door:left"] },
+        { "id": "fort:right-to-vault", "fromSpaceId": "fort:right", "toSpaceId": "fort:vault", "widthCm": 160, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "doorway"], "sourceIds": ["fort:door:right"] },
+        { "id": "fort:vault-to-right", "fromSpaceId": "fort:vault", "toSpaceId": "fort:right", "widthCm": 160, "headroomCm": 220, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "doorway"], "sourceIds": ["fort:door:right"] }
+      ],
+      "visibility": [
+        { "id": "fort:vault-sees-left", "fromSpaceId": "fort:vault", "toSpaceId": "fort:left", "distanceCm": 125, "blockerIds": [], "sourceIds": ["fort:door:left"] },
+        { "id": "fort:vault-sees-right", "fromSpaceId": "fort:vault", "toSpaceId": "fort:right", "distanceCm": 125, "blockerIds": [], "sourceIds": ["fort:door:right"] }
+      ],
+      "blockers": [],
+      "placementSlots": [
+        { "id": "fort:slot:arrival", "spaceId": "fort:arrival", "tags": ["arrival"], "sourceIds": ["fort:arrival"] },
+        { "id": "fort:slot:extraction", "spaceId": "fort:arrival", "tags": ["extraction"], "sourceIds": ["fort:arrival"] },
+        { "id": "fort:slot:loot", "spaceId": "fort:vault", "tags": ["objective", "loot"], "sourceIds": ["fort:vault"] },
+        { "id": "fort:slot:guard", "spaceId": "fort:vault", "tags": ["guard"], "sourceIds": ["fort:vault"] }
+      ]
+    },
+    {
+      "contractVersion": 1,
+      "siteVersion": 1,
+      "generatorVersion": 1,
+      "seed": 303,
+      "siteId": "single-door-bunker-v1",
+      "siteKind": "claimed-base",
+      "spaces": [
+        { "id": "bunker:arrival", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["outdoors", "settlement-edge"], "sourceIds": ["bunker:arrival"] },
+        { "id": "bunker:choke", "positionCm": { "x": 100, "y": 0, "z": 0 }, "tags": ["narrow", "doorway"], "sourceIds": ["bunker:choke"] },
+        { "id": "bunker:vault", "positionCm": { "x": 200, "y": 0, "z": 0 }, "tags": ["indoors", "vault"], "sourceIds": ["bunker:vault"] }
+      ],
+      "connections": [
+        { "id": "bunker:arrival-to-choke", "fromSpaceId": "bunker:arrival", "toSpaceId": "bunker:choke", "widthCm": 110, "headroomCm": 210, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "chokepoint"], "sourceIds": ["bunker:outer-mouth"] },
+        { "id": "bunker:choke-to-arrival", "fromSpaceId": "bunker:choke", "toSpaceId": "bunker:arrival", "widthCm": 110, "headroomCm": 210, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": [], "tags": ["ground", "chokepoint"], "sourceIds": ["bunker:outer-mouth"] },
+        { "id": "bunker:choke-to-vault", "fromSpaceId": "bunker:choke", "toSpaceId": "bunker:vault", "widthCm": 100, "headroomCm": 210, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": ["bunker:gate"], "tags": ["ground", "chokepoint", "doorway"], "sourceIds": ["bunker:gate"] },
+        { "id": "bunker:vault-to-choke", "fromSpaceId": "bunker:vault", "toSpaceId": "bunker:choke", "widthCm": 100, "headroomCm": 210, "maxStepCm": 0, "maxJumpGapCm": 0, "blockerIds": ["bunker:gate"], "tags": ["ground", "chokepoint", "doorway"], "sourceIds": ["bunker:gate"] }
+      ],
+      "visibility": [
+        { "id": "bunker:choke-sees-arrival", "fromSpaceId": "bunker:choke", "toSpaceId": "bunker:arrival", "distanceCm": 100, "blockerIds": [], "sourceIds": ["bunker:outer-mouth"] },
+        { "id": "bunker:choke-sees-vault", "fromSpaceId": "bunker:choke", "toSpaceId": "bunker:vault", "distanceCm": 100, "blockerIds": [], "sourceIds": ["bunker:gate"] },
+        { "id": "bunker:vault-sees-choke", "fromSpaceId": "bunker:vault", "toSpaceId": "bunker:choke", "distanceCm": 100, "blockerIds": ["bunker:gate"], "sourceIds": ["bunker:gate"] }
+      ],
+      "blockers": [
+        { "id": "bunker:gate", "tags": ["gate", "destructible"], "sourceIds": ["bunker:gate"] }
+      ],
+      "placementSlots": [
+        { "id": "bunker:slot:arrival", "spaceId": "bunker:arrival", "tags": ["arrival"], "sourceIds": ["bunker:arrival"] },
+        { "id": "bunker:slot:extraction", "spaceId": "bunker:arrival", "tags": ["extraction"], "sourceIds": ["bunker:arrival"] },
+        { "id": "bunker:slot:loot", "spaceId": "bunker:vault", "tags": ["objective", "loot"], "sourceIds": ["bunker:vault"] },
+        { "id": "bunker:slot:guard", "spaceId": "bunker:choke", "tags": ["guard"], "sourceIds": ["bunker:choke"] }
+      ]
+    },
+    {
+      "contractVersion": 1,
+      "siteVersion": 1,
+      "generatorVersion": 1,
+      "seed": 404,
+      "siteId": "sealed-dungeon-v1",
+      "siteKind": "wild-dungeon",
+      "spaces": [
+        { "id": "sealed:arrival", "positionCm": { "x": 0, "y": 0, "z": 0 }, "tags": ["outdoors", "rift-scar"], "sourceIds": ["sealed:arrival"] },
+        { "id": "sealed:prize", "positionCm": { "x": 200, "y": 0, "z": 0 }, "tags": ["indoors", "boss-room"], "sourceIds": ["sealed:prize"] }
+      ],
+      "connections": [
+        {
+          "id": "sealed:route",
+          "fromSpaceId": "sealed:arrival",
+          "toSpaceId": "sealed:prize",
+          "widthCm": 200,
+          "headroomCm": 220,
+          "maxStepCm": 0,
+          "maxJumpGapCm": 0,
+          "blockerIds": ["sealed:wall"],
+          "tags": ["ground", "sealed"],
+          "sourceIds": ["sealed:wall"]
+        }
+      ],
+      "visibility": [],
+      "blockers": [
+        { "id": "sealed:wall", "tags": ["wall", "non-damageable"], "sourceIds": ["sealed:wall"] }
+      ],
+      "placementSlots": [
+        { "id": "sealed:slot:arrival", "spaceId": "sealed:arrival", "tags": ["arrival", "extraction"], "sourceIds": ["sealed:arrival"] },
+        { "id": "sealed:slot:loot", "spaceId": "sealed:prize", "tags": ["objective", "loot"], "sourceIds": ["sealed:prize"] },
+        { "id": "sealed:slot:guard", "spaceId": "sealed:prize", "tags": ["guard"], "sourceIds": ["sealed:prize"] }
+      ]
+    }
+  ]
+}

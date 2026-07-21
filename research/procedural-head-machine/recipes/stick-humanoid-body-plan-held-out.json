@@ -1,0 +1,18 @@
+{
+  "schema": "body-plan/0",
+  "id": "stick-humanoid-tall",
+  "cell_size_m": 0.14,
+  "nodes": [
+    {"id": "torso", "role": "core", "size_cells": [6, 2, 7]},
+    {"id": "neck", "role": "core", "parent": "torso", "attach": "+z", "size_cells": [2, 2, 1], "offset_cells": [0, 0]},
+    {"id": "head", "role": "head", "parent": "neck", "attach": "+z", "size_cells": [4, 2, 3], "offset_cells": [0, 0]},
+    {"id": "left_arm", "role": "limb", "parent": "torso", "attach": "-x", "size_cells": [5, 2, 2], "offset_cells": [0, 2]},
+    {"id": "right_arm", "role": "limb", "parent": "torso", "attach": "+x", "size_cells": [5, 2, 2], "offset_cells": [0, 2], "mirror_of": "left_arm"},
+    {"id": "left_hand", "role": "limb", "parent": "left_arm", "attach": "-x", "size_cells": [2, 1, 2], "offset_cells": [0, 0]},
+    {"id": "right_hand", "role": "limb", "parent": "right_arm", "attach": "+x", "size_cells": [2, 1, 2], "offset_cells": [0, 0], "mirror_of": "left_hand"},
+    {"id": "left_leg", "role": "limb", "parent": "torso", "attach": "-z", "size_cells": [2, 2, 7], "offset_cells": [-2, 0]},
+    {"id": "right_leg", "role": "limb", "parent": "torso", "attach": "-z", "size_cells": [2, 2, 7], "offset_cells": [2, 0], "mirror_of": "left_leg"},
+    {"id": "left_foot", "role": "limb", "parent": "left_leg", "attach": "-z", "size_cells": [2, 4, 1], "offset_cells": [0, 1]},
+    {"id": "right_foot", "role": "limb", "parent": "right_leg", "attach": "-z", "size_cells": [2, 4, 1], "offset_cells": [0, 1], "mirror_of": "left_foot"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "winnerSlots": ["left", "center", "right", "tie"],
+  "dimensionValues": ["better", "same", "worse", "unknown"],
+  "dimensions": [
+    "frontLikeness",
+    "threeDimensionalPlausibility",
+    "groundedMatureGeometry",
+    "individualCharacter"
+  ],
+  "hardFailures": [
+    "invalid-blend",
+    "projection-or-visible-image-texture",
+    "missing-view",
+    "implausible-anatomy",
+    "cartoon-or-toy-read",
+    "armature-or-animation",
+    "unknown-provenance"
+  ]
+}

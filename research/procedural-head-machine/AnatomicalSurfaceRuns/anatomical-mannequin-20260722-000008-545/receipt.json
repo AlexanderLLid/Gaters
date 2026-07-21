@@ -1,0 +1,10 @@
+{
+  "anatomical_guide_sha256": "88590463051dd2ac5d160fd069e0208f4b1cf0b1c50b59ec5d51e82d25fd196d",
+  "backend": "houdini",
+  "backend_version": "22.0.368",
+  "body_composition_sha256": "95c146847222c480ad6459b0e46fc8ee5bd03abeaecacf24a5e10da7e6cbee9a",
+  "body_plan_sha256": "95c146847222c480ad6459b0e46fc8ee5bd03abeaecacf24a5e10da7e6cbee9a",
+  "schema": "smooth-body-receipt/0",
+  "surface_recipe_sha256": "f90d2a7ce687dff5fd41cab0d0f34efc613a4b051efce1080cb8ef037c4db21c",
+  "surface_sha256": "8435a39eeef4afe5a9bbe64203c031fa9f7c8d485dd0b4033329a0286d3c435a"
+}

@@ -1,0 +1,8 @@
+{
+  "compiler": "body-plan-compiler/0",
+  "composition_sha256": "1ddb76901f5d2ff07d80b8dc15a855e3220b8f0388f64adc50657072c6cfab58",
+  "plan_sha256": "c887c1ffd9c5291c997cfd11cbc2bfad1062d8ffea9573fb7fe387b8189f7f9d",
+  "schema": "body-plan-receipt/0",
+  "topology_sha256": "d9b093607e76ecf9c028bcca15ade54f875ac3ed5ed7da6d9b0a3d77e672581b",
+  "verifier": "body-plan-verifier/0"
+}

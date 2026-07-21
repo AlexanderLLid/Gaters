@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "runId": "macro-grid-20260720-061500",
+  "status": "stopped-before-selection",
+  "cause": "The external command runner interrupted the serialized eight-candidate dispatch after creating the fourth derived output directory. The sculpt contract correctly refused to overwrite that partial evidence.",
+  "recovery": "Preserve all receipts under this identity; rerun the same eight immutable recipes under a replacement run identity with one candidate per command.",
+  "humanAcceptance": false
+}

@@ -1,0 +1,34 @@
+{
+  "artifacts": {
+    "front.png": "22f5751d7c8e8139e85e64871e35cbd1a3b8432c319f57a03d77e91c263a8f86",
+    "profile.png": "22f74008f43255b5403dc924e31ca528f1ad3a6d756257b79edcee50d55183b3",
+    "raw-head.blend": "193ed651ec5c2950cfbff5ff59ebdc554666bd49c6e9bbd12b7d8ce1ec1bdb18",
+    "three-quarter.png": "74db0bf3ec02c3eddb8bff7c147bb96bed267816cc41816d421310ef039a4126"
+  },
+  "claims": [
+    "unconstrained major-form maquette",
+    "editable Blender geometry"
+  ],
+  "excludes": [
+    "likeness approval",
+    "production topology",
+    "texture",
+    "rigging",
+    "animation"
+  ],
+  "input": {
+    "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf",
+    "targetImage": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Reference\\painted-a-front-flat-v2.png"
+  },
+  "machineId": "research.raw-head-design-sculpt",
+  "output": {
+    "blend": "C:\\repos\\Gaters\\research\\character-style-exploration\\raw-sculpt-proof\\Derived\\minimal-v1\\raw-head.blend",
+    "headFaces": 13676,
+    "headVertices": 13674,
+    "objects": 24
+  },
+  "schemaVersion": 1,
+  "status": "human-review",
+  "usesImageProjection": false,
+  "usesMpfb": false
+}

@@ -1,0 +1,21 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1",
+  "FriendlyName": "Character Physics Profile Adapter",
+  "CanContainContent": false,
+  "EnabledByDefault": false,
+  "Plugins": [
+    {
+      "Name": "IKRig",
+      "Enabled": true
+    }
+  ],
+  "Modules": [
+    {
+      "Name": "CharacterPhysicsProfileAdapter",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

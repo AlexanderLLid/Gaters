@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "controlSet": "gaters.style-macro-direct.v1",
+  "sourceBlend": "Derived/search-runs/anatomical-front-fit-v0-20260720-1/round-9/9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8/face-sculpt.blend",
+  "baselineMacro": "Derived/search-runs/anatomical-front-fit-v0-20260720-1/round-9/9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8/macro-geometry.json",
+  "targetGeometry": "target-front-geometry.json",
+  "parameters": {
+    "upperHeightScale": 0.97,
+    "lowerHeightScale": 0.96,
+    "cheekScale": 0.979,
+    "jawScale": 1.052,
+    "lateralPower": 4.0,
+    "mouthWidthValue": 0.0,
+    "mouthNarrowValue": 0.17,
+    "eyeScaleDecreaseLeft": 0.22,
+    "eyeScaleDecreaseRight": 0.41,
+    "eyeHeightValue": 0.545,
+    "eyeNarrowLeft": 0.0,
+    "eyeNarrowRight": 0.0
+  }
+}

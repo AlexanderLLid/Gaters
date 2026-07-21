@@ -2,8 +2,9 @@
 
 ## Current objective
 
-- Explore world and rift fiction that supports proven gameplay, keeping undecided ideas
-  out of canon until selected.
+- Hold the selected pure-fantasy Rift premise while its weather metaphor, targeting,
+  arrival, costs,
+  ownership authority, and the project name remain open.
 
 ## Owned outputs
 
@@ -12,4 +13,6 @@
 
 ## Exchanges
 
-- None.
+- [`LORE-1 - Fantasy Rift integration`](../exchanges/LORE-1-fantasy-rift-integration.md)
+  - resolved; integrated across canon, active guidance, and the neutral Arrival recipe
+    contract.

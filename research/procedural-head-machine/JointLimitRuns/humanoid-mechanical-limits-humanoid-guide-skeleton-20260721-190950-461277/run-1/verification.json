@@ -1,0 +1,7 @@
+{
+  "control_count": 9,
+  "failures": [],
+  "passed": true,
+  "pose_suite_count": 5,
+  "schema": "joint-limit-verification/0"
+}

@@ -1,0 +1,338 @@
+{
+  "activeProposal": {
+    "agents": {
+      "source": {
+        "identity": "sculpt-v13",
+        "instructions": "Use the accepted sculpt-v13 champion as the parent.",
+        "response": "{\"identity\":\"sculpt-v13\",\"recipe\":{\"hash\":\"196c38d51256bfe4dc088c14ff3dd1a3bc7a8aa5c94714f0566e6ef9580459c4\",\"path\":\"face-brief.json\"}}"
+      },
+      "tool": {
+        "identity": "face_search.py",
+        "instructions": "Generate a bounded symmetric pair on one geometry axis.",
+        "response": "proposed nose_width round 1"
+      }
+    },
+    "artifacts": [
+      {
+        "candidateId": "b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09",
+        "hash": "8bbf4667b236020a3b4c115f9475cd56426a174c4275381f4b986369f1348ee4",
+        "kind": "candidateRecipe",
+        "path": "Runs/task2-smoke/candidates/b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09.json"
+      },
+      {
+        "candidateId": "c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4",
+        "hash": "51c7f23020b5f1421e283ba5d4362050fd817243b67671472c01083ee69e9c2c",
+        "kind": "candidateRecipe",
+        "path": "Runs/task2-smoke/candidates/c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4.json"
+      }
+    ],
+    "axis": "nose_width",
+    "axisReason": [
+      "selected bounded face-geometry axis"
+    ],
+    "candidates": [
+      {
+        "axis": "nose_width",
+        "candidateId": "b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09",
+        "direction": "lower",
+        "parameters": {
+          "cheek_definition": 0.36,
+          "chin_projection": -0.12,
+          "eye_bag": 0.44,
+          "eye_spacing": 0.0,
+          "head_height": 0.0,
+          "head_width": -0.08,
+          "jaw_taper": 0.085,
+          "lip_volume": 0.08,
+          "nose_length": 0.3,
+          "nose_projection": 0.14,
+          "nose_width": 0.19
+        },
+        "parentId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+        "round": 1
+      },
+      {
+        "axis": "nose_width",
+        "candidateId": "c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4",
+        "direction": "upper",
+        "parameters": {
+          "cheek_definition": 0.36,
+          "chin_projection": -0.12,
+          "eye_bag": 0.44,
+          "eye_spacing": 0.0,
+          "head_height": 0.0,
+          "head_width": -0.08,
+          "jaw_taper": 0.085,
+          "lip_volume": 0.08,
+          "nose_length": 0.3,
+          "nose_projection": 0.14,
+          "nose_width": 0.33
+        },
+        "parentId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+        "round": 1
+      }
+    ],
+    "championBefore": {
+      "axis": null,
+      "candidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+      "direction": "initial",
+      "parameters": {
+        "cheek_definition": 0.36,
+        "chin_projection": -0.12,
+        "eye_bag": 0.44,
+        "eye_spacing": 0.0,
+        "head_height": 0.0,
+        "head_width": -0.08,
+        "jaw_taper": 0.085,
+        "lip_volume": 0.08,
+        "nose_length": 0.3,
+        "nose_projection": 0.14,
+        "nose_width": 0.26
+      },
+      "parentId": null,
+      "round": 0
+    },
+    "recipes": [
+      {
+        "candidateId": "b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09",
+        "delta": -0.07
+      },
+      {
+        "candidateId": "c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4",
+        "delta": 0.07
+      }
+    ],
+    "round": 1,
+    "stepBefore": 0.07
+  },
+  "artifactRoot": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof",
+  "axes": {
+    "cheek_definition": {
+      "initial": 0.36,
+      "maximum": 0.7,
+      "minimum": 0.0,
+      "minimumStep": 0.02,
+      "step": 0.08
+    },
+    "chin_projection": {
+      "initial": -0.12,
+      "maximum": 0.15,
+      "minimum": -0.3,
+      "minimumStep": 0.0125,
+      "step": 0.05
+    },
+    "eye_bag": {
+      "initial": 0.44,
+      "maximum": 0.75,
+      "minimum": 0.0,
+      "minimumStep": 0.02,
+      "step": 0.08
+    },
+    "eye_spacing": {
+      "initial": 0.0,
+      "maximum": 0.2,
+      "minimum": -0.2,
+      "minimumStep": 0.0125,
+      "step": 0.05
+    },
+    "head_height": {
+      "initial": 0.0,
+      "maximum": 0.2,
+      "minimum": -0.2,
+      "minimumStep": 0.0125,
+      "step": 0.05
+    },
+    "head_width": {
+      "initial": -0.08,
+      "maximum": 0.1,
+      "minimum": -0.25,
+      "minimumStep": 0.0125,
+      "step": 0.05
+    },
+    "jaw_taper": {
+      "initial": 0.085,
+      "maximum": 0.2,
+      "minimum": 0.0,
+      "minimumStep": 0.0075,
+      "step": 0.03
+    },
+    "lip_volume": {
+      "initial": 0.08,
+      "maximum": 0.35,
+      "minimum": -0.15,
+      "minimumStep": 0.0175,
+      "step": 0.07
+    },
+    "nose_length": {
+      "initial": 0.3,
+      "maximum": 0.65,
+      "minimum": 0.0,
+      "minimumStep": 0.0175,
+      "step": 0.07
+    },
+    "nose_projection": {
+      "initial": 0.14,
+      "maximum": 0.45,
+      "minimum": 0.0,
+      "minimumStep": 0.015,
+      "step": 0.06
+    },
+    "nose_width": {
+      "initial": 0.26,
+      "maximum": 0.55,
+      "minimum": 0.0,
+      "minimumStep": 0.0175,
+      "step": 0.07
+    }
+  },
+  "champion": {
+    "axis": null,
+    "candidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+    "direction": "initial",
+    "parameters": {
+      "cheek_definition": 0.36,
+      "chin_projection": -0.12,
+      "eye_bag": 0.44,
+      "eye_spacing": 0.0,
+      "head_height": 0.0,
+      "head_width": -0.08,
+      "jaw_taper": 0.085,
+      "lip_volume": 0.08,
+      "nose_length": 0.3,
+      "nose_projection": 0.14,
+      "nose_width": 0.26
+    },
+    "parentId": null,
+    "round": 0
+  },
+  "disagreementCount": 0,
+  "history": [],
+  "learning": [],
+  "maxRounds": 16,
+  "minimumSteps": {
+    "cheek_definition": 0.02,
+    "chin_projection": 0.0125,
+    "eye_bag": 0.02,
+    "eye_spacing": 0.0125,
+    "head_height": 0.0125,
+    "head_width": 0.0125,
+    "jaw_taper": 0.0075,
+    "lip_volume": 0.0175,
+    "nose_length": 0.0175,
+    "nose_projection": 0.015,
+    "nose_width": 0.0175
+  },
+  "noPromotionCount": 0,
+  "provenance": {
+    "acceptedChampion": {
+      "identity": "sculpt-v13",
+      "recipe": {
+        "hash": "196c38d51256bfe4dc088c14ff3dd1a3bc7a8aa5c94714f0566e6ef9580459c4",
+        "path": "face-brief.json"
+      }
+    }
+  },
+  "runDirectory": "Runs/task2-smoke",
+  "runId": "task2-smoke",
+  "schemaVersion": 1,
+  "searchSpace": {
+    "axes": {
+      "cheek_definition": {
+        "initial": 0.36,
+        "maximum": 0.7,
+        "minimum": 0.0,
+        "minimumStep": 0.02,
+        "step": 0.08
+      },
+      "chin_projection": {
+        "initial": -0.12,
+        "maximum": 0.15,
+        "minimum": -0.3,
+        "minimumStep": 0.0125,
+        "step": 0.05
+      },
+      "eye_bag": {
+        "initial": 0.44,
+        "maximum": 0.75,
+        "minimum": 0.0,
+        "minimumStep": 0.02,
+        "step": 0.08
+      },
+      "eye_spacing": {
+        "initial": 0.0,
+        "maximum": 0.2,
+        "minimum": -0.2,
+        "minimumStep": 0.0125,
+        "step": 0.05
+      },
+      "head_height": {
+        "initial": 0.0,
+        "maximum": 0.2,
+        "minimum": -0.2,
+        "minimumStep": 0.0125,
+        "step": 0.05
+      },
+      "head_width": {
+        "initial": -0.08,
+        "maximum": 0.1,
+        "minimum": -0.25,
+        "minimumStep": 0.0125,
+        "step": 0.05
+      },
+      "jaw_taper": {
+        "initial": 0.085,
+        "maximum": 0.2,
+        "minimum": 0.0,
+        "minimumStep": 0.0075,
+        "step": 0.03
+      },
+      "lip_volume": {
+        "initial": 0.08,
+        "maximum": 0.35,
+        "minimum": -0.15,
+        "minimumStep": 0.0175,
+        "step": 0.07
+      },
+      "nose_length": {
+        "initial": 0.3,
+        "maximum": 0.65,
+        "minimum": 0.0,
+        "minimumStep": 0.0175,
+        "step": 0.07
+      },
+      "nose_projection": {
+        "initial": 0.14,
+        "maximum": 0.45,
+        "minimum": 0.0,
+        "minimumStep": 0.015,
+        "step": 0.06
+      },
+      "nose_width": {
+        "initial": 0.26,
+        "maximum": 0.55,
+        "minimum": 0.0,
+        "minimumStep": 0.0175,
+        "step": 0.07
+      }
+    },
+    "maxRounds": 16,
+    "schemaVersion": 1,
+    "stopAfterDisagreement": 3,
+    "stopAfterNoPromotion": 4
+  },
+  "steps": {
+    "cheek_definition": 0.08,
+    "chin_projection": 0.05,
+    "eye_bag": 0.08,
+    "eye_spacing": 0.05,
+    "head_height": 0.05,
+    "head_width": 0.05,
+    "jaw_taper": 0.03,
+    "lip_volume": 0.07,
+    "nose_length": 0.07,
+    "nose_projection": 0.06,
+    "nose_width": 0.07
+  },
+  "stopAfterDisagreement": 3,
+  "stopAfterNoPromotion": 4
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "primary",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Inspect only the round-3 primary blind package and images. Apply the same geometry-only target/front comparison and 3/4/profile anatomy-regression rules as prior rounds. Return only the evaluator-contract ballot, judge physical geometry, and do not default to a screen position.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"primary\",\"winnerSlot\":\"right\",\"confidence\":0.54,\"dimensions\":{\"frontLikeness\":\"same\",\"threeDimensionalPlausibility\":\"better\",\"groundedMatureGeometry\":\"better\",\"individualCharacter\":\"same\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"The lower face still tapers too sharply into a narrow chin instead of retaining the target's broad, squared mature jaw base.\"],\"nextAxis\":\"jaw_taper\"}",
+    "winnerSlot": "right",
+    "confidence": 0.54,
+    "dimensions": {"frontLikeness": "same", "threeDimensionalPlausibility": "better", "groundedMatureGeometry": "better", "individualCharacter": "same"},
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": ["The lower face still tapers too sharply into a narrow chin instead of retaining the target's broad, squared mature jaw base."],
+    "nextAxis": "jaw_taper"
+  },
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "audit",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Inspect only the round-3 audit blind package and images. Apply the same geometry-only target/front comparison and 3/4/profile anatomy-regression rules as prior rounds. Return only the evaluator-contract ballot, judge physical geometry, and do not default to a screen position.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"audit\",\"winnerSlot\":\"tie\",\"confidence\":0.7,\"dimensions\":{\"frontLikeness\":\"same\",\"threeDimensionalPlausibility\":\"same\",\"groundedMatureGeometry\":\"same\",\"individualCharacter\":\"same\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"The evaluated geometry remains materially too tall and narrow relative to the target's compact broad facial mass.\",\"The lower face still resolves into an over-tapered, generic oval rather than a stable mature jaw and chin structure.\"],\"nextAxis\":\"head_width\"}",
+    "winnerSlot": "tie",
+    "confidence": 0.7,
+    "dimensions": {"frontLikeness": "same", "threeDimensionalPlausibility": "same", "groundedMatureGeometry": "same", "individualCharacter": "same"},
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": ["The evaluated geometry remains materially too tall and narrow relative to the target's compact broad facial mass.", "The lower face still resolves into an over-tapered, generic oval rather than a stable mature jaw and chin structure."],
+    "nextAxis": "head_width"
+  }
+]

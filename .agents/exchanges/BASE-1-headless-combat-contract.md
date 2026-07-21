@@ -1,14 +1,14 @@
 # BASE-1 — Headless combat capability contract
 
-Status: open
-From: Base & Raid Lab
+Status: resolved
+From: Raids & Dungeons
 To: Combat & Classes
 Type: CONTRACT
 Notification: sent
 
 ## Request
 
-Provide the smallest versioned, pure-data capability contract that lets Base & Raid Lab
+Provide the smallest versioned, pure-data capability contract that lets Raids & Dungeons
 judge generated bases with deterministic headless raids rather than the current
 reachability-only probe.
 
@@ -31,7 +31,7 @@ events, outcome, and termination reason so a failure implicates either the base 
 the combat contract.
 
 Ownership boundary: Combat & Classes delivers the schema, fixtures, policy definitions,
-and expected black-box outcomes only. Base & Raid Lab owns the executable reference
+and expected black-box outcomes only. Raids & Dungeons owns the executable reference
 resolver and headless evaluator that consume them.
 
 This request does not require a final class roster, named abilities, animation, combat
@@ -55,16 +55,63 @@ Minimum supporting evidence:
 
 ## Response
 
-In progress. Agreed response shape:
+Delivered:
 
-- Combat & Classes owns one normative Markdown contract for semantics, rules, and
-  versioning, plus one machine-readable JSON catalog containing every provisional value,
-  two attacker policies, two defender policies, three arenas, and expected outcome
-  matrices.
-- Base & Raid Lab owns validation and the executable reference resolver/evaluator.
-- No separate JSON Schema or split catalogs until a second consumer or malformed-data
-  evidence earns that complexity.
+- [`headless-combat-contract-v1.md`](../../research/combat/headless-combat-contract-v1.md)
+  defines the Actor-free tactical graph, mask-only agent durability, ordinary
+  attack-based breach, post-upkeep decision snapshot, atomic movement, simultaneous
+  combat, objective rules, terminal precedence, diagnostics, and evidence versioning.
+- [`headless-combat-fixtures-v1.json`](../../research/combat/headless-combat-fixtures-v1.json)
+  carries every provisional value: one traversal envelope, attacker/defender capability
+  profiles, `runner`/`clear` attacker policies, `hold`/`intercept` defender policies, and
+  twelve policy-pair cases across three arenas.
+
+Expected matrices:
+
+- `open`: every policy pair extracts (`4/4`).
+- `fortified`: only `clear` against `intercept` extracts (`1/4`).
+- `sealed`: no pair extracts (`0/4`); every pair ends `no-effective-action` and implicates
+  `sealed-wall` plus `sealed-route`.
+
+Structural evidence:
+
+- PowerShell parsing and contract assertions pass for versions, counts, unique scoped
+  IDs, traversal/profile/policy/arena references, side/version agreement, complete policy
+  matrices, split width/headroom, anti-oracle policy wording, and sealed actionlessness.
+- The full design and verification steps are recorded in
+  [`2026-07-18-headless-combat-contract-v1.md`](../plans/2026-07-18-headless-combat-contract-v1.md).
+
+Machine fit: this Combat contract and catalog are an AND input beside verified
+navigation/visibility data; Raids & Dungeons owns the adapter and resolver that can promote
+`runtime.combat-simulation` evidence. No separate JSON Schema, resolver, Unreal code,
+canon, or registry change was added.
+
+The expected outcomes are acceptance vectors, not executed combat evidence yet. Base &
+Raids & Dungeons resolves this packet only after its independently implemented resolver reproduces
+fixed inputs, emits the required diagnostics, and matches the three matrices.
 
 ## Resolution
 
-Pending.
+Resolved by Raids & Dungeons with an independent, Raids-owned headless resolver:
+
+- [`headless_raid_resolver.py`](../../research/base-raid-lab/headless_raid_resolver.py)
+  consumes Combat's fixture catalog and emits deterministic canonical raid results with
+  version, policy, profile, event, outcome, terminal, and implicated-ID diagnostics.
+- [`test_headless_raid_resolver.py`](../../research/base-raid-lab/test_headless_raid_resolver.py)
+  reruns every acceptance case twice, requires byte-identical canonical output, checks the
+  expected outcome/terminal/decisive event, and verifies the required version/profile
+  diagnostics.
+
+Acceptance evidence:
+
+- `python research/base-raid-lab/test_headless_raid_resolver.py` passes.
+- CLI rerun against
+  [`headless-combat-fixtures-v1.json`](../../research/combat/headless-combat-fixtures-v1.json)
+  reproduces the required matrices: `open` extracts `4/4`, `fortified` extracts `1/4`,
+  and `sealed` extracts `0/4`.
+- Sealed cases terminate `no-effective-action` with `sealed-wall` and `sealed-route`;
+  fortified cases separate policy behavior, with only `clear` against `intercept`
+  extracting.
+
+This resolves the contract request only. Generated-site tactical adapter work remains
+Raids & Dungeons-owned and is not yet tactical evidence for arbitrary generated sites.

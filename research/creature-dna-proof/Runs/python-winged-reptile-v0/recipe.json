@@ -1,0 +1,46 @@
+{
+  "id": "winged-reptile",
+  "modules": [
+    {
+      "id": "body",
+      "length": 3.2,
+      "radius": 0.72,
+      "type": "torso"
+    },
+    {
+      "base_radius": 0.48,
+      "id": "head",
+      "length": 1.1,
+      "parent": "body.front",
+      "tip_radius": 0.08,
+      "type": "tapered_head"
+    },
+    {
+      "id": "tail",
+      "length": 2.4,
+      "parent": "body.back",
+      "segments": 5,
+      "tip_radius": 0.04,
+      "type": "tail"
+    },
+    {
+      "count": 4,
+      "id": "legs",
+      "layout": "bilateral",
+      "length": 1.35,
+      "parent": "body.root",
+      "type": "leg"
+    },
+    {
+      "count": 2,
+      "id": "wings",
+      "layout": "bilateral",
+      "length": 2.6,
+      "parent": "body.root",
+      "type": "wing"
+    }
+  ],
+  "schema": "creature-dna/0",
+  "seed": 1701,
+  "units": "m"
+}

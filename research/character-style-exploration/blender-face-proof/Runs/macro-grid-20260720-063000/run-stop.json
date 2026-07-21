@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "runId": "macro-grid-20260720-063000",
+  "status": "stopped-before-selection",
+  "cause": "The external command runner interrupted the second serialized dispatch after a later candidate output had been created. The immutable sculpt contract prohibits rebuilding into that directory.",
+  "recovery": "Preserve all receipts under this identity; rerun the same eight immutable recipes under a new identity with exactly one candidate per command.",
+  "humanAcceptance": false
+}

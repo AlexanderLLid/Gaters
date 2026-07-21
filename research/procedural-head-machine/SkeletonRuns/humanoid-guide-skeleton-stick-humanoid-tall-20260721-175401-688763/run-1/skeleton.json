@@ -1,0 +1,528 @@
+{
+  "bones": [
+    {
+      "child": "waist",
+      "id": "spine_lower",
+      "parent": "pelvis"
+    },
+    {
+      "child": "chest",
+      "id": "spine_upper",
+      "parent": "waist"
+    },
+    {
+      "child": "head_center",
+      "id": "neck",
+      "parent": "chest"
+    },
+    {
+      "child": "left_shoulder",
+      "id": "left_clavicle",
+      "parent": "chest"
+    },
+    {
+      "child": "left_elbow",
+      "id": "left_upper_arm",
+      "parent": "left_shoulder"
+    },
+    {
+      "child": "left_wrist",
+      "id": "left_lower_arm",
+      "parent": "left_elbow"
+    },
+    {
+      "child": "left_hip",
+      "id": "left_pelvis",
+      "parent": "pelvis"
+    },
+    {
+      "child": "left_knee",
+      "id": "left_thigh",
+      "parent": "left_hip"
+    },
+    {
+      "child": "left_ankle",
+      "id": "left_calf",
+      "parent": "left_knee"
+    },
+    {
+      "child": "right_shoulder",
+      "id": "right_clavicle",
+      "parent": "chest"
+    },
+    {
+      "child": "right_elbow",
+      "id": "right_upper_arm",
+      "parent": "right_shoulder"
+    },
+    {
+      "child": "right_wrist",
+      "id": "right_lower_arm",
+      "parent": "right_elbow"
+    },
+    {
+      "child": "right_hip",
+      "id": "right_pelvis",
+      "parent": "pelvis"
+    },
+    {
+      "child": "right_knee",
+      "id": "right_thigh",
+      "parent": "right_hip"
+    },
+    {
+      "child": "right_ankle",
+      "id": "right_calf",
+      "parent": "right_knee"
+    }
+  ],
+  "guide_id": "humanoid-guide",
+  "id": "humanoid-guide-skeleton",
+  "joints": [
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "side": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "pelvis",
+      "parent": null,
+      "position": [
+        0,
+        0,
+        0.1372
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "side": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "waist",
+      "parent": "pelvis",
+      "position": [
+        0,
+        0,
+        0.4116
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_hip",
+      "parent": "pelvis",
+      "position": [
+        -0.28,
+        0,
+        0.0588
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_hip",
+      "parent": "pelvis",
+      "position": [
+        0.28,
+        0,
+        0.0588
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "side": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "chest",
+      "parent": "waist",
+      "position": [
+        0,
+        0,
+        0.686
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_knee",
+      "parent": "left_hip",
+      "position": [
+        -0.28,
+        0,
+        -0.481376
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_knee",
+      "parent": "right_hip",
+      "position": [
+        0.28,
+        0,
+        -0.481376
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "side": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "head_center",
+      "parent": "chest",
+      "position": [
+        0.0,
+        0.0,
+        1.19
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          -0.998034703462,
+          0.0,
+          -0.062663631281
+        ],
+        "side": [
+          -0.062663631281,
+          0.0,
+          0.998034703462
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_shoulder",
+      "parent": "chest",
+      "position": [
+        -0.3696,
+        0,
+        0.7
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.998034703462,
+          0.0,
+          -0.062663631281
+        ],
+        "side": [
+          -0.062663631281,
+          -0.0,
+          -0.998034703462
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_shoulder",
+      "parent": "chest",
+      "position": [
+        0.3696,
+        0,
+        0.7
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_ankle",
+      "parent": "left_knee",
+      "position": [
+        -0.28,
+        0,
+        -0.92806
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "side": [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_ankle",
+      "parent": "right_knee",
+      "position": [
+        0.28,
+        0,
+        -0.92806
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          -0.996992157703,
+          0.0,
+          -0.077502499821
+        ],
+        "side": [
+          -0.077502499821,
+          0.0,
+          0.996992157703
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_elbow",
+      "parent": "left_shoulder",
+      "position": [
+        -0.759808,
+        0,
+        0.6755
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.996992157703,
+          0.0,
+          -0.077502499821
+        ],
+        "side": [
+          -0.077502499821,
+          -0.0,
+          -0.996992157703
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_elbow",
+      "parent": "right_shoulder",
+      "position": [
+        0.759808,
+        0,
+        0.6755
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          -0.996992157703,
+          0.0,
+          -0.077502499821
+        ],
+        "side": [
+          -0.077502499821,
+          0.0,
+          0.996992157703
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "left_wrist",
+      "parent": "left_elbow",
+      "position": [
+        -1.074976,
+        0,
+        0.651
+      ]
+    },
+    {
+      "basis": {
+        "aim": [
+          0.996992157703,
+          0.0,
+          -0.077502499821
+        ],
+        "side": [
+          -0.077502499821,
+          -0.0,
+          -0.996992157703
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          0.0
+        ]
+      },
+      "name": "right_wrist",
+      "parent": "right_elbow",
+      "position": [
+        1.074976,
+        0,
+        0.651
+      ]
+    }
+  ],
+  "root_joint": "pelvis",
+  "schema": "guide-skeleton/0",
+  "source_guide_sha256": "13ae41d1f607fbf33dc8f9f55adb6396d7131d408f1ead52482659e5b99f9af7",
+  "symmetry_pairs": [
+    [
+      "left_shoulder",
+      "right_shoulder"
+    ],
+    [
+      "left_elbow",
+      "right_elbow"
+    ],
+    [
+      "left_wrist",
+      "right_wrist"
+    ],
+    [
+      "left_hip",
+      "right_hip"
+    ],
+    [
+      "left_knee",
+      "right_knee"
+    ],
+    [
+      "left_ankle",
+      "right_ankle"
+    ]
+  ]
+}

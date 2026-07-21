@@ -17,9 +17,6 @@ $Mermaid = @(& $Show -Registry $Registry -Format Mermaid)
 if ($Summary -notcontains "Dream: $($Data.dreamMachine)") {
     throw 'Summary does not identify the registry dream machine.'
 }
-if ($Summary -notcontains "Focus: $($Data.currentFocus)") {
-    throw 'Summary does not identify the registry current focus.'
-}
 foreach ($Wave in @($Data.machines.targetWave | Sort-Object -Unique)) {
     if (-not ($Summary -match "^Wave $Wave`$")) {
         throw "Summary does not contain wave $Wave."

@@ -92,9 +92,9 @@ FGatersStructuralEvaluation FGatersStructuralEvaluator::Evaluate(
 	}
 
 	TSet<FString> Ids;
-	int32 GateCount = 0;
+	int32 ArrivalCount = 0;
 	int32 BaseCount = 0;
-	const FGatersRecipeNode* Gate = nullptr;
+	const FGatersRecipeNode* Arrival = nullptr;
 	const FGatersRecipeNode* Base = nullptr;
 	for (const FGatersRecipeNode& Node : Recipe.Nodes)
 	{
@@ -131,18 +131,27 @@ FGatersStructuralEvaluation FGatersStructuralEvaluator::Evaluate(
 		}
 
 		if ((Node.Kind == EGatersRecipeNodeKind::BasePiece ||
-			Node.Kind == EGatersRecipeNodeKind::RouteWaypoint) && Node.ContentKey.IsEmpty())
+			Node.Kind == EGatersRecipeNodeKind::RouteWaypoint ||
+			Node.Kind == EGatersRecipeNodeKind::SettlementModule ||
+			Node.Kind == EGatersRecipeNodeKind::SettlementParcel ||
+			Node.Kind == EGatersRecipeNodeKind::SettlementGrowthFront) && Node.ContentKey.IsEmpty())
 		{
 			const TCHAR* KindName = Node.Kind == EGatersRecipeNodeKind::BasePiece
-				? TEXT("BasePiece") : TEXT("RouteWaypoint");
+				? TEXT("BasePiece")
+				: Node.Kind == EGatersRecipeNodeKind::RouteWaypoint
+					? TEXT("RouteWaypoint")
+					: Node.Kind == EGatersRecipeNodeKind::SettlementModule
+						? TEXT("SettlementModule")
+						: Node.Kind == EGatersRecipeNodeKind::SettlementParcel
+							? TEXT("SettlementParcel") : TEXT("SettlementGrowthFront");
 			AddIssue(Evaluation, TEXT("node.content.required"),
 				FString::Printf(TEXT("%s node %s requires ContentKey"), KindName, *Node.Id), Node.Id);
 		}
 
-		if (Node.Kind == EGatersRecipeNodeKind::Gate)
+		if (Node.Kind == EGatersRecipeNodeKind::Arrival)
 		{
-			++GateCount;
-			Gate = &Node;
+			++ArrivalCount;
+			Arrival = &Node;
 		}
 		else if (Node.Kind == EGatersRecipeNodeKind::BaseSite)
 		{
@@ -349,15 +358,15 @@ FGatersStructuralEvaluation FGatersStructuralEvaluator::Evaluate(
 		}
 	}
 
-	if (GateCount != 1)
+	if (ArrivalCount != 1)
 	{
-		AddIssue(Evaluation, TEXT("recipe.gate.cardinality"),
-			TEXT("recipe must contain exactly one Gate node"));
+		AddIssue(Evaluation, TEXT("recipe.arrival.cardinality"),
+			TEXT("recipe must contain exactly one Arrival node"));
 	}
-	else if (!Gate->Location.Equals(FVector::ZeroVector))
+	else if (!Arrival->Location.Equals(FVector::ZeroVector))
 	{
-		AddIssue(Evaluation, TEXT("recipe.gate.location"),
-			TEXT("Gate node must be at the local origin"), Gate->Id);
+		AddIssue(Evaluation, TEXT("recipe.arrival.location"),
+			TEXT("Arrival node must be at the local origin"), Arrival->Id);
 	}
 
 	const int32 ExpectedBaseCount = Recipe.bHasBaseSite ? 1 : 0;
@@ -370,7 +379,7 @@ FGatersStructuralEvaluation FGatersStructuralEvaluator::Evaluate(
 	{
 		const FVector ExpectedLocation(
 			Recipe.BaseSite,
-			static_cast<double>(Recipe.CreateEnvironment().HeightAt(Recipe.BaseSite)));
+			static_cast<double>(Recipe.BaseSiteHeight));
 		if (!Base->Location.Equals(ExpectedLocation))
 		{
 			AddIssue(Evaluation, TEXT("recipe.base.location"),

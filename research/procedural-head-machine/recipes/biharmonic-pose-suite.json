@@ -1,0 +1,66 @@
+{
+  "schema": "skin-capture-recipe/0",
+  "id": "humanoid-biharmonic-pose-suite",
+  "method": "houdini-joint-capture-biharmonic",
+  "max_influences": 4,
+  "max_iterations": 10,
+  "normalize": true,
+  "diagnostic_poses": [
+    {
+      "id": "left_elbow_flex",
+      "joint": "left_elbow",
+      "descendants": ["left_wrist"],
+      "axis": [0.0, 1.0, 0.0],
+      "degrees": 55.0,
+      "active_modules": ["left_arm"],
+      "protected_modules": ["torso", "head", "right_arm", "left_leg", "right_leg"],
+      "evaluation": {"module": "left_arm", "parent_joint": "left_shoulder", "child_joint": "left_wrist", "radius_m": 0.16, "minimum_thickness_ratio_p10": 0.88}
+    },
+    {
+      "id": "left_knee_flex",
+      "joint": "left_knee",
+      "descendants": ["left_ankle"],
+      "axis": [1.0, 0.0, 0.0],
+      "degrees": 65.0,
+      "active_modules": ["left_leg"],
+      "protected_modules": ["torso", "head", "left_arm", "right_arm", "right_leg"],
+      "evaluation": {"module": "left_leg", "parent_joint": "left_hip", "child_joint": "left_ankle", "radius_m": 0.18, "minimum_thickness_ratio_p10": 0.80}
+    },
+    {
+      "id": "left_shoulder_raise",
+      "joint": "left_shoulder",
+      "descendants": ["left_elbow", "left_wrist"],
+      "axis": [0.0, 1.0, 0.0],
+      "degrees": 50.0,
+      "active_modules": ["left_arm"],
+      "protected_modules": ["head", "right_arm", "left_leg", "right_leg"],
+      "transition_modules": [{"module": "torso", "maximum_displacement_m": 0.04}],
+      "evaluation": {"module": "left_arm", "parent_joint": "chest", "child_joint": "left_elbow", "radius_m": 0.18, "minimum_thickness_ratio_p10": 0.75}
+    },
+    {
+      "id": "left_hip_flex",
+      "joint": "left_hip",
+      "descendants": ["left_knee", "left_ankle"],
+      "axis": [1.0, 0.0, 0.0],
+      "degrees": 45.0,
+      "active_modules": ["left_leg"],
+      "protected_modules": ["head", "left_arm", "right_arm", "right_leg"],
+      "transition_modules": [{"module": "torso", "maximum_displacement_m": 0.04}],
+      "evaluation": {"module": "left_leg", "parent_joint": "pelvis", "child_joint": "left_knee", "radius_m": 0.20, "minimum_thickness_ratio_p10": 0.75}
+    },
+    {
+      "id": "torso_twist",
+      "joint": "waist",
+      "descendants": ["chest", "head_center", "left_shoulder", "left_elbow", "left_wrist", "right_shoulder", "right_elbow", "right_wrist"],
+      "axis": "joint_aim",
+      "degrees": 35.0,
+      "active_modules": ["torso", "head", "left_arm", "right_arm"],
+      "protected_modules": [],
+      "transition_modules": [
+        {"module": "left_leg", "maximum_displacement_m": 0.01},
+        {"module": "right_leg", "maximum_displacement_m": 0.01}
+      ],
+      "evaluation": {"module": "torso", "parent_joint": "pelvis", "child_joint": "chest", "radius_m": 0.25, "minimum_thickness_ratio_p10": 0.75}
+    }
+  ]
+}

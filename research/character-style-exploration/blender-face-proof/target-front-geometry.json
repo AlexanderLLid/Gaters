@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "image": {
+    "path": "Reference/painted-a-front-flat-v2.png",
+    "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf",
+    "size": [1254, 1254]
+  },
+  "annotationMethod": "Manual pixel landmarks selected once at original resolution on the approved front reference; points mark visible anatomical extrema or pupil centers, never hair, brows, skin texture, lighting, or background.",
+  "uncertainty": "Painted contours and perspective make each manually chosen surface landmark approximate; ratios are used only for the five named macro mismatches and require a material score margin, not a likeness claim.",
+  "contourBands": {
+    "cheekFraction": 0.3497536945812808,
+    "jawFraction": 0.7315270935960591,
+    "halfBandOfEyeChin": 0.04,
+    "method": "Candidate cheek and jaw anchors are full visible head-surface contour x extrema, excluding stable ear vertices, in narrow vertical bands normalized from the eye line to the chin point. The bands match the manual target points at y=573 and y=728."
+  },
+  "points": {
+    "leftEye": [510, 432], "rightEye": [739, 430],
+    "leftCheek": [414, 573], "rightCheek": [838, 573],
+    "leftJaw": [423, 728], "rightJaw": [831, 728],
+    "leftMouth": [505, 704], "rightMouth": [749, 704],
+    "chin": [627, 837]
+  },
+  "ratios": {
+    "cheekWidth": 1.851528384279476,
+    "jawWidth": 1.7816593886462883,
+    "mouthWidth": 1.0655021834061136,
+    "eyeToChinHeight": 1.777292576419214,
+    "lowerFaceTaper": 0.9622639622641509
+  }
+}

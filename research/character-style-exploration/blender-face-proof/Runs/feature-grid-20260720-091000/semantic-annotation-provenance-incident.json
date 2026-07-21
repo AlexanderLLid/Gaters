@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-8-target-feature-annotation-provenance-mismatch",
+  "invalidatedRunIds": ["feature-grid-20260720-091000"],
+  "reason": "The recorded blind annotation points did not exactly reproduce the two reported annotations for alare y coordinates and the image-right eye center. Build and fresh-verifier receipts remain append-only evidence, but no feature metric or selection may use this run. A new run uses the reconciled consensus and conservative uncertainty.",
+  "preservedFailure": "logs/e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a-feature.log"
+}

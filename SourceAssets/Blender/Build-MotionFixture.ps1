@@ -1,7 +1,7 @@
 param(
     [string] $Blender = 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe',
     [string] $Brief = (Join-Path $PSScriptRoot 'contracts\neutral-motion.json'),
-    [string] $Output = (Join-Path $PSScriptRoot 'Derived\neutral-motion-v1')
+    [string] $Output = (Join-Path $PSScriptRoot 'Derived\neutral-motion-v2')
 )
 
 $ErrorActionPreference = 'Stop'

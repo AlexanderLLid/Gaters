@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "candidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+  "sourceRecipe": {"path": "Runs/face-search-20260720-032234/candidates/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44.json", "sha256": "dcdd734626fd54194e3f6d02130dd6e14f5fdf4dccc0714199c5bc4106b49a83"},
+  "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/manifest.json", "sha256": "3f0bf57e280c2e3d496c3d852c6d3b730de7e97509faafb2ad149da1e5b3c1a8"},
+  "artifacts": {
+    "blend": {"path": "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/face-sculpt.blend", "sha256": "0ecbf1d99f33ac21d57334aef7ffd1dd4acba8eeb75d52d38794ac2f872e9811"},
+    "front": {"path": "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/front.png", "sha256": "5427cbbd99888cb1bd763d7edb1c7e1d646dae2cdb5927629410f25c7d8f6cda"},
+    "threeQuarter": {"path": "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/three-quarter.png", "sha256": "82031d7f341be1e6ff806eac8caea8c410e504f12000b99e5939e2fa61e0979a"},
+    "profile": {"path": "Derived/search-runs/face-search-20260720-032234/round-0/9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44/profile.png", "sha256": "e0de9f72c9166ea6a79b9316f841a3b19ab78c8ae2462e371480915a8ff665cf"}
+  },
+  "logs": {
+    "build": {"path": "Runs/face-search-20260720-032234/final-replay/logs/champion-build.log", "sha256": "8769159ef8a0271eedfdf1925874e2877121a4581de732104dc13034a42d06dd"},
+    "verifier": {"path": "Runs/face-search-20260720-032234/final-replay/logs/champion-verify.log", "sha256": "e052893b67c4dd04dca6214135233056ca4045e691901d06b21540df3933a5e1"}
+  },
+  "semanticResult": "candidate identity, full parameter vector, views, 768x768 output, current hard checks, current source and current tool hashes passed; byte identity was not required",
+  "humanAcceptance": false
+}

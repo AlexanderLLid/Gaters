@@ -1,0 +1,11 @@
+{
+  "failures": [],
+  "metrics": {
+    "face_count": 44,
+    "max_position_delta_m": 2.9386673671240906e-08,
+    "max_region_delta": 0.0,
+    "vertex_count": 42
+  },
+  "passed": true,
+  "schema": "socket-adapter-verification/0"
+}

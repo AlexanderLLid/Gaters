@@ -1,0 +1,10 @@
+{
+  "branch_id": "torso-side-branches-held-out",
+  "composition_sha256": "4bbe126d63f87af0dd062720daa3869aa56d8732bbf72a3e81c434afbf4064c1",
+  "passed": true,
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BranchRuns\\torso-side-branches-held-out-20260721-161314-730080\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BranchRuns\\torso-side-branches-held-out-20260721-161314-730080\\run-2"
+  ],
+  "schema": "mirrored-branch-run-summary/0"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "primary",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Inspect only the round-2 primary blind package and its target and three-view slots. Compare front likeness and use other views only for anatomy regression. Ignore lighting, skin, hair, eyebrows, texture, presentation, parameters, directions, history, and the audit package. Return only the evaluator-contract geometry ballot.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"primary\",\"winnerSlot\":\"left\",\"confidence\":0.57,\"dimensions\":{\"frontLikeness\":\"better\",\"threeDimensionalPlausibility\":\"same\",\"groundedMatureGeometry\":\"better\",\"individualCharacter\":\"same\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"The lower facial silhouette still narrows too much toward the chin instead of holding the target's broader, squared mature jaw base.\"],\"nextAxis\":\"jaw_taper\"}",
+    "winnerSlot": "left",
+    "confidence": 0.57,
+    "dimensions": {"frontLikeness": "better", "threeDimensionalPlausibility": "same", "groundedMatureGeometry": "better", "individualCharacter": "same"},
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": ["The lower facial silhouette still narrows too much toward the chin instead of holding the target's broader, squared mature jaw base."],
+    "nextAxis": "jaw_taper"
+  },
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "audit",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Inspect only the round-2 audit blind package and its target and three-view slots. Compare front likeness and use other views only for anatomy regression. Ignore lighting, skin, hair, eyebrows, texture, presentation, parameters, directions, history, and the primary package. Return only the evaluator-contract geometry ballot.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"audit\",\"winnerSlot\":\"left\",\"confidence\":0.54,\"dimensions\":{\"frontLikeness\":\"better\",\"threeDimensionalPlausibility\":\"better\",\"groundedMatureGeometry\":\"better\",\"individualCharacter\":\"better\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"The facial mass remains too tall and narrow for the target, especially through the temples, cheeks, and lower jaw.\",\"The chin-to-jaw transition still resolves as a smooth generic oval instead of the target's broader, mature lower-face structure.\"],\"nextAxis\":\"head_width\"}",
+    "winnerSlot": "left",
+    "confidence": 0.54,
+    "dimensions": {"frontLikeness": "better", "threeDimensionalPlausibility": "better", "groundedMatureGeometry": "better", "individualCharacter": "better"},
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": ["The facial mass remains too tall and narrow for the target, especially through the temples, cheeks, and lower jaw.", "The chin-to-jaw transition still resolves as a smooth generic oval instead of the target's broader, mature lower-face structure."],
+    "nextAxis": "head_width"
+  }
+]

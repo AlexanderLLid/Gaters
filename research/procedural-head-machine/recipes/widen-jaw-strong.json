@@ -1,0 +1,9 @@
+{
+  "schema": "head-deformation/0",
+  "id": "widen-jaw-strong",
+  "operation": "widen_region",
+  "region": "jaw",
+  "preserve": "skull",
+  "axis": "x",
+  "amount": 0.5
+}

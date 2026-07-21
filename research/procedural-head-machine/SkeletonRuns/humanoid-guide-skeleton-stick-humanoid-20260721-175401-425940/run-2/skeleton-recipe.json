@@ -1,0 +1,41 @@
+{
+  "id": "humanoid-guide-skeleton",
+  "orientation_up_axis": [
+    0.0,
+    -1.0,
+    0.0
+  ],
+  "primary_children": {
+    "chest": "head_center",
+    "left_elbow": "left_wrist",
+    "left_hip": "left_knee",
+    "left_knee": "left_ankle",
+    "left_shoulder": "left_elbow",
+    "pelvis": "waist",
+    "right_elbow": "right_wrist",
+    "right_hip": "right_knee",
+    "right_knee": "right_ankle",
+    "right_shoulder": "right_elbow",
+    "waist": "chest"
+  },
+  "required_joints": [
+    "pelvis",
+    "waist",
+    "chest",
+    "head_center",
+    "left_shoulder",
+    "left_elbow",
+    "left_wrist",
+    "right_shoulder",
+    "right_elbow",
+    "right_wrist",
+    "left_hip",
+    "left_knee",
+    "left_ankle",
+    "right_hip",
+    "right_knee",
+    "right_ankle"
+  ],
+  "root_joint": "pelvis",
+  "schema": "guide-skeleton-recipe/0"
+}

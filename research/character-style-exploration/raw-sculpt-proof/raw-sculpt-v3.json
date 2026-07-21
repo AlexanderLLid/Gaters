@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "machineId": "research.raw-head-design-sculpt",
+  "parent": "raw-sculpt-v2.json",
+  "targetImage": "../blender-face-proof/Reference/painted-a-front-flat-v2.png",
+  "outputDirectory": "Derived/minimal-v3-gnm",
+  "construction": "gnm-statistical-anatomy",
+  "rejectedParentReason": "A deformed sphere preserved an egg-shaped childish head and violated ART-1.",
+  "anatomySource": {
+    "repository": "https://github.com/google/GNM.git",
+    "commit": "545a62ed617137b478586ced9d138c5c106ca65a",
+    "license": "Apache-2.0",
+    "model": "GNM Head v3"
+  },
+  "identity": {
+    "genderClass": "female",
+    "ethnicityClass": "black",
+    "seed": 1847
+  }
+}

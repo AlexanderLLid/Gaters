@@ -1,0 +1,43 @@
+[
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "primary",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Round 1 blind ballot. Read-only; do not edit. Read Runs/face-search-20260720-032234/round-1/primary-package.json, then use view_image original detail on its target and every front/three-quarter/profile path. Do not inspect recipes, manifests, scripts, parameters, directions, audit package, or any other run data. Compare the approved target directly with each front. Front likeness is reference-backed; three-quarter and profile are anatomy-regression checks only. Ignore lighting, skin, hair, eyebrows, texture, and presentation: they cannot improve rank. Judge skull/facial silhouette, feature placement/projection, age structure, asymmetry, anatomical continuity, grounded mature geometry, and individual character. Reject projection tricks, implausible anatomy, cartoon/toy geometry, missing evidence, and generic smoothing that removes character. Return only the evaluator-contract JSON ballot. No candidate IDs, parameter inference, prose, markdown, promotion language, or extra fields.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"primary\",\"winnerSlot\":\"left\",\"confidence\":0.58,\"dimensions\":{\"frontLikeness\":\"better\",\"threeDimensionalPlausibility\":\"same\",\"groundedMatureGeometry\":\"better\",\"individualCharacter\":\"same\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"Lower face remains too tapered and pointed compared with the target's broad, squared mature jaw and chin silhouette.\"],\"nextAxis\":\"jaw_taper\"}",
+    "winnerSlot": "left",
+    "confidence": 0.58,
+    "dimensions": {
+      "frontLikeness": "better",
+      "threeDimensionalPlausibility": "same",
+      "groundedMatureGeometry": "better",
+      "individualCharacter": "same"
+    },
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": ["Lower face remains too tapered and pointed compared with the target's broad, squared mature jaw and chin silhouette."],
+    "nextAxis": "jaw_taper"
+  },
+  {
+    "schemaVersion": 1,
+    "evaluatorId": "audit",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Round 1 blind ballot. Read-only; do not edit. Read Runs/face-search-20260720-032234/round-1/audit-package.json, then use view_image original detail on its target and every front/three-quarter/profile path. Do not inspect recipes, manifests, scripts, parameters, directions, primary package, or any other run data. Compare the approved target directly with each front. Front likeness is reference-backed; three-quarter and profile are anatomy-regression checks only. Ignore lighting, skin, hair, eyebrows, texture, and presentation: they cannot improve rank. Judge skull/facial silhouette, feature placement/projection, age structure, asymmetry, anatomical continuity, grounded mature geometry, and individual character. Reject projection tricks, implausible anatomy, cartoon/toy geometry, missing evidence, and generic smoothing that removes character. Return only the evaluator-contract JSON ballot. No candidate IDs, parameter inference, prose, markdown, promotion language, or extra fields.",
+    "response": "{\"schemaVersion\":1,\"evaluatorId\":\"audit\",\"winnerSlot\":\"left\",\"confidence\":0.58,\"dimensions\":{\"frontLikeness\":\"better\",\"threeDimensionalPlausibility\":\"better\",\"groundedMatureGeometry\":\"better\",\"individualCharacter\":\"better\"},\"hardFailures\":[],\"severeRegressions\":[],\"diagnosis\":[\"All candidates remain too tall and narrow through the cranial and facial mass, leaving the target's compact broad mature silhouette unresolved.\",\"The lower face still tapers too strongly into a generic oval chin rather than carrying the target's stable jaw width.\"],\"nextAxis\":\"head_width\"}",
+    "winnerSlot": "left",
+    "confidence": 0.58,
+    "dimensions": {
+      "frontLikeness": "better",
+      "threeDimensionalPlausibility": "better",
+      "groundedMatureGeometry": "better",
+      "individualCharacter": "better"
+    },
+    "hardFailures": [],
+    "severeRegressions": [],
+    "diagnosis": [
+      "All candidates remain too tall and narrow through the cranial and facial mass, leaving the target's compact broad mature silhouette unresolved.",
+      "The lower face still tapers too strongly into a generic oval chin rather than carrying the target's stable jaw width."
+    ],
+    "nextAxis": "head_width"
+  }
+]

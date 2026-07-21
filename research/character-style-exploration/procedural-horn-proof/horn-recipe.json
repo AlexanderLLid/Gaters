@@ -1,0 +1,26 @@
+{
+  "schema": "horn-proof/0",
+  "id": "ram-horn-v0",
+  "seed": 2207,
+  "axial_samples": 280,
+  "radial_segments": 40,
+  "turns": 1.55,
+  "coil_radius_base": 1.35,
+  "coil_decay": 0.17,
+  "helix_rise": 0.42,
+  "base_radius": 0.38,
+  "tip_radius": 0.025,
+  "taper_power": 0.78,
+  "ovate_aspect": 0.82,
+  "twist_turns": 0.32,
+  "ridge_count": 28,
+  "ridge_amplitude": 0.065,
+  "ridge_sharpness": 5.0,
+  "striation_count": 18,
+  "striation_amplitude": 0.018,
+  "asymmetry": 0.035,
+  "chips": [
+    {"position": 0.68, "angle": 1.1, "length": 0.025, "width": 0.34, "depth": 0.12},
+    {"position": 0.84, "angle": 4.4, "length": 0.018, "width": 0.28, "depth": 0.18}
+  ]
+}

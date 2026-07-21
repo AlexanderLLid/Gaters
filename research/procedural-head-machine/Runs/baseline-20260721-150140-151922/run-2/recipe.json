@@ -1,0 +1,11 @@
+{
+  "chin_taper": 0.62,
+  "depth_m": 0.19,
+  "height_m": 0.22,
+  "id": "baseline",
+  "jaw_width": 0.82,
+  "rings": 12,
+  "schema": "head-recipe/0",
+  "segments": 16,
+  "width_m": 0.16
+}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GatersLandformProcessField.h"
 
 enum class EGatersEnvironment : uint8
 {
@@ -29,6 +30,14 @@ struct PROTOTYPE_API FGatersWaterSurface
 struct PROTOTYPE_API FGatersEnvironment
 {
 	static FGatersEnvironment FromSeed(int32 Seed, float ChunkSize);
+	FGatersEnvironment WithProfile(
+		EGatersEnvironment Terrain,
+		EGatersHydrology InHydrology,
+		const FVector2D& ProcessCoordinateOffset = FVector2D::ZeroVector,
+		float InLocalHydrologyRadius = 0.f) const;
+	FGatersEnvironment WithLandformProcesses(
+		const FGatersLandformProcessRecipe& Recipe) const;
+	bool HasLandformProcesses() const { return LandformProcesses.IsSet(); }
 
 	float HeightAt(const FVector2D& Point) const;
 	float FootprintDrop(const FVector2D& Center, float Radius) const;
@@ -54,6 +63,9 @@ private:
 	FVector2D NoiseOffset = FVector2D::ZeroVector;
 	float RotationRadians = 0.f;
 	float Phase = 0.f;
+	TOptional<FGatersLandformProcessRecipe> LandformProcesses;
+	FVector2D LandformCoordinateOffset = FVector2D::ZeroVector;
+	float LocalHydrologyRadius = 0.f;
 
 	FVector2D Rotate(const FVector2D& Point) const;
 	FVector2D LakeCenter(int32 Index) const;

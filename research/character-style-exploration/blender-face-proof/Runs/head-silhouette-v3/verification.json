@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "chin": -1.68112490054044,
+    "meanWidthError": 0.055776615378975415,
+    "top": 1.7995132939972927
+  },
+  "baselineScore": 0.3488374979187974,
+  "decision": "promote-head-silhouette-fit",
+  "evidence": {
+    "blendSha256": "d15ae0068b4e766dbc98ac456b63f898666bcbdb23342f677a7bb1d5886337f5",
+    "manifestSha256": "d4be23beed7b70329c96500a946986d37a94e931bbed16639192d396cc3f0d4a",
+    "verifierSha256": "6560337b83396cc846a2c0ceb761e963a0de06a6273e09dadcc19fdd8a5f431d"
+  },
+  "fitted": {
+    "chin": -1.7729252994120261,
+    "meanWidthError": 0.019910047392374654,
+    "top": 1.598252611782212
+  },
+  "fittedScore": 0.01991117549944641,
+  "gates": {
+    "boundedDisplacement": true,
+    "depthPreserved": true,
+    "finiteCoordinates": true,
+    "neckContinuous": true,
+    "profileImprovement": true,
+    "topology": true
+  },
+  "improvementFraction": 0.9429213441265958,
+  "maximumDepthChange": 0.0,
+  "maximumDisplacement": 0.012272561285386585,
+  "schemaVersion": 1,
+  "target": {
+    "chin": -1.7729257641921397,
+    "top": 1.5982532751091703
+  },
+  "topologyUnchanged": true,
+  "visualDecision": "pending-human"
+}

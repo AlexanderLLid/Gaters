@@ -8,7 +8,42 @@
 
 int32 FGatersVisualBatchPlan::NumInstances() const
 {
-	return Trees.Num() + Rocks.Num() + OpenClaims.Num() + ClaimedClaims.Num();
+	return Trees.Num() + Rocks.Num() + OpenClaims.Num() + ClaimedClaims.Num()
+		+ VillageFoundations.Num() + VillageWalls.Num() + VillageRoofs.Num()
+		+ VillageSpaces.Num();
+}
+
+namespace
+{
+void AddDoorFrame(
+	const FString& StableId,
+	const FTransform& Envelope,
+	TArray<FGatersVisualInstance>& OutWalls)
+{
+	const FVector Scale = Envelope.GetScale3D();
+	const bool bLongX = Scale.X >= Scale.Y;
+	const float LongScale = bLongX ? Scale.X : Scale.Y;
+	const float OpeningScale = LongScale * 0.45f;
+	const float SideScale = (LongScale - OpeningScale) * 0.5f;
+	const float OffsetCm = (OpeningScale + SideScale) * 50.f;
+	const FVector LocalAxis = bLongX ? FVector(1, 0, 0) : FVector(0, 1, 0);
+	for (const int32 Side : {-1, 1})
+	{
+		FTransform Post = Envelope;
+		FVector PostScale = Scale;
+		(bLongX ? PostScale.X : PostScale.Y) = SideScale;
+		Post.SetScale3D(PostScale);
+		Post.AddToTranslation(Envelope.GetRotation().RotateVector(LocalAxis * OffsetCm * Side));
+		OutWalls.Add({StableId + (Side < 0 ? TEXT(":frame:left") : TEXT(":frame:right")), Post});
+	}
+	FTransform Lintel = Envelope;
+	FVector LintelScale = Scale;
+	(bLongX ? LintelScale.X : LintelScale.Y) = OpeningScale;
+	LintelScale.Z = Scale.Z * 0.22f;
+	Lintel.SetScale3D(LintelScale);
+	Lintel.AddToTranslation(FVector(0.f, 0.f, (Scale.Z - LintelScale.Z) * 50.f));
+	OutWalls.Add({StableId + TEXT(":frame:top"), Lintel});
+}
 }
 
 FGatersVisualBatchPlan FGatersVisualMaterializer::Plan(
@@ -18,6 +53,41 @@ FGatersVisualBatchPlan FGatersVisualMaterializer::Plan(
 	FGatersVisualBatchPlan Result;
 	for (const FGatersCompiledNode& Node : World.Nodes)
 	{
+		if (Node.Kind == EGatersRecipeNodeKind::VillageSite)
+		{
+			FTransform Transform = Node.Transform;
+			Transform.AddToTranslation(FVector(0.f, 0.f, 10.f));
+			Transform.SetScale3D(FVector(5.f, 5.f, 0.2f));
+			Result.VillageSpaces.Add({Node.NodeId, Transform});
+			continue;
+		}
+		if (Node.Kind == EGatersRecipeNodeKind::SettlementModule)
+		{
+			if (Node.ContentKey == TEXT("building.foundation")
+				|| Node.ContentKey == TEXT("building.floor"))
+			{
+				Result.VillageFoundations.Add({Node.NodeId, Node.Transform});
+			}
+			else if (Node.ContentKey == TEXT("building.wall"))
+			{
+				Result.VillageWalls.Add({Node.NodeId, Node.Transform});
+			}
+			else if (Node.ContentKey == TEXT("building.door"))
+			{
+				Result.VillageDoors.Add({Node.NodeId, Node.Transform});
+				AddDoorFrame(Node.NodeId, Node.Transform, Result.VillageWalls);
+			}
+			else if (Node.ContentKey == TEXT("building.roof"))
+			{
+				Result.VillageRoofs.Add({Node.NodeId, Node.Transform});
+			}
+			continue;
+		}
+		if (Node.Kind == EGatersRecipeNodeKind::SettlementPath)
+		{
+			// Path identity remains semantic until a terrain-aware presentation adapter exists.
+			continue;
+		}
 		const bool bScatter = Node.Kind == EGatersRecipeNodeKind::ScatterTree ||
 			Node.Kind == EGatersRecipeNodeKind::ScatterRock;
 		const bool bClaim = Node.Kind == EGatersRecipeNodeKind::BuildPlot;
@@ -85,7 +155,15 @@ bool FGatersVisualMaterializer::Materialize(
 		{TEXT("GatersOpenClaims"), TEXT("/Engine/BasicShapes/Cube.Cube"),
 			TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"), &Plan.OpenClaims, nullptr},
 		{TEXT("GatersClaimedClaims"), TEXT("/Engine/BasicShapes/Cube.Cube"),
-			TEXT("/Game/Gaters/Materials/MI_Claimed.MI_Claimed"), &Plan.ClaimedClaims, nullptr}
+			TEXT("/Game/Gaters/Materials/MI_Claimed.MI_Claimed"), &Plan.ClaimedClaims, nullptr},
+		{TEXT("GatersVillageFoundations"), TEXT("/Engine/BasicShapes/Cube.Cube"),
+			TEXT("/Game/Gaters/Materials/MI_ScatterRock.MI_ScatterRock"), &Plan.VillageFoundations, nullptr},
+		{TEXT("GatersVillageWalls"), TEXT("/Engine/BasicShapes/Cube.Cube"),
+			TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"), &Plan.VillageWalls, nullptr},
+		{TEXT("GatersVillageRoofs"), TEXT("/Engine/BasicShapes/Cube.Cube"),
+			TEXT("/Game/Gaters/Materials/MI_Claimed.MI_Claimed"), &Plan.VillageRoofs, nullptr},
+		{TEXT("GatersVillageSpaces"), TEXT("/Engine/BasicShapes/Cylinder.Cylinder"),
+			TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"), &Plan.VillageSpaces, nullptr}
 	};
 
 	while (InOutComponents.Num() < UE_ARRAY_COUNT(Batches))

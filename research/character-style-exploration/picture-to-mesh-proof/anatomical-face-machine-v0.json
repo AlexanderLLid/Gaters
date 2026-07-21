@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "machineId": "research.anatomical-front-fit",
+  "sourceBlend": "../blender-face-proof/Derived/face-v2/face-proof.blend",
+  "candidateRecipe": "../blender-face-proof/Runs/feature-calibration-20260720-100000/candidates/9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8.json",
+  "targetGeometry": "../blender-face-proof/target-feature-geometry.json",
+  "targetImage": "../blender-face-proof/Reference/painted-a-front-flat-v2.png",
+  "maximumRatioError": 0.02
+}

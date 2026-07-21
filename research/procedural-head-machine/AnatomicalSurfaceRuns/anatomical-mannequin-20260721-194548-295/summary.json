@@ -1,0 +1,12 @@
+{
+  "body_plan_id": "stick-humanoid",
+  "passed": true,
+  "preview": "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-194548-295\\preview.png",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-194548-295\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-194548-295\\run-2"
+  ],
+  "schema": "smooth-body-run-summary/0",
+  "surface_id": "anatomical-mannequin",
+  "surface_sha256": "e8608eefe242f9f81794fa4e517c362653d038cf47eeb1c1331bac83d1188880"
+}

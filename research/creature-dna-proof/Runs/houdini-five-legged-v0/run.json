@@ -1,0 +1,7 @@
+{
+  "graph_sha256": "e63cb106ed5466790c30428060f6583d33f4f128b63d92d1d1bfca13fc58e93a",
+  "houdini": null,
+  "passed": true,
+  "python": "3.13.10",
+  "recipe_id": "five-legged-challenge"
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-031640",
+  "sharedRankedAxes": ["jaw_taper", "cheek_definition", "eye_spacing"],
+  "selectedAxis": "jaw_taper",
+  "reason": "jaw_taper is the only shared high-severity mismatch; primary ranked it first and audit ranked it third. Lower jaw_taper directly tests the shared diagnosis of an excessively narrow lower-face silhouette.",
+  "humanAcceptance": false
+}

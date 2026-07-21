@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "runId": "detail-grid-20260720-063059",
+  "status": "completed-review-only-no-clear-improvement",
+  "humanAcceptance": false,
+  "machinePromotion": false,
+  "invalidPredecessorRuns": [
+    "detail-grid-20260720-061718",
+    "detail-grid-20260720-062133"
+  ],
+  "dependencyVersions": {
+    "detailContract": "70e4d4321219148da391ef7b61c914796bab0b4698a089599b89ad8a49780a85",
+    "detailScript": "152ef35535b774c8d2a4ce6e74833fe7353cd6c52184890f776160a7d8bd1894",
+    "detailMetric": "05d95a96762be0fba44f40b3fe3abea54b923b52729ffb8363d0ee3085df7923",
+    "featureMetric": "f28e8f3c5a4b92519aaac35f56691d05e7292f4f05c0567bf8ec7ef689234712",
+    "macroMetric": "ec7d13c212bab9b7e10ed7cb0667c802760037ea1006c6d12429ab74346eab3d",
+    "integrityContract": "6053e9cf20eb9005f1b6ae27682a38c33cdb870c005d1ee33572877cef5d7465",
+    "targetDetail": "7c58b73d3b159845a5201c514ebb63cbc9cd20d246fae70f7e97b41d2c93b412"
+  },
+  "receiptCounts": {
+    "recipes": 8,
+    "buildPassed": 8,
+    "freshVerifyPassed": 8,
+    "detailMetricPassed": 8,
+    "featureMetricPassed": 8,
+    "macroMetricPassed": 8,
+    "frontViews": 8,
+    "threeQuarterViews": 8,
+    "profileViews": 8
+  },
+  "hardGates": {
+    "uniqueSceneLockCount": 1,
+    "uniqueCameraCount": 1,
+    "uniqueTopologyCount": 1,
+    "activeNumberedAbsoluteControlDuplicates": [],
+    "macroRegressionKeys": ["cheekWidth", "jawWidth", "eyeToChinHeight", "lowerFaceTaper"],
+    "macroMouthWidthExcluded": true,
+    "macroMaximumObservedDelta": 0.0,
+    "passed": true
+  },
+  "ranking": [
+    {"candidateId": "c3cbf8d36fd9d600500912cf76ea0963b65af2966999cd62ad4fc97d7bb462cb", "mouthWidth": 0.36, "upperLipHeight": 0.08, "nosePointDown": 0.25, "detailScore": 0.21417096345617875, "featureScore": 0.014278697709102423},
+    {"candidateId": "306eeb04f635124a3e58b88518f6c3e33c7645f4fa82dec09fe86f95037e1add", "mouthWidth": 0.36, "upperLipHeight": 0.08, "nosePointDown": 0.15, "detailScore": 0.21417096345617875, "featureScore": 0.01618625083311956},
+    {"candidateId": "0fb3a7dc1959311a3619455a94135d7e65a6bd19a6021ffb852287abdd87c2bf", "mouthWidth": 0.36, "upperLipHeight": 0.18, "nosePointDown": 0.25, "detailScore": 0.22023861955390328, "featureScore": 0.015318199753622946},
+    {"candidateId": "32e9d41af98e907f55a7d8fdae59a1c1ea18c292252e212058af7f1960c794da", "mouthWidth": 0.36, "upperLipHeight": 0.18, "nosePointDown": 0.15, "detailScore": 0.22023861955390328, "featureScore": 0.017225752877640083},
+    {"candidateId": "65f1002d9dfcd4e4566c43ad51868771dcff9b0d1384782e8c77727e129764cc", "mouthWidth": 0.24, "upperLipHeight": 0.08, "nosePointDown": 0.25, "detailScore": 0.2335186569895124, "featureScore": 0.0097017304059617},
+    {"candidateId": "5da0258506f2c4af9e39300556f2a40dfb63e08e3a9b3b446020f4d66f42f14a", "mouthWidth": 0.24, "upperLipHeight": 0.08, "nosePointDown": 0.15, "detailScore": 0.2335186569895124, "featureScore": 0.011609283529978837},
+    {"candidateId": "ec4cd8d9a77b5188d45a1fc149cf85b1f26f07054f221a3f49dac7a271dd7754", "mouthWidth": 0.24, "upperLipHeight": 0.18, "nosePointDown": 0.25, "detailScore": 0.23958631308723694, "featureScore": 0.010741232450482224},
+    {"candidateId": "c66ad9d9b032cc9e74e7b73034e0867f5ac64591e8044eac5d0c79612eb4373c", "mouthWidth": 0.24, "upperLipHeight": 0.18, "nosePointDown": 0.15, "detailScore": 0.23958631308723694, "featureScore": 0.01264878557449936}
+  ],
+  "receiptHashes": {
+    "0fb3a7dc1959311a3619455a94135d7e65a6bd19a6021ffb852287abdd87c2bf": {"manifest": "9c03ab91469e7e5122718880d8aa6cf80c319133f825b8ed0351203c79bc4a58", "detail": "cffc01ac1e757e5dd86c216631ad28de0e92ba5f3dd131c6ae1fcb75a8f39699", "feature": "ae0bde771f3d668379b33f3829643592ffe06aec5c71c4d54748b9536d5d113b", "macro": "71521e2f94b7ae92388c5102910fd7e57d0679ee473bae6a0673eb84f1138110"},
+    "306eeb04f635124a3e58b88518f6c3e33c7645f4fa82dec09fe86f95037e1add": {"manifest": "68ce6665c633f158dfdbd7bb65959b9a93331d638bd0ab4cc1ee1fa5f4194bc6", "detail": "c38194164b12bcd1bc3c663c117cc0942293b6fa664773c82da93c2c96d8165f", "feature": "20e01110467f72dcf27fb8b12a1c93a0e1435af0f1506597f4d96457c6577baf", "macro": "eb4e6decda1adc5d743a6b2247ecdf64fbaeb7baff6c6270eb44a6982bbf65d4"},
+    "32e9d41af98e907f55a7d8fdae59a1c1ea18c292252e212058af7f1960c794da": {"manifest": "bcae0df87915fe0c39c6edd84a6b415934f919713c3304f09e72cf0ee5c41fb8", "detail": "036fa48eb6736edd3ef0e3c5976da347b1917793f35d3b4464b08fdca62a7609", "feature": "7fae4f7820fffa2cce19b1a73418ed52324e66128b4a91b85a43c65d396fad14", "macro": "3fdb4e8754b16be2ba2e83a0cd7b2e40b5b9c96199821895f72dc2c9c145f293"},
+    "5da0258506f2c4af9e39300556f2a40dfb63e08e3a9b3b446020f4d66f42f14a": {"manifest": "63b1f0769ea69cc38d01d6033b45bf798772a25ba8dadbbf032cdca9ecc77dc8", "detail": "8a781b37f5f02e403e2bf4c8110db65a083714eaa40d8a4799a84109eca8ced2", "feature": "10469402af578f4a6b7c239617d987d923880dc121859520c129c452ad905322", "macro": "cc79b1849bc2b0584fab4d0942975fcb2bcc58efba13c72fdd94f0895825bebc"},
+    "65f1002d9dfcd4e4566c43ad51868771dcff9b0d1384782e8c77727e129764cc": {"manifest": "c5ccaec3d8655ca9fa7c55fe70688a24f8ad9a0670fec406d7c76918a2e855f3", "detail": "c68f4d398a8028c566966fcd30f344255ed08aafc02b6492ce40e8d1b6ffe116", "feature": "0dab44ca6f9233f09e7492485e3fc63b0e9b4f84e8ba04b429f76601765b3f60", "macro": "a99a47fedcfef4733357cd532d8352d501aee087f6a406750c65c4682df2caf2"},
+    "c3cbf8d36fd9d600500912cf76ea0963b65af2966999cd62ad4fc97d7bb462cb": {"manifest": "2a1757540b468bafe2c7b58e3a2d55751ba031db317ab72268b84f2b943cc98e", "detail": "db023406d1dceb8c66eb6baf8d3d63bc438f9d73e283726e49785bd90903fedc", "feature": "471b84f64c37a29c77df9be26c751dde97fc7a1f25cb853bb56ba3b7cd535453", "macro": "da60e26e21c808364b1fbde55fcac8651287a485c4a232209ad369ff76c99d84"},
+    "c66ad9d9b032cc9e74e7b73034e0867f5ac64591e8044eac5d0c79612eb4373c": {"manifest": "1a7237931a386b7cd1bb6cbe7c593dab46f0be99517304d77ef36e6bf2fe426d", "detail": "1999f916202adad341ff835c2b663f8938c6c419c5becb80181fa1454cf89f39", "feature": "ddf199c4d7ebfc28a9372c8e59cf700d08bc93caf0fe5da1d183b68fe3df057e", "macro": "ca31f29fe40b2b5bd065e2283c1d63b4fb3ee772532ac35c993ccfc77eae20d4"},
+    "ec4cd8d9a77b5188d45a1fc149cf85b1f26f07054f221a3f49dac7a271dd7754": {"manifest": "b39460cd88169022e8cb8e1beee1131c85a4dd131c719463a38c959493ef017a", "detail": "78c0a24d51d6933962113b10c78050650582bc95ddf06014b6ffb16bb3ed3d31", "feature": "e89fbb1edbbca49b5e4bac5c6b710a6d269f50f7f739fd8c7a9d9c0680b8283a", "macro": "f25b93cac02acc138e5de9723a7744fd5ab66cdb756ff269b7dd538021ee7e29"}
+  },
+  "visualAudits": {
+    "slotMap": {
+      "X": "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8",
+      "A": "c3cbf8d36fd9d600500912cf76ea0963b65af2966999cd62ad4fc97d7bb462cb",
+      "B": "306eeb04f635124a3e58b88518f6c3e33c7645f4fa82dec09fe86f95037e1add",
+      "C": "65f1002d9dfcd4e4566c43ad51868771dcff9b0d1384782e8c77727e129764cc"
+    },
+    "auditA": {"path": "evaluations/visual-audit-a.json", "sha256": "f5346f72b860b197fd78f3c7b533469202e5ca960bef055e3fe6b6882f14071e", "rank": ["C", "B", "X", "A"], "clearImprovement": false, "hardRegression": false},
+    "auditB": {"path": "evaluations/visual-audit-b.json", "sha256": "44bc2cb1ac3c09f758bf6488abaf81b8dfcebdd7cd92071c99c69011029fcd88", "rank": ["A", "C", "B", "X"], "clearImprovement": false, "hardRegression": false}
+  },
+  "independentEvidenceReview": {"path": "independent-review.json", "sha256": "6e46245620687743a687cd720ce0f70f232e7ff628a2bc7a5cdc14328df1c32f", "decision": "APPROVED", "testsPassed": 87},
+  "decision": {
+    "machineBestCandidateId": "c3cbf8d36fd9d600500912cf76ea0963b65af2966999cd62ad4fc97d7bb462cb",
+    "machineBestControls": {"eye_outer_corner_down": 0.08, "mouth_width": 0.36, "upper_lip_height": 0.08, "nose_point_down": 0.25},
+    "detailScore": 0.21417096345617875,
+    "summedAnnotationUncertainty": 0.6651982378854626,
+    "fullGridScoreRange": 0.02541534963105818,
+    "visualConclusion": "Both independent auditors found no clear improvement over the Task 9 parent and disagreed on the marginally best challenger.",
+    "adoption": "Task 9 parent remains retained; Task 10 machine-best is review-only evidence.",
+    "remainingMismatch": "Eyes remain slit-like; nose base/tip remain pinched; mouth remains short and weakly articulated. The wider mouth endpoint moved in the correct measured direction but remained far short of the target, while the higher upper-lip control moved its landmark in the wrong direction.",
+    "humanAccepted": false
+  },
+  "stopReason": "The bounded final pass completed with valid evidence but no clear visual improvement. Further work requires new human feedback, new facial controls or topology, or new independently annotated semantics; parameter extrapolation is not supported."
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "machineId": "research.raw-head-design-sculpt",
+  "targetImage": "../blender-face-proof/Reference/painted-a-front-flat-v2.png",
+  "outputDirectory": "Derived/minimal-v1",
+  "design": {
+    "headWidth": 1.46,
+    "headHeight": 2.34,
+    "headDepth": 1.38,
+    "jawWidth": 1.05,
+    "chinWidth": 0.58,
+    "cheekWidth": 1.38,
+    "eyeSpacing": 0.64,
+    "noseWidth": 0.46,
+    "mouthWidth": 0.64
+  }
+}

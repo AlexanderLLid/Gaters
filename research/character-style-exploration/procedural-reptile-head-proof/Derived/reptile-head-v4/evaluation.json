@@ -1,0 +1,17 @@
+{
+  "candidate": "reptile-head",
+  "humanAcceptance": false,
+  "labels": [
+    "A - STANDARD THIRD-PERSON DISTANCE",
+    "B - GAMEPLAY CLOSE DISTANCE",
+    "C - INSPECTION CLOSE-UP"
+  ],
+  "renderer": "Houdini Mantra Apprentice",
+  "renders": [
+    "A-gameplay.png",
+    "B-gameplay-close.png",
+    "C-inspection.png"
+  ],
+  "schema": "art-evaluation/0",
+  "visibleFailure": "Art self-review rejects Wartales-level fidelity: the fused skull and muzzle are readable as a creature blockout, but eye integration, mouth anatomy, plane changes, and surface character remain too primitive for finished third-person art. Human acceptance remains pending."
+}

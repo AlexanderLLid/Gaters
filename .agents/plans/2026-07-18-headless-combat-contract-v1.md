@@ -36,12 +36,12 @@ verified navigation/visibility data and owns validation plus execution.
   result/event contract, terminal precedence, and acceptance rules used by Task 2 and
   the Base-owned resolver.
 
-- [ ] Write the Actor-free, class-free tactical graph schema and stable-ID rules.
-- [ ] Specify post-upkeep snapshots, atomic links, simultaneous combat, mask-only agent
+- [x] Write the Actor-free, class-free tactical graph schema and stable-ID rules.
+- [x] Specify post-upkeep snapshots, atomic links, simultaneous combat, mask-only agent
   durability, structure integrity, loot/extraction, progress, and terminal precedence.
-- [ ] Specify the four declarative policy definitions without predicted outcomes.
-- [ ] Specify version projection, canonical replay equality, diagnostics, and exclusions.
-- [ ] Verify Markdown contains no numeric tuning values and cites the governing canon and
+- [x] Specify the four declarative policy definitions without predicted outcomes.
+- [x] Specify version projection, canonical replay equality, diagnostics, and exclusions.
+- [x] Verify Markdown contains no numeric tuning values and cites the governing canon and
   exchange packet.
 
 ### Task 2: Fixture catalog
@@ -54,12 +54,12 @@ verified navigation/visibility data and owns validation plus execution.
 - Produces: one baseline traversal envelope, provisional attacker/defender profiles, four
   policies, open/fortified/sealed arenas, and exact expected 4/4, 1/4, 0/4 matrices.
 
-- [ ] Add top-level contract/fixture identity and all provisional run tunables.
-- [ ] Add stable-ID traversal, capability, attack-mode, and policy records.
-- [ ] Add explicit-node/link/blocker arenas; sealed exposes no legal movement, breach, or
+- [x] Add top-level contract/fixture identity and all provisional run tunables.
+- [x] Add stable-ID traversal, capability, attack-mode, and policy records.
+- [x] Add explicit-node/link/blocker arenas; sealed exposes no legal movement, breach, or
   combat action.
-- [ ] Add all twelve expected policy-pair outcomes with causal requirements.
-- [ ] Parse the JSON and validate counts, versions, unique IDs, references, matrices, and
+- [x] Add all twelve expected policy-pair outcomes with causal requirements.
+- [x] Parse the JSON and validate counts, versions, unique IDs, references, matrices, and
   sealed actionlessness with PowerShell.
 
 ### Task 3: Exchange closeout
@@ -73,8 +73,8 @@ verified navigation/visibility data and owns validation plus execution.
 - Produces: an `answered` BASE-1 response with evidence links and a Combat status that
   truthfully waits for Base resolution/integration.
 
-- [ ] Replace the in-progress Response with the delivered contract, fixture, acceptance
+- [x] Replace the in-progress Response with the delivered contract, fixture, acceptance
   matrix, magic-machine fit, and evidence links; set `Status: answered`.
-- [ ] Update Combat status with the delivered evidence and answered exchange state.
-- [ ] Run JSON validation, `research/Test-SharedAgentDocs.ps1`, `git diff --check`, and a
+- [x] Update Combat status with the delivered evidence and answered exchange state.
+- [x] Run JSON validation, `research/Test-SharedAgentDocs.ps1`, `git diff --check`, and a
   scoped diff review before notifying Base.

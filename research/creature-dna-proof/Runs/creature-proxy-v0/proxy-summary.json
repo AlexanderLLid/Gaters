@@ -1,0 +1,9 @@
+{
+  "edition": "licenseCategoryType.Apprentice",
+  "houdini": "22.0.368",
+  "passed": true,
+  "point_count": 2508,
+  "polygon_count": 2512,
+  "source_bone_count": 34,
+  "source_joint_count": 35
+}

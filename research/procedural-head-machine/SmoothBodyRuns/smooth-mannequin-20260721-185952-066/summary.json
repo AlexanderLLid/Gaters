@@ -1,0 +1,12 @@
+{
+  "body_plan_id": "stick-humanoid-tall",
+  "passed": true,
+  "preview": "C:\\repos\\Gaters\\research\\procedural-head-machine\\SmoothBodyRuns\\smooth-mannequin-20260721-185952-066\\preview.png",
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SmoothBodyRuns\\smooth-mannequin-20260721-185952-066\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\SmoothBodyRuns\\smooth-mannequin-20260721-185952-066\\run-2"
+  ],
+  "schema": "smooth-body-run-summary/0",
+  "surface_id": "smooth-mannequin",
+  "surface_sha256": "79ecc70b47f6fcb8e97a9bbb386cd63ad5c0b993a938df9ce33d8f877e429e38"
+}

@@ -1,0 +1,413 @@
+{
+  "scenarioCatalogVersion": 1,
+  "requires": {
+    "builtSiteRecipe": "RAID-1",
+    "combatContractVersion": 1,
+    "riftRules": [
+      "RIFT-1",
+      "RIFT-2",
+      "RIFT-3",
+      "RIFT-4",
+      "RIFT-5",
+      "RIFT-6",
+      "ANCHOR-1",
+      "ANCHOR-2",
+      "ANCHOR-3",
+      "ANCHOR-5",
+      "RAID-1",
+      "RAID-2",
+      "RAID-3",
+      "RAID-4",
+      "RAID-5",
+      "RAID-6",
+      "TRACE-1",
+      "TRACE-2",
+      "TRACE-3",
+      "TRACE-4",
+      "TRACE-5",
+      "TRACE-6"
+    ]
+  },
+  "riftAccessStates": [
+    {
+      "id": "natural-wild-rift-v1",
+      "version": 1,
+      "siteKinds": [
+        "wild-dungeon",
+        "ruin",
+        "monster-held-site",
+        "rift-wounded-site",
+        "settlement"
+      ],
+      "accessPrecondition": "natural-rift-or-called-expedition-opportunity",
+      "arrivalBias": [
+        "anchor",
+        "ruin-edge",
+        "threshold",
+        "rift-scar",
+        "settlement-edge"
+      ],
+      "extractionMode": "return-to-rift-or-site-exit-before-close",
+      "mustReject": [
+        "no-current-opportunity",
+        "arrival-inside-objective",
+        "arrival-inside-vault"
+      ]
+    },
+    {
+      "id": "traced-claimed-base-v1",
+      "version": 1,
+      "siteKinds": [
+        "claimed-base"
+      ],
+      "accessPrecondition": "current-trace-or-route-evidence",
+      "arrivalBias": [
+        "known-anchor",
+        "world-edge",
+        "ruin",
+        "breached-perimeter",
+        "unstable-rift-landing"
+      ],
+      "extractionMode": "carrier-reaches-valid-extraction-slot-before-raid-clock",
+      "mustReject": [
+        "stale-trace-only",
+        "map-knowledge-only",
+        "arrival-inside-objective",
+        "arrival-inside-vault"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "ice-forest-ambush-v1",
+      "version": 1,
+      "siteKinds": [
+        "wild-dungeon",
+        "rift-wounded-site"
+      ],
+      "accessStateId": "natural-wild-rift-v1",
+      "objective": {
+        "type": "boss-or-loot-extract",
+        "requiredSlotKinds": [
+          "objective",
+          "loot",
+          "extraction"
+        ]
+      },
+      "arrival": {
+        "requiredSlotKinds": [
+          "arrival"
+        ],
+        "forbidden": [
+          "vault",
+          "loot",
+          "boss-room"
+        ]
+      },
+      "roles": [
+        {
+          "id": "route-ambusher",
+          "side": "defender",
+          "slotKinds": [
+            "patrol",
+            "guard"
+          ],
+          "purpose": "pressure exposed routes without making first contact unavoidable"
+        },
+        {
+          "id": "objective-elite",
+          "side": "defender",
+          "slotKinds": [
+            "guard",
+            "objective"
+          ],
+          "purpose": "guard the prize and test whether a route can bypass the fight"
+        },
+        {
+          "id": "retreat-pressure",
+          "side": "defender",
+          "slotKinds": [
+            "reinforcement",
+            "retreat"
+          ],
+          "purpose": "make extraction risk separate from entry risk"
+        }
+      ],
+      "pressure": [
+        "low-visibility-approach",
+        "patrol-contact",
+        "boss-or-prize-gate",
+        "extraction-risk"
+      ],
+      "requiredRecipeFacts": [
+        "directed-movement-routes",
+        "directed-visibility-links",
+        "neutral-arrival-slots",
+        "neutral-objective-slots",
+        "neutral-extraction-slots",
+        "blocker-provenance"
+      ],
+      "evaluationFocus": [
+        "route-choice",
+        "ambush-counterplay",
+        "boss-skip-risk",
+        "environment-counterplay",
+        "extraction-pressure"
+      ],
+      "mustFlag": [
+        "straight-line-boss-rush",
+        "unavoidable-first-shot",
+        "reward-without-extraction-risk",
+        "single-corridor-clear",
+        "objective-unreachable"
+      ]
+    },
+    {
+      "id": "abandoned-settlement-loot-v1",
+      "version": 1,
+      "siteKinds": [
+        "settlement"
+      ],
+      "accessStateId": "natural-wild-rift-v1",
+      "objective": {
+        "type": "loot-extract",
+        "requiredSlotKinds": [
+          "objective",
+          "loot",
+          "extraction"
+        ]
+      },
+      "arrival": {
+        "requiredSlotKinds": [
+          "arrival"
+        ],
+        "forbidden": [
+          "vault",
+          "loot",
+          "private-room"
+        ]
+      },
+      "roles": [
+        {
+          "id": "settlement-looter",
+          "side": "attacker",
+          "slotKinds": [
+            "arrival",
+            "extraction"
+          ],
+          "purpose": "reach interior loot and carry it back through the valid world approach"
+        },
+        {
+          "id": "settlement-guard",
+          "side": "defender",
+          "slotKinds": [
+            "guard",
+            "patrol"
+          ],
+          "purpose": "pressure approach, interior access, and extraction without requiring a player owner"
+        }
+      ],
+      "pressure": [
+        "world-approach",
+        "interior-access",
+        "defender-coverage",
+        "carried-extraction"
+      ],
+      "requiredRecipeFacts": [
+        "composed-world-to-site-approach",
+        "site-network-membership",
+        "directed-movement-routes",
+        "directed-visibility-links",
+        "neutral-arrival-slots",
+        "neutral-objective-slots",
+        "neutral-extraction-slots",
+        "blocker-provenance"
+      ],
+      "evaluationFocus": [
+        "approach-depth",
+        "site-network-connectivity",
+        "defender-coverage",
+        "policy-sensitivity",
+        "extraction-pressure"
+      ],
+      "mustFlag": [
+        "world-approach-evidence-unknown",
+        "site-network-disconnected-objective",
+        "objective-unreachable",
+        "trivial-extraction",
+        "unavoidable-first-shot",
+        "reward-without-extraction-risk"
+      ]
+    },
+    {
+      "id": "claimed-base-steal-v1",
+      "version": 1,
+      "siteKinds": [
+        "claimed-base"
+      ],
+      "accessStateId": "traced-claimed-base-v1",
+      "objective": {
+        "type": "loot-or-route-knowledge-steal",
+        "requiredSlotKinds": [
+          "objective",
+          "loot",
+          "extraction"
+        ]
+      },
+      "arrival": {
+        "requiredSlotKinds": [
+          "arrival"
+        ],
+        "forbidden": [
+          "vault",
+          "loot",
+          "private-room"
+        ]
+      },
+      "roles": [
+        {
+          "id": "automated-guard",
+          "side": "defender",
+          "slotKinds": [
+            "guard",
+            "patrol"
+          ],
+          "purpose": "provide baseline defence without requiring the owner to be online"
+        },
+        {
+          "id": "present-defender",
+          "side": "defender",
+          "slotKinds": [
+            "reinforcement",
+            "guard"
+          ],
+          "purpose": "test defender agency when a defender is present"
+        },
+        {
+          "id": "looter",
+          "side": "attacker",
+          "slotKinds": [
+            "arrival",
+            "extraction"
+          ],
+          "purpose": "test breach, carry, and extraction pressure"
+        }
+      ],
+      "pressure": [
+        "perimeter-defence",
+        "breach-or-route-choice",
+        "raid-clock",
+        "extraction-risk"
+      ],
+      "requiredRecipeFacts": [
+        "directed-movement-routes",
+        "directed-visibility-links",
+        "neutral-arrival-slots",
+        "neutral-loot-slots",
+        "neutral-extraction-slots",
+        "destructible-or-routable-blockers",
+        "ownership-context"
+      ],
+      "evaluationFocus": [
+        "offline-fairness",
+        "single-route-defence",
+        "low-risk-high-value",
+        "doorstep-killbox",
+        "extraction-pressure"
+      ],
+      "mustFlag": [
+        "routine-offline-loss",
+        "vault-spawn-shortcut",
+        "single-route-solved-defence",
+        "trivial-extraction",
+        "no-counterplay-ambush"
+      ]
+    },
+    {
+      "id": "single-door-bunker-v1",
+      "version": 1,
+      "siteKinds": [
+        "claimed-base"
+      ],
+      "accessStateId": "traced-claimed-base-v1",
+      "objective": {
+        "type": "breach-and-extract",
+        "requiredSlotKinds": [
+          "objective",
+          "loot",
+          "extraction"
+        ]
+      },
+      "arrival": {
+        "requiredSlotKinds": [
+          "arrival"
+        ],
+        "forbidden": [
+          "vault",
+          "loot"
+        ]
+      },
+      "roles": [
+        {
+          "id": "choke-holder",
+          "side": "defender",
+          "slotKinds": [
+            "guard"
+          ],
+          "purpose": "test whether one defended mouth solves the whole site"
+        },
+        {
+          "id": "flank-tester",
+          "side": "attacker",
+          "slotKinds": [
+            "arrival"
+          ],
+          "purpose": "test whether alternate approaches exist"
+        }
+      ],
+      "pressure": [
+        "chokepoint",
+        "breach-cost",
+        "line-of-sight-denial",
+        "alternate-route-need"
+      ],
+      "requiredRecipeFacts": [
+        "movement-route-cut-sets",
+        "directed-visibility-links",
+        "neutral-arrival-slots",
+        "neutral-guard-slots",
+        "blocker-provenance"
+      ],
+      "evaluationFocus": [
+        "single-route-defence",
+        "chokepoint-value",
+        "alternate-approach-count",
+        "breach-vs-route-choice"
+      ],
+      "mustFlag": [
+        "one-door-bunker",
+        "unavoidable-killbox",
+        "objective-unreachable",
+        "no-flank-path"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "reject-direct-prize-arrival-v1",
+      "expectation": "Every scenario forbids arrival inside loot, vault, or objective-only prize spaces."
+    },
+    {
+      "id": "reject-map-only-claimed-base-access-v1",
+      "expectation": "Claimed-base scenarios require current trace or route evidence; stable map knowledge alone is insufficient."
+    },
+    {
+      "id": "require-causal-recipe-ids-v1",
+      "expectation": "Every evaluation result must cite stable recipe IDs for blocked paths, exploit routes, unfair spawns, unreachable objectives, and trivial extraction."
+    },
+    {
+      "id": "cover-first-wave-v1",
+      "expectation": "The first challenge set includes at least one wild dungeon, AI or abandoned settlement, and claimed player-base case."
+    }
+  ]
+}

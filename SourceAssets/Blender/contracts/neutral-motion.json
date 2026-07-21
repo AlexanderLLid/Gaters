@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatorVersion": 1,
+  "generatorVersion": 2,
   "artifactPolicy": {
     "brief": "authoritative",
     "generator": "authoritative",
     "blend": "derived-reproducible"
   },
   "assetId": "motion.neutral-step",
-  "assetVersion": 1,
+  "assetVersion": 2,
   "selectedStyle": null,
   "styleNeutral": true,
   "skeleton": {

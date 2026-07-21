@@ -1,0 +1,15 @@
+{
+  "schema": "skin-capture-recipe/0",
+  "id": "humanoid-biharmonic-skin",
+  "method": "houdini-joint-capture-biharmonic",
+  "max_influences": 4,
+  "max_iterations": 10,
+  "normalize": true,
+  "elbow_evaluation_radius_m": 0.16,
+  "diagnostic_pose": {
+    "joint": "left_elbow",
+    "descendants": ["left_wrist"],
+    "axis": "y",
+    "degrees": 55.0
+  }
+}

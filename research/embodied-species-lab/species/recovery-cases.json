@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": "impact-left",
+      "expectedStepFoot": "foot_l",
+      "event": {
+        "eventId": "impact.recovery.left",
+        "type": "impact",
+        "point": "chest",
+        "direction": [1.0, 0.0, 0.05],
+        "strength": 0.75
+      }
+    },
+    {
+      "caseId": "impact-right",
+      "expectedStepFoot": "foot_r",
+      "event": {
+        "eventId": "impact.recovery.right",
+        "type": "impact",
+        "point": "chest",
+        "direction": [-1.0, 0.0, 0.05],
+        "strength": 0.75
+      }
+    },
+    {
+      "caseId": "impact-forward",
+      "expectedStepFoot": "foot_r",
+      "event": {
+        "eventId": "impact.recovery.forward",
+        "type": "impact",
+        "point": "chest",
+        "direction": [0.0, -1.0, 0.05],
+        "strength": 0.75
+      }
+    },
+    {
+      "caseId": "impact-backward",
+      "expectedStepFoot": "foot_l",
+      "event": {
+        "eventId": "impact.recovery.backward",
+        "type": "impact",
+        "point": "chest",
+        "direction": [0.0, 1.0, 0.05],
+        "strength": 0.75
+      }
+    }
+  ]
+}
+

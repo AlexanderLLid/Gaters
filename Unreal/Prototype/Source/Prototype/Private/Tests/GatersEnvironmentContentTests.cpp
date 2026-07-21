@@ -63,6 +63,20 @@ bool FGatersEnvironmentContentTest::RunTest(const FString& Parameters)
 	TestTrue(TEXT("tree semantic key retains its fallback"), Tree.IsSet());
 	TestTrue(TEXT("tree remains a placeholder until its own candidate exists"),
 		Tree && Tree->Mesh.IsNull());
+	UStaticMesh* TreeFallback = LoadObject<UStaticMesh>(
+		nullptr, TEXT("/Engine/BasicShapes/Cone.Cone"));
+	TestNotNull(TEXT("tree visual fallback exists"), TreeFallback);
+	if (Tree && TreeFallback)
+	{
+		const FBox FallbackBounds = TreeFallback->GetBoundingBox();
+		TestTrue(TEXT("tree contract uses the visual fallback bounds center"),
+			Tree->Contract.BoundsCenter.Equals(FallbackBounds.GetCenter(), 0.1f));
+		TestTrue(TEXT("tree contract uses the visual fallback bounds extent"),
+			Tree->Contract.BoundsExtent.Equals(FallbackBounds.GetExtent(), 0.1f));
+		TestTrue(TEXT("tree ground contact is the visual fallback bottom"),
+			Tree->Contract.Contacts[0].Location.Equals(
+				FallbackBounds.GetCenter() - FVector(0.f, 0.f, FallbackBounds.GetExtent().Z), 0.1f));
+	}
 	return true;
 }
 

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "generatorVersion": 2,
+  "proofId": "art.face.highland-a1.v2",
+  "styleId": "gaters.clean-midpoly-painted-1",
+  "artifactPolicy": {
+    "brief": "authoritative",
+    "generator": "authoritative",
+    "blend": "derived-reproducible",
+    "renders": "derived-evidence"
+  },
+  "assetPack": {
+    "id": "makehuman_system_assets_cc0",
+    "license": "CC0-1.0",
+    "archiveSha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+    "root": "Derived/makehuman_system_assets"
+  },
+  "assets": {
+    "skin": {
+      "id": "old_african_female",
+      "path": "skins/old_african_female/old_african_female.mhmat",
+      "materialModel": "MAKESKIN"
+    },
+    "eyes": {
+      "id": "high-poly",
+      "path": "eyes/high-poly/high-poly.mhclo",
+      "materialModel": "MAKESKIN"
+    },
+    "eyebrows": {
+      "id": "eyebrow003",
+      "path": "eyebrows/eyebrow003/eyebrow003.mhclo",
+      "materialModel": "MAKESKIN"
+    },
+    "hair": {
+      "id": "braid01",
+      "path": "hair/braid01/braid01.mhclo",
+      "materialModel": "MAKESKIN"
+    }
+  },
+  "target": {
+    "description": "Mature dark-skinned woman with a long crooked nose, strong jaw, greying braid, and restrained natural asymmetry.",
+    "ageYears": 64,
+    "phenotype": {
+      "gender": 0.0,
+      "age": 1.0,
+      "muscle": 0.42,
+      "weight": 0.48,
+      "height": 0.52,
+      "proportions": 0.52,
+      "race": {
+        "african": 0.82,
+        "asian": 0.08,
+        "caucasian": 0.10
+      }
+    },
+    "skinPalette": {
+      "base": [0.105, 0.040, 0.022, 1.0],
+      "light": [0.25, 0.105, 0.055, 1.0],
+      "shadow": [0.025, 0.008, 0.004, 1.0],
+      "lip": [0.145, 0.032, 0.027, 1.0]
+    },
+    "controls": [
+      { "name": "head.rectangular", "section": "head", "target": "head-rectangular", "weight": 0.28 },
+      { "name": "jaw.width", "section": "chin", "target": "chin-width-incr", "weight": 0.32 },
+      { "name": "jaw.prominence", "section": "chin", "target": "chin-prominent-incr", "weight": 0.20 },
+      { "name": "nose.length", "section": "nose", "target": "nose-scale-vert-incr", "weight": 0.48 },
+      { "name": "nose.bridgeDepth", "section": "nose", "target": "nose-scale-depth-incr", "weight": 0.24 },
+      { "name": "nose.width", "section": "nose", "target": "nose-scale-horiz-incr", "weight": 0.24 },
+      { "name": "nose.convexity", "section": "nose", "target": "nose-curve-convex", "weight": 0.28 },
+      { "name": "nose.hump", "section": "nose", "target": "nose-hump-incr", "weight": 0.26 },
+      { "name": "nose.pointDown", "section": "nose", "target": "nose-point-down", "weight": 0.15 },
+      { "name": "mouth.width", "section": "mouth", "target": "mouth-scale-horiz-incr", "weight": 0.14 },
+      { "name": "mouth.anglesDown", "section": "mouth", "target": "mouth-angles-down", "weight": 0.12 },
+      { "name": "age.laughLines", "section": "mouth", "target": "mouth-laugh-lines-in", "weight": 0.12 },
+      { "name": "cheek.leftBone", "section": "cheek", "target": "l-cheek-bones-incr", "weight": 0.26 },
+      { "name": "cheek.rightBone", "section": "cheek", "target": "r-cheek-bones-incr", "weight": 0.20 },
+      { "name": "cheek.leftVolume", "section": "cheek", "target": "l-cheek-volume-decr", "weight": 0.24 },
+      { "name": "cheek.rightVolume", "section": "cheek", "target": "r-cheek-volume-decr", "weight": 0.30 },
+      { "name": "forehead.temples", "section": "forehead", "target": "forehead-temple-decr", "weight": 0.28 },
+      { "name": "asymmetry.nose", "section": "asym", "target": "asym-nose-2-l", "weight": 0.22 },
+      { "name": "asymmetry.eye", "section": "asym", "target": "asym-eye-3-r", "weight": 0.14 },
+      { "name": "asymmetry.ear", "section": "asym", "target": "asym-ear-2-l", "weight": 0.15 },
+      { "name": "age.eyeBagsLeft", "section": "eyes", "target": "l-eye-bag-incr", "weight": 0.28 },
+      { "name": "age.eyeBagsRight", "section": "eyes", "target": "r-eye-bag-incr", "weight": 0.23 },
+      { "name": "eye.leftNarrow", "section": "eyes", "target": "l-eye-height1-decr", "weight": 0.14 },
+      { "name": "eye.rightNarrow", "section": "eyes", "target": "r-eye-height1-decr", "weight": 0.17 }
+    ]
+  },
+  "look": {
+    "stylePass": "painted-grounded-v1",
+    "hair": "dark-grey-braid",
+    "hairTint": [0.22, 0.17, 0.15, 1.0],
+    "browTint": [0.11, 0.065, 0.040, 1.0],
+    "skinRoughness": 0.82,
+    "surface": "restrained-painted-midpoly",
+    "expression": "neutral-alert"
+  },
+  "render": {
+    "resolution": 768,
+    "views": ["front", "three-quarter", "profile"]
+  }
+}

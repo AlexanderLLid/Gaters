@@ -1,0 +1,9 @@
+{
+  "branch_recipe_sha256": "c493f977477d30d2fe0e89043e31e9e93adfddc3eafdd2cf4f1170f072d80b7b",
+  "compiler": "mirrored-branch-compiler/0",
+  "composition_sha256": "4bbe126d63f87af0dd062720daa3869aa56d8732bbf72a3e81c434afbf4064c1",
+  "parent_recipe_sha256": "26bf488d1036908856b710653105d20b5bddf700b19e93a522a7eddea7157527",
+  "schema": "mirrored-branch-receipt/0",
+  "topology_sha256": "495b39531584bf4cce77ed2fb5537a58e2c6a6015bbf1742a74afa0d76ba1b75",
+  "verifier": "mirrored-branch-verifier/0"
+}

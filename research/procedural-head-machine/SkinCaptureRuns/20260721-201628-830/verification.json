@@ -1,0 +1,19 @@
+{
+  "failures": [],
+  "metrics": {
+    "active_limb_displacement_m": 0.4007802277273918,
+    "capture_region_count": 16,
+    "elbow_posed_thickness_p10_m": 0.08556863405932237,
+    "elbow_rest_thickness_p10_m": 0.09236373918263721,
+    "elbow_sample_count": 520,
+    "elbow_thickness_ratio_p10": 0.9264310303648664,
+    "max_cross_side_weight": 0.0,
+    "max_influences": 4,
+    "max_position_delta_m": 0.0,
+    "max_weight_sum_error": 4.470348358154297e-08,
+    "protected_module_displacement_m": 1.4919776018337002e-07,
+    "vertex_count": 15407
+  },
+  "passed": true,
+  "schema": "skin-capture-verification/0"
+}

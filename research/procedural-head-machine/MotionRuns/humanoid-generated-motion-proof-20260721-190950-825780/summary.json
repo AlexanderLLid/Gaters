@@ -1,0 +1,9 @@
+{
+  "motion_sha256": "de08264656acdf56fab072f27f1b8284e67a81b4bb878bd2b834938503710ca8",
+  "passed": true,
+  "runs": [
+    "research\\procedural-head-machine\\MotionRuns\\humanoid-generated-motion-proof-20260721-190950-825780\\run-1",
+    "research\\procedural-head-machine\\MotionRuns\\humanoid-generated-motion-proof-20260721-190950-825780\\run-2"
+  ],
+  "schema": "motion-run-summary/0"
+}

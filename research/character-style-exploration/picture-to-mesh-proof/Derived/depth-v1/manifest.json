@@ -1,0 +1,44 @@
+{
+  "artifacts": {
+    "picture-to-mesh-depth.blend": {
+      "sha256": "8ce6486c1892883b678e5d5920fe12e259e57c36aef9e58062c4efe2abec6e01"
+    },
+    "renders/front.png": {
+      "sha256": "7b0e2746a7b08c7f4b4b3721968dc1940af71604ceca1df9edc9ab8619f1d754"
+    },
+    "renders/side.png": {
+      "sha256": "29d2d532479d90e3c915a9b0908a5e0d49112c5de73428d2f2a5ad13f98cff97"
+    },
+    "renders/three-quarter.png": {
+      "sha256": "f3cf2ca010fc56b54434c6bc5ab9af09c0b40c860aad49f1b1934f9587650d18"
+    },
+    "target-depth.png": {
+      "sha256": "d344e9ec6ff3632f6f3f70b10f05c5ea6f793a48e8e7245b737eeace9417ba87"
+    }
+  },
+  "inputType": "single-front-grayscale-depth-picture",
+  "inputs": {
+    "depth": {
+      "path": "target-depth.pgm",
+      "sha256": "8a721604902647b9c67d0131e5b2b29442f929c5204d7d7eaec1f2e8efee54b9"
+    }
+  },
+  "recipe": {
+    "depthScale": 0.35,
+    "grid": 41,
+    "shapeKey": "FittedDepth"
+  },
+  "schemaVersion": 1,
+  "status": "built-unverified",
+  "tools": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "7b7fdf4c3bce74aedf93baad0337404d1cd978144a26de05cc061f775b112d75",
+    "fitterSha256": "7108737a2695a4bfa0e572929c7ee3b9b4716ac377612fb2ba3cab59670f7b7e",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "connectivitySha256": "58c618dea8a209596ea2a1426edd39a0a0ea52b3daccd07543d6c03325c0080b",
+    "faceCount": 1600,
+    "vertexCount": 1681
+  }
+}

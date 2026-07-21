@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $Runner = Join-Path $PSScriptRoot 'Build-MotionFixture.ps1'
-$Output = Join-Path $PSScriptRoot 'Derived\neutral-motion-v1'
+$Output = Join-Path $PSScriptRoot 'Derived\neutral-motion-v2'
 $Manifest = Join-Path $Output 'manifest.json'
 
 foreach ($Path in @($Blender, $Runner)) {

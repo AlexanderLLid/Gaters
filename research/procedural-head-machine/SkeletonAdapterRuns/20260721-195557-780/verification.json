@@ -1,0 +1,11 @@
+{
+  "failures": [],
+  "metrics": {
+    "bone_count": 15,
+    "joint_count": 16,
+    "max_position_delta_m": 4.768371586472142e-08,
+    "max_transform_delta": 2.2873999028227843e-08
+  },
+  "passed": true,
+  "schema": "guide-skeleton-adapter-verification/0"
+}

@@ -1,0 +1,12 @@
+{
+  "failures": [],
+  "metrics": {
+    "landmarks": 19,
+    "max_symmetry_error_m": 0.0,
+    "skeleton_segments": 15,
+    "surface_ellipsoids": 11,
+    "surface_segments": 9
+  },
+  "passed": true,
+  "schema": "anatomical-guide-verification/0"
+}

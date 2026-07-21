@@ -1,0 +1,12 @@
+{
+  "failures": [],
+  "metrics": {
+    "faces": 224,
+    "manifold_edges": 432,
+    "max_tangent_angle_rad": 0.0,
+    "realized_neck_length_m": 0.22000000000000006,
+    "vertices": 210
+  },
+  "passed": true,
+  "schema": "module-socket-verification/0"
+}

@@ -1,0 +1,15 @@
+{
+  "failures": [
+    {
+      "rule": "SOCKET-ADAPTER-SEMANTICS-1",
+      "subject": "labels"
+    }
+  ],
+  "metrics": {
+    "face_count": 224,
+    "max_position_delta_m": 6.60245825584162e-09,
+    "vertex_count": 210
+  },
+  "passed": false,
+  "schema": "socket-adapter-verification/0"
+}

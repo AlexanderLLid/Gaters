@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "round": 1,
+  "identity": "face_sculptor",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "Build both immutable jaw_taper recipes sequentially from the sculpt_integrity-pinned Derived/face-v2/face-proof.blend. Add --python-exit-code 1 to every Blender command; preserve full build and fresh-reopen verifier logs; require exit zero plus CLAY_SCULPT_OK and SCULPT_VERIFY_OK; stop on first failure; never change candidate values or judge quality.",
+  "response": {
+    "failureDiagnosis": null,
+    "commands": [
+      "blender --background --python-exit-code 1 Derived/face-v2/face-proof.blend --python sculpt_clay.py -- --candidate Runs/face-search-20260720-032234/candidates/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924.json --output Derived/search-runs/face-search-20260720-032234/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924",
+      "blender --background --python-exit-code 1 Derived/search-runs/face-search-20260720-032234/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924/face-sculpt.blend --python verify_sculpt.py -- --output Derived/search-runs/face-search-20260720-032234/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924",
+      "blender --background --python-exit-code 1 Derived/face-v2/face-proof.blend --python sculpt_clay.py -- --candidate Runs/face-search-20260720-032234/candidates/f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa.json --output Derived/search-runs/face-search-20260720-032234/round-1/f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa",
+      "blender --background --python-exit-code 1 Derived/search-runs/face-search-20260720-032234/round-1/f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa/face-sculpt.blend --python verify_sculpt.py -- --output Derived/search-runs/face-search-20260720-032234/round-1/f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa"
+    ],
+    "candidates": [
+      {
+        "candidateId": "3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924",
+        "buildExit": 0,
+        "verifierExit": 0,
+        "buildMarker": true,
+        "verifierMarker": true,
+        "buildLog": {"path": "Runs/face-search-20260720-032234/round-1/logs/3cb0f8ad-build.log", "sha256": "92979ce14c06081b55d785974ffd1817bc7b286f6bc81784bb2c9e9a26ba74bb"},
+        "verifierLog": {"path": "Runs/face-search-20260720-032234/round-1/logs/3cb0f8ad-verify.log", "sha256": "c16b5902eefd94db2be1b1ba8d135f8ed8a3cab56bec8a8ca5822858a3a2d40d"},
+        "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924/manifest.json", "sha256": "0e60c68fa682cd3b89817d6a1d03f0e5fd7f0d0e3892253c046cb0898e1c8272"}
+      },
+      {
+        "candidateId": "f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa",
+        "buildExit": 0,
+        "verifierExit": 0,
+        "buildMarker": true,
+        "verifierMarker": true,
+        "buildLog": {"path": "Runs/face-search-20260720-032234/round-1/logs/f9a67dba-build.log", "sha256": "c2667dc848a6185c522f36298a4e8ef57c1b1799551397eedde1a7fcea232d99"},
+        "verifierLog": {"path": "Runs/face-search-20260720-032234/round-1/logs/f9a67dba-verify.log", "sha256": "b2188394f7ef7787290d7abc29a6c471822ef4ae8e67d528084da6d75b6128a0"},
+        "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-1/f9a67dba014e861a87d0a2d7e6d3dde65d7caf8f3a79db7162ce929596f9b6fa/manifest.json", "sha256": "5314ab76209b42921a5341b48ed8d70a439ee12ae2e3b13d944dabb3dfe2d61a"}
+      }
+    ]
+  },
+  "humanAcceptance": false
+}

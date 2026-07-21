@@ -8,6 +8,7 @@ struct PROTOTYPE_API FGatersTraversabilityEvaluation
 	int32 EvaluatorVersion = 1;
 	FGatersTerrainRegion Region;
 	FGatersTerrainPath GoalPath;
+	float WalkableFraction = 0.f;
 	float ReachableFraction = 0.f;
 	bool bEscapesStart = false;
 	bool bGoalReachable = false;

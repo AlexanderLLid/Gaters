@@ -23,7 +23,27 @@ bool FGatersVisualMaterializerPlanTest::RunTest(const FString& Parameters)
 		{TEXT("plot:2"), EGatersRecipeNodeKind::BuildPlot,
 			FTransform(FVector(700, 800, 900))},
 		{TEXT("plot:3"), EGatersRecipeNodeKind::BuildPlot,
-			FTransform(FVector(1000, 1100, 1200))}
+			FTransform(FVector(1000, 1100, 1200))},
+		{TEXT("site:village:0"), EGatersRecipeNodeKind::VillageSite,
+			FTransform(FVector(1300, 1400, 1500))},
+		{TEXT("settlement:building:home:0:module:foundation:0"),
+			EGatersRecipeNodeKind::SettlementModule,
+			FTransform(FRotator(0, 90, 0), FVector(1600, 1700, 1800), FVector(5, 5, 0.4)),
+			TEXT("building.foundation")},
+		{TEXT("settlement:building:home:0:module:wall:0"),
+			EGatersRecipeNodeKind::SettlementModule,
+			FTransform(FRotator(0, 90, 0), FVector(1700, 1800, 1900), FVector(2.5, 0.2, 2.6)),
+			TEXT("building.wall")},
+		{TEXT("settlement:building:home:0:module:door:0"),
+			EGatersRecipeNodeKind::SettlementModule,
+			FTransform(FRotator(0, 90, 0), FVector(1800, 1900, 2000), FVector(0.2, 2.5, 2.6)),
+			TEXT("building.door")},
+		{TEXT("settlement:building:home:0:module:roof:0"),
+			EGatersRecipeNodeKind::SettlementModule,
+			FTransform(FRotator(0, 90, 0), FVector(1900, 2000, 2100), FVector(5.4, 5.4, 0.4)),
+			TEXT("building.roof")},
+		{TEXT("settlement:path:0"), EGatersRecipeNodeKind::SettlementPath,
+			FTransform(FVector(2000, 2100, 2200))}
 	};
 	World.Nodes[0].Representation = EGatersCompiledRepresentation::InstancedStatic;
 	World.Nodes[1].Representation = EGatersCompiledRepresentation::InstancedStatic;
@@ -37,7 +57,13 @@ bool FGatersVisualMaterializerPlanTest::RunTest(const FString& Parameters)
 	TestEqual(TEXT("chopped rock is not rendered"), Plan.Rocks.Num(), 0);
 	TestEqual(TEXT("open plot uses open batch"), Plan.OpenClaims.Num(), 1);
 	TestEqual(TEXT("claimed plot uses claimed batch"), Plan.ClaimedClaims.Num(), 1);
-	TestEqual(TEXT("plan retains every visible instance"), Plan.NumInstances(), 3);
+	TestEqual(TEXT("village public space is visible"), Plan.VillageSpaces.Num(), 1);
+	TestEqual(TEXT("foundation module is visible"), Plan.VillageFoundations.Num(), 1);
+	TestEqual(TEXT("wall and three door-frame pieces are visible"), Plan.VillageWalls.Num(), 4);
+	TestEqual(TEXT("door module leaves an opening"), Plan.VillageDoors.Num(), 1);
+	TestEqual(TEXT("roof module is visible"), Plan.VillageRoofs.Num(), 1);
+	TestEqual(TEXT("semantic paths are not forced into terrain"), Plan.VillagePaths.Num(), 0);
+	TestEqual(TEXT("plan retains every visible instance"), Plan.NumInstances(), 10);
 	TestEqual(TEXT("stable scatter identity is retained"), Plan.Trees[0].StableId,
 		FString(TEXT("scatter:10")));
 	TestTrue(TEXT("catalog-selected tree mesh reaches the batch plan"), Plan.TreeMesh.Get() == CatalogTree);
@@ -47,6 +73,10 @@ bool FGatersVisualMaterializerPlanTest::RunTest(const FString& Parameters)
 		FString(TEXT("plot:3")));
 	TestEqual(TEXT("claim marker receives its visual lift"),
 		Plan.OpenClaims[0].Transform.GetLocation(), FVector(700, 800, 920));
+	TestEqual(TEXT("foundation module preserves authored transform"),
+		Plan.VillageFoundations[0].Transform, World.Nodes[5].Transform);
+	TestEqual(TEXT("wall module preserves authored transform"),
+		Plan.VillageWalls[0].Transform, World.Nodes[6].Transform);
 
 	AActor* Owner = NewObject<AActor>();
 	USceneComponent* Root = NewObject<USceneComponent>(Owner, TEXT("Root"));
@@ -55,13 +85,13 @@ bool FGatersVisualMaterializerPlanTest::RunTest(const FString& Parameters)
 	TArray<FString> Errors;
 	TestTrue(TEXT("native ISM adapter accepts a valid plan"),
 		FGatersVisualMaterializer::Materialize(*Owner, *Root, Plan, Components, Errors));
-	TestEqual(TEXT("one native component is reserved per visual class"), Components.Num(), 4);
+	TestEqual(TEXT("one native component is reserved per visual class"), Components.Num(), 8);
 	int32 NativeInstances = 0;
 	for (const UInstancedStaticMeshComponent* Component : Components)
 	{
 		NativeInstances += Component->GetInstanceCount();
 	}
-	TestEqual(TEXT("native components contain the planned instances"), NativeInstances, 3);
+	TestEqual(TEXT("native components contain the planned instances"), NativeInstances, 10);
 	TestTrue(TEXT("native tree batch uses catalog-selected mesh"),
 		Components[0]->GetStaticMesh() == CatalogTree);
 	TestEqual(TEXT("valid native materialization has no diagnostics"), Errors.Num(), 0);

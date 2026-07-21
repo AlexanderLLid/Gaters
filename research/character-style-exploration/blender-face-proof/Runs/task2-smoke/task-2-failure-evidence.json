@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "runId": "task2-smoke",
+  "candidateRecipes": [
+    "Runs/task2-smoke/candidates/b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09.json",
+    "Runs/task2-smoke/candidates/c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4.json"
+  ],
+  "failures": [
+    {
+      "stage": "sculpt-launch",
+      "error": "ModuleNotFoundError: No module named 'face_search'",
+      "resolution": "Blender does not add --python script directories to sys.path; sculpt_clay.py now inserts its own directory before importing the pure mapper."
+    },
+    {
+      "stage": "fresh-load-verification",
+      "error": "output was rejected by the stale Derived-only guard, then an in-memory headless Render Result reported 0x0 pixels",
+      "resolution": "verification now accepts Derived/search-runs and writes its 768px checks to a temporary directory."
+    }
+  ],
+  "derivedArtifacts": {
+    "root": "Derived/search-runs/task2-smoke/round-1",
+    "lower": {
+      "candidateId": "b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09",
+      "face-sculpt.blend": "c94e4c442aae0276f2ac930600ea124df779ce8144930f8088352623711fa860",
+      "front.png": "4147a56c9df0d3f475e8f60ed6abc6460b8c2b31c0fe3056d42afac91762952a",
+      "three-quarter.png": "6e850ad1d2328388edd8a08731f03959e929527c77c6b244a33b8f71bf46278c",
+      "profile.png": "0366ada06f8e963d610edf665ec742391446d26b50bdbca9e6c875f8f3a4991b"
+    },
+    "upper": {
+      "candidateId": "c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4",
+      "face-sculpt.blend": "ace84e1a0ee5679573d6db0704cff5058af6e5fdb72a1ac7ccc17d0bc69c312a",
+      "front.png": "87300fbe43439afe630fdd9a56ad281546e10e44db22f976f0a754cfc9da5f6f",
+      "three-quarter.png": "6a2ee882eefd71da1395cca0093a790d7c349cd21bb9be62f6a443835674be78",
+      "profile.png": "92ecaf609d3e119ad6ca818ee0ce98a6a7d2f429908546214a5c43d5d6df535e"
+    }
+  }
+}

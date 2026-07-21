@@ -1,0 +1,10 @@
+{
+  "branch_id": "torso-side-branches",
+  "composition_sha256": "9d977d9c92211f0ef1033f80e3da240ec2e7811e75323a6c07814ed6dbdd8ad7",
+  "passed": true,
+  "runs": [
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BranchRuns\\torso-side-branches-20260721-161314-577521\\run-1",
+    "C:\\repos\\Gaters\\research\\procedural-head-machine\\BranchRuns\\torso-side-branches-20260721-161314-577521\\run-2"
+  ],
+  "schema": "mirrored-branch-run-summary/0"
+}

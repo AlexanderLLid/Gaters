@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
   "dreamMachine": "research.autonomous-living-world-researcher",
-  "currentFocus": "evaluation.motion-mechanical",
-  "outcome": "Given a bounded world brief, generate, materialize, simulate, evaluate, and iteratively improve a reproducible stylized playable world with terrain, resources, settlements, raidable bases, species, inhabitants, assets, and motion without manual content authoring.",
+  "outcome": "Given a bounded world brief, generate, materialize, simulate, evaluate, and iteratively improve a reproducible playable world with coherent terrain, resources, settlements, raidable bases, species, inhabitants, assets, and motion without manual content authoring.",
   "enginePolicy": {
     "gatersOwns": "Deterministic recipes, semantic generation, stable gameplay identity, diffs, content contracts, evaluators, experiment evidence, and optimizer decisions.",
     "unrealOwns": "Rendering and instancing, mesh/component lifecycle, physics, navigation runtime, animation runtime, profiling APIs, and scalable engine subsystems when their contracts fit.",
@@ -35,27 +34,61 @@
       "targetWave": 0,
       "requires": [],
       "verifier": "Unreal automation validates canonical checksum, stable nodes, transforms, and semantic keys.",
-      "challengeSet": "Repeated seeds, changed seeds, duplicate IDs, missing required arrival site, invalid transforms, mismatched base sites, and moved site or route nodes.",
+      "challengeSet": "Repeated seeds, changed seeds, duplicate IDs, missing required arrival site, invalid transforms, mismatched base sites, moved site or route nodes, and changed settlement module, parcel, growth-front, or coordinate-stable path nodes.",
       "failureArtifact": "Validation errors plus canonical recipe checksum and node list.",
       "promotionGate": "All recipe automation passes and duplicate sweeps produce identical checksums.",
       "workDeleted": "Coupling generators, persistence, evaluation, and materialization to spawned actors.",
-      "champion": "schema-6"
+      "champion": "schema-9-settlement-growth-semantics"
+    },
+    {
+      "id": "world.intent-recipe",
+      "name": "Seed-Derived World Intent Recipe",
+      "domain": "world",
+      "outcome": "A seed declares deterministic broad regional terrain, hydrology, vegetation, stone, landmark, and travel-friction intent without requiring detailed cells or universal resource guarantees.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 0,
+      "requires": [],
+      "verifier": "Two pure automation tests cover exact same-seed identity, different-seed variation, global terrain/hydrology agreement, stable coordinate responsibility, unique valid regions, bounded profiles, and valid near-forestless intent across a seed sweep.",
+      "challengeSet": "Repeated and changed seeds, region overlaps, distant coordinates, invalid profile bounds, duplicate IDs, and sparse or forestless regions.",
+      "failureArtifact": "Seed, generator version, region IDs, coordinate, intended profile, and validation diagnostic.",
+      "promotionGate": "Held-out seeds reproduce stable valid intent, coordinate ownership remains deterministic, and sparse intent is accepted without a resource-presence guarantee.",
+      "workDeleted": "Guessing whether unusual terrain or resource absence is intended by the seed or caused by a downstream generator defect.",
+      "champion": "world-intent-2-global-profile-alignment"
     },
     {
       "id": "world.terrain-generator",
       "name": "Terrain Family Generator",
       "domain": "world",
-      "outcome": "Seeds deterministically produce bounded lowland, mountain, canyon, or archipelago landforms with orthogonal dry, lake, river, or ocean hydrology and one playable arrival-to-base terrain route.",
+      "outcome": "Seeds deterministically produce bounded lowland, mountain, canyon, or archipelago landforms with orthogonal dry, lake, river, or ocean hydrology and a playable Arrival neighborhood; optional site candidates are evidence, not a universal guarantee.",
       "source": "Adapt",
       "status": "verified",
       "targetWave": 0,
       "requires": [],
-      "verifier": "Environment and navigation automation measure determinism, signed elevation, relief, local water footprints, cliffs, buildable coverage, valid base footprints, arrival escape, and base reachability; paired fixed-camera clean and traversal captures expose visual failures.",
-      "challengeSet": "Representative family seeds, water and cliff barriers, a broad base-site seed sweep, a runtime archipelago topology sweep, held-out dry-mountain seed 0, runtime archipelago seed 2, and mountain-lake seed 53 at runtime dimensions.",
+      "verifier": "Environment, navigation, and terrain-morphology automation measure determinism, signed elevation, relief, local water footprints, cliffs, buildable coverage, closed-contour circularity, Arrival escape, optional site evidence, and declared-required route reachability; paired fixed-camera clean and traversal captures remain the human visual gate.",
+      "challengeSet": "Representative family seeds, water and cliff barriers, a broad base-site seed sweep, a runtime archipelago topology sweep, held-out circular-archipelago seed 131, dry-mountain seed 0, runtime archipelago seed 2, and mountain-lake seed 53 at runtime dimensions.",
       "failureArtifact": "Seed, environment family, sampled terrain profile, failed terrain assertion, and hashed clean/traversal PNG pair.",
-      "promotionGate": "Every family remains reachable and held-out seeds retain deterministic playable footprints.",
+      "promotionGate": "Every declared-playable Arrival remains escapable, held-out seeds retain deterministic terrain, optional scarcity is accepted, morphology evidence rejects unexplained radial stamps, and the human accepts the fixed-camera seed-131 silhouette.",
       "workDeleted": "Hand-authoring the macro terrain for every test world.",
-      "champion": "generator-9"
+      "champion": "generator-10-morphology"
+    },
+    {
+      "id": "world.intent-terrain-field",
+      "name": "Intent-Aware Terrain Field",
+      "domain": "world",
+      "outcome": "Streamed terrain samples preserve the seed's existing arrival region while smoothly consuming regional terrain and hydrology tendencies from the authoritative world intent recipe.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.intent-recipe", "world.terrain-generator"] }
+      ],
+      "verifier": "Three pure automation tests cover exact repeatability, protected arrival identity, full regional-core influence, declared terrain/hydrology consumption, smooth boundary fade, and explicit materialized height/normal integration; a held-out world-only gallery checks streamed-cell rendering.",
+      "challengeSet": "Different global families, local profile overrides, region cores and edges, overlapping regions, arrival protection, streamed-cell boundaries, and held-out world-only seed 7.",
+      "failureArtifact": "Seed, intent version, region ID, coordinate, influence, global and regional profiles, observed height, and fixed-camera gallery pair.",
+      "promotionGate": "An independent sampled-fidelity evaluator passes held-out regional profiles and local water surfaces consume regional hydrology without seams or arrival regressions.",
+      "workDeleted": "Building separate terrain generators per biome region or manually deciding where one seed's terrain families transition.",
+      "champion": "intent-terrain-field-1-runtime-challenger"
     },
     {
       "id": "evaluation.terrain-metrics",
@@ -74,6 +107,96 @@
       "promotionGate": "Repeated evaluations match and no metric collapses distinct terrain families.",
       "workDeleted": "Opening random seeds merely to discover whether their terrain differs.",
       "champion": "evaluator-3"
+    },
+    {
+      "id": "evaluation.terrain-morphology",
+      "name": "Terrain Morphology Evaluator",
+      "domain": "evaluation",
+      "outcome": "Pure height fields expose versioned closed-contour evidence that can distinguish compact radial generator stamps from irregular landforms without deciding whether a requested crater or atoll is valid.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 0,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator"] }
+      ],
+      "verifier": "Synthetic circle and irregular-contour automation calibrate the evidence; held-out seed 131 must retain a viable base site while remaining below the unexplained-circularity gate at water and upland contours.",
+      "challengeSet": "Synthetic circles, irregular multi-lobed contours, seed-131 archipelago contours at multiple elevations, small and large closed components, boundary-touching components, and recipe-declared radial landforms once those declarations exist.",
+      "failureArtifact": "Evaluator version, contour heights, closed-component counts and sizes, maximum radial circularity, seed, terrain family, and fixed-camera gallery pair.",
+      "promotionGate": "Held-out Earth-like terrain families reject unexplained primitive contours without rejecting recipe-declared craters, atolls, or other intentionally radial landforms; human gallery labels agree on hidden cases.",
+      "workDeleted": "Relying on reachability and random screenshots to notice obvious circular terrain stamps.",
+      "champion": "morphology-1-closed-contour-candidate"
+    },
+    {
+      "id": "evaluation.intent-terrain-fidelity",
+      "name": "Intent Terrain Fidelity Evaluator",
+      "domain": "evaluation",
+      "outcome": "Externally supplied terrain observations receive causal evidence that the global core and every regional core match their own seed declaration, without requiring any terrain family or resource to exist universally.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.intent-recipe", "world.intent-terrain-field"] }
+      ],
+      "verifier": "Two pure automation tests feed independently collected observations, accept matching global/regional cores, reject a 100-unit corrupted regional height with its region ID, and reject missing regional evidence.",
+      "challengeSet": "Matching observations, corrupted heights, missing regions, every terrain/hydrology profile, blend annuli, overlapping regions, and held-out runtime samples.",
+      "failureArtifact": "Intent version, seed, region ID, coordinate, expected height, observed height, error, coverage count, and causal diagnostic.",
+      "promotionGate": "Held-out runtime observations across every supported profile pass, blend-annulus continuity has independent evidence, local water surfaces are observed, and the complete shared suite is green.",
+      "workDeleted": "Visually guessing whether a strange region is faithful to its seed declaration or a broken generator output.",
+      "champion": "intent-terrain-fidelity-1-core-challenger"
+    },
+    {
+      "id": "world.regional-water-surfaces",
+      "name": "Regional Water Surface Recipe",
+      "domain": "world",
+      "outcome": "Seed-declared wet regional profiles emit stable bounded lake, river, or ocean render surfaces while dry profiles emit none and existing global water remains unchanged.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.intent-recipe", "world.intent-terrain-field"] }
+      ],
+      "verifier": "Pure recipe automation covers exact determinism, dry suppression, bounded water extent, containment, and unique stable IDs. Regional lake centers and extents scale to their declared region and the same footprint drives both terrain depression and surface output while global lake geometry remains unchanged. Environment-root validation injects authoritative QueryTerrain evidence into the independent physical-fit evaluator. Held-out runtime-scale seeds 11, 29, 47, 83, and 131 validate and fit their declared surfaces at 65-by-65 drainage evidence resolution; seed 53 retains its generic river cut.",
+      "challengeSet": "Dry, lakes, river, and ocean regional profiles across terrain families, overlapping wet regions, world boundaries, streamed terrain transitions, and held-out seeds.",
+      "failureArtifact": "DrainageRealRegionalWaterFitChallenge.log records seed 11 and 29 regional lakes placed where composed influence was zero or partial. DrainageRealRegionalWaterFitGeometryHypothesis.log records the remaining seed 83 sub-grid miss. The passing 65-by-65 challenge is DrainageRealRegionalWaterFit65Challenge.log. Each failure names seed, surface ID, minimum sampled height, datum, and center influence.",
+      "promotionGate": "An independent water-fit evaluator confirms coverage, terrain intersection, containment, absence in dry profiles, no visible hard-edge leaks, and normal streaming/performance budgets across held-out profiles.",
+      "workDeleted": "Hand-placing water whenever a seed introduces a wet regional terrain profile.",
+      "champion": "regional-water-1-primitive-surface-challenger"
+    },
+    {
+      "id": "evaluation.regional-water-fit",
+      "name": "Regional Water Physical-Fit Evaluator",
+      "domain": "evaluation",
+      "outcome": "A pure evaluator rejects missing, leaking, misplaced, or terrain-disconnected regional water surfaces without scoring unfinished water art.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["world.intent-recipe", "world.intent-terrain-field", "world.regional-water-surfaces"] }
+      ],
+      "verifier": "Two pure evaluator tests accept a correct mixed lakes/ocean recipe and independently reject a missing surface, wrong water datum, dry-region leakage, and an injected composed terrain field elevated above every surface. Environment-root validation passes its authoritative QueryTerrain sampler rather than letting the generator and evaluator share an unblended profile assumption. Runtime-scale seeds 11 and 29 remain permanent composed-terrain counterexamples and now pass without changing datum tolerance.",
+      "challengeSet": "Dry, lakes, river, and ocean declarations; missing and excess counts; invalid region identity; hydrology mismatch; bounds escape; wrong datum; and no submerged terrain evidence.",
+      "failureArtifact": "Evaluator version, intent version, seed, region ID, hydrology, expected and actual counts, surface datum and bounds, submerged sample count, and causal diagnostic.",
+      "promotionGate": "Injected-height corruption tests, runtime-scale composed-terrain counterexamples, and the complete 131-test Gaters suite remain green; material, color, opacity, waves, foam, reflections, and shoreline beauty are explicitly outside this machine.",
+      "workDeleted": "Opening every wet seed to guess whether water is physically present in the correct region and intersects its terrain.",
+      "champion": "regional-water-fit-1-physical-contract"
+    },
+    {
+      "id": "evaluation.content-distribution",
+      "name": "Content Distribution Evaluator",
+      "domain": "evaluation",
+      "outcome": "Externally supplied physical opportunities and semantic placement counts receive independent density, kind-mix, scarcity, and opportunity-correlation evidence without loading assets or asking the generator to score itself.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.biome-opportunity-field", "world.content-cell-generator"] }
+      ],
+      "verifier": "Two synthetic tests accept a matching sparse-to-dense distribution and independently reject constant density across varied opportunity plus content inside declared scarcity. A held-out Environment Recipe sweep independently queries physical opportunities and counts generated semantic placements across 66 unobstructed cells from seeds 11, 29, 47, 83, and 131; it records 0.056 mean density error, 0.006 kind-mix error, and 0.781 opportunity-density correlation.",
+      "challengeSet": "Declared empty, sparse, mixed, dense, vegetation-dominant, stone-dominant, frozen, saturated, dry, coastal, steep, obstructed, and constant-density counterexamples across held-out roots.",
+      "failureArtifact": "ContentDistributionEvaluatorV1.log proves synthetic corruption rejection. ContentCellDensityV6Red.log records the falsified constant-density v5 behavior. ContentDistributionV1Final.log records held-out observation count, density error, kind-mix error, correlation, and causal issue IDs.",
+      "promotionGate": "Synthetic counterexamples remain rejected and held-out root observations stay within declared error and correlation tolerances without requiring assets, Actors, sites, or universal content presence.",
+      "workDeleted": "Opening every seed and eyeballing whether sparse and dense content follows its physical environment.",
+      "champion": "content-distribution-evaluator-1"
     },
     {
       "id": "runtime.seed-diff",
@@ -163,7 +286,7 @@
     },
     {
       "id": "content.style-contract",
-      "name": "Stylized Art Contract",
+      "name": "Visual Coherence Contract",
       "domain": "content",
       "outcome": "Generated assets share explicit silhouette, proportion, detail, material, palette, and readability constraints.",
       "source": "Build",
@@ -273,19 +396,19 @@
       "id": "world.terrain-semantic-field",
       "name": "Terrain Semantic Field",
       "domain": "world",
-      "outcome": "Generators and evaluators query one deterministic materialized-height grid classified as flat, slope, steep, or water.",
+      "outcome": "Generators and evaluators query one deterministic global-or-regional materialized-height grid classified as flat, slope, steep, or water, with a versioned radius-derived local Arrival transition that is independent of optional routes and sites.",
       "source": "Adapt",
       "status": "verified",
       "targetWave": 1,
       "requires": [
-        { "type": "AND", "machines": ["world.terrain-generator"] }
+        { "type": "AND", "machines": ["world.terrain-generator", "world.intent-recipe", "world.intent-terrain-field"] }
       ],
-      "verifier": "Unreal automation checks repeated-query determinism, exhaustive categories, the current flattened arrival pad adapter, archipelago water, canyon cliffs, and walkable terrain.",
-      "challengeSet": "Repeated seeds, arrival-pad blending, water terrain, steep terrain, walkable terrain, and environment-family boundaries.",
+      "verifier": "Unreal automation checks repeated-query determinism, exhaustive categories, semantic-field version 2, zero-radius raw-terrain identity, radius-derived Arrival blending, archipelago water, canyon cliffs, walkable terrain, exact regional-intent parity, and the seed-11 world-only no-route regression. The complete shared suite passes 118/118; the latest 20-case held-out sweep records semantic version 2 and transition width 2000 cm in every schema-14 record with zero best-candidate Arrival failures.",
+      "challengeSet": "Repeated seeds, zero and nonzero Arrival treatment, seed 11 without a route or site, global and regional terrain intent, wet and dry profiles, steep terrain, walkable terrain, and environment-family boundaries.",
       "failureArtifact": "Seed, query bounds, returned semantic samples, and expected classification.",
       "promotionGate": "Chunk site and traversability analysis consume the field, repeated queries match, and representative real seeds retain deterministic classifications.",
       "workDeleted": "Each placement system independently resampling and interpreting terrain.",
-      "champion": "field-2"
+      "champion": "field-4-radius-derived-arrival-transition"
     },
     {
       "id": "evaluation.structural",
@@ -345,7 +468,7 @@
       "id": "evaluation.traversability",
       "name": "Traversability Evaluator",
       "domain": "evaluation",
-      "outcome": "Seeds with trapped starts, unreachable usable ground, disconnected regions, or invalid critical routes fail automatically.",
+      "outcome": "Seeds with trapped required starts, unreachable declared-required ground, or invalid critical routes fail automatically; intentionally sparse or disconnected optional regions may pass.",
       "source": "Adapt",
       "status": "verified",
       "targetWave": 1,
@@ -353,9 +476,9 @@
         { "type": "AND", "machines": ["world.recipe", "runtime.navigation-query"] }
       ],
       "verifier": "Golden reachable, split, and trapped fixtures plus representative real family seeds produce expected connectivity, escape, and critical-route results.",
-      "challengeSet": "Spawn pits, mountain bowls, islands, cliffs, water barriers, disconnected usable ground, arrival-to-base routes, and seed 53 at the 4 km runtime contract.",
+      "challengeSet": "Spawn pits, mountain bowls, islands, cliffs, water barriers, declared connected-land targets, declared-required routes, intentional sparse/disconnected fixtures, and seed 53 at the 4 km runtime contract.",
       "failureArtifact": "Seed, connected-component map, failed route, slope/water barrier, and nearest reachable alternative.",
-      "promotionGate": "Known-bad fixtures fail for the intended reason and lowland, mountain, archipelago, and canyon seeds escape and reach their base.",
+      "promotionGate": "Known-bad required-connectivity fixtures fail for the intended reason, declared sparse fixtures pass, and lowland, mountain, archipelago, and canyon Arrivals escape.",
       "workDeleted": "Discovering only in play that the player spawned somewhere they cannot escape.",
       "champion": "evaluator-1"
     },
@@ -449,6 +572,43 @@
       "nativeFit": "Adapt: Gaters owns deterministic fit policy and causal rule IDs; Unreal will gather navigation and collision evidence at the adapter boundary. The current pure C++ observer consumes selected compiled asset contracts, typed terrain/attachment contacts, materialized terrain samples, transforms, and obstacle bounds. Runtime observation is active, but promotion remains blocked on intended embed-depth representation, attachment solving, and engine collision/navigation evidence."
     },
     {
+      "id": "world.building-assembly-generator",
+      "name": "Building Assembly Generator",
+      "domain": "world",
+      "outcome": "A terrain anchor and structural massing compile into stable foundation, floor, wall, doorway, and roof modules shared by generated and future player-built structures.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-semantic-field", "content.semantic-keys", "world.recipe"] }
+      ],
+      "verifier": "Pure Unreal automation proves deterministic module identity, bounded footprints and storeys, required module kinds, one entrance, support coverage, and rejection of blocked anchors.",
+      "challengeSet": "Low and tall profiles, one- and two-cell footprints, multiple storeys, missing entrances, duplicate IDs, missing supports, blocked terrain, slopes, and future player-edited graphs.",
+      "failureArtifact": "Building anchor, massing profile, canonical module graph, transforms, semantic keys, and causal evaluator issues.",
+      "promotionGate": "Held-out assemblies remain structurally valid, terrain-fit, editable by stable module ID, and contract-preserving under visual replacement.",
+      "workDeleted": "Hand-authoring every house variant and maintaining a separate generated-building representation.",
+      "champion": "building-assembly-generator-1-box-modules",
+      "nativeFit": "Build: pure Gaters C++ owns meaningful module identity and rectangular assembly grammar. Unreal owns primitive batched representation; decorative micro-pieces and finished assets remain outside runtime identity."
+    },
+    {
+      "id": "evaluation.building-assembly",
+      "name": "Building Assembly Evaluator",
+      "domain": "evaluation",
+      "outcome": "Generated and player-authored module graphs receive independent causal evidence for identity, entrances, support, transforms, and terrain anchors.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.building-assembly-generator", "evaluation.structural", "world.terrain-semantic-field"] }
+      ],
+      "verifier": "Positive and corrupted assembly fixtures independently classify valid graphs, missing entrances, duplicate IDs, invalid transforms, unsupported storeys, and blocked anchors with stable rule IDs.",
+      "challengeSet": "Missing or repeated modules, invalid scale, unsupported upper floors, absent roofs or foundations, terrain obstruction, module overlap, and edited player structures.",
+      "failureArtifact": "Assembly canonical text, involved module IDs, terrain cell, measured counts, and stable causal issues.",
+      "promotionGate": "The evaluator rejects known structural counterexamples and held-out invalid edits without using generator-internal scoring.",
+      "workDeleted": "Opening every generated building to manually check whether its module graph is usable.",
+      "champion": "building-assembly-evaluator-1-structural"
+    },
+    {
       "id": "content.environment-asset-factory",
       "name": "Environment Asset Factory",
       "domain": "content",
@@ -474,7 +634,7 @@
       "status": "planned",
       "targetWave": 2,
       "requires": [
-        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog", "world.building-assembly-generator", "evaluation.building-assembly"] }
       ],
       "verifier": "Snap, doorway, collision, foundation, destruction, silhouette, and material fixture scenes validate each piece family.",
       "challengeSet": "Corners, slopes, multiple stories, doors, windows, roof intersections, damaged states, and mixed material tiers.",
@@ -486,19 +646,177 @@
       "id": "world.content-cell-generator",
       "name": "Content Cell Generator",
       "domain": "world",
-      "outcome": "A bounded terrain cell deterministically yields stable tree and rock opportunities or explicit water, slope, and budget rejection evidence without owning actors or assets.",
+      "outcome": "A bounded terrain cell deterministically consumes the accepted Environment Recipe and yields stable tree and rock opportunities or explicit water, slope, intent, and budget rejection evidence without owning actors or assets.",
       "source": "Build",
-      "status": "active",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.recipe", "world.environment-recipe-compiler", "world.biome-opportunity-field"] }
+      ],
+      "verifier": "Eight pure automation tests cover recipe-v6 repeatability, accepted Environment Recipe and Biome Opportunity provenance, exact root biome/opportunity parity across held-out seeds 11, 29, 47, 83, and 131, magnitude-sensitive density, zero-vegetation and valid barren suppression, deterministic transforms, cross-cell and cross-world uniqueness, bounded budgets, spatial coverage, and causal opportunity rejection accounting. Focused Content Cells pass 8/8. The independent Content Distribution Evaluator passes 3/3; Worldgen passes 106/107 and complete Gaters passes 143/146, with only three active Settlements-owned RED contracts failing.",
+      "challengeSet": "Declared barren, stone-only, climate/surface-driven opportunity differences, dry land, ocean, frozen and saturated ground, steep terrain, adjacent cells, different worlds, cell edges, density budgets, and spatial bias.",
+      "failureArtifact": "ContentCellDensityV6Red.log proves v5 filled equal placement counts for high and low opportunity. ContentCellsV6DensityGreen2.log proves v6 density response and causal rejection accounting. World seed, root versions, region ID, effective opportunities, cell, candidate, transform, and every rejection count remain available. WorldgenContentDistributionV1.log and GatersFullContentDistributionV1.log retain only the unrelated active Settlements-owned failures.",
+      "promotionGate": "Held-out terrain cells preserve deterministic identity and valid ground contact while obeying seed-declared absence, including zero forced trees and valid no-content cells.",
+      "workDeleted": "Hand-placing streamed opportunities and guessing whether an empty or unusual region violates the seed declaration.",
+      "champion": "content-cell-6-physical-density"
+    },
+    {
+      "id": "world.biome-field",
+      "name": "Biome Semantic Field",
+      "domain": "world",
+      "outcome": "Any world coordinate exposes deterministic elevation, slope, water proximity, moisture, exposure, intent provenance, and a semantic biome key derived from the same regional seed intent as its terrain without loading cells, sites, Actors, or assets.",
+      "source": "Build",
+      "status": "verified",
       "targetWave": 1,
       "requires": [
-        { "type": "AND", "machines": ["world.recipe", "world.terrain-semantic-field"] }
+        { "type": "AND", "machines": ["world.terrain-semantic-field", "world.intent-recipe", "world.intent-terrain-field"] }
       ],
-      "verifier": "Four pure automation tests cover recipe-v2 repeatability, full recipe identity, final deterministic scatter yaw and scale, non-vacuous cross-cell and cross-world uniqueness, bounded transforms and budgets, spatial coverage, and causal rejection accounting.",
-      "challengeSet": "Dry land, ocean, steep terrain, adjacent cells, different worlds, cell edges, density budgets, and spatial bias.",
-      "failureArtifact": "World seed, cell coordinate, candidate ID, placement transform, and placed/water/steep/budget coverage counts.",
-      "promotionGate": "Held-out terrain cells preserve deterministic identity, valid ground contact, useful distribution, and bounded opportunity counts.",
-      "workDeleted": "Hand-placing resources in each streamed terrain region and debugging empty regions without causal evidence.",
-      "champion": "content-cell-2-recipe-owned-transforms"
+      "verifier": "Three pure automation tests cover repeatability, bounded values, non-empty and non-vacuous keys across held-out seeds 0, 2, 4, 7, and 53, streaming continuity, lake evidence, exact arrival compatibility, regional terrain/hydrology consumption, dry override, intent provenance, and blend-annulus continuity; content-cell automation proves the runtime consumer uses the supplied intent.",
+      "challengeSet": "All terrain families, global and regional dry/wet hydrology, arrival protection, blend annuli, adjacent streaming cells, biome thresholds, distant coordinates, and held-out seeds.",
+      "failureArtifact": "Seed, intent version and region ID, influence, coordinate, global and regional terrain/hydrology, biome sample, and failed semantic invariant.",
+      "promotionGate": "Held-out coordinate queries are deterministic, bounded, spatially continuous, regionally intent-aware, preserve arrival behavior, and produce multiple semantic biome keys consumed by content cells.",
+      "workDeleted": "Loading world cells or inspecting spawned content just to decide what biome a coordinate belongs to.",
+      "champion": "biome-field-2-regional-intent"
+    },
+    {
+      "id": "world.biome-opportunity-field",
+      "name": "Biome Opportunity Field",
+      "domain": "world",
+      "outcome": "Accepted biome, climate, and surface-condition evidence becomes bounded neutral vegetation, stone, landmark, and travel-friction opportunities without choosing assets, sites, or gameplay rewards.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.biome-field", "world.climate-field", "world.surface-condition-field"] }
+      ],
+      "verifier": "Two pure Unreal tests pass. Explicit evidence proves warm moist soil favors vegetation, exposed rock and relief increase stone and landmark opportunity, snow/ice and saturation increase travel friction, frozen stress reduces vegetation, water emits no land vegetation or stone, and barren evidence may emit exact optional scarcity. Every output is finite and bounded. Environment Recipe v5 stores the versioned provenance recipe and delegates exact biome-plus-climate-plus-surface queries. Seeds 11, 29, 47, 83, and 131 repeat the recipe and three coordinate queries each. Focused opportunity tests pass 2/2 and Environment Recipe passes 3/3; Worldgen passes 101/102 and complete Gaters passes 137/140, with only the three active Settlements-owned RED contracts failing.",
+      "challengeSet": "Warm soil, exposed rock, cliffs, ridges, saturated ground, snow, ice, water, barren scarcity, biome borders, and held-out mixed roots.",
+      "failureArtifact": "The v2 RED compile failed only on the absent evaluator, provenance recipe, and Environment root member. BiomeOpportunitiesV2Focused.log passes the physical and held-out root contracts; EnvironmentRecipeV5BiomeOpportunities.log passes root composition. WorldgenBiomeOpportunitiesV2.log and GatersFullBiomeOpportunitiesV2.log retain the unrelated active Settlements-owned RED failures. Content-cell density, resource identities, assets, and visual differentiation remain unverified.",
+      "promotionGate": "Held-out physical evidence produces deterministic bounded neutral opportunities and downstream generators consume them without terrain-family special cases.",
+      "workDeleted": "Each resource, landmark, and travel consumer independently translating the same biome evidence.",
+      "champion": "biome-opportunity-field-2-physical-root"
+    },
+    {
+      "id": "world.environment-brief-compiler",
+      "name": "Environment Brief Compiler",
+      "domain": "world",
+      "outcome": "A bounded request such as a glacial, tropical, arid, volcanic, or mixed world plus a seed becomes versioned global, regional, and land-access constraints without choosing sites, encounters, species, or assets.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [],
+      "verifier": "Version-2 pure Unreal automation proves exact same-seed target identity, changed-seed physical variation rather than metadata variation, fixed-signal invariance, bounded global, regional, walkable-land, and connected-land outputs, and valid mixed constraints. Counterexamples causally reject unsupported versions, reversed, non-finite, and out-of-range signals, duplicate region IDs, invalid land-access ranges, zero and oversized radii, escaped regions, and invalid world size.",
+      "challengeSet": "Bounded and fixed signals, cold/ice global targets, wetland and volcanic mixed regions, changed seeds, invalid ranges, duplicate identities, invalid geometry, and world bounds; later downstream satisfaction challenges add tropical, arid, coastal, mountainous, and temperate worlds.",
+      "failureArtifact": "Brief, seed, compiled intent, unsatisfied constraints, responsible rule, and intent version.",
+      "promotionGate": "Held-out valid briefs reproduce bounded declared targets while preserving only caller-allowed seed variation, and invalid briefs return stable causal diagnostics without downstream content decisions.",
+      "workDeleted": "Writing a separate named generator or hardcoded seed table for every requested world theme.",
+      "champion": "environment-brief-compiler-2-land-access-targets"
+    },
+    {
+      "id": "world.landform-process-field",
+      "name": "Composable Landform Process Field",
+      "domain": "world",
+      "outcome": "Environment intent composes deterministic macro relief and local uplift, erosion, deposition, coastal, glacial, and volcanic tendencies while the current terrain-family generator remains the champion until the challenger wins.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.environment-brief-compiler", "world.terrain-generator", "evaluation.terrain-metrics", "evaluation.traversability"] }
+      ],
+      "verifier": "The landform and selector contracts pass 11/11 focused Unreal automation; recipe version 6 preserves exact candidate zero and the proven candidate-seven fallback while candidates 1-6 derive bounded ruggedness from declared walkable-land intent. Ruggedness uses seeded broad massif and rounded ridge fields, a generic erosion valley, shoreline-aware influence, and Arrival protection without optional site queries. The complete shared suite passes 121/121. The fresh schema-15 20-case world-only sweep over seeds 11, 29, 47, 83, and 131 selects 2/20 versus the frozen 1/20 baseline, improves mean best target error from 0.3930 to 0.3027, increases best-candidate coarse world access from 16/20 to 18/20, preserves Arrival escape 20/20 and budget validity 20/20, and exactly repeats the seed-83 high-relief candidate identity, checksum, selector evidence, and metrics in a gallery run. Automated image validation passes from the lit camera azimuth; visual geometry review accepts the natural-process direction but not final-art quality, so the machine remains active.",
+      "challengeSet": "Mountain chains, plateaus, basins, plains, canyons, islands, coasts, dunes, glacial valleys, volcanic terrain, mixed transitions, and adversarial traversal cases.",
+      "failureArtifact": "Current evidence: Unreal/Prototype/Saved/EnvironmentRuns/landform-natural-final-20260721-200000.jsonl (SHA-256 43288B98C55B9647C966AA0C22A7337151D4BDE6924E9D8A0DBB7D82AA3E7C18) and the deterministic seed-83 gallery repeat landform-rounded-massif-lit-gallery-20260721-194500.jsonl (SHA-256 ED33DD087294DCC652C555E1F8A8C07BFF121A468ED7C05726B1FC8DC4ADD263). The independent candidate lattice was falsified by landform-lattice-20260721-153500.jsonl; cellular spike and dome variants were visually rejected despite stronger numeric selection. The remaining failure is sparse/disconnected archipelago control: shoreline-aware natural massifs improve aggregate breadth but cannot yet reproduce the old seed-131 baseline candidate's low connected-land target.",
+      "promotionGate": "The challenger covers more held-out Earth landform niches than the terrain-family champion without losing determinism, controllability, traversal, continuity, or runtime budget.",
+      "workDeleted": "Adding a new monolithic height formula for every recognizable landform combination."
+    },
+    {
+      "id": "world.environment-candidate-selector",
+      "name": "Environment Candidate Selector",
+      "domain": "world",
+      "outcome": "A bounded deterministic candidate set is independently evaluated against declared full-world walkable/connected-land targets and local Arrival escape; only a satisfying candidate replaces the terrain champion.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.environment-brief-compiler", "world.landform-process-field", "world.terrain-semantic-field", "evaluation.traversability"] }
+      ],
+      "verifier": "Seven focused selector tests plus four landform tests pass and prove exact repeated selection, bounded attempt evidence, champion retention, coarse-world-access and relative-target guards, world-only Arrival escape, target-derived walkable control, and preservation of the proven candidate-seven fallback. Runtime archive schema 15 records selected and best candidate identity, feature, dissection, ruggedness, target metrics, world access, Arrival escape, semantic version, and transition width. The complete shared suite passes 121/121. The fresh 20-case held-out sweep selects seed-83 high-relief candidate 4 and seed-131 volcanic candidate 7; both satisfy every target, world-access, Arrival, and budget gate. The seed-83 candidate exactly repeats in the gallery archive; all best candidates escape Arrival, 18/20 have coarse world access, and all 20 runs stay within budget.",
+      "challengeSet": "Held-out baseline, high-relief, volcanic, glacial, mountain, archipelago, sparse-land, and disconnected-land briefs; impossible targets, trapped Arrival boundaries, coarse-world false positives, tolerance-collapse counterexamples, candidate ties, invalid bounds, repeated seeds, and optional-content absence.",
+      "failureArtifact": "Unreal/Prototype/Saved/EnvironmentRuns/landform-natural-final-20260721-200000.jsonl (SHA-256 43288B98C55B9647C966AA0C22A7337151D4BDE6924E9D8A0DBB7D82AA3E7C18), selector-v4, landform-v6, semantic-v2, and archive-schema-15 evidence; Unreal/Prototype/Saved/EnvironmentRuns/landform-rounded-massif-lit-gallery-20260721-194500.jsonl preserves the exact seed-83 selected-case repeat. Eighteen rejected briefs remain causal candidate-breadth evidence, not false selector acceptance.",
+      "promotionGate": "Held-out valid briefs reproducibly select candidates satisfying declared world-access targets without absolute-tolerance collapse and local Arrival escape within budget, while unsatisfied or intentionally sparse requests retain the champion with causal evidence and never force optional sites.",
+      "workDeleted": "Adding named accessible-land generator branches, hand-picking seeds, or accepting a bad candidate because generation completed.",
+      "champion": "environment-candidate-selector-4-relative-shortfall"
+    },
+    {
+      "id": "world.climate-field",
+      "name": "Climate Field",
+      "domain": "world",
+      "outcome": "Any coordinate exposes deterministic temperature, precipitation, wind exposure, seasonality, and freeze-thaw evidence derived from the environment brief and terrain rather than a biome name.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.environment-brief-compiler", "world.landform-process-field"] }
+      ],
+      "verifier": "Four pure Climate Field tests pass. They prove versioned provenance, exact repeated compilation and coordinate queries, changed-seed wind variation, bounded grid samples, altitude cooling, declared-moisture and local-water precipitation, windward uplift, leeward drying, terrain exposure, wet near-freezing freeze-thaw, maritime seasonality damping, and continuous regional intent through the shared landform profile seam. The held-out matrix covers polar, tropical, alpine, lowland, arid, maritime, continental, windward, and leeward cases plus five real seeded terrain fields. Environment Recipe v2 injects its authoritative regional terrain query through the Climate Field's external height seam; a regression proves the fixture differs from raw terrain and climate height matches root terrain exactly. The raw Environment adapter remains green. Focused Environment Recipe, Climate, and Drainage tests pass 9/9; the complete shared suite passes 128/128.",
+      "challengeSet": "Polar, alpine, temperate, tropical, arid, maritime, continental, windward, leeward, and mixed regional briefs.",
+      "failureArtifact": "The first held-out run at Unreal/Prototype/Saved/Logs/ClimateHeldOutRed.log causally rejected identical maritime and continental seasonality. Local-water damping and dry-land amplification corrected it. Passing evidence: ClimateHeldOutGreen.log, ClimateHeldOutCombined.log, and GatersFullClimateHeldOut.log. Environment-root/runtime consumption remains a separate integration gate, not part of this pure field's promotion claim.",
+      "promotionGate": "Held-out fields remain deterministic and continuous while satisfying requested climate constraints and basic causal relationships.",
+      "workDeleted": "Assigning snow, desert, rainforest, and seasonal conditions directly from named terrain families.",
+      "champion": "climate-field-1-physical-evidence"
+    },
+    {
+      "id": "world.drainage-network",
+      "name": "Drainage Network",
+      "domain": "world",
+      "outcome": "Terrain and precipitation evidence produce deterministic connected watersheds, rivers, lakes, wetlands, deltas, and waterfall candidates with explicit flow provenance.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.landform-process-field", "world.climate-field", "world.regional-water-surfaces", "evaluation.regional-water-fit"] }
+      ],
+      "verifier": "Nine pure Drainage Network tests pass. Synthetic slopes prove deterministic D8 flow, stable segment identity, non-uphill edges, precipitation accumulation, wet-over-dry channel evidence, enclosed basin sinks, flat-plateau routing, and supported waterfall drops. A pure regional-water fit records datum tolerance plus covered cells, basin and terminal identities, channel contacts, inlet/outlet counts, accumulation, and submerged-terrain support; causal corruptions reject invalid versions, duplicate IDs, escaped coverage, unsupported datum, and invalid settings. A versioned pure compiler records its settings and derives neutral river-system, declared-lake, wet low-drop basin, supported ocean-delta, and waterfall candidates while retaining cell, basin, segment, and surface provenance; dry empty output is valid scarcity. Five runtime-scale roots repeat and reference only accepted facts at 65-by-65 resolution; Environment Recipe v4 retains and independently rebuilds the graph, fit, and features at the first root-scale resolution passing the existing 400000-unit matrix, 129-by-129. Every Drainage and Environment test passes; the rebuilt complete suite is currently blocked only by three active Settlements-owned RED tests.",
+      "challengeSet": "Dry basins, mountain headwaters, braided rivers, lake chains, wetlands, deltas, coastlines, waterfalls, world edges, and mixed regional rainfall.",
+      "failureArtifact": "DrainageRegionalWaterFitGreenV2.log verifies the isolated association contract. DrainageRealRegionalWaterFitChallenge.log exposed uncomposed lake terrain for seeds 11 and 29; DrainageRealRegionalWaterFitGeometryHypothesis.log isolated seed 83 as a 33-by-33 resolution miss. DrainageFeatureCandidatesGreen.log verifies feature compilation and corruption rejection; DrainageFeatureCandidatesRealChallenge.log passes all nine tests across five held-out roots. EnvironmentDrainageRootV3Diagnostic.log rejects 65-by-65 at 400000-unit scale; EnvironmentDrainageRootV3HeldOut.log passes the 129-by-129 root composition. Richer depression handling, hierarchical/local drainage, terrain carving, and rendering remain unverified.",
+      "promotionGate": "Held-out drainage graphs are deterministic, connected where declared, terrain-supported, bounded, and materially more varied than the primitive water champion.",
+      "workDeleted": "Hand-shaping every river, lake relationship, wetland, delta, and waterfall location."
+    },
+    {
+      "id": "world.surface-condition-field",
+      "name": "Surface Condition Field",
+      "domain": "world",
+      "outcome": "Terrain, climate, and drainage become deterministic substrate, soil, rock exposure, sediment, sand, snow, ice, saturation, shore, ridge, valley, and cliff evidence for all downstream generators.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.landform-process-field", "world.climate-field", "world.drainage-network"] }
+      ],
+      "verifier": "Four pure Unreal tests pass. Explicit evidence fixtures independently require steep exposed terrain to raise cliff/rock, wet accumulated valleys to raise saturation/sediment, freeze-thaw to raise loose sediment, declared gentle shores to raise shore/sand, and cold wet surfaces to raise snow/ice. Dry warm evidence permits exact shore/snow/ice scarcity. The adapter records versioned settings and provenance, samples authoritative terrain/climate, measures exact global and regional water geometry, and bilinearly interpolates drainage accumulation/channel/drop so adjacent cell-boundary queries do not snap. Environment Recipe v4 stores the accepted recipe, independently recompiles it from recorded settings, and exposes exact query parity. Seeds 11, 29, 47, 83, and 131 repeat across 125 held-out coordinate queries with every output finite and bounded and every source cell valid. Focused Surface Condition passes 4/4 and Environment Recipe passes 3/3; rebuilt Worldgen passes 100/101 and complete Gaters passes 136/139, with only the three active Settlements-owned RED contracts failing.",
+      "challengeSet": "Rock, soil, sand, mud, snow, ice, permafrost, shorelines, cliffs, ridges, valleys, floodplains, dunes, and transition zones.",
+      "failureArtifact": "SurfaceConditionFieldV1Green.log verifies the initial four-test contract. SurfaceConditionFreezeThawRed.log records the unused freeze-thaw counterexample before correction; SurfaceConditionFieldV1Final.log passes 4/4 afterward. EnvironmentSurfaceRootV4Focused.log and EnvironmentSurfaceRootV4Surface.log verify root composition plus isolated parity. WorldgenEnvironmentSurfaceRootV4.log and GatersFullEnvironmentSurfaceRootV4.log retain the unrelated active Settlements-owned RED failures. Visual materials, final beach/ice geometry, terrain carving, and resource consumption remain unverified.",
+      "promotionGate": "Downstream beaches, ice cover, resources, sites, and raids can consume physical evidence without reconstructing terrain or branching on a named terrain family.",
+      "workDeleted": "Every downstream system inventing separate beach, ice, cliff, soil, and terrain-feature detection logic.",
+      "champion": "surface-condition-field-1-physical-evidence"
+    },
+    {
+      "id": "world.environment-recipe-compiler",
+      "name": "Environment Recipe Compiler",
+      "domain": "world",
+      "outcome": "One versioned pure-data root composes accepted environment layers and exposes authoritative terrain, climate, biome, opportunity, water, drainage, water-fit, neutral drainage-feature, and surface-condition evidence without Actors, assets, sites, raids, or characters; v5 composes the accepted current layers.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 2,
+      "requires": [
+        { "type": "AND", "machines": ["world.terrain-generator", "world.intent-recipe", "world.intent-terrain-field", "world.environment-brief-compiler", "world.landform-process-field", "world.climate-field", "world.regional-water-surfaces", "evaluation.regional-water-fit", "world.drainage-network", "world.surface-condition-field", "world.biome-field", "world.biome-opportunity-field"] }
+      ],
+      "verifier": "Three Environment Recipe tests prove exact repeated-seed composition across seeds 0, 2, 4, 7, and 53, changed-seed identity, direct component parity, selected-landform composition, authoritative terrain/climate/surface/opportunity queries, and causal provenance corruptions. Version 5 stores 129-by-129 drainage, regional-water fit, neutral drainage-feature, Surface Condition, and physical Biome Opportunity recipes; validation independently rebuilds and compares every derived recipe. Runtime-scale roots 11, 29, 47, 83, and 131 validate and repeat exact composed recipes and queries. Focused Environment Recipe passes 3/3 and Biome Opportunities passes 2/2. The rebuilt Worldgen suite passes 101/102 and complete Gaters passes 137/140; the only failures are three active Settlements-owned access/facade RED tests.",
+      "challengeSet": "Repeated and changed seeds, global and regional terrain, wet and dry regions, streamed terrain cells, corrupted component provenance, unknown water regions, and future climate/process layer additions.",
+      "failureArtifact": "EnvironmentDrainageRootV3Diagnostic.log disproves reuse of the 65-by-65 runtime-scale drainage grid at 400000-unit root scale. EnvironmentSurfaceRootV4Focused.log passes Surface Condition composition. The v5 RED compile failed only on the absent physical opportunity evaluator, recipe, and root member; BiomeOpportunitiesV2Focused.log and EnvironmentRecipeV5BiomeOpportunities.log pass the new contracts. WorldgenBiomeOpportunitiesV2.log and GatersFullBiomeOpportunitiesV2.log retain the unrelated active Settlements-owned failures. Terrain carving, rendering, resource placement, and hierarchical/local drainage remain unverified.",
+      "promotionGate": "Full Unreal automation remains green, runtime consumers no longer reconstruct accepted environment layers, and each new Earth-environment field enters through this root without changing downstream ownership.",
+      "workDeleted": "Every downstream generator independently reconstructing seed terrain, regional intent, water, biome, and opportunity state.",
+      "champion": "environment-recipe-compiler-5-physical-opportunities"
     },
     {
       "id": "world.biome-resource-generator",
@@ -509,9 +827,9 @@
       "status": "planned",
       "targetWave": 2,
       "requires": [
-        { "type": "AND", "machines": ["world.content-cell-generator", "content.environment-asset-factory", "content.catalog"] }
+        { "type": "AND", "machines": ["world.intent-recipe", "world.biome-field", "world.biome-opportunity-field", "world.climate-field", "world.surface-condition-field", "world.content-cell-generator", "evaluation.content-distribution"] }
       ],
-      "verifier": "Pure distribution checks plus dressed fixtures measure coverage, adjacency, accessibility, density, and repetition.",
+      "verifier": "Pure semantic distribution checks measure coverage, adjacency, accessibility, density, kind mix, scarcity, and repetition before replaceable asset dressing.",
       "challengeSet": "All terrain families, biome borders, sparse/dense settings, inaccessible resources, and repeated landmark patterns.",
       "failureArtifact": "Seed, biome field, resource/landmark nodes, distribution metrics, and responsible rule.",
       "promotionGate": "Held-out seeds contain reachable resource loops and distinct biome compositions within object budgets.",
@@ -546,13 +864,13 @@
       "requires": [
         { "type": "AND", "machines": ["runtime.world-compiler", "content.catalog", "evaluation.performance"] }
       ],
-      "verifier": "Pure automation partitions full stable recipe identities, resolves native instance indices to diff entries, verifies harvest removal and claim-state transition, native collision policy, and catalog-selected mesh propagation; a headless seed-7 run compiled and rendered 72 streamed resource placements through four native ISM batches with no actor carriers.",
+      "verifier": "Pure automation partitions stable recipe identities, resolves native instance indices to diff entries, verifies harvest removal and claim-state transition, native collision policy, catalog-selected mesh propagation, and modular foundation/wall/door-frame/roof/public-space batches; held-out runtime runs compile eight native ISM batches with no per-module actors.",
       "challengeSet": "Live player touch feel and visible harvest/claim transitions, dense vegetation, modular assemblies, catalog-driven meshes, LOD transitions, missing optional art, mixed asset sources, collision edge cases, and per-instance persistence.",
       "failureArtifact": "Recipe node, stable gameplay ID, selected artifact, native ISM batch/index, overlap evidence, diff entry, render capture, and budget trace.",
       "promotionGate": "Visual improvements do not regress structural or gameplay metrics outside declared tolerances.",
       "workDeleted": "Per-seed prop dressing, one visible component per repeated placeholder, and hand-converting decoration to efficient instances.",
-      "champion": "unreal-ism-adapter-2",
-      "nativeFit": "Adapt: Unreal UInstancedStaticMeshComponent owns repeated rendering, collision bodies, overlap events, and instance indices. Gaters only groups compiled catalog meshes/transforms, maps ordered indices to stable recipe IDs, and records diffs. Destructive base pieces remain unique; PCG is not used because the recipe already supplies deterministic transforms."
+      "champion": "unreal-ism-adapter-4-modular-buildings",
+      "nativeFit": "Adapt: Unreal UInstancedStaticMeshComponent owns repeated rendering, collision bodies, overlap events, and instance indices. Gaters groups compiled catalog meshes and transforms, expands semantic door modules into primitive frames, maps ordered indices to stable recipe IDs, and records diffs. Settlement paths remain semantic until a terrain-aware presentation adapter exists. Destructive base pieces remain unique; PCG is not used because the recipe already supplies deterministic transforms."
     },
     {
       "id": "runtime.content-cell-streaming",
@@ -575,20 +893,20 @@
     },
     {
       "id": "world.environment-generator",
-      "name": "Complete Environment Generator",
+      "name": "Generate a World Environment",
       "domain": "world",
-      "outcome": "A seed produces terrain, water, biomes, resources, landmarks, routes, and contracted visual dressing as one reproducible environment recipe.",
+      "outcome": "A bounded environment brief and seed produce terrain, climate, hydrology, surface conditions, biomes, declared required environmental content, optional resources, and contracted visual dressing as one reproducible environment recipe consumable by independent site and gameplay systems.",
       "source": "Build",
-      "status": "planned",
-      "targetWave": 2,
+      "status": "active",
+      "targetWave": 3,
       "requires": [
-        { "type": "AND", "machines": ["world.terrain-generator", "world.terrain-semantic-field", "world.biome-resource-generator", "world.site-route-planner", "runtime.visual-materializer", "evaluation.physical-fit"] }
+        { "type": "AND", "machines": ["world.environment-brief-compiler", "world.landform-process-field", "world.environment-candidate-selector", "world.climate-field", "world.drainage-network", "world.surface-condition-field", "world.environment-recipe-compiler", "world.biome-resource-generator", "runtime.visual-materializer", "evaluation.physical-fit"] }
       ],
       "verifier": "Layered structural, terrain, traversal, physical-fit, visual, and performance evidence evaluates held-out seeds.",
-      "challengeSet": "Every terrain family, extreme parameter combinations, scarce sites, dense dressing, and catalog swaps.",
+      "challengeSet": "Held-out glacial, alpine, temperate, tropical, arid, volcanic, coastal, island, wetland, river, lake, canyon, plain, and mixed-region briefs; extreme combinations, scarce environmental opportunities, dense dressing, and catalog swaps.",
       "failureArtifact": "Environment recipe, seed, layer-specific diagnostics, captures, and versioned metric vector.",
-      "promotionGate": "Held-out environments are reproducible, traversable, resource-viable, diverse, and within budget.",
-      "workDeleted": "Assembling terrain, biomes, resources, routes, and dressing by hand."
+      "promotionGate": "Held-out environment briefs are reproducible, satisfy declared physical, access, and required-content constraints, accept declared optional scarcity, remain recognizably diverse across Earth landform/climate niches, and stay within budget.",
+      "workDeleted": "Assembling terrain, biomes, environmental resources, and dressing by hand."
     },
     {
       "id": "runtime.activity-system",
@@ -613,16 +931,17 @@
       "domain": "runtime",
       "outcome": "Placeholder attackers and defenders execute deterministic movement, targeting, attacks, damage, death, and objective interactions.",
       "source": "Adapt",
-      "status": "planned",
+      "status": "active",
       "targetWave": 3,
       "requires": [
         { "type": "AND", "machines": ["world.recipe", "runtime.navigation-query"] }
       ],
-      "verifier": "Known open and fortified fixtures separate across repeated fixed-policy simulations.",
+      "verifier": "The Raids-owned deterministic headless resolver consumes the versioned Combat catalog and reproduces fixed policy matrices: open 4/4, fortified 1/4, and sealed 0/4. Fresh resolver automation passes 1/1 and the broader raid harness passes 10/10; the five-settlement representative ensemble remains analysis-only and does not promote encounter or raid-space evaluation.",
       "challengeSet": "Melee, ranged, obstacles, unreachable targets, multiple agents, breach objectives, and deterministic reruns.",
       "failureArtifact": "Replay, policy/seed, event timeline, paths, damage, objective state, and termination reason.",
       "promotionGate": "Fixed inputs reproduce and multiple policies expose different tactical weaknesses.",
-      "workDeleted": "Using one manual playthrough or one naive bot as raid evidence."
+      "workDeleted": "Using one manual playthrough or one naive bot as raid evidence.",
+      "champion": "headless-combat-resolver-v1"
     },
     {
       "id": "world.settlement-generator",
@@ -630,16 +949,54 @@
       "domain": "world",
       "outcome": "Routes become coherent villages with parcels, building roles, entrances, activity ports, public space, and decoration anchors.",
       "source": "Build",
-      "status": "planned",
+      "status": "active",
       "targetWave": 3,
       "requires": [
-        { "type": "AND", "machines": ["world.site-route-planner", "content.building-asset-factory", "content.catalog", "evaluation.physical-fit", "runtime.activity-system"] }
+        { "type": "AND", "machines": ["world.site-route-planner", "world.terrain-semantic-field", "runtime.navigation-query", "content.semantic-keys", "world.building-assembly-generator", "evaluation.building-assembly"] }
       ],
-      "verifier": "Structural and navigation checks verify road access, entrances, roles, activity ports, spacing, and budgets.",
-      "challengeSet": "Small/large sites, slopes, rivers, dense parcels, multiple settlement shapes, and asset substitutions.",
-      "failureArtifact": "Settlement graph, parcel/building IDs, rejected rules, route failures, and render capture.",
-      "promotionGate": "Held-out settlements are connected, inhabitable, distinct, and contract-preserving under catalog swaps.",
-      "workDeleted": "Hand-laying roads, plots, buildings, and village activity for every world."
+      "verifier": "Pure Unreal automation checks deterministic profiles and layouts, stable stage prefixes, structural massing variety, role coverage, unique land parcels, declared growth fronts, reachable entrances, semantic paths, compact radius, and facade-direction spread. A separate adapter compiles accepted plans into versioned physical facts and neutral slots. Held-out seed 73 exports complete retained-edge evidence and passes the Raids production preflight as ready-for-scenario, but independent graph analysis finds 43 movement components and only 2 of 10 ground-floor indoor neutral slots reachable from the path network; preflight readiness is not global-connectivity proof.",
+      "challengeSet": "Open and scarce fields, low and tall profiles, varied and crossing full building footprints, water-blocked entrances, missing or duplicate parcels, blocked planned links, zero-edge interiors, disconnected doorway fragments, silently omitted required slot connections, missing intentionally-sealed physical facts, no surviving exterior-to-interior route, undeclared growth fronts, collapsed facade orientation, sprawled buildings, stage-prefix drift, all terrain families, and the first seed-7 one-orientation visual failure.",
+      "failureArtifact": "Seed, growth stage, settlement canonical text, stable building/parcel/front/path/slot IDs, roles/cells/entrances, versioned physical recipe, movement components, indoor-slot reachability, doorway/threshold/footprint/terrain-approach/movement-envelope evidence, explicit intentionally-sealed facts, omitted blocked and required-connection diagnostics, causal evaluator issues, runtime report, and render capture.",
+      "promotionGate": "Held-out settlements are inhabitable, distinct, contract-preserving under catalog swaps, and selected with full-footprint physical-fit evidence before coarse plans publish paths; every emitted neutral indoor slot is reachable from the applicable outdoor network through a declared movement mode or carries an explicit neutral intentionally-sealed physical fact, with zero silently omitted connections required by usable slots.",
+      "workDeleted": "Hand-laying roads, plots, buildings, and village activity for every world.",
+      "champion": "settlement-generator-2-land-growth-contract",
+      "nativeFit": "Build: pure Gaters C++ owns deterministic semantic layout, continuous structural profiles, stable identity, parcel support/access contracts, immutable growth fronts, and the adapter from accepted plans to versioned physical facts. The current adapter truthfully omits blocked connections, but requiring one surviving exterior-to-interior route is insufficient: each usable building-to-network relationship must be solved from its actual footprint, doorway, threshold, terrain approach, and movement envelope before publication. Ground support is the only implemented habitat; the parcel seam permits later tree, cliff, cave, water, or floating support/navigation adapters without changing settlement roles or growth history. Unreal owns primitive ISM rendering."
+    },
+    {
+      "id": "world.settlement-growth-planner",
+      "name": "Settlement Growth Planner",
+      "domain": "world",
+      "outcome": "An accepted settlement advances by one deterministic stage as an append-only patch that preserves every existing building, parcel, path identity, and declared growth direction.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.settlement-generator", "evaluation.settlement"] }
+      ],
+      "verifier": "Pure Unreal automation compares the source canonical plan, regenerates the next stage independently, checks stable prefixes, and applies the emitted building, parcel, and path additions; live seed 7 compiles stages 0 through 2 through the same recipe adapter.",
+      "challengeSet": "Skipped stages, tampered source state, duplicate additions, disconnected entrances, missing parcels, changed earlier paths, unsupported stages, and insufficient habitat capacity.",
+      "failureArtifact": "Source/target stage, source canonical text, append-only patch, stable IDs, causal planner diagnostics, and expanded-plan evaluation.",
+      "promotionGate": "Held-out terrain seeds advance and reconstruct without changing prior semantic identity or publishing a structurally invalid stage.",
+      "workDeleted": "Regenerating or hand-editing an entire village whenever background simulation grows it.",
+      "champion": "settlement-growth-patch-1"
+    },
+    {
+      "id": "evaluation.settlement-growth",
+      "name": "Settlement Growth Evaluator",
+      "domain": "evaluation",
+      "outcome": "Village growth patches receive independent causal evidence for source integrity, one-stage progression, identity preservation, connectivity, parcels, and final settlement validity.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 3,
+      "requires": [
+        { "type": "AND", "machines": ["world.settlement-growth-planner", "evaluation.settlement", "evaluation.building-assembly"] }
+      ],
+      "verifier": "Pure Unreal counterexample automation rejects skipped stages, altered sources, duplicate additions, and disconnected growth while accepting deterministic stage patches.",
+      "challengeSet": "Planner self-approval, duplicate IDs, source checksum drift, invalid assembly additions, inaccessible parcels, path replacement, and a valid patch on an invalid source.",
+      "failureArtifact": "Patch, source and expanded canonical plans, failed rule ID, involved stable IDs, and nested settlement/building issues.",
+      "promotionGate": "Held-out known-good and deliberately corrupted patches separate with stable causal rules.",
+      "workDeleted": "Watching village growth or trusting the generator to judge its own output.",
+      "champion": "settlement-growth-evaluator-1"
     },
     {
       "id": "world.base-generator",
@@ -664,16 +1021,17 @@
       "domain": "evaluation",
       "outcome": "Village coherence, access, role coverage, activity viability, composition, density, and repetition become explainable evidence.",
       "source": "Build",
-      "status": "planned",
+      "status": "active",
       "targetWave": 3,
       "requires": [
-        { "type": "AND", "machines": ["world.settlement-generator", "runtime.navigation-query", "evaluation.structural"] }
+        { "type": "AND", "machines": ["world.settlement-generator", "evaluation.building-assembly", "runtime.navigation-query", "evaluation.structural"] }
       ],
-      "verifier": "Hand-built coherent and deliberately broken settlement fixtures yield expected relative results.",
-      "challengeSet": "Disconnected doors, dead roads, duplicated layouts, missing roles, empty public space, and overcrowding.",
-      "failureArtifact": "Settlement graph, failed routes/roles, descriptor vector, capture, and involved node IDs.",
+      "verifier": "Independent evaluator automation accepts deterministic open and generated-terrain layouts while rejecting scarce capacity, unreachable entrances, collapsed orientation, and sprawl with stable rule IDs.",
+      "challengeSet": "Disconnected entrances, missing path cells, duplicate IDs/cells, missing roles, collapsed orientation, sprawl, empty public space, and overcrowding.",
+      "failureArtifact": "Settlement graph, failed routes/roles, radius/orientation/path evidence, capture, and involved stable node IDs.",
       "promotionGate": "The evaluator rejects structural failures and distinguishes meaningful layout niches without one opaque score.",
-      "workDeleted": "Opening every village to decide whether its layout makes sense."
+      "workDeleted": "Opening every village to decide whether its layout makes sense.",
+      "champion": "settlement-evaluator-1-structural"
     },
     {
       "id": "evaluation.raid-space",
@@ -727,21 +1085,135 @@
       "workDeleted": "Saving complete worlds and hand-writing persistence for every generated content type."
     },
     {
+      "id": "content.body-plan-compiler",
+      "name": "Body Plan Compiler",
+      "domain": "content",
+      "outcome": "A versioned anatomy graph resolves a root core and attached modules into one connected labelled structural volume without manual placement.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["research.run-archive"] }
+      ],
+      "verifier": "A standard-library evaluator checks closed manifold topology, occupied-cell connectivity, parent-child contact counts, declared mirror pairs, dimensions, semantic coverage, and deterministic replay; a separate Houdini process reopens and reads back the derived scene.",
+      "challengeSet": "Accepted 11-node explicit-terminal baseline and held-out BodyPlans containing torso, neck, head, paired arms and hands, and paired legs and feet, with realized envelopes of 2.24 m x 2.52 m and 2.66 m x 2.80 m; open boundaries, disconnected modules, overlaps, asymmetric pairs, false contact receipts, and invalid labels.",
+      "failureArtifact": "BodyPlan recipe, composed mesh, occupied cells, placements, contacts, mirror declarations, OBJ diagnostic, verification, hashes, Houdini scene, fresh readback, and adapter report.",
+      "promotionGate": "Baseline and held-out BodyPlans replay twice with identical hashes, pass every structural check, and freshly reopen in Houdini without geometry, semantic, or graph-metadata drift.",
+      "workDeleted": "Hand placing structural body modules and creating a separate coarse mesh for every proportion set.",
+      "champion": "stick-humanoid-body-plan-0",
+      "nativeFit": "The tool-neutral standard-library compiler emits the authoritative coarse volume and graph evidence. Houdini 22.0 is a replaceable materialization adapter. Smooth module substitution, anatomy, deformation topology, guide skeleton, rigging, animation, and visual quality remain unproven."
+    },
+    {
+      "id": "content.body-surface-materializer",
+      "name": "Body Surface Materializer",
+      "domain": "content",
+      "outcome": "An accepted BodyPlan becomes one rounded connected polygon surface with preserved module provenance and labelled actual-mesh previews.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.body-plan-compiler", "research.run-archive"] }
+      ],
+      "verifier": "A standard-library evaluator checks manifold topology, connected components, structural bounds, non-axis-aligned normals, face budget, BodyPlan provenance, native graph parameters, semantic labels, and repeated-build identity after a separate Houdini reopen.",
+      "challengeSet": "Baseline and tall BodyPlans; open surfaces, metadata drift, native-parameter drift, missing module labels, excessive bounds drift, insufficient smoothing, and face-budget excess.",
+      "failureArtifact": "BodyPlan, surface recipe, two native Houdini scenes, fresh mesh/metadata readbacks, verification reports, hashes, OBJ, and labelled front/three-quarter preview.",
+      "promotionGate": "Baseline and held-out surfaces build twice identically, reopen separately, remain one closed component within structural bounds and budget, retain every module label, and visibly replace block stepping with rounded forms.",
+      "workDeleted": "Manually fusing coarse body modules, smoothing their first surface, and recreating evidence images.",
+      "champion": "smooth-mannequin-houdini-vdb-0",
+      "nativeFit": "Houdini 22.0 VDB From Polygons, Smooth SDF, Convert VDB, attribute wrangles, and normals form the current derived graph. The tool-neutral BodyPlan and surface recipe remain authoritative. Current promotion is structural: the output is an ellipsoid mannequin, not accepted anatomy, deformation topology, rigging, animation, or style."
+    },
+    {
+      "id": "content.character-module-composer",
+      "name": "Character Module Composer",
+      "domain": "content",
+      "outcome": "Versioned generated mesh modules join through explicit shared interfaces with measured continuity and preserved semantic labels.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["research.run-archive"] }
+      ],
+      "verifier": "A standard-library evaluator checks source preservation, closed manifold topology, duplicate seams, tangent continuity, realized dimensions, semantic labels, finite geometry, and deterministic replay; a separate Houdini process reopens and reads back the derived scene.",
+      "challengeSet": "Baseline head with short neck; held-out broad-jaw head with longer and wider neck; baseline box parent with three-ring mirrored branches; held-out parent proportions with changed length, taper, and four-ring topology; corrupted topology, duplicate seams, discontinuous tangents, invalid frames, asymmetry, changed labels, and changed socket metadata.",
+      "failureArtifact": "Source mesh, socket recipe, composed mesh, OBJ diagnostic, verification report, hashes, Houdini scene, fresh readback, and adapter report.",
+      "promotionGate": "Both head-neck variants and both mirrored-branch variants replay twice with identical hashes and pass independent structural verification; Houdini materialization must freshly reopen without changing geometry, labels, frames, or socket metadata.",
+      "workDeleted": "Manually welding generated body parts, repairing their first seams, and separately constructing mirrored branches in a DCC.",
+      "champion": "local-frame-mirrored-branches-0",
+      "nativeFit": "The composition recipes and accepted meshes are tool-neutral authority. Houdini 22.0 materializes accepted artifacts as editable native geometry and preserves them on fresh readback. Promotion covers one axial head-to-neck interface and paired branches on opposite X-facing frames; arbitrary body graphs, non-mirrored branches, curved guides, deformation across seams, and visual anatomy remain unproven."
+    },
+    {
+      "id": "content.anatomical-guide-compiler",
+      "name": "Anatomical Guide Compiler",
+      "domain": "content",
+      "outcome": "An accepted BodyPlan becomes one versioned set of named landmarks, skeleton segments, tapered surface segments, torso volumes, and symmetry declarations shared by mesh and rig stages.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.body-plan-compiler", "research.run-archive"] }
+      ],
+      "verifier": "A standard-library evaluator checks required landmarks, segment attachment, landmark containment, exact mirror pairs, positive and tapered radii, BodyPlan provenance, and deterministic replay.",
+      "challengeSet": "Baseline and tall BodyPlans; missing landmarks, detached segments, broken symmetry, invalid radii, absent taper, and provenance drift.",
+      "failureArtifact": "BodyPlan, guide recipe, compiled guide, labelled front/three-quarter preview, verification report, hashes, and provenance receipt.",
+      "promotionGate": "Baseline and held-out guides compile twice identically, respond to proportion changes, and pass every structural guide check.",
+      "workDeleted": "Defining joint positions, segment axes, and volume measurements separately in surface and skeleton tools.",
+      "champion": "humanoid-anatomical-guide-0",
+      "nativeFit": "The guide is tool-neutral JSON authority. Current measurements prove a reusable contract and mechanical consistency, not anatomically final placement, deformation topology, rigging, animation, or style."
+    },
+    {
+      "id": "content.anatomical-surface-materializer",
+      "name": "Anatomical Surface Materializer",
+      "domain": "content",
+      "outcome": "One accepted anatomical guide causally drives a connected tapered mannequin surface with preserved provenance and actual-mesh previews.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.anatomical-guide-compiler", "content.body-surface-materializer", "research.run-archive"] }
+      ],
+      "verifier": "A standard-library evaluator checks closed topology, connectivity, bounds, semantic labels, guide provenance, taper measured from actual mesh vertices, face budget, fresh Houdini readback, and repeated-build identity.",
+      "challengeSet": "Baseline and tall guides; open surfaces, disconnected components, metadata drift, missing labels, false taper, bounds drift, and face-budget excess.",
+      "failureArtifact": "BodyPlan, anatomical guide, surface recipe, two native Houdini scenes, fresh readbacks, verification reports, hashes, OBJ, and labelled front/three-quarter preview.",
+      "promotionGate": "Baseline and held-out anatomical surfaces build twice identically, reopen separately, remain one connected closed surface, preserve guide identity, and exhibit measured distal limb taper.",
+      "workDeleted": "Manually rebuilding mannequin proportions and limb taper after the anatomical guide changes.",
+      "champion": "guide-driven-houdini-anatomical-mannequin-0",
+      "nativeFit": "Houdini 22.0 currently materializes guide ellipsoids and sampled tapered segments through the existing VDB graph. The guide and recipe remain authoritative. Promotion is mechanical: face, hands, final anatomy, deformation topology, rigging, animation, and art style remain unproven."
+    },
+    {
       "id": "content.character-body-factory",
       "name": "Character Body Factory",
       "domain": "content",
-      "outcome": "Machines produce stylized contracted humanoid and creature meshes, materials, topology, proportions, and deformation-ready source files.",
+      "outcome": "Machines produce recognizable, visually coherent contracted humanoid and creature meshes, materials, topology, proportions, and deformation-ready source files without fixing the final visual style.",
       "source": "Build",
       "status": "planned",
       "targetWave": 4,
       "requires": [
-        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
+        { "type": "AND", "machines": ["content.style-contract", "content.anatomical-surface-materializer", "content.character-module-composer", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter", "content.catalog"] }
       ],
       "verifier": "Turntables, silhouette tests, topology/weight readiness, material checks, LOD/performance, and deformation fixtures evaluate bodies.",
       "challengeSet": "Humanoids, quadrupeds, proportion variants, equipment clearance, extreme poses, LODs, and damage/readability distances.",
       "failureArtifact": "Blender source, turntable, contract report, mesh statistics, style dimensions, and deformation capture.",
       "promotionGate": "Bodies are visually coherent, riggable, performant, and replaceable without gameplay-schema changes.",
       "workDeleted": "Manual character and creature modeling."
+    },
+    {
+      "id": "content.guide-skeleton-compiler",
+      "name": "Guide Skeleton Compiler",
+      "domain": "content",
+      "outcome": "The same accepted anatomical guide that drives the body surface becomes a rooted native KineFX guide skeleton without manual joint placement.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.anatomical-guide-compiler", "research.run-archive"] }
+      ],
+      "verifier": "Independent evaluators check required joints, exact landmark positions, hierarchy edges, orthonormal right-handed frames, source-guide identity, deterministic replay, native KineFX attributes, and fresh Houdini readback.",
+      "challengeSet": "Baseline and tall guides; disconnected graphs, missing joints, changed parents, landmark drift, nonorthogonal transforms, and provenance drift.",
+      "failureArtifact": "Anatomical guide, skeleton recipe, compiled skeleton, verification, hashes, labelled preview, native Houdini scene, fresh readback, and adapter report.",
+      "promotionGate": "Baseline and held-out skeletons compile twice identically and their separate KineFX scenes reopen without joint, hierarchy, position, transform, or provenance drift.",
+      "workDeleted": "Manually placing and re-placing the first guide skeleton whenever generated body proportions change.",
+      "champion": "guide-driven-houdini-kinefx-skeleton-0",
+      "nativeFit": "The tool-neutral guide and skeleton recipe remain authoritative. Houdini 22.0 stores the derived skeleton as named points with transform attributes and hierarchy polylines. Controls, joint limits, skinning, deformation quality, retargeting, and animation remain unproven."
     },
     {
       "id": "content.rig-factory",
@@ -752,7 +1224,7 @@
       "status": "planned",
       "targetWave": 4,
       "requires": [
-        { "type": "AND", "machines": ["content.character-body-factory", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter"] }
+        { "type": "AND", "machines": ["content.character-body-factory", "content.guide-skeleton-compiler", "content.skin-capture-generator", "content.deformation-pose-suite", "content.bounded-motion-sequence", "tool.blender-operator", "tool.unreal-content-importer", "content.asset-intake-linter"] }
       ],
       "verifier": "Bone hierarchy, orientations, weights, deformation poses, IK targets, sockets, retargeting, and cost checks validate each rig.",
       "challengeSet": "Shared humanoid rigs, proportion extremes, quadrupeds, equipment sockets, ground contact, and malformed weights.",
@@ -762,22 +1234,80 @@
       "nativeFit": "Adapt: Blender Python may generate and skin standard source rigs; Unreal IK Rig/IK Retargeter should own cross-proportion animation reuse and contact-aware retargeting. Start with one shared humanoid family, not one rig per generated character."
     },
     {
+      "id": "content.skin-capture-generator",
+      "name": "Skin Capture Generator",
+      "domain": "content",
+      "outcome": "An accepted generated surface binds to its guide-derived skeleton and responds to a diagnostic joint pose without manual weight painting.",
+      "source": "Adapt",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.anatomical-surface-materializer", "content.guide-skeleton-compiler", "research.run-archive"] }
+      ],
+      "verifier": "Independent checks cover rest-surface preservation, capture coverage, normalized weights, maximum influences, left/right isolation, exact provenance, intended-limb displacement, protected-module stability, tenth-percentile elbow thickness retention, labelled actual-mesh previews, and fresh Houdini readback; a separate comparator holds mesh, skeleton, and pose fixed between capture methods.",
+      "challengeSet": "Baseline and tall bodies; proximity and biharmonic capture; raw five-influence biharmonic output; missing arrays, unnormalized weights, excessive influences, cross-side leakage, surface drift, input drift, inactive diagnostic pose, protected movement, and bend collapse.",
+      "failureArtifact": "Surface and skeleton inputs, capture recipes, native Houdini scenes, unpacked capture arrays, verification, dominant-weight previews, actual posed-mesh previews, displacement and thickness metrics, and labelled champion-challenger comparison.",
+      "promotionGate": "Both body proportions capture without code changes, every vertex has normalized weights with at most four influences, no side leakage occurs, protected modules remain fixed, and the challenger retains at least 88% tenth-percentile elbow thickness while improving over proximity by at least five points on baseline and held-out bodies.",
+      "workDeleted": "Manual first-pass weight painting and visual-only proof that generated geometry can be bound and deformed.",
+      "champion": "houdini-kinefx-biharmonic-capture-0",
+      "nativeFit": "Houdini 22.0 Joint Capture Biharmonic, Capture Correct, Capture Attribute Unpack, and Joint Deform form the current native graph. Four-influence biharmonic capture retains 91.2% and 92.6% tenth-percentile elbow thickness on baseline and held-out bodies, materially outperforming proximity. Promotion covers automated binding and one bend fixture only; knees, shoulders, twists, extreme poses, topology, controls, retargeting, and animation remain unproven."
+    },
+    {
+      "id": "content.deformation-pose-suite",
+      "name": "Deformation Pose Suite",
+      "domain": "content",
+      "outcome": "One captured generated body is automatically posed and measured at its elbow, knee, shoulder, hip, and waist without recapturing or manual inspection.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.skin-capture-generator", "research.run-archive"] }
+      ],
+      "verifier": "An independent evaluator measures intended module motion, strict protected-module stability, bounded adjacent seam motion, tenth-percentile surface thickness around each joint, pose coverage, and labelled previews derived from the actual deformed mesh.",
+      "challengeSet": "Baseline and tall bodies; elbow flex, knee flex, shoulder raise, hip flex, and torso twist; missing poses, inactive joints, protected movement, excessive transition leakage, and local thickness collapse.",
+      "failureArtifact": "Versioned pose suite, captured native Houdini scene, five posed skeletons and deformed surfaces, per-pose displacement and thickness metrics, labelled preview, and failed evaluator revisions.",
+      "promotionGate": "All five poses pass their declared thickness, active-motion, strict-protection, and seam-transition thresholds on baseline and held-out proportions without recapturing the skin.",
+      "workDeleted": "Manually posing and visually checking each generated body before deciding whether weights, topology, or helper joints need work.",
+      "champion": "biharmonic-major-joint-pose-suite-0",
+      "nativeFit": "Houdini 22.0 reuses one captured skin across five Joint Deform branches driven by tool-neutral pose recipes. Baseline/tall retention is elbow 91.2/92.6%, knee 89.9/89.3%, shoulder 91.9/90.2%, hip 90.4/87.7%, and twist 97.9/98.0%. Static isolated poses are proven; joint limits, controls, sequences, contacts, self-intersection, animation curves, and runtime behavior remain unproven."
+    },
+    {
+      "id": "content.bounded-motion-sequence",
+      "name": "Bounded Motion Sequence Compiler",
+      "domain": "content",
+      "outcome": "Versioned joint limits and editable motion curves generate complete skeleton frames and one replayable native Houdini deformation timeline without manual keyframing.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 4,
+      "requires": [
+        { "type": "AND", "machines": ["content.guide-skeleton-compiler", "content.skin-capture-generator", "content.deformation-pose-suite", "research.run-archive"] }
+      ],
+      "verifier": "Independent standard-library checks validate joint coverage, finite ranges, mirror symmetry, pose-suite containment, curve interpolation, limit compliance, continuity, rest endpoints, exact skeleton replay, surface topology, native skeleton positions, provenance, and duplicate fresh-scene readback.",
+      "challengeSet": "Baseline and tall proportions; mirrored joint controls; coordinated shoulder, elbow, hip, knee, and waist tracks; missing joints, asymmetric mirrors, out-of-range keys, modified frames, topology drift, skeleton drift, inactive motion, discontinuity, endpoint drift, and provenance corruption.",
+      "failureArtifact": "Joint-limit and motion recipes, compiled limits and skeleton frames, receipts, verifier reports, two derived Houdini scenes and readbacks, native timeline node graph, and labelled actual-mesh filmstrip.",
+      "promotionGate": "Baseline and held-out proportions compile twice identically; both native Houdini timelines reopen twice with identical readbacks, preserve rest topology and endpoints, reproduce every skeleton frame, and show bounded nonzero surface motion.",
+      "workDeleted": "Manually entering joint ranges, keyframing the first generated motion proof, and visually guessing whether the DCC followed the source curves.",
+      "champion": "tool-neutral-limits-curves-houdini-kinefx-sequence-0",
+      "nativeFit": "Tool-neutral recipes own limits, timing, curves, and skeleton frames. Houdini 22.0 materializes 13 generated skeleton states through a frame-driven Switch SOP and one Joint Deform node. Baseline and tall bodies return exactly to rest, replay identically, and reach 0.693 m and 0.803 m peak surface motion. This proves a bounded source-motion sequence, not anatomy-final limits, animator controls, contacts, balance, self-intersection, locomotion, retargeting, visual quality, Unreal import, or runtime behavior."
+    },
+    {
       "id": "evaluation.motion-mechanical",
       "name": "Mechanical Motion Evaluator",
       "domain": "evaluation",
       "outcome": "Animation candidates are checked for skeleton validity, timing, root motion, contacts, foot sliding, reach, penetration, and gameplay events.",
       "source": "Build",
-      "status": "planned",
+      "status": "active",
       "targetWave": 4,
       "requires": [
         { "type": "AND", "machines": ["content.rig-factory", "runtime.combat-simulation", "tool.unreal-content-importer"] }
       ],
-      "verifier": "The current positive observer proves native hierarchy, scale, duration, sampled keys, and root path from one imported style-neutral clip, and records missing Unreal notify transport explicitly. Known-good and deliberately broken evaluator fixtures remain required before promotion.",
-      "challengeSet": "Idle, locomotion, turns, dodge, hit, death, light/heavy attacks, slopes, target heights, and proportion variants.",
+      "verifier": "A separate standard-library policy evaluator consumes the authoritative motion manifest and Unreal-native import report. Native component-space poses falsified neutral-step v1 at 50 cm planted-foot drift per stance; repaired v2 passes both stances at 0 cm. Isolated missing-bone, wrong-duration, wrong-root-path, missing-event, and shifted-planted-foot counterexamples fail for their intended rules.",
+      "challengeSet": "One repaired native positive clip; its falsified sliding predecessor; isolated missing bone, wrong duration, wrong root path, missing contact event, and 10 cm planted-foot shift; later idle, locomotion, turns, dodge, hit, death, light/heavy attacks, slopes, target heights, retargeted proportions, and runtime terrain response.",
       "failureArtifact": "Clip/rig versions, event timeline, bone traces, contact errors, root path, and test-arena replay.",
       "promotionGate": "No clip reaches visual evaluation or the catalog with a mechanical hard failure.",
       "workDeleted": "Manually inspecting every generated animation for technical correctness.",
-      "nativeFit": "Build only the policy and evidence adapter: read imported Unreal animation sequence, skeleton, root, contact, notify, and timing data; do not build a custom playback or retargeting runtime. Current gap: Blender timeline contact markers remain source evidence but FBX produces zero Unreal notifies, so a versioned event adapter or rejection rule is still required."
+      "champion": "motion-mechanical-2-native-foot-contact",
+      "nativeFit": "The policy reads Unreal-native hierarchy, timing, root, and component-space foot evidence without building a custom playback or retargeting runtime. Gameplay contact frames use a versioned source-manifest sidecar because FBX imports zero Unreal notifies. The single source-rig gait now proves planted-foot drift; runtime sidecar consumption, retargeted contact, terrain response, reach, penetration, deformation, combat timing, and cost remain unproven."
     },
     {
       "id": "evaluation.motion-visual",
@@ -1019,6 +1549,23 @@
       "workDeleted": "Opening every world live to decide whether it looks natural, interesting, readable, or repetitive."
     },
     {
+      "id": "evaluation.face-sculpt",
+      "name": "Face Sculpt Evaluator",
+      "domain": "evaluation",
+      "outcome": "Blind paired evaluation records front-reference likeness separately from three-dimensional plausibility, visual coherence, and individual character without treating one realism or proportion style as globally required.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator", "research.run-archive"] }
+      ],
+      "verifier": "Opposite-order evaluator ballots plus a held-out mechanically valid anatomy counterexample; target-matched body-contour and facial-feature receipts independently rank bounded candidates without raster appearance inputs; fresh reopen rejects hidden landmark mappings and additive duplicate shape keys.",
+      "challengeSet": "Front-only reference ambiguity, label-order bias, projection cheats, generic smoothing, unintended age or proportion drift relative to the declared target, plausible ties, reference/mesh anchor-semantic mismatch, control-region extrema that are not visible landmarks, hidden rear vertices, Blender target-name collisions, annotation provenance, uncertainty margins, and evaluator leakage from an undeclared visual style.",
+      "failureArtifact": "Packages, renders, ballots, disagreement, evaluator versions, verbatim annotations, geometry receipts, scene locks, invalidated incidents, selection arithmetic, and implicated candidate IDs.",
+      "promotionGate": "Both blind evaluators reject held-out failures and agree on hidden champion comparisons without claiming unsupported profile likeness.",
+      "workDeleted": "Unaided subjective claims that a face became closer."
+    },
+    {
       "id": "evaluation.layered-record",
       "name": "Layered World Evaluation Record",
       "domain": "evaluation",
@@ -1034,6 +1581,59 @@
       "failureArtifact": "The immutable evaluation record itself plus referenced raw evidence.",
       "promotionGate": "A failed candidate identifies its layer and next experiment; no missing metric is silently treated as zero.",
       "workDeleted": "Opaque pass/fail decisions and rewatching runs to diagnose failures."
+    },
+    {
+      "id": "research.face-sculpt-search",
+      "name": "Face Sculpt Search",
+      "domain": "research",
+      "outcome": "Named Blender facial axes iteratively produce, evaluate, narrow, and preserve champion/challenger face sculpts.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["evaluation.face-sculpt", "tool.blender-operator", "research.promotion-gate", "research.run-archive"] }
+      ],
+      "verifier": "Replay the bounded run from initial candidate through every proposal, ballot, step update, macro and feature receipt, measured response calibration, invalidated metric or annotation, and retained, nominated, or review-only decision.",
+      "challengeSet": "Bounds, ties, evaluator disagreement, coupled controls, minimum steps, invalid Blender output, interrupted runs, local optima, controls whose target lies outside the tested span, nonresponsive semantic landmarks, additive duplicate targets, and changes smaller than annotation uncertainty.",
+      "failureArtifact": "Complete run state, candidate recipes, Blender logs, manifests, renders, ballots, semantic measurements, incidents, and promotion or retention decisions.",
+      "promotionGate": "The final candidate is reproducible, passes hard checks, beats the initial champion in opposite-order held-out audits, and receives later human approval.",
+      "workDeleted": "Manual parameter guessing, unrecorded sculpt iteration, and reconstructing generator training evidence after the experiment."
+    },
+    {
+      "id": "research.front-relief-fit",
+      "name": "Front Relief Fit",
+      "domain": "research",
+      "outcome": "An explicit front silhouette and relative-depth raster mold one closed fixed-topology mesh while preserving connectivity and the unconditioned rear.",
+      "source": "Build",
+      "status": "verified",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["content.style-contract", "tool.blender-operator"] }
+      ],
+      "verifier": "Fresh Blender reopen measures front silhouette IoU, named facial depth ordering, topology identity, rear preservation, finite coordinates, positive face area, and maximum edge stretch.",
+      "challengeSet": "Balanced, broad, and crooked front masks; over-smoothed landmarks; over-retained sharp depth; additive shape-key composition; silhouette discontinuities; and technically valid but anatomically implausible profiles.",
+      "failureArtifact": "Input raster, recipe and tool hashes, blend, fixed-camera renders, per-feature depth deltas, topology and stretch metrics, and explicit mechanical and visual decisions.",
+      "promotionGate": "One fixed recipe passes all mechanical gates on balanced, broad, and crooked inputs; production-head suitability remains explicitly outside this narrow contract.",
+      "workDeleted": "Manual front silhouette tracing and unaudited guesses that a shallow fitted mask preserved usable topology.",
+      "champion": "picture-to-mesh-mask-v8"
+    },
+    {
+      "id": "research.anatomical-front-fit",
+      "name": "Anatomical Front Fit",
+      "domain": "research",
+      "outcome": "A versioned front-reference package produces a fresh editable anatomical Blender head, fixed views, geometry receipt, and separate mechanical and visual decisions with one local command.",
+      "source": "Build",
+      "status": "active",
+      "targetWave": 1,
+      "requires": [
+        { "type": "AND", "machines": ["evaluation.face-sculpt", "tool.blender-operator", "research.front-relief-fit"] }
+      ],
+      "verifier": "Separate Blender processes build, reopen, and measure the candidate; the orchestrator binds all input and output hashes while visual review remains an independent decision.",
+      "challengeSet": "Missing or changed source inputs, existing run IDs, invalid candidate recipes, failed Blender stages, feature-ratio misses, mechanically valid but visibly unlike heads, and unsupported profile claims from one front image.",
+      "failureArtifact": "Immutable contract, run record, stage logs, blend, three renders, feature receipt, mechanical result, visual review, and next isolated experiment.",
+      "promotionGate": "Held-out front references compile new bounded control recipes that pass mechanical gates and independent visual comparison; replaying an existing recipe alone cannot promote the machine.",
+      "workDeleted": "Manual reconstruction of how one front-derived face candidate was built, reopened, measured, and rejected.",
+      "champion": "style-presentation-v5"
     },
     {
       "id": "research.quality-diversity-archive",
@@ -1107,7 +1707,7 @@
       "id": "research.autonomous-living-world-researcher",
       "name": "Autonomous Living World Researcher",
       "domain": "research",
-      "outcome": "A bounded brief repeatedly yields reproducible, diverse, playable stylized worlds with coherent environments, settlements, bases, species, inhabitants, assets, motion, simulations, diagnostics, and promoted champions.",
+      "outcome": "A bounded brief repeatedly yields reproducible, diverse, playable worlds with coherent environments, settlements, bases, species, inhabitants, assets, motion, simulations, diagnostics, and promoted champions while the final visual style remains replaceable.",
       "source": "Build",
       "status": "planned",
       "targetWave": 6,

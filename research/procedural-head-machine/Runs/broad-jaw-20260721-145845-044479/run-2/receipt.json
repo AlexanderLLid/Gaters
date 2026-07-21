@@ -1,0 +1,9 @@
+{
+  "compiler": "head-compiler/0",
+  "mesh_sha256": "61849e061ebb737df6ba64bd0c742d761544d0e30d9b394bf9651e05dd6e2dca",
+  "python": "3.10.10",
+  "recipe_sha256": "c3d7d2104a46b75c5d84263a898a03b1b80224b4e6b012793dd63842dec8ed87",
+  "schema": "head-receipt/0",
+  "topology_sha256": "60ae50e52c54ae03b787822d29ba90c8c3b69c86fce45f582e529b4f91a8d09c",
+  "verifier": "head-verifier/0"
+}

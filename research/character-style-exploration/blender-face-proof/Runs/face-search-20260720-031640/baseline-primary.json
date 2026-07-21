@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "evaluatorId": "primary",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "You are the PRIMARY independent baseline face-sculpt evaluator for run face-search-20260720-031640. Read-only: do not edit any file. Use view_image at original detail to inspect the approved target front Reference/painted-a-front-flat-v2.png and the current champion views Derived/sculpt-v13/front.png, three-quarter.png, and profile.png. Compare target directly with champion front; use 3/4 and profile only to reject anatomy regressions. Ignore lighting, skin color, hair, eyebrows, texture, and presentation quality completely. Judge only skull/facial silhouette, feature placement and projection, age structure, asymmetry, anatomical continuity, grounded mature geometry, and individual character. The only selectable axes are: head_width, head_height, jaw_taper, chin_projection, nose_width, nose_length, nose_projection, eye_spacing, cheek_definition, lip_volume, eye_bag. Do not infer or request parameter values. Return only the requested JSON baseline diagnosis. Rank only effects those axes can actually change. Do not promote anything.",
+  "response": {
+    "evaluatorId": "primary",
+    "modelIdentity": "gpt-5.6-terra",
+    "rankedMismatches": [
+      {"axis": "jaw_taper", "severity": "high", "reason": "Champion narrows into a pointed lower face; target keeps a broader, more squared jaw and chin base."},
+      {"axis": "nose_length", "severity": "high", "reason": "Champion nose reads visibly longer from bridge to tip than the target's compact nose."},
+      {"axis": "nose_projection", "severity": "high", "reason": "Profile shows the champion nose projecting too far forward relative to the target's more restrained mature profile."},
+      {"axis": "eye_spacing", "severity": "medium", "reason": "Champion eyes sit too widely apart, weakening the target's tighter central facial grouping."},
+      {"axis": "nose_width", "severity": "medium", "reason": "Champion nasal base and tip are narrower than the target's broader, rounder nose."},
+      {"axis": "cheek_definition", "severity": "medium", "reason": "Champion has overly linear hollow cheek transitions; target has grounded but softer cheek volume."}
+    ],
+    "unavailableGeometryGaps": [
+      "Brow ridge, forehead planes, and orbital/eyelid shapes do not match the target and are not selectable axes.",
+      "Mouth width, lip corner shape, philtrum, and nasolabial transitions need geometry unavailable through the configured axes.",
+      "Ear shape and placement differ from the target and are unavailable."
+    ],
+    "mostImportantError": "The champion's strongly tapered, pointed lower face misses the target's broad, mature jaw-and-chin silhouette.",
+    "recommendedAxis": "jaw_taper"
+  }
+}

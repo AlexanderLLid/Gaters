@@ -1,0 +1,170 @@
+{
+  "cell_size_m": 0.14,
+  "id": "stick-humanoid",
+  "nodes": [
+    {
+      "id": "torso",
+      "role": "core",
+      "size_cells": [
+        6,
+        2,
+        6
+      ]
+    },
+    {
+      "attach": "+z",
+      "id": "neck",
+      "offset_cells": [
+        0,
+        0
+      ],
+      "parent": "torso",
+      "role": "core",
+      "size_cells": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "attach": "+z",
+      "id": "head",
+      "offset_cells": [
+        0,
+        0
+      ],
+      "parent": "neck",
+      "role": "head",
+      "size_cells": [
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "attach": "-x",
+      "id": "left_arm",
+      "offset_cells": [
+        0,
+        1
+      ],
+      "parent": "torso",
+      "role": "limb",
+      "size_cells": [
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "attach": "+x",
+      "id": "right_arm",
+      "mirror_of": "left_arm",
+      "offset_cells": [
+        0,
+        1
+      ],
+      "parent": "torso",
+      "role": "limb",
+      "size_cells": [
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "attach": "-x",
+      "id": "left_hand",
+      "offset_cells": [
+        0,
+        0
+      ],
+      "parent": "left_arm",
+      "role": "limb",
+      "size_cells": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "attach": "+x",
+      "id": "right_hand",
+      "mirror_of": "left_hand",
+      "offset_cells": [
+        0,
+        0
+      ],
+      "parent": "right_arm",
+      "role": "limb",
+      "size_cells": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "attach": "-z",
+      "id": "left_leg",
+      "offset_cells": [
+        -2,
+        0
+      ],
+      "parent": "torso",
+      "role": "limb",
+      "size_cells": [
+        2,
+        2,
+        5
+      ]
+    },
+    {
+      "attach": "-z",
+      "id": "right_leg",
+      "mirror_of": "left_leg",
+      "offset_cells": [
+        2,
+        0
+      ],
+      "parent": "torso",
+      "role": "limb",
+      "size_cells": [
+        2,
+        2,
+        5
+      ]
+    },
+    {
+      "attach": "-z",
+      "id": "left_foot",
+      "offset_cells": [
+        0,
+        1
+      ],
+      "parent": "left_leg",
+      "role": "limb",
+      "size_cells": [
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "attach": "-z",
+      "id": "right_foot",
+      "mirror_of": "left_foot",
+      "offset_cells": [
+        0,
+        1
+      ],
+      "parent": "right_leg",
+      "role": "limb",
+      "size_cells": [
+        2,
+        4,
+        1
+      ]
+    }
+  ],
+  "schema": "body-plan/0"
+}

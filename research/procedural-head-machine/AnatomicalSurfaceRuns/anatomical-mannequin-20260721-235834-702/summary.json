@@ -1,0 +1,13 @@
+{
+  "body_plan_id": "stick-humanoid",
+  "clay_preview": "AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-235834-702\\clay-preview.png",
+  "passed": true,
+  "preview": "AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-235834-702\\preview.png",
+  "runs": [
+    "AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-235834-702\\run-1",
+    "AnatomicalSurfaceRuns\\anatomical-mannequin-20260721-235834-702\\run-2"
+  ],
+  "schema": "smooth-body-run-summary/0",
+  "surface_id": "anatomical-mannequin",
+  "surface_sha256": "931c447e6de9798f0ef833c39c84eb7dc0f7b2fe2beb245e6e63e6958acc4de5"
+}

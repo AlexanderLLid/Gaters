@@ -1,0 +1,142 @@
+{
+  "allLowReplay": {
+    "axis": "feature_grid",
+    "candidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a",
+    "direction": "grid",
+    "featureControls": {
+      "sha256": "4f38d27f641f1112ca965da109b84df8cb57eab49e3af2d9f4c444d8993e3206",
+      "values": {
+        "eye_aperture": 0.0,
+        "nose_length": 0.3,
+        "nose_width": 0.26
+      }
+    },
+    "parameters": {
+      "cheek_definition": 0.36,
+      "chin_projection": -0.12,
+      "eye_bag": 0.44,
+      "eye_spacing": 0.0,
+      "head_height": 0.0,
+      "head_width": -0.08,
+      "jaw_taper": 0.0,
+      "lip_volume": 0.08,
+      "nose_length": 0.3,
+      "nose_projection": 0.14,
+      "nose_width": 0.26
+    },
+    "parentId": "eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b",
+    "round": 8
+  },
+  "candidateCount": 8,
+  "grid": {
+    "eye_aperture": [
+      0.0,
+      0.12
+    ],
+    "nose_length": [
+      0.3,
+      0.37
+    ],
+    "nose_width": [
+      0.26,
+      0.33
+    ]
+  },
+  "humanAcceptance": false,
+  "minimumImprovementMargin": 0.02,
+  "parentCandidate": {
+    "axis": "macro_grid",
+    "candidateId": "eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b",
+    "direction": "grid",
+    "parameters": {
+      "cheek_definition": 0.36,
+      "chin_projection": -0.12,
+      "eye_bag": 0.44,
+      "eye_spacing": 0.0,
+      "head_height": 0.0,
+      "head_width": -0.08,
+      "jaw_taper": 0.0,
+      "lip_volume": 0.08,
+      "nose_length": 0.3,
+      "nose_projection": 0.14,
+      "nose_width": 0.26
+    },
+    "parentId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+    "round": 7
+  },
+  "purpose": "Task 8 deterministic feature geometry grid",
+  "recipeHashes": {
+    "7dffbc94a2f7741363b767459ce2c9b4e9261ebd0ae88623ce86baf4bb4fa2d3": "aa99a451cf4e273215f106595ffb2cb762f80d802351d1d4302ce942c630070c",
+    "7ed003f199f912325136ef9a55a5ec4e5cb8f7d3aa8abeac9710f560578c653d": "97d172512478bdfdf6785ea01483f2149139c12e299a04d86a4c2f054924cfeb",
+    "95d0a968d5665545ec4a087cec651494ca380a8b3a4801f07a77f4e25451387d": "7debec8b84090e32a2c28452c6dbb0016b2bffe9f69b915f81b5866ad6eeb9be",
+    "99f640f49d80237ab187ffa1195f8f3fee1214b894b498386c3b61465f51bb01": "873d83e8bb247d026fe5b23d3201ccec535a1026519f04caf72235d79c88b4f3",
+    "e2fd4f12963b0498490680f359f37fb63c424ebd1693c624b25b30bf7d392d81": "42529e8d0a670f7b931fb7809ef135d1cbee04b9697964eb5fc88dc9a7744aa7",
+    "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a": "56146baa9c5a9db9193c9c08d843780b7b0bf6c9152e6bddd2752eaa508ec326",
+    "f0927e6a81b29a56ee9ccb150ae95929032fd7d92dfbcb8f5fd46d11bb2cf534": "87ab24314339c58152a385863d2a3c48da70c12aeaff80134b60554a4f68f15f",
+    "f3d18cb55b4f03a2575d5e81c51e3e40943c0914eeee45d3a9dc571957fec598": "3708a69aee28329737107c45eab519e627fc235a2762c09c858398e04bc36499"
+  },
+  "runId": "feature-grid-20260720-090000",
+  "schemaVersion": 1,
+  "selectionRule": "Nominate only a feature-only geometry score improving the all-low replay by the declared margin while preserving Task 7 macro ratios and all fresh hard gates.",
+  "status": "initialized",
+  "targetAnnotation": {
+    "annotationMethod": "Manual original-resolution points mark exposed upper and lower lid margins, nasion, subnasale, and alare; lashes, brows, bags, shadows, texture, and nostril darkness are excluded.",
+    "image": {
+      "path": "Reference/painted-a-front-flat-v2.png",
+      "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "points": {
+      "leftAlare": [
+        549,
+        596
+      ],
+      "leftEyeCenter": [
+        510,
+        432
+      ],
+      "leftLowerLid": [
+        510,
+        454
+      ],
+      "leftUpperLid": [
+        510,
+        414
+      ],
+      "nasion": [
+        624,
+        470
+      ],
+      "rightAlare": [
+        702,
+        596
+      ],
+      "rightEyeCenter": [
+        739,
+        430
+      ],
+      "rightLowerLid": [
+        739,
+        453
+      ],
+      "rightUpperLid": [
+        739,
+        414
+      ],
+      "subnasale": [
+        624,
+        619
+      ]
+    },
+    "ratios": {
+      "alarWidth": 0.6681222707423581,
+      "eyeAperture": 0.17248908296943233,
+      "noseLength": 0.6506550218340611
+    },
+    "schemaVersion": 1,
+    "uncertainty": "Each painted margin is uncertain by roughly three pixels. The score compares only the three declared front-supported distances and requires a material margin; it is not a likeness or profile claim."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-032234",
+  "stopCondition": "stopAfterDisagreement",
+  "configuredThreshold": 3,
+  "completedRounds": 3,
+  "promotions": 0,
+  "noPromotionCount": 3,
+  "disagreementCount": 3,
+  "championCandidateId": "9e7d3f47b84eb6eb3f015cd078dfbdab6747321a49f832b47746a7990f618c44",
+  "championIdentity": "sculpt-v13 initial vector",
+  "causalEvidence": [
+    "Round 1 opposite-order ballots both chose screen-left, resolving to opposite jaw_taper candidates; both confidence values were 0.58.",
+    "Round 2 opposite-order ballots both chose screen-left, resolving to opposite head_width candidates; confidence values were 0.57 and 0.54.",
+    "Round 3 primary chose one cheek candidate at 0.54 while audit returned tie at 0.70.",
+    "No ballot pair met physical-candidate agreement plus confidence threshold, so root-owned verifier receipts never authorized promotion."
+  ],
+  "diagnosis": "The current agent evaluator can describe large missing facial structures but is not reliable enough to rank the available subtle one-axis variations. Reversed ordering exposed position sensitivity. The search therefore cannot claim that the initial champion is optimal or close to the target.",
+  "runState": {"path": "Runs/face-search-20260720-032234/run.json", "sha256": "621e5b75109d39396c1475b61053292d61e481924ef84fb03c14f37594bca60b"},
+  "roundBallotHashes": [
+    "a36d506aaa7e2c3c75dac088a7f272af9788029f288047e37b2920c3d39ce684",
+    "4e401b768b75a9ebebe1cf6b5481ba6e15d9e3cec4fe8fb6e63709acea912c95",
+    "17df782c9c6e15322868eb7dce6faea4eb81b00c458eaa219b404b79d07353e7"
+  ],
+  "humanAcceptance": false
+}

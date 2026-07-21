@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "machineResultSha256": "73031b5a43fc1ba46e1c69aa8259c3ed3de3089db449768ecdbc07e335ff24ef",
+  "decision": "reject",
+  "mechanicalDecision": "pass",
+  "visualDecision": "reject",
+  "humanAcceptance": false,
+  "strengths": [
+    "editable anatomical topology",
+    "view-independent head with plausible profile",
+    "reproducible three-view evidence"
+  ],
+  "failures": [
+    "skull is too tall and round",
+    "jaw is too narrow and tapered",
+    "eye apertures remain pinched",
+    "nose and mouth remain generic relative to the reference"
+  ],
+  "nextIsolatedExperiment": "Compile front semantic landmarks into bounded anatomical control proposals, then search them against geometry gates before visual review."
+}

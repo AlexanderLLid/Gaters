@@ -447,7 +447,7 @@ bool FGatersEnvironmentBaseSiteTest::RunTest(const FString& Parameters)
 		{
 			continue;
 		}
-		TestTrue(TEXT("site is outside the Gate clearing"), Site.Size() >= TestChunkSize * 0.20f);
+		TestTrue(TEXT("site is outside the arrival clearing"), Site.Size() >= TestChunkSize * 0.20f);
 		TestTrue(TEXT("site remains inside the generated chunk"), Site.Size() <= TestChunkSize * 0.36f + 1.f);
 		TestTrue(TEXT("site footprint fits the foundation-drop rule"),
 			Environment.FootprintDrop(Site, 900.f) <= 350.f);

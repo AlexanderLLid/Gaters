@@ -1,0 +1,25 @@
+{
+  "schema": "anatomical-guide-recipe/0",
+  "id": "humanoid-guide",
+  "torso_sections": {
+    "pelvis": {"z_fraction": 0.14, "width_fraction": 0.76, "depth_fraction": 1.12, "height_fraction": 0.28},
+    "abdomen": {"z_fraction": 0.42, "width_fraction": 0.66, "depth_fraction": 1.02, "height_fraction": 0.32},
+    "chest": {"z_fraction": 0.70, "width_fraction": 0.88, "depth_fraction": 1.18, "height_fraction": 0.45}
+  },
+  "head_sections": {
+    "cranium": {"z_fraction": 0.65, "radii_fraction": [0.78, 1.00, 0.70]},
+    "lower_face": {"z_fraction": 0.38, "radii_fraction": [0.74, 0.90, 0.55]},
+    "jaw": {"z_fraction": 0.16, "radii_fraction": [0.62, 0.78, 0.30]}
+  },
+  "deltoid_radius_scale": [0.78, 0.72, 0.90],
+  "hand_radius_scale": [0.92, 0.82, 0.58],
+  "foot_radius_scale": [0.95, 0.95, 0.72],
+  "neck_radius_fraction": 0.38,
+  "arm_elbow_fraction": 0.52,
+  "arm_wrist_fraction": 0.94,
+  "arm_radius_profile": [0.92, 0.72, 0.52],
+  "leg_knee_fraction": 0.52,
+  "leg_ankle_fraction": 0.95,
+  "leg_radius_profile": [1.08, 0.78, 0.55],
+  "segment_samples": 5
+}

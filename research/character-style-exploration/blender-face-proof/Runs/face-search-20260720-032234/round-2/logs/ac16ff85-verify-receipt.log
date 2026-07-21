@@ -1,0 +1,6 @@
+SCULPT_VERIFY_OK views=3 size=768x768 projection=false editable=SculptDirect armature=false animation=false
+sourceLog=Runs/face-search-20260720-032234/round-2/logs/ac16ff85-verify.log
+sourceLogSha256=8a19c5ac751695f7e0933cdbd11aebfc340c02fc8a5e23640d041630db022deb
+sourceLogEncoding=utf-16le
+blenderExit=0
+markerConfirmed=true

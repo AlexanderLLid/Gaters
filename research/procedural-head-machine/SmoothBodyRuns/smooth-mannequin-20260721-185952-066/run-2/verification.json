@@ -1,0 +1,13 @@
+{
+  "failures": [],
+  "metrics": {
+    "connected_components": 1,
+    "faces": 12713,
+    "manifold_edges": 24864,
+    "max_bounds_error_m": 0.055168599486351,
+    "non_axial_face_fraction": 0.9927633131440258,
+    "vertices": 12153
+  },
+  "passed": true,
+  "schema": "smooth-body-verification/0"
+}

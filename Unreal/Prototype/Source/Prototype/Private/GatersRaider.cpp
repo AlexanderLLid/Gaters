@@ -1,4 +1,5 @@
 #include "GatersRaider.h"
+#include "GatersDebugMessages.h"
 
 #include "AIController.h"
 #include "Components/CapsuleComponent.h"
@@ -185,12 +186,12 @@ void AGatersRaider::Finish(bool bSuccess, const TCHAR* Why)
 		FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), FILEWRITE_Append);
 
 	UE_LOG(LogTemp, Display, TEXT("[GatersRaider] RAID %s"), *Line);
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 30.f, bSuccess ? FColor::Green : FColor::Red,
-			FString::Printf(TEXT("RAID %s why=%s time=%.1fs broken=%d"),
-				bSuccess ? TEXT("SUCCESS") : TEXT("FAIL"), Why, Elapsed, Broken));
-	}
+	FGatersDebugMessages::Show(
+		FGatersDebugMessages::RaidKey,
+		30.f,
+		bSuccess ? FColor::Green : FColor::Red,
+		FString::Printf(TEXT("RAID %s why=%s time=%.1fs broken=%d"),
+			bSuccess ? TEXT("SUCCESS") : TEXT("FAIL"), Why, Elapsed, Broken));
 	GetCharacterMovement()->DisableMovement();
 	SetLifeSpan(5.f);
 }

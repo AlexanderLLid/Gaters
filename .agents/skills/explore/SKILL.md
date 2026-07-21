@@ -13,7 +13,7 @@ active throughout.
 
 - Pin the question: a `questions.md` #N, or state the topic as one sharp question.
 - Read what it touches: the owning sections of `world.md` / `systems.md` (and
-  `gate-physics.md` if physics-adjacent), their `Why / rejected` blocks, and the
+  `rift-rules.md` if Rift-adjacent), their `Why / rejected` blocks, and the
   question's entry. Don't re-litigate what's already decided — build on it, or surface
   the conflict explicitly and ask.
 

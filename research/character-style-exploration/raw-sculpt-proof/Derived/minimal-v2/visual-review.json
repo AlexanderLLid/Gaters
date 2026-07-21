@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "decision": "reject",
+  "reason": "The continuous sphere removes seams but preserves an egg-shaped, childish head with insufficient anatomical structure; the result violates ART-1.",
+  "next": "Start from a statistical anatomical head model rather than procedural primitives."
+}

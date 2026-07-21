@@ -1,0 +1,7 @@
+{
+  "schema": "skin-capture-comparison-recipe/0",
+  "id": "elbow-bend-capture-comparison",
+  "minimum_thickness_ratio_p10": 0.88,
+  "minimum_improvement": 0.05,
+  "maximum_influences": 4
+}

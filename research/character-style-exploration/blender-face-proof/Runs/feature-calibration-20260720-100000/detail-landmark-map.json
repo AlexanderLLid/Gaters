@@ -1,0 +1,73 @@
+{
+  "candidateBlend": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\feature-calibration-20260720-100000\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\face-sculpt.blend",
+    "sha256": "4a2d86111beb677e24eaee3d7428a12cfd0da9b068550c6e44f71ce5616f5c50"
+  },
+  "candidateId": "9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8",
+  "distances": {
+    "leftEyeInnerCorner": {
+      "cameraDepth": 1.0223723649978638,
+      "pixelDistance": 1.0402654090349661
+    },
+    "leftEyeOuterCorner": {
+      "cameraDepth": 1.0245542526245117,
+      "pixelDistance": 0.316230592803767
+    },
+    "lowerLipBottomCenter": {
+      "cameraDepth": 1.1594197750091553,
+      "pixelDistance": 1.6619644165039062
+    },
+    "mouthLeftCorner": {
+      "cameraDepth": 1.0130186080932617,
+      "pixelDistance": 1.6500228015746157
+    },
+    "mouthRightCorner": {
+      "cameraDepth": 1.0136998891830444,
+      "pixelDistance": 1.2814989506846886
+    },
+    "mouthSeamCenter": {
+      "cameraDepth": 1.0064111948013306,
+      "pixelDistance": 2.0605087280273438
+    },
+    "noseTipLowestCenter": {
+      "cameraDepth": 1.0010145902633667,
+      "pixelDistance": 0.77166748046875
+    },
+    "rightEyeInnerCorner": {
+      "cameraDepth": 1.0228958129882812,
+      "pixelDistance": 1.274171349461975
+    },
+    "rightEyeOuterCorner": {
+      "cameraDepth": 1.0225815773010254,
+      "pixelDistance": 0.4979516211749318
+    },
+    "upperLipTopCenter": {
+      "cameraDepth": 1.0050606727600098,
+      "pixelDistance": 0.36446380615234375
+    }
+  },
+  "eligibleBodyVertexCount": 13380,
+  "indices": {
+    "leftEyeInnerCorner": 6769,
+    "leftEyeOuterCorner": 1061,
+    "lowerLipBottomCenter": 854,
+    "mouthLeftCorner": 404,
+    "mouthRightCorner": 7164,
+    "mouthSeamCenter": 574,
+    "noseTipLowestCenter": 5072,
+    "rightEyeInnerCorner": 13363,
+    "rightEyeOuterCorner": 6802,
+    "upperLipTopCenter": 474
+  },
+  "method": "Consensus Task 9 front pixels projected to the nearest visible camera-space body vertex once; indices are outputs for human review and manual freezing, never remapped per detail candidate.",
+  "schemaVersion": 1,
+  "sha256": "74c203497608747c78bd1af2f76dfb8347a3ef6eb6cf2367894418d152ad913d",
+  "targetDetail": {
+    "path": "target-detail-geometry.json",
+    "sha256": "b3b97d5a063c482b17a75da707ef3e59127beb75113b005fdf48910e5add6afd"
+  },
+  "toolVersions": {
+    "detailContract": "94ae96534e356ca2af1f909c50a2af45610b97a44a1ee7e71dc9a8eec1fd3144",
+    "mapScript": "14073f218cd4240d989659471e2e07c5717d4f70462338e468a77970581ee39d"
+  }
+}

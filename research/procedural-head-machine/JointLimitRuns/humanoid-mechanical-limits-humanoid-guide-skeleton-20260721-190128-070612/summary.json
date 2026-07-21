@@ -1,0 +1,9 @@
+{
+  "joint_limits_sha256": "b55f43629bd81277ce4fc7606c4619b48bc53e5f5893e33613d21f8974dc2bd2",
+  "passed": true,
+  "runs": [
+    "research\\procedural-head-machine\\JointLimitRuns\\humanoid-mechanical-limits-humanoid-guide-skeleton-20260721-190128-070612\\run-1",
+    "research\\procedural-head-machine\\JointLimitRuns\\humanoid-mechanical-limits-humanoid-guide-skeleton-20260721-190128-070612\\run-2"
+  ],
+  "schema": "joint-limit-run-summary/0"
+}

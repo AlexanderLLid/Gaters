@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "primary": {"left": "initial", "center": "counterexample", "right": "final-replay"},
+  "audit": {"left": "final-replay", "center": "counterexample", "right": "initial"},
+  "imageHashes": {
+    "primary": {
+      "left": ["35c5f9b34a2d8ac0d0ff2a432f8ee908a20f90983443fbb28a0d201e581653e3", "a8a79ba89e4e640a43ac657209200cb70a4c3ec8f73565b4ce306b6c072bdeea", "cc418e0cd9efd178a7067807c59b07be36bf4ab0fa4c4a9df66aa38252d2efc7"],
+      "center": ["c8e9bce7bd6838590a58129f660b9c5aa687a7c2f0e1645586c1e18df26a8ff4", "a36a41478d730ab8312957d4125745ea16ecf20cbddc21770102a6ea6c9bd3b9", "7b594edfabab12064001b47d569b4280eea4d60e0554ea2cc8861ffdbc978f4c"],
+      "right": ["5427cbbd99888cb1bd763d7edb1c7e1d646dae2cdb5927629410f25c7d8f6cda", "82031d7f341be1e6ff806eac8caea8c410e504f12000b99e5939e2fa61e0979a", "e0de9f72c9166ea6a79b9316f841a3b19ab78c8ae2462e371480915a8ff665cf"]
+    },
+    "audit": {
+      "left": ["5427cbbd99888cb1bd763d7edb1c7e1d646dae2cdb5927629410f25c7d8f6cda", "82031d7f341be1e6ff806eac8caea8c410e504f12000b99e5939e2fa61e0979a", "e0de9f72c9166ea6a79b9316f841a3b19ab78c8ae2462e371480915a8ff665cf"],
+      "center": ["c8e9bce7bd6838590a58129f660b9c5aa687a7c2f0e1645586c1e18df26a8ff4", "a36a41478d730ab8312957d4125745ea16ecf20cbddc21770102a6ea6c9bd3b9", "7b594edfabab12064001b47d569b4280eea4d60e0554ea2cc8861ffdbc978f4c"],
+      "right": ["35c5f9b34a2d8ac0d0ff2a432f8ee908a20f90983443fbb28a0d201e581653e3", "a8a79ba89e4e640a43ac657209200cb70a4c3ec8f73565b4ce306b6c072bdeea", "cc418e0cd9efd178a7067807c59b07be36bf4ab0fa4c4a9df66aa38252d2efc7"]
+    }
+  },
+  "notProvidedToEvaluators": true
+}

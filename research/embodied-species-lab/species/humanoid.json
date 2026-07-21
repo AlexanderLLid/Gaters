@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": 1,
+  "artifactPolicy": {
+    "brief": "authoritative",
+    "generator": "authoritative",
+    "blend": "derived-reproducible"
+  },
+  "speciesId": "lab.humanoid",
+  "speciesVersion": 1,
+  "body": {
+    "heightMeters": 1.8,
+    "shoulderWidthMeters": 0.44,
+    "hipWidthMeters": 0.32,
+    "depthMeters": 0.24
+  },
+  "motion": {
+    "name": "A_ImpactReaction",
+    "seed": 17,
+    "fps": 30,
+    "event": {
+      "eventId": "impact.demo",
+      "type": "impact",
+      "point": "chest",
+      "direction": [1.0, -0.25, 0.1],
+      "strength": 0.7
+    }
+  }
+}

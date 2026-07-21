@@ -1,0 +1,64 @@
+{
+  "failures": [],
+  "passed": true,
+  "poses": {
+    "left_elbow_flex": {
+      "active_displacement_m": 0.4007802277273918,
+      "minimum_thickness_ratio_p10": 0.88,
+      "posed_thickness_p10_m": 0.08556863405932237,
+      "protected_displacement_m": 1.4919776018337002e-07,
+      "rest_thickness_p10_m": 0.09236373918263721,
+      "sample_count": 520,
+      "thickness_ratio_p10": 0.9264310303648664,
+      "transition_displacements_m": {}
+    },
+    "left_hip_flex": {
+      "active_displacement_m": 0.8161276569630062,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.12218337350332907,
+      "protected_displacement_m": 1.4975481660844222e-07,
+      "rest_thickness_p10_m": 0.13926750283435538,
+      "sample_count": 772,
+      "thickness_ratio_p10": 0.8773286733564387,
+      "transition_displacements_m": {
+        "torso": 0.022821916312046997
+      }
+    },
+    "left_knee_flex": {
+      "active_displacement_m": 0.5724353190561383,
+      "minimum_thickness_ratio_p10": 0.8,
+      "posed_thickness_p10_m": 0.0891347439668481,
+      "protected_displacement_m": 1.4975481660844222e-07,
+      "rest_thickness_p10_m": 0.09979321278784115,
+      "sample_count": 718,
+      "thickness_ratio_p10": 0.8931944515740485,
+      "transition_displacements_m": {}
+    },
+    "left_shoulder_raise": {
+      "active_displacement_m": 0.6972827177044234,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.10946514568449413,
+      "protected_displacement_m": 1.4919776018337002e-07,
+      "rest_thickness_p10_m": 0.1213523823153539,
+      "sample_count": 528,
+      "thickness_ratio_p10": 0.9020436483894576,
+      "transition_displacements_m": {
+        "torso": 0.023121480069304715
+      }
+    },
+    "torso_twist": {
+      "active_displacement_m": 0.7175327940669303,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.12965588438364334,
+      "protected_displacement_m": 0.0,
+      "rest_thickness_p10_m": 0.1322567813463312,
+      "sample_count": 1211,
+      "thickness_ratio_p10": 0.9803344907065514,
+      "transition_displacements_m": {
+        "left_leg": 0.0016858616762509258,
+        "right_leg": 0.0009292576647197478
+      }
+    }
+  },
+  "schema": "pose-suite-verification/0"
+}

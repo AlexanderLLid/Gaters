@@ -1,0 +1,8918 @@
+{
+  "body_plan_id": "stick-humanoid",
+  "cell_size_m": 0.14,
+  "cells": [
+    {
+      "module": "left_hand",
+      "position": [
+        -9,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_hand",
+      "position": [
+        -9,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_hand",
+      "position": [
+        -8,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_hand",
+      "position": [
+        -8,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -7,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -7,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -7,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -7,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -6,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -6,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -6,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -6,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -5,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -5,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -5,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -5,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -4,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -4,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -4,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "left_arm",
+      "position": [
+        -4,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -3,
+        -1,
+        -6
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        -1,
+        -5
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        -1,
+        -4
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        -1,
+        -3
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        -1,
+        -2
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        -1,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -3,
+        0,
+        -6
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        0,
+        -5
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        0,
+        -4
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        0,
+        -3
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        0,
+        -2
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -3,
+        0,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -3,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -3,
+        1,
+        -6
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -3,
+        2,
+        -6
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -2,
+        -1,
+        -6
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        -1,
+        -5
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        -1,
+        -4
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        -1,
+        -3
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        -1,
+        -2
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        -1,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        -1,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        -1,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        -1,
+        9
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -2,
+        0,
+        -6
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        0,
+        -5
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        0,
+        -4
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        0,
+        -3
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        0,
+        -2
+      ]
+    },
+    {
+      "module": "left_leg",
+      "position": [
+        -2,
+        0,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -2,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        0,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        0,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -2,
+        0,
+        9
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -2,
+        1,
+        -6
+      ]
+    },
+    {
+      "module": "left_foot",
+      "position": [
+        -2,
+        2,
+        -6
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "neck",
+      "position": [
+        -1,
+        -1,
+        6
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        -1,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        -1,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        -1,
+        9
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        -1,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "neck",
+      "position": [
+        -1,
+        0,
+        6
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        0,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        0,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        -1,
+        0,
+        9
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "neck",
+      "position": [
+        0,
+        -1,
+        6
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        -1,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        -1,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        -1,
+        9
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        0,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "neck",
+      "position": [
+        0,
+        0,
+        6
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        0,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        0,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        0,
+        0,
+        9
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        1,
+        -1,
+        -6
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        -1,
+        -5
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        -1,
+        -4
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        -1,
+        -3
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        -1,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        -1,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        -1,
+        9
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        1,
+        0,
+        -6
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        0,
+        -5
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        0,
+        -4
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        0,
+        -3
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        0,
+        -2
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        1,
+        0,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        0,
+        7
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        0,
+        8
+      ]
+    },
+    {
+      "module": "head",
+      "position": [
+        1,
+        0,
+        9
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        1,
+        1,
+        -6
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        1,
+        2,
+        -6
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        2,
+        -1,
+        -6
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        -1,
+        -5
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        -1,
+        -4
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        -1,
+        -3
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        -1,
+        -2
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        -1,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        -1,
+        5
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        2,
+        0,
+        -6
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        0,
+        -5
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        0,
+        -4
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        0,
+        -3
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        0,
+        -2
+      ]
+    },
+    {
+      "module": "right_leg",
+      "position": [
+        2,
+        0,
+        -1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "torso",
+      "position": [
+        2,
+        0,
+        5
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        2,
+        1,
+        -6
+      ]
+    },
+    {
+      "module": "right_foot",
+      "position": [
+        2,
+        2,
+        -6
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        3,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        3,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        4,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        4,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        4,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        4,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        5,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        5,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        5,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        6,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        6,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        6,
+        0,
+        3
+      ]
+    },
+    {
+      "module": "right_arm",
+      "position": [
+        6,
+        0,
+        4
+      ]
+    },
+    {
+      "module": "right_hand",
+      "position": [
+        7,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_hand",
+      "position": [
+        7,
+        -1,
+        4
+      ]
+    },
+    {
+      "module": "right_hand",
+      "position": [
+        8,
+        -1,
+        3
+      ]
+    },
+    {
+      "module": "right_hand",
+      "position": [
+        8,
+        -1,
+        4
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "attach": "+z",
+      "child": "neck",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          0.0,
+          0.0,
+          0.84
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "torso"
+    },
+    {
+      "attach": "+z",
+      "child": "head",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          0.0,
+          0.0,
+          0.98
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "neck"
+    },
+    {
+      "attach": "-x",
+      "child": "left_arm",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          -0.42,
+          0.0,
+          0.56
+        ],
+        "tangent": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "u": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "parent": "torso"
+    },
+    {
+      "attach": "+x",
+      "child": "right_arm",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          0.42,
+          0.0,
+          0.56
+        ],
+        "tangent": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "u": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "parent": "torso"
+    },
+    {
+      "attach": "-x",
+      "child": "left_hand",
+      "contact_faces": 2,
+      "frame": {
+        "origin": [
+          -0.98,
+          -0.07,
+          0.56
+        ],
+        "tangent": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "u": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "parent": "left_arm"
+    },
+    {
+      "attach": "+x",
+      "child": "right_hand",
+      "contact_faces": 2,
+      "frame": {
+        "origin": [
+          0.98,
+          -0.07,
+          0.56
+        ],
+        "tangent": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "u": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "parent": "right_arm"
+    },
+    {
+      "attach": "-z",
+      "child": "left_leg",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          -0.28,
+          0.0,
+          0.0
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "torso"
+    },
+    {
+      "attach": "-z",
+      "child": "right_leg",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          0.28,
+          0.0,
+          0.0
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "torso"
+    },
+    {
+      "attach": "-z",
+      "child": "left_foot",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          -0.28,
+          0.0,
+          -0.7
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "left_leg"
+    },
+    {
+      "attach": "-z",
+      "child": "right_foot",
+      "contact_faces": 4,
+      "frame": {
+        "origin": [
+          0.28,
+          0.0,
+          -0.7
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "u": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "parent": "right_leg"
+    }
+  ],
+  "face_modules": [
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "left_foot",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "left_foot",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck",
+    "neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck",
+    "neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck",
+    "neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck",
+    "neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "right_foot",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "right_foot",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand"
+  ],
+  "faces": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      4,
+      5,
+      1
+    ],
+    [
+      3,
+      2,
+      6,
+      7
+    ],
+    [
+      0,
+      3,
+      7,
+      4
+    ],
+    [
+      1,
+      8,
+      9,
+      2
+    ],
+    [
+      1,
+      5,
+      10,
+      8
+    ],
+    [
+      2,
+      9,
+      11,
+      6
+    ],
+    [
+      8,
+      10,
+      11,
+      9
+    ],
+    [
+      4,
+      12,
+      13,
+      5
+    ],
+    [
+      7,
+      6,
+      14,
+      15
+    ],
+    [
+      4,
+      7,
+      15,
+      12
+    ],
+    [
+      5,
+      13,
+      16,
+      10
+    ],
+    [
+      6,
+      11,
+      17,
+      14
+    ],
+    [
+      10,
+      16,
+      17,
+      11
+    ],
+    [
+      12,
+      18,
+      19,
+      13
+    ],
+    [
+      12,
+      15,
+      20,
+      18
+    ],
+    [
+      13,
+      19,
+      21,
+      16
+    ],
+    [
+      16,
+      21,
+      22,
+      17
+    ],
+    [
+      15,
+      14,
+      23,
+      24
+    ],
+    [
+      24,
+      23,
+      25,
+      26
+    ],
+    [
+      15,
+      24,
+      26,
+      20
+    ],
+    [
+      14,
+      17,
+      27,
+      23
+    ],
+    [
+      23,
+      27,
+      28,
+      25
+    ],
+    [
+      17,
+      22,
+      28,
+      27
+    ],
+    [
+      18,
+      29,
+      30,
+      19
+    ],
+    [
+      18,
+      20,
+      31,
+      29
+    ],
+    [
+      19,
+      30,
+      32,
+      21
+    ],
+    [
+      21,
+      32,
+      33,
+      22
+    ],
+    [
+      26,
+      25,
+      34,
+      35
+    ],
+    [
+      20,
+      26,
+      35,
+      31
+    ],
+    [
+      25,
+      28,
+      36,
+      34
+    ],
+    [
+      22,
+      33,
+      36,
+      28
+    ],
+    [
+      29,
+      37,
+      38,
+      30
+    ],
+    [
+      29,
+      31,
+      39,
+      37
+    ],
+    [
+      30,
+      38,
+      40,
+      32
+    ],
+    [
+      32,
+      40,
+      41,
+      33
+    ],
+    [
+      35,
+      34,
+      42,
+      43
+    ],
+    [
+      31,
+      35,
+      43,
+      39
+    ],
+    [
+      34,
+      36,
+      44,
+      42
+    ],
+    [
+      33,
+      41,
+      44,
+      36
+    ],
+    [
+      37,
+      45,
+      46,
+      38
+    ],
+    [
+      37,
+      39,
+      47,
+      45
+    ],
+    [
+      38,
+      46,
+      48,
+      40
+    ],
+    [
+      40,
+      48,
+      49,
+      41
+    ],
+    [
+      43,
+      42,
+      50,
+      51
+    ],
+    [
+      39,
+      43,
+      51,
+      47
+    ],
+    [
+      42,
+      44,
+      52,
+      50
+    ],
+    [
+      41,
+      49,
+      52,
+      44
+    ],
+    [
+      53,
+      54,
+      55,
+      56
+    ],
+    [
+      53,
+      57,
+      58,
+      54
+    ],
+    [
+      53,
+      56,
+      59,
+      57
+    ],
+    [
+      54,
+      60,
+      61,
+      55
+    ],
+    [
+      54,
+      58,
+      62,
+      60
+    ],
+    [
+      60,
+      63,
+      64,
+      61
+    ],
+    [
+      60,
+      62,
+      65,
+      63
+    ],
+    [
+      63,
+      66,
+      67,
+      64
+    ],
+    [
+      63,
+      65,
+      68,
+      66
+    ],
+    [
+      66,
+      69,
+      70,
+      67
+    ],
+    [
+      66,
+      68,
+      71,
+      69
+    ],
+    [
+      69,
+      72,
+      73,
+      70
+    ],
+    [
+      69,
+      71,
+      74,
+      72
+    ],
+    [
+      72,
+      75,
+      76,
+      73
+    ],
+    [
+      72,
+      74,
+      77,
+      75
+    ],
+    [
+      75,
+      78,
+      79,
+      76
+    ],
+    [
+      75,
+      77,
+      80,
+      78
+    ],
+    [
+      78,
+      45,
+      47,
+      79
+    ],
+    [
+      78,
+      80,
+      81,
+      45
+    ],
+    [
+      45,
+      81,
+      82,
+      46
+    ],
+    [
+      46,
+      82,
+      83,
+      48
+    ],
+    [
+      48,
+      84,
+      85,
+      49
+    ],
+    [
+      48,
+      83,
+      86,
+      84
+    ],
+    [
+      84,
+      86,
+      87,
+      85
+    ],
+    [
+      56,
+      55,
+      88,
+      89
+    ],
+    [
+      56,
+      89,
+      90,
+      59
+    ],
+    [
+      55,
+      61,
+      91,
+      88
+    ],
+    [
+      88,
+      91,
+      92,
+      93
+    ],
+    [
+      61,
+      64,
+      94,
+      91
+    ],
+    [
+      91,
+      94,
+      95,
+      92
+    ],
+    [
+      64,
+      67,
+      96,
+      94
+    ],
+    [
+      94,
+      96,
+      97,
+      95
+    ],
+    [
+      67,
+      70,
+      98,
+      96
+    ],
+    [
+      96,
+      98,
+      99,
+      97
+    ],
+    [
+      70,
+      73,
+      100,
+      98
+    ],
+    [
+      98,
+      100,
+      101,
+      99
+    ],
+    [
+      73,
+      76,
+      102,
+      100
+    ],
+    [
+      100,
+      102,
+      103,
+      101
+    ],
+    [
+      76,
+      79,
+      104,
+      102
+    ],
+    [
+      102,
+      104,
+      105,
+      103
+    ],
+    [
+      79,
+      47,
+      51,
+      104
+    ],
+    [
+      104,
+      51,
+      106,
+      105
+    ],
+    [
+      51,
+      50,
+      107,
+      106
+    ],
+    [
+      50,
+      52,
+      108,
+      107
+    ],
+    [
+      49,
+      85,
+      109,
+      52
+    ],
+    [
+      52,
+      109,
+      110,
+      108
+    ],
+    [
+      85,
+      87,
+      110,
+      109
+    ],
+    [
+      89,
+      88,
+      111,
+      112
+    ],
+    [
+      89,
+      112,
+      113,
+      90
+    ],
+    [
+      88,
+      93,
+      114,
+      111
+    ],
+    [
+      112,
+      111,
+      115,
+      116
+    ],
+    [
+      116,
+      115,
+      117,
+      118
+    ],
+    [
+      112,
+      116,
+      118,
+      113
+    ],
+    [
+      111,
+      114,
+      117,
+      115
+    ],
+    [
+      119,
+      120,
+      121,
+      122
+    ],
+    [
+      57,
+      119,
+      122,
+      58
+    ],
+    [
+      57,
+      59,
+      120,
+      119
+    ],
+    [
+      122,
+      121,
+      123,
+      124
+    ],
+    [
+      58,
+      122,
+      124,
+      62
+    ],
+    [
+      124,
+      123,
+      125,
+      126
+    ],
+    [
+      62,
+      124,
+      126,
+      65
+    ],
+    [
+      126,
+      125,
+      127,
+      128
+    ],
+    [
+      65,
+      126,
+      128,
+      68
+    ],
+    [
+      128,
+      127,
+      129,
+      130
+    ],
+    [
+      68,
+      128,
+      130,
+      71
+    ],
+    [
+      130,
+      129,
+      131,
+      132
+    ],
+    [
+      71,
+      130,
+      132,
+      74
+    ],
+    [
+      74,
+      132,
+      133,
+      77
+    ],
+    [
+      77,
+      133,
+      134,
+      80
+    ],
+    [
+      80,
+      134,
+      135,
+      81
+    ],
+    [
+      81,
+      135,
+      136,
+      82
+    ],
+    [
+      82,
+      136,
+      137,
+      83
+    ],
+    [
+      83,
+      137,
+      138,
+      86
+    ],
+    [
+      86,
+      138,
+      139,
+      87
+    ],
+    [
+      140,
+      141,
+      142,
+      143
+    ],
+    [
+      140,
+      144,
+      145,
+      141
+    ],
+    [
+      140,
+      143,
+      146,
+      144
+    ],
+    [
+      141,
+      147,
+      148,
+      142
+    ],
+    [
+      141,
+      145,
+      149,
+      147
+    ],
+    [
+      147,
+      150,
+      151,
+      148
+    ],
+    [
+      147,
+      149,
+      152,
+      150
+    ],
+    [
+      150,
+      152,
+      153,
+      151
+    ],
+    [
+      120,
+      154,
+      155,
+      121
+    ],
+    [
+      59,
+      90,
+      154,
+      120
+    ],
+    [
+      121,
+      155,
+      156,
+      123
+    ],
+    [
+      93,
+      92,
+      156,
+      155
+    ],
+    [
+      123,
+      156,
+      157,
+      125
+    ],
+    [
+      92,
+      95,
+      157,
+      156
+    ],
+    [
+      125,
+      157,
+      158,
+      127
+    ],
+    [
+      95,
+      97,
+      158,
+      157
+    ],
+    [
+      127,
+      158,
+      159,
+      129
+    ],
+    [
+      97,
+      99,
+      159,
+      158
+    ],
+    [
+      129,
+      159,
+      160,
+      131
+    ],
+    [
+      99,
+      101,
+      160,
+      159
+    ],
+    [
+      101,
+      103,
+      161,
+      160
+    ],
+    [
+      103,
+      105,
+      162,
+      161
+    ],
+    [
+      105,
+      106,
+      163,
+      162
+    ],
+    [
+      106,
+      107,
+      164,
+      163
+    ],
+    [
+      107,
+      108,
+      165,
+      164
+    ],
+    [
+      108,
+      110,
+      166,
+      165
+    ],
+    [
+      87,
+      139,
+      166,
+      110
+    ],
+    [
+      143,
+      142,
+      167,
+      168
+    ],
+    [
+      168,
+      167,
+      169,
+      170
+    ],
+    [
+      143,
+      168,
+      170,
+      146
+    ],
+    [
+      142,
+      148,
+      171,
+      167
+    ],
+    [
+      167,
+      171,
+      172,
+      169
+    ],
+    [
+      148,
+      151,
+      173,
+      171
+    ],
+    [
+      171,
+      173,
+      174,
+      172
+    ],
+    [
+      151,
+      153,
+      174,
+      173
+    ],
+    [
+      154,
+      175,
+      176,
+      155
+    ],
+    [
+      90,
+      113,
+      175,
+      154
+    ],
+    [
+      93,
+      155,
+      176,
+      114
+    ],
+    [
+      175,
+      177,
+      178,
+      176
+    ],
+    [
+      118,
+      117,
+      178,
+      177
+    ],
+    [
+      113,
+      118,
+      177,
+      175
+    ],
+    [
+      114,
+      176,
+      178,
+      117
+    ],
+    [
+      132,
+      179,
+      180,
+      133
+    ],
+    [
+      132,
+      131,
+      181,
+      179
+    ],
+    [
+      133,
+      180,
+      182,
+      134
+    ],
+    [
+      134,
+      182,
+      183,
+      135
+    ],
+    [
+      135,
+      183,
+      184,
+      136
+    ],
+    [
+      136,
+      184,
+      185,
+      137
+    ],
+    [
+      137,
+      185,
+      186,
+      138
+    ],
+    [
+      138,
+      144,
+      146,
+      139
+    ],
+    [
+      138,
+      186,
+      187,
+      144
+    ],
+    [
+      144,
+      187,
+      188,
+      145
+    ],
+    [
+      145,
+      188,
+      189,
+      149
+    ],
+    [
+      149,
+      189,
+      190,
+      152
+    ],
+    [
+      152,
+      190,
+      191,
+      153
+    ],
+    [
+      160,
+      161,
+      192,
+      193
+    ],
+    [
+      131,
+      160,
+      193,
+      181
+    ],
+    [
+      161,
+      162,
+      194,
+      192
+    ],
+    [
+      162,
+      163,
+      195,
+      194
+    ],
+    [
+      163,
+      164,
+      196,
+      195
+    ],
+    [
+      164,
+      165,
+      197,
+      196
+    ],
+    [
+      165,
+      166,
+      198,
+      197
+    ],
+    [
+      139,
+      146,
+      170,
+      166
+    ],
+    [
+      166,
+      170,
+      199,
+      198
+    ],
+    [
+      170,
+      169,
+      200,
+      199
+    ],
+    [
+      169,
+      172,
+      201,
+      200
+    ],
+    [
+      172,
+      174,
+      202,
+      201
+    ],
+    [
+      153,
+      191,
+      202,
+      174
+    ],
+    [
+      179,
+      203,
+      204,
+      180
+    ],
+    [
+      179,
+      181,
+      205,
+      203
+    ],
+    [
+      180,
+      204,
+      206,
+      182
+    ],
+    [
+      182,
+      206,
+      207,
+      183
+    ],
+    [
+      183,
+      207,
+      208,
+      184
+    ],
+    [
+      184,
+      208,
+      209,
+      185
+    ],
+    [
+      185,
+      209,
+      210,
+      186
+    ],
+    [
+      210,
+      211,
+      212,
+      213
+    ],
+    [
+      186,
+      210,
+      213,
+      187
+    ],
+    [
+      187,
+      213,
+      214,
+      188
+    ],
+    [
+      188,
+      214,
+      215,
+      189
+    ],
+    [
+      189,
+      215,
+      216,
+      190
+    ],
+    [
+      190,
+      216,
+      217,
+      191
+    ],
+    [
+      193,
+      192,
+      218,
+      219
+    ],
+    [
+      181,
+      193,
+      219,
+      205
+    ],
+    [
+      192,
+      194,
+      220,
+      218
+    ],
+    [
+      194,
+      195,
+      221,
+      220
+    ],
+    [
+      195,
+      196,
+      222,
+      221
+    ],
+    [
+      196,
+      197,
+      223,
+      222
+    ],
+    [
+      197,
+      198,
+      224,
+      223
+    ],
+    [
+      211,
+      224,
+      225,
+      212
+    ],
+    [
+      198,
+      199,
+      225,
+      224
+    ],
+    [
+      199,
+      200,
+      226,
+      225
+    ],
+    [
+      200,
+      201,
+      227,
+      226
+    ],
+    [
+      201,
+      202,
+      228,
+      227
+    ],
+    [
+      191,
+      217,
+      228,
+      202
+    ],
+    [
+      229,
+      230,
+      231,
+      232
+    ],
+    [
+      229,
+      233,
+      234,
+      230
+    ],
+    [
+      229,
+      232,
+      235,
+      233
+    ],
+    [
+      230,
+      236,
+      237,
+      231
+    ],
+    [
+      230,
+      234,
+      238,
+      236
+    ],
+    [
+      236,
+      239,
+      240,
+      237
+    ],
+    [
+      236,
+      238,
+      241,
+      239
+    ],
+    [
+      239,
+      242,
+      243,
+      240
+    ],
+    [
+      239,
+      241,
+      244,
+      242
+    ],
+    [
+      242,
+      245,
+      246,
+      243
+    ],
+    [
+      242,
+      244,
+      247,
+      245
+    ],
+    [
+      245,
+      203,
+      205,
+      246
+    ],
+    [
+      245,
+      247,
+      248,
+      203
+    ],
+    [
+      203,
+      248,
+      249,
+      204
+    ],
+    [
+      204,
+      249,
+      250,
+      206
+    ],
+    [
+      206,
+      250,
+      251,
+      207
+    ],
+    [
+      207,
+      251,
+      252,
+      208
+    ],
+    [
+      208,
+      252,
+      253,
+      209
+    ],
+    [
+      209,
+      253,
+      254,
+      210
+    ],
+    [
+      210,
+      254,
+      255,
+      211
+    ],
+    [
+      256,
+      257,
+      258,
+      259
+    ],
+    [
+      213,
+      256,
+      259,
+      214
+    ],
+    [
+      213,
+      212,
+      257,
+      256
+    ],
+    [
+      259,
+      258,
+      260,
+      261
+    ],
+    [
+      214,
+      259,
+      261,
+      215
+    ],
+    [
+      261,
+      260,
+      262,
+      263
+    ],
+    [
+      215,
+      261,
+      263,
+      216
+    ],
+    [
+      216,
+      263,
+      262,
+      217
+    ],
+    [
+      232,
+      231,
+      264,
+      265
+    ],
+    [
+      232,
+      265,
+      266,
+      235
+    ],
+    [
+      231,
+      237,
+      267,
+      264
+    ],
+    [
+      264,
+      267,
+      268,
+      269
+    ],
+    [
+      237,
+      240,
+      270,
+      267
+    ],
+    [
+      267,
+      270,
+      271,
+      268
+    ],
+    [
+      240,
+      243,
+      272,
+      270
+    ],
+    [
+      270,
+      272,
+      273,
+      271
+    ],
+    [
+      243,
+      246,
+      274,
+      272
+    ],
+    [
+      272,
+      274,
+      275,
+      273
+    ],
+    [
+      246,
+      205,
+      219,
+      274
+    ],
+    [
+      274,
+      219,
+      276,
+      275
+    ],
+    [
+      219,
+      218,
+      277,
+      276
+    ],
+    [
+      218,
+      220,
+      278,
+      277
+    ],
+    [
+      220,
+      221,
+      279,
+      278
+    ],
+    [
+      221,
+      222,
+      280,
+      279
+    ],
+    [
+      222,
+      223,
+      281,
+      280
+    ],
+    [
+      223,
+      224,
+      282,
+      281
+    ],
+    [
+      211,
+      255,
+      282,
+      224
+    ],
+    [
+      257,
+      283,
+      284,
+      258
+    ],
+    [
+      225,
+      226,
+      284,
+      283
+    ],
+    [
+      212,
+      225,
+      283,
+      257
+    ],
+    [
+      258,
+      284,
+      285,
+      260
+    ],
+    [
+      226,
+      227,
+      285,
+      284
+    ],
+    [
+      260,
+      285,
+      286,
+      262
+    ],
+    [
+      227,
+      228,
+      286,
+      285
+    ],
+    [
+      217,
+      262,
+      286,
+      228
+    ],
+    [
+      265,
+      264,
+      287,
+      288
+    ],
+    [
+      265,
+      288,
+      289,
+      266
+    ],
+    [
+      264,
+      269,
+      290,
+      287
+    ],
+    [
+      288,
+      287,
+      291,
+      292
+    ],
+    [
+      292,
+      291,
+      293,
+      294
+    ],
+    [
+      288,
+      292,
+      294,
+      289
+    ],
+    [
+      287,
+      290,
+      293,
+      291
+    ],
+    [
+      295,
+      296,
+      297,
+      298
+    ],
+    [
+      233,
+      295,
+      298,
+      234
+    ],
+    [
+      233,
+      235,
+      296,
+      295
+    ],
+    [
+      298,
+      297,
+      299,
+      300
+    ],
+    [
+      234,
+      298,
+      300,
+      238
+    ],
+    [
+      300,
+      299,
+      301,
+      302
+    ],
+    [
+      238,
+      300,
+      302,
+      241
+    ],
+    [
+      302,
+      301,
+      303,
+      304
+    ],
+    [
+      241,
+      302,
+      304,
+      244
+    ],
+    [
+      304,
+      303,
+      305,
+      306
+    ],
+    [
+      244,
+      304,
+      306,
+      247
+    ],
+    [
+      306,
+      305,
+      307,
+      308
+    ],
+    [
+      247,
+      306,
+      308,
+      248
+    ],
+    [
+      308,
+      307,
+      309,
+      310
+    ],
+    [
+      248,
+      308,
+      310,
+      249
+    ],
+    [
+      310,
+      309,
+      311,
+      312
+    ],
+    [
+      249,
+      310,
+      312,
+      250
+    ],
+    [
+      312,
+      311,
+      313,
+      314
+    ],
+    [
+      250,
+      312,
+      314,
+      251
+    ],
+    [
+      251,
+      314,
+      315,
+      252
+    ],
+    [
+      252,
+      315,
+      316,
+      253
+    ],
+    [
+      316,
+      317,
+      318,
+      319
+    ],
+    [
+      253,
+      316,
+      319,
+      254
+    ],
+    [
+      254,
+      319,
+      318,
+      255
+    ],
+    [
+      296,
+      320,
+      321,
+      297
+    ],
+    [
+      235,
+      266,
+      320,
+      296
+    ],
+    [
+      297,
+      321,
+      322,
+      299
+    ],
+    [
+      269,
+      268,
+      322,
+      321
+    ],
+    [
+      299,
+      322,
+      323,
+      301
+    ],
+    [
+      268,
+      271,
+      323,
+      322
+    ],
+    [
+      301,
+      323,
+      324,
+      303
+    ],
+    [
+      271,
+      273,
+      324,
+      323
+    ],
+    [
+      303,
+      324,
+      325,
+      305
+    ],
+    [
+      273,
+      275,
+      325,
+      324
+    ],
+    [
+      305,
+      325,
+      326,
+      307
+    ],
+    [
+      275,
+      276,
+      326,
+      325
+    ],
+    [
+      307,
+      326,
+      327,
+      309
+    ],
+    [
+      276,
+      277,
+      327,
+      326
+    ],
+    [
+      309,
+      327,
+      328,
+      311
+    ],
+    [
+      277,
+      278,
+      328,
+      327
+    ],
+    [
+      311,
+      328,
+      329,
+      313
+    ],
+    [
+      278,
+      279,
+      329,
+      328
+    ],
+    [
+      279,
+      280,
+      330,
+      329
+    ],
+    [
+      280,
+      281,
+      331,
+      330
+    ],
+    [
+      317,
+      331,
+      332,
+      318
+    ],
+    [
+      281,
+      282,
+      332,
+      331
+    ],
+    [
+      255,
+      318,
+      332,
+      282
+    ],
+    [
+      320,
+      333,
+      334,
+      321
+    ],
+    [
+      266,
+      289,
+      333,
+      320
+    ],
+    [
+      269,
+      321,
+      334,
+      290
+    ],
+    [
+      333,
+      335,
+      336,
+      334
+    ],
+    [
+      294,
+      293,
+      336,
+      335
+    ],
+    [
+      289,
+      294,
+      335,
+      333
+    ],
+    [
+      290,
+      334,
+      336,
+      293
+    ],
+    [
+      314,
+      337,
+      338,
+      315
+    ],
+    [
+      314,
+      313,
+      339,
+      337
+    ],
+    [
+      315,
+      338,
+      340,
+      316
+    ],
+    [
+      316,
+      340,
+      341,
+      317
+    ],
+    [
+      329,
+      330,
+      342,
+      343
+    ],
+    [
+      313,
+      329,
+      343,
+      339
+    ],
+    [
+      330,
+      331,
+      344,
+      342
+    ],
+    [
+      317,
+      341,
+      344,
+      331
+    ],
+    [
+      337,
+      345,
+      346,
+      338
+    ],
+    [
+      337,
+      339,
+      347,
+      345
+    ],
+    [
+      338,
+      346,
+      348,
+      340
+    ],
+    [
+      340,
+      348,
+      349,
+      341
+    ],
+    [
+      343,
+      342,
+      350,
+      351
+    ],
+    [
+      339,
+      343,
+      351,
+      347
+    ],
+    [
+      342,
+      344,
+      352,
+      350
+    ],
+    [
+      341,
+      349,
+      352,
+      344
+    ],
+    [
+      345,
+      353,
+      354,
+      346
+    ],
+    [
+      345,
+      347,
+      355,
+      353
+    ],
+    [
+      346,
+      354,
+      356,
+      348
+    ],
+    [
+      348,
+      356,
+      357,
+      349
+    ],
+    [
+      351,
+      350,
+      358,
+      359
+    ],
+    [
+      347,
+      351,
+      359,
+      355
+    ],
+    [
+      350,
+      352,
+      360,
+      358
+    ],
+    [
+      349,
+      357,
+      360,
+      352
+    ],
+    [
+      353,
+      361,
+      362,
+      354
+    ],
+    [
+      353,
+      355,
+      363,
+      361
+    ],
+    [
+      354,
+      362,
+      364,
+      356
+    ],
+    [
+      356,
+      364,
+      365,
+      357
+    ],
+    [
+      363,
+      366,
+      367,
+      368
+    ],
+    [
+      359,
+      358,
+      367,
+      366
+    ],
+    [
+      355,
+      359,
+      366,
+      363
+    ],
+    [
+      368,
+      367,
+      369,
+      365
+    ],
+    [
+      358,
+      360,
+      369,
+      367
+    ],
+    [
+      357,
+      365,
+      369,
+      360
+    ],
+    [
+      361,
+      370,
+      371,
+      362
+    ],
+    [
+      363,
+      368,
+      372,
+      373
+    ],
+    [
+      361,
+      363,
+      373,
+      370
+    ],
+    [
+      362,
+      371,
+      374,
+      364
+    ],
+    [
+      368,
+      365,
+      375,
+      372
+    ],
+    [
+      364,
+      374,
+      375,
+      365
+    ],
+    [
+      376,
+      377,
+      378,
+      379
+    ],
+    [
+      370,
+      376,
+      379,
+      371
+    ],
+    [
+      373,
+      372,
+      378,
+      377
+    ],
+    [
+      370,
+      373,
+      377,
+      376
+    ],
+    [
+      379,
+      378,
+      380,
+      381
+    ],
+    [
+      371,
+      379,
+      381,
+      374
+    ],
+    [
+      372,
+      375,
+      380,
+      378
+    ],
+    [
+      374,
+      381,
+      380,
+      375
+    ]
+  ],
+  "mirrors": [
+    {
+      "plane": "x=0",
+      "source": "left_arm",
+      "target": "right_arm"
+    },
+    {
+      "plane": "x=0",
+      "source": "left_hand",
+      "target": "right_hand"
+    },
+    {
+      "plane": "x=0",
+      "source": "left_leg",
+      "target": "right_leg"
+    },
+    {
+      "plane": "x=0",
+      "source": "left_foot",
+      "target": "right_foot"
+    }
+  ],
+  "placements": {
+    "head": {
+      "bounds_cells": [
+        [
+          -2,
+          -1,
+          7
+        ],
+        [
+          2,
+          1,
+          10
+        ]
+      ],
+      "role": "head"
+    },
+    "left_arm": {
+      "bounds_cells": [
+        [
+          -7,
+          -1,
+          3
+        ],
+        [
+          -3,
+          1,
+          5
+        ]
+      ],
+      "role": "limb"
+    },
+    "left_foot": {
+      "bounds_cells": [
+        [
+          -3,
+          -1,
+          -6
+        ],
+        [
+          -1,
+          3,
+          -5
+        ]
+      ],
+      "role": "limb"
+    },
+    "left_hand": {
+      "bounds_cells": [
+        [
+          -9,
+          -1,
+          3
+        ],
+        [
+          -7,
+          0,
+          5
+        ]
+      ],
+      "role": "limb"
+    },
+    "left_leg": {
+      "bounds_cells": [
+        [
+          -3,
+          -1,
+          -5
+        ],
+        [
+          -1,
+          1,
+          0
+        ]
+      ],
+      "role": "limb"
+    },
+    "neck": {
+      "bounds_cells": [
+        [
+          -1,
+          -1,
+          6
+        ],
+        [
+          1,
+          1,
+          7
+        ]
+      ],
+      "role": "core"
+    },
+    "right_arm": {
+      "bounds_cells": [
+        [
+          3,
+          -1,
+          3
+        ],
+        [
+          7,
+          1,
+          5
+        ]
+      ],
+      "role": "limb"
+    },
+    "right_foot": {
+      "bounds_cells": [
+        [
+          1,
+          -1,
+          -6
+        ],
+        [
+          3,
+          3,
+          -5
+        ]
+      ],
+      "role": "limb"
+    },
+    "right_hand": {
+      "bounds_cells": [
+        [
+          7,
+          -1,
+          3
+        ],
+        [
+          9,
+          0,
+          5
+        ]
+      ],
+      "role": "limb"
+    },
+    "right_leg": {
+      "bounds_cells": [
+        [
+          1,
+          -1,
+          -5
+        ],
+        [
+          3,
+          1,
+          0
+        ]
+      ],
+      "role": "limb"
+    },
+    "torso": {
+      "bounds_cells": [
+        [
+          -3,
+          -1,
+          0
+        ],
+        [
+          3,
+          1,
+          6
+        ]
+      ],
+      "role": "core"
+    }
+  },
+  "regions": [
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.4,
+      "head": 0.6,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.5,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.4,
+      "head": 0.6,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.5,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.5,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.5,
+      "limb": 0.0
+    },
+    {
+      "core": 0.4,
+      "head": 0.6,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.4,
+      "head": 0.6,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 1.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 0.5,
+      "head": 0.0,
+      "limb": 0.5
+    },
+    {
+      "core": 0.6,
+      "head": 0.0,
+      "limb": 0.4
+    },
+    {
+      "core": 1.0,
+      "head": 0.0,
+      "limb": 0.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    },
+    {
+      "core": 0.0,
+      "head": 0.0,
+      "limb": 1.0
+    }
+  ],
+  "schema": "body-plan-mesh/0",
+  "vertex_modules": [
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_hand",
+    "left_arm|left_hand",
+    "left_arm|left_hand",
+    "left_arm|left_hand",
+    "left_arm|left_hand",
+    "left_arm|left_hand",
+    "left_arm|left_hand",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_arm|torso",
+    "left_foot",
+    "left_foot|left_leg",
+    "left_foot|left_leg",
+    "left_foot",
+    "left_foot",
+    "left_foot|left_leg",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg|torso",
+    "left_leg|torso",
+    "left_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "left_foot|left_leg",
+    "left_foot",
+    "left_foot",
+    "left_leg",
+    "left_leg",
+    "left_foot|left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg|torso",
+    "left_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot|left_leg",
+    "left_foot|left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg|torso",
+    "left_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "neck|torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head|neck",
+    "head",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "left_foot",
+    "left_foot|left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg",
+    "left_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "head",
+    "head",
+    "head",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "left_foot",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "right_leg|torso",
+    "torso",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "neck|torso",
+    "head|neck",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "head",
+    "torso",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "neck|torso",
+    "head|neck",
+    "head",
+    "head",
+    "head",
+    "right_foot",
+    "right_foot|right_leg",
+    "right_foot|right_leg",
+    "right_foot",
+    "right_foot",
+    "right_foot|right_leg",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "head",
+    "right_foot|right_leg",
+    "right_foot",
+    "right_foot",
+    "right_leg",
+    "right_leg",
+    "right_foot|right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "head",
+    "head",
+    "head",
+    "head",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot|right_leg",
+    "right_foot|right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg|torso",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "torso",
+    "torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "torso",
+    "torso",
+    "right_foot",
+    "right_foot|right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg",
+    "right_leg|torso",
+    "torso",
+    "torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "right_arm|torso",
+    "torso",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_foot",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm",
+    "right_arm|right_hand",
+    "right_arm|right_hand",
+    "right_arm|right_hand",
+    "right_arm|right_hand",
+    "right_arm|right_hand",
+    "right_arm",
+    "right_arm",
+    "right_arm|right_hand",
+    "right_arm",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand",
+    "right_hand"
+  ],
+  "vertices": [
+    [
+      -1.26,
+      -0.14,
+      0.42
+    ],
+    [
+      -1.26,
+      -0.14,
+      0.56
+    ],
+    [
+      -1.26,
+      0.0,
+      0.56
+    ],
+    [
+      -1.26,
+      0.0,
+      0.42
+    ],
+    [
+      -1.12,
+      -0.14,
+      0.42
+    ],
+    [
+      -1.12,
+      -0.14,
+      0.56
+    ],
+    [
+      -1.12,
+      0.0,
+      0.56
+    ],
+    [
+      -1.12,
+      0.0,
+      0.42
+    ],
+    [
+      -1.26,
+      -0.14,
+      0.7
+    ],
+    [
+      -1.26,
+      0.0,
+      0.7
+    ],
+    [
+      -1.12,
+      -0.14,
+      0.7
+    ],
+    [
+      -1.12,
+      0.0,
+      0.7
+    ],
+    [
+      -0.98,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.98,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.98,
+      0.0,
+      0.56
+    ],
+    [
+      -0.98,
+      0.0,
+      0.42
+    ],
+    [
+      -0.98,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.98,
+      0.0,
+      0.7
+    ],
+    [
+      -0.84,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.84,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.84,
+      0.0,
+      0.42
+    ],
+    [
+      -0.84,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.84,
+      0.0,
+      0.7
+    ],
+    [
+      -0.98,
+      0.14,
+      0.56
+    ],
+    [
+      -0.98,
+      0.14,
+      0.42
+    ],
+    [
+      -0.84,
+      0.14,
+      0.56
+    ],
+    [
+      -0.84,
+      0.14,
+      0.42
+    ],
+    [
+      -0.98,
+      0.14,
+      0.7
+    ],
+    [
+      -0.84,
+      0.14,
+      0.7
+    ],
+    [
+      -0.7,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.7,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.7,
+      0.0,
+      0.42
+    ],
+    [
+      -0.7,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.7,
+      0.0,
+      0.7
+    ],
+    [
+      -0.7,
+      0.14,
+      0.56
+    ],
+    [
+      -0.7,
+      0.14,
+      0.42
+    ],
+    [
+      -0.7,
+      0.14,
+      0.7
+    ],
+    [
+      -0.56,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.56,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.56,
+      0.0,
+      0.42
+    ],
+    [
+      -0.56,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.56,
+      0.0,
+      0.7
+    ],
+    [
+      -0.56,
+      0.14,
+      0.56
+    ],
+    [
+      -0.56,
+      0.14,
+      0.42
+    ],
+    [
+      -0.56,
+      0.14,
+      0.7
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.42,
+      0.0,
+      0.42
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.42,
+      0.0,
+      0.7
+    ],
+    [
+      -0.42,
+      0.14,
+      0.56
+    ],
+    [
+      -0.42,
+      0.14,
+      0.42
+    ],
+    [
+      -0.42,
+      0.14,
+      0.7
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.84
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.84
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.84
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.7
+    ],
+    [
+      -0.28,
+      0.0,
+      -0.84
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.56
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.56
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.56
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.42
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.42
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.42
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.28
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.28
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.28
+    ],
+    [
+      -0.42,
+      -0.14,
+      -0.14
+    ],
+    [
+      -0.42,
+      0.0,
+      -0.14
+    ],
+    [
+      -0.28,
+      -0.14,
+      -0.14
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.0
+    ],
+    [
+      -0.42,
+      0.0,
+      0.0
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.0
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.14
+    ],
+    [
+      -0.42,
+      0.0,
+      0.14
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.14
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.28
+    ],
+    [
+      -0.42,
+      0.0,
+      0.28
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.28
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.42,
+      -0.14,
+      0.84
+    ],
+    [
+      -0.42,
+      0.0,
+      0.84
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.84
+    ],
+    [
+      -0.28,
+      0.0,
+      0.84
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.84
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.84
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.56
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.56
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.42
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.42
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.28
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.28
+    ],
+    [
+      -0.42,
+      0.14,
+      -0.14
+    ],
+    [
+      -0.28,
+      0.14,
+      -0.14
+    ],
+    [
+      -0.42,
+      0.14,
+      0.0
+    ],
+    [
+      -0.28,
+      0.14,
+      0.0
+    ],
+    [
+      -0.42,
+      0.14,
+      0.14
+    ],
+    [
+      -0.28,
+      0.14,
+      0.14
+    ],
+    [
+      -0.42,
+      0.14,
+      0.28
+    ],
+    [
+      -0.28,
+      0.14,
+      0.28
+    ],
+    [
+      -0.28,
+      0.14,
+      0.42
+    ],
+    [
+      -0.28,
+      0.14,
+      0.56
+    ],
+    [
+      -0.28,
+      0.14,
+      0.7
+    ],
+    [
+      -0.42,
+      0.14,
+      0.84
+    ],
+    [
+      -0.28,
+      0.14,
+      0.84
+    ],
+    [
+      -0.42,
+      0.28,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.28,
+      -0.84
+    ],
+    [
+      -0.28,
+      0.28,
+      -0.84
+    ],
+    [
+      -0.28,
+      0.28,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.42,
+      -0.7
+    ],
+    [
+      -0.42,
+      0.42,
+      -0.84
+    ],
+    [
+      -0.28,
+      0.42,
+      -0.7
+    ],
+    [
+      -0.28,
+      0.42,
+      -0.84
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.84
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.84
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.7
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.7
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.56
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.56
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.42
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.42
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.28
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.28
+    ],
+    [
+      -0.14,
+      0.0,
+      -0.14
+    ],
+    [
+      -0.14,
+      -0.14,
+      -0.14
+    ],
+    [
+      -0.14,
+      0.0,
+      0.0
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.0
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.14
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.28
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.42
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.56
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.7
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.84
+    ],
+    [
+      -0.14,
+      0.0,
+      0.84
+    ],
+    [
+      -0.28,
+      -0.14,
+      0.98
+    ],
+    [
+      -0.28,
+      -0.14,
+      1.12
+    ],
+    [
+      -0.28,
+      0.0,
+      1.12
+    ],
+    [
+      -0.28,
+      0.0,
+      0.98
+    ],
+    [
+      -0.14,
+      -0.14,
+      0.98
+    ],
+    [
+      -0.14,
+      -0.14,
+      1.12
+    ],
+    [
+      -0.14,
+      0.0,
+      0.98
+    ],
+    [
+      -0.28,
+      -0.14,
+      1.26
+    ],
+    [
+      -0.28,
+      0.0,
+      1.26
+    ],
+    [
+      -0.14,
+      -0.14,
+      1.26
+    ],
+    [
+      -0.28,
+      -0.14,
+      1.4
+    ],
+    [
+      -0.28,
+      0.0,
+      1.4
+    ],
+    [
+      -0.14,
+      -0.14,
+      1.4
+    ],
+    [
+      -0.14,
+      0.0,
+      1.4
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.84
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.7
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.56
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.42
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.28
+    ],
+    [
+      -0.14,
+      0.14,
+      -0.14
+    ],
+    [
+      -0.14,
+      0.14,
+      0.0
+    ],
+    [
+      -0.14,
+      0.14,
+      0.14
+    ],
+    [
+      -0.14,
+      0.14,
+      0.28
+    ],
+    [
+      -0.14,
+      0.14,
+      0.42
+    ],
+    [
+      -0.14,
+      0.14,
+      0.56
+    ],
+    [
+      -0.14,
+      0.14,
+      0.7
+    ],
+    [
+      -0.14,
+      0.14,
+      0.84
+    ],
+    [
+      -0.28,
+      0.14,
+      1.12
+    ],
+    [
+      -0.28,
+      0.14,
+      0.98
+    ],
+    [
+      -0.14,
+      0.14,
+      1.12
+    ],
+    [
+      -0.14,
+      0.14,
+      0.98
+    ],
+    [
+      -0.28,
+      0.14,
+      1.26
+    ],
+    [
+      -0.14,
+      0.14,
+      1.26
+    ],
+    [
+      -0.28,
+      0.14,
+      1.4
+    ],
+    [
+      -0.14,
+      0.14,
+      1.4
+    ],
+    [
+      -0.14,
+      0.28,
+      -0.84
+    ],
+    [
+      -0.14,
+      0.28,
+      -0.7
+    ],
+    [
+      -0.14,
+      0.42,
+      -0.84
+    ],
+    [
+      -0.14,
+      0.42,
+      -0.7
+    ],
+    [
+      0.0,
+      -0.14,
+      0.0
+    ],
+    [
+      0.0,
+      -0.14,
+      0.14
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.14,
+      0.28
+    ],
+    [
+      0.0,
+      -0.14,
+      0.42
+    ],
+    [
+      0.0,
+      -0.14,
+      0.56
+    ],
+    [
+      0.0,
+      -0.14,
+      0.7
+    ],
+    [
+      0.0,
+      -0.14,
+      0.84
+    ],
+    [
+      0.0,
+      -0.14,
+      0.98
+    ],
+    [
+      0.0,
+      -0.14,
+      1.12
+    ],
+    [
+      0.0,
+      -0.14,
+      1.26
+    ],
+    [
+      0.0,
+      -0.14,
+      1.4
+    ],
+    [
+      0.0,
+      0.0,
+      1.4
+    ],
+    [
+      0.0,
+      0.14,
+      0.14
+    ],
+    [
+      0.0,
+      0.14,
+      0.0
+    ],
+    [
+      0.0,
+      0.14,
+      0.28
+    ],
+    [
+      0.0,
+      0.14,
+      0.42
+    ],
+    [
+      0.0,
+      0.14,
+      0.56
+    ],
+    [
+      0.0,
+      0.14,
+      0.7
+    ],
+    [
+      0.0,
+      0.14,
+      0.84
+    ],
+    [
+      0.0,
+      0.14,
+      0.98
+    ],
+    [
+      0.0,
+      0.14,
+      1.12
+    ],
+    [
+      0.0,
+      0.14,
+      1.26
+    ],
+    [
+      0.0,
+      0.14,
+      1.4
+    ],
+    [
+      0.14,
+      -0.14,
+      0.0
+    ],
+    [
+      0.14,
+      -0.14,
+      0.14
+    ],
+    [
+      0.14,
+      0.0,
+      0.0
+    ],
+    [
+      0.14,
+      -0.14,
+      0.28
+    ],
+    [
+      0.14,
+      -0.14,
+      0.42
+    ],
+    [
+      0.14,
+      -0.14,
+      0.56
+    ],
+    [
+      0.14,
+      -0.14,
+      0.7
+    ],
+    [
+      0.14,
+      -0.14,
+      0.84
+    ],
+    [
+      0.14,
+      0.0,
+      0.84
+    ],
+    [
+      0.14,
+      0.0,
+      0.98
+    ],
+    [
+      0.14,
+      -0.14,
+      0.98
+    ],
+    [
+      0.14,
+      -0.14,
+      1.12
+    ],
+    [
+      0.14,
+      -0.14,
+      1.26
+    ],
+    [
+      0.14,
+      -0.14,
+      1.4
+    ],
+    [
+      0.14,
+      0.0,
+      1.4
+    ],
+    [
+      0.14,
+      0.14,
+      0.14
+    ],
+    [
+      0.14,
+      0.14,
+      0.0
+    ],
+    [
+      0.14,
+      0.14,
+      0.28
+    ],
+    [
+      0.14,
+      0.14,
+      0.42
+    ],
+    [
+      0.14,
+      0.14,
+      0.56
+    ],
+    [
+      0.14,
+      0.14,
+      0.7
+    ],
+    [
+      0.14,
+      0.14,
+      0.84
+    ],
+    [
+      0.14,
+      0.14,
+      0.98
+    ],
+    [
+      0.14,
+      0.14,
+      1.12
+    ],
+    [
+      0.14,
+      0.14,
+      1.26
+    ],
+    [
+      0.14,
+      0.14,
+      1.4
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.84
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.7
+    ],
+    [
+      0.14,
+      0.0,
+      -0.7
+    ],
+    [
+      0.14,
+      0.0,
+      -0.84
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.84
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.7
+    ],
+    [
+      0.28,
+      0.0,
+      -0.84
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.56
+    ],
+    [
+      0.14,
+      0.0,
+      -0.56
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.56
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.42
+    ],
+    [
+      0.14,
+      0.0,
+      -0.42
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.42
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.28
+    ],
+    [
+      0.14,
+      0.0,
+      -0.28
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.28
+    ],
+    [
+      0.14,
+      -0.14,
+      -0.14
+    ],
+    [
+      0.14,
+      0.0,
+      -0.14
+    ],
+    [
+      0.28,
+      -0.14,
+      -0.14
+    ],
+    [
+      0.28,
+      -0.14,
+      0.0
+    ],
+    [
+      0.28,
+      -0.14,
+      0.14
+    ],
+    [
+      0.28,
+      -0.14,
+      0.28
+    ],
+    [
+      0.28,
+      -0.14,
+      0.42
+    ],
+    [
+      0.28,
+      -0.14,
+      0.56
+    ],
+    [
+      0.28,
+      -0.14,
+      0.7
+    ],
+    [
+      0.28,
+      -0.14,
+      0.84
+    ],
+    [
+      0.28,
+      0.0,
+      0.84
+    ],
+    [
+      0.28,
+      -0.14,
+      0.98
+    ],
+    [
+      0.28,
+      0.0,
+      0.98
+    ],
+    [
+      0.28,
+      0.0,
+      1.12
+    ],
+    [
+      0.28,
+      -0.14,
+      1.12
+    ],
+    [
+      0.28,
+      0.0,
+      1.26
+    ],
+    [
+      0.28,
+      -0.14,
+      1.26
+    ],
+    [
+      0.28,
+      0.0,
+      1.4
+    ],
+    [
+      0.28,
+      -0.14,
+      1.4
+    ],
+    [
+      0.14,
+      0.14,
+      -0.7
+    ],
+    [
+      0.14,
+      0.14,
+      -0.84
+    ],
+    [
+      0.28,
+      0.14,
+      -0.84
+    ],
+    [
+      0.14,
+      0.14,
+      -0.56
+    ],
+    [
+      0.28,
+      0.14,
+      -0.56
+    ],
+    [
+      0.28,
+      0.14,
+      -0.7
+    ],
+    [
+      0.14,
+      0.14,
+      -0.42
+    ],
+    [
+      0.28,
+      0.14,
+      -0.42
+    ],
+    [
+      0.14,
+      0.14,
+      -0.28
+    ],
+    [
+      0.28,
+      0.14,
+      -0.28
+    ],
+    [
+      0.14,
+      0.14,
+      -0.14
+    ],
+    [
+      0.28,
+      0.14,
+      -0.14
+    ],
+    [
+      0.28,
+      0.14,
+      0.0
+    ],
+    [
+      0.28,
+      0.14,
+      0.14
+    ],
+    [
+      0.28,
+      0.14,
+      0.28
+    ],
+    [
+      0.28,
+      0.14,
+      0.42
+    ],
+    [
+      0.28,
+      0.14,
+      0.56
+    ],
+    [
+      0.28,
+      0.14,
+      0.7
+    ],
+    [
+      0.28,
+      0.14,
+      0.84
+    ],
+    [
+      0.28,
+      0.14,
+      0.98
+    ],
+    [
+      0.28,
+      0.14,
+      1.12
+    ],
+    [
+      0.28,
+      0.14,
+      1.26
+    ],
+    [
+      0.28,
+      0.14,
+      1.4
+    ],
+    [
+      0.14,
+      0.28,
+      -0.7
+    ],
+    [
+      0.14,
+      0.28,
+      -0.84
+    ],
+    [
+      0.28,
+      0.28,
+      -0.84
+    ],
+    [
+      0.28,
+      0.28,
+      -0.7
+    ],
+    [
+      0.14,
+      0.42,
+      -0.7
+    ],
+    [
+      0.14,
+      0.42,
+      -0.84
+    ],
+    [
+      0.28,
+      0.42,
+      -0.7
+    ],
+    [
+      0.28,
+      0.42,
+      -0.84
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.84
+    ],
+    [
+      0.42,
+      0.0,
+      -0.84
+    ],
+    [
+      0.42,
+      0.0,
+      -0.7
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.7
+    ],
+    [
+      0.42,
+      0.0,
+      -0.56
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.56
+    ],
+    [
+      0.42,
+      0.0,
+      -0.42
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.42
+    ],
+    [
+      0.42,
+      0.0,
+      -0.28
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.28
+    ],
+    [
+      0.42,
+      0.0,
+      -0.14
+    ],
+    [
+      0.42,
+      -0.14,
+      -0.14
+    ],
+    [
+      0.42,
+      0.0,
+      0.0
+    ],
+    [
+      0.42,
+      -0.14,
+      0.0
+    ],
+    [
+      0.42,
+      0.0,
+      0.14
+    ],
+    [
+      0.42,
+      -0.14,
+      0.14
+    ],
+    [
+      0.42,
+      0.0,
+      0.28
+    ],
+    [
+      0.42,
+      -0.14,
+      0.28
+    ],
+    [
+      0.42,
+      0.0,
+      0.42
+    ],
+    [
+      0.42,
+      -0.14,
+      0.42
+    ],
+    [
+      0.42,
+      -0.14,
+      0.56
+    ],
+    [
+      0.42,
+      -0.14,
+      0.7
+    ],
+    [
+      0.42,
+      0.0,
+      0.7
+    ],
+    [
+      0.42,
+      0.0,
+      0.84
+    ],
+    [
+      0.42,
+      -0.14,
+      0.84
+    ],
+    [
+      0.42,
+      0.14,
+      -0.84
+    ],
+    [
+      0.42,
+      0.14,
+      -0.7
+    ],
+    [
+      0.42,
+      0.14,
+      -0.56
+    ],
+    [
+      0.42,
+      0.14,
+      -0.42
+    ],
+    [
+      0.42,
+      0.14,
+      -0.28
+    ],
+    [
+      0.42,
+      0.14,
+      -0.14
+    ],
+    [
+      0.42,
+      0.14,
+      0.0
+    ],
+    [
+      0.42,
+      0.14,
+      0.14
+    ],
+    [
+      0.42,
+      0.14,
+      0.28
+    ],
+    [
+      0.42,
+      0.14,
+      0.42
+    ],
+    [
+      0.42,
+      0.14,
+      0.56
+    ],
+    [
+      0.42,
+      0.14,
+      0.7
+    ],
+    [
+      0.42,
+      0.14,
+      0.84
+    ],
+    [
+      0.42,
+      0.28,
+      -0.84
+    ],
+    [
+      0.42,
+      0.28,
+      -0.7
+    ],
+    [
+      0.42,
+      0.42,
+      -0.84
+    ],
+    [
+      0.42,
+      0.42,
+      -0.7
+    ],
+    [
+      0.56,
+      -0.14,
+      0.42
+    ],
+    [
+      0.56,
+      -0.14,
+      0.56
+    ],
+    [
+      0.56,
+      0.0,
+      0.42
+    ],
+    [
+      0.56,
+      -0.14,
+      0.7
+    ],
+    [
+      0.56,
+      0.0,
+      0.7
+    ],
+    [
+      0.56,
+      0.14,
+      0.56
+    ],
+    [
+      0.56,
+      0.14,
+      0.42
+    ],
+    [
+      0.56,
+      0.14,
+      0.7
+    ],
+    [
+      0.7,
+      -0.14,
+      0.42
+    ],
+    [
+      0.7,
+      -0.14,
+      0.56
+    ],
+    [
+      0.7,
+      0.0,
+      0.42
+    ],
+    [
+      0.7,
+      -0.14,
+      0.7
+    ],
+    [
+      0.7,
+      0.0,
+      0.7
+    ],
+    [
+      0.7,
+      0.14,
+      0.56
+    ],
+    [
+      0.7,
+      0.14,
+      0.42
+    ],
+    [
+      0.7,
+      0.14,
+      0.7
+    ],
+    [
+      0.84,
+      -0.14,
+      0.42
+    ],
+    [
+      0.84,
+      -0.14,
+      0.56
+    ],
+    [
+      0.84,
+      0.0,
+      0.42
+    ],
+    [
+      0.84,
+      -0.14,
+      0.7
+    ],
+    [
+      0.84,
+      0.0,
+      0.7
+    ],
+    [
+      0.84,
+      0.14,
+      0.56
+    ],
+    [
+      0.84,
+      0.14,
+      0.42
+    ],
+    [
+      0.84,
+      0.14,
+      0.7
+    ],
+    [
+      0.98,
+      -0.14,
+      0.42
+    ],
+    [
+      0.98,
+      -0.14,
+      0.56
+    ],
+    [
+      0.98,
+      0.0,
+      0.42
+    ],
+    [
+      0.98,
+      -0.14,
+      0.7
+    ],
+    [
+      0.98,
+      0.0,
+      0.7
+    ],
+    [
+      0.98,
+      0.14,
+      0.42
+    ],
+    [
+      0.98,
+      0.14,
+      0.56
+    ],
+    [
+      0.98,
+      0.0,
+      0.56
+    ],
+    [
+      0.98,
+      0.14,
+      0.7
+    ],
+    [
+      1.12,
+      -0.14,
+      0.42
+    ],
+    [
+      1.12,
+      -0.14,
+      0.56
+    ],
+    [
+      1.12,
+      0.0,
+      0.56
+    ],
+    [
+      1.12,
+      0.0,
+      0.42
+    ],
+    [
+      1.12,
+      -0.14,
+      0.7
+    ],
+    [
+      1.12,
+      0.0,
+      0.7
+    ],
+    [
+      1.26,
+      -0.14,
+      0.42
+    ],
+    [
+      1.26,
+      0.0,
+      0.42
+    ],
+    [
+      1.26,
+      0.0,
+      0.56
+    ],
+    [
+      1.26,
+      -0.14,
+      0.56
+    ],
+    [
+      1.26,
+      0.0,
+      0.7
+    ],
+    [
+      1.26,
+      -0.14,
+      0.7
+    ]
+  ]
+}

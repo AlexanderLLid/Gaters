@@ -1,0 +1,2811 @@
+{
+  "body_metadata": {
+    "body_plan_id": "stick-humanoid-tall",
+    "cells": [
+      {
+        "module": "left_hand",
+        "position": [
+          -10,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_hand",
+        "position": [
+          -10,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_hand",
+        "position": [
+          -9,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_hand",
+        "position": [
+          -9,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -8,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -8,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -8,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -8,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -7,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -7,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -7,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -7,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -6,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -6,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -6,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -6,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -5,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -5,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -5,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -5,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -4,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -4,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -4,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "left_arm",
+        "position": [
+          -4,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -3,
+          -1,
+          -8
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -7
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -6
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -5
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -4
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -3
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -2
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          -1,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -3,
+          0,
+          -8
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -7
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -6
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -5
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -4
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -3
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -2
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -3,
+          0,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -3,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -3,
+          1,
+          -8
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -3,
+          2,
+          -8
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -2,
+          -1,
+          -8
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -7
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -6
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -5
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -4
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -3
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -2
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          -1,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          -1,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          -1,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          -1,
+          10
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -2,
+          0,
+          -8
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -7
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -6
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -5
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -4
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -3
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -2
+        ]
+      },
+      {
+        "module": "left_leg",
+        "position": [
+          -2,
+          0,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -2,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          0,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          0,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -2,
+          0,
+          10
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -2,
+          1,
+          -8
+        ]
+      },
+      {
+        "module": "left_foot",
+        "position": [
+          -2,
+          2,
+          -8
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "neck",
+        "position": [
+          -1,
+          -1,
+          7
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          -1,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          -1,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          -1,
+          10
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          -1,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "neck",
+        "position": [
+          -1,
+          0,
+          7
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          0,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          0,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          -1,
+          0,
+          10
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "neck",
+        "position": [
+          0,
+          -1,
+          7
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          -1,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          -1,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          -1,
+          10
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          0,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "neck",
+        "position": [
+          0,
+          0,
+          7
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          0,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          0,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          0,
+          0,
+          10
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          1,
+          -1,
+          -8
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -7
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -6
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -5
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -4
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -3
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -2
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          -1,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          -1,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          -1,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          -1,
+          10
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          1,
+          0,
+          -8
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -7
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -6
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -5
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -4
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -3
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -2
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          1,
+          0,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          1,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          0,
+          8
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          0,
+          9
+        ]
+      },
+      {
+        "module": "head",
+        "position": [
+          1,
+          0,
+          10
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          1,
+          1,
+          -8
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          1,
+          2,
+          -8
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          2,
+          -1,
+          -8
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -7
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -6
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -5
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -4
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -3
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -2
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          -1,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          -1,
+          6
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          2,
+          0,
+          -8
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -7
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -6
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -5
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -4
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -3
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -2
+        ]
+      },
+      {
+        "module": "right_leg",
+        "position": [
+          2,
+          0,
+          -1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          0
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          2
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "torso",
+        "position": [
+          2,
+          0,
+          6
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          2,
+          1,
+          -8
+        ]
+      },
+      {
+        "module": "right_foot",
+        "position": [
+          2,
+          2,
+          -8
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          3,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          3,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          3,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          3,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          4,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          4,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          4,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          4,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          5,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          5,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          5,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          5,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          6,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          6,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          6,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          6,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          7,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          7,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          7,
+          0,
+          4
+        ]
+      },
+      {
+        "module": "right_arm",
+        "position": [
+          7,
+          0,
+          5
+        ]
+      },
+      {
+        "module": "right_hand",
+        "position": [
+          8,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_hand",
+        "position": [
+          8,
+          -1,
+          5
+        ]
+      },
+      {
+        "module": "right_hand",
+        "position": [
+          9,
+          -1,
+          4
+        ]
+      },
+      {
+        "module": "right_hand",
+        "position": [
+          9,
+          -1,
+          5
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "attach": "+z",
+        "child": "neck",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.98
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "torso"
+      },
+      {
+        "attach": "+z",
+        "child": "head",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            0.0,
+            0.0,
+            1.12
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "neck"
+      },
+      {
+        "attach": "-x",
+        "child": "left_arm",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            -0.42,
+            0.0,
+            0.7
+          ],
+          "tangent": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "u": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "parent": "torso"
+      },
+      {
+        "attach": "+x",
+        "child": "right_arm",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            0.42,
+            0.0,
+            0.7
+          ],
+          "tangent": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "u": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "parent": "torso"
+      },
+      {
+        "attach": "-x",
+        "child": "left_hand",
+        "contact_faces": 2,
+        "frame": {
+          "origin": [
+            -1.12,
+            -0.07,
+            0.7
+          ],
+          "tangent": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "u": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "parent": "left_arm"
+      },
+      {
+        "attach": "+x",
+        "child": "right_hand",
+        "contact_faces": 2,
+        "frame": {
+          "origin": [
+            1.12,
+            -0.07,
+            0.7
+          ],
+          "tangent": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "u": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "parent": "right_arm"
+      },
+      {
+        "attach": "-z",
+        "child": "left_leg",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            -0.28,
+            0.0,
+            0.0
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "torso"
+      },
+      {
+        "attach": "-z",
+        "child": "right_leg",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            0.28,
+            0.0,
+            0.0
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "torso"
+      },
+      {
+        "attach": "-z",
+        "child": "left_foot",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            -0.28,
+            0.0,
+            -0.98
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "left_leg"
+      },
+      {
+        "attach": "-z",
+        "child": "right_foot",
+        "contact_faces": 4,
+        "frame": {
+          "origin": [
+            0.28,
+            0.0,
+            -0.98
+          ],
+          "tangent": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "u": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "v": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "parent": "right_leg"
+      }
+    ],
+    "mirrors": [
+      {
+        "plane": "x=0",
+        "source": "left_arm",
+        "target": "right_arm"
+      },
+      {
+        "plane": "x=0",
+        "source": "left_hand",
+        "target": "right_hand"
+      },
+      {
+        "plane": "x=0",
+        "source": "left_leg",
+        "target": "right_leg"
+      },
+      {
+        "plane": "x=0",
+        "source": "left_foot",
+        "target": "right_foot"
+      }
+    ],
+    "placements": {
+      "head": {
+        "bounds_cells": [
+          [
+            -2,
+            -1,
+            8
+          ],
+          [
+            2,
+            1,
+            11
+          ]
+        ],
+        "role": "head"
+      },
+      "left_arm": {
+        "bounds_cells": [
+          [
+            -8,
+            -1,
+            4
+          ],
+          [
+            -3,
+            1,
+            6
+          ]
+        ],
+        "role": "limb"
+      },
+      "left_foot": {
+        "bounds_cells": [
+          [
+            -3,
+            -1,
+            -8
+          ],
+          [
+            -1,
+            3,
+            -7
+          ]
+        ],
+        "role": "limb"
+      },
+      "left_hand": {
+        "bounds_cells": [
+          [
+            -10,
+            -1,
+            4
+          ],
+          [
+            -8,
+            0,
+            6
+          ]
+        ],
+        "role": "limb"
+      },
+      "left_leg": {
+        "bounds_cells": [
+          [
+            -3,
+            -1,
+            -7
+          ],
+          [
+            -1,
+            1,
+            0
+          ]
+        ],
+        "role": "limb"
+      },
+      "neck": {
+        "bounds_cells": [
+          [
+            -1,
+            -1,
+            7
+          ],
+          [
+            1,
+            1,
+            8
+          ]
+        ],
+        "role": "core"
+      },
+      "right_arm": {
+        "bounds_cells": [
+          [
+            3,
+            -1,
+            4
+          ],
+          [
+            8,
+            1,
+            6
+          ]
+        ],
+        "role": "limb"
+      },
+      "right_foot": {
+        "bounds_cells": [
+          [
+            1,
+            -1,
+            -8
+          ],
+          [
+            3,
+            3,
+            -7
+          ]
+        ],
+        "role": "limb"
+      },
+      "right_hand": {
+        "bounds_cells": [
+          [
+            8,
+            -1,
+            4
+          ],
+          [
+            10,
+            0,
+            6
+          ]
+        ],
+        "role": "limb"
+      },
+      "right_leg": {
+        "bounds_cells": [
+          [
+            1,
+            -1,
+            -7
+          ],
+          [
+            3,
+            1,
+            0
+          ]
+        ],
+        "role": "limb"
+      },
+      "torso": {
+        "bounds_cells": [
+          [
+            -3,
+            -1,
+            0
+          ],
+          [
+            3,
+            1,
+            7
+          ]
+        ],
+        "role": "core"
+      }
+    }
+  },
+  "body_plan_id": "stick-humanoid-tall",
+  "id": "humanoid-guide",
+  "landmarks": {
+    "chest": [
+      0,
+      0,
+      0.686
+    ],
+    "head_base": [
+      0,
+      0,
+      1.162
+    ],
+    "head_center": [
+      0.0,
+      0.0,
+      1.33
+    ],
+    "head_top": [
+      0.0,
+      0.0,
+      1.54
+    ],
+    "left_ankle": [
+      -0.28,
+      0,
+      -0.92806
+    ],
+    "left_elbow": [
+      -0.759808,
+      0,
+      0.6755
+    ],
+    "left_hip": [
+      -0.28,
+      0,
+      0.0588
+    ],
+    "left_knee": [
+      -0.28,
+      0,
+      -0.481376
+    ],
+    "left_shoulder": [
+      -0.3696,
+      0,
+      0.7
+    ],
+    "left_wrist": [
+      -1.074976,
+      0,
+      0.651
+    ],
+    "neck_base": [
+      0,
+      0,
+      0.98
+    ],
+    "pelvis": [
+      0,
+      0,
+      0.1372
+    ],
+    "right_ankle": [
+      0.28,
+      0,
+      -0.92806
+    ],
+    "right_elbow": [
+      0.759808,
+      0,
+      0.6755
+    ],
+    "right_hip": [
+      0.28,
+      0,
+      0.0588
+    ],
+    "right_knee": [
+      0.28,
+      0,
+      -0.481376
+    ],
+    "right_shoulder": [
+      0.3696,
+      0,
+      0.7
+    ],
+    "right_wrist": [
+      1.074976,
+      0,
+      0.651
+    ],
+    "waist": [
+      0,
+      0,
+      0.4116
+    ]
+  },
+  "schema": "anatomical-guide/0",
+  "skeleton_segments": [
+    {
+      "end": "waist",
+      "id": "spine_lower",
+      "start": "pelvis"
+    },
+    {
+      "end": "chest",
+      "id": "spine_upper",
+      "start": "waist"
+    },
+    {
+      "end": "head_center",
+      "id": "neck",
+      "start": "chest"
+    },
+    {
+      "end": "left_shoulder",
+      "id": "left_clavicle",
+      "start": "chest"
+    },
+    {
+      "end": "left_elbow",
+      "id": "left_upper_arm",
+      "start": "left_shoulder"
+    },
+    {
+      "end": "left_wrist",
+      "id": "left_lower_arm",
+      "start": "left_elbow"
+    },
+    {
+      "end": "left_hip",
+      "id": "left_pelvis",
+      "start": "pelvis"
+    },
+    {
+      "end": "left_knee",
+      "id": "left_thigh",
+      "start": "left_hip"
+    },
+    {
+      "end": "left_ankle",
+      "id": "left_calf",
+      "start": "left_knee"
+    },
+    {
+      "end": "right_shoulder",
+      "id": "right_clavicle",
+      "start": "chest"
+    },
+    {
+      "end": "right_elbow",
+      "id": "right_upper_arm",
+      "start": "right_shoulder"
+    },
+    {
+      "end": "right_wrist",
+      "id": "right_lower_arm",
+      "start": "right_elbow"
+    },
+    {
+      "end": "right_hip",
+      "id": "right_pelvis",
+      "start": "pelvis"
+    },
+    {
+      "end": "right_knee",
+      "id": "right_thigh",
+      "start": "right_hip"
+    },
+    {
+      "end": "right_ankle",
+      "id": "right_calf",
+      "start": "right_knee"
+    }
+  ],
+  "surface_ellipsoids": [
+    {
+      "center": [
+        0.0,
+        0.0,
+        0.1372
+      ],
+      "id": "pelvis",
+      "module": "torso",
+      "radii": [
+        0.3192,
+        0.1568,
+        0.1372
+      ],
+      "role": "core"
+    },
+    {
+      "center": [
+        0.0,
+        0.0,
+        0.4116
+      ],
+      "id": "abdomen",
+      "module": "torso",
+      "radii": [
+        0.2772,
+        0.1428,
+        0.1568
+      ],
+      "role": "core"
+    },
+    {
+      "center": [
+        0.0,
+        0.0,
+        0.686
+      ],
+      "id": "chest",
+      "module": "torso",
+      "radii": [
+        0.3696,
+        0.1652,
+        0.2205
+      ],
+      "role": "core"
+    },
+    {
+      "center": [
+        0.0,
+        0.0,
+        1.393
+      ],
+      "id": "cranium",
+      "module": "head",
+      "radii": [
+        0.2184,
+        0.14,
+        0.147
+      ],
+      "role": "head"
+    },
+    {
+      "center": [
+        0.0,
+        0.0,
+        1.2796
+      ],
+      "id": "lower_face",
+      "module": "head",
+      "radii": [
+        0.2072,
+        0.126,
+        0.1155
+      ],
+      "role": "head"
+    },
+    {
+      "center": [
+        0.0,
+        0.0,
+        1.1872
+      ],
+      "id": "jaw",
+      "module": "head",
+      "radii": [
+        0.1736,
+        0.1092,
+        0.063
+      ],
+      "role": "head"
+    },
+    {
+      "center": [
+        -0.3696,
+        0,
+        0.7
+      ],
+      "id": "left_deltoid",
+      "module": "left_arm",
+      "radii": [
+        0.1092,
+        0.1008,
+        0.126
+      ],
+      "role": "limb"
+    },
+    {
+      "center": [
+        -1.26,
+        -0.07,
+        0.7
+      ],
+      "id": "left_hand",
+      "module": "left_hand",
+      "radii": [
+        0.118496,
+        0.052808,
+        0.074704
+      ],
+      "role": "limb"
+    },
+    {
+      "center": [
+        -0.28,
+        0.14,
+        -1.05
+      ],
+      "id": "left_foot",
+      "module": "left_foot",
+      "radii": [
+        0.12236,
+        0.24472,
+        0.046368
+      ],
+      "role": "limb"
+    },
+    {
+      "center": [
+        0.3696,
+        0,
+        0.7
+      ],
+      "id": "right_deltoid",
+      "module": "right_arm",
+      "radii": [
+        0.1092,
+        0.1008,
+        0.126
+      ],
+      "role": "limb"
+    },
+    {
+      "center": [
+        1.26,
+        -0.07,
+        0.7
+      ],
+      "id": "right_hand",
+      "module": "right_hand",
+      "radii": [
+        0.118496,
+        0.052808,
+        0.074704
+      ],
+      "role": "limb"
+    },
+    {
+      "center": [
+        0.28,
+        0.14,
+        -1.05
+      ],
+      "id": "right_foot",
+      "module": "right_foot",
+      "radii": [
+        0.12236,
+        0.24472,
+        0.046368
+      ],
+      "role": "limb"
+    }
+  ],
+  "surface_segments": [
+    {
+      "end": "left_elbow",
+      "end_radius_m": 0.1008,
+      "id": "left_upper_arm",
+      "module": "left_arm",
+      "role": "limb",
+      "samples": 5,
+      "start": "left_shoulder",
+      "start_radius_m": 0.1288
+    },
+    {
+      "end": "left_wrist",
+      "end_radius_m": 0.0728,
+      "id": "left_lower_arm",
+      "module": "left_arm",
+      "role": "limb",
+      "samples": 5,
+      "start": "left_elbow",
+      "start_radius_m": 0.1008
+    },
+    {
+      "end": "left_knee",
+      "end_radius_m": 0.1092,
+      "id": "left_thigh",
+      "module": "left_leg",
+      "role": "limb",
+      "samples": 5,
+      "start": "left_hip",
+      "start_radius_m": 0.1512
+    },
+    {
+      "end": "left_ankle",
+      "end_radius_m": 0.077,
+      "id": "left_calf",
+      "module": "left_leg",
+      "role": "limb",
+      "samples": 5,
+      "start": "left_knee",
+      "start_radius_m": 0.1092
+    },
+    {
+      "end": "right_elbow",
+      "end_radius_m": 0.1008,
+      "id": "right_upper_arm",
+      "module": "right_arm",
+      "role": "limb",
+      "samples": 5,
+      "start": "right_shoulder",
+      "start_radius_m": 0.1288
+    },
+    {
+      "end": "right_wrist",
+      "end_radius_m": 0.0728,
+      "id": "right_lower_arm",
+      "module": "right_arm",
+      "role": "limb",
+      "samples": 5,
+      "start": "right_elbow",
+      "start_radius_m": 0.1008
+    },
+    {
+      "end": "right_knee",
+      "end_radius_m": 0.1092,
+      "id": "right_thigh",
+      "module": "right_leg",
+      "role": "limb",
+      "samples": 5,
+      "start": "right_hip",
+      "start_radius_m": 0.1512
+    },
+    {
+      "end": "right_ankle",
+      "end_radius_m": 0.077,
+      "id": "right_calf",
+      "module": "right_leg",
+      "role": "limb",
+      "samples": 5,
+      "start": "right_knee",
+      "start_radius_m": 0.1092
+    },
+    {
+      "end": "head_base",
+      "end_radius_m": 0.121072,
+      "id": "neck",
+      "module": "neck",
+      "role": "core",
+      "samples": 5,
+      "start": "neck_base",
+      "start_radius_m": 0.1288
+    }
+  ],
+  "symmetry_pairs": [
+    [
+      "left_shoulder",
+      "right_shoulder"
+    ],
+    [
+      "left_elbow",
+      "right_elbow"
+    ],
+    [
+      "left_wrist",
+      "right_wrist"
+    ],
+    [
+      "left_hip",
+      "right_hip"
+    ],
+    [
+      "left_knee",
+      "right_knee"
+    ],
+    [
+      "left_ankle",
+      "right_ankle"
+    ]
+  ]
+}

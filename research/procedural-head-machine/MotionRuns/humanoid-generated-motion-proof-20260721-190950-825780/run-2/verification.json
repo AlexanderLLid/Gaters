@@ -1,0 +1,9 @@
+{
+  "failures": [],
+  "frame_count": 13,
+  "maximum_frame_delta_degrees": 10.833333333333343,
+  "maximum_joint_motion_m": 0.6572597877110836,
+  "maximum_replay_delta_m": 0.0,
+  "passed": true,
+  "schema": "motion-verification/0"
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "image": {
+    "path": "Reference/painted-a-front-flat-v2.png",
+    "sha256": "b8352cbe17c646619295764480127f6f4fc0f305879efd3e9479212723c6f7bf",
+    "size": [1254, 1254]
+  },
+  "annotationMethod": "Two independent blind manual original-resolution annotations were reconciled to the fixed consensus points below. They mark exposed upper and lower lid margins, nasion, subnasale, and alare; lashes, brows, bags, shadows, texture, and nostril darkness are excluded.",
+  "uncertainty": "The consensus keeps the larger observed disagreement per role. The score compares only the three declared front-supported distances. A nomination must exceed both the fixed material margin and the summed ratio uncertainty; otherwise it is triage only, never a likeness or profile claim.",
+  "blindAnnotations": [
+    {"id": "blind-a", "points": {"leftUpperLid": [510, 415], "leftLowerLid": [510, 448], "rightUpperLid": [735, 414], "rightLowerLid": [735, 448], "nasion": [626, 454], "subnasale": [626, 622], "leftAlare": [545, 593], "rightAlare": [705, 593], "leftEyeCenter": [510, 430], "rightEyeCenter": [735, 430]}},
+    {"id": "blind-b", "points": {"leftUpperLid": [510, 416], "leftLowerLid": [510, 447], "rightUpperLid": [739, 414], "rightLowerLid": [739, 445], "nasion": [625, 448], "subnasale": [625, 616], "leftAlare": [546, 588], "rightAlare": [704, 590], "leftEyeCenter": [510, 432], "rightEyeCenter": [739, 430]}}
+  ],
+  "points": {
+    "leftUpperLid": [510, 416], "leftLowerLid": [510, 448],
+    "rightUpperLid": [737, 414], "rightLowerLid": [737, 447],
+    "nasion": [626, 451], "subnasale": [626, 619],
+    "leftAlare": [546, 591], "rightAlare": [705, 592],
+    "leftEyeCenter": [510, 431], "rightEyeCenter": [737, 430]
+  },
+  "ratios": {
+    "eyeAperture": 0.14317180616740088,
+    "noseLength": 0.7400881057268722,
+    "alarWidth": 0.7004405286343612
+  },
+  "uncertaintyPixels": {"leftUpperLid": 4, "leftLowerLid": 4, "rightUpperLid": 4, "rightLowerLid": 4, "nasion": 7, "subnasale": 6, "leftAlare": 5, "rightAlare": 5, "leftEyeCenter": 3, "rightEyeCenter": 3},
+  "uncertaintyRatios": {"eyeAperture": 0.03524229074889868, "noseLength": 0.05726872246696035, "alarWidth": 0.04405286343612335},
+  "totalUncertaintyRatio": 0.13656387665198238
+}

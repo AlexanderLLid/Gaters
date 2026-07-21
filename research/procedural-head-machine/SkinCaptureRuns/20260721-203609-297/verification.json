@@ -1,0 +1,65 @@
+{
+  "failures": [
+    {
+      "rule": "POSE-SUITE-PROTECTED-1",
+      "subject": "left_shoulder_raise"
+    },
+    {
+      "rule": "POSE-SUITE-PROTECTED-1",
+      "subject": "left_hip_flex"
+    },
+    {
+      "rule": "POSE-SUITE-PROTECTED-1",
+      "subject": "torso_twist"
+    }
+  ],
+  "passed": false,
+  "poses": {
+    "left_elbow_flex": {
+      "active_displacement_m": 0.3471861377070991,
+      "minimum_thickness_ratio_p10": 0.88,
+      "posed_thickness_p10_m": 0.0829123432429342,
+      "protected_displacement_m": 1.3348812510944096e-07,
+      "rest_thickness_p10_m": 0.0909377607833146,
+      "sample_count": 510,
+      "thickness_ratio_p10": 0.9117482388916166
+    },
+    "left_hip_flex": {
+      "active_displacement_m": 0.6071556773720802,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.12356405646232975,
+      "protected_displacement_m": 0.02372856920686608,
+      "rest_thickness_p10_m": 0.13669031313940874,
+      "sample_count": 808,
+      "thickness_ratio_p10": 0.9039708346875196
+    },
+    "left_knee_flex": {
+      "active_displacement_m": 0.4439956163976095,
+      "minimum_thickness_ratio_p10": 0.8,
+      "posed_thickness_p10_m": 0.08866008146586742,
+      "protected_displacement_m": 1.3348812510944096e-07,
+      "rest_thickness_p10_m": 0.09860688467709815,
+      "sample_count": 680,
+      "thickness_ratio_p10": 0.8991266862977884
+    },
+    "left_shoulder_raise": {
+      "active_displacement_m": 0.5866314386026631,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.10975017820691312,
+      "protected_displacement_m": 0.025596252796883785,
+      "rest_thickness_p10_m": 0.11941299812274117,
+      "sample_count": 557,
+      "thickness_ratio_p10": 0.919080669041607
+    },
+    "torso_twist": {
+      "active_displacement_m": 0.6386849526924975,
+      "minimum_thickness_ratio_p10": 0.75,
+      "posed_thickness_p10_m": 0.13389327341059148,
+      "protected_displacement_m": 0.004258646725062425,
+      "rest_thickness_p10_m": 0.13680924436054404,
+      "sample_count": 1156,
+      "thickness_ratio_p10": 0.9786858631989234
+    }
+  },
+  "schema": "pose-suite-verification/0"
+}

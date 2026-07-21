@@ -1,0 +1,101 @@
+{
+  "artifacts": {
+    "face-style-macro.blend": "20290c2a1a0bbd0f9b26f3bf76d0f08eb2b49f4cad9219bf886cd4c115d2718a",
+    "front.png": "d3ba38860b5473ad7e534e4158ef51506e24505eb8aaa36ed3da9ec0f6fd6eff",
+    "profile.png": "1aeb1411568523518563a627214b7e77d51b9fce579570b447245800d184be90",
+    "three-quarter.png": "0a93f62e9f2ea19e5e3d624619000abc64ba52e7a13051b5c6fb6c27232ed426"
+  },
+  "baselineMacro": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\macro-geometry.json",
+    "sha256": "8097090850d64c06b7621cebeca881216ca3acd2ef3a69e632525359eb9bb402"
+  },
+  "maximumDisplacement": 0.012847228767824972,
+  "maximumYDisplacement": 0.0,
+  "recipe": {
+    "parameters": {
+      "addPupils": true,
+      "browColor": [
+        0.018,
+        0.008,
+        0.004,
+        1.0
+      ],
+      "browDepthScale": 0.7,
+      "browHeightScale": 0.78,
+      "browWidthScale": 0.95,
+      "cheekScale": 0.979,
+      "eyeBagLeft": 0.16,
+      "eyeBagRight": 0.14,
+      "eyeHeightValue": 0.545,
+      "eyeNarrowLeft": 0.0,
+      "eyeNarrowRight": 0.0,
+      "eyeScaleDecreaseLeft": 0.22,
+      "eyeScaleDecreaseRight": 0.41,
+      "irisColor": [
+        0.025,
+        0.009,
+        0.003,
+        1.0
+      ],
+      "jawScale": 1.052,
+      "lateralPower": 4.0,
+      "lipColor": [
+        0.045,
+        0.012,
+        0.01,
+        1.0
+      ],
+      "lowerHeightScale": 1.12,
+      "lowerLipVolumeDecrease": 0.2,
+      "lowerLipVolumeIncrease": 0.0,
+      "mouthNarrowValue": 0.17,
+      "mouthWidthValue": 0.0,
+      "pupilColor": [
+        0.001,
+        0.0005,
+        0.0003,
+        1.0
+      ],
+      "scleraColor": [
+        0.4,
+        0.36,
+        0.3,
+        1.0
+      ],
+      "showBrows": true,
+      "skinColor": [
+        0.08,
+        0.03,
+        0.015,
+        1.0
+      ],
+      "upperHeightScale": 0.9,
+      "upperLipVolumeDecrease": 0.25,
+      "upperLipVolumeIncrease": 0.0
+    },
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\style-presentation-v3.json",
+    "sha256": "6c4f091aa803ada70db39442f7dcc5f475814489b28b74cee1ab5bd7a2889861"
+  },
+  "schemaVersion": 1,
+  "shapeKey": "StyleMacroDirect",
+  "sourceBlend": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\search-runs\\anatomical-front-fit-v0-20260720-1\\round-9\\9032fd4dc9db2de64564b3f19e32ca5e6199881df111c2fa2d37feb1c7cc12f8\\face-sculpt.blend",
+    "sha256": "4dd761827a05919179e4ad1829a0d27e7ee4b617546e237ada8a80588410155c"
+  },
+  "status": "built-unverified",
+  "targetGeometry": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\target-front-geometry.json",
+    "sha256": "f4849f11bfb6a3d105025741e44f452830b485c2bbebfa76394404e581cc57d6"
+  },
+  "toolVersions": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "913712152a675579aef6c32b41312eb0f52d638ee4de188016130e2ac95dea7b",
+    "deformerSha256": "826543c655904f6d9a97ca1b4068743ebd6b78d868443892ff0cd951c94a3515",
+    "python": "3.13.13"
+  },
+  "topology": {
+    "faceCount": 18486,
+    "sha256": "1f78e347f544c2377abee83216f297dc9499b73b7a149bd8b8d849b5553d95db",
+    "vertexCount": 19158
+  }
+}

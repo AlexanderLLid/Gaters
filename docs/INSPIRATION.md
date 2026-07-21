@@ -28,19 +28,14 @@ enters the lore or systems wikis.
 
 ## Visual direction
 
-- **[current call] Clean mid-poly structure with hand-painted warmth:** smooth readable
-  silhouettes, simplified reusable geometry and materials, painted color variation, and
-  moderate foliage density. Detail comes from shape, palette, composition, and lighting
-  rather than photoreal scans or visible terrain facets.
+- **[open] Final visual direction:** realism level, proportion language, shading, surface
+  finish, and detail density remain undecided. Candidates may range from grounded to
+  strongly stylized, but must satisfy `ART-1` recognizability and remain replaceable.
 - **Performance shape:** ordinary Unreal lighting and scalable density/shadows are the
   baseline; expensive rendering features remain optional quality settings.
-- **References:** `research/references/style-clean-midpoly-natural.png` owns structure and
-  material detail; `research/references/style-painted-warmth.png` owns palette and shape
-  warmth.
-- **Why / rejected:** chosen as the strongest balance of richness, AI-authoring
-  consistency, and weaker-PC scalability. Rejected flat-shaded low-poly as too crude,
-  photoreal/NMS-lush density as too costly, and cel shading as unnecessary shader risk.
-- **Open:** exact palette and UI style.
+- **References:** visual studies under `research/character-style-exploration/` are
+  comparison evidence, not a selected style contract.
+- **Open:** style, palette, UI language, and production quality bar.
 
 ## Feel
 

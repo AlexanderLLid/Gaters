@@ -1,0 +1,9 @@
+{
+  "compiler": "socket-compiler/0",
+  "composition_sha256": "7e30ec2a54e7b70a836e4bf96e7925b22f0a6874ca94e6b796a078046d75fe1a",
+  "schema": "module-socket-receipt/0",
+  "socket_sha256": "ba750dd53d53ebb58393c398788d562cbe4ce6c59b425a46b0b87fbc3c45008b",
+  "source_mesh_sha256": "31f9217953a072425b44a514935fc8f0b50c30b8f982ed28d96d67f4b1ff73af",
+  "topology_sha256": "12a84473beea3332548aa3d64e18b913325b75952dee43e01b6e05cc36abd1f7",
+  "verifier": "socket-verifier/0"
+}

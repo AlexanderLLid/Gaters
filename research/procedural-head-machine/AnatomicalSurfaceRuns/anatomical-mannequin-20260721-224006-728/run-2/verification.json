@@ -1,0 +1,24 @@
+{
+  "failures": [],
+  "metrics": {
+    "connected_components": 1,
+    "faces": 18751,
+    "manifold_edges": 36766,
+    "max_bounds_error_m": 0.03688837409019469,
+    "measured_joint_radii_m": {
+      "left_calf_low": 0.09131501273940847,
+      "left_elbow": 0.10877204275868098,
+      "left_knee": 0.1095497358504993,
+      "left_wrist": 0.08147912756645657,
+      "right_calf_low": 0.09131500579985564,
+      "right_elbow": 0.10877204275868098,
+      "right_knee": 0.1095497358504993,
+      "right_wrist": 0.08147916206938924
+    },
+    "minimum_distal_taper_m": 0.01823472311109084,
+    "non_axial_face_fraction": 0.9815476507919577,
+    "vertices": 18017
+  },
+  "passed": true,
+  "schema": "anatomical-surface-verification/0"
+}

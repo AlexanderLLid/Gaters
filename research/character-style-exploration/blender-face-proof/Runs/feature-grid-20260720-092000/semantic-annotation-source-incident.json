@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-8-target-feature-annotation-source-mismatch",
+  "invalidatedRunIds": ["feature-grid-20260720-092000"],
+  "reason": "The two stored blind annotations mixed source points rather than reproducing each report exactly. Two source-pinned build receipts remain append-only, but no metric or selection may use this run."
+}

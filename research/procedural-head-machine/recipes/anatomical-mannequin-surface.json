@@ -1,0 +1,13 @@
+{
+  "schema": "body-surface/0",
+  "id": "anatomical-mannequin",
+  "voxel_size_m": 0.02,
+  "smooth_iterations": 2,
+  "adaptivity": 0.005,
+  "target_faces": 9000,
+  "module_overlap_m": 0.01,
+  "minimum_non_axial_face_fraction": 0.25,
+  "bounds_tolerance_m": 0.1,
+  "maximum_faces": 10000,
+  "minimum_distal_taper_m": 0.012
+}

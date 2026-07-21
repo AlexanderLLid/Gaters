@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "incident": "task-2-derived-artifact-loss",
+  "date": "2026-07-20",
+  "deletedScope": "Derived/search-runs",
+  "cause": "The ART-4 unit-test teardown selected output.parents[2], resolving to the shared Derived/search-runs root instead of its unique temporary run directory.",
+  "survivingSourceRecords": [
+    "Runs/task2-smoke/run.json",
+    "Runs/task2-smoke/task-2-failure-evidence.json",
+    "Runs/task2-smoke-v2/run.json",
+    "Runs/task2-smoke-v3/run.json",
+    "Runs/task2-smoke-v3/candidates/b67952f4ca72a15f6a32cfd135a00c92697fe98a36aff6ab6cf6c8758004ea09.json",
+    "Runs/task2-smoke-v3/candidates/c2969db151f7931b8b7a662c92e5f6201f45f31db99d39badd6864c9e39121b4.json"
+  ],
+  "invalidatedRunIds": [
+    "task2-smoke",
+    "task2-smoke-v2",
+    "task2-smoke-v3"
+  ],
+  "followUp": "Do not write old run paths. Produce final evidence only in a new task2-smoke-v4 run."
+}

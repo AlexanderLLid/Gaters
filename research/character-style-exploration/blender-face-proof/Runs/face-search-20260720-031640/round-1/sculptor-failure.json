@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "runId": "face-search-20260720-031640",
+  "round": 1,
+  "agent": {
+    "identity": "face_sculptor",
+    "modelIdentity": "gpt-5.6-terra",
+    "instructions": "Build both immutable jaw_taper candidates sequentially, preserve Blender logs, fresh-reopen verify each, require CLAY_SCULPT_OK and SCULPT_VERIFY_OK, stop on first failure, and never alter candidate values. The dispatch incorrectly named Derived/sculpt-v13/face-sculpt.blend as the generator source.",
+    "response": "Lower build emitted CLAY_SCULPT_OK. Fresh verifier emitted ValueError: source blend path is not the fixed face proof and no SCULPT_VERIFY_OK. Upper candidate was not attempted."
+  },
+  "candidateId": "3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924",
+  "attemptedSourceBlend": "Derived/sculpt-v13/face-sculpt.blend",
+  "requiredSourceBlend": "Derived/face-v2/face-proof.blend",
+  "buildExitReportedByBlender": 0,
+  "verifierExitReportedByBlender": 0,
+  "buildMarker": true,
+  "verifierMarker": false,
+  "failureDiagnosis": "Root dispatch used the visual champion artifact instead of the fixed generator source required by sculpt_integrity.py. Blender also returned zero after the Python exception because --python-exit-code was absent; the required marker prevented false acceptance.",
+  "evidence": {
+    "buildLog": {"path": "Runs/face-search-20260720-031640/round-1/logs/3cb0f8ad-build.log", "sha256": "59a613251b2880acb97cab7b394edf0736c576153767a4a2a645efa217cf032b"},
+    "verifierLog": {"path": "Runs/face-search-20260720-031640/round-1/logs/3cb0f8ad-verify.log", "sha256": "e57a4a7f0b723952ae007863b3bd0e61ada0c4bf6d66e374a57eee83400ad62c"},
+    "manifest": {"path": "Derived/search-runs/face-search-20260720-031640/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924/manifest.json", "sha256": "dcdace79cf2805db9fc9452be62e343e5d5839e1e5e40d754b49034a39a2669a"},
+    "blend": {"path": "Derived/search-runs/face-search-20260720-031640/round-1/3cb0f8ad247a8c9d6f8ff1d2228fb14cab49cf61700d837d093eefb872c7a924/face-sculpt.blend", "sha256": "d508f00fbd2d0e29f491b423d0715dab08bb1779736a920534511754fb5fc602"}
+  },
+  "acceptedAsEvidence": false,
+  "humanAcceptance": false
+}

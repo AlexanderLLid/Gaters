@@ -1,0 +1,48 @@
+{
+  "artifacts": {
+    "face-head-silhouette.blend": "d15ae0068b4e766dbc98ac456b63f898666bcbdb23342f677a7bb1d5886337f5",
+    "front.png": "5b87b58b2f65a03ae37068b84471cdb597009e901e92f1a9dec6996477e31d9a",
+    "profile.png": "f97b61b339097aa272173bc41f15246808b887853cfd38124df9e98c1e1ac59f",
+    "three-quarter.png": "31c881ad0db1c4cc8a134903462b4ab35c1fcadecfda0bfd8fe0782fe105330f"
+  },
+  "maximumDepthChange": 0.0,
+  "maximumDisplacement": 0.012272561285386585,
+  "recipe": {
+    "parameters": {
+      "chinVertexIndex": 5225,
+      "neckFade": 0.6,
+      "profileBinSize": 0.04,
+      "sidePower": 1.5,
+      "smoothingRadius": 0.14
+    },
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\head-silhouette-v3.json",
+    "sha256": "0e15346f54859c1d26027c5b8e0477b33b2e79cba9a5f233e8b5595b66c5c696"
+  },
+  "schemaVersion": 1,
+  "semanticAnchors": {
+    "chinVertexIndex": 5225,
+    "currentChin": -1.68112490054044,
+    "currentTop": 1.7995132939972927
+  },
+  "shapeKey": "HeadSilhouetteFit",
+  "sourceBlend": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\Derived\\style-presentation-v5\\face-style-macro.blend",
+    "sha256": "5a461a00a5f26467aef5faaca30843715d777545dd5717b7884603553a8144c4"
+  },
+  "sourceTopology": {
+    "faceCount": 18486,
+    "sha256": "1f78e347f544c2377abee83216f297dc9499b73b7a149bd8b8d849b5553d95db",
+    "vertexCount": 19158
+  },
+  "status": "built-unverified",
+  "targetProfile": {
+    "path": "C:\\repos\\Gaters\\research\\character-style-exploration\\blender-face-proof\\target-head-silhouette-v1.json",
+    "sha256": "74e418302318e2928fa4f851037d1e68f9504169ab8c7aa047c23beb67d95071"
+  },
+  "toolVersions": {
+    "blender": "5.2.0 LTS",
+    "builderSha256": "71758f02d42fbeffde6925dcfce517efcf666804fc74897b1720381e81a64ff0",
+    "fitterSha256": "66edb3d0cefdfa3d98dad1a2d19d6e1dba03cf03ce08a415ea72448ac3d6d4cb",
+    "python": "3.13.13"
+  }
+}

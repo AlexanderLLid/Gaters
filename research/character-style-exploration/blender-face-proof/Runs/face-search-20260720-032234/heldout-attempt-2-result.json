@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "8196f5e3b705640f9e8edff1ce1464fa6ae8583948853dbb976a4db51f55d99a",
+  "parameters": {"head_height": -0.2, "eye_spacing": 0.2},
+  "mechanicalResult": "passed",
+  "visualPrecheck": "failed-counterexample-design",
+  "diagnosis": "The negative height and outward eye extremes produced a plausible compact face and could be interpreted as closer to the broad target. It is not a valid obvious-failure control.",
+  "disposition": "preserved but not used as the final evaluator counterexample",
+  "nextAttempt": {"candidateId": "c842c4a217388531088a5abfec7d603269d38ddb9cb722c81527cbed4037583e", "head_height": 0.2, "eye_spacing": -0.2},
+  "excludedFromSearchHistory": true,
+  "humanAcceptance": false
+}

@@ -1,0 +1,12 @@
+{
+  "failures": [],
+  "metrics": {
+    "faces": 36,
+    "manifold_edges": 68,
+    "max_length_error_m": 0.0,
+    "max_mirror_error_m": 0.0,
+    "vertices": 34
+  },
+  "passed": true,
+  "schema": "mirrored-branch-verification/0"
+}

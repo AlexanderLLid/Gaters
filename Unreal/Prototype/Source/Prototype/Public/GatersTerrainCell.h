@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "DynamicMeshActor.h"
-#include "GatersEnvironment.h"
+#include "GatersEnvironmentRecipe.h"
 #include "GatersTerrainCell.generated.h"
 
 UCLASS()
@@ -17,8 +17,7 @@ public:
 		const FIntPoint& Cell, const FVector2D& LocalPosition, float CellSize);
 
 	void Configure(
-		int32 InSeed,
-		float InWorldSize,
+		const FGatersEnvironmentRecipe& InEnvironmentRecipe,
 		const FIntPoint& InCell,
 		float InCellSize,
 		int32 InResolution,
@@ -27,12 +26,11 @@ public:
 	void Build();
 
 private:
-	int32 Seed = 0;
-	float WorldSize = 0.f;
 	FIntPoint Cell = FIntPoint::ZeroValue;
 	float CellSize = 10000.f;
 	int32 Resolution = 32;
 	float PadRadius = 0.f;
 	FVector2D RouteTarget = FVector2D::ZeroVector;
 	FGatersEnvironment Environment;
+	FGatersWorldIntentRecipe Intent;
 };

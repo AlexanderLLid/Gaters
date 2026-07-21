@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "runId": "feature-grid-20260720-094000",
+  "status": "retained",
+  "humanAcceptance": false,
+  "targetAnnotation": {
+    "path": "target-feature-geometry.json",
+    "sha256": "62aec9184dbe819f79a982898fe5bd487d03d4be5ce169d677f1d58aa4f16963"
+  },
+  "evaluatorVersions": {
+    "featureGrid": "b86ea3bcc5852b9c2a7de062d30d487ff9d77757cca7dd445f496504a9a0eb9f",
+    "featureMetric": "f28e8f3c5a4b92519aaac35f56691d05e7292f4f05c0567bf8ec7ef689234712",
+    "macroMetric": "ec7d13c212bab9b7e10ed7cb0667c802760037ea1006c6d12429ab74346eab3d"
+  },
+  "receiptCounts": {
+    "recipes": 8,
+    "buildPassed": 8,
+    "freshVerifyPassed": 8,
+    "featureMetricPassed": 8,
+    "macroMetricPassed": 8
+  },
+  "replayGate": {
+    "allLowCandidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a",
+    "task7ParentCandidateId": "eaec583dac7c9adf295510e82a06dd721dceb2aea371ced31bfdcaa88b884d5b",
+    "topologyMatches": true,
+    "cameraMatches": true,
+    "maximumMacroRatioDelta": 0.0,
+    "passed": true
+  },
+  "sceneGate": {
+    "uniqueSceneLockCount": 1,
+    "uniqueCameraCount": 1,
+    "uniqueTopologyCount": 1,
+    "passed": true
+  },
+  "macroRegressionGate": {
+    "algorithm": "feature_grid.macro_regression_gate",
+    "comparison": "absolute delta from the all-low replay for each Task 7 macro ratio",
+    "tolerance": 1e-09,
+    "maximumObservedDelta": 0.0,
+    "passed": true
+  },
+  "ranking": [
+    {"candidateId": "f3d18cb55b4f03a2575d5e81c51e3e40943c0914eeee45d3a9dc571957fec598", "eyeAperture": 0.12, "noseLength": 0.30, "noseWidth": 0.26, "score": 0.05694016395961812},
+    {"candidateId": "99f640f49d80237ab187ffa1195f8f3fee1214b894b498386c3b61465f51bb01", "eyeAperture": 0.12, "noseLength": 0.37, "noseWidth": 0.26, "score": 0.06555621950457438},
+    {"candidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a", "eyeAperture": 0.00, "noseLength": 0.30, "noseWidth": 0.26, "score": 0.06734195220607438},
+    {"candidateId": "e2fd4f12963b0498490680f359f37fb63c424ebd1693c624b25b30bf7d392d81", "eyeAperture": 0.12, "noseLength": 0.30, "noseWidth": 0.33, "score": 0.06794894106668528},
+    {"candidateId": "7dffbc94a2f7741363b767459ce2c9b4e9261ebd0ae88623ce86baf4bb4fa2d3", "eyeAperture": 0.00, "noseLength": 0.37, "noseWidth": 0.26, "score": 0.07595800775103063},
+    {"candidateId": "95d0a968d5665545ec4a087cec651494ca380a8b3a4801f07a77f4e25451387d", "eyeAperture": 0.12, "noseLength": 0.37, "noseWidth": 0.33, "score": 0.07656499661164154},
+    {"candidateId": "7ed003f199f912325136ef9a55a5ec4e5cb8f7d3aa8abeac9710f560578c653d", "eyeAperture": 0.00, "noseLength": 0.30, "noseWidth": 0.33, "score": 0.07835072931314153},
+    {"candidateId": "f0927e6a81b29a56ee9ccb150ae95929032fd7d92dfbcb8f5fd46d11bb2cf534", "eyeAperture": 0.00, "noseLength": 0.37, "noseWidth": 0.33, "score": 0.08696678485809779}
+  ],
+  "decision": {
+    "retainedCandidateId": "e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a",
+    "rawBestCandidateId": "f3d18cb55b4f03a2575d5e81c51e3e40943c0914eeee45d3a9dc571957fec598",
+    "improvement": 0.010401788246456253,
+    "minimumFixedMargin": 0.02,
+    "annotationUncertaintyMargin": 0.13656387665198239,
+    "requiredMargin": 0.13656387665198239,
+    "reason": "The raw best does not clear either the fixed margin or the annotation uncertainty margin. The all-low replay remains the machine-retained candidate."
+  },
+  "preservedFailures": [
+    {
+      "path": "Runs/feature-grid-20260720-094000/logs/e316b0656cf3b3f2a3f6435d0fe6a50905af959abb5f372345dc592cb30f7f0a-feature-failed-shadow.log",
+      "cause": "measure_feature_geometry.py shadowed the imported scene_lock function",
+      "correction": "renamed the local manifest record and reran all feature receipts",
+      "verifiedBy": "the corresponding feature.log contains FEATURE_GEOMETRY_OK"
+    }
+  ],
+  "nextExperiment": {
+    "type": "bounded-response-calibration",
+    "reason": "Eye aperture improved monotonically but the target lies outside the tested span; increased nose length and width moved away from the target."
+  }
+}

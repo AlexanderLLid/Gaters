@@ -1,0 +1,29 @@
+{
+  "failures": [
+    {
+      "rule": "ANATOMICAL-SURFACE-TAPER-1",
+      "subject": "limbs"
+    }
+  ],
+  "metrics": {
+    "connected_components": 1,
+    "faces": 13822,
+    "manifold_edges": 26969,
+    "max_bounds_error_m": 0.08193387508392336,
+    "measured_joint_radii_m": {
+      "left_ankle": 0.18815216939526036,
+      "left_elbow": 0.10990466459951484,
+      "left_knee": 0.11432319549545217,
+      "left_wrist": 0.0844581342267035,
+      "right_ankle": 0.18815216793802755,
+      "right_elbow": 0.10990466459951484,
+      "right_knee": 0.11432319549545217,
+      "right_wrist": 0.0844581342267035
+    },
+    "minimum_distal_taper_m": -0.07382897389980819,
+    "non_axial_face_fraction": 0.9881348574735929,
+    "vertices": 13149
+  },
+  "passed": false,
+  "schema": "anatomical-surface-verification/0"
+}

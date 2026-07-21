@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "cd4ab9d75b01d503505bb6a205f9a76d186afb32a1c7149d1e679315fcf390b4",
+  "parameters": {"head_height": 0.2, "eye_spacing": 0.2},
+  "mechanicalResult": "passed",
+  "visualPrecheck": "failed-counterexample-design",
+  "diagnosis": "The allowed positive extremes remained anatomically plausible and were not grossly distinguishable from the initial face. Treating this as an obvious failure would make the held-out evaluator test circular.",
+  "disposition": "preserved but not used as the final evaluator counterexample",
+  "nextAttempt": {"candidateId": "8196f5e3b705640f9e8edff1ce1464fa6ae8583948853dbb976a4db51f55d99a", "head_height": -0.2, "eye_spacing": 0.2},
+  "excludedFromSearchHistory": true,
+  "humanAcceptance": false
+}

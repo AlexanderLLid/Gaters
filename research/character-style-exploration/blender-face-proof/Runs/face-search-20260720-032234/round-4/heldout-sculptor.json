@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "identity": "face_sculptor",
+  "modelIdentity": "gpt-5.6-terra",
+  "instructions": "Build only the post-search held-out counterexample from the fixed source with --python-exit-code 1, UTF-8 logs, fresh-reopen verification, exit and marker checks; do not edit or judge it and do not add it to search history.",
+  "response": {"failureDiagnosis": null, "buildExit": 0, "verifierExit": 0, "buildMarker": true, "verifierMarker": true},
+  "candidate": {"path": "Runs/face-search-20260720-032234/candidates/cd4ab9d75b01d503505bb6a205f9a76d186afb32a1c7149d1e679315fcf390b4.json", "sha256": "8adc9e8f6fcadfaeeaee4dab0eb19f8af8a03024ed5ff4d69f20722cf6583387"},
+  "buildLog": {"path": "Runs/face-search-20260720-032234/round-4/logs/cd4ab9d7-build.log", "sha256": "f80a33393f1da30efd6c5136b8b7ecc31b84eae4d20df578c3ef69aeea473515"},
+  "verifierLog": {"path": "Runs/face-search-20260720-032234/round-4/logs/cd4ab9d7-verify.log", "sha256": "4dc43c460646c3dfcd1849e48309961424f56ec9a8536a64932241987fe24123"},
+  "manifest": {"path": "Derived/search-runs/face-search-20260720-032234/round-4/cd4ab9d75b01d503505bb6a205f9a76d186afb32a1c7149d1e679315fcf390b4/manifest.json", "sha256": "39efff1c64305deec3cba91ef0e8376c3fc9d7cdb1f80435aff314e6d0ef2b36"},
+  "rootIntegrityCheck": "passed-current-manifest-integrity",
+  "excludedFromSearchHistory": true,
+  "humanAcceptance": false
+}

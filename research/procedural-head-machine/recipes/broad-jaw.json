@@ -1,0 +1,11 @@
+{
+  "schema": "head-recipe/0",
+  "id": "broad-jaw",
+  "width_m": 0.16,
+  "height_m": 0.22,
+  "depth_m": 0.19,
+  "jaw_width": 0.98,
+  "chin_taper": 0.62,
+  "rings": 12,
+  "segments": 16
+}

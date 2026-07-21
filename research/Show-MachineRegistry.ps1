@@ -45,10 +45,6 @@ foreach ($Machine in $Machines) {
 if (-not $ById.ContainsKey($Data.dreamMachine)) {
     $Errors.Add("Dream machine '$($Data.dreamMachine)' does not exist.")
 }
-if (-not $ById.ContainsKey($Data.currentFocus)) {
-    $Errors.Add("Current focus '$($Data.currentFocus)' does not exist.")
-}
-
 $Edges = @{}
 foreach ($Machine in $Machines) {
     foreach ($Group in @($Machine.requires)) {
@@ -110,7 +106,6 @@ if ($Format -eq 'Validate') {
 
 if ($Format -eq 'Summary') {
     Write-Output "Dream: $($Data.dreamMachine)"
-    Write-Output "Focus: $($Data.currentFocus)"
     foreach ($Wave in @($Machines.targetWave | Sort-Object -Unique)) {
         Write-Output "Wave $Wave"
         foreach ($Machine in @($Machines | Where-Object targetWave -eq $Wave | Sort-Object id)) {

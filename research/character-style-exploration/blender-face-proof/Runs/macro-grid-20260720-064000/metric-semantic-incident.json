@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "runId": "macro-grid-20260720-064000",
+  "incident": "task-7-anchor-semantic-mismatch",
+  "status": "invalid-for-promotion",
+  "cause": "The old cheek and jaw anchors used extrema of MPFB cheek-bone and chin-width control regions, while the manual target points are full visible facial-contour extrema. This made every candidate jaw wider than its cheek metric and could reward increased taper contrary to the target ratio and visible diagnosis.",
+  "affectedArtifacts": "All macro-geometry.json receipts and selection.json under this run remain preserved but may not support nomination or promotion.",
+  "recovery": "Use full non-ear head-surface contour extrema in target-matched normalized cheek/jaw bands and stable maximum-signed-displacement mouth corners under a new immutable run identity.",
+  "humanAcceptance": false
+}

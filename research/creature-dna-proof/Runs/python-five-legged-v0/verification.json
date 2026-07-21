@@ -1,0 +1,10 @@
+{
+  "failures": [],
+  "metrics": {
+    "bone_count": 29,
+    "failure_count": 0,
+    "joint_count": 30,
+    "module_count": 8
+  },
+  "passed": true
+}

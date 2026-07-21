@@ -1,0 +1,9 @@
+{
+  "backend": "houdini",
+  "backend_version": "22.0.368",
+  "body_composition_sha256": "1ddb76901f5d2ff07d80b8dc15a855e3220b8f0388f64adc50657072c6cfab58",
+  "body_plan_sha256": "1ddb76901f5d2ff07d80b8dc15a855e3220b8f0388f64adc50657072c6cfab58",
+  "schema": "smooth-body-receipt/0",
+  "surface_recipe_sha256": "4efe508b7ed27cf09ef0c20d60f271ba178b51ccabceb18fb6c3c3df9c8bc25e",
+  "surface_sha256": "ac33ae279ca1c19d56897f8636592b5940166fe9950f010f6a8cede213b7a684"
+}

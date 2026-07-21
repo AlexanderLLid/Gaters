@@ -49,6 +49,8 @@ the change touches — at this scale that's cheap — then climb.
   provisioning rule, a cost sink. Fiction with no lever is colour — cut it.
 - **Deletion over addition.** Change in place; no supersedes-history, no graveyard
   comments, no migration notes.
+- **One concept, one canonical noun.** Use the same noun in UI, canon, data, and code;
+  syntax or localization may adapt it, but semantic aliases are parallel systems.
 - **Numbers never in prose.** Record the shape of a curve and name the tunables, not
   values.
 - **Mark deliberate stubs:** `[open]` + one line, so thin reads as intent, not neglect.
@@ -86,8 +88,11 @@ Never simplify away:
   contradiction.
 - **The why on a hard-to-reverse call.** Unrecorded decisions get re-litigated, which
   costs more than recording them.
-- **The contradiction stop.** Never silently change a recorded call — flag and ask.
-- **Gate-physics depth.** The one designated deep zone; depth there is the point.
+- **Contradiction handling.** Apply `AGENTS.md#Decisions & contradictions`: repair clear
+  repository contradictions in place; use its concrete question for user-vs-written
+  conflicts.
+- **Rift-rules depth.** The one designated deep zone; behavioural consistency there is
+  the point.
 - **Reading.** The ladder shortens the writing, never the understanding — read the
   sections a change touches before climbing.
 

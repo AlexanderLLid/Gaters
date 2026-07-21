@@ -1,5 +1,8 @@
 #include "GatersContentCellRecipe.h"
 
+#include "GatersBiomeField.h"
+#include "GatersBiomeOpportunityField.h"
+#include "GatersEnvironmentRecipe.h"
 #include "GatersTerrainSemanticField.h"
 #include "Misc/Crc.h"
 
@@ -32,6 +35,25 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 	float InCellSize,
 	const FGatersEnvironment& Environment,
 	const FGatersContentCellSemantics& Semantics)
+
+{
+	return Generate(
+		InCell,
+		InCellSize,
+		Environment,
+		FGatersWorldIntentRecipe::Generate(Environment.Seed, Environment.ChunkSize),
+		Semantics);
+}
+
+namespace
+{
+FGatersContentCellRecipe GenerateContentCell(
+	const FIntPoint& InCell,
+	float InCellSize,
+	const FGatersEnvironment& Environment,
+	const FGatersWorldIntentRecipe& Intent,
+	const FGatersEnvironmentRecipe* EnvironmentRoot,
+	const FGatersContentCellSemantics& Semantics)
 {
 	check(InCellSize > 0.f);
 	check(Semantics.MinGroundNormalZ >= 0.f && Semantics.MinGroundNormalZ <= 1.f);
@@ -42,6 +64,10 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 	Result.WorldSeed = Environment.Seed;
 	Result.Cell = InCell;
 	Result.CellSize = InCellSize;
+	Result.EnvironmentVersion = EnvironmentRoot ? EnvironmentRoot->Version : 0;
+	Result.BiomeOpportunityVersion = EnvironmentRoot
+		? EnvironmentRoot->BiomeOpportunities.Version
+		: 0;
 	Result.Coverage.CandidateCount = CandidatesPerAxis * CandidatesPerAxis;
 	TArray<int32> Candidates;
 	Candidates.SetNumUninitialized(Result.Coverage.CandidateCount);
@@ -58,6 +84,37 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 
 	const float Spacing = InCellSize / CandidatesPerAxis;
 	const FVector2D Center(InCell.X * InCellSize, InCell.Y * InCellSize);
+	FGatersBiomeQuery BiomeQuery;
+	BiomeQuery.PadRadius = Semantics.PadRadius;
+	BiomeQuery.RouteTarget = Semantics.RouteTarget;
+	BiomeQuery.NormalSampleDistance = Spacing * 0.25f;
+	const FGatersBiomeSample CellBiome = EnvironmentRoot
+		? EnvironmentRoot->QueryBiome(Center, BiomeQuery)
+		: FGatersBiomeField::Query(Environment, Intent, Center, BiomeQuery);
+	const FGatersBiomeOpportunitySample Opportunities = EnvironmentRoot
+		? EnvironmentRoot->QueryOpportunities(Center, BiomeQuery)
+		: FGatersBiomeOpportunityField::Query(CellBiome);
+	const FGatersWorldRegionIntent& RegionIntent = Intent.At(Center);
+	Result.IntentVersion = Intent.Version;
+	Result.IntentRegionId = RegionIntent.Id;
+	Result.DeclaredVegetationOpportunity = RegionIntent.VegetationOpportunity;
+	Result.DeclaredStoneOpportunity = RegionIntent.StoneOpportunity;
+	Result.BiomeKey = CellBiome.BiomeKey;
+	Result.VegetationOpportunity =
+		RegionIntent.VegetationOpportunity * Opportunities.Vegetation;
+	Result.StoneOpportunity =
+		RegionIntent.StoneOpportunity * Opportunities.Stone;
+	if (RegionIntent.VegetationOpportunity + RegionIntent.StoneOpportunity <= KINDA_SMALL_NUMBER)
+	{
+		Result.Coverage.IntentRejectedCount = Result.Coverage.CandidateCount;
+		return Result;
+	}
+	const float TreeFraction = Result.VegetationOpportunity /
+		FMath::Max(Result.VegetationOpportunity + Result.StoneOpportunity, 0.001f);
+	const float Density = FMath::Clamp(
+		Result.VegetationOpportunity + Result.StoneOpportunity, 0.f, 1.f);
+	const float CandidateAcceptance = Density
+		* static_cast<float>(Result.MaxPlacements) / Result.Coverage.CandidateCount;
 	for (const int32 Candidate : Candidates)
 	{
 		const uint32 Hash = ContentHash(Environment.Seed, InCell, Candidate);
@@ -78,7 +135,7 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 			continue;
 		}
 		const float Height = FGatersTerrainSemanticField::MaterializedHeightAt(
-			Environment, Point, Semantics.PadRadius, Semantics.RouteTarget);
+			Environment, Intent, Point, Semantics.PadRadius, Semantics.RouteTarget);
 		if (Environment.HasWater() && Height <= Environment.WaterHeight + Semantics.WaterClearance)
 		{
 			++Result.Coverage.WaterRejectedCount;
@@ -86,10 +143,16 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 		}
 
 		const FVector Normal = FGatersTerrainSemanticField::MaterializedNormalAt(
-			Environment, Point, Spacing * 0.25f, Semantics.PadRadius, Semantics.RouteTarget);
+			Environment, Intent, Point, Spacing * 0.25f,
+			Semantics.PadRadius, Semantics.RouteTarget);
 		if (Normal.Z < Semantics.MinGroundNormalZ)
 		{
 			++Result.Coverage.SteepRejectedCount;
+			continue;
+		}
+		if (HashUnit(Hash, 24) >= CandidateAcceptance)
+		{
+			++Result.Coverage.OpportunityRejectedCount;
 			continue;
 		}
 		if (Result.Placements.Num() >= Result.MaxPlacements)
@@ -101,7 +164,7 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 		FGatersContentCellPlacement& Placement = Result.Placements.AddDefaulted_GetRef();
 		Placement.Id = FString::Printf(TEXT("content:%d:%d:%d:%d"),
 			Environment.Seed, InCell.X, InCell.Y, Candidate);
-		const bool bTree = (Hash & 1u) == 0u;
+		const bool bTree = HashUnit(Hash, 16) < TreeFraction;
 		Placement.Kind = bTree
 			? EGatersRecipeNodeKind::ScatterTree
 			: EGatersRecipeNodeKind::ScatterRock;
@@ -118,4 +181,27 @@ FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
 		++Result.Coverage.PlacedCount;
 	}
 	return Result;
+}
+}
+
+FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
+	const FIntPoint& InCell,
+	float InCellSize,
+	const FGatersEnvironment& Environment,
+	const FGatersWorldIntentRecipe& Intent,
+	const FGatersContentCellSemantics& Semantics)
+{
+	return GenerateContentCell(
+		InCell, InCellSize, Environment, Intent, nullptr, Semantics);
+}
+
+FGatersContentCellRecipe FGatersContentCellRecipe::Generate(
+	const FIntPoint& InCell,
+	float InCellSize,
+	const FGatersEnvironmentRecipe& Environment,
+	const FGatersContentCellSemantics& Semantics)
+{
+	return GenerateContentCell(
+		InCell, InCellSize, Environment.Terrain, Environment.Intent,
+		&Environment, Semantics);
 }

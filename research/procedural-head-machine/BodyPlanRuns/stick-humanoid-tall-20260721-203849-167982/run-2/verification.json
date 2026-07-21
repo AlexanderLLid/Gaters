@@ -1,0 +1,15 @@
+{
+  "failures": [],
+  "metrics": {
+    "cells": 232,
+    "connected_components": 1,
+    "faces": 444,
+    "height_m": 2.66,
+    "manifold_edges": 888,
+    "max_mirror_error_cells": 0.0,
+    "vertices": 446,
+    "width_m": 2.8
+  },
+  "passed": true,
+  "schema": "body-plan-verification/0"
+}

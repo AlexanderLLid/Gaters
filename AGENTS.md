@@ -29,8 +29,8 @@ The whole canon must stay readable in one sitting.
   mystery, the behind-the-curtain truth.
 - `docs/systems.md` — the mechanics bible: pillars, traps, core loop, every mechanic,
   archetypes, validation, technical challenges.
-- `docs/gate-physics.md` — the one designated **deep** page: every claim bound to real
-  physics, tagged GROUNDED / STRETCH / CONCEIT.
+- `docs/rift-rules.md` — the one designated **deep** page: consistent magical Rift
+  behaviour, gameplay consequences, and explicit open rules.
 - `docs/questions.md` — the backlog: open questions (stable `#N` IDs, never reused),
   parked explorations, deferred wants, option banks.
 - `docs/INSPIRATION.md` — the design compass (references, styles, wants, counters);
@@ -47,8 +47,9 @@ layer depends on the one above:
 
 1. Experience — reach equals exposure; aggressor fantasy, no defender tax ([[world]]).
 2. Core loop — moment / session / long-term ([[systems]], documented once).
-3. Primary verb + seam — open / raid, routed through the Gate (the highest-blast object).
-4. Resources (the knobs) — mask energy, power cores, Potential, coordinates.
+3. Primary verb + seam — call / enter / raid through temporary Rifts; Anchors shape
+   arrival (the highest-blast objects).
+4. Resources (the knobs) — Rift cost [open], Potential, traces, and route knowledge.
 5. Conflict — raiding, combat, hub worlds.
 6. Counterforce — the stagnation economy, tiers, charter / tithe.
 7. Content — taming, building, items, biomes, creatures.
@@ -79,9 +80,15 @@ layer depends on the one above:
 - Inline tags say how settled a claim is: **[current call]** (the call we'd make today +
   its why — never locked), **[tentative]** (leaning), **[open]** (unresolved, tracked in
   `questions.md`).
-- **Never silently change a recorded call.** New content that directly contradicts one
-  blocks: stop and ask, don't pick a winner. Undecided design questions are not
-  contradictions — they go to `questions.md`.
+- **Resolve repository contradictions in place.** Existing text is not locked. When
+  repository sources contradict and the intended winner is clear, any chat may update
+  every affected current source so one coherent model remains. If the winner is unclear,
+  ask one concrete question. Resolution is complete only when all affected authoritative
+  sources agree; undecided design questions go to `questions.md`.
+- **Make user conflicts concrete.** When a user instruction contradicts written material,
+  ask before choosing: "`X` conflicts with `Y` because `Z`. Which should govern?" Name
+  the actual statements and causal incompatibility, not merely that a contradiction
+  exists. After the answer, update every affected current source in place.
 - **No graveyard comments.** Removing something leaves the current model only — no
   "was X, now removed" narration, no commented-out old concepts. If a removal leaves
   something unresolved, flag it `[open]` and record the why once in `questions.md`.
@@ -93,12 +100,25 @@ layer depends on the one above:
   by a non-native player without a dictionary — no region-bound or legalistic register
   (charter, writ), no borrowed genre nouns (the IP line in [[systems]]). Test: does the
   word work in a sentence said by a 14-year-old in any country?
-- Cross-link with heading wikilinks: `[[systems#Raiding|Raiding]]`, `[[world#The mystery]]`,
+- **One concept, one canonical noun.** Use the same noun in UI, design docs, data schemas,
+  and code identifiers. Namespaces, type prefixes, and localization may adapt syntax;
+  they must not introduce a second semantic name for the same concept.
+- Cross-link with heading wikilinks: `[[systems#Raiding|Raiding]]`, `[[world#Rifts and Anchors|Rifts and Anchors]]`,
   `[[questions]]`, same-file `[[#Combat|Combat]]`.
 - Anchor claims to sources: cite inline as `(src: raw/file.md)`. Prefer anchoring over
   memory.
 - Split static data (Definition) from runtime state (Instance); prefer tags over rigid
   class trees.
+- **Requirements check:** after drafting a plan and before executing it, read
+  `docs/systems.md#Shared requirements`. Check Global and every subject the plan creates,
+  changes, or depends on. Update the plan until every applicable `MUST` is satisfied;
+  record justification for each `SHOULD` exception. Handle request conflicts with the
+  concrete question under [[#Decisions & contradictions]]. Complete the check with
+  `Requirements checked: <IDs>; exceptions: <IDs or none>`. Requirement text lives only
+  in the shared section; reference it by ID elsewhere. When the human states or changes
+  a cross-workstream product requirement or acceptance criterion, add or update it there
+  in the same task using that section's compact format. Propose agent-inferred
+  requirements instead of silently adding them.
 - Generated content boundary: versioned recipes, contracts, and source artifacts are
   authoritative; Unreal assets and Actors are derived outputs behind adapters.
 
@@ -127,6 +147,17 @@ Keep this schema lean. Add a short rule when a mistake repeats, not an essay.
 For capability or implementation work, invoke `finding-magic-machines`; its skill owns
 the method. A builder closes work only after independent evidence either promotes the
 machine or records the falsified guarantee and next isolated experiment.
+
+- **Interactive Unreal coordination.** `Unreal Runner` is the only task allowed to launch
+  UnrealBuildTool, `UnrealEditor-Cmd`, commandlets, Automation tests, Unreal Editor, or
+  Live Coding in the shared checkout. Other tasks send it
+  `UNREAL RUN: <requester> | <exact command> | <purpose>` and continue non-Unreal work.
+  When task messaging is available, send that line directly to `Unreal Runner`; human
+  relay is only the fallback when task messaging is unavailable.
+  The Runner reports the active requester, command, PID, and queue; it serializes
+  agent-owned operations without asking the human. If the human Editor blocks a needed
+  run, only the Runner asks once for it to be closed. No task closes, dismisses, attaches
+  to, or terminates a process or dialog.
 
 ## Research registry
 

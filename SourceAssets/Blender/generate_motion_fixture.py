@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 import shutil
 import sys
 from pathlib import Path
@@ -11,7 +12,7 @@ import bpy
 from mathutils import Vector
 
 
-GENERATOR_VERSION = 1
+GENERATOR_VERSION = 2
 ARTIFACT_POLICY = {
     "brief": "authoritative",
     "generator": "authoritative",
@@ -176,14 +177,31 @@ def make_animation(armature, brief):
     lift = float(clip["footLiftMeters"])
     left = armature.pose.bones["foot_l"]
     right = armature.pose.bones["foot_r"]
-    foot_samples = {
-        left: [(clip["startFrame"], 0.0), (23, lift), (clip["endFrame"], 0.0)],
-        right: [(clip["startFrame"], 0.0), (8, lift), (16, 0.0), (clip["endFrame"], 0.0)],
-    }
-    for pose_bone, samples in foot_samples.items():
-        for frame, z in samples:
-            pose_bone.location = Vector((0.0, 0.0, z))
-            pose_bone.keyframe_insert(data_path="location", frame=frame, group=pose_bone.name)
+    start_frame = clip["startFrame"]
+    middle_frame = clip["events"][1]["frame"]
+    end_frame = clip["endFrame"]
+    start_x = clip["rootSamplesMeters"][0]["location"][0]
+    middle_x = clip["rootSamplesMeters"][1]["location"][0]
+    end_x = clip["rootSamplesMeters"][-1]["location"][0]
+    for frame in range(start_frame, end_frame + 1):
+        scene.frame_set(frame)
+        root_x = float(root.location.x)
+        if frame <= middle_frame:
+            first_phase = (frame - start_frame) / (middle_frame - start_frame)
+            left_world_x = start_x
+            right_world_x = start_x + (middle_x - start_x) * first_phase
+            left_z = 0.0
+            right_z = lift * math.sin(math.pi * first_phase)
+        else:
+            second_phase = (frame - middle_frame) / (end_frame - middle_frame)
+            left_world_x = start_x + (end_x - start_x) * second_phase
+            right_world_x = middle_x
+            left_z = lift * math.sin(math.pi * second_phase)
+            right_z = 0.0
+        left.location = Vector((0.0, left_world_x - root_x, left_z))
+        right.location = Vector((0.0, right_world_x - root_x, right_z))
+        left.keyframe_insert(data_path="location", frame=frame, group=left.name)
+        right.keyframe_insert(data_path="location", frame=frame, group=right.name)
 
     for event in clip["events"]:
         scene.timeline_markers.new(f"{event['name']}|{event['frame']}", frame=event["frame"])
